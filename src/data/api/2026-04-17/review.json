@@ -1,5 +1,5 @@
 {
-  "reviewId": "2026-04-17T08-57-59",
+  "reviewId": "2026-04-17T09-07-44",
   "date": "2026-04-17",
   "status": "awaiting_human_review",
   "publishPolicy": "manual_review",
@@ -22,7 +22,7 @@
       {
         "code": "builder_missing_dialectic",
         "severity": "high",
-        "path": "builders[5]",
+        "path": "builders[15]",
         "message": "Builder is missing dialectic fields"
       }
     ]
@@ -30,11 +30,11 @@
   "humanDecision": null,
   "history": [
     {
-      "at": "2026-04-17T08:57:59.871Z",
+      "at": "2026-04-17T09:07:44.968Z",
       "type": "draft_generated"
     },
     {
-      "at": "2026-04-17T08:57:59.871Z",
+      "at": "2026-04-17T09:07:44.968Z",
       "type": "ai_review_completed"
     }
   ]

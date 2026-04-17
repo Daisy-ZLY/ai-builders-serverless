@@ -1,4 +1,4 @@
-Review ID: 2026-04-17T08-57-59
+Review ID: 2026-04-17T09-07-44
 Date: 2026-04-17
 Status: awaiting_human_review
 Policy: manual_review
@@ -13,7 +13,7 @@ Highlights:
 - 无重点条目
 
 Issues:
-- [high] builder_missing_dialectic @ builders[5]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[15]: Builder is missing dialectic fields
 
 Artifacts:
 - Markdown: drafts/2026-04-17/2026-04-17.md
