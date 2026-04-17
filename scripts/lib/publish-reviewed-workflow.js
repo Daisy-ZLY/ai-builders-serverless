@@ -26,7 +26,9 @@ function sleep(ms) {
 
 export function resolveSleepMs(sleepMs) {
   if (sleepMs === undefined || sleepMs === null) {
-    return 180000;
+    // We are running in a CI/CD pipeline, and COS deploy happens downstream.
+    // No need to sleep for 3 minutes anymore!
+    return 0;
   }
 
   const parsed = Number(sleepMs);
@@ -78,7 +80,9 @@ export async function publishReviewedDigestWorkflow({
   }
 
   await sleep(resolveSleepMs(sleepMs));
-  await runShell(wecomPushCmd || buildDefaultWecomPushCommand(date));
+  const wecomResult = await runShell(wecomPushCmd || buildDefaultWecomPushCommand(date));
+  if (wecomResult.stdout) console.log('WeCom Push stdout:', wecomResult.stdout);
+  if (wecomResult.stderr) console.error('WeCom Push stderr:', wecomResult.stderr);
 
   return {
     ...approveResult,
