@@ -143,7 +143,8 @@ export async function runLocalDigestWorkflow(options) {
       complete: ({ messages, prepared: preparedInput }) => completeWithCommand({
         prepared: preparedInput,
         messages,
-        command: ['sh', '-c', generatorCmd]
+        command: ['sh', '-c', generatorCmd],
+        env
       })
     });
   } catch (error) {
@@ -166,7 +167,8 @@ export async function runLocalDigestWorkflow(options) {
       : ({ messages, prepared: preparedInput }) => completeWithCommand({
           prepared: preparedInput,
           messages,
-          command: ['sh', '-c', reviewCmd]
+          command: ['sh', '-c', reviewCmd],
+          env
         });
 
     try {

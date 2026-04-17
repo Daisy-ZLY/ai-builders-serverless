@@ -285,7 +285,8 @@ export async function completeWithCommand({
   prepared,
   messages,
   command,
-  cwd = process.cwd()
+  cwd = process.cwd(),
+  env = process.env
 }) {
   if (!Array.isArray(command) || command.length === 0) {
     throw new Error('Local generator command must be a non-empty array');
@@ -302,7 +303,7 @@ export async function completeWithCommand({
     const { stdout, stderr } = await execFileAsync(command[0], command.slice(1), {
       cwd,
       env: {
-        ...process.env,
+        ...env,
         AI_BUILDERS_PREPARED_PATH: preparedPath,
         AI_BUILDERS_MESSAGES_PATH: messagesPath
       },
