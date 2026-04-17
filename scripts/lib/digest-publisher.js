@@ -26,10 +26,10 @@ export async function publishDigestArtifacts({
 
   const markdownPath = path.join(contentDir, `${date}.md`);
   const archiveMarkdownPath = path.join(archiveDir, `${date}.md`);
-  const dateGeneratedDir = path.join(generatedDir, date);
-  await ensureDir(dateGeneratedDir);
-  const digestJsonPath = path.join(dateGeneratedDir, 'digest.json');
-  const preparedJsonPath = path.join(dateGeneratedDir, 'prepared.json');
+  
+  // In the new Astro project, we want the JSON directly in src/data/api/${date}.json
+  const digestJsonPath = path.join(generatedDir, `${date}.json`);
+  const preparedJsonPath = path.join(generatedDir, `${date}.prepared.json`);
 
   await fs.writeFile(markdownPath, `${markdown}\n`, 'utf-8');
   await fs.writeFile(archiveMarkdownPath, `${markdown}\n`, 'utf-8');
@@ -37,7 +37,8 @@ export async function publishDigestArtifacts({
   await fs.writeFile(preparedJsonPath, `${JSON.stringify(prepared, null, 2)}\n`, 'utf-8');
 
   if (!skipBuild) {
-    await runCommand('npm', ['run', 'publish:site'], { cwd });
+    // We don't need to run publish:site anymore, Astro handles building
+    console.log('Skipping legacy publish:site command in Astro project.');
   }
 
   if (publishCmd) {

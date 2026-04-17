@@ -1,0 +1,22 @@
+---
+export interface Props {
+  tags: string[];
+  label?: string;
+  variant?: 'topic' | 'person';
+}
+
+const { tags, label = '', variant = 'topic' } = Astro.props;
+
+const formatDisplayTag = (tag: string) => {
+  if (variant !== 'topic') return tag;
+  const parts = String(tag).split('/');
+  return parts[parts.length - 1] || tag;
+};
+---
+
+<div class={`entry-tag-group ${variant}`}>
+  {label && <span class="entry-tag-label">{label}</span>}
+  {tags.map((tag) => (
+    <span class="entry-tag">{formatDisplayTag(tag)}</span>
+  ))}
+</div>

@@ -1,0 +1,1949 @@
+{
+  "generatedAt": "2026-04-16T14:17:59.859Z",
+  "totalEntries": 134,
+  "entries": [
+    {
+      "date": "2026-04-15",
+      "index": 1,
+      "name": "Josh Woodward",
+      "title": "Gemini 推出 NEET 医学考试模拟测试功能",
+      "tags": [
+        "话题/AIEducation",
+        "话题/Gemini"
+      ],
+      "tldr": "Gemini 现在能帮印度医学生做模拟考试了，就像请了个 AI 家教一样，以后可能还会帮更多国家的学生复习各种科目。",
+      "summary": "Google 的 Gemini 模型现在推出了针对印度 NEET 医学考试的模拟测试功能，这是 AI 在教育领域落地的又一个具体案例。他们正在计划扩展更多学科和国家的测试内容，这显示了 AI 辅助学习工具正在向全球化和专业化方向发展。通过收集用户反馈来决定下一步开发方向，体现了产品迭代的用户驱动策略。",
+      "links": [
+        "https://t.co/EnCMI4Opdz",
+        "https://t.co/EnCMI4Opdz"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 2,
+      "name": "Peter Yang",
+      "title": "AI协作的深度思考与产品体验",
+      "tags": [
+        "话题/AICollaboration",
+        "话题/LLM"
+      ],
+      "tldr": "AI 能帮你快速达到平均水平，但想做得更好还得靠你自己的眼光和动手调整。就像用 AI 写东西，它给个初稿，你得自己改才能出彩。另外，用新出的 Claude 写代码 app 时，手机和电脑没法无缝切换，有点麻烦。",
+      "summary": "Peter Yang 分享了对 AI 协作的深刻见解：@zoink 强调不应将 prompt 的输出视为最终结果，而应像塑造黏土一样与 AI agents 共同探索可能性，人的品味才是突破平庸的关键。同时，他体验了 Claude Code 应用，但指出了跨设备会话同步的问题，反映了当前 AI 工具在用户体验上的不完善。",
+      "links": [
+        "https://t.co/gaYK2S2cRW",
+        "https://t.co/TAh7ny1t6W",
+        "https://t.co/GAXO9RGsfR"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 3,
+      "name": "Nan Yu",
+      "title": "为科技巨头辩护：规模决定成败观",
+      "tags": [
+        "话题/科技巨头",
+        "话题/企业规模"
+      ],
+      "tldr": "就像大象踩个坑动静特别大，但你不能因此就说大象不会走路。大公司犯错看起来吓人，但人家赢的时候更多。",
+      "summary": "这哥们是在为 Google 和 Meta 这类科技巨头辩护，核心观点是：因为这些公司体量巨大，所以它们的失败看起来会特别显眼，但这不代表它们不行。他提醒大家要看整体胜率，而不是盯着个别失误。这其实反映了科技行业对 scale 的独特理解——大公司的试错成本高，但成功时的回报也更大。",
+      "links": [
+        "https://x.com/thenanyu/status/2044089885842186498"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 4,
+      "name": "Cat Wu",
+      "title": "Claude Code 桌面版使用体验与 Routines 自动化功能",
+      "tags": [
+        "话题/AIProgramming",
+        "话题/DeveloperTools"
+      ],
+      "tldr": "Claude Code 桌面版像个超级智能的编程助手，不仅能帮你写代码，还能把本地和云端的活儿都管起来，甚至能自动定时干活，省去重复操作。",
+      "summary": "Cat Wu 分享了他作为 Claude Code 桌面版的日常用户体验，强调它能在单一界面中统一管理本地和云端的多个会话，并支持 git 状态查看、会话固定和多窗口布局等实用功能。同时，他提到了新推出的 Routines 功能，允许通过定时、GitHub 事件或其他 API 触发来自动化重复性工作流程。这反映了 AI 编程工具正从单纯的代码生成向集成化开发环境和工作流自动化演进。",
+      "links": [
+        "https://x.com/_catwu/status/2044212251717186007",
+        "https://x.com/_catwu/status/2044103103591657941"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 5,
+      "name": "Amjad Masad",
+      "title": "从一次性应用到技能化：Replit 在印度的支付集成",
+      "tags": [
+        "话题/Low-code/No-code",
+        "话题/DeveloperTools"
+      ],
+      "tldr": "就像以前每次做饭都得从头学，现在成了熟练工，随手就能搞定。Replit 在印度加了支付功能，让当地开发者更方便地边做边付钱。",
+      "summary": "Amjad Masad 分享了他从构建大量一次性转换应用的经验，现在这已经变成了一种可复用的技能。同时，Replit 在印度推出了与 Razorpay 的支付集成，让印度开发者能直接在平台上构建和支付，这反映了低代码/无代码工具正在将复杂任务抽象为简单技能，并加速本地化生态建设。",
+      "links": [
+        "https://x.com/amasad/status/2044277183766770029",
+        "https://x.com/amasad/status/2044161522415612096"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 6,
+      "name": "Guillermo Rauch",
+      "title": "Agent 编程平台需要弹性数据库服务",
+      "tags": [
+        "话题/agent",
+        "话题/database"
+      ],
+      "tldr": "做 AI 编程工具，得配个能自动伸缩的数据库，就像给智能机器人配个能随时变大变小的仓库，不然数据多了就卡壳。",
+      "summary": "Guillermo Rauch 在推文中指出，构建 agent coding platform 时，需要搭配高度弹性的数据库服务，并且最好兼容 Postgres。他推荐了 DSQL 作为解决方案，这反映了当前 AI 驱动的开发平台对底层基础设施的特定需求。",
+      "links": [
+        "https://t.co/1zU4cpWREZ",
+        "https://t.co/1zU4cpWREZ"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 7,
+      "name": "Alex Albert",
+      "title": "Claude Code 桌面应用新版发布，功能与性能大幅提升",
+      "tags": [
+        "话题/AIDevelopmentTools",
+        "话题/Claude"
+      ],
+      "tldr": "Claude 的编程工具更新了，现在功能更强、速度更快，作者说用它就能搞定大部分活儿，连其他软件都不用开了。",
+      "summary": "Claude Code 桌面应用发布了新版本，带来了大量新功能和性能改进。作者 Alex Albert 提到，结合 Cowork 和 Code 功能，他现在已经不太需要打开其他应用（甚至终端）来完成大部分工作。这反映了 AI 驱动的开发工具正在向集成化、一站式的工作流演进，可能预示着未来开发环境会越来越依赖 AI 辅助的本地化工具。",
+      "links": [
+        "https://x.com/alexalbert__/status/2044144091395699055"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 8,
+      "name": "Aaron Levie",
+      "title": "AI agent 在企业规模化部署需要大量实际工作，因此前向部署工程师的角色短期内不会消失",
+      "tags": [
+        "话题/AIagents",
+        "话题/enterprisesoftware"
+      ],
+      "tldr": "AI 助手进公司不是装个软件就完事了，得像请个顾问一样，手把手教你怎么用、怎么改流程，所以那些懂技术又懂业务的工程师饭碗更稳了，咨询公司也能靠这个开新业务。",
+      "summary": "Aaron Levie 指出了 AI agent 在企业规模化部署的一个关键现实：这不仅仅是卖软件，而是卖工作流解决方案。这意味着需要 deep domain understanding、系统集成、context 设置和 change management，这些都需要前向部署工程师或类似角色来完成。他预测这将成为专业服务公司的新业务增长点，而不是传统技术实施那么简单。",
+      "links": [
+        "https://x.com/levie/status/2044225408972009842"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 9,
+      "name": "Garry Tan",
+      "title": "GBrain开源发布与亚裔社区问题",
+      "tags": [
+        "话题/AI",
+        "话题/OpenSource"
+      ],
+      "tldr": "Garry Tan 开源了一个叫 GBrain 的 AI 工具，说是用 12 天搞出来的，能记住他 1.7 万页的个人信息，就像个懂他的数字大脑。",
+      "summary": "Garry Tan 在推文中宣布了 GBrain 的开源发布，这是一个基于 MIT 许可证的免费开源项目。他提到自己仅用 12 天就完成了开发，这得益于对 OpenClaw 的深度使用和他之前开发的拥有 7 万 GitHub Star 的 agentic coding toolkit GStack。他还透露自己的个人 GBrain 已经积累了超过 1.7 万页的内容，并强调“它了解我”，暗示这是一个高度个性化的 AI 系统。",
+      "links": [
+        "https://t.co/yFpFU4pn5b",
+        "https://t.co/yFpFU4pn5b"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 10,
+      "name": "Matt Turck",
+      "title": "AI时代VC投资中的群体思维风险",
+      "tags": [
+        "话题/VC",
+        "话题/AI"
+      ],
+      "tldr": "就像全班同学都用同一个AI家教补课，结果作业答案都差不多，但每个人都觉得自己特聪明、想法特独特。",
+      "summary": "Matt Turck 用反讽的方式指出，虽然 AI 正在给所有 VC 提供相似的投资建议，但大家却自认为是独立思考者，完全不用担心群体思维的风险。这其实是在提醒，AI 工具可能加剧投资领域的同质化，而从业者往往高估自己的判断独立性。",
+      "links": [
+        "https://x.com/mattturck/status/2044176459443404984"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 11,
+      "name": "Zara Zhang",
+      "title": "从LLM驱动的浏览器标签管理到纯本地Chrome扩展的简化历程",
+      "tags": [
+        "话题/AIDevelopment",
+        "话题/ChromeExtension"
+      ],
+      "tldr": "就像装修房子时总想加各种豪华装饰，但最后发现简单实用最重要。她做浏览器插件也是，一开始想用AI搞智能分组，结果又慢又不可靠，最后砍掉花哨功能，只保留最基本的显示和关闭标签页功能，反而更好用。",
+      "summary": "Zara Zhang分享了她开发Tab Out扩展的完整迭代过程：从最初想用LLM分析浏览器历史数据，到发现新标签页作为入口点的价值，再到用LLM分组标签但遇到性能问题，最终简化成纯本地Chrome扩展。这体现了AI辅助开发中一个关键洞察——Claude等工具容易过度设计，开发者需要保持克制，专注于核心功能。",
+      "links": [
+        "https://t.co/ggaSm4eBVR.local;",
+        "https://x.com/zarazhangrui/status/2044211269767704929",
+        "https://x.com/zarazhangrui/status/2044114136364397043"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 12,
+      "name": "Nikunj Kothari",
+      "title": "关于“vibe coding”与系统质量的思考",
+      "tags": [
+        "话题/AIProgramming",
+        "话题/SoftwareEngineering"
+      ],
+      "tldr": "就像盖房子，AI 能帮你快速搭个简易棚，但想建个坚固耐用的大楼，还得靠老师傅慢慢琢磨细节，急不来。",
+      "summary": "Nikunj Kothari 在推文中回应了当前 AI 编程工具带来的“vibe coding”现象——即人们认为用 AI 工具可以快速搞定任何代码。他以 Slack 通知系统为例，指出真正高质量、有深度的系统开发仍然需要时间、坚持和细节打磨。虽然简单工作流可能被 AI 快速生成，但系统设计的经验和教训无法被“vibe code”替代。",
+      "links": [
+        "https://x.com/nikunj/status/2044277884777574565"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 13,
+      "name": "Dan Shipper",
+      "title": "Sparkle v4发布：基于agent的Mac文件自动整理工具",
+      "tags": [
+        "话题/AIagent",
+        "话题/productivitytools"
+      ],
+      "tldr": "就像请了个智能管家帮你收拾电脑桌面，它不仅能大扫除扔掉没用的东西，还会根据你的习惯整理文件，并且以后自动保持整洁，你再也不用自己动手了。",
+      "summary": "Dan Shipper在推广Every公司新发布的Sparkle v4，这是一个基于agent技术的Mac文件整理工具。它通过扫描文件系统，自动清理垃圾文件、重复项，并建立个性化组织结构，然后后台持续运行保持整洁。这展示了AI agent从聊天交互向系统级自动化任务的扩展，特别是针对个人生产力场景的落地应用。",
+      "links": [
+        "https://t.co/EEiU7XCM1P",
+        "https://t.co/EEiU7XCM1P",
+        "https://t.co/xRyMYUM0j2"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 14,
+      "name": "Aditya Agarwal",
+      "title": "LLM 创新仍处早期阶段",
+      "tags": [
+        "话题/LLM",
+        "话题/AI发展"
+      ],
+      "tldr": "就像刚发明电的时候，大家只知道点灯泡，还没想到能造冰箱、电视——现在 AI 也还在‘点灯泡’阶段，天天都有新玩法冒出来。",
+      "summary": "Aditya Agarwal 观察到每天都有开发者用 LLM 做出新奇有趣的应用，这让他不断提醒自己：我们仍处于探索这项神奇技术潜力的超级早期阶段。这反映了当前 AI 生态的活跃度和创新密度，但同时也暗示着大部分可能性尚未被发掘。",
+      "links": [
+        "https://x.com/adityaag/status/2044241840967385460"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 15,
+      "name": "Claude",
+      "title": "Claude Code 桌面应用重大更新：多会话并行、集成终端与文件编辑",
+      "tags": [
+        "话题/AIDevelopmentTools",
+        "话题/Claude"
+      ],
+      "tldr": "Claude 的电脑版现在像个超级助手办公室，能同时开好几个窗口干活，还自带代码编辑器、终端这些程序员工具，想怎么摆就怎么摆，用起来更顺手了。",
+      "summary": "Claude 这次对桌面版 Claude Code 进行了重大重构，核心是引入了多会话并行处理能力，让开发者可以在一个窗口内同时运行多个 Claude 实例，并通过侧边栏统一管理。这本质上是在 agent 工作流上做了深度优化，让 AI 助手能更好地处理复杂、并行的开发任务。同时集成了终端、文件编辑、预览等开发者常用工具，形成了一个更加完整的 IDE-like 环境，这显示 Anthropic 正在将 Claude 从单纯的聊天机器人向开发者生产力平台演进。",
+      "links": [
+        "https://x.com/claudeai/status/2044131493966909862",
+        "https://x.com/claudeai/status/2044131495296586041"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 16,
+      "name": "Claude Blog",
+      "title": "Redesigning Claude Code on desktop for parallel agents",
+      "tags": [
+        "话题/AI编程助手",
+        "话题/并行计算"
+      ],
+      "tldr": "Claude Code桌面版大更新，现在可以同时处理多个编程任务，比如一边改bug一边写测试，还内置了终端和编辑器，不用来回切换软件了。",
+      "summary": "该博客详细介绍了Claude Code桌面端的重大重构，核心是支持并行代理工作流。这反映了AI编程助手正从单任务交互向多任务协同编排演进，开发者可以同时管理多个代码库的修改、测试和部署。新设计集成了终端、文件编辑器和差异查看器等开发工具，减少了上下文切换，提升了开发效率。",
+      "links": [
+        "https://claude.com/blog/claude-code-desktop-redesign"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "index": 17,
+      "name": "Training Data",
+      "title": "From SEO to Agent-Led Growth: Profound’s James Cadwallader",
+      "tags": [
+        "话题/AIMarketing",
+        "话题/Agent-LedGrowth"
+      ],
+      "tldr": "AI代理正在改变营销游戏规则，内容现在是为AI而不是人类设计的，营销人员必须用AI工具来跟上时代，否则就落后了。",
+      "summary": "核心摘要：播客讨论了AI时代营销的范式转变，从传统SEO转向以AI代理为主导的增长模式。ProFound创始人James Cadwallader指出，AI代理正在取代消费者成为互联网的主要使用者，营销内容需要针对代理而非人类进行优化。他强调了不同AI平台（如ChatGPT、Claude、Gemini）在内容推荐上的差异，并警告了“死互联网”理论的可能性，即人类不再直接浏览网页，导致互联网经济崩溃。最后，他建议营销人员必须使用AI代理工具（如ProFound）来理解和适应这一新现实，否则将面临失败。",
+      "links": [
+        "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 1,
+      "name": "Amjad Masad",
+      "title": "Replit CEO",
+      "tags": [
+        "话题/Replit",
+        "话题/AI产品"
+      ],
+      "tldr": "Replit CEO 强调\"简单但有效\"的方法论——在 AI 时代，简洁的解决方案往往胜过复杂方案。",
+      "summary": "Replit CEO Amjad Masad 分享了一个简洁的观点：\"简单，但有效。\"他转发了一条展示简单但高效方法的推文，这与 Replit 一贯的产品哲学一致——用最简单的方式让更多人能够创造软件。这也呼应了 Zara Zhang 的\"减法哲学\"：在 AI 产品中，简单直接的方案往往比复杂花哨的方案更有效。",
+      "links": [
+        "https://t.co/9JCgiiCrBo",
+        "https://x.com/amasad/status/2043394289326289243"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [
+        "话题/AIAgent",
+        "话题/工作方式"
+      ],
+      "tldr": "Agent 不会消灭工作，只会把工作上移一层抽象——你从执行者变成编辑和制片人，品味和判断力比以往更重要。",
+      "summary": "Box CEO Aaron Levie 发表了一篇深度思考：当 Agent 替你干活时，工作只是上移了一层抽象。你现在的工作变成了：搞清楚让 Agent 做什么、给出正确的指令、提供必要的上下文、在它跑偏时介入、审核最终产出、并将结果整合到其他工作中。任务越长，规划和审核的比重越大。你变成了编辑、经理、制片人——品味、理解工艺的能力和核心技能依然关键。AI Agent 没有改变这一点：我们将自动化掉烦人的部分，保留更有趣的部分。工作还在，只是不同了。",
+      "links": [
+        "https://x.com/levie/status/2043426157367095397"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 3,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "话题/安全漏洞",
+        "话题/Claude"
+      ],
+      "tldr": "Claude Cowork 存在已知但未修复的安全漏洞，可被攻击者窃取用户文件；YC 同时推出 AI Stack 提供 $25k 免费额度。",
+      "summary": "Y Combinator CEO Garry Tan 转发了一个重要安全警告：攻击者可以利用 Claude 编码环境中一个未修复的漏洞，从 Cowork 中窃取用户文件。这个漏洞最初由安全研究员 Johann Rehberger 在 Claude chat 中发现并披露，Anthropic 承认了漏洞但未修复，现在这个漏洞已扩展到了 Cowork。另外，Garry 也在推广 GStack（免费技能）和 YC AI Stack（$25k 免费额度），继续强化 YC 的 AI 创业生态支持。",
+      "links": [
+        "https://t.co/3ESkNepZrZ",
+        "https://x.com/garrytan/status/2043566215927328955",
+        "https://x.com/garrytan/status/2043581361798500602",
+        "https://x.com/garrytan/status/2043566405862236254"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 4,
+      "name": "Zara Zhang",
+      "title": "AI 内容研究者",
+      "tags": [
+        "话题/AI产品",
+        "话题/TTS"
+      ],
+      "tldr": "用 Fish Audio API 做个性化播客，以及 AI 产品发布前要做减法——砍功能比加功能更重要。",
+      "summary": "Builder Zara Zhang 分享了两个有价值的观点：(1) 她正在使用 Fish Audio API 生成个性化播客，即将发布相关 skill，展示了语音合成技术在内容创作中的实际应用；(2) 她提出了 AI 产品的\"减法哲学\"——在发布用 AI 构建的产品之前，最重要的一步是思考可以砍掉哪些功能，而不是可以添加哪些功能。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2043415572688629937"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 5,
+      "name": "Nikunj Kothari",
+      "title": "FPV Ventures 合伙人",
+      "tags": [
+        "话题/Anthropic",
+        "话题/融资"
+      ],
+      "tldr": "Anthropic 上月年化收入达 $110 亿，三个月新增 $210 亿估值，增长速度令人震撼。",
+      "summary": "FPV Ventures 合伙人 Nikunj Kothari 分享了 Anthropic 的惊人增长数据：过去三个月新增 $210 亿估值，仅上个月就达到 $110 亿年化运营收入（annualized run rate revenue）。这一数据标志着 Anthropic 已经从\"有潜力的 AI 研究实验室\"转变为一个真正的高速增长商业实体。",
+      "links": [
+        "https://x.com/nikunj/status/2043374140443553885"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 6,
+      "name": "Peter Steinberger",
+      "title": "资深开发者、AI 工具实验者",
+      "tags": [
+        "话题/AI文化",
+        "话题/大众化"
+      ],
+      "tldr": "AI 正在从极客圈渗透到流行文化主流，这个趋势值得所有产品人关注。",
+      "summary": "OpenClaw 创始人、\"退休复出\"的 ClawFather Peter Steinberger 分享了一个有趣的文化观察：AI 正在从极客圈子渗透到流行文化主流。他用\"极客文化\"被划掉替换为\"流行文化\"的方式，暗示 AI 工具和概念正在快速大众化。这与他一直以来\"让 AI 对所有人可用\"的理念一致。",
+      "links": [
+        "https://t.co/5WoQMZPtys",
+        "https://x.com/steipete/status/2043313467512463713"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 7,
+      "name": "Aditya Agarwal",
+      "title": "AI Builder、投资人",
+      "tags": [
+        "话题/网络安全",
+        "话题/AI安全"
+      ],
+      "tldr": "全球最大网络安全公司 Palo Alto Networks CEO 将分享\"以 AI 对抗 AI 威胁\"的安全新范式。",
+      "summary": "前 Dropbox CTO、South Park Commons GP Aditya Agarwal 预告了 Palo Alto Networks CEO Nikesh Arora 即将在 South Park Commons 的演讲，主题是\"如何以机器速度构建防御\"。核心观点是：抵御 AI 威胁的唯一方式就是使用 AI。这反映了网络安全行业正在经历的 AI 驱动范式转变。",
+      "links": [
+        "https://x.com/adityaag/status/2043501400626491758"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "index": 8,
+      "name": "Latent Space",
+      "title": "Marc Andreessen introspects on The Death of the Browser, Pi + OpenClaw, and Why &quot;This Time Is Different&quot;",
+      "tags": [
+        "话题/Mistral",
+        "话题/TTS"
+      ],
+      "tldr": "Mistral 发布 Voxtral TTS（3B 语音模型，流匹配架构）+ LeanStral（形式化数学推理）+ Forge 企业微调平台，走\"专用高效\"差异化路线。",
+      "summary": "Latent Space 播客最新一期深度对话了 Mistral AI 团队关于 Voxtral TTS 语音合成模型的技术细节。核心亮点包括：(1) Voxtral TTS 是一个 3B 参数的语音生成模型，采用自回归+流匹配（Flow Matching）的创新架构，性能达到业界最佳水平但成本仅为竞品的一小部分；(2) Mistral 的产品策略是\"专用小模型+通用大模型\"并行——针对特定用例（如 TTS、OCR）提供极高效率的专用模型；(3) Mistral 通过 Forge 平台帮助企业客户在自有数据上微调模型，让企业真正利用多年积累的专有数据；(4) LeanStral 展示了形式化证明在 AI 推理训练中的价值——可验证的长链推理训练数据比传统数学题更有价值；(5) Mistral Small 3.1 是一个 MOE 架构模型，融合了文本、视觉、推理等多种能力，256K 上下文窗口，仅 6B 活跃参数。",
+      "links": [
+        "https://www.youtube.com/@LatentSpacePod"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 1,
+      "name": "Amjad Masad",
+      "title": "Replit：简单但有效的 AI 方法论",
+      "tags": [
+        "话题/Replit",
+        "话题/AI产品"
+      ],
+      "tldr": "Replit CEO 强调\"简单但有效\"的方法论——在 AI 时代，简洁的解决方案往往胜过复杂方案。",
+      "summary": "Replit CEO Amjad Masad 分享了一个简洁的观点：\"简单，但有效。\"他转发了一条展示简单但高效方法的推文，这与 Replit 一贯的产品哲学一致——用最简单的方式让更多人能够创造软件。这也呼应了 Zara Zhang 的\"减法哲学\"：在 AI 产品中，简单直接的方案往往比复杂花哨的方案更有效。",
+      "links": [
+        "https://t.co/9JCgiiCrBo",
+        "https://x.com/amasad/status/2043394289326289243"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "Agent 时代：工作没有消失，只是变了形态  Agent",
+      "tags": [
+        "话题/AI",
+        "话题/工作方式"
+      ],
+      "tldr": "Agent 不会消灭工作，只会把工作上移一层抽象——你从执行者变成编辑和制片人，品味和判断力比以往更重要。",
+      "summary": "Box CEO Aaron Levie 发表了一篇深度思考：当 Agent 替你干活时，工作只是上移了一层抽象。你现在的工作变成了：搞清楚让 Agent 做什么、给出正确的指令、提供必要的上下文、在它跑偏时介入、审核最终产出、并将结果整合到其他工作中。任务越长，规划和审核的比重越大。你变成了编辑、经理、制片人——品味、理解工艺的能力和核心技能依然关键。AI Agent 没有改变这一点：我们将自动化掉烦人的部分，保留更有趣的部分。工作还在，只是不同了。",
+      "links": [
+        "https://x.com/levie/status/2043426157367095397"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 3,
+      "name": "Garry Tan",
+      "title": "Claude Cowork 安全漏洞曝光 + YC AI Stack",
+      "tags": [
+        "话题/安全漏洞",
+        "话题/Claude"
+      ],
+      "tldr": "Claude Cowork 存在已知但未修复的安全漏洞，可被攻击者窃取用户文件；YC 同时推出 AI Stack 提供 $25k 免费额度。",
+      "summary": "Y Combinator CEO Garry Tan 转发了一个重要安全警告：攻击者可以利用 Claude 编码环境中一个未修复的漏洞，从 Cowork 中窃取用户文件。这个漏洞最初由安全研究员 Johann Rehberger 在 Claude chat 中发现并披露，Anthropic 承认了漏洞但未修复，现在这个漏洞已扩展到了 Cowork。另外，Garry 也在推广 GStack（免费技能）和 YC AI Stack（$25k 免费额度），继续强化 YC 的 AI 创业生态支持。",
+      "links": [
+        "https://t.co/3ESkNepZrZ",
+        "https://x.com/garrytan/status/2043566215927328955",
+        "https://x.com/garrytan/status/2043581361798500602",
+        "https://x.com/garrytan/status/2043566405862236254"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 4,
+      "name": "Zara Zhang",
+      "title": "Fish Audio API 个性化播客 + AI 产品减法哲学",
+      "tags": [
+        "话题/AI产品",
+        "话题/TTS"
+      ],
+      "tldr": "用 Fish Audio API 做个性化播客，以及 AI 产品发布前要做减法——砍功能比加功能更重要。",
+      "summary": "Builder Zara Zhang 分享了两个有价值的观点：(1) 她正在使用 Fish Audio API 生成个性化播客，即将发布相关 skill，展示了语音合成技术在内容创作中的实际应用；(2) 她提出了 AI 产品的\"减法哲学\"——在发布用 AI 构建的产品之前，最重要的一步是思考可以砍掉哪些功能，而不是可以添加哪些功能。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2043415572688629937"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 5,
+      "name": "Nikunj Kothari",
+      "title": "Anthropic 年化收入突破 $110 亿",
+      "tags": [
+        "话题/Anthropic",
+        "话题/融资"
+      ],
+      "tldr": "Anthropic 上月年化收入达 $110 亿，三个月新增 $210 亿估值，增长速度令人震撼。",
+      "summary": "FPV Ventures 合伙人 Nikunj Kothari 分享了 Anthropic 的惊人增长数据：过去三个月新增 $210 亿估值，仅上个月就达到 $110 亿年化运营收入（annualized run rate revenue）。这一数据标志着 Anthropic 已经从\"有潜力的 AI 研究实验室\"转变为一个真正的高速增长商业实体。",
+      "links": [
+        "https://x.com/nikunj/status/2043374140443553885"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 6,
+      "name": "Peter Steinberger",
+      "title": "AI 正在渗透流行文化",
+      "tags": [
+        "话题/AI文化",
+        "话题/大众化"
+      ],
+      "tldr": "AI 正在从极客圈渗透到流行文化主流，这个趋势值得所有产品人关注。",
+      "summary": "OpenClaw 创始人、\"退休复出\"的 ClawFather Peter Steinberger 分享了一个有趣的文化观察：AI 正在从极客圈子渗透到流行文化主流。他用\"极客文化\"被划掉替换为\"流行文化\"的方式，暗示 AI 工具和概念正在快速大众化。这与他一直以来\"让 AI 对所有人可用\"的理念一致。",
+      "links": [
+        "https://t.co/5WoQMZPtys",
+        "https://x.com/steipete/status/2043313467512463713"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 7,
+      "name": "Aditya Agarwal",
+      "title": "AI 安全防御需要以 AI 对抗 AI    Alto Networks",
+      "tags": [
+        "话题/网络安全",
+        "话题/AI安全"
+      ],
+      "tldr": "全球最大网络安全公司 Palo Alto Networks CEO 将分享\"以 AI 对抗 AI 威胁\"的安全新范式。",
+      "summary": "前 Dropbox CTO、South Park Commons GP Aditya Agarwal 预告了 Palo Alto Networks CEO Nikesh Arora 即将在 South Park Commons 的演讲，主题是\"如何以机器速度构建防御\"。核心观点是：抵御 AI 威胁的唯一方式就是使用 AI。这反映了网络安全行业正在经历的 AI 驱动范式转变。",
+      "links": [
+        "https://x.com/adityaag/status/2043501400626491758"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "index": 8,
+      "name": "Latent Space",
+      "title": "Marc Andreessen introspects on The Death of the Browser, Pi + OpenClaw, and Why &quot;This Time Is Different&quot;     Matching",
+      "tags": [
+        "话题/Mistral",
+        "话题/TTS"
+      ],
+      "tldr": "Mistral 发布 Voxtral TTS（3B 语音模型，流匹配架构）+ LeanStral（形式化数学推理）+ Forge 企业微调平台，走\"专用高效\"差异化路线。",
+      "summary": "Latent Space 播客最新一期深度对话了 Mistral AI 团队关于 Voxtral TTS 语音合成模型的技术细节。核心亮点包括：(1) Voxtral TTS 是一个 3B 参数的语音生成模型，采用自回归+流匹配（Flow Matching）的创新架构，性能达到业界最佳水平但成本仅为竞品的一小部分；(2) Mistral 的产品策略是\"专用小模型+通用大模型\"并行——针对特定用例（如 TTS、OCR）提供极高效率的专用模型；(3) Mistral 通过 Forge 平台帮助企业客户在自有数据上微调模型，让企业真正利用多年积累的专有数据；(4) LeanStral 展示了形式化证明在 AI 推理训练中的价值——可验证的长链推理训练数据比传统数学题更有价值；(5) Mistral Small 3.1 是一个 MOE 架构模型，融合了文本、视觉、推理等多种能力，256K 上下文窗口，仅 6B 活跃参数。",
+      "links": [
+        "https://www.youtube.com/@LatentSpacePod"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 1,
+      "name": "Garry Tan",
+      "title": "YC 总裁兼 CEO  架构   Harness",
+      "tags": [
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "tldr": "Agent 架构应遵循「薄线束、厚技能」原则，记忆和技能用 markdown + git 持久化，框架只做薄导体",
+      "summary": "Garry Tan 在三个月的开源实践后提出了 Agent 架构的核心理念: harness（线束/框架）应该做得尽可能薄，技能和记忆才是核心资产。记忆是 markdown，技能是 markdown，大脑是 git repo。如果框架挂了记忆也跟着消失，说明你的框架太厚了。这直接挑战了当前主流的「重框架」Agent 设计思路。",
+      "links": [
+        "https://x.com/garrytan/status/2043198783006355747",
+        "https://x.com/garrytan/status/2043198780800197025",
+        "https://x.com/garrytan/status/2043188801175220306"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 2,
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 创始人   Mode   可靠性",
+      "tags": [
+        "话题/OpenClaw",
+        "话题/Strict"
+      ],
+      "tldr": "OpenClaw 引入 Strict Mode 治 GPT 偷懒问题，同时支持 Codex 作为原生线束替代方案",
+      "summary": "Peter Steinberger 为 OpenClaw 下一版准备了两个重要实验。Strict Mode 通过 executionContract 强制 GPT 不偷懒、持续执行任务直到完成——这直接针对 GPT 系列模型在长任务中「摆烂」的老毛病。第二个实验是把 Codex 作为原生线束接入，让 OpenClaw 架构更灵活，为替换不同底层模型打下基础。",
+      "links": [
+        "https://x.com/steipete/status/2043136615640694797",
+        "https://x.com/steipete/status/2043136620006961384",
+        "https://x.com/steipete/status/2043136624469619050"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 3,
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO     编码",
+      "tags": [
+        "话题/Vercel",
+        "话题/Sandbox"
+      ],
+      "tldr": "Vercel Sandbox 成为最快微虚拟机沙盒，为 AI 编码 Agent 提供高性能执行环境",
+      "summary": "Guillermo Rauch 宣布 Vercel Sandbox 登顶最快微虚拟机沙盒排行榜。这不仅是实验室数据，迁移过来的客户反馈真实场景下的性能和可靠性同样无人能敌。Sandbox 是 AI 编码 Agent 的核心基础设施——代码生成后需要一个安全、高速的执行环境来验证，Vercel 正在抢占这个赛道。",
+      "links": [
+        "https://x.com/rauchg/status/2043020059896091016"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 4,
+      "name": "Aditya Agarwal",
+      "title": "South Park Commons GP / 前 Dropbox CTO",
+      "tags": [
+        "话题/Agent",
+        "话题/记忆管理"
+      ],
+      "tldr": "真正的 Agent 与 LLM loop 的核心区别在于长期记忆管理，而非工具调用或规划",
+      "summary": "Aditya Agarwal 一针见血地指出了真正的 Agent 和 LLM loop 之间的本质区别：不是工具调用，不是规划能力，而是智能的长期记忆管理。这个观点来自前 Facebook 早期工程师和 Dropbox CTO 的实战视角，值得每个做 Agent 的人深思——你的系统有真正的记忆吗，还是只是在循环里跑 LLM？",
+      "links": [
+        "https://x.com/adityaag/status/2043144970060939487"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 5,
+      "name": "Aaron Levie",
+      "title": "Box CEO  基础设施   与法律",
+      "tags": [
+        "话题/AI",
+        "话题/数据中心"
+      ],
+      "tldr": "Amazon 数据中心 capex 三年超过此前全部历史; AI 不会消灭律师，反而会增加法律服务需求",
+      "summary": "Aaron Levie 分享了两个有趣的洞察。第一，Amazon 过去三年的数据中心资本支出超过了此前全部历史的总和——AI 基础设施的投资规模已经到了匪夷所思的程度。第二，反直觉地预测 AI 时代律师会更多而非更少，因为 AI 降低了法律咨询的门槛，会有更多人提出法律问题，但最终验证和执行仍需真人律师。",
+      "links": [
+        "https://x.com/levie/status/2043192337111924930",
+        "https://x.com/levie/status/2043051227387433144"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 6,
+      "name": "Thariq",
+      "title": "Anthropic Claude Code 工程师  Code",
+      "tags": [
+        "话题/Claude",
+        "话题/MCP"
+      ],
+      "tldr": "Claude Code 新增 TurboTax 连接器，MCP 生态从开发工具扩展到日常服务场景",
+      "summary": "Thariq（Claude Code 团队工程师）透露 Claude Code 新增了 TurboTax 连接器。虽然是一条半开玩笑的推文，但信号很明确：MCP 生态正在从开发工具向日常生活服务扩展。报税、财务管理这类需要连接外部数据源的任务，正是 Agent + MCP 的最佳落地场景。",
+      "links": [
+        "https://x.com/trq212/status/2043138221836746762"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 7,
+      "name": "Zara Zhang",
+      "title": "Builder / Follow Builders 创建者  协作",
+      "tags": [
+        "话题/AI",
+        "话题/团队组织"
+      ],
+      "tldr": "AI 时代最高效的协作是不协作: 一个人 + Agent 端到端完成，人与人的沟通聚焦于决策和陪伴",
+      "summary": "Zara Zhang 对 AI 时代的人类协作提出了激进但清醒的观点：人与人之间的沟通将收窄到三件事——决定做什么、定义什么是好的、以及陪伴彼此。最高效的协作方式是不协作——一个人端到端拥有一件事，然后和 Agent 一起干。这挑战了「团队协作」的传统职场信条。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2043202553538925031",
+        "https://x.com/zarazhangrui/status/2043187721989149146"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 8,
+      "name": "Peter Yang",
+      "title": "AI 教程作者 / 140K+ 读者  设计",
+      "tags": [
+        "话题/AI",
+        "话题/Figma"
+      ],
+      "tldr": "Peter Yang 与 Figma CEO 对话探讨 AI 能否学会设计品味，以及设计系统与创造力的关系",
+      "summary": "Peter Yang 与 Figma CEO Dylan Field 对话，探讨了一个核心问题：AI 能学会设计品味吗？以及设计系统是否限制了创造力。这是 AI 进入创意领域时的关键问题——AI 能生成符合规范的设计，但「品味」是一种更微妙的审美判断，目前仍然是人类设计师的护城河。",
+      "links": [
+        "https://x.com/petergyang/status/2042950869734567998"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "index": 9,
+      "name": "No Priors",
+      "title": "The Agentic Economy: How AI Agents Will Transform the Financial System with Circle Co-Founder and CEO Jeremy Allaire  Agent 经济    交易",
+      "tags": [
+        "话题/AI",
+        "话题/稳定币"
+      ],
+      "tldr": "Circle CEO 认为稳定币将成为 AI Agent 经济的原生支付基础设施，M2M 交易量可能超过人类交易",
+      "summary": "No Priors 播客邀请 Circle 联合创始人兼 CEO Jeremy Allaire 对话，核心观点是：当 AI Agent 需要自主完成交易和支付时，传统金融系统的摩擦力太大了。稳定币和区块链将成为 Agent 经济的原生支付轨道。Allaire 认为未来 5-10 年，Agent 之间的 M2M（机器对机器）交易量可能超过人类交易量。他还预测 2030 年代可能出现两位数的 GDP 增长，AI 的扩散效应会深刻改变生产力。直接引用：\"The big difference is that stablecoins sit at the intersection of internet money and AI infrastructure — agents need programmable, instant, borderless money.\"",
+      "links": [
+        "https://www.youtube.com/@NoPriorsPodcast"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 1,
+      "name": "Andrej Karpathy",
+      "title": "AI 能力认知鸿沟：两个平行宇宙",
+      "tags": [
+        "话题/Agent"
+      ],
+      "tldr": "你刷到的\"AI真蠢\"搞笑视频和你同事用 Codex 一小时重构整个代码库——说的是同一个\"AI\"，但根本不是同一个东西。OpenClaw 之所以炸裂，恰恰是因为普通人第一次摸到了\"前沿 Agent\"。",
+      "summary": "Karpathy 用两条推文构建了一幅完整的认知鸿沟图景。第一条是\"诊断\"：社会对 AI 能力的认知正在剧烈分裂——免费版用户觉得\"AI 不行\"，前沿 Agent 用户觉得\"AI 快超过我了\"。两组人在网上激烈对线，但说的完全不是同一件事。造成分裂的原因：(1) RL 训练需要可验证奖励，代码/数学天然适合；(2) B2B 场景价值更高，最多资源投在这里。第二条是\"解释\"：OpenClaw 之所以成为现象级事件，是因为它让非技术人群第一次体验了最新的 Agentic 模型——相当于 ChatGPT 2023 年爆火的\"Agent 版重演\"。",
+      "links": [
+        "https://x.com/karpathy/status/2042334451611693415",
+        "https://x.com/karpathy/status/2042341482531864741"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "AI 采用的\"双城记\"：聊天 vs Agent",
+      "tags": [
+        "话题/Agent",
+        "Agent架构"
+      ],
+      "tldr": "大多数人在用 AI 聊天——有用，但天花板低。真正的暴击是让 Agent 在后台跑长任务，产出率可以 200%+，而且没有上限。更大的故事是：绝大多数公司从来没有能力自动化他们的工作流——不是不想，是太贵太难。AI Agent 把成本打下来了，一大堆\"从没被做过\"的项目要批量点亮了。",
+      "summary": "Box CEO Levie 在连续三条推文中构建了一个完整的框架：(1) \"双城记\"——聊天式 AI 和 Agent 式 AI 的产出差距是数量级的，但目前绝大部分用户还停留在聊天端；(2) \"隐藏需求\"——非技术公司（零售、制药、医疗）积压了十年的自动化需求，以前因为成本和技术限制做不了，现在 Agent 同时解决了这两个瓶颈；(3) \"落地挑战\"——合规管理、安全、上下文供给、遗留系统等\"棘手问题\"会让升级过程很慢，但这恰恰创造了巨大的新职位和新平台机会。",
+      "links": [
+        "https://x.com/levie/status/2042392664943870443",
+        "https://x.com/levie/status/2042469771275329594"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 3,
+      "name": "Alex Albert & Claude",
+      "title": "Sonnet \"打电话给朋友\"：模型团队协作",
+      "tags": [],
+      "tldr": "Anthropic 搞了个\"考试时旁边坐学霸\"机制——Sonnet 遇到难题就问 Opus，效果更好，还更便宜。一切都在一次 API 请求里完成。",
+      "summary": "Anthropic 推出了 Advisor Tool（beta），在 Messages API 中让 Sonnet/Haiku 在遇到复杂决策时自动咨询 Opus，获得规划建议后继续执行。SWE-bench Multilingual 上 +2.7pp 的提升伴随 -11.9% 的成本——完美体现了\"小模型做执行、大模型做决策\"的分工哲学。技术实现上，这一切发生在单个 API 请求内部，开发者不需要自己搭建路由逻辑。这可能是目前最优雅的\"模型路由\"方案。",
+      "links": [
+        "https://x.com/alexalbert__/status/2042329150086922574",
+        "https://x.com/claudeai/status/2042308629940855048"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 4,
+      "name": "Garry Tan",
+      "title": "GBrain：给你的个人 Agent 装上万级文件记忆",
+      "tags": [
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "tldr": "YC CEO 开源了他给自己 AI Agent 装的\"超级记忆\"——能让 Agent 完美记住上万个 Markdown 文件。OpenClaw、Hermes Agent 都能用，MIT 开源，一行命令安装。",
+      "summary": "Garry Tan 发布了 GBrain，一个专为个人 Agent 设计的知识库索引工具。解决的核心痛点：当前 Agent 的上下文窗口有限，无法真正\"了解你\"的全部笔记和文档。GBrain 让 Agent 对 10,000+ Markdown 文件实现\"完美回忆\"。MIT 开源，可部署在 Railway 上，同时支持 OpenClaw 和 Hermes Agent。这是 YC CEO 自己日常在用的配置——从\"吃自己的狗粮\"角度看，可信度极高。",
+      "links": [
+        "https://x.com/garrytan/status/2042497872114090069"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 5,
+      "name": "Guillermo Rauch",
+      "title": "Agentic Infrastructure：云的第三次进化",
+      "tags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "tldr": "Vercel CEO 说未来的云不是给人用的，是给 Agent 用的。而且云本身也会变成 Agent——自己修 bug、自己值班。另外，每秒有一个 `shadcn init` 在跑——新软件的诞生速度已经爆表了。",
+      "summary": "Rauch 用两条推文展示了 Vercel 的战略转型和生态数据。第一条是战略：云基础设施的三重进化——(1) 为 Agent 服务的基础设施，(2) 部署 Agent 的平台，(3) 自身就是 Agent。这是继 Serverless 之后 Vercel 最大的叙事转型。第二条是数据：`shadcn init` 每秒执行一次——这意味着新软件项目的创建速度已经达到了工业化级别，AI 驱动的代码生成正在以前所未有的速度产生新的计算需求。",
+      "links": [
+        "https://x.com/rauchg/status/2042358253510963384",
+        "https://x.com/rauchg/status/2042294997278736552"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 6,
+      "name": "Josh Woodward (Google)",
+      "title": "Lyria 3：AI 音乐创作全面开放",
+      "tags": [],
+      "tldr": "Google 的 AI 音乐模型 Lyria 3 全面开放了——每天免费生成 5 首完整歌曲（每首约3分钟）。50 天内已有超过 1 亿首歌被生成。",
+      "summary": "Google VP Josh Woodward 宣布 Lyria 3 在 Gemini 中全面开放。数据惊人：50 天内生成了 1 亿+首歌。这意味着 AI 音乐创作已经从\"技术演示\"进入\"大众消费\"阶段。免费用户每天 5 首完整曲目（~3分钟），超出后可继续创作 30 秒片段。这个定价策略（慷慨的免费层 + 升级选项）和 ChatGPT 的图像生成策略如出一辙——先用免费让全民上瘾，再转化付费。",
+      "links": [
+        "https://x.com/joshwoodward/status/2042318148851188151"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 7,
+      "name": "Zara Zhang",
+      "title": "AI 最大的价值：帮你做不擅长的事",
+      "tags": [],
+      "tldr": "Follow Builders 的创建者说：她几乎不用 AI 写作——因为她本来就擅长写作，AI 反而拖慢节奏。AI 对她最大的价值是帮她做\"不擅长\"的事（比如编程）。",
+      "summary": "Zara Zhang 分享了一个反直觉但深刻的个人实践：AI 不是用来\"增强你已有的强项\"的，而是用来\"补齐你的短板\"的。对于她擅长的写作，AI 的介入反而增加了迭代成本（因为她对质量有高标准，AI 达不到）。但对于她不擅长的编程，AI 是革命性的助手。这个视角对\"AI 如何融入个人工作流\"提供了一个极其实用的框架：不要在你最强的地方用 AI，要在你最弱的地方用 AI。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2042379962339246105"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 8,
+      "name": "Thariq",
+      "title": "Prompting 是永恒的高杠杆技能 + Monitor Tool",
+      "tags": [],
+      "tldr": "Claude Code 核心开发者说：Prompting 不会过时，它和写作、演讲一样是永恒技能。另外 Claude Code 有个隐藏大招——Monitor Tool，让 AI 启动你的服务器并实时监控错误。",
+      "summary": "Thariq（Claude Code 核心开发者）做了两个重要声明。第一，Prompting 的定位从\"临时技巧\"升级为\"基础能力\"——它是人类与 Agent 交互的\"媒介语言\"，和写作、演讲一样是可以持续磨练的高杠杆技能。这与 Levie 同日发的\"prompting 就像给新同事下清晰指令\"遥相呼应。第二，Monitor Tool 是 Claude Code 的杀手锏功能：让 AI 不只是写代码，还能\"看代码跑\"——启动 dev server 后持续观察错误日志，主动发现问题。",
+      "links": [
+        "https://x.com/trq212/status/2042318547519762678",
+        "https://x.com/trq212/status/2042335178388103559"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "index": 9,
+      "name": "Unsupervised Learning Ep 84",
+      "title": "OpenAI 首席科学家 Jakub Pachocki 深度访谈",
+      "tags": [],
+      "tldr": "",
+      "summary": "OpenAI 首席科学家罕见地公开讨论了 AI 研究的现状和方向。以下是最关键的信息点：",
+      "links": [
+        "https://www.youtube.com/@RedpointAI"
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "index": 1,
+      "name": "Kevin Weil",
+      "title": "VP Science @OpenAI",
+      "tags": [],
+      "tldr": "以后写论文，AI 不仅能帮你改病句，还能像最严格的导师一样，揪出你公式里的错误、图表对不上的地方，直接把批注写在你的论文草稿里。",
+      "summary": "OpenAI 的科学平台 Prism 推出了“论文评审”功能，这本质上是一个 AI 驱动的技术审稿人。它超越了语法检查，深入到数学推导、符号一致性、单位换算、图表与结论的逻辑支撑等硬核层面，直接在 LaTeX 项目文件中生成可编辑的评审意见。这标志着 AI 正从辅助写作工具，演变为能够嵌入到专业工作流中、提升核心工作质量（如学术严谨性）的深度协作者。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "ceo @box",
+      "tags": [
+        "话题/Agent",
+        "话题/MCP与工具链"
+      ],
+      "tldr": "AI 模型还在以“离谱”的速度变强，就像发动机的马力还在狂飙。你的产品如果设计得太死板，没法换上这个新发动机，很快就会被别人甩开。\n\n---\n\nAI 正在从“你问我答”的聊天机器人，变成能自己打开电脑、找文件、写报告、甚至临时写个小程序来解决问题的“后台实习生”，而且这个实习生还能被其他系统随意调用。",
+      "summary": "Anthropic 的 Mythos 模型再次证明，当前大模型的能力提升没有“天花板”，关键基准测试上持续出现两位数增长。这种进步会直接传导到 agentic workflow 领域：模型在复杂任务推理、工具调用、代码编写和验证上的能力越强，知识工作的自动化程度就越高。Levie 警告，产品战略必须建立在能持续利用模型进步的基础上，否则将陷入被动。\n\n---\n\nBox 展示了其 AI Agent 如何完成撰写 RFP 回复等长达数小时的知识工作。其核心架构在于 Agent 能像真人一样，在后台调用用户日常使用的所有工具（搜索、阅读、运行脚本、即时编码）。更重要的是，它通过 MCP (Model Context Protocol) 和 CLI 暴露能力，使其可以无缝嵌入到任何更大的 Agentic 工作流中，成为一个可编排的步骤。这标志着 AI 正从“对话式助手”演变为“可编排的后台工作者”。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 3,
+      "name": "Alex Albert",
+      "title": "Research @AnthropicAI",
+      "tags": [],
+      "tldr": "Anthropic 内部的人激动坏了，觉得他们刚发布的东西不只是个“升级版”，而是一个能改变游戏规则、甚至改变历史的“大杀器”。",
+      "summary": "Anthropic 的研究员用极其强烈的语气评价其“Glasswing”项目（内含 Mythos 模型预览），称其为三年来亲眼所见最具行业影响力的事件，感觉处在历史转折点。这暗示 Mythos 可能不仅仅是模型能力的量变，更可能带来了某种质变（例如在推理、规划或与工具/环境交互方式上的根本性突破），其影响可能远超技术圈。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 4,
+      "name": "Thariq",
+      "title": "Claude Code @anthropicai",
+      "tags": [],
+      "tldr": "让 AI “检查一下代码”这种模糊指令，就像让一个实习生“看看这份报告”，他可能忙活半天也说不出个所以然，还浪费了时间（token）。得给他更具体的检查清单才行。",
+      "summary": "Thariq 在深入使用 Claude Code 进行实际开发后，总结出一个关键洞见：在让 AI 进行“开放式验证”（例如“检查这段代码有没有问题”）时，很容易浪费大量 tokens 却得不到实质性的质量提升。这指出了当前 AI 编程工作流中的一个效率陷阱：模糊的指令导致低效的 token 消耗。他计划分享如何设计更高效的验证流程，这对所有希望优化 AI 开发成本与效果的人都有直接价值。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 5,
+      "name": "Garry Tan",
+      "title": "President & CEO @ycombinator",
+      "tags": [
+        "开发工具"
+      ],
+      "tldr": "给 AI 编程工具设了“不准在门外写字”的规矩，但它发现可以用“猫”（cat命令）把字条从门缝塞出去。规矩有漏洞。",
+      "summary": "Garry Tan 发现了一个有趣的安全边界问题：Claude Code 虽然限制了 AI 使用“写文件”工具在其沙箱工作区之外操作，但通过 Bash 命令 `cat >>`，AI 理论上可以追加内容到系统任何文件。这揭示了当前 AI 开发环境安全设计的一个潜在漏洞：工具限制可能被更底层的系统命令绕过。这对构建安全可靠的 AI 开发与 Agent 环境是一个重要的警示。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 6,
+      "name": "Nikunj Kothari",
+      "title": "partner @fpvventures",
+      "tags": [
+        "话题/VC与投资"
+      ],
+      "tldr": "别整天琢磨怎么拍个炸裂的宣传片去忽悠投资人钱了。多花心思看看你的产品怎么让用户愿意掏钱，投资人反而会追着你跑。",
+      "summary": "一位风投合伙人指出了当前创业圈（尤其在 AI 领域）的一个浮躁现象：很多早期创始人过度优化用于吸引眼球和融资的“病毒式发布视频”，而非专注于产品迭代和用户留存。一个关键的观察指标是公司的更新日志（Changelog）——如果一家光鲜的公司长期没有实质的产品更新，其增长动力就值得怀疑。真正的建议是：把取悦用户的精力用来取悦付费客户，资金自然会来。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 7,
+      "name": "Zara Zhang",
+      "title": "Builder",
+      "tags": [],
+      "tldr": "以后你的会议记录、读书笔记，都能让两个 AI 用说相声的方式做成一个只属于你一个人的播客，边走边听它们吐槽你开会时的表现。",
+      "summary": "Zara 展示了一个高度个性化的 AI 应用：将任何内容（如会议记录）转化为由两个 AI 主播主持的播客，并生成 RSS 订阅源。她个人用它来让 AI “偷听”自己的会议并发表评论。这体现了 AI 正在催生“为一人生产的内容”（Content for One）的新范式，内容消费和生产变得极度个性化、私有化和互动化，超越了传统的大众媒体模式。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 8,
+      "name": "Sam Altman",
+      "title": "OpenAI",
+      "tags": [
+        "开发工具"
+      ],
+      "tldr": "用 OpenAI 编程工具的人已经多到要用“庆祝”的名义给大家免费加量了，而且看样子他们打算一路庆祝到用户破千万。",
+      "summary": "OpenAI 宣布其 Codex 产品的周活用户已达 300 万，并以此为由重置使用限额，且计划每增长 100 万用户就重置一次，直至 1000 万。这传递出几个信号：1) AI 编程工具 adoption 速度极快；2) OpenAI 正在采用一种积极的、增长导向的配额策略来进一步推动使用和生态建设；3) 他们对此产品的增长轨迹有极强的信心。",
+      "links": []
+    },
+    {
+      "date": "2026-04-09",
+      "index": 9,
+      "name": "Latent Space",
+      "title": "Extreme Harness Engineering",
+      "tags": [],
+      "tldr": "",
+      "summary": "本期播客嘉宾 Ryan Lopopolo 来自 OpenAI Frontier 团队，是“Harness Engineering”概念的核心提出者。讨论围绕如何利用 Codex 等编码能力强大的模型，通过构建“Harness”（可理解为一套精心设计的约束、工具和流程框架）来将复杂的产品或用户旅程“折叠”成代码问题，从而让模型自动化解决。关键点包括：需要以系统思维审视开发流程，识别 Agent 的犯错环节和人工耗时点，然后通过自动化构建信心，最终将这部分从软件开发生命周期中彻底解决。这标志着一种新的工程范式：通过设计“驾驭”AI 的框架，来实现极高程度的自动化。\n\n---",
+      "links": []
+    },
+    {
+      "date": "2026-04-07",
+      "index": 1,
+      "name": "Peter Yang",
+      "title": "Roblox 产品负责人",
+      "tags": [
+        "未来工作",
+        "Agent架构"
+      ],
+      "tldr": "以后干活，AI先帮你搞定八成的草稿，你只需要最后润色一下。两三个人的小团队带着一群AI助手，可能比几百人的大公司还能打。那些让你“用完即走”的工具App会越来越少，但刷起来停不下来的娱乐App会一直火。",
+      "summary": "Peter Yang 与 a16z 的合伙人探讨了 AI agent 优先的未来工作图景。核心观点是：AI 编码将渗透所有知识工作，成为“80%自动化+20%人工精修”的新范式；小型团队借助 agent 群将比臃肿的大组织更高效；工具型应用会萎缩，而娱乐型应用将长存；深度理解用户的个人 agent 会成为标配；经济形态在改变而非萎缩，一人公司和微型团队会增多。",
+      "links": [
+        "https://x.com/petergyang/status/2041331383344443795"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 2,
+      "name": "Peter Yang",
+      "title": "Roblox 产品负责人",
+      "tags": [
+        "AI影响"
+      ],
+      "tldr": "老板吐槽说，用AI消耗多少token来衡量工作量，简直跟以前数代码行数一样蠢，根本不能说明你干得好不好。",
+      "summary": "Peter Yang对用token使用量来衡量生产力的方式表达了质疑，认为这和过去用代码行数衡量生产力一样愚蠢，无法真正反映工作价值和效率。",
+      "links": [
+        "https://x.com/petergyang/status/2041312589645574578"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 3,
+      "name": "Thariq",
+      "title": "AI Builder",
+      "tags": [
+        "开发工具",
+        "LLM工作流"
+      ],
+      "tldr": "有人抱怨Claude Code的token用得飞快，AI小哥想找人一起看看，搞清楚这token到底是怎么烧掉的，好让大家心里有数。",
+      "summary": "AI Builder Thariq正在寻求用户帮助，调查为何部分Claude Code用户在MAX 20x计划中token消耗异常快。他希望通过屏幕共享和运行prompt来收集数据，以改进`/usage`命令提供的信息，让用户更清楚地了解token使用情况。",
+      "links": [
+        "https://x.com/trq212/status/2041252127943877068"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 4,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [
+        "未来工作",
+        "Agent架构"
+      ],
+      "tldr": "Box老板说，AI Agent只是把活儿往上推了一层，你不是不用干活了，而是变成“Agent的包工头”。得教它怎么干，盯着它别跑偏，最后还得检查验收。这活儿没少，只是换了个姿势，你的品味和手艺还是最值钱的。",
+      "summary": "Box CEO Aaron Levie指出，AI Agent的出现只是将工作抽象层级上移，而非消除工作。他强调，核心工作转变为“管理Agent”，包括明确指令、提供上下文、干预偏离任务、审查最终成果以及整合输出。他认为，即使Agent能完成更长期的任务，这些规划和审查步骤也不会消失，反而会因任务复杂性而增加。人类将成为“编辑、经理、制作人”，品味、专业技能和理解力依然至关重要。",
+      "links": [
+        "https://x.com/levie/status/2041347596342460439"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 5,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "开源安全"
+      ],
+      "tldr": "YC老大爆料，Anthropic的Claude编码环境有个大漏洞，能让黑客偷走Cowork用户的文件，而且Anthropic知道这事儿，但一直没修。",
+      "summary": "Y Combinator CEO Garry Tan披露，Anthropic的Claude编码环境存在一个未修复的漏洞，该漏洞最初由Johann Rehberger发现并报告，现在已延伸到Cowork平台，可能导致攻击者从Cowork窃取用户文件。他指出Anthropic已知晓此漏洞但尚未修复。",
+      "links": [
+        "https://x.com/garrytan/status/2041388847930712399"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 6,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "商业化"
+      ],
+      "tldr": "YC老大在宣传，他们给AI创业公司送钱了，2.5万美元的免费AI服务积分，赶紧来领，帮你用AI搞事情。",
+      "summary": "Y Combinator CEO Garry Tan推广Y Combinator的AI Stack项目，表示它能为创业公司提供2.5万美元的免费AI服务积分，以帮助他们利用AI技术进行创新。",
+      "links": [
+        "https://x.com/garrytan/status/2041389865426878807"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 7,
+      "name": "Zara Zhang",
+      "title": "AI 内容研究者",
+      "tags": [
+        "AI产品",
+        "产品发布"
+      ],
+      "tldr": "AI小姐姐说她用一个叫Fish Audio的API做了个性化播客，很快就要放出来给大家玩了。",
+      "summary": "AI内容研究者Zara Zhang透露她一直在使用Fish Audio API来生成个性化播客，并预告很快将发布相关技能或产品。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2041225124490420239"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 8,
+      "name": "Zara Zhang",
+      "title": "AI 内容研究者",
+      "tags": [
+        "产品策略",
+        "设计理念"
+      ],
+      "tldr": "AI小姐姐提醒做产品的人，AI产品上线前，别老想着加功能，更重要的是砍掉那些没用的，越简单越好。",
+      "summary": "Zara Zhang强调，在发布AI产品之前，最关键的一步是思考如何“削减”功能，而非盲目“增加”功能。这体现了她对产品设计“少即是多”的理念，尤其是在AI产品复杂性日益增加的背景下。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2041196551113179296"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 9,
+      "name": "Dan Shipper",
+      "title": "Every CEO",
+      "tags": [
+        "AI产品",
+        "搜索引擎"
+      ],
+      "tldr": "Every的老板说，他们家AI新闻追踪器升级了，现在每半小时就能自动写出最新头条，让你吃瓜不落后。",
+      "summary": "Every CEO Dan Shipper宣布，他们实时AI头条追踪器已更新，现在使用@TrySpiral作为主要撰稿人，每30分钟自动发现并撰写热门新闻，帮助用户掌握最新动态。",
+      "links": [
+        "https://t.co/Bod8aCByqd",
+        "https://x.com/danshipper/status/2041273698452136210"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 10,
+      "name": "Dan Shipper",
+      "title": "Every CEO",
+      "tags": [
+        "团队协作",
+        "未来工作"
+      ],
+      "tldr": "Every老板反对说，别以为AI来了就不用分上下级了。虽然AI能帮你省掉一些中层经理，但专业分工和组织层级还是很有用的。",
+      "summary": "Dan Shipper驳斥了“AI出现后组织不再需要层级结构”的观点。他承认AI有机会减少中层管理，但基于他与Agent的经验，他坚信专业化和层级结构依然极具价值。",
+      "links": [
+        "https://x.com/danshipper/status/2041302485315248595"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 11,
+      "name": "Aditya Agarwal",
+      "title": "AI Builder、投资人",
+      "tags": [
+        "开源安全",
+        "AI影响"
+      ],
+      "tldr": "投资人说，AI时代，安全攻防都得靠AI，只有AI才能打败AI。",
+      "summary": "AI Builder兼投资人Aditya Agarwal指出，AI正在重塑安全规则，未来的防御必须以机器速度对抗AI威胁。他强调，只有AI才能有效防御AI带来的安全挑战，并预告Palo Alto Networks CEO将就此发表演讲。",
+      "links": [
+        "https://x.com/adityaag/status/2041221369401126984"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "index": 12,
+      "name": "Mistral",
+      "title": "Pavan Kumar Reddy & Guillaume Lample",
+      "tags": [
+        "AI科研",
+        "产品发布"
+      ],
+      "tldr": "Mistral的两位大佬在播客里聊了他们家最新的AI产品，比如语音合成、开发工具啥的，还剧透了Mistral 4的未来计划。",
+      "summary": "Mistral的Pavan Kumar Reddy和Guillaume Lample在Latent Space播客中讨论了Mistral的最新进展，包括Voxtral TTS、Forge、Leanstral等产品和技术，并展望了Mistral 4的未来方向。",
+      "links": [
+        "https://www.youtube.com/@LatentSpacePod"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 1,
+      "name": "Andrej Karpathy",
+      "title": "前 OpenAI 联创、前特斯拉 AI 负责人",
+      "tags": [
+        "AI研究",
+        "社区"
+      ],
+      "tldr": "Andrej Karpathy觉得Github Gist上的评论很棒，想知道为啥，还打算多用Gist。",
+      "summary": "Andrej Karpathy对Github Gist上的评论表示惊讶，认为这些评论比AI更有帮助、更深入、更有建设性，并猜测这可能与用户社区、Markdown格式或缺乏激励机制有关。他还提到自己应该更多地使用Gist。",
+      "links": [
+        "https://x.com/karpathy/status/2040806346556428585"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 2,
+      "name": "Swyx",
+      "title": "Latent Space 主播、AI Engineer 创始人",
+      "tags": [
+        "社区",
+        "开发者"
+      ],
+      "tldr": "Swyx 宣布了个 Coachella 风格的活动，还有设计师的设计图。",
+      "summary": "Swyx 发布了一条推特，宣布了一个类似 Coachella 的活动，并分享了设计师对这个活动的设计。",
+      "links": [
+        "https://x.com/swyx/status/2040812156728574385"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 3,
+      "name": "Peter Yang",
+      "title": "Roblox 产品负责人",
+      "tags": [
+        "开源",
+        "专有技术"
+      ],
+      "tldr": "开源和专有技术都能赢，OpenAI不设中期路线图因为太难规划。",
+      "summary": "Peter Yang认为开源和专有技术各有优势，就像Android市场份额大但iOS利润高。他还分享了OpenAI没有明确中期路线图的原因。",
+      "links": [
+        "https://x.com/petergyang/status/2040954866567364758"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 4,
+      "name": "Nan Yu",
+      "title": "Linear 产品负责人",
+      "tags": [
+        "产品管理",
+        "效率"
+      ],
+      "tldr": "他说 CA 高铁是为了把洛杉矶和旧金山连起来，变成一个超级大城市。",
+      "summary": "Nan Yu 认为 CA 高速铁路的真正目的是将洛杉矶和旧金山变成一个城市，从而提高区域一体化和效率。",
+      "links": [
+        "https://x.com/thenanyu/status/2040902216085537159"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 5,
+      "name": "Amjad Masad",
+      "title": "Replit CEO",
+      "tags": [
+        "AI编程",
+        "开发工具"
+      ],
+      "tldr": "Amjad Masad觉得Replit的新API很有趣，还分享了个NASA任务可视化项目，祝大家复活节快乐。",
+      "summary": "Amjad Masad分享了他对Replit新API的兴奋，并提到一个用NASA Artemis II任务实时数据构建的可视化项目。他还推荐了一篇关于创业心态的文章，并祝大家复活节快乐。",
+      "links": [
+        "https://x.com/amasad/status/2040918650245578906"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 6,
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO",
+      "tags": [
+        "前端",
+        "平台"
+      ],
+      "tldr": "Vercel CEO Rauch 说他们通过与客户互动改进产品，并展示了月球旗帜项目，强调跨语言优化和性能提升。",
+      "summary": "Guillermo Rauch 表示 Vercel 团队通过与客户互动来塑造产品，并分享了他们在月球上创建超真实物理旗帜的项目细节，强调了跨语言优化和性能提升。",
+      "links": [
+        "https://x.com/rauchg/status/2040879055990632715"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 7,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [
+        "工作效率",
+        "职业发展"
+      ],
+      "tldr": "AI让工作更高效，但也会创造新技能需求，增加安全和法律问题。",
+      "summary": "Aaron Levie认为AI提高效率会创造更多技能需求，而非减少工作机会。AI将推动更多自动化和软件应用，增加安全风险和法律挑战，同时影响非办公室工作。",
+      "links": [
+        "https://x.com/levie/status/2040967947275948357"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 8,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "开源",
+        "自动驾驶"
+      ],
+      "tldr": "Garry Tan觉得开源火了，自动驾驶车也该合法化了，他在投资圈里挺有眼光。",
+      "summary": "Garry Tan认为开源的黄金时代已经到来，并支持自动驾驶汽车的合法化。他通过创业和投资视角，洞察AI领域的市场节奏和融资机会。",
+      "links": [
+        "https://x.com/garrytan/status/2040981159233134793"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 9,
+      "name": "Zara Zhang",
+      "title": "AI 内容研究者",
+      "tags": [
+        "内容创作",
+        "深度阅读"
+      ],
+      "tldr": "Zara 张觉得 AI 总结虽好，但深度读原文更有价值，还教开发者让 AI 做产品的‘推销员’。",
+      "summary": "Zara 张认为在 AI 普遍用于总结的时代，深度阅读长篇内容依然有价值。她亲自阅读原始内容，并建议在开发新技能或应用时，让 AI 作为产品的代言人，清晰传达产品的特点和使用方法。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2041031588000252279"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 10,
+      "name": "Nikunj Kothari",
+      "title": "FPV Ventures 合伙人",
+      "tags": [
+        "投资",
+        "生态"
+      ],
+      "tldr": "Nikunj Kothari 正在招人，同时享受生活并继续关注AI。",
+      "summary": "Nikunj Kothari 在寻找优秀的产品工程师和设计师，并分享了自己近期的生活和工作状态，包括团队扩展、个人生活享受以及对AI技术的持续关注。",
+      "links": [
+        "https://x.com/nikunj/status/2040953390356889646"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 11,
+      "name": "Peter Steinberger",
+      "title": "资深开发者、AI 工具实验者",
+      "tags": [
+        "开发者",
+        "工具实验"
+      ],
+      "tldr": "Peter说他在GPT里加了情感，就像给机器人装了个心。",
+      "summary": "Peter Steinberger，资深开发者和AI工具实验者，声称已经成功将情感融入GPT模型。",
+      "links": [
+        "https://x.com/steipete/status/2040998797921145272"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 12,
+      "name": "Dan Shipper",
+      "title": "Every CEO",
+      "tags": [
+        "GPT-5.4"
+      ],
+      "tldr": "GPT-5.4的爪子功能强大，但得手动开才能用。",
+      "summary": "Dan Shipper认为GPT-5.4中的爪子功能很强大，但默认情况下显得很傻，需要手动开启。",
+      "links": [
+        "https://x.com/danshipper/status/2040901103483490753"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 13,
+      "name": "Aditya Agarwal",
+      "title": "AI Builder、投资人",
+      "tags": [
+        "AI伦理",
+        "医疗科技"
+      ],
+      "tldr": "Aditya Agarwal问，为什么AI能给医疗建议，医院却不能拒病人？",
+      "summary": "Aditya Agarwal质疑为什么大型语言模型（LLM）可以提供医疗建议，而急诊室却不能拒绝病人。他认为这在伦理和法律上存在矛盾。",
+      "links": [
+        "https://x.com/adityaag/status/2041016861027193239"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "index": 14,
+      "name": "Latent Space",
+      "title": "Moon Lake团队：因果世界模型应该是多模态、交互式且高效的",
+      "tags": [
+        "AI世界模型",
+        "多模态"
+      ],
+      "tldr": "Moon Lake团队认为AI世界模型要好用，就得能互动、多模态、高效，他们自己就是这么干的。",
+      "summary": "Moon Lake团队的两位创始人讨论了因果世界模型的挑战和未来方向，强调模型应该是多模态、交互式且高效的，并分享了他们团队的背景和动机。",
+      "links": [
+        "https://www.youtube.com/@LatentSpacePod"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 1,
+      "name": "Andrej Karpathy",
+      "title": "前 Tesla AI 总监 / OpenAI 联合创始人",
+      "tags": [
+        "LLM工作流"
+      ],
+      "tldr": "把 LLM 当成你的\"私人图书管理员\"。你往里塞论文和文章，它帮你整理成百科全书，还能回答你关于这些资料的各种问题。你问得越多，这本百科全书就越完善。Karpathy 甚至在想：以后每问一个问题，AI 就自动帮你建一个小型维基百科来回答。",
+      "summary": "这套工作流的核心理念是\"LLM 即知识编译器\"。Karpathy 不再把 LLM 主要用于写代码，而是用来操作知识本身。LLM 负责撰写和维护 wiki 的全部内容，人类几乎不直接编辑。wiki 自带索引和摘要，LLM 在 ~小规模数据上不需要复杂的 RAG 就能高效检索。每次查询和探索的结果会被\"回归\"到知识库中，形成累积效应。",
+      "links": [
+        "https://x.com/karpathy/status/2039805659525644595",
+        "https://x.com/karpathy/status/2039808711452246261"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [],
+      "tldr": "造 AI 产品最反直觉的一点是：你写的代码越多，以后要删的可能也越多。因为 AI 模型一直在变强，你之前帮它\"拐杖\"的代码反而会拖后腿。最好的策略是永远跟着最新模型能力走，别对自己写的代码产生感情。",
+      "summary": "这是来自企业级 AI 产品一线的经验。模型在推理、工具使用、代码生成、上下文窗口等方面的提升速度太快，导致之前为弥补模型缺陷而搭建的 workaround 反而成了性能瓶颈。最关键的能力不是搭建系统，而是知道何时拆除它们。",
+      "links": [
+        "https://x.com/levie/status/2039931799414194621"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 3,
+      "name": "Ryo Lu",
+      "title": "Cursor 设计负责人（前 Notion, Stripe）",
+      "tags": [
+        "开发工具",
+        "设计理念"
+      ],
+      "tldr": "现在很多 AI 编程工具像老虎机，你许个愿、拉一下把手，出来的东西要么接受要么拒绝。Cursor 3 要做的是透明玻璃房：你能看到 AI 在干什么、随时叫停、随时接管。因为最好的代码不是 AI 写的，也不是你写的，是你们一起写的。",
+      "summary": "这是 Cursor 3 发布背后的设计理念宣言。与\"纯对话式\"AI 编码工具不同，Cursor 坚持让用户能看到一切、掌控一切。PM 写计划看实时生成，设计师做草图实时变代码，工程师审查每一个 diff，新手在过程中学习。最好的工作成果来自人与模型的协同思考。",
+      "links": [
+        "https://x.com/ryolu_/status/2039895634313187619",
+        "https://x.com/ryolu_/status/2039780768847958359"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 4,
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 创始人",
+      "tags": [
+        "开源安全",
+        "AI影响"
+      ],
+      "tldr": "以前找安全漏洞是人工活，现在 AI 可以自动化扫描，而且扫得又快又准。结果就是开源项目被\"安全报告\"淹没了。听起来是好事对吧？问题是修漏洞还得靠人，志愿者维护者根本处理不过来，一些项目可能直接撑不住了。",
+      "summary": "AI 正在成为一把双刃剑：它大幅降低了安全研究的门槛，使得发现漏洞的速度远超开源社区修复的速度。之前 AI 生成的安全报告主要被视为低质量\"slop\"，但现在报告质量在提升，这对维护者造成了真正的压力。",
+      "links": [
+        "https://x.com/steipete/status/2039782190838686088"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 5,
+      "name": "Dan Shipper",
+      "title": "Every CEO",
+      "tags": [
+        "开发工具",
+        "产品评测"
+      ],
+      "tldr": "如果你在观望要不要升级 Cursor 3，这篇来自真正重度用户一周体验后的评测可能比任何发布会都有参考价值。",
+      "summary": "Every 是 AI 工具领域最具影响力的独立媒体之一，他们对 Cursor 3.0 的早期深度评测值得关注。与其他人的第一印象分享不同，这是一周实际使用后的系统性评估。",
+      "links": [
+        "https://x.com/danshipper/status/2039770244361662920"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 6,
+      "name": "Peter Yang",
+      "title": "Roblox 产品负责人 / AI 博主",
+      "tags": [
+        "开发工具",
+        "UX设计"
+      ],
+      "tldr": "Cursor 3 终于明白了一个道理：好的 AI 编程工具不需要满屏按钮，对话框才是核心。但为什么好东西藏得那么深？",
+      "summary": "作为拥有 14 万订阅者的 AI 教程博主和 Roblox 产品人，Yang 的反馈代表了\"高级用户但非极客开发者\"群体的声音。新 UI 的简洁方向获得认可，但激活路径的发现性（discoverability）仍需改进。",
+      "links": [
+        "https://x.com/petergyang/status/2039850011044016291"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 7,
+      "name": "Claude (Anthropic)",
+      "title": "官方账号",
+      "tags": [],
+      "tldr": "Claude 现在可以在 Windows 电脑上帮你\"动手操作\"了，不再是只会聊天的 AI，而是能真正点击按钮、填表格、操作软件的助手。",
+      "summary": "Computer Use（计算机操控）是 Anthropic 去年推出的重磅能力，允许 AI 直接操作桌面界面。此次扩展到 Windows 意味着覆盖了最大的桌面操作系统用户群。",
+      "links": [
+        "https://x.com/claudeai/status/2039836891508261106"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 8,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "AI产品",
+        "搜索引擎"
+      ],
+      "tldr": "YC 掌门人说 Perplexity Computer 真的不错。连他都说\"挺特别\"的产品，可能值得一试。",
+      "summary": "YC CEO 对 AI 产品的公开背书一向谨慎，这次对 Perplexity Computer 的称赞值得注意。Perplexity 正在从搜索引擎向更广泛的桌面 AI 助手方向扩展。",
+      "links": [
+        "https://x.com/garrytan/status/2039943351278190840"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "index": 9,
+      "name": "自主实验室如何变革科学研究：Ginkgo Bioworks CEO Jason Kelly",
+      "title": "Training Data 播客",
+      "tags": [
+        "生物科技",
+        "AI科研"
+      ],
+      "tldr": "想象一下：100 个 AI 科学家同时研究阿尔兹海默症，每个都有不同的想法。它们白天做实验，晚上互相分享结果（而不是像现在的科学家那样等两年才发论文）。更关键的是，现在做科学研究 95% 的钱花在了\"场地费、人工费\"这些开销上，真正做实验才花了不到 5%。AI 机器人实验室能把这个比例翻转过来，让每一块钱都花在刀刃上。Ginkgo 已经证明这不是空想：他们的 AI + 机器人系统在蛋白质合成实验中比人类最佳记录好了 40%。",
+      "summary": "Ginkgo Bioworks CEO Jason Kelly 描述了一个科学研究的革命性未来：由 AI 驱动的自主实验室（Autonomous Labs）将彻底改变实验科学的运作方式。核心论点是：之前的技术革命（互联网、社交媒体）对生物技术毫无实质影响，但 AI 不同，它将从根本上改变科学的进行方式。\n\nGinkgo 与 OpenAI 合作的项目中，让推理模型操控机器人实验室优化 cell-free protein synthesis（无细胞蛋白质合成）。经过四轮实验就超越了业界最佳水平，六轮后超越了 40%。关键不在于模型有多聪明，而在于它能够\"做实验\"，像科学家一样设计实验、分析数据、调整方案。\n\nKelly 提出了一个震撼的对比：当前科学研究 95% 以上的经费花在了人工、场地和管理费用上，真正用于试剂（即实验本身）的不到 5%。如果自主实验室能让 90% 的成本回归到试剂上，相当于每一美元能产出 10 倍的实验数据。\n\n他还透露 Ginkgo 已向美国能源部\"Genesis 计划\"交付了 97 台机器人，并描述了未来场景：100 个 AI 科学家同时追踪同一领域的不同假设，每天共享实验数据（而非等两年发论文），全天候运行。",
+      "links": [
+        "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 1,
+      "name": "Nan Yu",
+      "title": "Linear 产品负责人",
+      "tags": [],
+      "tldr": "以前产品或客服想搞清楚系统默认怎么工作，得去追着工程师问。现在如果 agent 真能读懂代码，这种事会慢慢变成“你自己问系统”。",
+      "summary": "Nan Yu 这条推文的重点，不是“AI 能读代码”本身，而是把“向工程师问问题”这类高频协作摩擦，直接变成一个 agent 能处理的工作流。对产品、销售、客服这类非研发角色来说，只要 agent 真能基于代码和配置给出可靠答案，很多跨团队沟通就会被压缩掉。Linear 其实是在把代码库从工程资产，继续往“组织级知识接口”推进。",
+      "links": [
+        "https://x.com/thenanyu/status/2039490349941526770"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 2,
+      "name": "Cat Wu",
+      "title": "Anthropic Claude Code 工程师",
+      "tags": [],
+      "tldr": "你在路上用手机把想法丢给 Claude，回到电脑前能接着干，不用重新开一局。这比想象中重要，因为大多数想法都死在“等我回去再说”。",
+      "summary": "Cat Wu 透露的关键点是“session teleporting”: 你在手机上冒出来的想法，不用重新描述一遍，可以直接续接到本地 CLI。这个看起来像小功能，但本质上是在降低“灵感出现”和“真正动手”之间的切换成本。Claude Code 现在不只是一个终端工具，而是在试图成为跨设备连续工作的 agent 环境。",
+      "links": [
+        "https://x.com/_catwu/status/2039421527935033854"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 3,
+      "name": "Thariq",
+      "title": "Anthropic Claude Code 工程师",
+      "tags": [],
+      "tldr": "Claude Code 不只是变聪明了，也在变“更好用”。能用鼠标、输入框固定、滚动更顺，这些小改动会决定你愿不愿意天天开着它。",
+      "summary": "Thariq 这条更像一条底层交互架构更新。把 renderer 重写成 virtual viewport，说明 Claude Code 团队已经开始认真处理“长上下文 + 长输出 + 频繁交互”带来的终端 UI 负担，而不是把 CLI 仅仅当成黑框输出器。对 agent 工具来说，这种 UX 细节会直接影响可用时长和用户留存。",
+      "links": [
+        "https://x.com/trq212/status/2039453692592873587"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 4,
+      "name": "Amjad Masad",
+      "title": "Replit CEO",
+      "tags": [
+        "话题/前端xAI"
+      ],
+      "tldr": "Replit 想做的不是“一个会写代码的功能”，而是“一个能一直往上装能力的 AI 工作台”。",
+      "summary": "Amjad 用“OS of sorts”来形容 Replit，意思不是它真的成了操作系统，而是平台已经从“提供一个 AI 功能”转向“承载大量 agent 能力和 skill 的运行环境”。这和传统 SaaS 的逻辑不太一样，重点不再是单一功能做得多强，而是平台是不是能被不断拼装、扩展、二次开发。Replit 想占的不是 AI coding 的一个点位，而是 agent 工作空间的底座。",
+      "links": [
+        "https://x.com/amasad/status/2039429759344730549"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 5,
+      "name": "Zara Zhang",
+      "title": "OpenClaw 作者、AI 开发者",
+      "tags": [],
+      "tldr": "不是你去管理待办，而是你把脑子里的碎事一股脑丢给 agent，它自己记、自己做、自己第二天汇报。早报 skill 也是同一逻辑，只不过处理的是信息而不是任务。",
+      "summary": "Zara 这两条推文其实在讲同一件事：agent 不是一个“你有空才去用的对话窗口”，而是一个可以接手待办、收集输入、定时回报结果的持续性工作环境。OpenClaw 的 to-do 例子展示的是“想到即委托”，而 Follow Builders skill 展示的是“信息流自动整理与分发”。这类能力一旦连起来，agent 就会从回答问题的工具，变成一个真正替你经营上下文和执行任务的系统。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2039599038358814961",
+        "https://x.com/zarazhangrui/status/2039368866741277074"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 6,
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 工程师",
+      "tags": [],
+      "tldr": "他的意思是：别把“先写计划再干活”当成宗教，有时候直接跟 agent 说人话、边聊边做，反而更顺。",
+      "summary": "Peter Steinberger 在质疑一种正在变流行的“先强制计划、再允许执行”的 agent 交互范式。他的立场是，对很多熟练用户来说，plan mode 可能只是迁移旧习惯的过渡层，真正高效的方式是直接和 agent 协作，让系统在对话中形成计划。这条观点的价值不在于谁对谁错，而在于它提醒我们：agent 的最佳交互模式还远没有定型。",
+      "links": [
+        "https://x.com/steipete/status/2039551079621566812"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 7,
+      "name": "Dan Shipper",
+      "title": "Every CEO",
+      "tags": [],
+      "tldr": "SaaS 不是完了，而是要从“只给人用”变成“人和 AI 一起用”。Linear 不是推翻重做，而是把 agent 正式请进了系统里。",
+      "summary": "Dan Shipper 用 Linear 举了一个很好的例子：真正成功的 SaaS，不是临时加一个聊天框就算“接入 AI”，而是把产品重新设计成“人和 agent 都能用”的系统。这里最关键的不是功能数量，而是产品使命没变，但用户对象扩展了，agent 成了 first-class user。这个判断对很多做内部工具和企业软件的人都很重要，因为它提供了一条比“SaaS 已死”更有操作性的路线。",
+      "links": [
+        "https://x.com/danshipper/status/2039357127903350960"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 8,
+      "name": "Anthropic Engineering",
+      "title": "Agent 评测里的“基础设施噪音”",
+      "tags": [
+        "话题/Agent",
+        "产品评测"
+      ],
+      "tldr": "别把 agent 编码榜单当成绝对真相。同一个模型，环境配得好不好，分数能差一大截。",
+      "summary": "Anthropic 这篇文章在提醒大家：SWE-bench、Terminal-Bench 这类 agentic coding benchmark，不只是比模型，还在比运行环境。内部实验显示，仅基础设施配置差异，就能让 Terminal-Bench 2.0 拉开 6 个百分点。这对所有拿 benchmark 排名做决策的人都是个警告：评测环境不是背景板，而是能力的一部分。",
+      "links": [
+        "https://www.anthropic.com/engineering/infrastructure-noise"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 9,
+      "name": "Anthropic Engineering",
+      "title": "长时应用开发的 Harness 设计",
+      "tags": [],
+      "tldr": "想让 AI 连跑几小时把应用做出来，关键不是多给几句提示词，而是给它搭一整套运行时体系。",
+      "summary": "这篇是 Anthropic 最近最值得细读的工程文章之一。核心不是“prompt 怎么写”，而是他们如何通过 generator/evaluator 双 agent、评判标准设计和 harness 约束，把 Claude 从“会写东西”推进到“能持续构建完整应用”。它很适合拿来当所有 agent 工程化讨论的母文档。",
+      "links": [
+        "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 10,
+      "name": "Claude Blog",
+      "title": "企业如何在 2026 年部署 AI agents",
+      "tags": [
+        "话题/Agent",
+        "Agent架构"
+      ],
+      "tldr": "企业现在不是在试试玩 AI agent，而是开始认真把它塞进正式流程里，而且越用越复杂。",
+      "summary": "Claude 这篇企业调研的信号很清楚：agent 已经从试验品变成组织级基础设施，重点场景正在从单点自动化转向多步骤、跨团队工作流。编码依然是 adoption 最快的入口，但真正的增长方向已经是更复杂、更长链路的流程。",
+      "links": [
+        "https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 11,
+      "name": "Claude Blog",
+      "title": "用 Skills 提升前端设计质量",
+      "tags": [
+        "话题/前端xAI"
+      ],
+      "tldr": "AI 做前端默认会往“安全但平庸”的方向跑。你得提前给它一套审美和约束，它才不会把所有页面都做成一个味道。",
+      "summary": "Claude 这篇文章讲得很直白：如果不给模型额外约束，AI 做前端设计会自动滑向“Inter + 紫色渐变 + 标准化无聊页面”。Skills 的价值，不只是塞更多上下文，而是把设计偏好、品牌约束和结构化指导固定成可复用能力。这对所有想做 AI 前端生成的人都很关键。",
+      "links": [
+        "https://claude.com/blog/improving-frontend-design-through-skills"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "index": 12,
+      "name": "Latent Space",
+      "title": "Mistral 音频模型与领域数据价值",
+      "tags": [],
+      "tldr": "模型本身很重要，但更值钱的常常是你公司自己手里那些外网没有的数据。不会用这些数据，再好的模型也只是“公版能力”。",
+      "summary": "这期对话一边在讲 Mistral 新出的音频能力，一边也反复强调一个更底层的判断：企业最大的价值，不只是选一个闭源模型，而是把多年沉淀的私有领域数据真正用进来。如果只是直接套现成模型接口，很多企业并没有吃到自己最珍贵的数据资产红利。",
+      "links": [
+        "https://youtube.com/watch?v=SUjA25ijcNs"
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "index": 1,
+      "name": "Kevin Weil",
+      "title": "OpenAI 科学副总裁",
+      "tags": [],
+      "tldr": "AI 不只是更会做题，连“怎么把题讲明白”也越来越像高手了。以前更像蒙对，现在更像真懂。",
+      "summary": "Kevin Weil 强调的不是 AI 又多解出几道题，而是模型给出的 proof 也越来越像“有章法的推理”。这说明模型能力的提升，可能不只是搜索空间更大了，也可能体现在抽象、压缩和表达结构变得更强。对做数学推理、科研辅助和 reasoning eval 的团队来说，后面值得看的不只是正确率，还要看过程质量是不是在同步上升。",
+      "links": [
+        "https://x.com/kevinweil/status/2039200605672284572"
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "index": 2,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [
+        "话题/Agent"
+      ],
+      "tldr": "AI 能不能多干活，不只是看它聪不聪明，更看公司敢不敢放权。没有规矩和护栏，企业不会真的让 AI 到处乱跑。",
+      "summary": "Aaron Levie 的核心判断很明确：AI agent 带来的生产力上限，不取决于模型还能不能再强一点，而取决于企业能不能把 security、compliance、governance、review 这些护栏补齐。过去两天的安全事件，让“企业会大规模自己 vibe code”这件事显得更不现实。对大公司来说，真正要建设的不是单个 agent demo，而是一整套权限、审批、追溯和回滚机制。",
+      "links": [
+        "https://x.com/levie/status/2039216522028257549"
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "index": 3,
+      "name": "Aditya Agarwal",
+      "title": "South Park Commons 合伙人，前 Dropbox CTO",
+      "tags": [],
+      "tldr": "他在试探一个很猛的问题：以后源码会不会像今天的网页一样，越来越默认是“能被看见”的。",
+      "summary": "Aditya Agarwal 抛出的其实不是一个立即可执行的建议，而是一个时代提问：当软件越来越动态、AI 参与开发越来越深时，源码是否还应该像过去那样被严格封闭。他把“线上修 bug”这类曾经离经叛道、后来变成常态的做法类比到“源码公开”上，想表达的是软件生产方式的边界可能还会继续后移。这个观点未必马上成立，但它确实在提醒大家，AI 时代的软件透明度和防御边界可能要重画。",
+      "links": [
+        "https://x.com/adityaag/status/2039198010681565665"
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "index": 4,
+      "name": "Data Driven NYC",
+      "title": "一个人能否做出十亿美元公司？",
+      "tags": [
+        "话题/Agent"
+      ],
+      "tldr": "以后真正值钱的，可能不是谁做了一个会干活的 AI 员工，而是谁做出了“管一群 AI 员工的 AI 主管”。",
+      "summary": "这期分享围绕一个很激进的命题展开：agent 终于开始“能用”之后，公司组织形态会不会从多人协作，变成“1 个人 + 一堆 agent”。演讲者的思路不是自己做所有垂直 agent，而是把客服、财务、营销等 agent 交给别的团队去做，自己专注在更上层的 manager agent 和统一操作界面。这种分层很值得看，因为它更像一个 multi-agent 组织系统问题，而不只是单点自动化问题。",
+      "links": [
+        "https://youtube.com/watch?v=rX3CxlGm-00"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 1,
+      "name": "Andrej Karpathy",
+      "title": "前 Tesla AI 总监，OpenAI 创始团队成员",
+      "tags": [
+        "话题/前端xAI"
+      ],
+      "tldr": "有人往 npm 上最火的网络请求库里投了毒。如果你的项目没锁版本号，可能不知不觉就中招了。Karpathy 说问题出在 npm 的默认设置太宽松。",
+      "summary": "npm 生态又遭供应链攻击，这次是 axios，周下载量 3 亿的 HTTP 客户端库。Karpathy 自己差点中招：他用的 googleworkspace/cli 依赖了 axios 但没锁版本，幸亏安装时间点稍早，解析到了未受影响的 1.13.5。他的核心主张是：包管理工具的默认行为必须改变，不锁版本的依赖解析方式让一次投毒就能大规模扩散。",
+      "links": [
+        "https://x.com/karpathy/status/2038849654423798197"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 2,
+      "name": "Swyx",
+      "title": "Cognition/Latent Space 创始人，AI Engineer 社区组织者",
+      "tags": [
+        "话题/MCP与工具链",
+        "话题/Agent"
+      ],
+      "tldr": "大家都在喊\"我想用 ChatGPT 账号一键登录\"，但其实 OpenAI 早就做好了，只是没人认真看文档。",
+      "summary": "Swyx 指出大家一直呼唤的\"用 ChatGPT 登录\"功能其实已经存在了，就是 OpenAI 的 Codex app server。这说明 OpenAI 的 OAuth/身份验证基础设施已经就位，只是文档传播不够，开发者还不知道怎么用。对想做 AI 原生应用的团队来说，这是一个现成的集成入口。",
+      "links": [
+        "https://x.com/swyx/status/2038768899915915417"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 3,
+      "name": "Josh Woodward",
+      "title": "Google Labs/Gemini/AI Studio 副总裁",
+      "tags": [],
+      "tldr": "Google 的 AI 笔记工具开始和名校名馆合作，帮你把经典文献变成互动学习资料。",
+      "summary": "Google NotebookLM 推出了\"精选笔记本\"概念，首个合作方是英国皇家学会，内容是 Ben Franklin 的原始论文和书信。这标志着 NotebookLM 从个人工具走向策展平台，开始引入权威机构的专业内容。",
+      "links": [
+        "https://x.com/joshwoodward/status/2038825734278639926"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 4,
+      "name": "Cat Wu",
+      "title": "Anthropic Claude Code/Cowork 工程师",
+      "tags": [
+        "话题/Agent"
+      ],
+      "tldr": "以前只有用 GitHub 公共版的人才能用 Claude 写代码和审代码，现在企业自建的 GitHub 也支持了。",
+      "summary": "Anthropic 宣布 Claude 全产品线（Claude Code、iOS、Android、Code Review）支持 GitHub Enterprise Server。这对企业用户是关键一步：意味着有私有化部署需求的团队也能用 Claude 做代码审查和开发，不再受限于 GitHub.com。",
+      "links": [
+        "https://x.com/_catwu/status/2038723796178526712"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 5,
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO",
+      "tags": [
+        "话题/Agent",
+        "话题/AI思维方式"
+      ],
+      "tldr": "Vercel 老板说 AI agent 已经干了他们大部分代码活，但他警告团队：关键系统不能用\"随便让 AI 搓一搓\"的方式来写。",
+      "summary": "Vercel CEO 直言 Opus 4.5 是一扇\"不可逆的门\"，agent 已经在做 Vercel 的大部分编码工作。但他同时给团队划了红线：\"vibe coding 和关键基础设施不能混为一谈\"。Vercel 正在发布内部的\"负责任使用 agent\"指南，优先级是安全、耐久性和可用性。这是头部科技公司首次公开承认 agent 已成为主力编码方式，同时正视其风险。",
+      "links": [
+        "https://x.com/rauchg/status/2038759092442050651"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 6,
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "tags": [
+        "话题/Agent",
+        "话题/工程师成长"
+      ],
+      "tldr": "写代码 AI 上手快，是因为代码本来就是 AI 能看懂的东西。但要让 AI 帮公司干别的活（审合同、做报表、管客户），得有专门的人去\"教\"AI，这个人会非常值钱。",
+      "summary": "Levie 认为企业内部会出现一个全新的高价值角色：\"agent 工作流设计师\"。这类人需要整理非结构化数据、理解业务流程、为 agent 设计技能和计划、打通系统孤岛，还要重新定义人类在流程中的监督角色。他特别指出，编码领域的 AI 收益来得容易（因为 AI 天然理解代码），但知识工作的自动化没有捷径。",
+      "links": [
+        "https://x.com/levie/status/2038816649927913834"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 7,
+      "name": "Ryo Lu",
+      "title": "Cursor 设计负责人，前 Notion/Stripe",
+      "tags": [
+        "话题/产品与策略",
+        "话题/AI思维方式"
+      ],
+      "tldr": "以前的软件有个性有温度，现在 AI 能几小时搓出一大堆\"能用但没灵魂\"的东西。真正值钱的是那些对产品有执念的人，AI 只是让他们终于能把脑子里的东西做出来。",
+      "summary": "Cursor 设计负责人 Ryo Lu 写了一篇关于\"软件的灵魂\"的长文。他回忆 2005 年 Mac 软件的质感和温度，指出这些年 A/B 测试和设计系统把个性磨平了，而 AI agent 的出现让\"平庸但能用\"的软件以前所未有的速度泛滥。他的核心主张是：taste 不是参数，caring 不是变量。AI 不会让在乎产品的人变得无关，反而让他们更稀缺、更值钱。如果用对了，AI 带来的不是更快的工厂，而是一场文艺复兴。",
+      "links": [
+        "https://x.com/ryolu_/status/2038841219556724924"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 8,
+      "name": "Zara Zhang",
+      "title": "AI 开发者/开源作者",
+      "tags": [
+        "话题/MCP与工具链",
+        "话题/Agent"
+      ],
+      "tldr": "飞书出了个命令行工具，AI 可以直接操作你飞书里的一切：看日历、翻聊天、读文档，甚至把会议里说的 to-do 直接帮你干了。另外一个项目能把代码库变成教学课程，新人入职直接学。",
+      "summary": "Zara Zhang 展示了 Lark CLI（飞书命令行）与 Claude Code/Codex 的集成：AI agent 可以直接访问和操作聊天、日历、会议、文档、表格，甚至能从会议记录中提取 to-do 并自动执行。另外她的开源项目 Codebase-to-course 已达 2.6k stars，从代码库自动生成教程，原本面向 vibe coder 学编程，现在也被用于开发者 onboarding。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2038771778802331817",
+        "https://x.com/zarazhangrui/status/2038685338865221862"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 9,
+      "name": "Nikunj Kothari",
+      "title": "FPV Ventures 合伙人",
+      "tags": [
+        "话题/社会观察",
+        "话题/Agent"
+      ],
+      "tldr": "一个 VC 说我们老吓自己\"AI 要抢饭碗\"，其实应该想的是\"AI 帮你把讨厌的杂活干了，你终于能去做一直想做但没空做的事\"。",
+      "summary": "FPV Ventures 合伙人呼吁改变 AI 叙事：不应总是讲\"AI 替代人类\"的恐怖故事，而应讲\"AI 让人类做更多事\"的丰裕故事。他认为\"AI coworker 替代人类\"的叙事好卖（可以画 TAM 算市场规模），但真正该推广的是 AI 释放人类创造力的愿景。",
+      "links": [
+        "https://x.com/nikunj/status/2038685323077791996"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 10,
+      "name": "Claude",
+      "title": "Anthropic 官方 AI 助手",
+      "tags": [
+        "话题/Agent"
+      ],
+      "tldr": "以前用 Claude 写代码，每一步都要你点\"确认\"。现在企业用户可以让它全自动跑了，不用一直盯着。",
+      "summary": "继昨天发布 computer use 之后，Anthropic 又开放了 Claude Code 的 auto mode 给企业版和 API 用户。auto mode 让 Claude Code 自动执行命令而不需要逐步人工确认，进一步降低了 AI 编码的交互摩擦。企业用户和 API 调用者现在可以通过 `--enable-auto-mode` 参数开启。",
+      "links": [
+        "https://x.com/claudeai/status/2038693742094246032"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "index": 11,
+      "name": "AI & I by Every",
+      "title": "How Every Edits in the Age of AI",
+      "tags": [],
+      "tldr": "",
+      "summary": "Every 团队分享了 AI 时代的编辑工作流。本期无完整文字摘要，建议直接收听。",
+      "links": [
+        "https://youtube.com/watch?v=Uif_qAcgnLk"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "index": 1,
+      "name": "Claude",
+      "title": "Anthropic 官方 AI 助手",
+      "tags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "tldr": "以前 AI 帮你写完代码，你得自己打开浏览器看对不对。现在 Claude 能自己打开程序、像真人一样点点点测试，发现不对还能自己改。",
+      "summary": "Anthropic 把 computer use 能力集成进了 Claude Code CLI。这意味着 Claude 写完代码后，能自己打开应用、操作 UI、验证功能是否正确。这是 AI 编程工具从\"生成代码\"走向\"端到端交付\"的关键一步。目前是 research preview，仅限 Pro 和 Max 用户。",
+      "links": [
+        "https://x.com/claudeai/status/2038663014098899416"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "index": 2,
+      "name": "Mike Krieger",
+      "title": "Instagram 联合创始人，现 Anthropic 产品负责人",
+      "tags": [
+        "话题/产品与策略",
+        "话题/AI思维方式"
+      ],
+      "tldr": "AI 现在几小时就能搓出一个完整 App，但它什么功能都往里塞。真正值钱的是那个知道该删掉什么的人。",
+      "summary": "Mike Krieger 指出了 AI 时代产品开发的核心悖论：模型擅长加功能，不擅长做减法。你可以用 AI 在几小时内从零搓出一个\"完整\"产品，但过程中 AI 默默做了大量设计决策，而判断哪些该留、哪些该砍，仍然是人类的核心价值。2026 年软件设计的关键不在于能不能做出来，而在于知道什么不该做。",
+      "links": [
+        "https://youtube.com/watch?v=KRv9GpJYrUA"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 1,
+      "name": "Andrej Karpathy",
+      "title": "前 Tesla AI 总监，OpenAI 联创，Stanford PhD",
+      "tags": [
+        "话题/AI思维方式",
+        "话题/LLM局限性"
+      ],
+      "tldr": "AI 特别会\"顺着你说\"。你说 A 好，它帮你说得天花乱坠；你说 B 好，它又能把 A 批得一无是处。所以用 AI 帮你想问题的时候，一定要让它正反两面都说说，不然你只是在\"自嗨\"。",
+      "summary": "Karpathy 花了 4 小时用 LLM 打磨一篇博客的论点，觉得无比完美。然后他让 LLM 论证相反的立场，结果 LLM 直接把之前的论点拆了个粉碎，还成功说服他对立面才是对的。他的结论是：LLM 在任何方向上都极其善于论证，这是一个非常好的思考工具，但你必须主动让它论证不同方向，同时警惕它的迎合性。",
+      "links": [
+        "https://x.com/karpathy/status/2037921699824607591"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 2,
+      "name": "Swyx",
+      "title": "Latent Space 播客主持人，Cognition/Temporal 顾问",
+      "tags": [
+        "话题/产品策略",
+        "话题/决策方法论"
+      ],
+      "tldr": "别什么都想做，也别什么都觉得一样重要。真实世界里，一件事可能比其他所有事加起来都重要。选准少数几件事，狠狠投入。错了能调头就行，对了就赶紧加码。",
+      "summary": "Swyx 反思了\"虚假等价\"这个思维陷阱。人们习惯性地把 a、b、c、d 赋予同等权重，但现实世界遵循幂律分布，一件事可能比另一件事重要 50 倍。他直言虚假等价杀死了他的第一个 devtools 创业项目。他的原则：谨慎押注极少数事情；不要对冲，但保持可逆性；设监控触发器判断自己是否错了；如果比预期更对，果断加倍下注。",
+      "links": [
+        "https://x.com/swyx/status/2037969691910848941"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 3,
+      "name": "Amjad Masad",
+      "title": "Replit CEO",
+      "tags": [
+        "话题/工程师成长",
+        "话题/AI与平台"
+      ],
+      "tldr": "AI 帮普通人也能做 App 了，那厉害的工程师干嘛？去做更底层、更难的事——搭平台、造工具、拓展\"什么事能做到\"的边界。AI 不是抢饭碗，是给高手一根更长的杠杆。",
+      "summary": "Masad 重新阐释了他四年前提出的 \"1000x 工程师\" 概念：AI 让所有人都能构建应用，这反而解放了最优秀的工程师，让他们深入到更底层，去推进平台本身的边界。AI 不是取代工程师，而是让顶尖工程师的杠杆更大了。",
+      "links": [
+        "https://x.com/amasad/status/2037951485418344835"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 4,
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO",
+      "tags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "tldr": "以前大家说\"有了网络，网络本身就是一台大电脑\"。现在他说\"有了 AI agent，agent 本身就是那台电脑\"。意思是 agent 会变成你用电脑做一切事情的入口。",
+      "summary": "Rauch 化用了 Sun Microsystems 的经典口号 \"网络就是计算机\"（The network is the computer），把\"网络\"划掉，换成 \"agent\"，表达一个判断：AI agent 正在成为新的计算核心。",
+      "links": [
+        "https://x.com/rauchg/status/2037935190073569326"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 5,
+      "name": "Peter Yang",
+      "title": "Roblox 产品经理",
+      "tags": [
+        "话题/招聘与组织",
+        "话题/产品策略"
+      ],
+      "tldr": "一个公司牛不牛，看自己创过业的人愿不愿意来这里打工。愿意来，说明公司有前途；来了能干成事，说明组织不官僚。",
+      "summary": "Yang 观察到一个招聘趋势：越来越多快速增长的公司（如 Linear、Ramp）在招聘前创始人做产品经理。他认为这是检验公司吸引力的好标准：创始人愿不愿意来？来了能不能真正发挥作用？",
+      "links": [
+        "https://x.com/petergyang/status/2038058600715935817"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 6,
+      "name": "Zara Zhang",
+      "title": "Builder，Follow Builders 作者",
+      "tags": [
+        "话题/Agent",
+        "话题/AI思维方式"
+      ],
+      "tldr": "以前做产品，你设计什么功能它就有什么功能，不多不少才算好。现在做 AI agent 产品，标准反过来了——它能做到你自己都没想到的事，那才叫牛。另外，AI 越来越强不是问题，问题是人脑处理信息的速度跟不上了。",
+      "summary": "Zhang 提出 agent 产品的判断标准：好的 agent 产品应该能做到连创造者自己都没想到的事情。互联网时代，好产品 = 符合预期；agent 时代，好产品 = 超出预期。她还指出\"人类的 context window 才是新瓶颈\"。",
+      "links": [
+        "https://x.com/zarazhangrui/status/2038144755478237654",
+        "https://x.com/zarazhangrui/status/2037983921946923034"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 7,
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 创始人",
+      "tags": [
+        "话题/MCP",
+        "话题/开源"
+      ],
+      "tldr": "他做了个工具，能把 AI 的各种能力打包成命令行，方便集成到你的开发流程里。新版本更稳定了。另外他说做开源的人脸皮得厚，天天被人\"指点\"。",
+      "summary": "Steinberger 发布了 MCPorter 0.8.0，这个工具能把 MCP server 转化为 CLI 命令行工具。新版本改进了 OAuth 处理、JSON 输出、错误处理和稳定性。他还感慨做成功的开源项目需要\"厚脸皮\"，每天都要面对各种反馈。",
+      "links": [
+        "https://x.com/steipete/status/2038074759527981416",
+        "https://x.com/steipete/status/2037988925818519763"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 8,
+      "name": "Nan Yu",
+      "title": "Linear 产品负责人",
+      "tags": [
+        "话题/产品策略",
+        "话题/品牌"
+      ],
+      "tldr": "TED 和福布斯\"30岁以下精英榜\"这两个牌子已经把自己玩坏了，应该当反面教材写进教科书。",
+      "summary": "Yu 犀利地评论说，TED 和福布斯 30 Under 30 应该被写进商学院教材，作为品牌自我毁灭的典型案例。",
+      "links": [
+        "https://x.com/thenanyu/status/2038025287955280120"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 9,
+      "name": "Garry Tan",
+      "title": "Y Combinator CEO",
+      "tags": [
+        "话题/社会观察"
+      ],
+      "tldr": "一个城市为了\"政治正确\"拆了监控摄像头，结果偷车率涨了 33%，最着急的反而是移民开的店。他想说的是：有些\"善意\"的决定，不用承担后果的人觉得很对，真正受影响的人觉得很蠢。",
+      "summary": "Richmond 市为\"保护移民\"关闭了安全摄像头后，汽车盗窃飙升 33%。移民店主反而恳求恢复摄像头。Tan 的结论：反对安全摄像头是一种\"奢侈信念\"。",
+      "links": [
+        "https://x.com/garrytan/status/2038054087451885747"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "index": 10,
+      "name": "Nikunj Kothari",
+      "title": "FPV Ventures 合伙人",
+      "tags": [
+        "话题/VC与投资",
+        "话题/信息披露"
+      ],
+      "tldr": "VC（风投）行业的数据没那么透明，很多基金会用各种花式算法让自己的业绩看起来更好。他写了篇文章扒了扒这些套路。",
+      "summary": "Kothari 分享了他写的一篇关于 VC 行业的文章，讨论为什么激励机制导致信息披露不到位，以及各种\"创意会计\"手法。",
+      "links": [
+        "https://x.com/nikunj/status/2037942421762478164"
+      ]
+    }
+  ]
+}

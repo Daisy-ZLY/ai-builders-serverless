@@ -1,0 +1,345 @@
+{
+  "dateStr": "2026年4月1日 — AI Builders 早报",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Andrej Karpathy",
+      "title": "前 Tesla AI 总监，OpenAI 创始团队成员",
+      "profileBio": "顶级 AI 研究者与工程实践者，长期关注模型能力、训练范式与开发体验。",
+      "personTags": [
+        "研究",
+        "模型",
+        "工程"
+      ],
+      "topicTags": [
+        "话题/前端xAI"
+      ],
+      "explicitTags": [
+        "话题/前端xAI"
+      ],
+      "originalText": "> New supply chain attack this time for npm axios, the most popular HTTP client library with 300M weekly downloads. Scanning my system I found a use imported from googleworkspace/cli from a few days ago. The installed version (luckily) resolved to an unaffected 1.13.5, but the project dependency is not pinned, meaning that if I did this earlier today the code would have resolved to latest and I'd be pwned. I think ultimately the defaults of package management projects (pip, npm etc) have to change so that a single infection does not spread through users at random and at scale via unpinned dependencies.",
+      "chineseInterpretation": "npm 生态又遭供应链攻击，这次是 axios，周下载量 3 亿的 HTTP 客户端库。Karpathy 自己差点中招：他用的 googleworkspace/cli 依赖了 axios 但没锁版本，幸亏安装时间点稍早，解析到了未受影响的 1.13.5。他的核心主张是：包管理工具的默认行为必须改变，不锁版本的依赖解析方式让一次投毒就能大规模扩散。",
+      "tldr": "有人往 npm 上最火的网络请求库里投了毒。如果你的项目没锁版本号，可能不知不觉就中招了。Karpathy 说问题出在 npm 的默认设置太宽松。",
+      "relevance": "",
+      "proView": "如果他说得对：包管理工具应该默认锁版本、设置发布年龄约束，这会显著降低供应链攻击面。对前端团队来说，现在就应该审查 lockfile 和 CI 中的依赖解析策略。",
+      "conView": "但另一面是：严格锁版本会降低安全补丁的自动流入速度。2022 年 Log4Shell 之所以危害巨大，恰恰因为太多项目锁着旧版本不更新。安全是一个\"开放 vs 锁定\"的永恒张力，没有银弹。",
+      "clue": "判断线索：关注 npm 官方是否会在 2026 年内调整默认的版本解析策略（如引入 release-age 约束作为 opt-out 而非 opt-in）。",
+      "links": [
+        "https://x.com/karpathy/status/2038849654423798197"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Swyx",
+      "title": "Cognition/Latent Space 创始人，AI Engineer 社区组织者",
+      "profileBio": "活跃于 AI 开发者社区，擅长连接模型能力、开发者工具与内容传播。",
+      "personTags": [
+        "社区",
+        "开发者",
+        "内容"
+      ],
+      "topicTags": [
+        "话题/MCP与工具链",
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/MCP与工具链",
+        "话题/Agent"
+      ],
+      "originalText": "> Everybody is asking for \"sign in with ChatGPT\". It already exists! Codex app server! Y'all just need to read the docs, this has been out for months.",
+      "chineseInterpretation": "Swyx 指出大家一直呼唤的\"用 ChatGPT 登录\"功能其实已经存在了，就是 OpenAI 的 Codex app server。这说明 OpenAI 的 OAuth/身份验证基础设施已经就位，只是文档传播不够，开发者还不知道怎么用。对想做 AI 原生应用的团队来说，这是一个现成的集成入口。",
+      "tldr": "大家都在喊\"我想用 ChatGPT 账号一键登录\"，但其实 OpenAI 早就做好了，只是没人认真看文档。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://x.com/swyx/status/2038768899915915417"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Josh Woodward",
+      "title": "Google Labs/Gemini/AI Studio 副总裁",
+      "profileBio": "代表大厂产品视角，常释放 Google Labs 在 AI 产品化上的新动作。",
+      "personTags": [
+        "Google",
+        "产品",
+        "平台"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> New in NotebookLM: The Science Of Ben Franklin, a first-of-its-kind featured notebook made in collaboration with The Royal Society. Featured notebooks allow you to learn from curated collections of high-quality sources.",
+      "chineseInterpretation": "Google NotebookLM 推出了\"精选笔记本\"概念，首个合作方是英国皇家学会，内容是 Ben Franklin 的原始论文和书信。这标志着 NotebookLM 从个人工具走向策展平台，开始引入权威机构的专业内容。",
+      "tldr": "Google 的 AI 笔记工具开始和名校名馆合作，帮你把经典文献变成互动学习资料。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://x.com/joshwoodward/status/2038825734278639926"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Cat Wu",
+      "title": "Anthropic Claude Code/Cowork 工程师",
+      "profileBio": "关注 AI 工具、工作流与个人表达，常从实践者角度给出轻量观察。",
+      "personTags": [
+        "AI",
+        "工具"
+      ],
+      "topicTags": [
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "> We now support GitHub Enterprise Server across our product suite, including Claude Code on the web, iOS, Android and Code Review!",
+      "chineseInterpretation": "Anthropic 宣布 Claude 全产品线（Claude Code、iOS、Android、Code Review）支持 GitHub Enterprise Server。这对企业用户是关键一步：意味着有私有化部署需求的团队也能用 Claude 做代码审查和开发，不再受限于 GitHub.com。",
+      "tldr": "以前只有用 GitHub 公共版的人才能用 Claude 写代码和审代码，现在企业自建的 GitHub 也支持了。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://x.com/_catwu/status/2038723796178526712"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO",
+      "profileBio": "前端平台与产品工程代表人物，常分享框架、体验和开发者平台思考。",
+      "personTags": [
+        "前端",
+        "平台",
+        "产品工程"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/AI思维方式"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/AI思维方式",
+        "话题/前端xAI"
+      ],
+      "originalText": "> When Opus 4.5 came out, it was a one-way door to a new way of engineering. Agents now do most of our coding. Knowing the inherent flaws and over-confidence of LLMs, we sent a clear message to our teams. Vibing and mission-critical infrastructure don't go together. We're sharing some of our early internal guidance in how we're \"agenting responsibly\", prioritizing security, durability, and availability at all times.",
+      "chineseInterpretation": "Vercel CEO 直言 Opus 4.5 是一扇\"不可逆的门\"，agent 已经在做 Vercel 的大部分编码工作。但他同时给团队划了红线：\"vibe coding 和关键基础设施不能混为一谈\"。Vercel 正在发布内部的\"负责任使用 agent\"指南，优先级是安全、耐久性和可用性。这是头部科技公司首次公开承认 agent 已成为主力编码方式，同时正视其风险。",
+      "tldr": "Vercel 老板说 AI agent 已经干了他们大部分代码活，但他警告团队：关键系统不能用\"随便让 AI 搓一搓\"的方式来写。",
+      "relevance": "",
+      "proView": "如果他说得对：AI agent 作为主力编码工具已经是现实而非愿景。前端团队应该开始建立自己的\"agent 使用纪律\"，区分可以 vibe 的场景和必须严格审查的场景。",
+      "conView": "但另一面是：Rauch 作为 Vercel CEO 有动机把 AI 编码叙事推到极致来巩固 Vercel 的开发者平台定位。\"agents do most of our coding\"这句话的含义很模糊：是 agent 写了大部分代码行数，还是 agent 参与了大部分编码任务？两者差异巨大。",
+      "clue": "判断线索：等 Vercel 那份内部指南公开后，看具体限制条款。如果限制很多、很细，说明\"agent 做大部分编码\"的代价比他表述的要高。",
+      "links": [
+        "https://x.com/rauchg/status/2038759092442050651"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "profileBio": "企业软件老兵，常从商业化与组织效率角度判断 AI 对工作的影响。",
+      "personTags": [
+        "企业软件",
+        "AI",
+        "商业化"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/工程师成长"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/工程师成长"
+      ],
+      "originalText": "> There is a huge opportunity for resourceful and entrepreneurial talent within organizations to go in and reimagine workflows for a world of agents. The way you automate work with agents requires real work: setting up unstructured data, learning workflows, creating skills or plans for agents, connecting disparate systems, and changing the process itself. Most coding gains don't take this level of effort because the agent knows more and gets context easily. But for the rest of knowledge work there's no shortcut. You will see a huge growth of roles within enterprises, and people that specialize in this will be hugely valuable.",
+      "chineseInterpretation": "Levie 认为企业内部会出现一个全新的高价值角色：\"agent 工作流设计师\"。这类人需要整理非结构化数据、理解业务流程、为 agent 设计技能和计划、打通系统孤岛，还要重新定义人类在流程中的监督角色。他特别指出，编码领域的 AI 收益来得容易（因为 AI 天然理解代码），但知识工作的自动化没有捷径。",
+      "tldr": "写代码 AI 上手快，是因为代码本来就是 AI 能看懂的东西。但要让 AI 帮公司干别的活（审合同、做报表、管客户），得有专门的人去\"教\"AI，这个人会非常值钱。",
+      "relevance": "",
+      "proView": "如果他说得对：对早期职业的人来说，成为\"agent 工作流专家\"是弯道超车的机会。不需要深厚的技术背景，需要的是理解业务+动手能力+系统思维。",
+      "conView": "但另一面是：Levie 是 Box CEO，Box 的商业模式就是企业内容管理。\"agent 需要整理非结构化数据\"恰好指向 Box 的产品方向。另外，\"没有捷径\"这个判断可能太绝对：随着 RAG 和多模态能力提升，agent 自己理解非结构化数据的能力也在快速进步。",
+      "clue": "判断线索：观察接下来 6 个月内，大型咨询公司（McKinsey、Accenture）是否开始招聘\"AI workflow architect\"之类的岗位。如果是，说明需求确实存在。",
+      "links": [
+        "https://x.com/levie/status/2038816649927913834"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Ryo Lu",
+      "title": "Cursor 设计负责人，前 Notion/Stripe",
+      "profileBio": "关注 AI 工具和内容表达，常分享个人实践与产品观察。",
+      "personTags": [
+        "AI",
+        "内容"
+      ],
+      "topicTags": [
+        "话题/产品与策略",
+        "话题/AI思维方式"
+      ],
+      "explicitTags": [
+        "话题/产品与策略",
+        "话题/AI思维方式",
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "originalText": "> When software had a soul. There was a moment around 2005 when using a Mac felt like touching something alive. Software back then had texture, philosophy. You could feel the person behind it. Somewhere along the way, we traded all of that for growth. A/B tests flattened the edges. Design systems standardized the personality out. Then came AI agents, and the speed got inhuman. When making things is too easy, the slop comes for free too. Mediocre things don't look obviously bad. The internet is filling up with software that functions but means nothing.\n>\n> Here's what I still believe: the best things are made by people who couldn't help themselves. AI doesn't make that irrelevant. It actually makes it rarer and more valuable. Taste is not a parameter. The path forward isn't to make more slop faster. It's to give people with real vision the tools to make the thing they always imagined. If we get this right, we don't get a faster factory. We get a renaissance.",
+      "chineseInterpretation": "Cursor 设计负责人 Ryo Lu 写了一篇关于\"软件的灵魂\"的长文。他回忆 2005 年 Mac 软件的质感和温度，指出这些年 A/B 测试和设计系统把个性磨平了，而 AI agent 的出现让\"平庸但能用\"的软件以前所未有的速度泛滥。他的核心主张是：taste 不是参数，caring 不是变量。AI 不会让在乎产品的人变得无关，反而让他们更稀缺、更值钱。如果用对了，AI 带来的不是更快的工厂，而是一场文艺复兴。",
+      "tldr": "以前的软件有个性有温度，现在 AI 能几小时搓出一大堆\"能用但没灵魂\"的东西。真正值钱的是那些对产品有执念的人，AI 只是让他们终于能把脑子里的东西做出来。",
+      "relevance": "",
+      "proView": "如果他说得对：对工程师和设计师来说，\"品味\"和\"审美执念\"会成为与 AI 时代最重要的差异化能力。与其焦虑 AI 替代，不如培养自己对产品细节的直觉。",
+      "conView": "但另一面是：2005 年的 Mac 软件之所以有\"灵魂\"，部分原因是市场小、竞争少、创作者可以不计成本地打磨。今天的软件面对的是全球化竞争和资本回报压力。\"文艺复兴\"叙事很美，但历史上的文艺复兴也需要美第奇家族的钱。另外，Ryo 在 Cursor 工作，Cursor 本身就是\"让 AI 帮你更快写代码\"的工具，这个立场和\"慢下来打磨灵魂\"之间存在张力。",
+      "clue": "判断线索：观察 AI 原生产品中是否出现\"有灵魂\"的爆款（用户因为体验而非功能留存）。如果 2026 年底前出现这样的产品，说明\"AI 文艺复兴\"不只是口号。",
+      "links": [
+        "https://x.com/ryolu_/status/2038841219556724924"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Zara Zhang",
+      "title": "AI 开发者/开源作者",
+      "profileBio": "持续观察 builders 与 AI 产品演进，擅长把复杂信息转成可读内容。",
+      "personTags": [
+        "AI",
+        "内容",
+        "研究"
+      ],
+      "topicTags": [
+        "话题/MCP与工具链",
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/MCP与工具链",
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "originalText": "> Imagine if Claude Code/Codex can access AND operate all your chats, calendars, meetings, docs, sheets... That's possible now with Lark CLI. I just built a skill on top of this: Not only does it extract to-dos from the meetings, it actually EXECUTES those to-dos.\n\n> Codebase-to-course now has 2.6k stars on GitHub. Just optimized it to be a lot more token efficient & reliable. Originally intended for vibe coders to learn CS, but was told it's great for developer onboarding as well.",
+      "chineseInterpretation": "Zara Zhang 展示了 Lark CLI（飞书命令行）与 Claude Code/Codex 的集成：AI agent 可以直接访问和操作聊天、日历、会议、文档、表格，甚至能从会议记录中提取 to-do 并自动执行。另外她的开源项目 Codebase-to-course 已达 2.6k stars，从代码库自动生成教程，原本面向 vibe coder 学编程，现在也被用于开发者 onboarding。",
+      "tldr": "飞书出了个命令行工具，AI 可以直接操作你飞书里的一切：看日历、翻聊天、读文档，甚至把会议里说的 to-do 直接帮你干了。另外一个项目能把代码库变成教学课程，新人入职直接学。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://x.com/zarazhangrui/status/2038771778802331817",
+        "https://x.com/zarazhangrui/status/2038685338865221862"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Nikunj Kothari",
+      "title": "FPV Ventures 合伙人",
+      "profileBio": "偏投资与生态视角，适合观察资本市场对 AI 方向的判断。",
+      "personTags": [
+        "投资",
+        "AI",
+        "生态"
+      ],
+      "topicTags": [
+        "话题/社会观察",
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/社会观察",
+        "话题/Agent",
+        "话题/VC与投资"
+      ],
+      "originalText": "> Our sometimes narrow view of AI has shifted society thinking that AI will replace humans. That is the case for doomerism. What I think we should be preaching MORE of is the abundant era where humans will DO more together. Where AI takes care of all the frivolous work we hate doing. Where we get to build and think together ALL the dreams that we stored away in some attic in our brain waiting for a better day.",
+      "chineseInterpretation": "FPV Ventures 合伙人呼吁改变 AI 叙事：不应总是讲\"AI 替代人类\"的恐怖故事，而应讲\"AI 让人类做更多事\"的丰裕故事。他认为\"AI coworker 替代人类\"的叙事好卖（可以画 TAM 算市场规模），但真正该推广的是 AI 释放人类创造力的愿景。",
+      "tldr": "一个 VC 说我们老吓自己\"AI 要抢饭碗\"，其实应该想的是\"AI 帮你把讨厌的杂活干了，你终于能去做一直想做但没空做的事\"。",
+      "relevance": "",
+      "proView": "如果他说得对：AI 投资和产品叙事应该从\"效率替代\"转向\"能力增强\"，这会影响产品定位和 GTM 策略。",
+      "conView": "但另一面是：作为 VC，\"丰裕叙事\"比\"替代叙事\"更有利于投资生态的繁荣（更多创业者 = 更多 deal flow）。而且\"AI 处理无聊工作、人类专注创造\"的愿景，和历史上每一次自动化革命的初始承诺一样美好，但实际结果往往是工作重新分配而非消失，新的无聊工作会被创造出来。",
+      "clue": "判断线索：观察使用 AI agent 的企业中，被\"释放\"出来的员工是真的去做了更有创造力的工作，还是被裁员或重新分配到了新的重复性任务。",
+      "links": [
+        "https://x.com/nikunj/status/2038685323077791996"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Claude",
+      "title": "Anthropic 官方 AI 助手",
+      "profileBio": "用于观察 Anthropic 在产品能力、品牌叙事和面向用户发布上的节奏。",
+      "personTags": [
+        "Anthropic",
+        "产品",
+        "品牌"
+      ],
+      "topicTags": [
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "> Auto mode for Claude Code is now available on the Enterprise plan and for API users. To try it out, update your install and run claude --enable-auto-mode.",
+      "chineseInterpretation": "继昨天发布 computer use 之后，Anthropic 又开放了 Claude Code 的 auto mode 给企业版和 API 用户。auto mode 让 Claude Code 自动执行命令而不需要逐步人工确认，进一步降低了 AI 编码的交互摩擦。企业用户和 API 调用者现在可以通过 `--enable-auto-mode` 参数开启。",
+      "tldr": "以前用 Claude 写代码，每一步都要你点\"确认\"。现在企业用户可以让它全自动跑了，不用一直盯着。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://x.com/claudeai/status/2038693742094246032"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "AI & I by Every",
+      "title": "How Every Edits in the Age of AI",
+      "profileBio": "兼具媒体和创业者视角，擅长把 AI 变化翻译成大众可理解的叙事。",
+      "personTags": [
+        "媒体",
+        "AI",
+        "创业"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "",
+      "chineseInterpretation": "Every 团队分享了 AI 时代的编辑工作流。本期无完整文字摘要，建议直接收听。",
+      "tldr": "",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://youtube.com/watch?v=Uif_qAcgnLk"
+      ]
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端",
+      "items": [
+        {
+          "title": "强化 npm 供应链安全",
+          "summary": "开源生态的投毒事件频发（如 axios 投毒），前端依赖安全面临挑战。",
+          "implication": "必须严格审查前端团队项目的 lockfile 策略，确保 CI/CD 流程中的依赖解析已完全锁定版本，防范供应链攻击。",
+          "sourceUrl": "https://twitter.com/karpathy"
+        }
+      ],
+      "actions": [
+        "检查所有核心前端项目的 package-lock.json / pnpm-lock.yaml 策略，确保 CI 中使用严格安装命令（如 npm ci）。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端",
+      "items": [
+        {
+          "title": "建立 Agent 使用规范",
+          "summary": "Vercel 内部区分了“可以 vibe（自由发挥）”和“必须严格审查”的 AI 场景。",
+          "implication": "在后端引入 AI Agent 时，需要明确边界。对于涉及核心数据、权限变更的场景，必须建立严格的审计和 Human-in-the-loop 机制。",
+          "sourceUrl": "https://twitter.com/rauchg"
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "isRoleSpecific": true
+}

@@ -1,0 +1,146 @@
+---
+import EntryCard from './EntryCard.astro';
+import RolePanel from './RolePanel.astro';
+import { formatDate, formatDateMobile, getReadingTimeMobile } from '@/utils/markdown';
+import '@/styles/daily.css';
+
+export interface Props {
+  digest: any;
+  post?: any;
+  readingTime?: any;
+  wordCount?: number;
+}
+
+const { digest, post, readingTime, wordCount } = Astro.props;
+
+// Calculate Volume number from post.id (e.g., "2026-04-15" -> "20260415")
+// Some post IDs might have extra paths if in subfolders, so we extract the date part
+const extractDate = (id: string) => {
+  const match = id.match(/\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : '';
+};
+const dateStr = post?.id ? extractDate(post.id) : (digest.date || '');
+const volNumber = dateStr.replace(/-/g, '');
+
+// Clean up the main title (remove date prefix if present)
+let mainTitle = post?.data?.title || digest.dateStr || '今日 AI 构建';
+mainTitle = mainTitle.replace(/^[\d-]+\s*—\s*/, ''); // Remove "2026-04-15 — "
+
+const tweetCount = digest.twitterBuilders ? digest.twitterBuilders.reduce((sum: number, b: any) => sum + (b.links?.length || 0), 0) : 0;
+---
+
+<div class="digest-container" id="digest-view">
+  <header class="masthead">
+    <div class="masthead-brand">AI 构建者日报 <span>Vol.{volNumber}</span></div>
+    <h1>{mainTitle}</h1>
+    
+    {post && (
+      <div class="masthead-meta">
+        <time datetime={post.data.date.toISOString()}>
+          <span class="hidden sm:inline">📅 {formatDate(post.data.date)}</span>
+          <span class="sm:hidden">📅 {formatDateMobile(post.data.date)}</span>
+        </time>
+        
+        {readingTime && (
+          <>
+            <span class="meta-divider">•</span>
+            <span>
+              <span class="hidden sm:inline">⏳ {readingTime.text && readingTime.text !== 'read0' && readingTime.text !== '' ? readingTime.text : '1 min read'}</span>
+              <span class="sm:hidden">⏳ {getReadingTimeMobile(readingTime)}</span>
+            </span>
+          </>
+        )}
+        
+        {wordCount !== undefined && (
+          <>
+            <span class="meta-divider">•</span>
+            <span>
+              <span class="hidden sm:inline">📝 {wordCount === 1 ? '1 word' : `${wordCount.toLocaleString()} words`}</span>
+              <span class="sm:hidden">📝 {wordCount === 1 ? '1 word' : `${wordCount.toLocaleString()} words`}</span>
+            </span>
+          </>
+        )}
+      </div>
+    )}
+  </header>
+
+  <div class="tagline">
+    <div class="tagline-stats">
+      <span>{digest.twitterBuilders?.length || 0} 位构建者</span>
+      <span class="meta-divider">·</span>
+      <span>{tweetCount} 条新动态</span>
+      {digest.blogs && digest.blogs.length > 0 && (
+        <>
+          <span class="meta-divider">·</span>
+          <span>{digest.blogs.length} 篇官方博客</span>
+        </>
+      )}
+      {digest.podcasts && digest.podcasts.length > 0 && (
+        <>
+          <span class="meta-divider">·</span>
+          <span>{digest.podcasts.length} 期播客</span>
+        </>
+      )}
+    </div>
+    <div class="tagline-slogan">追踪构建者，而非网红。</div>
+    <details class="tagline-why">
+      <summary>为什么关注构建者？</summary>
+      <p>AI 领域信息爆炸，但真正推动变革的是少数在一线构建产品的人。我们不追热点，不转谣言——只追踪那些正在亲手写代码、发产品、踩过坑的构建者。他们今天说的，往往就是行业三个月后的方向。</p>
+    </details>
+  </div>
+
+  {digest.twitterBuilders && digest.twitterBuilders.length > 0 && (
+    <div class="section-rule" id="builders"><span>构建者</span></div>
+  )}
+  {digest.twitterBuilders?.map((entry: any, index: number) => (
+    <EntryCard 
+      entry={entry}
+      index={index + 1}
+      isFeatured={index === 0}
+    />
+  ))}
+
+  {digest.blogs && digest.blogs.length > 0 && (
+    <>
+      <div class="section-rule" id="blogs"><span>官方博客</span></div>
+      {digest.blogs.map((entry: any, index: number) => (
+        <EntryCard 
+          entry={entry}
+          index={(digest.twitterBuilders?.length || 0) + index + 1}
+        />
+      ))}
+    </>
+  )}
+
+  {digest.podcasts && digest.podcasts.length > 0 && (
+    <>
+      <div class="section-rule" id="podcasts"><span>播客</span></div>
+      {digest.podcasts.map((entry: any, index: number) => (
+        <EntryCard 
+          entry={entry}
+          index={(digest.twitterBuilders?.length || 0) + (digest.blogs?.length || 0) + index + 1}
+          linkText="收听 →"
+        />
+      ))}
+    </>
+  )}
+
+  {digest.roleSuggestions && digest.roleSuggestions.length > 0 && (
+    <>
+      <div class="section-rule" id="relevance"><span>🎯 和你有关</span></div>
+      <RolePanel 
+        intro={digest.relevanceIntro}
+        suggestions={digest.roleSuggestions}
+        isRoleSpecific={digest.isRoleSpecific}
+      />
+    </>
+  )}
+</div>
+
+<style>
+.digest-container {
+  /* This container replaces the old .container which had max-width.
+     Since Astro Modular's layout handles max-width, we just use 100% width here. */
+  width: 100%;
+}
+</style>

@@ -1,0 +1,124 @@
+---
+export interface Props {
+  intro: string;
+  suggestions: any[];
+  isRoleSpecific: boolean;
+}
+
+const { intro, suggestions, isRoleSpecific } = Astro.props;
+
+const getRoleLabel = (roleId: string) => {
+  const map: Record<string, string> = {
+    'product': '产品',
+    'dev': '前端',
+    'growth': '增长',
+    'frontend': '前端',
+    'backend': '服务端'
+  };
+  return map[roleId] || roleId.replace('视角', '');
+};
+---
+
+<div class={`role-relevance ${!isRoleSpecific ? 'role-relevance-legacy' : ''}`}>
+  <p class="relevance-intro">{intro}</p>
+  
+  {isRoleSpecific ? (
+    <>
+      {suggestions.length > 1 && (
+        <div class="role-switcher" role="tablist" aria-label="角色切换">
+          {suggestions.map((group, index) => (
+            <button 
+              class={`role-chip ${index === 0 ? 'is-active' : ''}`}
+              type="button" 
+              role="tab"
+              data-role={group.roleId}
+            >
+              {getRoleLabel(group.roleId)}
+            </button>
+          ))}
+        </div>
+      )}
+      
+      <div class="role-panels">
+        {suggestions.map((group, index) => (
+          <section 
+            class={`role-panel ${index === 0 ? 'block' : 'hidden'}`}
+            data-role-panel={group.roleId}
+          >
+            {group.items.map((item: any, i: number) => (
+              <div class="action-entry role-action-entry">
+                <span class="action-idx">{String(i + 1).padStart(2, '0')}</span>
+                <div class="role-compact-body">
+                  {item.title && <strong>{item.title}</strong>}
+                  {(item.summary || item.implication) && (
+                    <p>
+                      {[item.summary, item.implication].filter(Boolean).join(' ')}
+                      {item.sourceUrl && (
+                        <span class="role-inline-source"> · <a href={item.sourceUrl} target="_blank" rel="noopener">原文</a></span>
+                      )}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+            
+            {group.actions && group.actions.length > 0 && (
+              <div class="role-actions-container">
+                <div class="role-action-label">行动建议</div>
+                <ul class="role-actions-list">
+                  {group.actions.map((action: string) => (
+                    <li>{action}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+    </>
+  ) : (
+    suggestions[0]?.items.map((item: any, i: number) => (
+      <div class="action-entry">
+        <span class="action-idx">{i + 1}</span>
+        <div>
+          {item.title && <strong>{item.title}</strong>}
+          <p>{item.summary}</p>
+        </div>
+      </div>
+    ))
+  )}
+</div>
+
+<script>
+// Handle role switching
+document.addEventListener('DOMContentLoaded', () => {
+  const chips = document.querySelectorAll('.role-chip');
+  const panels = document.querySelectorAll('.role-panel');
+  
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const role = chip.getAttribute('data-role');
+      
+      // Update active chip
+      chips.forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      
+      // Update active panel
+      panels.forEach(p => {
+        if (p.getAttribute('data-role-panel') === role) {
+          p.classList.remove('hidden');
+          p.classList.add('block');
+        } else {
+          p.classList.remove('block');
+          p.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
+
+<style>
+.hidden { display: none !important; }
+.block { display: block !important; }
+</style>

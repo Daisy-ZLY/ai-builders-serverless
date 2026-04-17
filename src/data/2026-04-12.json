@@ -1,0 +1,356 @@
+{
+  "dateStr": "2026-04-12 — AI Builders 早报",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Garry Tan",
+      "title": "YC 总裁兼 CEO  架构   Harness",
+      "profileBio": "代表创业与投资视角，适合观察 AI 创业机会、市场节奏与融资判断。",
+      "personTags": [
+        "创业",
+        "投资",
+        "市场"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/开源",
+        "话题/Thin"
+      ],
+      "originalText": "Thin harness, fat skills: If your memory dies when your harness dies, you built the harness too thick. Memory is markdown. Skills are markdown. Brain is a git repo. The harness is a thin conductor — it reads the files, it does the work.",
+      "chineseInterpretation": "Garry Tan 在三个月的开源实践后提出了 Agent 架构的核心理念: harness（线束/框架）应该做得尽可能薄，技能和记忆才是核心资产。记忆是 markdown，技能是 markdown，大脑是 git repo。如果框架挂了记忆也跟着消失，说明你的框架太厚了。这直接挑战了当前主流的「重框架」Agent 设计思路。",
+      "tldr": "Agent 架构应遵循「薄线束、厚技能」原则，记忆和技能用 markdown + git 持久化，框架只做薄导体",
+      "relevance": "直接影响 Agent 开发者选择架构方向——是投资重框架还是轻框架+富技能",
+      "proView": "这种设计让 Agent 的知识和记忆脱离了具体框架的绑定，实现了真正的可移植性和持久性，降低了迁移成本",
+      "conView": "过度简化框架可能牺牲了编排复杂多步任务时的控制能力，markdown 作为记忆载体在结构化查询和大规模数据时效率存疑",
+      "clue": "关注 Garry Tan 的开源项目 GStack/GBrain 的后续迭代，看这套理念在生产环境中的验证",
+      "links": [
+        "https://x.com/garrytan/status/2043198783006355747",
+        "https://x.com/garrytan/status/2043198780800197025",
+        "https://x.com/garrytan/status/2043188801175220306"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 创始人   Mode   可靠性",
+      "profileBio": "长期从开发者与工具实验视角观察 AI 应用真实可用性。",
+      "personTags": [
+        "开发者",
+        "AI",
+        "工具"
+      ],
+      "topicTags": [
+        "话题/OpenClaw",
+        "话题/Strict"
+      ],
+      "explicitTags": [
+        "话题/OpenClaw",
+        "话题/Strict",
+        "话题/Codex",
+        "话题/Agent"
+      ],
+      "originalText": "Two experiments in the next OpenClaw: 1) Strict mode — tells GPT-5.x to keep working, read files, verify changes. 2) Native Codex as the OpenClaw harness — plugins.entries.codex.enabled = true, agents.defaults.model = codex/gpt-5.4",
+      "chineseInterpretation": "Peter Steinberger 为 OpenClaw 下一版准备了两个重要实验。Strict Mode 通过 executionContract 强制 GPT 不偷懒、持续执行任务直到完成——这直接针对 GPT 系列模型在长任务中「摆烂」的老毛病。第二个实验是把 Codex 作为原生线束接入，让 OpenClaw 架构更灵活，为替换不同底层模型打下基础。",
+      "tldr": "OpenClaw 引入 Strict Mode 治 GPT 偷懒问题，同时支持 Codex 作为原生线束替代方案",
+      "relevance": "直接影响所有使用 GPT 系列模型做 Agent 的开发者——终于有人系统性解决偷懒问题了",
+      "proView": "Strict Mode 解决了 LLM 在 Agent 场景下最让人头疼的可靠性问题，Codex 原生支持让架构更开放",
+      "conView": "强制执行可能增加 token 消耗和延迟，在简单任务上过度严格反而降低效率",
+      "clue": "观察 Strict Mode 在真实多步编码任务中的完成率数据",
+      "links": [
+        "https://x.com/steipete/status/2043136615640694797",
+        "https://x.com/steipete/status/2043136620006961384",
+        "https://x.com/steipete/status/2043136624469619050"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Guillermo Rauch",
+      "title": "Vercel CEO     编码",
+      "profileBio": "前端平台与产品工程代表人物，常分享框架、体验和开发者平台思考。",
+      "personTags": [
+        "前端",
+        "平台",
+        "产品工程"
+      ],
+      "topicTags": [
+        "话题/Vercel",
+        "话题/Sandbox"
+      ],
+      "explicitTags": [
+        "话题/Vercel",
+        "话题/Sandbox",
+        "话题/microVM",
+        "话题/AI"
+      ],
+      "originalText": "Vercel Sandbox is now the #1 fastest microVM-based Sandbox. We've also heard from customers migrating that beyond 'in the lab' benchmarks, our real-world performance & reliability are second-to-none.",
+      "chineseInterpretation": "Guillermo Rauch 宣布 Vercel Sandbox 登顶最快微虚拟机沙盒排行榜。这不仅是实验室数据，迁移过来的客户反馈真实场景下的性能和可靠性同样无人能敌。Sandbox 是 AI 编码 Agent 的核心基础设施——代码生成后需要一个安全、高速的执行环境来验证，Vercel 正在抢占这个赛道。",
+      "tldr": "Vercel Sandbox 成为最快微虚拟机沙盒，为 AI 编码 Agent 提供高性能执行环境",
+      "relevance": "AI 编码工具开发者的基础设施选型参考",
+      "proView": "快速沙盒直接缩短了 Agent 的 code-test-iterate 循环时间，提升整体编码效率",
+      "conView": "性能基准测试和实际生产负载之间可能存在差距，vendor lock-in 风险需要评估",
+      "clue": "关注 Vercel Sandbox 在 v0 和其他 AI 编码产品中的集成进展",
+      "links": [
+        "https://x.com/rauchg/status/2043020059896091016"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aditya Agarwal",
+      "title": "South Park Commons GP / 前 Dropbox CTO",
+      "profileBio": "常从技术、医疗和投资交叉视角分享 AI 行业判断与应用机会。",
+      "personTags": [
+        "AI",
+        "医疗科技",
+        "投资"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/记忆管理"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/记忆管理",
+        "话题/架构设计"
+      ],
+      "originalText": "The big difference between a true 'agent' and simply running an LLM in a loop (or an event-based trigger) is how you do intelligent long-horizon memory management. By far the most interesting aspect.",
+      "chineseInterpretation": "Aditya Agarwal 一针见血地指出了真正的 Agent 和 LLM loop 之间的本质区别：不是工具调用，不是规划能力，而是智能的长期记忆管理。这个观点来自前 Facebook 早期工程师和 Dropbox CTO 的实战视角，值得每个做 Agent 的人深思——你的系统有真正的记忆吗，还是只是在循环里跑 LLM？",
+      "tldr": "真正的 Agent 与 LLM loop 的核心区别在于长期记忆管理，而非工具调用或规划",
+      "relevance": "Agent 架构师的设计决策参考——记忆系统应该是第一优先级而非附加功能",
+      "proView": "聚焦记忆管理是一个被低估但关键的维度，可能成为 Agent 产品差异化的核心",
+      "conView": "记忆管理的定义很模糊——RAG、向量数据库、还是结构化 state？不同实现方式差异巨大",
+      "clue": "关注 Aditya 在 South Park Commons 投资的 Agent 记忆相关创业项目",
+      "links": [
+        "https://x.com/adityaag/status/2043144970060939487"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aaron Levie",
+      "title": "Box CEO  基础设施   与法律",
+      "profileBio": "企业软件老兵，常从商业化与组织效率角度判断 AI 对工作的影响。",
+      "personTags": [
+        "企业软件",
+        "AI",
+        "商业化"
+      ],
+      "topicTags": [
+        "话题/AI",
+        "话题/数据中心"
+      ],
+      "explicitTags": [
+        "话题/AI",
+        "话题/数据中心",
+        "话题/AI"
+      ],
+      "originalText": "This chart puts the datacenter demands into perspective very clearly. Amazon has done more capex in the last 3 years than its entire history. We will likely have more lawyers in the future than today, because AI will cause so many more people to ask legal questions.",
+      "chineseInterpretation": "Aaron Levie 分享了两个有趣的洞察。第一，Amazon 过去三年的数据中心资本支出超过了此前全部历史的总和——AI 基础设施的投资规模已经到了匪夷所思的程度。第二，反直觉地预测 AI 时代律师会更多而非更少，因为 AI 降低了法律咨询的门槛，会有更多人提出法律问题，但最终验证和执行仍需真人律师。",
+      "tldr": "Amazon 数据中心 capex 三年超过此前全部历史; AI 不会消灭律师，反而会增加法律服务需求",
+      "relevance": "帮助理解 AI 对专业服务行业的影响模式——扩大市场而非替代从业者",
+      "proView": "降低信息获取门槛往往扩大而非缩小市场——这是 AI 对传统行业影响的重要思考框架",
+      "conView": "更多律师≠更高质量的法律服务，AI 可能更多创造的是低端法律咨询需求",
+      "clue": "观察 Box 在 AI 内容管理方面的产品迭代，看 Levie 如何将这些洞察落地到产品中",
+      "links": [
+        "https://x.com/levie/status/2043192337111924930",
+        "https://x.com/levie/status/2043051227387433144"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Thariq",
+      "title": "Anthropic Claude Code 工程师  Code",
+      "profileBio": "偏向实验型 builder，常分享新工具、新界面和个人使用体验。",
+      "personTags": [
+        "AI",
+        "实验"
+      ],
+      "topicTags": [
+        "话题/Claude",
+        "话题/MCP"
+      ],
+      "explicitTags": [
+        "话题/Claude",
+        "话题/MCP",
+        "话题/TurboTax"
+      ],
+      "originalText": "there's a turbotax connector in Claude Code now, so glad I procrastinated on taxes 😭",
+      "chineseInterpretation": "Thariq（Claude Code 团队工程师）透露 Claude Code 新增了 TurboTax 连接器。虽然是一条半开玩笑的推文，但信号很明确：MCP 生态正在从开发工具向日常生活服务扩展。报税、财务管理这类需要连接外部数据源的任务，正是 Agent + MCP 的最佳落地场景。",
+      "tldr": "Claude Code 新增 TurboTax 连接器，MCP 生态从开发工具扩展到日常服务场景",
+      "relevance": "MCP 生态扩展方向的参考信号——日常服务场景是下一个增长点",
+      "proView": "MCP 连接器覆盖报税场景说明 Agent 正在走向真正的实用化，不再只是开发者玩具",
+      "conView": "财务数据连接涉及敏感信息安全问题，用户信任门槛比代码工具高得多",
+      "clue": "关注 Anthropic MCP 连接器生态的增长速度和覆盖领域",
+      "links": [
+        "https://x.com/trq212/status/2043138221836746762"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Zara Zhang",
+      "title": "Builder / Follow Builders 创建者  协作",
+      "profileBio": "持续观察 builders 与 AI 产品演进，擅长把复杂信息转成可读内容。",
+      "personTags": [
+        "AI",
+        "内容",
+        "研究"
+      ],
+      "topicTags": [
+        "话题/AI",
+        "话题/团队组织"
+      ],
+      "explicitTags": [
+        "话题/AI",
+        "话题/团队组织",
+        "话题/单人创业"
+      ],
+      "originalText": "Human communication will be for deciding what to work on & what 'good' looks like, keeping each other company & preventing loneliness, creative brainstorming. The most efficient way for humans to collaborate: do not collaborate — one person should own something end-to-end and work with agents.",
+      "chineseInterpretation": "Zara Zhang 对 AI 时代的人类协作提出了激进但清醒的观点：人与人之间的沟通将收窄到三件事——决定做什么、定义什么是好的、以及陪伴彼此。最高效的协作方式是不协作——一个人端到端拥有一件事，然后和 Agent 一起干。这挑战了「团队协作」的传统职场信条。",
+      "tldr": "AI 时代最高效的协作是不协作: 一个人 + Agent 端到端完成，人与人的沟通聚焦于决策和陪伴",
+      "relevance": "重新思考团队组织方式——AI 原生团队可能只需要很少的人",
+      "proView": "减少协作开销能极大提升效率，Agent 作为协作伙伴比人类更可控更高效",
+      "conView": "完全取消协作可能导致知识孤岛和创新瓶颈，复杂项目仍需多人视角碰撞",
+      "clue": "观察这种「单人+Agent」模式在实际创业项目中的验证效果",
+      "links": [
+        "https://x.com/zarazhangrui/status/2043202553538925031",
+        "https://x.com/zarazhangrui/status/2043187721989149146"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Peter Yang",
+      "title": "AI 教程作者 / 140K+ 读者  设计",
+      "profileBio": "擅长从产品与增长视角拆解 AI 行业机会、组织节奏与市场判断。",
+      "personTags": [
+        "产品",
+        "增长",
+        "策略"
+      ],
+      "topicTags": [
+        "话题/AI",
+        "话题/Figma"
+      ],
+      "explicitTags": [
+        "话题/AI",
+        "话题/Figma",
+        "话题/设计品味"
+      ],
+      "originalText": "Can AI learn design taste? There's no better person to ask this question to than Figma's CEO. I had a great chat with Dylan about whether design systems constrain creativity...",
+      "chineseInterpretation": "Peter Yang 与 Figma CEO Dylan Field 对话，探讨了一个核心问题：AI 能学会设计品味吗？以及设计系统是否限制了创造力。这是 AI 进入创意领域时的关键问题——AI 能生成符合规范的设计，但「品味」是一种更微妙的审美判断，目前仍然是人类设计师的护城河。",
+      "tldr": "Peter Yang 与 Figma CEO 对话探讨 AI 能否学会设计品味，以及设计系统与创造力的关系",
+      "relevance": "设计师和产品经理评估 AI 设计工具能力边界的参考",
+      "proView": "AI 在规范化设计上已经很强，品味问题可能通过更多高质量训练数据解决",
+      "conView": "品味是文化和审美的综合判断，不太可能仅通过数据学习获得，这可能是 AI 的天花板",
+      "clue": "关注 Figma AI 功能的迭代方向——是走规范化还是品味化路线",
+      "links": [
+        "https://x.com/petergyang/status/2042950869734567998"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "No Priors",
+      "title": "The Agentic Economy: How AI Agents Will Transform the Financial System with Circle Co-Founder and CEO Jeremy Allaire  Agent 经济    交易",
+      "profileBio": "由 Sarah Guo 和 Elad Gil 主持的顶级 AI 投资与技术播客。",
+      "personTags": [
+        "播客",
+        "投资",
+        "访谈"
+      ],
+      "topicTags": [
+        "话题/AI",
+        "话题/稳定币"
+      ],
+      "explicitTags": [
+        "话题/AI",
+        "话题/稳定币",
+        "话题/加密支付",
+        "话题/M2M"
+      ],
+      "originalText": "",
+      "chineseInterpretation": "No Priors 播客邀请 Circle 联合创始人兼 CEO Jeremy Allaire 对话，核心观点是：当 AI Agent 需要自主完成交易和支付时，传统金融系统的摩擦力太大了。稳定币和区块链将成为 Agent 经济的原生支付轨道。Allaire 认为未来 5-10 年，Agent 之间的 M2M（机器对机器）交易量可能超过人类交易量。他还预测 2030 年代可能出现两位数的 GDP 增长，AI 的扩散效应会深刻改变生产力。直接引用：\"The big difference is that stablecoins sit at the intersection of internet money and AI infrastructure — agents need programmable, instant, borderless money.\"",
+      "tldr": "Circle CEO 认为稳定币将成为 AI Agent 经济的原生支付基础设施，M2M 交易量可能超过人类交易",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://www.youtube.com/@NoPriorsPodcast"
+      ]
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端工程师",
+      "items": [
+        {
+          "title": "Vercel Sandbox 微虚拟机性能登顶",
+          "summary": "Vercel Sandbox 成为最快微虚拟机沙盒，AI 编码 Agent 的执行环境性能直接影响开发体验",
+          "implication": "如果你在构建 AI 辅助编码工具，Sandbox 是优先评估的执行环境选项",
+          "sourceUrl": "https://x.com/rauchg/status/2043020059896091016"
+        },
+        {
+          "title": "AI 能学会设计品味吗",
+          "summary": "Peter Yang 与 Figma CEO 探讨 AI 设计能力的边界",
+          "implication": "前端开发者需要理解 AI 生成的设计产物的品质边界，避免盲信",
+          "sourceUrl": "https://x.com/petergyang/status/2042950869734567998"
+        }
+      ],
+      "actions": [
+        "关注 Vercel Sandbox 的集成 SDK",
+        "评估 Figma AI 对设计到代码工作流的影响"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "后端工程师",
+      "items": [
+        {
+          "title": "Thin Harness, Fat Skills — Agent 架构新范式",
+          "summary": "Garry Tan 提出 Agent 框架应尽量薄，技能和记忆用 markdown + git 持久化",
+          "implication": "如果你在设计 Agent 架构，考虑把记忆和技能从框架中解耦，降低迁移成本",
+          "sourceUrl": "https://x.com/garrytan/status/2043198783006355747"
+        },
+        {
+          "title": "Agent 的核心是长期记忆管理",
+          "summary": "前 Dropbox CTO 指出 Agent 与 LLM loop 的本质区别在于记忆，而非工具调用",
+          "implication": "在 Agent 系统设计中，记忆模块应该是架构优先级最高的组件",
+          "sourceUrl": "https://x.com/adityaag/status/2043144970060939487"
+        }
+      ],
+      "actions": [
+        "评估 Thin Harness 架构对现有 Agent 项目的适用性",
+        "重新审视系统中的记忆管理层设计"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "产品经理",
+      "items": [
+        {
+          "title": "AI 时代最高效的协作是不协作",
+          "summary": "Zara Zhang 提出一个人端到端负责 + Agent 协作，比多人协作更高效",
+          "implication": "产品团队可以考虑更小的单元组织——单人+Agent 完成完整功能模块",
+          "sourceUrl": "https://x.com/zarazhangrui/status/2043202553538925031"
+        },
+        {
+          "title": "MCP 连接器从开发工具走向日常服务",
+          "summary": "Claude Code 新增 TurboTax 连接器，MCP 生态正在扩展到报税等日常场景",
+          "implication": "产品经理应关注 MCP 生态的覆盖范围，评估自家产品是否需要提供 MCP 连接器",
+          "sourceUrl": "https://x.com/trq212/status/2043138221836746762"
+        }
+      ],
+      "actions": [
+        "重新思考 AI 时代的团队协作模式",
+        "评估 MCP 连接器生态对产品集成策略的影响"
+      ]
+    }
+  ],
+  "isRoleSpecific": true
+}

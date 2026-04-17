@@ -15,7 +15,8 @@ import Lightbox from '@/components/Lightbox.astro';
 import Icon from '@/components/Icon.astro';
 import ImageWrapper from '@/components/ImageWrapper.astro';
 import { devConfig } from '@/config/dev';
-import { readFileSync } from 'fs';
+import DigestView from '@/components/daily/DigestView.astro';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
 export interface Props {
@@ -23,6 +24,19 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+
+// Check if we have JSON data for this post
+let digestData = null;
+try {
+  // Post ID is typically the date like "2026-04-15"
+  const jsonPath = join(process.cwd(), 'src', 'data', 'api', `${post.id}.json`);
+  if (existsSync(jsonPath)) {
+    const jsonContent = readFileSync(jsonPath, 'utf-8');
+    digestData = JSON.parse(jsonContent);
+  }
+} catch (e) {
+  console.error(`Error reading JSON data for ${post.id}:`, e);
+}
 
 // Check if we're in development mode
 const isDev = import.meta.env.DEV;
@@ -68,8 +82,43 @@ const readingTime = calculateReadingTime(post.body || '');
 
 // Generate table of contents if enabled
 const hideTOC = post.data.hideTOC === true;
-const shouldShowTOC = !hideTOC && siteConfig.tableOfContents.enabled && headings.length > 0;
-const toc = shouldShowTOC ? await generateTOC(headings) : [];
+
+// Custom TOC generation for DigestView
+let customHeadings: Heading[] = [];
+if (digestData) {
+  if (digestData.twitterBuilders && digestData.twitterBuilders.length > 0) {
+    customHeadings.push({ depth: 2, slug: 'builders', text: '构建者' });
+    digestData.twitterBuilders.forEach((entry: any, index: number) => {
+      customHeadings.push({ depth: 3, slug: `entry-${index + 1}`, text: `${String(index + 1).padStart(2, '0')} ${entry.name}` });
+    });
+  }
+  
+  let currentOffset = (digestData.twitterBuilders?.length || 0);
+  
+  if (digestData.blogs && digestData.blogs.length > 0) {
+    customHeadings.push({ depth: 2, slug: 'blogs', text: '官方博客' });
+    digestData.blogs.forEach((entry: any, index: number) => {
+      customHeadings.push({ depth: 3, slug: `entry-${currentOffset + index + 1}`, text: `${String(currentOffset + index + 1).padStart(2, '0')} ${entry.name || entry.title}` });
+    });
+  }
+  
+  currentOffset += (digestData.blogs?.length || 0);
+  
+  if (digestData.podcasts && digestData.podcasts.length > 0) {
+    customHeadings.push({ depth: 2, slug: 'podcasts', text: '播客' });
+    digestData.podcasts.forEach((entry: any, index: number) => {
+      customHeadings.push({ depth: 3, slug: `entry-${currentOffset + index + 1}`, text: `${String(currentOffset + index + 1).padStart(2, '0')} ${entry.name || entry.title}` });
+    });
+  }
+  
+  if (digestData.roleSuggestions && digestData.roleSuggestions.length > 0) {
+    customHeadings.push({ depth: 2, slug: 'relevance', text: '🎯 和你有关' });
+  }
+}
+
+const finalHeadings = digestData ? customHeadings : headings;
+const shouldShowTOC = !hideTOC && siteConfig.tableOfContents.enabled && finalHeadings.length > 0;
+const toc = shouldShowTOC ? await generateTOC(finalHeadings) : [];
 
 // Get adjacent posts for navigation
 const { prev: prevPost, next: nextPost } = getAdjacentPosts(visiblePosts, post.id);
@@ -204,62 +253,70 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
         <!-- Post content wrapper -->
         <div class={`p-6 ${siteConfig.postOptions.showPostCardCoverImages !== 'none' && post.data.image && post.data.hideCoverImage !== true ? 'rounded-b-lg' : 'rounded-lg'}`}>
           <!-- Post header -->
-          <header class="mb-4">
-          <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
-            {post.data.title}
-          </h1>
+          {!digestData && (
+            <header class="mb-4">
+            <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
+              {post.data.title}
+            </h1>
 
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-primary-600 dark:text-primary-300 mb-6">
-            <time datetime={post.data.date.toISOString()} class="font-medium">
-              <span class="hidden sm:inline">
-                {formatDate(post.data.date)}
-              </span>
-              <span class="sm:hidden">
-                {formatDateMobile(post.data.date)}
-              </span>
-            </time>
-
-            {siteConfig.postOptions.readingTime && readingTime && (
-              <>
-                <span class="text-primary-300 dark:text-primary-600 hidden sm:inline">•</span>
-                <span class="text-primary-300 dark:text-primary-600 sm:hidden">•</span>
-                <span>
-                  <span class="hidden sm:inline">{readingTime.text && readingTime.text !== 'read0' && readingTime.text !== '' ? readingTime.text : '1 min read'}</span>
-                  <span class="sm:hidden">{getReadingTimeMobile(readingTime)}</span>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-primary-600 dark:text-primary-300 mb-6">
+              <time datetime={post.data.date.toISOString()} class="font-medium">
+                <span class="hidden sm:inline">
+                  {formatDate(post.data.date)}
                 </span>
-              </>
-            )}
-
-            {siteConfig.postOptions.wordCount && wordCount !== undefined && (
-              <>
-                <span class="text-primary-300 dark:text-primary-600 hidden sm:inline">•</span>
-                <span class="text-primary-300 dark:text-primary-600 sm:hidden">•</span>
-                <span class="min-w-0">
-                  <span class="hidden sm:inline">{wordCount === 1 ? '1 word' : `${wordCount} words`}</span>
-                  <span class="sm:hidden">{wordCount === 1 ? '1 word' : `${wordCount.toLocaleString()} words`}</span>
+                <span class="sm:hidden">
+                  {formatDateMobile(post.data.date)}
                 </span>
-              </>
-            )}
-          </div>
+              </time>
 
-          {siteConfig.postOptions.tags && post.data.tags && post.data.tags.length > 0 && (
-            <div class="flex flex-wrap gap-2 mb-8">
-              {post.data.tags.map(tag => (
-                <a
-                  href={`/posts/tag/${encodeURIComponent(tag)}`}
-                  class="text-xs text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 transition-colors hover:bg-highlight-100 dark:hover:bg-highlight-800"
-                >
-                  {tag}
-                </a>
-              ))}
+              {siteConfig.postOptions.readingTime && readingTime && (
+                <>
+                  <span class="text-primary-300 dark:text-primary-600 hidden sm:inline">•</span>
+                  <span class="text-primary-300 dark:text-primary-600 sm:hidden">•</span>
+                  <span>
+                    <span class="hidden sm:inline">{readingTime.text && readingTime.text !== 'read0' && readingTime.text !== '' ? readingTime.text : '1 min read'}</span>
+                    <span class="sm:hidden">{getReadingTimeMobile(readingTime)}</span>
+                  </span>
+                </>
+              )}
+
+              {siteConfig.postOptions.wordCount && wordCount !== undefined && (
+                <>
+                  <span class="text-primary-300 dark:text-primary-600 hidden sm:inline">•</span>
+                  <span class="text-primary-300 dark:text-primary-600 sm:hidden">•</span>
+                  <span class="min-w-0">
+                    <span class="hidden sm:inline">{wordCount === 1 ? '1 word' : `${wordCount} words`}</span>
+                    <span class="sm:hidden">{wordCount === 1 ? '1 word' : `${wordCount.toLocaleString()} words`}</span>
+                  </span>
+                </>
+              )}
             </div>
+
+            {siteConfig.postOptions.tags && post.data.tags && post.data.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-8">
+                {post.data.tags.map(tag => (
+                  <a
+                    href={`/posts/tag/${encodeURIComponent(tag)}`}
+                    class="text-xs text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 transition-colors hover:bg-highlight-100 dark:hover:bg-highlight-800"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </div>
+            )}
+          </header>
           )}
-        </header>
 
         <!-- Article content -->
-        <div class="prose dark:prose-dark max-w-none" id="post-content">
-          <Content />
-        </div>
+        {digestData ? (
+          <div id="post-content">
+            <DigestView digest={digestData} post={post} readingTime={readingTime} wordCount={wordCount} />
+          </div>
+        ) : (
+          <div class="prose dark:prose-dark max-w-none" id="post-content">
+            <Content />
+          </div>
+        )}
 
         {siteConfig.postOptions.linkedMentions.enabled && (
           <LinkedMentions currentSlug={post.id} />

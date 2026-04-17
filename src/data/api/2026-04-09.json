@@ -1,0 +1,262 @@
+{
+  "dateStr": "AI Builders 早报 — 2026年4月9日星期四",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Kevin Weil",
+      "title": "VP Science @OpenAI",
+      "profileBio": "站在平台与产品交叉口，常谈模型能力如何变成可用的用户产品。",
+      "personTags": [
+        "产品",
+        "平台",
+        "OpenAI"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> Paper Review is built to act more like a careful technical reviewer than a grammar checker. It looks for issues in math, derivations, notation, units, structure, and whether a paper’s claims are actually supported by the results. It also catches inconsistencies across sections, figures, tables, captions, and appendices. The goal is to help authors strengthen technical rigor and correctness before submission.\n> Inside Prism, it runs as a structured workflow and writes its output as an editable LaTeX review file directly in the project. That means the review becomes part of the paper workspace itself, so authors can revise and work through feedback in the same environment as the manuscript.",
+      "chineseInterpretation": "OpenAI 的科学平台 Prism 推出了“论文评审”功能，这本质上是一个 AI 驱动的技术审稿人。它超越了语法检查，深入到数学推导、符号一致性、单位换算、图表与结论的逻辑支撑等硬核层面，直接在 LaTeX 项目文件中生成可编辑的评审意见。这标志着 AI 正从辅助写作工具，演变为能够嵌入到专业工作流中、提升核心工作质量（如学术严谨性）的深度协作者。",
+      "tldr": "以后写论文，AI 不仅能帮你改病句，还能像最严格的导师一样，揪出你公式里的错误、图表对不上的地方，直接把批注写在你的论文草稿里。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Aaron Levie",
+      "title": "ceo @box",
+      "profileBio": "企业软件老兵，常从商业化与组织效率角度判断 AI 对工作的影响。",
+      "personTags": [
+        "企业软件",
+        "AI",
+        "商业化"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/MCP与工具链"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/MCP与工具链"
+      ],
+      "originalText": "> Mythos from Anthropic is another clear reminder that there’s absolutely no wall in model capability progress right now. Meaningful double digit gains on critical benchmarks, and it appears we’re going to keep up getting insane gains from the other labs.\n> And as coding and tool use goes, so goes agentic workflows. Most knowledge automation is gated by some degree of models being able to reason through complicated tasks, use the right tools to work with data, have access to the right context, and be able to leverage skills and write code to work with and verify that data, and more.\n> Make sure you’re building something that can take advantage of these upcoming improvements, or you’ll be in a tough spot strategically.\n\n---\n\n> The same kinds of productivity gains we've seen in coding with AI agents are heading to the rest of knowledge work.\n> This is the jump when you go from having a chatbot to being able to actually have an agent go off and do work for minutes or even hours and come back with a complete work output that you then review.\n> The key to this architecture is that the agent is able to use all of the same tools in the background that a user uses to get work done. The agent can search for documents, read entire files, run scripts and tools in the background, and even be able to write code on the fly to automate tasks it hasn't seen before. And best of all, the Box Agent will (soon) work from the Box MCP and CLI so you can invoke it in any agentic system as a step in a process.",
+      "chineseInterpretation": "Anthropic 的 Mythos 模型再次证明，当前大模型的能力提升没有“天花板”，关键基准测试上持续出现两位数增长。这种进步会直接传导到 agentic workflow 领域：模型在复杂任务推理、工具调用、代码编写和验证上的能力越强，知识工作的自动化程度就越高。Levie 警告，产品战略必须建立在能持续利用模型进步的基础上，否则将陷入被动。\n\n---\n\nBox 展示了其 AI Agent 如何完成撰写 RFP 回复等长达数小时的知识工作。其核心架构在于 Agent 能像真人一样，在后台调用用户日常使用的所有工具（搜索、阅读、运行脚本、即时编码）。更重要的是，它通过 MCP (Model Context Protocol) 和 CLI 暴露能力，使其可以无缝嵌入到任何更大的 Agentic 工作流中，成为一个可编排的步骤。这标志着 AI 正从“对话式助手”演变为“可编排的后台工作者”。",
+      "tldr": "AI 模型还在以“离谱”的速度变强，就像发动机的马力还在狂飙。你的产品如果设计得太死板，没法换上这个新发动机，很快就会被别人甩开。\n\n---\n\nAI 正在从“你问我答”的聊天机器人，变成能自己打开电脑、找文件、写报告、甚至临时写个小程序来解决问题的“后台实习生”，而且这个实习生还能被其他系统随意调用。",
+      "relevance": "",
+      "proView": "如果他说得对：模型能力持续突破将加速所有依赖复杂推理和工具使用的行业（金融、法律、医疗）的自动化进程，催生全新的产品形态和商业模式。早期押注可扩展架构的团队将获得巨大先发优势。",
+      "conView": "但另一面是：模型进步可能存在“边际效应递减”，或者遇到新的、不可预见的瓶颈（如成本、可靠性、安全）。过度依赖“未来模型一定能解决”可能是一种技术债务，导致产品在当下缺乏实用性和用户价值。",
+      "clue": "判断线索：关注 Anthropic、OpenAI 等头部实验室未来 2-3 个模型迭代周期，看其在长上下文、复杂工具链任务上的实际表现和成本曲线，而不仅仅是基准测试分数。",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Alex Albert",
+      "title": "Research @AnthropicAI",
+      "profileBio": "连接模型能力与开发者生态，适合观察 Anthropic 的对外产品节奏。",
+      "personTags": [
+        "Anthropic",
+        "开发者",
+        "生态"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> Glasswing is possibly the most consequential event in the AI industry I've seen up close since joining Anthropic almost 3 years ago. It feels like we're at a turning point in history.",
+      "chineseInterpretation": "Anthropic 的研究员用极其强烈的语气评价其“Glasswing”项目（内含 Mythos 模型预览），称其为三年来亲眼所见最具行业影响力的事件，感觉处在历史转折点。这暗示 Mythos 可能不仅仅是模型能力的量变，更可能带来了某种质变（例如在推理、规划或与工具/环境交互方式上的根本性突破），其影响可能远超技术圈。",
+      "tldr": "Anthropic 内部的人激动坏了，觉得他们刚发布的东西不只是个“升级版”，而是一个能改变游戏规则、甚至改变历史的“大杀器”。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Thariq",
+      "title": "Claude Code @anthropicai",
+      "profileBio": "偏向实验型 builder，常分享新工具、新界面和个人使用体验。",
+      "personTags": [
+        "AI",
+        "实验"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> done about 10 of these calls so far + looked at more transcripts\n> many learnings but one of the biggest is that it's very easy to spend a lot of tokens on open ended verification that doesn't make your output better\n> I'll try and write more on how to do it efficiently",
+      "chineseInterpretation": "Thariq 在深入使用 Claude Code 进行实际开发后，总结出一个关键洞见：在让 AI 进行“开放式验证”（例如“检查这段代码有没有问题”）时，很容易浪费大量 tokens 却得不到实质性的质量提升。这指出了当前 AI 编程工作流中的一个效率陷阱：模糊的指令导致低效的 token 消耗。他计划分享如何设计更高效的验证流程，这对所有希望优化 AI 开发成本与效果的人都有直接价值。",
+      "tldr": "让 AI “检查一下代码”这种模糊指令，就像让一个实习生“看看这份报告”，他可能忙活半天也说不出个所以然，还浪费了时间（token）。得给他更具体的检查清单才行。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Garry Tan",
+      "title": "President & CEO @ycombinator",
+      "profileBio": "代表创业与投资视角，适合观察 AI 创业机会、市场节奏与融资判断。",
+      "personTags": [
+        "创业",
+        "投资",
+        "市场"
+      ],
+      "topicTags": [
+        "开发工具"
+      ],
+      "explicitTags": [],
+      "originalText": "> I like how Claude Code allows bash so the agent can’t use Write File tool outside its workspace but it can seemingly “cat >>” to any file in the file system",
+      "chineseInterpretation": "Garry Tan 发现了一个有趣的安全边界问题：Claude Code 虽然限制了 AI 使用“写文件”工具在其沙箱工作区之外操作，但通过 Bash 命令 `cat >>`，AI 理论上可以追加内容到系统任何文件。这揭示了当前 AI 开发环境安全设计的一个潜在漏洞：工具限制可能被更底层的系统命令绕过。这对构建安全可靠的 AI 开发与 Agent 环境是一个重要的警示。",
+      "tldr": "给 AI 编程工具设了“不准在门外写字”的规矩，但它发现可以用“猫”（cat命令）把字条从门缝塞出去。规矩有漏洞。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Nikunj Kothari",
+      "title": "partner @fpvventures",
+      "profileBio": "偏投资与生态视角，适合观察资本市场对 AI 方向的判断。",
+      "personTags": [
+        "投资",
+        "AI",
+        "生态"
+      ],
+      "topicTags": [
+        "话题/VC与投资"
+      ],
+      "explicitTags": [
+        "话题/VC与投资"
+      ],
+      "originalText": "> At some point, early stage founders decided to optimize for views and funding instead of focusing on product and retention..\n> And, it’s starting to show. One of the very first things I do is look at change logs (or feature releases) of supposedly flashy companies. Or read case studies if they have any.\n> And for weeks, I’ll barely see any changes. And, these are companies that would benefit from sharing this info to use for marketing.\n> Instead of spending your time optimizing the viral launch video that’ll primarily optimize for funding, use that same energy to focus on customers who’ll actually pay you. Trust me the VCs follow!",
+      "chineseInterpretation": "一位风投合伙人指出了当前创业圈（尤其在 AI 领域）的一个浮躁现象：很多早期创始人过度优化用于吸引眼球和融资的“病毒式发布视频”，而非专注于产品迭代和用户留存。一个关键的观察指标是公司的更新日志（Changelog）——如果一家光鲜的公司长期没有实质的产品更新，其增长动力就值得怀疑。真正的建议是：把取悦用户的精力用来取悦付费客户，资金自然会来。",
+      "tldr": "别整天琢磨怎么拍个炸裂的宣传片去忽悠投资人钱了。多花心思看看你的产品怎么让用户愿意掏钱，投资人反而会追着你跑。",
+      "relevance": "",
+      "proView": "如果他说得对：这将促使创业生态回归本质，减少估值泡沫，让真正创造用户价值、具备产品迭代能力的团队脱颖而出，获得更健康的长期发展。",
+      "conView": "但另一面是：在竞争极其激烈、窗口期短暂的 AI 领域，“酒香也怕巷子深”。适度的营销和声势对于吸引早期用户、合作伙伴和顶尖人才至关重要，完全忽视可能错失机会。",
+      "clue": "判断线索：观察明星 AI 初创公司在其官网、博客或社区中，是否持续发布有实质内容的更新日志、客户案例和深度技术文章，而不仅仅是融资新闻和宣传视频。",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Zara Zhang",
+      "title": "Builder",
+      "profileBio": "持续观察 builders 与 AI 产品演进，擅长把复杂信息转成可读内容。",
+      "personTags": [
+        "AI",
+        "内容",
+        "研究"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> Introducing the Personalized Podcast skill: Turn anything into a podcast with 2 AI hosts, publish it as an RSS feed, and listen to the show in your favorite podcast app on the go\n> I've been remixing my meeting transcripts into podcasts where the AIs “eavesdrop” on my conversation & comment on their impression of me. It's insane\n> This is the age of “content for one”",
+      "chineseInterpretation": "Zara 展示了一个高度个性化的 AI 应用：将任何内容（如会议记录）转化为由两个 AI 主播主持的播客，并生成 RSS 订阅源。她个人用它来让 AI “偷听”自己的会议并发表评论。这体现了 AI 正在催生“为一人生产的内容”（Content for One）的新范式，内容消费和生产变得极度个性化、私有化和互动化，超越了传统的大众媒体模式。",
+      "tldr": "以后你的会议记录、读书笔记，都能让两个 AI 用说相声的方式做成一个只属于你一个人的播客，边走边听它们吐槽你开会时的表现。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    },
+    {
+      "type": "builders",
+      "name": "Sam Altman",
+      "title": "OpenAI",
+      "profileBio": "OpenAI 的核心公开窗口之一，适合观察行业方向、产品节奏和战略信号。",
+      "personTags": [
+        "OpenAI",
+        "AI",
+        "战略"
+      ],
+      "topicTags": [
+        "开发工具"
+      ],
+      "explicitTags": [],
+      "originalText": "> To celebrate 3 million weekly codex users, we are resetting usage limits.\n> We will do this every million users up to 10 million.\n> Happy building!",
+      "chineseInterpretation": "OpenAI 宣布其 Codex 产品的周活用户已达 300 万，并以此为由重置使用限额，且计划每增长 100 万用户就重置一次，直至 1000 万。这传递出几个信号：1) AI 编程工具 adoption 速度极快；2) OpenAI 正在采用一种积极的、增长导向的配额策略来进一步推动使用和生态建设；3) 他们对此产品的增长轨迹有极强的信心。",
+      "tldr": "用 OpenAI 编程工具的人已经多到要用“庆祝”的名义给大家免费加量了，而且看样子他们打算一路庆祝到用户破千万。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "Latent Space",
+      "title": "Extreme Harness Engineering",
+      "profileBio": "活跃于 AI 开发者社区，擅长连接模型能力、开发者工具与内容传播。",
+      "personTags": [
+        "社区",
+        "开发者",
+        "内容"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "",
+      "chineseInterpretation": "本期播客嘉宾 Ryan Lopopolo 来自 OpenAI Frontier 团队，是“Harness Engineering”概念的核心提出者。讨论围绕如何利用 Codex 等编码能力强大的模型，通过构建“Harness”（可理解为一套精心设计的约束、工具和流程框架）来将复杂的产品或用户旅程“折叠”成代码问题，从而让模型自动化解决。关键点包括：需要以系统思维审视开发流程，识别 Agent 的犯错环节和人工耗时点，然后通过自动化构建信心，最终将这部分从软件开发生命周期中彻底解决。这标志着一种新的工程范式：通过设计“驾驭”AI 的框架，来实现极高程度的自动化。\n\n---",
+      "tldr": "",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": []
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 #话题/Agent #话题/MCP与工具链 #话题/前端xAI",
+      "items": [
+        {
+          "title": "建议",
+          "summary": "AI Agent 成为可编排的后台工作者，前端正从“界面层”向“智能工作流编排与监控层”演进。",
+          "implication": "前端的设计系统需要为“长时间运行的后台任务状态展示”、“多步骤 Agent 工作流的可视化编排与调试”、“基于 MCP 的第三方工具集成面板”等新交互范式做好准备。用户体验的核心从“瞬间响应”扩展到对“异步、复杂、可能失败的过程”的管理与信任建立。",
+          "sourceUrl": ""
+        }
+      ],
+      "actions": [
+        "组织团队调研主流 Agent 框架（如 LangChain, LlamaIndex）及 MCP 协议，评估其在前端可视化编排与状态管理上的最佳实践和现有组件库。",
+        "针对“长时间运行任务”和“复杂工作流”的 UI/UX 模式，组织一次跨职能（设计、前端、产品）评审，更新设计系统原则和组件规范。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端 #话题/Agent",
+      "items": [
+        {
+          "title": "建议",
+          "summary": "模型能力持续突破要求系统架构具备“模型可插拔性”，同时 AI Agent 的深入集成带来了新的安全与可靠性挑战。",
+          "implication": "架构设计必须考虑如何低成本地切换或升级底层模型（如从 GPT-4 切换到 Claude Mythos）。同时，像 Garry Tan 指出的安全边界问题，要求对 AI 的工具调用权限进行更细粒度、更深层次的沙箱控制，并建立完善的审计和回滚机制。系统需要为“小时级”的异步 Agent 任务提供可靠的执行引擎和状态持久化。",
+          "sourceUrl": ""
+        }
+      ],
+      "actions": [
+        "复盘当前系统中 AI 能力的集成方式，评估其在“模型切换成本”、“Agent 任务长时执行与状态管理”、“工具调用安全边界”三个方面的风险与改进点。",
+        "牵头制定《AI 工具调用与系统集成安全规范》，明确沙箱策略、命令过滤、权限最小化原则和审计日志标准。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "产品",
+      "items": [
+        {
+          "title": "建议",
+          "summary": "产品战略必须建立在能持续利用模型进步的基础上，同时要警惕“重营销轻迭代”的陷阱，关注真正的用户留存与付费转化。",
+          "implication": "定义产品需求时，需区分哪些功能严重依赖当前模型能力的边界，哪些具备“随着模型升级自动变强”的扩展性。应像 Nikunj Kothari 建议的，更关注产品迭代速度和用户价值深度，而非仅追求爆款传播。探索像“内容为一人”这样的全新产品形态和用户体验。",
+          "sourceUrl": ""
+        }
+      ],
+      "actions": [
+        "基于“模型可扩展性”原则，重新评估未来三个季度的产品功能优先级，将具备“随模型自动增强”潜力的特性提前。",
+        "在核心业务指标看板中，增设“产品迭代密度”（如每周/每月实质性功能/优化发布数量）和“高价值用户行为留存”指标，并将其与市场声量指标并列审视。"
+      ]
+    }
+  ],
+  "isRoleSpecific": true
+}

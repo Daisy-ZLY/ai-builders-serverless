@@ -1,0 +1,137 @@
+---
+import TagGroup from './TagGroup.astro';
+
+export interface Props {
+  entry: any;
+  index: number;
+  isFeatured?: boolean;
+  linkText?: string;
+}
+
+const { entry, index, isFeatured = false, linkText = '原文链接 →' } = Astro.props;
+
+const hasProfile = entry.title || entry.profileBio || (entry.personTags && entry.personTags.length > 0);
+const hasDialectic = entry.proView || entry.conView || entry.clue;
+
+const escapeHTML = (str: string) => {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+};
+
+const renderMarkdown = (text: string) => {
+  if (!text) return '';
+  let html = escapeHTML(text);
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  html = html.replace(/\n\n/g, '</p><p>');
+  html = html.replace(/\n/g, '<br>');
+  return html;
+};
+
+// Open details by default on desktop. For SSR, we can't detect window.innerWidth,
+// but we can set a class and use CSS to handle responsive details if needed, 
+// or just leave it open by default. The Vue app used `isDesktop` to set `:open`.
+// We'll just leave it open for now, or use a CSS media query approach.
+---
+
+<div class={`entry ${isFeatured ? 'is-featured' : ''}`} id={`entry-${index}`}>
+  <span class="entry-num">{String(index).padStart(2, '0')}</span>
+  <div class="entry-lead">
+    <div class="entry-author-wrap">
+      <div class="entry-author">{entry.name}</div>
+      {hasProfile ? (
+        <details class="entry-profile-card">
+          <summary class="profile-card-label">了解更多</summary>
+          <div class="profile-card-body">
+            {entry.title && <div class="profile-card-role">{entry.title}</div>}
+            {entry.profileBio && <p>{entry.profileBio}</p>}
+            {entry.personTags && entry.personTags.length > 0 && (
+              <TagGroup tags={entry.personTags} label="人物" variant="person" />
+            )}
+          </div>
+        </details>
+      ) : (
+        entry.title && <span class="entry-role">{entry.title}</span>
+      )}
+    </div>
+    
+    {entry.topicTags && entry.topicTags.length > 0 && (
+      <TagGroup tags={entry.topicTags} variant="topic" />
+    )}
+    
+    {entry.tldr && (
+      <div class="entry-tldr">
+        <p set:html={renderMarkdown(entry.tldr)}></p>
+      </div>
+    )}
+    
+    {/* Using open attribute by default, but we can manage it via CSS or client-side JS if needed */}
+    <details class="responsive-details" open>
+      <summary class="details-toggle">详细解读</summary>
+      <div class="details-content">
+        {entry.chineseInterpretation && (
+          <div class="entry-section">
+            <div class="dialectic-title">📝 详细解读</div>
+            <div class="entry-section-body"><p set:html={renderMarkdown(entry.chineseInterpretation)}></p></div>
+          </div>
+        )}
+        
+        {hasDialectic && (
+          <div class="entry-reasoning">
+            <div class="dialectic">
+              <div class="dialectic-title">💡 辩证视角</div>
+              <div class="dialectic-grid">
+                {entry.proView && (
+                  <div class="dialectic-card pro-card">
+                    <span class="d-label green">✅ 如果说对了</span>
+                    <p set:html={renderMarkdown(entry.proView.replace(/^如果他说得对[：:]\s*/, ''))}></p>
+                  </div>
+                )}
+                {entry.conView && (
+                  <div class="dialectic-card con-card">
+                    <span class="d-label red">⚠️ 但另一面</span>
+                    <p set:html={renderMarkdown(entry.conView.replace(/^但另一面是[：:]\s*/, ''))}></p>
+                  </div>
+                )}
+              </div>
+              {entry.clue && (
+                <div class="dialectic-clue">
+                  <span class="clue-label">🎯 判断线索</span>
+                  <p set:html={renderMarkdown(entry.clue.replace(/^判断线索[：:]\s*/, ''))}></p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+        
+        {entry.links && entry.links.length > 0 && (
+          <div class="entry-source">
+            <a href={entry.links[0]} target="_blank" rel="noopener">{linkText}</a>
+          </div>
+        )}
+      </div>
+    </details>
+  </div>
+</div>
+
+<script>
+// Client-side script to handle responsive details
+function updateResponsiveDetails() {
+  const isDesktop = window.innerWidth >= 768;
+  document.querySelectorAll('.responsive-details').forEach((el) => {
+    if (isDesktop) {
+      el.setAttribute('open', '');
+    } else {
+      el.removeAttribute('open');
+    }
+  });
+}
+
+// Run on load and resize
+window.addEventListener('DOMContentLoaded', updateResponsiveDetails);
+window.addEventListener('resize', updateResponsiveDetails);
+</script>

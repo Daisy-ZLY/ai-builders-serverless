@@ -1,0 +1,94 @@
+{
+  "dateStr": "2026年3月31日 — AI Builders 早报",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Claude",
+      "title": "Anthropic 官方 AI 助手",
+      "profileBio": "用于观察 Anthropic 在产品能力、品牌叙事和面向用户发布上的节奏。",
+      "personTags": [
+        "Anthropic",
+        "产品",
+        "品牌"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "originalText": "> Computer use is now in Claude Code. Claude can open your apps, click through your UI, and test what it built, right from the CLI. Now in research preview on Pro and Max plans.",
+      "chineseInterpretation": "Anthropic 把 computer use 能力集成进了 Claude Code CLI。这意味着 Claude 写完代码后，能自己打开应用、操作 UI、验证功能是否正确。这是 AI 编程工具从\"生成代码\"走向\"端到端交付\"的关键一步。目前是 research preview，仅限 Pro 和 Max 用户。",
+      "tldr": "以前 AI 帮你写完代码，你得自己打开浏览器看对不对。现在 Claude 能自己打开程序、像真人一样点点点测试，发现不对还能自己改。",
+      "relevance": "",
+      "proView": "如果这真的好用：AI 编程的反馈闭环就完整了。开发者不再需要手动验证 AI 写的每一行代码，审查负荷大幅降低，对前端 UI 开发场景尤其显著。",
+      "conView": "但另一面是：computer use 目前的精度和速度都有限，复杂的 SPA 或多步交互场景中可能频繁出错。如果 AI 自测通过但实际有 bug，反而制造\"虚假安全感\"，比没有自测更危险。",
+      "clue": "判断线索：关注社区接下来两周的实际反馈，重点看 computer use 在非 demo 级复杂度项目中的成功率。",
+      "links": [
+        "https://x.com/claudeai/status/2038663014098899416"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "Mike Krieger",
+      "title": "Instagram 联合创始人，现 Anthropic 产品负责人",
+      "profileBio": "",
+      "personTags": [],
+      "topicTags": [
+        "话题/产品与策略",
+        "话题/AI思维方式"
+      ],
+      "explicitTags": [
+        "话题/产品与策略",
+        "话题/AI思维方式"
+      ],
+      "originalText": "> The models today are good at adding features. They're not necessarily good about figuring out what to cut out of the product. You can get it to go zero to end pretty quickly over the matter of hours. It's made a lot of decisions along the way. And some of the intuitions you build about what are the right things to put in there, I think you build over time. I feel like that is the art and science of software design in 2026.",
+      "chineseInterpretation": "Mike Krieger 指出了 AI 时代产品开发的核心悖论：模型擅长加功能，不擅长做减法。你可以用 AI 在几小时内从零搓出一个\"完整\"产品，但过程中 AI 默默做了大量设计决策，而判断哪些该留、哪些该砍，仍然是人类的核心价值。2026 年软件设计的关键不在于能不能做出来，而在于知道什么不该做。",
+      "tldr": "AI 现在几小时就能搓出一个完整 App，但它什么功能都往里塞。真正值钱的是那个知道该删掉什么的人。",
+      "relevance": "",
+      "proView": "如果他说得对：产品经理和设计师的价值会急剧上升，因为\"做减法\"需要审美、用户同理心和商业判断，这些恰好是 AI 最弱的地方。工程师如果只会\"做加法\"，会越来越容易被 AI 替代。",
+      "conView": "但另一面是：Krieger 自己在 Anthropic 做产品，有动机强调\"人类判断\"的不可替代性。而且随着 AI 能力提升，\"什么该砍\"这种决策也可能被模型学会。早期人们说 AI 不会写代码，后来说不会做设计，每次\"只有人类能做\"的边界都在后退。",
+      "clue": "判断线索：关注 AI 全自动搓出的产品 vs 有人类设计师介入的产品，在用户留存率和 NPS 上的差距。如果差距持续存在，说明做减法确实还需要人。",
+      "links": [
+        "https://youtube.com/watch?v=KRv9GpJYrUA"
+      ]
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端",
+      "items": [
+        {
+          "title": "探索 Computer Use 自动化测试",
+          "summary": "Claude Code 的 Computer Use 能力为 UI 自动化测试提供了新思路。",
+          "implication": "在前端提效项目中，可以考虑接入 Computer Use 来实现可靠的 UI 自测和验证闭环，替代部分脆弱的自建 E2E 脚本。",
+          "sourceUrl": "https://anthropic.com"
+        }
+      ],
+      "actions": [
+        "调研 Claude Code 的 Computer Use 在前端 UI 自动化测试中的接入方案。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "产品",
+      "items": [
+        {
+          "title": "做减法才是核心竞争力",
+          "summary": "AI 时代，决定产品质量的不是“AI 能写多少代码”，而是“知道哪些代码不该要”。",
+          "implication": "在推行 AI 提效和产品设计时，品味和审美（做减法）比堆砌功能更重要。这与建立“反模式库”的思路高度一致。",
+          "sourceUrl": "https://twitter.com/mikekrieger"
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "isRoleSpecific": true
+}

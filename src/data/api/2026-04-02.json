@@ -1,0 +1,140 @@
+{
+  "dateStr": "2026年4月2日 — AI Builders 早报",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Kevin Weil",
+      "title": "OpenAI 科学副总裁",
+      "profileBio": "站在平台与产品交叉口，常谈模型能力如何变成可用的用户产品。",
+      "personTags": [
+        "产品",
+        "平台",
+        "OpenAI"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> Not only is AI solving more open problems, its proofs are getting more elegant as the models improve.",
+      "chineseInterpretation": "Kevin Weil 强调的不是 AI 又多解出几道题，而是模型给出的 proof 也越来越像“有章法的推理”。这说明模型能力的提升，可能不只是搜索空间更大了，也可能体现在抽象、压缩和表达结构变得更强。对做数学推理、科研辅助和 reasoning eval 的团队来说，后面值得看的不只是正确率，还要看过程质量是不是在同步上升。",
+      "tldr": "AI 不只是更会做题，连“怎么把题讲明白”也越来越像高手了。以前更像蒙对，现在更像真懂。",
+      "relevance": "",
+      "proView": "如果他说得对：以后评估模型时，大家会更重视解题过程是否简洁、稳定、可复查，而不只是最后答对没答对。",
+      "conView": "但另一面是：proof 看起来更优雅，不一定代表模型真的更懂，也可能只是更会把答案包装得像样。语言变漂亮，和推理变可靠，不是同一件事。",
+      "clue": "判断线索：接下来关注数学和科学 benchmark 是否开始把 proof quality、可验证中间步骤纳入正式评估项。",
+      "links": [
+        "https://x.com/kevinweil/status/2039200605672284572"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aaron Levie",
+      "title": "Box CEO",
+      "profileBio": "企业软件老兵，常从商业化与组织效率角度判断 AI 对工作的影响。",
+      "personTags": [
+        "企业软件",
+        "AI",
+        "商业化"
+      ],
+      "topicTags": [
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "> The ultimate rate limiter on productivity gains from agents will be on critical stuff like security, compliance, governance, the ability to review the work of the agent, ensure that it’s compatible with regulations, and so on.\n>\n> We’ve been living in a little bit of la-la land around how much software enterprises are going to ultimately want to vibe code themselves. The last 48 hours represents a good example of why you won’t take on every risk of every piece of technology in your enterprise.\n>\n> There’s no free lunch with AI productivity. Companies will have the build up the systems, processes, and controls for ensuring that agents can’t run around and do anything they want on any data at any time.",
+      "chineseInterpretation": "Aaron Levie 的核心判断很明确：AI agent 带来的生产力上限，不取决于模型还能不能再强一点，而取决于企业能不能把 security、compliance、governance、review 这些护栏补齐。过去两天的安全事件，让“企业会大规模自己 vibe code”这件事显得更不现实。对大公司来说，真正要建设的不是单个 agent demo，而是一整套权限、审批、追溯和回滚机制。",
+      "tldr": "AI 能不能多干活，不只是看它聪不聪明，更看公司敢不敢放权。没有规矩和护栏，企业不会真的让 AI 到处乱跑。",
+      "relevance": "",
+      "proView": "如果他说得对：未来企业 AI 落地的主战场，会从“谁先接上模型”转到“谁先建好治理和审查系统”。",
+      "conView": "但另一面是：大公司的治理体系也可能反过来把 agent 效率吃掉，最后变成每一步都要批，真正跑得快的还是小团队。",
+      "clue": "判断线索：看接下来半年企业采购和内部试点，预算是不是更多流向 audit、policy、review workflow，而不只是模型调用额度。",
+      "links": [
+        "https://x.com/levie/status/2039216522028257549"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aditya Agarwal",
+      "title": "South Park Commons 合伙人，前 Dropbox CTO",
+      "profileBio": "常从技术、医疗和投资交叉视角分享 AI 行业判断与应用机会。",
+      "personTags": [
+        "AI",
+        "医疗科技",
+        "投资"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> Looking back, early Facebook's philosophy of \"fixing bugs in production\" sounded crazy to most people.\n>\n> Maybe the modern version of that is, just let your source code be public.\n>\n> If software is so dynamic, maybe this isn't so crazy.\n>\n> Or maybe it is totally batshit crazy.",
+      "chineseInterpretation": "Aditya Agarwal 抛出的其实不是一个立即可执行的建议，而是一个时代提问：当软件越来越动态、AI 参与开发越来越深时，源码是否还应该像过去那样被严格封闭。他把“线上修 bug”这类曾经离经叛道、后来变成常态的做法类比到“源码公开”上，想表达的是软件生产方式的边界可能还会继续后移。这个观点未必马上成立，但它确实在提醒大家，AI 时代的软件透明度和防御边界可能要重画。",
+      "tldr": "他在试探一个很猛的问题：以后源码会不会像今天的网页一样，越来越默认是“能被看见”的。",
+      "relevance": "",
+      "proView": "如果他说得对：软件行业会更强调执行速度、运行时防护和系统韧性，而不是把“源码保密”当成第一道护城河。",
+      "conView": "但另一面是：源码公开和可控透明不是一回事。很多企业系统的价值不仅在代码，还在业务逻辑、数据结构和攻击面，直接公开可能把风险放大得比收益更快。",
+      "clue": "判断线索：观察未来是不是会出现更多“默认对 AI 友好但不完全公开”的中间形态，比如受控访问、细粒度审计、可验证但不可任意复制的代码暴露机制。",
+      "links": [
+        "https://x.com/adityaag/status/2039198010681565665"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "Data Driven NYC",
+      "title": "一个人能否做出十亿美元公司？",
+      "profileBio": "长期跟踪 AI 市场地图与创业趋势，是投资视角的重要观察对象。",
+      "personTags": [
+        "投资",
+        "AI",
+        "市场"
+      ],
+      "topicTags": [
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "",
+      "chineseInterpretation": "这期分享围绕一个很激进的命题展开：agent 终于开始“能用”之后，公司组织形态会不会从多人协作，变成“1 个人 + 一堆 agent”。演讲者的思路不是自己做所有垂直 agent，而是把客服、财务、营销等 agent 交给别的团队去做，自己专注在更上层的 manager agent 和统一操作界面。这种分层很值得看，因为它更像一个 multi-agent 组织系统问题，而不只是单点自动化问题。",
+      "tldr": "以后真正值钱的，可能不是谁做了一个会干活的 AI 员工，而是谁做出了“管一群 AI 员工的 AI 主管”。",
+      "relevance": "",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://youtube.com/watch?v=rX3CxlGm-00"
+      ]
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端",
+      "items": [
+        {
+          "title": "将 Agent 治理工程化",
+          "summary": "可执行型 Agent 的权限边界、审查链路和回滚机制比引入新模型更重要。",
+          "implication": "在后端架构中引入 Agent 时，必须将其视为高风险的工程系统。优先建设沙箱隔离、操作审计日志和一键熔断机制。",
+          "sourceUrl": "https://twitter.com/levie"
+        }
+      ],
+      "actions": [
+        "为现有的后端 Agent 系统梳理权限边界，补充操作审计和回滚方案。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "产品",
+      "items": [
+        {
+          "title": "重新定义 Reasoning 的评估标准",
+          "summary": "评估 AI 推理能力不应只看最终结果的对错，中间过程的清晰度和可验证性同样重要。",
+          "implication": "在设计 AI 产品的交互时，需要将 Agent 的“思考过程”透明化地展示给用户，建立信任感并允许用户干预。",
+          "sourceUrl": "https://twitter.com/kevinweil"
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "isRoleSpecific": true
+}

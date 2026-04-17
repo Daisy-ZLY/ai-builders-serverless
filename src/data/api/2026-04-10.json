@@ -1,0 +1,231 @@
+{
+  "dateStr": "2026年4月10日 — AI Builders 早报",
+  "twitterBuilders": [
+    {
+      "type": "builders",
+      "name": "Andrej Karpathy",
+      "title": "AI 能力认知鸿沟：两个平行宇宙",
+      "profileBio": "顶级 AI 研究者与工程实践者，长期关注模型能力、训练范式与开发体验。",
+      "personTags": [
+        "研究",
+        "模型",
+        "工程"
+      ],
+      "topicTags": [
+        "话题/Agent"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "> \"There is a growing gap in understanding of AI capability... a lot of people tried the free tier of ChatGPT somewhere last year and allowed it to inform their views on AI a little too much... these free and old/deprecated models don't reflect the capability in the latest round of state of the art agentic models.\"\n>\n> \"It really is simultaneously the case that OpenAI's free 'Advanced Voice Mode' will fumble the dumbest questions in your Instagram's reels AND at the same time, OpenAI's highest-tier Codex model will go off for 1 hour to coherently restructure an entire code base, or find and exploit vulnerabilities in computer systems.\"\n>\n> \"Someone recently suggested to me that the reason OpenClaw moment was so big is because it's the first time a large group of non-technical people experienced the latest agentic models.\"",
+      "chineseInterpretation": "Karpathy 用两条推文构建了一幅完整的认知鸿沟图景。第一条是\"诊断\"：社会对 AI 能力的认知正在剧烈分裂——免费版用户觉得\"AI 不行\"，前沿 Agent 用户觉得\"AI 快超过我了\"。两组人在网上激烈对线，但说的完全不是同一件事。造成分裂的原因：(1) RL 训练需要可验证奖励，代码/数学天然适合；(2) B2B 场景价值更高，最多资源投在这里。第二条是\"解释\"：OpenClaw 之所以成为现象级事件，是因为它让非技术人群第一次体验了最新的 Agentic 模型——相当于 ChatGPT 2023 年爆火的\"Agent 版重演\"。",
+      "tldr": "你刷到的\"AI真蠢\"搞笑视频和你同事用 Codex 一小时重构整个代码库——说的是同一个\"AI\"，但根本不是同一个东西。OpenClaw 之所以炸裂，恰恰是因为普通人第一次摸到了\"前沿 Agent\"。",
+      "relevance": "如果你还在用免费版 ChatGPT 评估\"AI能做什么\"，你可能落后了一整个世代。花一周时间深度使用 Codex 或 Claude Code，在你的专业领域里跑完整任务，再形成判断。",
+      "proView": "如果他说得对：AI 的\"寒武纪大爆发\"已经发生了，OpenClaw 只是让更多人看到了光\n- 🔴 但另一面是：如果前沿能力只在技术领域拉开差距，那\"通用智能\"的承诺什么时候才能惠及普通用户？认知鸿沟本身就是一个危险信号",
+      "conView": "但另一面是：如果前沿能力只在技术领域拉开差距，那\"通用智能\"的承诺什么时候才能惠及普通用户？认知鸿沟本身就是一个危险信号",
+      "clue": "",
+      "links": [
+        "https://x.com/karpathy/status/2042334451611693415",
+        "https://x.com/karpathy/status/2042341482531864741"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Aaron Levie",
+      "title": "AI 采用的\"双城记\"：聊天 vs Agent",
+      "profileBio": "企业软件老兵，常从商业化与组织效率角度判断 AI 对工作的影响。",
+      "personTags": [
+        "企业软件",
+        "AI",
+        "商业化"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "Agent架构"
+      ],
+      "explicitTags": [
+        "话题/Agent"
+      ],
+      "originalText": "> \"AI adoption is a tale of two cities. On one end, users are interacting with AI via chat tools and on the other end people are deploying agents to do long running tasks that create and produce real work output or automate workflows.\"\n>\n> \"The former is super useful but the productivity gains are capped. The latter could be 100-200% productivity gains off the bat, and have no inherent upper limit as you have agents running in the background.\"\n>\n> \"Everyone is substantially underestimating the total demand for software and automation in areas that don't feel like 'software'... Most companies have not been able to bring automation to most areas of work because it's been too complex or costly... Now that agents bring down the cost, companies will light these projects up.\"",
+      "chineseInterpretation": "Box CEO Levie 在连续三条推文中构建了一个完整的框架：(1) \"双城记\"——聊天式 AI 和 Agent 式 AI 的产出差距是数量级的，但目前绝大部分用户还停留在聊天端；(2) \"隐藏需求\"——非技术公司（零售、制药、医疗）积压了十年的自动化需求，以前因为成本和技术限制做不了，现在 Agent 同时解决了这两个瓶颈；(3) \"落地挑战\"——合规管理、安全、上下文供给、遗留系统等\"棘手问题\"会让升级过程很慢，但这恰恰创造了巨大的新职位和新平台机会。",
+      "tldr": "大多数人在用 AI 聊天——有用，但天花板低。真正的暴击是让 Agent 在后台跑长任务，产出率可以 200%+，而且没有上限。更大的故事是：绝大多数公司从来没有能力自动化他们的工作流——不是不想，是太贵太难。AI Agent 把成本打下来了，一大堆\"从没被做过\"的项目要批量点亮了。",
+      "relevance": "如果你是技术人员，最大的金矿可能不在科技公司，而在帮传统行业（制药、零售、医疗、制造）落地 AI 自动化。另外，如果你还只是在\"和 AI 聊天\"，是时候思考怎么让 Agent 在后台为你跑长任务了。",
+      "proView": "如果他说得对：这是一个\"存量需求释放\"的故事——不是创造新需求，而是解锁了被压抑十年的万亿市场\n- 🔴 但另一面是：传统企业的数据孤岛、合规要求、组织惰性不会因为 Agent 来了就自动消失，\"点亮\"和\"落地\"之间可能有 3-5 年的鸿沟",
+      "conView": "但另一面是：传统企业的数据孤岛、合规要求、组织惰性不会因为 Agent 来了就自动消失，\"点亮\"和\"落地\"之间可能有 3-5 年的鸿沟",
+      "clue": "",
+      "links": [
+        "https://x.com/levie/status/2042392664943870443",
+        "https://x.com/levie/status/2042469771275329594"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Alex Albert & Claude",
+      "title": "Sonnet \"打电话给朋友\"：模型团队协作",
+      "profileBio": "",
+      "personTags": [],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> \"Allowing Sonnet to 'phone a friend' (i.e. call Opus) increases performance while also reducing total cost since it reduces tokens spent trying to solve more complex tasks.\"\n>\n> \"In evals, Sonnet with an Opus advisor scored 2.7 percentage points higher on SWE-bench Multilingual than Sonnet alone, while costing 11.9% less per task.\"\n>\n> \"Add the advisor tool to your Messages API call. When your Sonnet or Haiku agent hits a hard decision mid-run, it consults Opus, gets a plan, and continues, all within a single API request.\"",
+      "chineseInterpretation": "Anthropic 推出了 Advisor Tool（beta），在 Messages API 中让 Sonnet/Haiku 在遇到复杂决策时自动咨询 Opus，获得规划建议后继续执行。SWE-bench Multilingual 上 +2.7pp 的提升伴随 -11.9% 的成本——完美体现了\"小模型做执行、大模型做决策\"的分工哲学。技术实现上，这一切发生在单个 API 请求内部，开发者不需要自己搭建路由逻辑。这可能是目前最优雅的\"模型路由\"方案。",
+      "tldr": "Anthropic 搞了个\"考试时旁边坐学霸\"机制——Sonnet 遇到难题就问 Opus，效果更好，还更便宜。一切都在一次 API 请求里完成。",
+      "relevance": "如果你在用 Anthropic API 做 Agent 开发，立刻尝试 Advisor Tool。把 Opus 当\"技术总监\"，Sonnet 当\"执行工程师\"——成本和效果可以兼得。",
+      "proView": "如果他说得对：未来的 AI 系统不是单一模型，而是\"模型团队\"——不同能力等级的模型各司其职\n- 🔴 但另一面是：这依然是 Anthropic 的封闭方案。如果其他模型提供商不跟进，跨供应商的 Agent 系统怎么办？",
+      "conView": "但另一面是：这依然是 Anthropic 的封闭方案。如果其他模型提供商不跟进，跨供应商的 Agent 系统怎么办？",
+      "clue": "",
+      "links": [
+        "https://x.com/alexalbert__/status/2042329150086922574",
+        "https://x.com/claudeai/status/2042308629940855048"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Garry Tan",
+      "title": "GBrain：给你的个人 Agent 装上万级文件记忆",
+      "profileBio": "代表创业与投资视角，适合观察 AI 创业机会、市场节奏与融资判断。",
+      "personTags": [
+        "创业",
+        "投资",
+        "市场"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/开源"
+      ],
+      "originalText": "> \"If you want your OpenClaw or Hermes Agent to be able to have perfect total recall of all 10,000+ markdown files, GBrain is here to help. It's exactly my OpenClaw/Hermes Agent setup. MIT-licensed open source.\"\n>\n> \"GBrain works on Hermes Agent, paste the same install script and you're good to go.\"",
+      "chineseInterpretation": "Garry Tan 发布了 GBrain，一个专为个人 Agent 设计的知识库索引工具。解决的核心痛点：当前 Agent 的上下文窗口有限，无法真正\"了解你\"的全部笔记和文档。GBrain 让 Agent 对 10,000+ Markdown 文件实现\"完美回忆\"。MIT 开源，可部署在 Railway 上，同时支持 OpenClaw 和 Hermes Agent。这是 YC CEO 自己日常在用的配置——从\"吃自己的狗粮\"角度看，可信度极高。",
+      "tldr": "YC CEO 开源了他给自己 AI Agent 装的\"超级记忆\"——能让 Agent 完美记住上万个 Markdown 文件。OpenClaw、Hermes Agent 都能用，MIT 开源，一行命令安装。",
+      "relevance": "如果你在用 OpenClaw 或 Hermes Agent，直接去 GitHub 安装 GBrain（一行命令）。如果你在搭建自己的 Agent，GBrain 的架构值得参考——\"如何让 Agent 记住所有东西\"是每个人迟早都会遇到的问题。",
+      "proView": "如果他说得对：个人 Agent 的\"记忆\"问题有了简洁的开源方案，\"第二大脑\"从概念走向了可用\n- 🔴 但另一面是：10,000 个文件的检索质量取决于索引和 Embedding 算法，RAG 的经典问题（召回率 vs 精确率）在这里同样存在",
+      "conView": "但另一面是：10,000 个文件的检索质量取决于索引和 Embedding 算法，RAG 的经典问题（召回率 vs 精确率）在这里同样存在",
+      "clue": "",
+      "links": [
+        "https://x.com/garrytan/status/2042497872114090069"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Guillermo Rauch",
+      "title": "Agentic Infrastructure：云的第三次进化",
+      "profileBio": "前端平台与产品工程代表人物，常分享框架、体验和开发者平台思考。",
+      "personTags": [
+        "前端",
+        "平台",
+        "产品工程"
+      ],
+      "topicTags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "explicitTags": [
+        "话题/Agent",
+        "话题/前端xAI"
+      ],
+      "originalText": "> \"Agentic Infrastructure is the future of the cloud. ① For coding agents: infra that 'clicks' for your agents, not just devs. ② To deploy agents: Pages → Agents. Long-running compute, sandboxes, and our token delivery network. ③ Itself an agent: self-healing, self-optimizing, self-securing. The agent holds the pager.\"\n>\n> \"This is remarkable. One `npx shadcn init` every second. Gives a sense of the scale of new software creation.\"",
+      "chineseInterpretation": "Rauch 用两条推文展示了 Vercel 的战略转型和生态数据。第一条是战略：云基础设施的三重进化——(1) 为 Agent 服务的基础设施，(2) 部署 Agent 的平台，(3) 自身就是 Agent。这是继 Serverless 之后 Vercel 最大的叙事转型。第二条是数据：`shadcn init` 每秒执行一次——这意味着新软件项目的创建速度已经达到了工业化级别，AI 驱动的代码生成正在以前所未有的速度产生新的计算需求。",
+      "tldr": "Vercel CEO 说未来的云不是给人用的，是给 Agent 用的。而且云本身也会变成 Agent——自己修 bug、自己值班。另外，每秒有一个 `shadcn init` 在跑——新软件的诞生速度已经爆表了。",
+      "relevance": "如果你在构建 AI Agent 产品，\"部署到哪里运行\"正在变成关键决策。Vercel、Modal、Railway 等\"Agent-native\"平台值得关注。如果你在用 shadcn/ui，你是每秒诞生的那些新项目之一。",
+      "proView": "如果他说得对：从\"Pages → Agents\"的进化意味着一个全新的基础设施市场正在诞生\n- 🔴 但另一面是：AWS/Azure/GCP 也在做同样的事，Vercel 的差异化护城河需要更清晰的答案",
+      "conView": "但另一面是：AWS/Azure/GCP 也在做同样的事，Vercel 的差异化护城河需要更清晰的答案",
+      "clue": "",
+      "links": [
+        "https://x.com/rauchg/status/2042358253510963384",
+        "https://x.com/rauchg/status/2042294997278736552"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Josh Woodward (Google)",
+      "title": "Lyria 3：AI 音乐创作全面开放",
+      "profileBio": "",
+      "personTags": [],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> \"In under 50 days, over 100 million songs have been generated on @GeminiApp. To celebrate, we're unlocking the full power of our music model, Lyria 3. Generate up to 5 full-length tracks every day (~3 mins each). Hit your limit? Keep creating 30-second clips, or upgrade for more.\"",
+      "chineseInterpretation": "Google VP Josh Woodward 宣布 Lyria 3 在 Gemini 中全面开放。数据惊人：50 天内生成了 1 亿+首歌。这意味着 AI 音乐创作已经从\"技术演示\"进入\"大众消费\"阶段。免费用户每天 5 首完整曲目（~3分钟），超出后可继续创作 30 秒片段。这个定价策略（慷慨的免费层 + 升级选项）和 ChatGPT 的图像生成策略如出一辙——先用免费让全民上瘾，再转化付费。",
+      "tldr": "Google 的 AI 音乐模型 Lyria 3 全面开放了——每天免费生成 5 首完整歌曲（每首约3分钟）。50 天内已有超过 1 亿首歌被生成。",
+      "relevance": "如果你做内容创作、短视频、播客，Lyria 3 是一个值得立刻试用的工具——免费、完整曲目、每天5首。但请注意版权条款，商用前务必确认。",
+      "proView": "如果他说得对：AI 正在把\"创作音乐\"从专业技能变成日常行为，就像 iPhone 把\"拍照\"从专业技能变成日常行为一样\n- 🔴 但另一面是：1 亿首歌意味着什么？版权怎么算？职业音乐人的生存空间进一步被压缩？",
+      "conView": "但另一面是：1 亿首歌意味着什么？版权怎么算？职业音乐人的生存空间进一步被压缩？",
+      "clue": "",
+      "links": [
+        "https://x.com/joshwoodward/status/2042318148851188151"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Zara Zhang",
+      "title": "AI 最大的价值：帮你做不擅长的事",
+      "profileBio": "持续观察 builders 与 AI 产品演进，擅长把复杂信息转成可读内容。",
+      "personTags": [
+        "AI",
+        "内容",
+        "研究"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> \"I seldom use AI for writing because I actually enjoy writing and find it very easy & fun to do. And because I have a high bar for writing, if I use AI to write, it almost always ends up taking more time than if I had written it by myself (too many iterations). For me personally, AI has been most useful for helping me with things OUTSIDE my comfort zone (like coding), not inside of it (like writing).\"",
+      "chineseInterpretation": "Zara Zhang 分享了一个反直觉但深刻的个人实践：AI 不是用来\"增强你已有的强项\"的，而是用来\"补齐你的短板\"的。对于她擅长的写作，AI 的介入反而增加了迭代成本（因为她对质量有高标准，AI 达不到）。但对于她不擅长的编程，AI 是革命性的助手。这个视角对\"AI 如何融入个人工作流\"提供了一个极其实用的框架：不要在你最强的地方用 AI，要在你最弱的地方用 AI。",
+      "tldr": "Follow Builders 的创建者说：她几乎不用 AI 写作——因为她本来就擅长写作，AI 反而拖慢节奏。AI 对她最大的价值是帮她做\"不擅长\"的事（比如编程）。",
+      "relevance": "认真想想：你在哪些领域\"已经很强\"，在哪些领域\"明显不够\"？把 AI 的时间和预算集中在后者——这可能比\"全面使用 AI\"更高效。",
+      "proView": "如果她说得对：\"AI 补短板\"是一个比\"AI 增强全局\"更精准的心智模型，能帮你避免在错误的地方浪费时间\n- 🔴 但另一面是：随着模型能力提升，AI 在\"强项\"上也会逐渐追上人类专家，这个框架可能只适用于当前阶段",
+      "conView": "但另一面是：随着模型能力提升，AI 在\"强项\"上也会逐渐追上人类专家，这个框架可能只适用于当前阶段",
+      "clue": "",
+      "links": [
+        "https://x.com/zarazhangrui/status/2042379962339246105"
+      ]
+    },
+    {
+      "type": "builders",
+      "name": "Thariq",
+      "title": "Prompting 是永恒的高杠杆技能 + Monitor Tool",
+      "profileBio": "偏向实验型 builder，常分享新工具、新界面和个人使用体验。",
+      "personTags": [
+        "AI",
+        "实验"
+      ],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "> \"I think 'prompting' will keep being an incredibly high-leverage skill, like writing or public speaking. It is the skill of talking to agents, mediated by the harness.\"\n>\n> \"You'll need to explicitly prompt Claude Code to use it, but the Monitor Tool is super powerful. E.g. 'start my dev server and use the MonitorTool to observe for errors'.\"",
+      "chineseInterpretation": "Thariq（Claude Code 核心开发者）做了两个重要声明。第一，Prompting 的定位从\"临时技巧\"升级为\"基础能力\"——它是人类与 Agent 交互的\"媒介语言\"，和写作、演讲一样是可以持续磨练的高杠杆技能。这与 Levie 同日发的\"prompting 就像给新同事下清晰指令\"遥相呼应。第二，Monitor Tool 是 Claude Code 的杀手锏功能：让 AI 不只是写代码，还能\"看代码跑\"——启动 dev server 后持续观察错误日志，主动发现问题。",
+      "tldr": "Claude Code 核心开发者说：Prompting 不会过时，它和写作、演讲一样是永恒技能。另外 Claude Code 有个隐藏大招——Monitor Tool，让 AI 启动你的服务器并实时监控错误。",
+      "relevance": "在 Claude Code 里试试 Monitor Tool：`\"start my dev server and use the MonitorTool to observe for errors\"`。这相当于给 AI 一双\"眼睛\"——让它不只是写代码，还能看着代码跑起来怎么样。",
+      "proView": "如果他说得对：\"Prompt Engineer\"不是临时岗位，而是未来每个知识工作者的必备技能\n- 🔴 但另一面是：如果模型越来越聪明，Prompting 的\"技术含量\"会不断被模型进步稀释——就像你不需要精心组织语言就能和一个聪明人有效沟通",
+      "conView": "但另一面是：如果模型越来越聪明，Prompting 的\"技术含量\"会不断被模型进步稀释——就像你不需要精心组织语言就能和一个聪明人有效沟通",
+      "clue": "",
+      "links": [
+        "https://x.com/trq212/status/2042318547519762678",
+        "https://x.com/trq212/status/2042335178388103559"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "type": "podcasts",
+      "name": "Unsupervised Learning Ep 84",
+      "title": "OpenAI 首席科学家 Jakub Pachocki 深度访谈",
+      "profileBio": "",
+      "personTags": [],
+      "topicTags": [],
+      "explicitTags": [],
+      "originalText": "",
+      "chineseInterpretation": "OpenAI 首席科学家罕见地公开讨论了 AI 研究的现状和方向。以下是最关键的信息点：",
+      "tldr": "",
+      "relevance": "- 企业不需要自己训练模型，把 eval 和领域数据准备好喂入上下文就行\n- 模型很快能自主工作数天，但\"给它正确的上下文和工具访问\"仍是最大瓶颈\n- \"能与 AI 协作完成复杂研究\"将成为最稀缺的技能之一\n\n🎙️ https://www.youtube.com/@RedpointAI\n\n---",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "links": [
+        "https://www.youtube.com/@RedpointAI"
+      ]
+    }
+  ],
+  "relevanceIntro": "根据今日内容，值得你关注/尝试/警惕的：",
+  "roleSuggestions": [],
+  "isRoleSpecific": false
+}

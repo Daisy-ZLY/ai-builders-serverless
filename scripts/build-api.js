@@ -86,8 +86,8 @@ function parseMD(md) {
 }
 
 function main() {
-  const contentDir = 'content';
-  const outDir = 'docs/api';
+  const contentDir = 'src/content/posts';
+  const outDir = 'src/data/api';
   
   if (!fs.existsSync(outDir)) {
     fs.mkdirSync(outDir, { recursive: true });
@@ -115,15 +115,6 @@ function main() {
     const outPath = path.join(outDir, `${basename}.json`);
     fs.writeFileSync(outPath, JSON.stringify(data, null, 2), 'utf-8');
     console.log(`✅ 已生成: ${outPath}`);
-
-    // Copy raw markdown file
-    const mdOutDir = path.join('docs', 'md');
-    if (!fs.existsSync(mdOutDir)) {
-      fs.mkdirSync(mdOutDir, { recursive: true });
-    }
-    const mdOutPath = path.join(mdOutDir, `${basename}.md`);
-    fs.copyFileSync(path.join(contentDir, file), mdOutPath);
-    console.log(`✅ 已复制 Markdown: ${mdOutPath}`);
 
     // Add to index
     const allBuilders = [...data.twitterBuilders, ...data.blogs, ...data.podcasts];
