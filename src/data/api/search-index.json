@@ -1,7 +1,346 @@
 {
-  "generatedAt": "2026-04-17T09:07:45.077Z",
-  "totalEntries": 134,
+  "generatedAt": "2026-04-17T09:34:50.258Z",
+  "totalEntries": 155,
   "entries": [
+    {
+      "date": "2026-04-17",
+      "index": 1,
+      "name": "Swyx",
+      "title": "AI工程领域的核心分裂：快速迭代派与稳健工程派",
+      "tags": [
+        "话题/AI工程",
+        "话题/开发方法论"
+      ],
+      "tldr": "就像盖房子一样，有人急着先搭个棚子住进去再说，有人非要打好地基慢慢来，AI工程师们现在也分成了这两派。",
+      "summary": "Swyx通过AI工程会议的组织安排，敏锐地指出了当前AI工程领域最核心的分裂：一边是快速迭代、追求速度的'slop cannons'派（以@_lopopolo为代表），另一边是注重稳健、强调工程质量的'grown ups'派（以@badlogicgames为代表）。这种分裂反映了AI工程从早期探索到成熟应用的过渡阶段，不同团队在开发理念上的根本差异。",
+      "links": [
+        "https://x.com/swyx/status/2044939001405350235"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 2,
+      "name": "Kevin Weil",
+      "title": "GPT-Rosalind发布：首个面向生命科学研究的AI前沿模型",
+      "tags": [
+        "话题/GPT-Rosalind",
+        "话题/Codex"
+      ],
+      "tldr": "就像给科学家配了个超级聪明的科研助手，专门懂生物医药那些复杂知识，还能防止被坏人乱用。",
+      "summary": "Kevin Weil宣布推出GPT-Rosalind，这是他们首个专门为生物学、药物发现和转化医学等科学研究打造的前沿模型。这个模型在化学、蛋白质工程、基因组学等领域进行了专门训练，还内置了研究人员常用的数据库和工具知识。同时发布的还有面向所有人的Codex生命科学插件，可以与主流模型和GPT-Rosalind配合使用。",
+      "links": [
+        "https://x.com/kevinweil/status/2044862783947448611"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 3,
+      "name": "Peter Yang",
+      "title": "AI工作流优化：从Claude/Codex的Markdown编辑到Agent自检循环",
+      "tags": [
+        "话题/Claude",
+        "话题/Codex"
+      ],
+      "tldr": "这哥们儿在说：用AI干活时，最好能像改Word文档一样方便地微调指令，再找个AI小助手帮忙检查成果对不对。现在工具太多，换来换去都忙不过来了。",
+      "summary": "Peter Yang分享了几个AI工作流的实用技巧。他建议Claude和Codex应该提供便捷的Markdown文件编辑功能，方便用户手动微调最后10%的指令。同时，他提到现在构建技能时会采用eval agent来对主agent的输出进行yes/no检查，形成一个自检循环。最后一句则调侃了当前AI工具链的复杂性，暗示开发者可能花费更多时间在工具迁移而非实际工作上。",
+      "links": [
+        "https://x.com/petergyang/status/2045007422084051168",
+        "https://x.com/petergyang/status/2044998456062906422",
+        "https://x.com/petergyang/status/2044976766914265097"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 4,
+      "name": "Nan Yu",
+      "title": "AI行业正在以比加密货币更快的速度重塑传统职业",
+      "tags": [
+        "话题/AI行业趋势",
+        "话题/职业变革"
+      ],
+      "tldr": "AI 就像个超级加速器，比当年加密货币改造金融行业还快，现在连工程师和产品经理这些老行当都得跟着变，恭喜咱们赶上了这趟快车。",
+      "summary": "Nan Yu 观察到 AI 行业正在快速重塑传统职业角色，比如工程师和产品经理。他类比了加密货币对金融行业的颠覆，但认为 AI 的变革速度更快。这反映了当前 AI 技术（特别是 LLM 和 agent）对工作流程和技能要求的根本性影响。",
+      "links": [
+        "https://x.com/thenanyu/status/2044922841208918031",
+        "https://x.com/thenanyu/status/2044922579891191852",
+        "https://x.com/thenanyu/status/2044922422147653763"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 5,
+      "name": "Cat Wu",
+      "title": "Claude Code 更新：Opus 4.7 默认 effort 设为 xhigh，并分享验证工作流技巧",
+      "tags": [
+        "话题/Claude",
+        "话题/Opus4.7"
+      ],
+      "tldr": "Claude 的编程助手更新了，现在默认会更卖力地帮你写代码，而且更会自己检查写得对不对，就像有个更细心、更会自查的编程小助手。",
+      "summary": "Anthropic 在 Claude Code 中为 Opus 4.7 模型设置了默认的 effort 级别为 xhigh，用户可以通过 /effort 命令调整。同时，他们建议开发者通过 claude.md 文件或 /verify-app 技能来明确告知模型如何验证代码变更，因为 Opus 4.7 在自我验证方面有所提升，分享本地开发的小技巧也能帮助模型更好地工作。",
+      "links": [
+        "https://x.com/_catwu/status/2044808539663978970",
+        "https://x.com/_catwu/status/2044808538351100377"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 6,
+      "name": "Thariq",
+      "title": "Anthropic 更新 Claude Code 使用指南、推出月度产品更新网络研讨会和文档“What's New”摘要",
+      "tags": [
+        "话题/ClaudeCode",
+        "话题/AI编程"
+      ],
+      "tldr": "Anthropic 就像个贴心的产品经理，不仅教你怎么用 Claude 写代码，还定期开直播汇报更新，文档里还加了“新闻速递”栏目，让你一眼看到所有重要变化。",
+      "summary": "Anthropic 正在积极优化 Claude Code 的用户体验，通过更新 /usage 文档来帮助开发者更好地利用这个 AI 编程工具。他们还推出了月度产品更新网络研讨会和文档中的“What's New”摘要，这显示他们正在加强开发者社区建设和产品透明度。这些举措表明 Anthropic 在 LLM 编程辅助领域的投入正在从技术研发转向更系统的用户支持和生态建设。",
+      "links": [
+        "https://x.com/trq212/status/2044893587691958320",
+        "https://x.com/trq212/status/2044893586333032627",
+        "https://x.com/trq212/status/2044893584961556767"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 7,
+      "name": "Amjad Masad",
+      "title": "Replit产品更新：iOS打包、并行代理折扣与欧盟部署",
+      "tags": [
+        "话题/Replit",
+        "话题/移动开发"
+      ],
+      "tldr": "Replit说：花不到10块钱就能把你的网站变成苹果手机App，还打五折帮你用AI工具更快做项目，现在欧洲也能用了。",
+      "summary": "这是Replit创始人Amjad Masad在推广平台的新功能：一是推出低于10美元的Web应用转iOS应用服务，降低了移动开发门槛；二是提供50%折扣，强调对运行parallel agents和加速项目开发特别有用；三是宣布支持欧盟部署，拓展了地理覆盖。这些更新显示Replit在强化其作为一体化开发平台的定位，尤其关注AI驱动的开发工作流和全球化需求。",
+      "links": [
+        "https://x.com/amasad/status/2044953138957025707",
+        "https://x.com/amasad/status/2044846551072419994",
+        "https://x.com/amasad/status/2044844802077069375"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 8,
+      "name": "Guillermo Rauch",
+      "title": "Workflow SDK 解决 AI Agent 后端持久化难题",
+      "tags": [
+        "话题/AIAgent",
+        "话题/后端开发"
+      ],
+      "tldr": "就像盖房子时地基不稳会塌一样，AI 应用的后台服务也经常出问题——AI 模型可能突然罢工、接口被限速、数据库卡壳。他们搞了个新工具，像给前端盖好房子的 Next.js 一样，给后台也搭了个稳当的框架，让你不用操心这些破事，还能随便放哪个云上都行。",
+      "summary": "Guillermo Rauch 指出了 AI agent 后端开发中最棘手的持久化问题——LLM 服务会宕机、API 会被限流、数据库会变慢，这些都会导致系统不可靠。他推出的 Workflow SDK 旨在解决这个问题，借鉴了 Next.js 在前端领域的成功经验，为新一代后端应用提供类似 SQS/Kafka 的可靠性，但避免了传统分布式系统的复杂性。这个 SDK 从一开始就支持自托管和多云部署，通过适配器架构简化了开发流程。",
+      "links": [
+        "https://t.co/ub7vQ7L6yE"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 9,
+      "name": "Alex Albert",
+      "title": "Claude Opus 4.7 版本亮点分享",
+      "tags": [
+        "话题/Claude",
+        "话题/模型更新"
+      ],
+      "tldr": "Claude 4.7 版本变得更听话、更省电、画质更好，做出来的东西也更好看了。",
+      "summary": "Alex Albert 分享了 Claude Opus 4.7 的几个关键改进：在异步任务和指令跟随方面表现更佳，effort levels 的 token 控制更可预测（新增了 xhigh 级别），高分辨率图像不再被降级处理，UI、幻灯片和文档的审美明显提升。这反映了 Anthropic 在模型性能优化、成本控制和多模态输出质量上的持续迭代。",
+      "links": [
+        "https://x.com/alexalbert__/status/2044788914813292583"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 10,
+      "name": "Aaron Levie",
+      "title": "Codex推动知识工作者agent新飞跃",
+      "tags": [
+        "话题/Codex",
+        "话题/agent"
+      ],
+      "tldr": "就像给办公室请了个全能助手，这个助手不仅会写报告、审合同，还能在不同软件之间穿梭干活，把以前需要人手动操作的工作都自动化了。",
+      "summary": "Aaron Levie在推文中强调了新一代Codex对知识工作者agent能力的重大提升。他认为能够编码、使用工具和操作计算机的agent将能够在后台执行各种长期任务，从报告起草到合同审查等。特别值得注意的是，通过Box插件和跨应用协作能力，企业内容工作几乎可以实现全面自动化，这代表了agent技术在企业环境中的实际应用迈出了关键一步。",
+      "links": [
+        "https://x.com/levie/status/2044855448722100720"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 11,
+      "name": "Ryo Lu",
+      "title": "Cursor AI 的新原型环境 Baby Glass 及 AI 工具链实践",
+      "tags": [
+        "话题/Cursor",
+        "话题/AI辅助编程"
+      ],
+      "tldr": "就像厨师用不同工具切菜、炒菜、调味一样，他们在 Cursor 里用不同 AI 模型分工合作：一个出主意，一个搭框架，一个解难题，还搞了个新玩具让设计师也能玩代码。",
+      "summary": "Ryo Lu 展示了 Cursor AI 内部的新原型环境 Baby Glass，它允许设计师用代码快速构思、混搭和测试想法，基于 Cursor 3 界面的共享组件。他还分享了在 Cursor 中整合多种 AI 模型的工作流：用 Opus 4.7 规划，Composer 2 构建迭代，Codex/GPT-5.4 解决难题，体现了 AI 工具链的模块化趋势。",
+      "links": [
+        "https://t.co/Or3Cyt5s6O",
+        "https://t.co/B9NyhYDXkr",
+        "https://t.co/Or3Cyt5s6O",
+        "https://t.co/B9NyhYDXkr"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 12,
+      "name": "Garry Tan",
+      "title": "GBrain 项目更新：安全修复、技能增强与开源计划",
+      "tags": [
+        "话题/开源",
+        "话题/AI测试"
+      ],
+      "tldr": "就像修车师傅找不到合适的工具，干脆自己造了一套，还顺便把车子的安全系统和发动机都升级了，准备把新工具免费分享给大家用。",
+      "summary": "Garry Tan 分享了 GBrain 项目的几个关键进展：他们为 Gemini Live 找不到合适的端到端测试方案，最终决定自己动手开发，并计划将 GBrain Voice 开源。同时，项目近期发布了大量安全修复，并对 /ship 技能进行了稳定性增强。这反映了 AI 项目在测试、安全和功能迭代上的实际挑战与开源协作趋势。",
+      "links": [
+        "https://t.co/kQOloJS9c0",
+        "https://t.co/Y49OdkXkyP",
+        "https://t.co/oCQxyHe6KJ"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 13,
+      "name": "Zara Zhang",
+      "title": "HTML是agent的贝多芬交响曲：前端工程与AI agent的深度结合",
+      "tags": [
+        "话题/HTML",
+        "话题/AIagent"
+      ],
+      "tldr": "就像音乐家需要乐谱、作家需要文字一样，AI智能体也需要HTML这种'语言'来表达和交互。HTML正在变成AI世界的通用'普通话'。",
+      "summary": "Zara Zhang提出了一个很有洞察力的观点：HTML对于AI agent来说，就像交响乐对于贝多芬、戏剧对于莎士比亚一样重要。她通过将前端幻灯片GitHub仓库转换成HTML视频来实践这个理念，展示了HTML正在从静态标记语言演变为AI agent的核心表达媒介。这反映了前端工程在AI时代的新定位——HTML不仅是人类可读的界面，更是agent之间、agent与人之间交互的通用语言。",
+      "links": [
+        "https://t.co/1FtNuUKSbx",
+        "https://t.co/8cNPqPjuVE",
+        "https://t.co/HIFQpP6saP",
+        "https://t.co/1FtNuUKSbx",
+        "https://t.co/HIFQpP6saP"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 14,
+      "name": "Peter Steinberger",
+      "title": "ClawCon 盛况与 OpenClaw 安全争议",
+      "tags": [
+        "话题/ClawCon",
+        "话题/OpenClaw"
+      ],
+      "tldr": "ClawCon 大会火了，人超多，像一群狂热粉丝在聚会。有人吐槽 OpenClaw 不安全，漏洞一堆，但作者说这不算啥，更大的麻烦还在后头呢。",
+      "summary": "Peter Steinberger 分享了 ClawCon Michigan 吸引了近 2000 人参与的盛况，暗示这个社区（戏称为“龙虾邪教”）正在快速壮大。同时，他回应了关于 OpenClaw 安全性的批评，认为当前的 GHSAs（GitHub Security Advisories）只是未来更大安全挑战的前兆，暗示问题可能更广泛或更复杂。",
+      "links": [
+        "https://x.com/steipete/status/2044935917417205796",
+        "https://x.com/steipete/status/2044888081141223442"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 15,
+      "name": "Dan Shipper",
+      "title": "AI实验室的哲学招聘与Anthropic的4D棋局",
+      "tags": [
+        "话题/AI伦理",
+        "话题/Anthropic"
+      ],
+      "tldr": "AI公司招哲学家就像球队选秀，挑谁可能影响未来怎么思考问题；另外，有猜测说Anthropic搞了个大新闻，可能是为了在政治游戏中保住生意，就像下了一盘高级棋。",
+      "summary": "Dan Shipper在推文中提出了一个有趣的思维实验：如果各大AI实验室能招聘历史上的哲学家，他们会选谁？这反映了业界对AI伦理和思维框架的深层关注。同时，他猜测Anthropic的Mythos发布可能是为了影响特朗普政府保留合同，暗示了AI公司与政治博弈的微妙关系。最后提到Anthropic的Alex Albert参与直播，显示了行业内的活跃交流。",
+      "links": [
+        "https://x.com/danshipper/status/2044890935637549380",
+        "https://x.com/danshipper/status/2044864110391710144",
+        "https://x.com/danshipper/status/2044811209695003083"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 16,
+      "name": "Aditya Agarwal",
+      "title": "对代码重写的焦虑",
+      "tags": [
+        "话题/技术升级",
+        "话题/代码维护"
+      ],
+      "tldr": "就像你刚装修好房子，房东突然说要换水管，所有东西都得拆了重装，让人头大。",
+      "summary": "这推文反映了开发者面对技术版本升级时的普遍焦虑。Aditya Agarwal 可能指的是某个框架或工具的 4.7 版本，暗示新版本可能带来不兼容的 API 变化，迫使大规模代码重写。这种情绪在快速迭代的 tech stack 中很常见，尤其是前端和 AI 工具链。",
+      "links": [
+        "https://x.com/adityaag/status/2044861137720918371"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 17,
+      "name": "Sam Altman",
+      "title": "Codex重大更新：从经验学习、并行操作Mac应用",
+      "tags": [
+        "话题/Codex",
+        "话题/AIagent"
+      ],
+      "tldr": "Codex现在像你的超级秘书，能同时操作电脑上所有软件还不打扰你工作，而且越用越聪明，会主动帮你做事。",
+      "summary": "Sam Altman在推文中透露了Codex的重大更新，重点是计算机使用能力的提升。现在Codex能够并行操作Mac上的所有应用，且不会干扰用户的直接工作，这标志着AI agent在桌面环境集成方面迈出了重要一步。另一个关键特性是Codex能够从经验中学习并主动提供建议，配合内置浏览器和插件生态，展示了向更智能、更自主的AI助手演进的方向。",
+      "links": [
+        "https://x.com/sama/status/2044858862042591378",
+        "https://x.com/sama/status/2044858863246323811"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 18,
+      "name": "Claude",
+      "title": "Claude Opus 4.7发布：代码审查增强、API控制精细化",
+      "tags": [
+        "话题/Claude",
+        "话题/AI代码助手"
+      ],
+      "tldr": "Claude升级了，现在写代码时能让AI帮你仔细检查修改，就像有个经验丰富的同事在旁把关；同时AI干活时也能更灵活地控制速度和成本，想快就快，想省就省。",
+      "summary": "Anthropic发布了Claude Opus 4.7，这次更新主要聚焦在开发者体验和API控制上。Claude Code新增了/ultrareview命令，能像资深reviewer一样仔细检查代码变更；API层面则引入了xhigh effort level和task budgets，让开发者能更精细地平衡推理质量和成本。",
+      "links": [
+        "https://t.co/tHPAZRgiuP,",
+        "https://t.co/tHPAZRgiuP",
+        "https://t.co/FXsCSDFSv3"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 19,
+      "name": "Anthropic Engineering",
+      "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+      "tags": [
+        "话题/智能体架构",
+        "话题/Claude"
+      ],
+      "tldr": "大白话：Anthropic 把 Claude 智能体拆成了‘大脑’、‘手’和‘记忆本’三部分，让它们可以独立升级和替换，就像电脑的操作系统一样，这样系统更稳定、更安全，还能连接各种外部工具。",
+      "summary": "Anthropic 通过解耦架构设计解决了智能体系统的可扩展性和可靠性问题。他们将 Claude 智能体拆分为三个独立接口：会话（状态记录）、大脑（Claude 与调度逻辑）和手（执行环境与工具），实现了类似操作系统的抽象层设计。这种架构允许各组件独立演进和故障恢复，同时通过安全边界设计解决了凭证泄露风险，为长期运行的智能体系统提供了稳定基础。",
+      "links": [
+        "https://www.anthropic.com/engineering/managed-agents"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 20,
+      "name": "Claude Blog",
+      "title": "Claude Managed Agents: get to production 10x faster",
+      "tags": [
+        "话题/AI代理",
+        "话题/生产部署"
+      ],
+      "tldr": "大白话：Claude推出了一个托管代理平台，帮你搞定AI代理的底层技术难题，让你能像搭积木一样快速构建和部署智能助手，开发速度能快10倍。",
+      "summary": "Anthropic推出的Claude托管代理服务，通过提供预构建的生产级基础设施和编排框架，显著降低了AI代理的开发与部署门槛。该服务集成了安全沙箱、长期会话管理和多代理协调等核心功能，专为Claude模型优化，在结构化文件生成等任务中可将成功率提升高达10个百分点。这标志着AI代理正从实验性工具向企业级生产系统演进，加速了AI在编码、金融、法律等垂直领域的落地应用。",
+      "links": [
+        "https://claude.com/blog/claude-managed-agents"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "index": 21,
+      "name": "Latent Space",
+      "title": "Notion’s Token Town: 5 Rebuilds, 100+ Tools, MCP vs CLIs and the Software Factory Future — Simon Last & Sarah Sachs of Notion",
+      "tags": [
+        "话题/Notion",
+        "话题/AI代理"
+      ],
+      "tldr": "Notion 的 AI 代理开发经历了多次失败和重构，最终通过模型友好的设计和灵活的团队文化成功推出，目标是成为企业工作的核心记录系统。",
+      "summary": "核心摘要：Notion 分享了其 AI 代理（Custom Agents）的开发历程，经历了多次重构，从早期尝试工具调用到最终采用渐进式披露和 SQLite 查询等模型友好设计。他们强调了团队文化的重要性，如低自我、快速原型和分布式工具所有权，以应对 AI 领域的快速变化。Notion 将自身定位为企业的记录系统，专注于协作而非底层模型训练，并通过评估框架和平台团队确保代理的可靠性和可扩展性。",
+      "links": [
+        "https://www.youtube.com/@LatentSpacePod"
+      ]
+    },
     {
       "date": "2026-04-15",
       "index": 1,

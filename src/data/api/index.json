@@ -1,7 +1,17 @@
 {
-  "generatedAt": "2026-04-17T09:07:45.077Z",
-  "totalEntries": 14,
+  "generatedAt": "2026-04-17T09:34:50.257Z",
+  "totalEntries": 15,
   "entries": [
+    {
+      "date": "2026-04-17",
+      "title": "话题/Claude · 话题/Codex · 话题/AIagent",
+      "stats": {
+        "builders": 18,
+        "tweets": 42,
+        "blogs": 2,
+        "podcasts": 1
+      }
+    },
     {
       "date": "2026-04-15",
       "title": "AI Builders 早报",

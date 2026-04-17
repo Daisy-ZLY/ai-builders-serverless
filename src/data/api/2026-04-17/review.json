@@ -1,11 +1,11 @@
 {
-  "reviewId": "2026-04-17T09-07-44",
+  "reviewId": "2026-04-17T09-34-45",
   "date": "2026-04-17",
-  "status": "awaiting_human_review",
-  "publishPolicy": "manual_review",
+  "status": "published",
+  "publishPolicy": "auto_publish",
   "requestedPublishPolicy": "auto_publish",
-  "qualityPassed": false,
-  "qualityIssueCount": 1,
+  "qualityPassed": true,
+  "qualityIssueCount": 0,
   "rewriteRound": 1,
   "artifacts": {
     "draftMarkdownPath": "drafts/2026-04-17/2026-04-17.md",
@@ -13,29 +13,26 @@
     "preparedJsonPath": "drafts/2026-04-17/2026-04-17.prepared.json"
   },
   "review": {
-    "publishable": false,
-    "riskLevel": "high",
-    "recommendedAction": "manual_check",
-    "summary": "质量守门未通过，已回退为人工审核。",
+    "publishable": true,
+    "riskLevel": "low",
+    "recommendedAction": "approve",
+    "summary": "未配置独立 AI 审稿器，使用质量守门结果作为默认审稿结论。",
     "highlights": [],
-    "issues": [
-      {
-        "code": "builder_missing_dialectic",
-        "severity": "high",
-        "path": "builders[15]",
-        "message": "Builder is missing dialectic fields"
-      }
-    ]
+    "issues": []
   },
   "humanDecision": null,
   "history": [
     {
-      "at": "2026-04-17T09:07:44.968Z",
+      "at": "2026-04-17T09:34:45.298Z",
       "type": "draft_generated"
     },
     {
-      "at": "2026-04-17T09:07:44.968Z",
+      "at": "2026-04-17T09:34:45.298Z",
       "type": "ai_review_completed"
+    },
+    {
+      "at": "2026-04-17T09:34:45.303Z",
+      "type": "published"
     }
   ]
 }

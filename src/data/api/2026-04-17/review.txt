@@ -1,19 +1,19 @@
-Review ID: 2026-04-17T09-07-44
+Review ID: 2026-04-17T09-34-45
 Date: 2026-04-17
-Status: awaiting_human_review
-Policy: manual_review
-Quality: fail (1 issues)
-Risk: high
-Recommended action: manual_check
+Status: published
+Policy: auto_publish
+Quality: pass (0 issues)
+Risk: low
+Recommended action: approve
 
 Summary:
-质量守门未通过，已回退为人工审核。
+未配置独立 AI 审稿器，使用质量守门结果作为默认审稿结论。
 
 Highlights:
 - 无重点条目
 
 Issues:
-- [high] builder_missing_dialectic @ builders[15]: Builder is missing dialectic fields
+- 无结构化风险问题
 
 Artifacts:
 - Markdown: drafts/2026-04-17/2026-04-17.md
