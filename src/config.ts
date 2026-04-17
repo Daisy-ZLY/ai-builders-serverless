@@ -183,7 +183,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   // Site Information
   // [CONFIG:SITE_URL]
-  site: "http://index-system.woa.com",
+  site: "https://Daisy-ZLY.github.io",
   // [CONFIG:SITE_TITLE]
   title: "Astro Modular",
   // [CONFIG:HOMEPAGE_TITLE]

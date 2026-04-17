@@ -31,6 +31,7 @@ const DEPLOYMENT_PLATFORM = process.env.DEPLOYMENT_PLATFORM || 'netlify';
 
 export default defineConfig({
   site: siteConfig.site,
+  base: '/ai-builders-serverless',
   deployment: {
     platform: DEPLOYMENT_PLATFORM
   },

@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   generate-and-deploy:
@@ -101,10 +103,24 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Deploy to Tencent Cloud COS
-        env:
-          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
-          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          COS_BUCKET: ${{ vars.COS_BUCKET }}
-          COS_REGION: ${{ vars.COS_REGION }}
-        run: node scripts/deploy-cos.js
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy-pages:
+    needs: generate-and-deploy
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
