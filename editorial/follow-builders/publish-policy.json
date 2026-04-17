@@ -1,0 +1,10 @@
+{
+  "publishPolicy": "manual_review",
+  "requireQualityPass": true,
+  "autoPublishRiskThreshold": "low",
+  "allowHumanOverride": true,
+  "maxRewriteRounds": 2,
+  "notifyOnDraftReady": true,
+  "notifyOnPublished": true,
+  "notifyChannel": "stdout"
+}
