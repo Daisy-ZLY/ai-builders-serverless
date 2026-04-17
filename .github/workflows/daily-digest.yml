@@ -65,16 +65,17 @@ jobs:
           const fs = require("fs");
           const path = require("path");
           const dir = "src/content/posts";
-          if (!fs.existsSync(dir)) return;
-          const files = fs.readdirSync(dir);
-          for (const file of files) {
-            if (!file.endsWith(".md")) continue;
-            const p = path.join(dir, file);
-            let content = fs.readFileSync(p, "utf8");
-            if (!content.startsWith("---")) {
-              const date = file.replace(".md", "");
-              content = `---\ntitle: "${date} — AI Builders 早报"\ndate: ${date}\n---\n${content}`;
-              fs.writeFileSync(p, content);
+          if (fs.existsSync(dir)) {
+            const files = fs.readdirSync(dir);
+            for (const file of files) {
+              if (!file.endsWith(".md")) continue;
+              const p = path.join(dir, file);
+              let content = fs.readFileSync(p, "utf8");
+              if (!content.startsWith("---")) {
+                const date = file.replace(".md", "");
+                content = `---\ntitle: "${date} — AI Builders 早报"\ndate: ${date}\n---\n${content}`;
+                fs.writeFileSync(p, content);
+              }
             }
           }
           '
