@@ -10,10 +10,13 @@ const EDITORIAL_DIR = path.join(workspaceRoot, 'editorial', 'follow-builders');
 const PROMPTS_DIR = path.join(EDITORIAL_DIR, 'prompts');
 const SOURCES_PATH = path.join(EDITORIAL_DIR, 'default-sources.json');
 
+const useProxy = !process.env.GITHUB_ACTIONS;
+const prefix = useProxy ? 'https://ghproxy.net/' : '';
+
 const DEFAULT_FEED_URLS = {
-  x: 'https://ghproxy.net/https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json',
-  podcasts: 'https://ghproxy.net/https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json',
-  blogs: 'https://ghproxy.net/https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json'
+  x: `${prefix}https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json`,
+  podcasts: `${prefix}https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json`,
+  blogs: `${prefix}https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json`
 };
 
 const PROMPT_FILES = [
