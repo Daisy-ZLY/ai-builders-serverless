@@ -64,15 +64,14 @@ export async function publishReviewedDigestWorkflow({
   // Upload generated content to COS
   console.log('Uploading generated content to COS...');
   try {
-    // Upload the markdown file
-    await uploadFileToCos(`content/${date}.md`, `content/${date}.md`);
-    // Upload the archive file
-    await uploadFileToCos(`archive/${date}.md`, `archive/${date}.md`);
-    // Upload the generated JSON and review files
-    await uploadDirectoryToCos(`generated/${date}`, `generated/${date}`);
-    // Upload the static site (docs directory)
-    await uploadDirectoryToCos('docs', 'docs');
-    console.log('COS upload completed successfully.');
+    // In Astro project, we rely on the GitHub Actions deploy step to upload everything in `dist/`
+    // and we no longer need this legacy manual upload script to handle individual JSON/MD files.
+    // The previous code was:
+    // await uploadFileToCos(`content/${date}.md`, `content/${date}.md`);
+    // await uploadFileToCos(`archive/${date}.md`, `archive/${date}.md`);
+    // await uploadDirectoryToCos(`generated/${date}`, `generated/${date}`);
+    // await uploadDirectoryToCos('docs', 'docs');
+    console.log('Skipping legacy manual COS upload. Astro build output (dist/) will be deployed by GitHub Actions.');
   } catch (error) {
     console.error('Failed to upload to COS:', error);
     throw error;
