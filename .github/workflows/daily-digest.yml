@@ -87,7 +87,14 @@ jobs:
           
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/content/posts/ src/data/api/ archive/ drafts/ generated/
+          
+          # 只 add 确实存在的目录，避免报错
+          [ -d "src/content/posts" ] && git add src/content/posts/
+          [ -d "src/data/api" ] && git add src/data/api/
+          [ -d "archive" ] && git add archive/
+          [ -d "drafts" ] && git add drafts/
+          [ -d "generated" ] && git add generated/
+          
           git commit -m "chore: add daily digest for $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
 
