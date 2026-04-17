@@ -7,8 +7,8 @@ import { uploadFileToCos, uploadDirectoryToCos } from './cos-uploader.js';
 function buildDefaultWecomPushCommand(date) {
   return [
     'mkdir -p output',
-    `node workflow/truncate-for-wecom.js --file "content/${date}.md" --role frontend > "output/${date}-wecom-v2.md"`,
-    `node workflow/push-to-wecom.js --mode markdown --file "output/${date}-wecom-v2.md"`
+    `node scripts/truncate-for-wecom.js --file "src/content/posts/${date}.md" --role frontend > "output/${date}-wecom-v2.md"`,
+    `node scripts/push-to-wecom.js --mode markdown --file "output/${date}-wecom-v2.md"`
   ].join(' && ');
 }
 
