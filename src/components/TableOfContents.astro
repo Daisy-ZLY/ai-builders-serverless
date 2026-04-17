@@ -99,38 +99,28 @@ const shouldShowTOC = filteredHeadings.length > 1;
     const maxDepth = tocContainer ? parseInt(tocContainer.dataset.maxDepth || '6', 10) : 6;
     
     // Build heading selectors based on configured depth
-    // Generate selectors from h2 to h{maxDepth}
-    const headingLevels: string[] = [];
-    for (let level = 2; level <= Math.min(maxDepth, 6); level++) {
-      headingLevels.push(`h${level}`);
-    }
-    const headingSelector = headingLevels.join(', ');
-    
-    // Query headings only from content areas (not from TOC itself or other sidebars)
-    // Only query heading levels that are actually displayed in the TOC
-    const contentContainers = [
-      '#post-content',
-      '#page-content',
-      '#project-content',
-      '#documentation-content',
-      '.prose'
-    ];
-    
-    let headings: NodeListOf<HTMLElement> | null = null;
-    for (const container of contentContainers) {
-      const selector = `${container} ${headingSelector}`;
-      const found = document.querySelectorAll<HTMLElement>(selector);
-      if (found.length > 0) {
-        headings = found;
-        break;
-      }
+    // Instead of querying h2, h3, etc., we get the elements directly from the TOC links
+    // This supports custom elements (like divs) used as headings in custom views
+    const headingsArray: HTMLElement[] = [];
+    if (tocLinks.length > 0) {
+      tocLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          // Escape the ID for querySelector or use getElementById
+          const id = href.slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            headingsArray.push(el);
+          }
+        }
+      });
     }
     
     const tocToggle = document.querySelector('.toc-toggle') as HTMLButtonElement;
     const tocList = document.querySelector('.toc-list') as HTMLElement;
     const tocChevron = document.querySelector('.toc-chevron') as HTMLElement;
 
-    if (!tocLinks.length || !headings || headings.length === 0) return;
+    if (!tocLinks.length || headingsArray.length === 0) return;
 
     // Calculate initial TOC height immediately
     updateTOCHeight();
@@ -169,11 +159,11 @@ const shouldShowTOC = filteredHeadings.length > 1;
     
     // Highlight active section in TOC
     function highlightTOC() {
-      if (!headings || headings.length === 0) return;
+      if (headingsArray.length === 0) return;
+      // console.log('highlightTOC called, headings length:', headingsArray.length);
 
       let current = '';
       const viewportTop = 120; // Threshold for active headings (accounts for header)
-      const headingsArray = Array.from(headings);
 
       // Find the heading that should be highlighted
       // Priority: 1) Heading closest to viewport top, 2) Last heading above viewport, 3) First heading
@@ -214,18 +204,23 @@ const shouldShowTOC = filteredHeadings.length > 1;
         if (href === current) {
           link.classList.add('active');
 
-          // Auto-scroll TOC to keep active item visible (less aggressive)
-          // Only do this if we haven't scrolled the page recently to avoid conflicts
-          const timeSinceLastScroll = Date.now() - lastScrollTime;
-          if (tocContent && tocContent.scrollHeight > tocContent.clientHeight && timeSinceLastScroll > 500) {
+          // Auto-scroll TOC to keep active item visible
+          if (tocContent && tocContent.scrollHeight > tocContent.clientHeight) {
             const linkRect = link.getBoundingClientRect();
             const contentRect = tocContent.getBoundingClientRect();
 
             // Only scroll if link is significantly outside visible area
             const scrollThreshold = 30; // pixels
-            if (linkRect.top < contentRect.top + scrollThreshold || linkRect.bottom > contentRect.bottom - scrollThreshold) {
-              // Smooth scroll but don't center - just make it visible
-              link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (linkRect.top < contentRect.top + scrollThreshold) {
+              tocContent.scrollBy({
+                top: linkRect.top - contentRect.top - scrollThreshold,
+                behavior: 'smooth'
+              });
+            } else if (linkRect.bottom > contentRect.bottom - scrollThreshold) {
+              tocContent.scrollBy({
+                top: linkRect.bottom - contentRect.bottom + scrollThreshold,
+                behavior: 'smooth'
+              });
             }
           }
         } else {
@@ -243,6 +238,7 @@ const shouldShowTOC = filteredHeadings.length > 1;
     // Update active link on scroll with minimal debouncing
     let ticking = false;
     scrollListener = () => {
+      console.log('scroll event fired');
       lastScrollTime = Date.now();
       if (!ticking) {
         requestAnimationFrame(() => {
