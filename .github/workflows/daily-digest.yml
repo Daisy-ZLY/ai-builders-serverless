@@ -1,0 +1,57 @@
+name: Daily AI Builders Digest
+
+on:
+  schedule:
+    # 每天早上 08:00 (Asia/Shanghai) = 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Daily Digest
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # 添加其他需要的环境变量
+        run: |
+          # 假设这是你的生成脚本命令
+          # npm run workflow:auto-publish
+          echo "Generating digest..."
+
+      - name: Commit new digest
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/content/posts/
+          git commit -m "chore: add daily digest for $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Deploy to COS
+        env:
+          SECRETId: ${{ secrets.TENCENT_SECRET_ID }}
+          SECRETKey: ${{ secrets.TENCENT_SECRET_KEY }}
+          BUCKET: ${{ secrets.TENCENT_BUCKET }}
+          REGION: ${{ secrets.TENCENT_REGION }}
+        run: |
+          # 安装 coscmd 或使用腾讯云官方 action
+          # 这里假设你有一个部署脚本
+          # npm run deploy:cos
+          echo "Deploying to COS..."
