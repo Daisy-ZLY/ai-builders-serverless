@@ -33,7 +33,7 @@ jobs:
       - name: Generate Daily Digest
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
+          WECOM_WEBHOOK_URL: ${{ vars.WECOM_WEBHOOK_URL }}
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
           COS_STORAGE_CLASS: ${{ vars.COS_STORAGE_CLASS }}
         run: |
