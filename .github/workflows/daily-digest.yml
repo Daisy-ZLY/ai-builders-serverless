@@ -37,6 +37,15 @@ jobs:
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
           COS_STORAGE_CLASS: ${{ vars.COS_STORAGE_CLASS }}
         run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo "❌ 错误：在 GitHub Actions 环境中未读取到 DEEPSEEK_API_KEY！"
+            echo "请检查：1. 是否在 Secrets 中配置了该变量？(不要配成 Variables)"
+            echo "2. 变量名是否拼写正确？(必须完全是 DEEPSEEK_API_KEY，不能有空格)"
+            exit 1
+          else
+            echo "✅ 成功读取到 DEEPSEEK_API_KEY (长度: ${#DEEPSEEK_API_KEY})"
+          fi
+          
           echo "Generating digest and pushing to WeCom..."
           node scripts/workflows/auto-publish-today.js \
             --generator-cmd "node scripts/deepseek-generator.js" \
