@@ -34,7 +34,8 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
-          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN }}
+          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
+          COS_STORAGE_CLASS: ${{ vars.COS_STORAGE_CLASS }}
         run: |
           echo "Generating digest and pushing to WeCom..."
           node scripts/workflows/auto-publish-today.js \
@@ -84,8 +85,8 @@ jobs:
         with:
           secret_id: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
           secret_key: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          cos_bucket: ${{ secrets.COS_BUCKET }}
-          cos_region: ${{ secrets.COS_REGION }}
+          cos_bucket: ${{ vars.COS_BUCKET }}
+          cos_region: ${{ vars.COS_REGION }}
           local_path: 'dist'
           remote_path: '/'
           clean: false
