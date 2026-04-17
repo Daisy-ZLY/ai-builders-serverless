@@ -35,13 +35,13 @@ jobs:
       - name: Generate Daily Digest
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          WECOM_WEBHOOK_URL: ${{ vars.WECOM_WEBHOOK_URL }}
-          CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
-          COS_STORAGE_CLASS: ${{ vars.COS_STORAGE_CLASS }}
+          WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
+          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN }}
+          COS_STORAGE_CLASS: ${{ secrets.COS_STORAGE_CLASS }}
           TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
           TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          COS_BUCKET: ${{ vars.COS_BUCKET }}
-          COS_REGION: ${{ vars.COS_REGION }}
+          COS_BUCKET: ${{ secrets.COS_BUCKET }}
+          COS_REGION: ${{ secrets.COS_REGION }}
         run: |
           if [ -z "$DEEPSEEK_API_KEY" ]; then
             echo "❌ 错误：在 GitHub Actions 环境中未读取到 DEEPSEEK_API_KEY！"
