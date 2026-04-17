@@ -102,12 +102,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to Tencent Cloud COS
-        uses: tencentcloud/cos-action@v1
-        with:
-          secret_id: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
-          secret_key: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
-          cos_bucket: ${{ vars.COS_BUCKET }}
-          cos_region: ${{ vars.COS_REGION }}
-          local_path: 'dist'
-          remote_path: '/'
-          clean: false
+        env:
+          TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          COS_BUCKET: ${{ vars.COS_BUCKET }}
+          COS_REGION: ${{ vars.COS_REGION }}
+        run: node scripts/deploy-cos.js
