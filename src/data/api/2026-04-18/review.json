@@ -1,0 +1,41 @@
+{
+  "reviewId": "2026-04-18T01-10-54",
+  "date": "2026-04-18",
+  "status": "awaiting_human_review",
+  "publishPolicy": "manual_review",
+  "requestedPublishPolicy": "auto_publish",
+  "qualityPassed": false,
+  "qualityIssueCount": 1,
+  "rewriteRound": 1,
+  "artifacts": {
+    "draftMarkdownPath": "drafts/2026-04-18/2026-04-18.md",
+    "draftDigestJsonPath": "drafts/2026-04-18/2026-04-18.digest.json",
+    "preparedJsonPath": "drafts/2026-04-18/2026-04-18.prepared.json"
+  },
+  "review": {
+    "publishable": false,
+    "riskLevel": "high",
+    "recommendedAction": "manual_check",
+    "summary": "质量守门未通过，已回退为人工审核。",
+    "highlights": [],
+    "issues": [
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[5]",
+        "message": "Builder is missing dialectic fields"
+      }
+    ]
+  },
+  "humanDecision": null,
+  "history": [
+    {
+      "at": "2026-04-18T01:10:54.702Z",
+      "type": "draft_generated"
+    },
+    {
+      "at": "2026-04-18T01:10:54.702Z",
+      "type": "ai_review_completed"
+    }
+  ]
+}
