@@ -1,0 +1,77 @@
+{
+  "reviewId": "2026-04-24T01-17-04",
+  "date": "2026-04-24",
+  "status": "awaiting_human_review",
+  "publishPolicy": "manual_review",
+  "requestedPublishPolicy": "auto_publish",
+  "qualityPassed": false,
+  "qualityIssueCount": 7,
+  "rewriteRound": 1,
+  "artifacts": {
+    "draftMarkdownPath": "drafts/2026-04-24/2026-04-24.md",
+    "draftDigestJsonPath": "drafts/2026-04-24/2026-04-24.digest.json",
+    "preparedJsonPath": "drafts/2026-04-24/2026-04-24.prepared.json"
+  },
+  "review": {
+    "publishable": false,
+    "riskLevel": "high",
+    "recommendedAction": "manual_check",
+    "summary": "质量守门未通过，已回退为人工审核。",
+    "highlights": [],
+    "issues": [
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[1]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_links",
+        "severity": "high",
+        "path": "builders[2].links",
+        "message": "Builder is missing links"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[3]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_links",
+        "severity": "high",
+        "path": "builders[7].links",
+        "message": "Builder is missing links"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[8]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[11]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[12]",
+        "message": "Builder is missing dialectic fields"
+      }
+    ]
+  },
+  "humanDecision": null,
+  "history": [
+    {
+      "at": "2026-04-24T01:17:04.519Z",
+      "type": "draft_generated"
+    },
+    {
+      "at": "2026-04-24T01:17:04.519Z",
+      "type": "ai_review_completed"
+    }
+  ]
+}

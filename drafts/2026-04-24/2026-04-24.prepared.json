@@ -1,0 +1,659 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-04-24T01:15:31.451Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2047220793419989457",
+          "text": "some more references in footnotes https://t.co/n5Nt0PUxzT",
+          "createdAt": "2026-04-23T07:47:27.000Z",
+          "url": "https://x.com/swyx/status/2047220793419989457",
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047217611880984935",
+          "text": "https://t.co/k3XbbNGw5s",
+          "createdAt": "2026-04-23T07:34:48.000Z",
+          "url": "https://x.com/swyx/status/2047217611880984935",
+          "likes": 28,
+          "retweets": 0,
+          "replies": 6,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047140362771132544",
+          "text": "btw in talking to friends the best framing for how to discuss GPT-Image-2-Thinking taking multiple tens of mins for generation and being able to oneshot QR codes and diagrams and logos and foods and faces..\n\n...is that Image-2 is a new Image model, Image-2-Thinking is a new Image AGENT that basically has search and photoshop as a tool to use in an agent loop that can search and composite and review its own work.\n\nthe same way Gemini Flash Vision destroyed benchmarks by introducing an agentic loop for image-to-text, now Image-2-Thinking is doing it for text-to-image.",
+          "createdAt": "2026-04-23T02:27:51.000Z",
+          "url": "https://x.com/swyx/status/2047140362771132544",
+          "likes": 56,
+          "retweets": 3,
+          "replies": 12,
+          "isQuote": true,
+          "quotedTweetId": "2046834320292131248"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Josh Woodward",
+      "handle": "joshwoodward",
+      "bio": "VP, @Google @GoogleLabs @GeminiApp @GoogleAIStudio",
+      "tweets": [
+        {
+          "id": "2047147030351642914",
+          "text": "✅ Papercut fixed: Conversation branching\n\nRolled out to 20% right now, ramping up! https://t.co/XXi8FsV3Pz",
+          "createdAt": "2026-04-23T02:54:20.000Z",
+          "url": "https://x.com/joshwoodward/status/2047147030351642914",
+          "likes": 463,
+          "retweets": 24,
+          "replies": 51,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2047124883071816189",
+          "text": "Craft &gt; slop\n\nI love using AI to generate things too but craft is in that last 10% where you manually apply your taste to make something you can be proud of. \n\nMany people never bother.",
+          "createdAt": "2026-04-23T01:26:20.000Z",
+          "url": "https://x.com/petergyang/status/2047124883071816189",
+          "likes": 39,
+          "retweets": 0,
+          "replies": 19,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2046982893185188088",
+          "text": "@mercury Interview is live! Here's where Ryan talks about his Claude Code second brain: https://t.co/ja8t3isUyP\n\nhttps://t.co/JrtFSWaKCC",
+          "createdAt": "2026-04-22T16:02:07.000Z",
+          "url": "https://x.com/petergyang/status/2046982893185188088",
+          "likes": 1,
+          "retweets": 1,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2046961520970777029"
+        },
+        {
+          "id": "2046961532983193691",
+          "text": "Also available on:\n\nSpotify: https://t.co/110HZoHaLI\n\nApple: https://t.co/shNRmPP2Wb\n\nNewsletter: https://t.co/t7w4L5uDfp",
+          "createdAt": "2026-04-22T14:37:14.000Z",
+          "url": "https://x.com/petergyang/status/2046961532983193691",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2047156858214035590",
+          "text": "You don’t have access to Mythos 🫵🤭\n\nDoesn’t mean you can just sit around and wait.\n\nReplit published a whitepaper showing you can get significantly better performance from current gen LLMs (90%+ in some cases) by combining with static analysis tools.\n\nhttps://t.co/Dlxn915Z4m",
+          "createdAt": "2026-04-23T03:33:23.000Z",
+          "url": "https://x.com/amasad/status/2047156858214035590",
+          "likes": 137,
+          "retweets": 4,
+          "replies": 15,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047150876423516384",
+          "text": "Replit Security Agent making the internet a better place one app review at a time. https://t.co/5tet1REHgl",
+          "createdAt": "2026-04-23T03:09:37.000Z",
+          "url": "https://x.com/amasad/status/2047150876423516384",
+          "likes": 45,
+          "retweets": 1,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2046801017396769138"
+        },
+        {
+          "id": "2047149103294091301",
+          "text": "You can now call Replit Agent from Gemini Enterprise. https://t.co/SpN6qto4Gf",
+          "createdAt": "2026-04-23T03:02:35.000Z",
+          "url": "https://x.com/amasad/status/2047149103294091301",
+          "likes": 74,
+          "retweets": 5,
+          "replies": 5,
+          "isQuote": true,
+          "quotedTweetId": "2047088059452117497"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Guillermo Rauch",
+      "handle": "rauchg",
+      "bio": "@vercel CEO",
+      "tweets": [
+        {
+          "id": "2047150411170320808",
+          "text": "I want to keep everyone updated on the details of the security investigation.\n\nThe team performed an in-depth analysis to search for root causes and to better understand the behavior of the threat actor.\n\nWe cast a very wide net, pulling and processing nearly a petabyte of logs of the entire Vercel Network and API, extending well beyond the initial Context[.]ai compromise.\n\nWe now understand that the threat actor has been active beyond that startup's compromise. Threat intel points to the distribution of malware to computers in search of valuable tokens like keys to Vercel accounts and other providers.\n\nOnce the attacker gets ahold of those keys, our logs show a repeated pattern: rapid and comprehensive API usage, with a focus on enumeration of non-sensitive environment variables.\n\nAs a result:\n◾We've deepened and widened our collaboration with partners across the industry, like Microsoft, AWS and Wiz, to further protect the broader internet.\n◾ We've notified other suspected victims of this threat actor, independent of this event, encouraging them to rotate credentials and adopt best practices.\n\nWe've also shipped a bunch more product enhancements. I'm extremely thankful to our team and industry partners for working around the clock. For more details on the ongoing investigation, refer to our security bulletin:\nhttps://t.co/BLVnic9fJC",
+          "createdAt": "2026-04-23T03:07:46.000Z",
+          "url": "https://x.com/rauchg/status/2047150411170320808",
+          "likes": 762,
+          "retweets": 102,
+          "replies": 51,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2047028112626749645",
+          "text": "This is probably the biggest news yet in software going headless, and will bring knowledge work agents to the masses. The new ChatGPT agents have access to any of the tools and data you want to work with, with complete coding and tool use available to them. \n\nHere's an example of a custom sales assistant agent uses Box as a knowledge source for accessing enterprise content securely to answer questions and generate new content on the fly. The workflows can obviously vastly far more complex as the agent can use any of the tools within Box available via MCP and CLI.\n\nThis precisely what agents will start to look like for knowledge work. You'll be able to spin them up in the foreground or background to help augment work. Big opportunity right now for headless platforms, and for all the new builders and designers of these agents in the enterprise.",
+          "createdAt": "2026-04-22T19:01:48.000Z",
+          "url": "https://x.com/levie/status/2047028112626749645",
+          "likes": 987,
+          "retweets": 64,
+          "replies": 66,
+          "isQuote": true,
+          "quotedTweetId": "2047008987665809771"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Ryo Lu",
+      "handle": "ryolu_",
+      "bio": "Design @Cursor_ai. Early @NotionHQ, @Stripe, built startups. I make a world where anyone can make software. Aspiring k-pop idol.",
+      "tweets": [
+        {
+          "id": "2046957675079237668",
+          "text": "overcooking\n\nyou've seen this: someone ships a dashboard that shows every number with a sparkline, every action has a confirmation modal, every empty state has an animated illustration and a tagline. individually each decision made sense to someone. together it feels like chaos. nothing is in focus.\n\nthat's overcooking. not one bad decision in isolation, but the accumulation of reasonable ones that no one said no to.\n\nAI makes this worse as the cost of adding dropped to near zero. it can build a feature, even a whole new concept in minutes. so people do. and then they do it again. the thing that started with a clear purpose slowly becomes a collection of additions that are each justifiable but collectively incoherent.\n\nthe root problem is that most \"new ideas\" aren't new. they're repackaging of something that already exists at a more fundamental level. a new sticker on an old concept. it feels like progress because something changed, with a new word and skin – but the thinking didn't go deeper, it just duplicated itself into confusion.\n\nthe whole has a core. you feel it once you understand the whole system. everything in it are related and balanced. when you overload it, that gravity weakens. not because any one thing is wrong – but because attention is finite and you force it everywhere.\n\nwhat we need aren't more tools that make more slop. it's seeing through the chaos, and returning to what the thing actually is, and cutting everything that doesn't serve that. that's harder now, not easier. because there's always something else you could add with one more prompt.",
+          "createdAt": "2026-04-22T14:21:55.000Z",
+          "url": "https://x.com/ryolu_/status/2046957675079237668",
+          "likes": 1121,
+          "retweets": 89,
+          "replies": 59,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2047184243164651648",
+          "text": "So far basically fewer fatter skills makes the resolver shorter which itself is less context bloat\n\nShort resolvers are better than long ones https://t.co/Yjvben7FqO",
+          "createdAt": "2026-04-23T05:22:13.000Z",
+          "url": "https://x.com/garrytan/status/2047184243164651648",
+          "likes": 35,
+          "retweets": 1,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2044479509874020852"
+        },
+        {
+          "id": "2047183884266402275",
+          "text": "This is interesting. Anyone experimenting with this? So far anytime I have adjacent skills I just tell it to DRY itself up and turn it into a bigger skill with more parameters\n\nSo far I found composing bigger skills with branching params is better https://t.co/L4T6Zfosr2",
+          "createdAt": "2026-04-23T05:20:47.000Z",
+          "url": "https://x.com/garrytan/status/2047183884266402275",
+          "likes": 158,
+          "retweets": 10,
+          "replies": 22,
+          "isQuote": true,
+          "quotedTweetId": "2047124337191444844"
+        },
+        {
+          "id": "2047148450828136522",
+          "text": "Man between this and CrabTrap from @pedroh96 I am going to have a busy week https://t.co/twDMf4nTa9",
+          "createdAt": "2026-04-23T02:59:59.000Z",
+          "url": "https://x.com/garrytan/status/2047148450828136522",
+          "likes": 168,
+          "retweets": 17,
+          "replies": 13,
+          "isQuote": true,
+          "quotedTweetId": "2046982854710857762"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2047166162707042431",
+          "text": "Saw the demo, very impressive setup that allows a coding agent to work autonomously for long running tasks without human intervention! https://t.co/3fNHsJXVy9",
+          "createdAt": "2026-04-23T04:10:22.000Z",
+          "url": "https://x.com/zarazhangrui/status/2047166162707042431",
+          "likes": 9,
+          "retweets": 2,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2046986420221534601"
+        },
+        {
+          "id": "2047124027370869016",
+          "text": "https://t.co/43aL2SN4s4",
+          "createdAt": "2026-04-23T01:22:56.000Z",
+          "url": "https://x.com/zarazhangrui/status/2047124027370869016",
+          "likes": 72,
+          "retweets": 4,
+          "replies": 7,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "@railway x @meter shill",
+      "tweets": [
+        {
+          "id": "2047052668246589574",
+          "text": "Before X kicks me out, I WOULD use the paid partnership label but I wasn’t actually paid anything for this..\n\n@acv x @JustJake forced me do this so please use their products and bombard them with feature requests 🙏 https://t.co/Tc1OVOgdKZ",
+          "createdAt": "2026-04-22T20:39:23.000Z",
+          "url": "https://x.com/nikunj/status/2047052668246589574",
+          "likes": 25,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047047747585675468",
+          "text": "Significantly longer essay I wrote last year on this https://t.co/RqbcPq5VyH",
+          "createdAt": "2026-04-22T20:19:49.000Z",
+          "url": "https://x.com/nikunj/status/2047047747585675468",
+          "likes": 3,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047024714116419665",
+          "text": "Every pixel will be generated in real time. It’s just a matter of when, not if. Demos like this show a view of what’s possible 👏 https://t.co/ykpQcR2jpC",
+          "createdAt": "2026-04-22T18:48:18.000Z",
+          "url": "https://x.com/nikunj/status/2047024714116419665",
+          "likes": 98,
+          "retweets": 2,
+          "replies": 8,
+          "isQuote": true,
+          "quotedTweetId": "2046982383430496444"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2047189920104477009",
+          "text": "I love these https://t.co/NGarQPF6e5",
+          "createdAt": "2026-04-23T05:44:46.000Z",
+          "url": "https://x.com/steipete/status/2047189920104477009",
+          "likes": 560,
+          "retweets": 17,
+          "replies": 22,
+          "isQuote": true,
+          "quotedTweetId": "2047113267068248156"
+        },
+        {
+          "id": "2046991196786979210",
+          "text": "8 React components per line 😅 https://t.co/IJTQgvCliP",
+          "createdAt": "2026-04-22T16:35:07.000Z",
+          "url": "https://x.com/steipete/status/2046991196786979210",
+          "likes": 777,
+          "retweets": 20,
+          "replies": 19,
+          "isQuote": true,
+          "quotedTweetId": "2046664907916259447"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2047027510014046497",
+          "text": "YouTube: https://t.co/mxQBcSt014 \n\nSpotify: https://t.co/GhHxzfZyaJ",
+          "createdAt": "2026-04-22T18:59:24.000Z",
+          "url": "https://x.com/danshipper/status/2047027510014046497",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047027507397005367",
+          "text": "LLMs write better code than most human engineers. If code is handled, what's left for us?\n\nI chatted with @kieranklaassen, GM of @CoraComputerCora and creator of compound engineering, on @every's AI & I about where humans fit now that AI can generate high-quality code, copy, strategy, and design. His theory: We’re the bread.\n\nHumans are indispensable at the beginning and end of every process. At the beginning, to set the frame, and at the end to provide the final polish.\n\nThis turned into a wide-ranging conversation on the future of humans and AI in coding and beyond.\n\nWe get into:\n- Why AI work is a sandwich. The models are the filling, responsible for writing, testing, and iterating. Humans are the bread bookending the models: We frame the problem and judge whether the output feels right.\n- The four steps behind compound engineering: Plan, work, review, and compound. The last one—where learnings feed back into the repo so agents don't repeat their mistakes—is what allows one engineer to ship like a team of five.\n- Play to your strengths. Knowing when to step away and let the models execute lets you focus on areas that require human judgement, like approaching a problem from multiple angles.\n\nThis is a must-watch for anyone trying to figure out their role in the workplace now that the execution layer is largely solved.\n\nWatch below!\n\nTimestamps:\nIntroduction and the AI sandwich metaphor: 00:00:52\nWhat compound engineering is and how it’s evolved: 00:02:33\nThe \"work\" phase of agentic coding is essentially solved: 00:04:27\nWhy humans belong at the beginning and the end of an AI workflow: 00:06:27\nDan's argument for why agents can't change frames—and how this will keep us employed: 00:11:06\nFull automation remains a moving target: 00:16:51\nMusical composition as a model for human-AI collaboration: 00:23:21\nFind your place in an AI-accelerated world by leaning into what brings you joy: 00:26:39",
+          "createdAt": "2026-04-22T18:59:24.000Z",
+          "url": "https://x.com/danshipper/status/2047027507397005367",
+          "likes": 50,
+          "retweets": 9,
+          "replies": 8,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2046947032120574144",
+          "text": "a lot of good ideas in here https://t.co/2dVddTUo5i",
+          "createdAt": "2026-04-22T13:39:37.000Z",
+          "url": "https://x.com/danshipper/status/2046947032120574144",
+          "likes": 42,
+          "retweets": 2,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2046737425066786990"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2047024961571692747",
+          "text": "Great leaders operate in \"owner mode.\" \n\nAssume the responsibility for risk and uncertainty. \n\nLearn fast and earn trust through judgment. \n\n@nikesharora is leading by example. Thanks for coming by @southpkcommons. https://t.co/697drARtOl",
+          "createdAt": "2026-04-22T18:49:17.000Z",
+          "url": "https://x.com/adityaag/status/2047024961571692747",
+          "likes": 74,
+          "retweets": 8,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047018146972987774",
+          "text": "This is dope https://t.co/pzUr5R9SHo",
+          "createdAt": "2026-04-22T18:22:12.000Z",
+          "url": "https://x.com/adityaag/status/2047018146972987774",
+          "likes": 122,
+          "retweets": 5,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2046982383430496444"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2047017964105597009",
+          "text": "These are cool! I think most companies will want to use them. https://t.co/453qKd7X1R",
+          "createdAt": "2026-04-22T18:21:29.000Z",
+          "url": "https://x.com/sama/status/2047017964105597009",
+          "likes": 4102,
+          "retweets": 171,
+          "replies": 383,
+          "isQuote": true,
+          "quotedTweetId": "2047008987665809771"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Claude",
+      "handle": "claudeai",
+      "bio": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d1e5 or download the app.",
+      "tweets": [
+        {
+          "id": "2047047633416397076",
+          "text": "Interactive charts and diagrams are now in Claude Cowork.\n\nAvailable in beta on all paid plans. https://t.co/Bqm0kHdsVY",
+          "createdAt": "2026-04-22T20:19:22.000Z",
+          "url": "https://x.com/claudeai/status/2047047633416397076",
+          "likes": 5659,
+          "retweets": 385,
+          "replies": 213,
+          "isQuote": true,
+          "quotedTweetId": "2032124273587077133"
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "AI & I by Every",
+      "title": "The AI Sandwich: Where Humans Excel in an AI World",
+      "guid": "e835fe4d-e084-45e1-93cb-ae88faf71bc4",
+      "url": "https://www.youtube.com/watch?v=G0LTv8hQ5Cs",
+      "publishedAt": "2026-04-22T18:53:47.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:03\nHumans are the bread in the sandwich, and the AI is in the middle.\n\nSpeaker 2 | 00:03 - 00:24\nAI is whatever you put on your sandwich. If you ship something or do something, if you want it to be your own, you cannot fully automate everything. It's like art. If you want it your own, it needs to be from you or somehow be connected. So I believe it's so important to do things you enjoy and you love.\n\nSpeaker 2 | 00:25 - 00:40\nAnd it's very important to make it feel great because the bar is high, the bar will always get higher. The beginning and the end, and the middles can be automated pretty well. And, Trevin, at some point, said, oh, it's kind of like a sandwich, which was, like, very funny.\n\nSpeaker 1 | 00:54 - 00:56\nKieran, welcome to the show.\n\nSpeaker 2 | 00:56 - 00:59\nHello, Dan. Happy to be here.\n\nSpeaker 1 | 00:59 - 01:19\nSo for people who don't know, you are the GM of Quora, and you are also the creator of Compan Engineering, the engineering framework and plug in that everyone inside of Ever uses. And everyone who's really coding in with agents is at least aware of, if not using. And so a pleasure to have you on the show.\n\nSpeaker 2 | 01:20 - 01:22\nThank you. Yeah. It's always great.\n\nSpeaker 1 | 01:22 - 01:52\nSo I love getting to chat with you and getting to work with you because every once in a while, you have a thing that you do or you figure out that I'm like, holy shit. That's definitely the future. And you just figured something out along with Trevin also helps out Trevin Chow, who also helps out on compound engineering. And I think it has massive implications for how programming works. And then I think we can also translate that to the rest of AI and its impact on work.\n\nSpeaker 1 | 01:52 - 02:29\nAnd one of the things you've been doing is you have this compound engineering plug in that you've rebuilt the engineering workflow for how you should work with agents. And in thinking about that and thinking about where a human is used and where a human is like should not be present inside of that process, I think you've you've found something like really interesting and deep about in general how how humans and AI are going to interact with work. So do you want to explain a little bit about compound engineering and that and the process that you've created? And then also explain this insight about where humans fit.\n\nSpeaker 2 | 02:30 - 02:45\nYeah, absolutely. So compound engineering is, like, a philosophy of, like, doing engineering work, but we realize it applies to more than just engineering work. It's product work as well. It's design work. It could be knowledge work.\n\nSpeaker 2 | 02:45 - 03:18\nIt could be other things. But how I build it is while building Quora, I had AI and I was like, how can I use AI to do better work more quickly? And the initial version of Compound Engineering really evolved around four steps, which is planning first. You make a great plan, so it's very clear what you need to build and do. Then the work part where the agent does the work implements it and actually writes the code, does the design work or whatever work needs to be done.\n\nSpeaker 2 | 03:19 - 03:37\nThe third is review. So, slop comes out or whatever you call it, something beautiful comes out. One of the two, like something comes out. But how do you know it's good? And traditionally, there's like a code review or like a PR that you review and see like, hey, this can be improved.\n\nSpeaker 2 | 03:37 - 03:51\nAnd there's some iteration going on there. And then the most important step is the compound step, which is if anything comes up during that review or during the planning that you think like, oh, this is this is\n\nSpeaker 3 | 03:51 - 03:51\na good\n\nSpeaker 2 | 03:51 - 04:21\nlearning, probably you will run into this again. You can compound that knowledge back into the system and we store that as knowledge inside the repository. Agents, next time when they go into planning or when they go into work or review, they can see the mistakes they made before so they won't make it to next time. And that's really the power. Like, that's by far the most powerful thing that is in this plugin.\n\nSpeaker 2 | 04:22 - 04:37\nBut we start to realize more. Like, first of all, the work phase is kind of done. Like, it it works. If you have a good plan, it does the work and it's pretty good. And then the review makes it a little bit better.\n\nSpeaker 1 | 04:37 - 04:49\nAnd by that, you mean like having an entire phase dedicated to work in this whole system doesn't necessarily make make that much sense when all that really means is run the model, let the model do the thing.\n\nSpeaker 2 | 04:49 - 05:02\nYeah. So there needs to be a step. But what I mean by done is I don't need to to care or, like, I don't need to think about it. I trust it. And this is not like, trust me, bro, it just works.\n\nSpeaker 2 | 05:02 - 05:25\nBut this is like, I've seen if you put in a good plan, like, it does the plan. Like, it executes on the plan. LLMs are very good at just following steps, doing deep work, like working for hours, days even now. And that's thing is kind of solved. And the review starts to get there too.\n\nSpeaker 2 | 05:25 - 05:37\nAnd the planning starts to get there too. And then there's this next step is like, so so if all these things work, where where do I have to do anything? Because, like\n\nSpeaker 1 | 05:37 - 05:39\nDid I automate myself\n\nSpeaker 2 | 05:40 - 05:54\nout of a job? If everything works, like, where do I work? What is still the bottleneck? And there are two things we started to know. Like, Trevin, he's very, very great contributor to the combat engineering plug in.\n\nSpeaker 2 | 05:54 - 06:20\nLike, he is a product person and he is like, I need more on the product side, which is like before the planning phase. So he added first a brainstorm step and an ideate step. And the ideate step is like really going wide. It's like it's like, okay, let's come up with ideas in a in a room full of interesting people with angles. Brainstorm is more like, I have a problem, but I don't really understand exactly what and how.\n\nSpeaker 2 | 06:20 - 06:51\nSo it's very much brainstorming with you around the problem. And the first thing we noticed there is like the top is very important to be super well in the loop with a human and really like ask a lot of questions and really think hard. It's like the human should think hard. The L1 should support a human. But then after that, the planning phase, if you have a good grace from an idea of what problems you solve, like it can create a very good plan and the human needs not to be in the loop.\n\nSpeaker 2 | 06:51 - 07:18\nSo that's the first realization where it's like, oh, hey, here here's good to be in the loop versus not to be in the loop. And you can see other like spectrum development, for example, or other ways to do things. They assume that it's always good to have people in the loop. And I disagree. I think it's it's very important to know when to be in the loop versus when to hand it off, because that means we can think harder at the moments where we need to think harder.\n\nSpeaker 2 | 07:18 - 07:30\nAnd that's the first one. So the other one comes at the end. So like something comes out. How do you validate it? Well, it's already tested because we have browser automated testing.\n\nSpeaker 2 | 07:30 - 07:48\nClicks through all the requirements are very clearly specified and says, yeah, everything works. But the beauty comes in when a human looks at it, clicks around and has a feel like, oh, this is this. This doesn't feel good. We can polish it even more. We can make it even better.\n\nSpeaker 2 | 07:48 - 08:31\nWe can increase like or like we can do something that's still missing or beautiful, make the design better. And this is something I've learned from doing Pomodoros, where ideally if you do Pomodoros, the old school way is like you start with a task and if you finish after fifteen minutes, you have ten more minutes to work on the same task. You cannot switch tasks. And sometimes in that space, something beautiful happens because you will go deeper, you will go further than you would do. And I think this is the other moment, which is all the way at the end when everything is done where you can just elevate everything and make it even better.\n\nSpeaker 2 | 08:32 - 08:59\nAnd I think that's also what we need to do because if we don't do it, it will be all slop, all the same. And it's very important to make it feel great because the bar is high, the bar will always get higher. So this is kind of what we realized, like the beginning and the end. The middle kind of solved and can be automated pretty well. And Trevin, at some point, said, oh, it's kind of like a sandwich, which was, like, very funny.\n\nSpeaker 2 | 08:59 - 09:17\nAnd Dan is now referring to the AI sandwich, which which I think is is is very cool. Like and and I think the sandwich here is, when do you need to think about what you do and really use your brain versus offload it to the other one?\n\nSpeaker 1 | 09:17 - 09:43\nWe've all been there. You're sitting in an important meeting and you're trying to pay attention, you're trying to stay present, but you have this lingering underlying anxiety that you're going to forget everything, that you're going to miss the important detail, forget the decision, forget the action item, let something important slip through the cracks. That's why I love Granolah. It's an AI powered notepad that works in the background while you're in your meetings. It takes notes on everything that gets said, transcribed to action items, and helps get rid of that feeling.\n\nSpeaker 1 | 09:44 - 10:05\nYou don't have to worry about whether you're gonna miss something because Granolah has you covered. And that lets you stay present in meetings. I've been using Granolah for a long time, almost since they came out, and it's amazing for this. It doesn't join the meeting like some of those other clunky meeting notetakers. The UI is really fast and well considered, and it feels like it's sort of just transcribing all the important moments in my work life.\n\nSpeaker 1 | 10:05 - 10:30\nAnd that gives me the confidence to get great work done. And what's even cooler is you can chat with your notes afterwards. You can run detailed research reports on how your week was, how you act as a leader, how you performed in particular difficult conversations, and how you can do better. It's really a power tool for anyone who cares about their meetings and also cares about how they show up in those meetings. It also has these things called recipes, which are premade prompts for common tasks like negotiating, coaching, or summarizing.\n\nSpeaker 1 | 10:30 - 10:54\nI even have a recipe that I made that's in granola that you should check out. Once you try it on one meeting, it's really, really hard to go back. The notes are always better than what you could do manually, and it helps me be much more present instead of frantically typing all the time. Head to granola.ai/every for three months free with the code every, every. That's granola.ai/every for three months free.\n\nSpeaker 1 | 10:54 - 11:01\nAnd now back to the episode. Humans are the are the the sandwich the bread in the sandwich, and the AI is in the middle.\n\nSpeaker 2 | 11:01 - 11:04\nYeah. The AI is whatever you put on your sandwich.\n\nSpeaker 1 | 11:04 - 11:26\nYeah. Exactly. And I I think that's really interesting and really cool because, a, it it it gives me a good mental model for how I should be working with coding agents. But I think that also applies to the rest of knowledge work. And I think this is such an important question now because we have all these questions about, oh my god, like, what are agents gonna do?\n\nSpeaker 1 | 11:27 - 11:51\nAnd is everyone gonna is everyone gonna lose their job and all that kind of stuff? And I think software engineers are a little bit of the canary in the coal mine. And so far, what we found internally at Every is we're absolutely not like we we still hire software engineers. We need software engineers. But but the the the way that you're working and what you're doing looks a lot more like managing if you're doing it well.\n\nSpeaker 1 | 11:51 - 12:30\nWell, you're still involved, but you're involved at the beginning and the end as sort of this sandwich. And I think the same is going to be true of every other kind of work, whether that's copywriting or strategy or design. And I think there are deep reasons why that is the case that I think will be interesting to talk about. And I want to start with an objection that I think people will have, which is like, Okay, for now, agents can't do the ideate in the brainstorm, but pretty soon they will. So then what happens?\n\nSpeaker 1 | 12:31 - 13:14\nNow they're starting to do the beginning of that process. And I think that there's something interesting here where if you look within any given local frame of a problem. So to take a non coding example, the problem might be my knee hurts, and I want to solve that problem. But you can say my knee hurts is the same as this feature is broken or customers are anxious about this part of the product or whatever, any problem. If you take that frame and you say, Okay, well, the solution is maybe for your we're talking the knee hurting thing, the solution is take Advil.\n\nSpeaker 1 | 13:17 - 13:49\nAny part of that process, getting to the store or whatever can be automated, let's say DoorDash can go do it. But there's always even once you've solved it in that way, there's always a larger frame within which to think about the problem. So an example is if your knee hurts, you might need to stretch your IT band. Or you might need to stop running on hard surfaces every day. And each one of these is addressing the same problem at a different level of the stack from a different frame.\n\nSpeaker 1 | 13:49 - 14:12\nAnd humans are very good at flipping and changing frames like that. And our job is to set the frame or set the bounds within which we solve the problem. And I think it's very it's going to be very, very hard for agents to do that well by themselves. And there are there are deep reasons for that. But does that do you get that?\n\nSpeaker 1 | 14:12 - 14:17\nLike, I know it's like a little bit hand wavy and the knee hurting thing is a little hard to hard to understand, but does that does that resonate for you?\n\nSpeaker 2 | 14:19 - 14:33\nYeah. For sure. Yeah. It's like this this all comes down to building an environment where the agent will thrive. And you do that by, like, picking the right things.\n\nSpeaker 2 | 14:33 - 15:08\nAnd this is why it's so important to have humans with experience and humans with taste and humans that just want to click around and like say this is shit or this is great and why it is shit or great. And and I think I think it's similar to like the Advil example. Like if you keep doing that, it's probably your friend will say, yo, that's messed up. Just go like, go fix the problem instead of like denying the problem. And and maybe it will work for you for a little bit.\n\nSpeaker 2 | 15:08 - 15:39\nYou need someone to shake you up. And in that case, like, that's the human or that's the other person. But I do think like it will also like be more automated. Like also the ideation, you can say, okay, let's have a persona of 100 people and run simulations of how they think and how they behave. And clearly, we're going there to where we run simulations of like millions of people and see how things work and probably you'll learn something from that.\n\nSpeaker 2 | 15:39 - 16:17\nAnd and there will be more automation and maybe even that step in the front will be fully automated. But I do think in the end, if you ship something or do something or make like a statement in the world, if you want it to be your own, which you need to say yes or no at some point. You cannot fully automate everything. Like, it's maybe a little bit like art, like making art. Like, if you want it your own, you need to just it needs to be from be from you or somehow be connected.\n\nSpeaker 2 | 16:17 - 16:32\nSo I believe, like having those moments where you decide this is what I just enjoy. And that's why it's so important to do things you enjoy and you love are very important.\n\nSpeaker 1 | 16:32 - 16:48\nYeah, I agree. And I think. Yeah, you can imagine it being like, okay, yeah, we're going to simulate bazillion people and then we're going to make decisions based on what we think they would do. But that would still only cover a small set of the decisions that someone might make.\n\nSpeaker 2 | 16:48 - 17:00\nIt will never be fully. It's all it's a moving target. Like, we always get something new. And then again, there is a layer up that we then can even make bigger impact on.\n\nSpeaker 1 | 17:00 - 17:33\nEspecially because especially for a lot of these decisions, the feedback loops on these decisions, like the data is really rare. You may need you may only get a couple of moments in your career where you gather the data that helps you decide about a particular thing. And that's very hard to get into language models, especially because it's hard to get and they need a lot of it. And so that that like sort of rare expert ize that is encapsulated in an expert who has a personality in a worldview is hard to hard to get. And you're right, it's also always moving.\n\nSpeaker 1 | 17:34 - 18:03\nAnd I don't know that that makes me like very excited about this stuff because I feel like we've been we've been wandering in the woods for a long time on, like, okay, what is AI progress gonna mean and how are humans gonna be involved and all that kind of stuff? And it just feels very much to me like the simple answer is ride the bottle. Or to mix the metaphor, be this be this bread in the sandwich. And if you do that, you're gonna be fine. It's gonna be like really, really, really, really great.\n\nSpeaker 2 | 18:05 - 18:22\nYeah. I agree. And and it will be different for different people because yeah. You need to change some things. Like, you cannot keep doing what you're doing because if you're if you like writing code only, you need to find your way of writing codes.\n\nSpeaker 2 | 18:22 - 18:40\nLike, yes, you can write codes, but maybe it's about beautiful codes. And maybe you find also lots of value in just seeing beautiful codes. Like someone looks at the UI and says, oh, this is beautiful. This works great. Maybe you want that for codes.\n\nSpeaker 2 | 18:40 - 19:17\nSome people don't care about that, but they're like, oh, but the UI should feel great and and just really polish it, go extra, like wherever you feel joy. But also, it's way more product focused. So as an engineer, you're going to become either more of a manager, but also more of a product person. So it's I think like a product manager, product engineer, like it's it's more of those things as well. And so there will be some changes, but lean into making beautiful stuff and whatever that means to you.\n\nSpeaker 2 | 19:17 - 19:39\nThat can mean beautiful code, beautiful abstractions, beautiful architecture, beautiful design, beautiful copy. I think it's very important to lean into what is beautiful to you because then you will find a way to utilize an LLM to make something that gives you energy instead of drains you all the way.\n\nSpeaker 3 | 19:40 - 20:13\nIt may not look like it, but Naveen is a dictator. You can speak faster than you can type, so dictators choose to do so whenever possible. While those confined to keyboards deal with finger cramps and input lag, voice allows dictators to convey ideas as naturally as they sound in their heads. And, in the future, as AI tools improve, we will see a rise of dictators around the world. More and more dictators are choosing monologue from every.\n\nSpeaker 3 | 20:13 - 20:32\nIt learns, transcribes, and translates across different disciplines and languages, adjusting its output format to match your context, allowing you to stay in flow. Be a dictator, an idea by Every. Every, the only subscription you need to stay at the edge of AI.\n\nSpeaker 1 | 20:32 - 21:10\nYeah. And I think there's a deep reason why language models are not gonna be as good at that. There's there's the there's one deep reason, which is it's just not gonna be yours if you didn't decide it, if you didn't do it. But another deep reason is you can think of language models as being a super intelligence that has been kept in a box for the last year and has no idea what's going on in the world except for whatever it gets right when it pops out of the box. And because of that, it ends up being its outputs end up being a little bit more generic and less personal to you and your situation.\n\nSpeaker 1 | 21:10 - 21:51\nAnd you can see this in all of the stuff like, Okay, all the AI writing that's like, it's X, not Y or all that kind of stuff. It's just going to do all that. And to truly solve a problem well or to truly make art or to truly make a product that resonates with people, it's going to have to be really well tuned to the exact problem that you're trying to solve or the exact form that you're trying to make. And language models need a lot of help to get there. And that's why you have to be on either end of them to set the frame of the problem and then make sure the details are really right at level of execution at the end.\n\nSpeaker 1 | 21:51 - 22:24\nAnd I don't think I think that they will get better at doing this, but I actually think they're much further than we think they are from being able to do it all end to end. My general bar for AGI is whenever it is economically profitable or makes economic sense to run an agent 20 fourseven, where it never turns off. And OpenClaw is pushing in this direction, but it doesn't run 20 fourseven. It runs on a schedule. It has a heartbeat.\n\nSpeaker 1 | 22:25 - 22:51\nBut it's not like you just say, hey, like, Open Claw, just go and just do a bunch of stuff and just work all the time, spend tokens all the time on on stuff, and it is is worthwhile. It just it's we're not even close to that. And yes, we sometimes have well specified tasks that we can send a model off to go for like twenty four hours on. But again, it's not changing frames. It's not finishing the task and be like, Now I'm gonna pick the next one and that's gonna take five minutes.\n\nSpeaker 1 | 22:51 - 23:18\nAnd then the next one, I'm gonna spend four days on it. It's we're not even close to that. And I think we're going to need some fundamental changes to language model architecture to let them learn better for them to get to a point where they're running twenty four seven. And I think that will if they are running twenty four seven like that, they'll be a lot closer to I'm sensitive enough to context to, like, actually do interesting creative things. But it's we're not there yet.\n\nSpeaker 2 | 23:19 - 23:25\nYeah. I I agree. One other way to look at it. So I I have a music background. I studied classical composition.\n\nSpeaker 2 | 23:25 - 24:27\nAnd I think one of the the the beautiful things about music is, like, yes, Suno can create songs, but it will never capture a live performance or coming up with a melody. And it's something internally in the human, like as a composer or musician, if you perform something and you deliver this to other people, that they feel that. Like, it will not be like, sure, if you're a DJ, maybe somewhere in the middle, but like, there is something, like, performing, like, you you see something, you express something. And I think there is some of that element in these steps as well, where you see something and you're like, oh, it feels a little bit off here because I don't know why, but I I wanted to change it a little bit with the with the step at the end. And suddenly you're like kind of performing or iterating or you're making stuff.\n\nSpeaker 2 | 24:27 - 24:48\nYou're putting something in the world. And and I feel that special, like practicing a piece for like playing it 100 times is not very creative as a musician. And this is kind of the middle part. But at the end, the performance is where where you bring it out into the world to the people. So I think that's a special moment.\n\nSpeaker 2 | 24:48 - 25:07\nAnd there is a little bit of a link for me with doing this Polish step at the end. And at the start is maybe coming up with a piece. Like if you're a composer, like coming up with something out of nothing. And this is also a special moment. And normally everything in the middle is kind of boring.\n\nSpeaker 2 | 25:07 - 25:18\nIt's just work. And I feel these moments are still special and it kind of works for making software or other things with LMs as well for me.\n\nSpeaker 1 | 25:18 - 25:38\nI think that's totally right. I love this art angle that you have. And another another way to say this is all the work exists on the spectrum from it being totally rote to it being art. And art itself has many tasks within it. Any kind of creative work has many tasks within it that are more rote or less rote.\n\nSpeaker 1 | 25:39 - 26:31\nAnd if you're trying to map work on that spectrum, the stuff that is more rote is just going to be stuff that you're not going to have to do anymore. And that is a big opportunity to move a lot of the work that we do to the more creative, to us, probably more interesting parts of work and to recognize that that frame is always changing or is always moving. So as certain things get wrote, other things become things that humans start to do. And and yes, those will get automated too, but like we're going to also keep keep moving down along that spectrum. And the final thing that's not automatable is the is, like, art made by humans who feel something, and I think that's beautiful.\n\nSpeaker 2 | 26:31 - 26:58\nYeah. It's still scary because what if you're in the middle and you wanna move or if you wanna figure out what that is to you because this might sound very abstract and weird to some people. If you're not an artist or haven't, like, really, like, felt this in moments. Like, it sounds maybe a little bit like, oh, but, like, that's not me. But I do believe everyone has this.\n\nSpeaker 2 | 26:58 - 27:23\nLike, think of it like what brings you joy? Like, what what lights a fire in you, like what do you get excited about. Like, I think that thing you should, like, lean into, like whatever that is. And that can be beautiful writing or that can be very structured lists or whatever it is. Like, anything that just brings you happiness.\n\nSpeaker 2 | 27:23 - 27:29\nLike, you should do more of that using LLMs in your work because that's good.\n\nSpeaker 1 | 27:30 - 27:33\nI agree. Kieran, always a pleasure.\n\nSpeaker 2 | 27:33 - 27:36\nThank you. Yeah. Let's see where this goes.\n\nSpeaker 1 | 27:37 - 27:38\nSee you next time.\n\nSpeaker 2 | 27:38 - 27:39\nSee you. Bye.\n\nSpeaker 4 | 27:47 - 28:04\nOh my gosh, folks. You absolutely positively have to smash that like button and subscribe to AI and I. Why? Because this show is the epitome of awesomeness. It's like finding a treasure chest in your backyard, but instead of gold, it's filled with pure unadulterated knowledge bombs about chat GPT.\n\nSpeaker 4 | 28:04 - 28:24\nEvery episode is a roller coaster of emotions, insights, and laughter that will leave you on the edge of your seat craving for more. It's not just a show. It's a journey into the future with Dan Shipper as the captain of the spaceship. So do yourself a favor. Hit like, smash subscribe, and strap in for the ride of your life.\n\nSpeaker 4 | 28:24 - 28:29\nAnd now without any further ado, let me just say, Dan, I'm absolutely, hopelessly in love with you."
+    }
+  ],
+  "blogs": [
+    {
+      "source": "blog",
+      "name": "Claude Blog",
+      "title": "Redesigning Claude Code on desktop for parallel agents",
+      "url": "https://claude.com/blog/claude-code-desktop-redesign",
+      "publishedAt": "Apr 14, 2026",
+      "author": "",
+      "description": "",
+      "content": "It includes a new sidebar for managing multiple sessions, a drag-and-drop layout for arranging your workspace, an integrated terminal and file editor, plus performance and quality-of-life improvements. The new desktop experience For many developers, the shape of agentic work has changed. You&#x27;re not typing one prompt and waiting. You&#x27;re kicking off a refactor in one repo, a bug fix in another, and a test-writing pass in a third, checking on each as results come in, steering when something drifts, and reviewing diffs before you ship. The new app is built for how agentic coding actually feels now: many things in flight, and you in the orchestrator seat. Run sessions in parallel The new sidebar puts every active and recent session in one place. Kick off work across multiple repos and move between them as results arrive. You can filter by status, project, or environment, or group the sidebar by project to find and resume sessions faster. When a session&#x27;s PR merges or closes, it archives itself so the sidebar stays focused on what&#x27;s live. When you need to ask a question mid-task, you can open a side chat (⌘ + ; or Ctrl + ;) to branch off a conversation. Side chats pull context from the main thread, but don’t add anything back to the thread, to avoid misdirecting your tasks. Review and ship without leaving the app The redesign brings more commonly-used tools into the app, so you can review, tweak, and ship Claude&#x27;s work without bouncing to your editor: Integrated terminal : Run tests or builds alongside your session. In-app file editor : Open files, make spot edits directly, and save changes. Faster diff viewer : Rebuilt for performance on large changesets. Expanded preview : Open HTML files or PDFs in-app, in addition to running local app servers in the preview pane. Every pane is drag-and-drop. Arrange the terminal, preview, diff viewer, and chat in whatever grid matches how you work. Fits your stack The desktop app now has parity with CLI plugins. If your org manages Claude Code plugins centrally, or you&#x27;ve installed your own locally, they work in the desktop app exactly the way they do in your terminal. You can still run sessions locally or in the cloud. SSH support now extends to Mac alongside Linux, so you can point sessions at remote machines from either platform. Customize for how you work Three view modes—Verbose, Normal, and Summary—let you dial the interface from full transparency into Claude&#x27;s tool calls to just the results. New keyboard shortcuts cover session switching, spawning, and navigation; press ⌘ + / (or Ctrl + / ) to see the full list. A new usage button shows both your context window and session usage at a glance. Under the hood, the app has been rebuilt for reliability and speed, and now streams responses as Claude generates them. Getting started The redesigned desktop app is available now for all Claude Code users on Pro, Max, Team, and Enterprise plans, and via the Claude API. Download the app , or update and restart if you already have it. Explore the documentation to learn more."
+    }
+  ],
+  "stats": {
+    "xBuilders": 15,
+    "totalTweets": 30,
+    "podcastEpisodes": 1,
+    "blogPosts": 1,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
