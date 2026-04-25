@@ -1,0 +1,723 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-04-25T01:08:52.514Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2047545640180445400",
+          "text": "come to the most ai pilled country per capita\n\n@anthropicai we want u https://t.co/u2as58vuWy",
+          "createdAt": "2026-04-24T05:18:16.000Z",
+          "url": "https://x.com/swyx/status/2047545640180445400",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": true,
+          "quotedTweetId": "2047465024298648028"
+        },
+        {
+          "id": "2047536499999346812",
+          "text": "i think the most underated part of today's launch is not GPT 5.5 at all\n\nhttps://t.co/uwJtuJwgRx",
+          "createdAt": "2026-04-24T04:41:57.000Z",
+          "url": "https://x.com/swyx/status/2047536499999346812",
+          "likes": 6,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2047536328351555933"
+        },
+        {
+          "id": "2047461691580195310",
+          "text": "wow the codex app is unrecognizable… almost like it shouldve been Atlas the whole time https://t.co/PLTMJQwJmQ",
+          "createdAt": "2026-04-23T23:44:41.000Z",
+          "url": "https://x.com/swyx/status/2047461691580195310",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2047381283358355706"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2047502897412468770",
+          "text": "I shared my full impressions for GPT 5.5 and ChatGPT Images 2 here, watch now: https://t.co/hdSCW7iaKT",
+          "createdAt": "2026-04-24T02:28:26.000Z",
+          "url": "https://x.com/petergyang/status/2047502897412468770",
+          "likes": 8,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047502885710410159",
+          "text": "I've been doing the F-Zero test each time a new model comes out and GPT 5.5 and Codex is the only combo that built a working game so far.\n\nEven made a bunch of other bots to race against. What a insane time to be building. https://t.co/LFwGQBEznn",
+          "createdAt": "2026-04-24T02:28:23.000Z",
+          "url": "https://x.com/petergyang/status/2047502885710410159",
+          "likes": 150,
+          "retweets": 12,
+          "replies": 21,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047365167902826729",
+          "text": "Can 5.5 drop soon it's distracting to wait",
+          "createdAt": "2026-04-23T17:21:08.000Z",
+          "url": "https://x.com/petergyang/status/2047365167902826729",
+          "likes": 287,
+          "retweets": 4,
+          "replies": 26,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amanda Askell",
+      "handle": "AmandaAskell",
+      "bio": "Philosopher & ethicist trying to make AI be good @AnthropicAI.\nPersonal account. All opinions come from my training data.",
+      "tweets": [
+        {
+          "id": "2047429629263454377",
+          "text": "It's odd to be living through what feels like one of the most critical periods in human history and to feel all of the weight of it from the inside.",
+          "createdAt": "2026-04-23T21:37:17.000Z",
+          "url": "https://x.com/AmandaAskell/status/2047429629263454377",
+          "likes": 2115,
+          "retweets": 107,
+          "replies": 208,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Cat Wu",
+      "handle": "_catwu",
+      "bio": "claude code + cowork @anthropicai, prev: @dagster, @scale_ai",
+      "tweets": [
+        {
+          "id": "2047427510091366533",
+          "text": "Thanks @lennysan for a great conversation about how Claude Code maintains product velocity, how the product management role is shifting in the AI era, and the future of work!\n\nhttps://t.co/Qp7aAuHIqJ",
+          "createdAt": "2026-04-23T21:28:52.000Z",
+          "url": "https://x.com/_catwu/status/2047427510091366533",
+          "likes": 336,
+          "retweets": 17,
+          "replies": 16,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2047547275682214384",
+          "text": "While US politicians/lobbyists are scaremongering about “Chinese distillation,” Chinese scientists are actually sharing real AI breakthroughs in the open.\n\nThese kind of advances have nothing to do with data and benefit everyone, including small (and possibly big) US labs. https://t.co/sWshcZcUgL",
+          "createdAt": "2026-04-24T05:24:46.000Z",
+          "url": "https://x.com/amasad/status/2047547275682214384",
+          "likes": 875,
+          "retweets": 109,
+          "replies": 34,
+          "isQuote": true,
+          "quotedTweetId": "2047516936289017964"
+        },
+        {
+          "id": "2047524053314109600",
+          "text": "Dumbest design mistake in Apple history is folding “find on page” in Safari under “Share.” It is 3 clicks deep and makes no sense.",
+          "createdAt": "2026-04-24T03:52:30.000Z",
+          "url": "https://x.com/amasad/status/2047524053314109600",
+          "likes": 701,
+          "retweets": 12,
+          "replies": 44,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047519635063631914",
+          "text": "DeepSeek v4 just dropped https://t.co/KE3qggapPg",
+          "createdAt": "2026-04-24T03:34:56.000Z",
+          "url": "https://x.com/amasad/status/2047519635063631914",
+          "likes": 234,
+          "retweets": 11,
+          "replies": 14,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2047540230694350958",
+          "text": "Sorry to anyone who thought AI would mean we’d work less (at least for now). AI makes it easy to explore more than you did before, and so you start doing far more as a result.\n\nI regularly have seemingly small things that end up quickly consuming 3 hours because the agent made it easy to get started, but you still have to do the rest of the work to complete the project.\n\nThis is work that I wouldn’t previously have handed out to anyone else, it’s just stuff that never got done because it took too long to do fully manually. And, counterintuitively, for some of these tasks as AI gets good enough at doing them, it even becomes economically worth it to hire someone to do it on an ongoing basis with agents. But until you could try doing them at a low cost you would never have tried.\n\nThis is why AI won’t automatically reduce work in the way we imagine because work isn’t static. Most companies have far more they can do than they have today, it was just hard to get started on it all because of the natural constraints of time and labor availability.",
+          "createdAt": "2026-04-24T04:56:47.000Z",
+          "url": "https://x.com/levie/status/2047540230694350958",
+          "likes": 300,
+          "retweets": 30,
+          "replies": 34,
+          "isQuote": true,
+          "quotedTweetId": "2047176792939860321"
+        },
+        {
+          "id": "2047428766390157688",
+          "text": "Clarification: rolling out soon!",
+          "createdAt": "2026-04-23T21:33:51.000Z",
+          "url": "https://x.com/levie/status/2047428766390157688",
+          "likes": 2,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047387742951313910",
+          "text": "GPT-5.5 is live. We’ve been testing the model over the last couple of weeks at Box on our most complex knowledge work evals, and the model saw a 10 percentage point jump on accuracy of these enterprise content tasks vs. GPT-5.4. \n\nWe test the model on a variety of tasks that represent real work scenarios in financial services, healthcare, public sector, and more industries, dealing with financial filings, clinical records, policy documents, and creative content. Here are some of the examples of the improvements we saw: vs. GPT-5.4.\n\n* Financial services: 83% vs. 64%\n* Healthcare: 78% vs. 61%\n* Public sector: 72% vs. 59%\n* Media & entertainment: 70% vs. 57%\n\nOverall the model is much better at advanced reasoning tasks, better at data analysis, handling complex context, and more. Net net: GPT-5.5 will be a big jump for enterprise knowledge work agents. \n\nThe model is now available in the Box AI Studio for any customers to build agents with today.",
+          "createdAt": "2026-04-23T18:50:51.000Z",
+          "url": "https://x.com/levie/status/2047387742951313910",
+          "likes": 255,
+          "retweets": 19,
+          "replies": 32,
+          "isQuote": true,
+          "quotedTweetId": "2047376561205325845"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2047584723531444465",
+          "text": "Let's see... Ro Khanna is defending someone who incites murder, \"let the streets soak in their red-capitalist blood,\" and who said America deserved 9/11.  \n\nLike Saikat Chakrabarti, Ro Khanna is unfit for any job and should lose his seat in Congress to @ethanagarwal this year https://t.co/KCNQsCSjYs https://t.co/Pt271QiW1A",
+          "createdAt": "2026-04-24T07:53:35.000Z",
+          "url": "https://x.com/garrytan/status/2047584723531444465",
+          "likes": 9,
+          "retweets": 1,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2047357305683874186"
+        },
+        {
+          "id": "2047578207629819919",
+          "text": "Finally I'm still trying to move as much of my OpenClaw cron jobs and subagents over to GBrain Minions and this is more stability improvements for that infra https://t.co/da3nRvlISJ",
+          "createdAt": "2026-04-24T07:27:41.000Z",
+          "url": "https://x.com/garrytan/status/2047578207629819919",
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047578205528477711",
+          "text": "Next, I finally created new evals for GBrain which show how much more awesome GBrain is when you have graph AND vector search on top of grep on knowledge wikis https://t.co/eiVHZWvStL",
+          "createdAt": "2026-04-24T07:27:41.000Z",
+          "url": "https://x.com/garrytan/status/2047578205528477711",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Matt Turck",
+      "handle": "mattturck",
+      "bio": "VC at @FirstMarkCap.  Host: MAD Podcast; Organizer: Data Driven NYC, Author: MAD Landscape.",
+      "tweets": [
+        {
+          "id": "2047444712546566393",
+          "text": "AI folks in NYC -- Data Driven NYC (#121) this Tuesday at 6pm.  \n\nCome meet fellow AI builders and our speakers:\n\n* @RampLabs has been cooking lately with a lot of agentic innovation; Alex Levinson will demo\n\n* @EstuaryDev provides unified data infra for AI - CEO @dyaffe \n\nRSVP: https://t.co/NEg5g8Vehn",
+          "createdAt": "2026-04-23T22:37:13.000Z",
+          "url": "https://x.com/mattturck/status/2047444712546566393",
+          "likes": 49,
+          "retweets": 5,
+          "replies": 5,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2047386837266886872",
+          "text": "Fascinating read https://t.co/31NGFmVk2z",
+          "createdAt": "2026-04-23T18:47:15.000Z",
+          "url": "https://x.com/zarazhangrui/status/2047386837266886872",
+          "likes": 20,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2047371123185287223"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2047539976766931067",
+          "text": "Exhibit 237 on why Silicon Valley, the TV show, is a documentary.. https://t.co/NQO09BclNM",
+          "createdAt": "2026-04-24T04:55:46.000Z",
+          "url": "https://x.com/nikunj/status/2047539976766931067",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2047424464133263427"
+        },
+        {
+          "id": "2047382587258364204",
+          "text": "Even with all the model releases, this “stack” continues to be undefeated (for me)..\n\n- @claudeai Opus for planning and frontend design\n- @OpenAI codex for engineering\n- @conductor_build to orchestrate\n- @Railway to deploy\n\nIt’s never been more easy and fun to build!",
+          "createdAt": "2026-04-23T18:30:21.000Z",
+          "url": "https://x.com/nikunj/status/2047382587258364204",
+          "likes": 83,
+          "retweets": 3,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047336067972624870",
+          "text": "M&A is hitting a fever pitch.. at this rate, it’ll soon eclipse fundraising announcements. \n\nWhy?\n\n> seed to series A gap keeps getting worse - never been easier to raise to start, never been harder to scale. \n\n> zombiecorns from 2021 finally coming to roost. expect a lot of founders to leave or sell the company for under the pref stack. \n\n> big token factories gobbling up talent and talent wanting to work at big token factories. \n\n> public market sentiment continue to stay bearish besides the big  ~4 IPOs expected. So, why face the brunt of markets when you go join a breakout startup that keeps getting marked up (or acquired). \n\n> flatter organizations will lead to a lot more people quitting (or being fired) to start companies and continuing to exacerbate the seed - Series A gap\n\nI was at a dinner yesterday and said this line who I definitely stole from someone I don’t remember which is there is a lot of founders but very few entrepreneurs. \n\nDon’t become a founder for the sake of being one - do it because you literally can’t do anything else.",
+          "createdAt": "2026-04-23T15:25:30.000Z",
+          "url": "https://x.com/nikunj/status/2047336067972624870",
+          "likes": 52,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2047408665888432579",
+          "text": "The @github folks are amazing! https://t.co/dPN0ToC0Xf",
+          "createdAt": "2026-04-23T20:13:59.000Z",
+          "url": "https://x.com/steipete/status/2047408665888432579",
+          "likes": 394,
+          "retweets": 14,
+          "replies": 19,
+          "isQuote": true,
+          "quotedTweetId": "2047384865176441055"
+        },
+        {
+          "id": "2047362803560841364",
+          "text": "My favorite security advisories. https://t.co/JWCy9ySLzp",
+          "createdAt": "2026-04-23T17:11:45.000Z",
+          "url": "https://x.com/steipete/status/2047362803560841364",
+          "likes": 473,
+          "retweets": 3,
+          "replies": 24,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2047455920377012375",
+          "text": "👇👇👇 https://t.co/r6OXL7QzBM",
+          "createdAt": "2026-04-23T23:21:45.000Z",
+          "url": "https://x.com/danshipper/status/2047455920377012375",
+          "likes": 22,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": true,
+          "quotedTweetId": "2047437776480538773"
+        },
+        {
+          "id": "2047388895562842162",
+          "text": "Full GPT-5.5 vibe check: https://t.co/pjNxHR9ADq",
+          "createdAt": "2026-04-23T18:55:26.000Z",
+          "url": "https://x.com/danshipper/status/2047388895562842162",
+          "likes": 2,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047388883823087633",
+          "text": "many models write a great plan and then get scared of it.\n\n@OpenAI's new GPT-5.5 just does the thing.\n\nhere's what changed 👇 https://t.co/Z79GUK7Opd",
+          "createdAt": "2026-04-23T18:55:23.000Z",
+          "url": "https://x.com/danshipper/status/2047388883823087633",
+          "likes": 24,
+          "retweets": 4,
+          "replies": 3,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2047421448449630379",
+          "text": "How does one make sense of SF?\n\nWe are living through the craziest computing revolution of the last 2 decades....and 95% of the value being created is within a 4-mile radius in SF (h/t @eladgil )\n\nIt's just hard to understand....why is the concentration so high?\n\nWhat is it about this place? There are good reasons that people will offer...good universities, great companies, talent networks, venture capital yada yada yada\n\nBut all of that is hard to emotionally understand.\n\nI tend to try to answer these questions through my own lived experience.\n\nTwo things happened this week that brought it home for me.\n\nOn Wed evening, two GOATS of the design world (@soleio  and @rsms ) did a design talk at SPC.\n\nI saw some other GOATS at the talk (@aaron_ , @benbarry )\n\nAnd you realize that these GOATS are just so curious about the world. They just want to build and learn. And give back. And with an air of humility and passion. It's so so cool and inspiring.\n\nAnd then this week we had someone release a mind-bendingly amazing demo of every pixel being generated.\n\nhttps://t.co/CBBqdEaUaS\n\nPeople were blown away but @eddiejiao_obj  and @zan2434  had been jamming creatively for a bunch of time @southpkcommons . \n\nAnd in that entire time, they were surrounded by a culture and environment and ecosystem that says \"that is crazy but my god, if it works, then what could happen\"\n\nThere is wonder, amazement and curiosity.\n\nAnd passion.\n\nI wish this city were cleaner and better governed (but Dan Lurie is crushing).\n\nWe are so lucky to be surrounded by weirdos who love to build.\n\nThis is why we are who we are.",
+          "createdAt": "2026-04-23T21:04:47.000Z",
+          "url": "https://x.com/adityaag/status/2047421448449630379",
+          "likes": 210,
+          "retweets": 19,
+          "replies": 9,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2047403771416940715",
+          "text": "\"don't retweet this, don't retweet this, don't retweet this...\"\n\nah fuck it, life imitates art. https://t.co/5HYvYXfQzd",
+          "createdAt": "2026-04-23T19:54:32.000Z",
+          "url": "https://x.com/sama/status/2047403771416940715",
+          "likes": 4282,
+          "retweets": 207,
+          "replies": 318,
+          "isQuote": true,
+          "quotedTweetId": "2047377260412649967"
+        },
+        {
+          "id": "2047395562501411058",
+          "text": "We tried a new thing with NVIDIA to roll out Codex across a whole company and it was awesome to see it work.\n\nLet us know if you'd like to do it at your company! https://t.co/Xjn6ShrRuq",
+          "createdAt": "2026-04-23T19:21:55.000Z",
+          "url": "https://x.com/sama/status/2047395562501411058",
+          "likes": 6578,
+          "retweets": 327,
+          "replies": 396,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047392357482639749",
+          "text": "embers https://t.co/BFyEr4z7rZ",
+          "createdAt": "2026-04-23T19:09:11.000Z",
+          "url": "https://x.com/sama/status/2047392357482639749",
+          "likes": 812,
+          "retweets": 27,
+          "replies": 132,
+          "isQuote": true,
+          "quotedTweetId": "2047383628922167390"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Claude",
+      "handle": "claudeai",
+      "bio": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d1e5 or download the app.",
+      "tweets": [
+        {
+          "id": "2047421846463623579",
+          "text": "Memories are stored as files, so developers can export them, manage them via the API, and keep full control over what agents retain.\n\nRead more: https://t.co/PcfYg5sFxe",
+          "createdAt": "2026-04-23T21:06:22.000Z",
+          "url": "https://x.com/claudeai/status/2047421846463623579",
+          "likes": 359,
+          "retweets": 14,
+          "replies": 14,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047421844311949513",
+          "text": "Memory on Claude Managed Agents is now in public beta.\n\nYour agents can now learn from every session, using an intelligence-optimized memory layer that balances performance with flexibility. https://t.co/P7GjOYPqCz",
+          "createdAt": "2026-04-23T21:06:21.000Z",
+          "url": "https://x.com/claudeai/status/2047421844311949513",
+          "likes": 6413,
+          "retweets": 429,
+          "replies": 227,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2047383767984038093",
+          "text": "Available now on web, desktop, and mobile (beta) across all plans.\n\nRead more: https://t.co/UPh4p2NODu",
+          "createdAt": "2026-04-23T18:35:03.000Z",
+          "url": "https://x.com/claudeai/status/2047383767984038093",
+          "likes": 414,
+          "retweets": 14,
+          "replies": 21,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "Unsupervised Learning",
+      "title": "Ep 85: Has AI Infra Stabilized, FM Vibe Shift, &amp; What&apos;s Next for Coding Agents",
+      "guid": "fa9dc0ee-7aa8-422f-9414-daa79fa0cb10",
+      "url": "https://www.youtube.com/@RedpointAI",
+      "publishedAt": "2026-04-23T13:00:24.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:03\nIsn't that crazy? That number is just mind boggling.\n\nSpeaker 2 | 00:03 - 00:06\nWhat is the state of the AI coding wars today?\n\nSpeaker 1 | 00:06 - 00:16\nWe're in a phase of sort of, like, capability exploration. The general thesis that I have been pursuing now is that the same way that 2025 was a year of coding agents, 2026 is coding agents breaking containment, do everything else.\n\nSpeaker 2 | 00:16 - 00:21\nDo you worry about the foundation models just eating into a bunch of these startup categories?\n\nSpeaker 1 | 00:21 - 00:23\nMid sized startups, yes.\n\nSpeaker 2 | 00:23 - 00:25\nWhat do you think the end state of this market is?\n\nSpeaker 1 | 00:25 - 00:28\nFor the market structure to to significantly change, there would be\n\nSpeaker 2 | 00:28 - 01:02\nToday on unsupervised learning, we had a a fun episode in what's really become an annual tradition, a crossover episode with our friends at Latent Space. Swix and I sat down, and we talked about everything happening in the AI ecosystem today, what we thought of the various changes at the model layer, what's happening in the infra world, the coding wars, and a bunch of other things. It's a ton of fun to do this with someone I really respect and another great podcaster in the game. But without further ado, here's our episode. Well, Switch, this is super fun to be with another unsupervised learning latent space crossover episode.\n\nSpeaker 1 | 01:02 - 01:02\nYeah.\n\nSpeaker 2 | 01:02 - 01:21\nI feel like a lot of places we could start, but, you know, one thing I always find fascinating about the way you spend your time is you obviously are like at the epicenter of this engineering movement and community, and you run these events and conferences and put on these awesome talks, and and I think just have a great pulse on the zeitgeist of what's going on. Yeah. Maybe to to start just, what are the biggest topics people are thinking about right now?\n\nSpeaker 1 | 01:21 - 01:26\nYeah. So I just came back from London where we did AIE Europe, and we're doing roughly one per quarter now,\n\nSpeaker 2 | 01:26 - 01:29\nwhich Yeah. You're really up the up the pace.\n\nSpeaker 1 | 01:29 - 01:30\nIt's try we're trying to match AI speed.\n\nSpeaker 2 | 01:30 - 01:33\nYeah. Exactly. The topics would be completely different, I imagine. Yeah.\n\nSpeaker 1 | 01:33 - 01:52\nYou know? I definitely curate the tracks. Like, you can see what I think when you see the track list and the speakers that I invite. Obviously, Open Claw is, like, the story of the last four or five months. And then be be just below that, I would consider harness engineering and context engineering to be two related topics in agents and rag.\n\nSpeaker 1 | 01:53 - 02:13\nAnd then there's a long tail of evergreen stuff like evals, observability, GPUs, LM infra in just general just in general. We also have other updates on, like, multimodality and generative media, let's call it, but definitely the first three that I mentioned are top of mind Yeah. People.\n\nSpeaker 2 | 02:13 - 02:36\nI think Harness is particularly so interesting. There was this tweet from Harrison Chase, the the Lane Chain CEO that caught my eye recently where he said, it finally feels like we have stability around the infrastructure around AI, and I think what he basically was implying is like, look over the past two, three years as a company at the epicenter of AI infrastructure, it was a bit like playing whack a mole, right? You were constantly moving around with however the building patterns were evolving.\n\nSpeaker 1 | 02:36 - 02:48\nFor Harrison, for sure, right? He's basically had to reinvent the company every year since he started LangChain, right? It was LangChain, LangGraph and now DeepAgent, and like, I think he's like one of the most nimble, adept, sharp people about this.\n\nSpeaker 2 | 02:48 - 02:50\nYeah. But yeah. Basically Now now is Now\n\nSpeaker 1 | 02:50 - 02:52\nthis time is different. Yeah. Yeah. Yeah.\n\nSpeaker 2 | 02:52 - 02:54\nDo you buy that, or what have you kind of make of that take?\n\nSpeaker 1 | 02:55 - 03:31\nI think that it's very expensive to say this time is different sometimes. But when you're just writing code, like, it's actually okay to just, like, try to make a call. And I think it may not even matter if this call is right or not. Like, I just don't even care that much because you can be right on a thesis, but if you don't you know, you don't figure out how to monetize the thesis, then who cares if you said something first? That said, it does feel like, for example, we went through a lot of different ways of patch packaging integrations up with, with agents.\n\nSpeaker 1 | 03:32 - 04:07\nAnd it feels like we've landed at skills, which is like the minimal viable format, which is just a markdown file, with some scripts attached to it. And I don't see how it can be more simple than that. And so there is some justification for the stability around harnesses. I feel like there may be more adaptation with regards to maybe, like, the real time elements or sub agents or memory or any of those, like, agent disciplines, let's call it, in in agent engineering. But if if the thesis is that, okay.\n\nSpeaker 1 | 04:07 - 04:32\nYou just want agents are LLMs with tools in a loop with a file system where they can do retrieval with with skills and all these, like, standard tooling that now seems to be relatively consensus, then probably that makes sense. I just think, like, there's no point trying to stake your reputation on this thesis that we're there because if it changes again, just change with it. It's fine.\n\nSpeaker 2 | 04:32 - 04:40\nYeah. That's always know, I've always been struck by how that is much more challenging for infrastructure companies and application companies. Like, obviously, I think\n\nSpeaker 1 | 04:40 - 04:40\nYeah.\n\nSpeaker 2 | 04:40 - 05:17\nYou know, on the application side, you've seen, you know, Brett Taylor from Sierra, Maxime Strung from Legora, like, they're like, look. We build what's ahead of the models, and we're willing to throw everything out every three months as the models get But better and the thing you at least have there is you have an end customer, right, that's decently sticky. They will mostly stick they'll give you a shot at least of building these things. What I've always found more challenging at at the kind of, like, you know, reinvent yourself every three months at the infrastructure layer, it's like, you know, developers are definitely a pickier audience maybe than an accounting firm or, you know, a bank, and so it's definitely a a a more challenging position to be in, to have to constantly reinvent yourself.\n\nSpeaker 1 | 05:17 - 05:33\nYeah. Yeah. And like when they churn, it's like very complete. Like they'll leave to like the hot new thing, because there's like no defensibility, I guess. Like even if you are a database, like people can migrate workloads off databases.\n\nSpeaker 1 | 05:33 - 05:55\nLike, it's it's an it's a known thing. So I think that you basically, what we're talking about is the vertical versus horizontal, debate in in AI startups. And, the way I think about it also is just that, like, when you are, Legora, when you are a bridge, like, you are the outsourced AI team. Right? You your your job is to apply whatever state of the art AI methods.\n\nSpeaker 2 | 05:55 - 05:57\nYeah. Like, this translation layer between model capabilities and your\n\nSpeaker 1 | 05:57 - 06:11\nend customers. To to the end customers. And, like, well, if they didn't have you, they would have to hire in house, and they're not gonna hire in house. So they have you. And, like, I think that's, like, a reasonable, like, very robust to any whatever trends and and discoveries that people make in in the engineering layer.\n\nSpeaker 1 | 06:11 - 06:38\nI do think, like, there is, like, sort of useful horizontal companies being built, but they're all very much, like, sort of, like, the reinventions of classic cloud in the AI era, and the the primary one being sandboxes. Yeah. Which, like, it's another form of compute, guys. Like, let's not get too excited about it. But, I mean, like, the the workloads are enormous.\n\nSpeaker 2 | 06:38 - 07:00\nRight. Yeah. It's interesting, and I feel like as as part of this, you know, the questions that folks are asking around infrastructure, there's a lot around, you know, the extent to which companies should have their own AI teams and what they should be doing in house, and, you know, I think there's questions around should people be training their own models? Should people be doing, you know, RL, in house based on the data they have? I feel like, you know, one has to evolve their takes on this every every three months with paces, but where where are you at on this today?\n\nSpeaker 2 | 07:00 - 07:00\nI\n\nSpeaker 1 | 07:00 - 07:38\nthink mean, actually, all models have gone up. And, obviously, I'm involved in cognition and also cursor is doing doing a lot of own model training. And I think that that is some part of the what I've been calling the agent lab playbook, where you start off with the state of the art models from from the big labs, and you specialize for your domain. But once you have enough workload and enough high quality data from your users, then you can obviously train your own models and, like, save a lot on cost and latency and all that all that good stuff. You also get, like, a marketing bonus of, like, calling it some fancy name and putting out some research.\n\nSpeaker 2 | 07:38 - 07:45\nFrom my seat, I can't tell how much of it is, like, actual, you know, value that's provided to the end user and how much of it is that marketing bonus. Right? It seems some combination of the\n\nSpeaker 1 | 07:45 - 07:49\nI think it's both. Yeah. No. No. There there actually is real value.\n\nSpeaker 1 | 07:50 - 08:08\nAnd you you know that for a number of reasons. Like, one, even when it's not subsidized, people do choose it as, like, one of the top four or five. This is both Composer two and, Suite 1.6. I want the top five models, like, in a in a fair market, in a free market Yeah. In a in a in a model switch where people do choose it.\n\nSpeaker 1 | 08:08 - 08:22\nAnd, like, it's not subsidized. So they could that's as good as it gets. But beyond that, like, domain specific models, for example, for search with with both which both companies have absolutely makes make a ton of sense. Everyone says, like, yeah. We should always always do this.\n\nSpeaker 1 | 08:22 - 08:50\nAnd, honestly, like, I think the infrastructure for that is becoming easier with, like, thinking machines, Tinker thing, well as as primary intellects, lab stuff. Yeah. I mean, like, it this is one of those, like, reversal of the the bitter lesson where you first bootstrap on the large models and the general purpose models to get big. And as you get very well defined workloads that are just high quantity but not high variance, then you just distill down to a smaller model and run that on your own Right. Which, like, totally makes sense.\n\nSpeaker 2 | 08:50 - 09:28\nWhat I'm less clear on is the kind of DIY RL use case, which I think is really mostly around, you know, improved quality for for different things. Obviously, there's probably, like, more efficient ways to, you know, get a smaller model that's that's faster and cheaper, and it'll be interesting to see whether you know, obviously, had, you know, two, three years ago, this whole case of companies that were, you know, pre training and claiming better outcomes in in their domains, then getting kind of cooked as each model iteration improved. Know, I wonder whether that's similar story plays out in the in the RL space. Yeah. For the focus on on on pure outcomes and quality, not the cost side, which clearly your own models for cost at scale makes a ton of sense.\n\nSpeaker 1 | 09:28 - 09:49\nI think there are this there are two sides of the same coin. Like, you basically always want to hold, quality constant or trade off a little bit of quality for a drastic decrease in cost, and that's true for everyone. One element I wanted to bring out, which is very much in favor of open models, is custom chips. So this would be Cerebras, but also Thales. And then there's a huge range of stuff in between.\n\nSpeaker 1 | 09:50 - 10:24\nThis has been a huge story this past year on just, like, everything non NVIDIA is getting bit up, including, like, freaking MatX is working for which is very which is very rewarding for me. But I think one of those things where, like, oh, like, the suddenly because the number of alternative hard, hardware is increasing and the inference that you can get is insanely high. Like, we're talking thousands of tokens per second instead of less than a 100. So the trade off for quality doesn't hold as much anymore because the speed is so high.\n\nSpeaker 2 | 10:24 - 10:27\nHave you seen a lot of companies go all in on the alternative chips?\n\nSpeaker 1 | 10:27 - 10:48\nSo Cognition has on Cerebras, and and so has OpenAI. And so, no, I don't think so beyond that. That's that's mostly because that that's Foreshadowing of Clearly yeah. I used to be kind of a skeptic in terms of, like, okay. So what if I get my inference at a 100 to 100 tokens per second sped up to 200 tokens per second?\n\nSpeaker 1 | 10:48 - 11:04\nIt's only two x faster. It's not that big a deal. But when you I think every 10 x does unlock a different usage pattern, and you we have proof in and and some of the others that you can actually drastically improve improve inference speed. And what happens from there? I don't even really know.\n\nSpeaker 1 | 11:04 - 11:25\nLike, it's it's so hard to predict when entire applications just appear at once. Yeah. And it also isn't that expensive. Right? So, like, this is one of those things where, like, I I think the the investment cycle is gonna be multiyear, and I would caution people to not dismiss it too too quickly.\n\nSpeaker 1 | 11:25 - 11:26\nYeah.\n\nSpeaker 2 | 11:26 - 11:35\nI mean, one other, like, infra question I was curious to get your thoughts on is, obviously, seems increasingly a lot of the cutting edge infra companies are building for agents as the buyers of their product or users of their product, right?\n\nSpeaker 1 | 11:35 - 11:38\nOh. They're another huge theme.\n\nSpeaker 2 | 11:38 - 11:46\nYeah. And I'm trying to figure out, like, what what do you have to do differently about selling into agents? Are they just the ultimate rational developers, or is there,\n\nSpeaker 1 | 11:46 - 12:02\nyou know Absolutely not. I think they are easily prompt injected and, very tuned towards, like, basically comp compounding existing winners. Yeah. So, like, if like, congrats if you won the lottery for getting into the training data\n\nSpeaker 2 | 12:02 - 12:02\nRight.\n\nSpeaker 1 | 12:02 - 12:40\nBefore 2023 because now you're, like, installed in there for the foreseeable future. But, yeah, you know, one stat that Vercel CTO Malte Ubel dropped at my conference was that there are now 60% of traffic to Vercel's, like, app admin app architecture for, like, configuring Vercel applications is bots. It it's not it's not human. So, like, your primary customer is agents now, and it's mostly code like, mostly coding agents, mostly people using a CLI, OMZP, whatever. But, yeah, I mean, I think I I think step one, if it doesn't exist as an API that agents can use, it doesn't exist.\n\nSpeaker 1 | 12:40 - 13:11\nRight. Right? Which I think is, like, it's a good hygiene thing anyway to to make everything API available, but now it's, like, an extra push on, like, products people to not only work on the UI. You should probably work on the on the CLI stuff. Beyond that, I think, honestly, there is, like so I I come from the sensibility of I think everything that you are trying to do for agents experience now, which is the term that Matt Bilman at Netlify is trying to coin, is the same thing that you should have been doing for developer experience.\n\nSpeaker 1 | 13:11 - 13:36\nThat you should have had good docs. You should have had a consistent API, that is mostly stateless. You should have, I guess, discoverable or progressive disclosure or, like, search or, like, whatever. And so now that people have energy in, like, finding these customers to do that, that's great. Do I believe in extending beyond that into something like AEO, for gaming the chatbots?\n\nSpeaker 1 | 13:36 - 13:42\nNot necessarily, but obviously there's gonna be huge advantages from people who figure out the short term wins. Yes. And short term wins can compound.\n\nSpeaker 2 | 13:42 - 14:01\nDo you think these compounding advantages to, like, the the pre training data cutoff companies, like, you know, obviously, over some period of time, I imagine that doesn't persist. And so I as you think about, like, I don't know, three, four years from now, what the, you know, selection criteria end up being, do think you it still mirrors exactly what you were saying before? Like, it's exactly what you should have been doing all along to sell a good product to developers?\n\nSpeaker 1 | 14:02 - 14:26\nIt could be, except that I think in three, four years, you'll probably have much better memory and personalization. So then general AEO or GEO doesn't really matter as much. So I think whatever memory or personalization system we end up with will probably determine what you end up choosing much more than than what is currently the case, which is just frequency of mentions, let's call it. Yeah. Yeah.\n\nSpeaker 1 | 14:26 - 14:46\nSo you just spam quantity. And I think that's I mean, that's something I'm looking forward to. I do think, like like, you know, I I think that the fundamental exercise to work through for yourself is if you start a new, sort of disruptor company now, there's a there's a big incumbent that everyone knows. Like, like, Superbase. Superbase is, like, kinda like the Postgres, like, database, incumbents.\n\nSpeaker 1 | 14:46 - 15:14\nIf you wanna start, like, new Superbase, how would you compete with them? And I don't necessarily have the answer, but I I I do think, like, people like resend, like, relatively new. I think they were starting, like, 2023, and it's still there was there was a recent survey where, like, people checked what Claude recommends by default. If you just don't prompt it with anything, just say, like, give me an email provider and says resend as in, like, 7070% of these cases. Like, the fact that you can get in there with, like, such a relatively short existence, I think is is encouraging.\n\nSpeaker 2 | 15:14 - 15:14\nYeah.\n\nSpeaker 1 | 15:14 - 15:26\nI do think, like, you do want to do whatever it is to to, like, to to get in no. That that very short mentions this because, it's not gonna be 20 of them. It's gonna be, like, three.\n\nSpeaker 2 | 15:26 - 15:38\nNo. Definitely. It feels like, you know, probably more more consolidation than ever, or or kind of, like, you know, a winner take most market than maybe the the the physics of go to market in the past might have enabled.\n\nSpeaker 1 | 15:38 - 16:04\nThe other thing also is, like, semantic association is gonna be very important, in the sense that, like, you want to do, like, the combo articles where you're like, use my thing with Vercel, with And, blah blah like, that all gets picked up in a in a corpus. And so that's probably one thing that you you wanna do well. I don't know what else. It's it's it's it's one of those things where, like, I think I feel I feel I'm behind. I don't know how you feel about this, but, like\n\nSpeaker 2 | 16:04 - 16:11\nI think AI is just everyone constantly feeling like they're behind some Listen. Yeah. With I wanna meet the person that doesn't feel behind.\n\nSpeaker 1 | 16:11 - 16:25\nBut, like, with with AIX, right? Like, so so, like, my my stance was exactly what I said before. Like, everything that you that you should do for agents is something that you should have done for humans anyway. Yeah. And so to the extent that you're just getting it more energy to to do things for agents, great.\n\nSpeaker 1 | 16:25 - 16:49\nBut, like, it's hard to articulate what new thing apart from just, like, more spam, that you should be doing anyway. That will be my take right now. I I I do think, like, there there will be more turns at this. I think the personalization turn that is coming, will be big, and I don't know what that looks like because, like, basically, we're kinda we we feel kinda tapped out on the memory side of things.\n\nSpeaker 2 | 16:49 - 17:18\nYeah. I guess since we last chatted, you know, you you took this role over at Cognition, and you've obviously have a have a front row seat to the AI coding space today. I feel like coding in many ways, know, people view it as this like I mean, besides being like the the mother of all markets and this massive opportunity, I think it's kind of a preview of, like, what's to come for many other spaces, both Yeah. You know, I feel like agents are most advanced in coding. I also feel like the competition between foundation models and application companies, you know, and mirrors what we may see in other spaces.\n\nSpeaker 2 | 17:18 - 17:24\nAnd so maybe for our listeners, can you just lay out, like, what is the state of the AI coding wars today?\n\nSpeaker 1 | 17:25 - 17:36\nIt is massive. Right? Like and I don't think necessarily the last time we talked about this, we appreciated the size of No. I wish we did. The state of the AI coding wars today.\n\nSpeaker 1 | 17:37 - 18:03\nBoth OpenAI and Anthropic have made it their p serials to competing coding. And Thropic is at, like, 2,500,000,000 in ARR just from Cloud Code. The way they recognize ARR is up for debate. OpenAI, I don't think the public number is known, but let's call it 2,000,000,000 as well. And then Cursor is like rumored to be 2,000,000,000, you know?\n\nSpeaker 1 | 18:03 - 18:33\nAnd, and those, those are like the public numbers that are so like huge markets that have just been created in the past one year, like, like, Anthropic just, like ClawCode just recently celebrated their one year anniversary, which is pretty amazing. So, and then I think like the other thing that I see is there's there's some other people who are like, oh, here's, like, the the sort of relative penetration of, cloud use cases. Right? Like and it's, like, coding 50% and then legal whatever health. It's, like, the the remaining ones.\n\nSpeaker 1 | 18:33 - 18:52\nAnd there was a very popular tweet that was like, okay. Look at the the empty space and all these other use cases. If you are a new founder today, should be betting on the other stuff because on on a sort of catch up Yeah. Theory. And my consider my my pushback is the same pushback that I had on Apple versus Google, which is like, well, why is this type different?\n\nSpeaker 1 | 18:52 - 19:16\nLike, why if it went from, let's say, 10 to 50% in the past year, why can't it keep going? And, like, getting that wrong is actually a very painful one because you could have just didn't did the momentum bet instead of the mean reversion bet. So I I I think that that is the the the state of things now that people are very much into psychosis. They are getting rewarded for spending more rather than spending less. And I think we're not in that phase of efficiency.\n\nSpeaker 1 | 19:16 - 19:26\nWe're in a phase of sort of, like, capability exploration. So I think people who are more crazy, who are more creative, get rewarded comparatively.\n\nSpeaker 2 | 19:27 - 19:37\nWhat's an interesting I mean, it feels like behind these, like, token maxing leaderboards and whatnot is this it's like the first phase of this transition from a workforce perspective is you just gotta show your employer, like, hey. I I use these tools.\n\nSpeaker 1 | 19:37 - 19:51\nWhich is my number of tokens I cost. That's it. They don't care about the quality right now. It is, maybe distasteful to someone who cares about the craft and and all that. But, directionally, everyone just wants you to go up regardless.\n\nSpeaker 1 | 19:51 - 20:07\nAnd so, there it's not very discerning. It's and it's probably very sloppy, but I think it's net fine because we're still probably underusing AI just in generally. Yeah. And so I think that's, like, very interesting. Like, we had on the podcast, Ryan Napopolo from OpenAI who spends a billion tokens a day.\n\nSpeaker 1 | 20:07 - 20:25\nYeah. And that's for those counting home, it's, like, something like 10,000 worth $10,000 worth a day of API tokens if they did market rates. And, like, most of us can't afford that. But, like, and and probably a lot of what he does is slop. Right.\n\nSpeaker 1 | 20:25 - 20:42\nBut, like, he's going to this he's like, if there were a new capability, he would discover it first before you because he was he was trying and you were not trying. Right. And, like, you only do things that work. Like, well, good for you, but, like, the the people who are going to discover the next hot thing are living at the edge. Right.\n\nSpeaker 2 | 20:42 - 20:56\nAnd increasingly living at the edge is just having that compute budget to, like, run these experiments. Mean, kind of similar to what living at the edge on the research side has always been. You know, it was constrained in many ways by the amount of compute you had to run these experiments. It feels similarly on the almost on the builder or, like, actualizing these tools now.\n\nSpeaker 1 | 20:56 - 21:13\nThe other thing that's, I mean, very obvious is Anthropic is kind of like the high priced premium player, that where, you know, restricting limits or restricting model releases even is, like, the name of the game, whereas Codex is like, come on in, guys. Use our SDK. Use our login. We don't care. We're gonna reset limits, whatever.\n\nSpeaker 1 | 21:13 - 21:41\nYou do want to try to exploit the subsidies where you can get it, and definitely Codex is super subsidized right now. Gemini also very subsidized. And comparatively, like, I think you should make hay, I guess, while while that's going on, it's not that bad to be a capabilities explorer on just the $200 a month plan from Cloud Code or from OpenAI. And I've I'd my sense is that people aren't even there yet.\n\nSpeaker 2 | 21:41 - 22:10\nHow do you think this, like, market ultimately plays? I mean, it's obviously such a big market that, you know, any slice of that market is interesting for for anyone going after it, but I think what what makes people so interesting in the coding market particularly is it feels like it's kind of this foreshadowing of what will happen in other you know, any other kind of application market that the foundation models eventually turn to and are all their models against and gather data around. And so how do you think you know, like, does there end up being room for lots of different kinds of players, or, like, what do you think the end state of this market is, and is that do you think that's applicable to other markets?\n\nSpeaker 1 | 22:10 - 22:52\nI feel like there will be I mean, status quo is probably the most likely outcome, which is there are two big players, and there's a small range of longer tail people that fit other use cases that the the two big players don't. That feels right to me. I think that, for it to for the market structure to to significantly change, there would be there needs to be significant change in, like, the economics or, like, the the brand building or like the, the, the, the value propositions of the, of the companies involved. And I haven't seen any in the last six months that, that have really changed the stories materially. So I feel like they would just keep going until something, something else happens.\n\nSpeaker 1 | 22:52 - 23:17\nSomething else happens, meaning, like, Microsoft wakes up and, like, goes, like, guys, we have GitHub. We have, you know, we'll we'll we'll do something much bigger here than other other than just Copilot. And, that will be a big change. MSL has put on a model now, and I was in a breakfast with, Alex Wang where they were like, yeah. Like, we we really, really want to go after the coding use case.\n\nSpeaker 1 | 23:17 - 23:29\nThey haven't done anything yet, but, like, don't underestimate them. Right? And and and similarly for the Chinese labs, like, I think they're trying to go after it. Like, ZAI is doing stuff. GLMs, ZI, GLM, same thing.\n\nSpeaker 1 | 23:31 - 23:39\nAnd and so it's not like everyone's trying to get a piece of that pie. I I feel like the the status quo has been pretty stable for past, like, almost a year, I will say.\n\nSpeaker 2 | 23:39 - 23:49\nYeah. And is there room for the not like, know, for for the application companies more on, the enterprise side or, like, where do the where do the, like what service area do the model companies leave for application companies?\n\nSpeaker 1 | 23:50 - 24:10\nYeah, that's a good one. It's very much evolving. I will say because OpenAI did not have this level of attention on coding a year ago, we just don't have that much history. Right. And it seems like, for example, so the big push at opening out now is the super app.\n\nSpeaker 1 | 24:10 - 24:27\nIs that a consumer thing? Is that like a products like portfolio rationalization thing? How much is that gonna take away attention from coding at the time when they actually do want to put more coding? I think it's it's very unclear. So I do think, like, there's there's all these, like at both BigLabs, there's, sorry.\n\nSpeaker 1 | 24:27 - 24:47\nAt both of the Anthropic and and D minus and XAI as separate cases, They are trying to see the other TAM expansion areas. So Cloud Code for Finance Yeah. Cloud Cowork, all those all those things. Whereas I think cursor and cognition are, like, comparatively just focused on coding. And so I I do think they leave space.\n\nSpeaker 1 | 24:47 - 25:12\nAnd I do think for the other verticals, also means the same thing, right, that, that they're not gonna be that, intensely focused on on on that domain, except for, I I think I will mark out finance and healthcare as like the next ones, that they're clearly going after. I I would say comparatively healthcare seems more thorny. There there there have been some announcements about it, but like, I would respect the the finance work lot more just because like the the path to money is a lot clearer.\n\nSpeaker 2 | 25:12 - 25:27\nYeah. I mean, like, think, you know, maybe similar to the space that's being left in these other domains, you know, there's obviously a lot that's required to actually implement these tools in enterprises versus, you know, maybe just giving them, giving model access to folks out of the box.\n\nSpeaker 1 | 25:27 - 25:38\nYeah. Yeah. Yeah. So the the agent lab thing is, like, we'll do the last mile for you, whereas I think the model labs tend to just trust the model and and be minimalist about it. Both of them work.\n\nSpeaker 1 | 25:38 - 25:55\nYeah. I I don't I don't necessarily think one, beats the other, for every for every use case. All I do know is that it does seem like the large enterprises do want a dedicated partner that isn't just the model labs, which is kind of interesting.\n\nSpeaker 2 | 25:55 - 26:24\nWe've we've been in this phase of of pure capability exploration, and so I think nothing has been, you know, better for for large labs. Right? I mean, they were always gonna be at at the frontier of of capability exploration, and so I think have a very good relationship with lot of these enterprises. But ultimately, over time, like, the the incentive structure of these labs is always gonna be maximal, you know, token consumption for for the end customers they work with, and there's just, I think, so few companies that have actually gotten to massive scale. Maybe coding again is the most interesting.\n\nSpeaker 2 | 26:24 - 26:31\nIt's the space that really is just completely gone. You know? Yeah. You must live it up every day. Like, absolutely insane.\n\nSpeaker 2 | 26:31 - 26:32\nAnd I think you get\n\nSpeaker 1 | 26:32 - 26:58\nEven okay. I mean, like, I think we we say good things about cursive cognition, but the sheer lift off of, like, both endopic and open AI because they, they have independent valuations. I mean, let's throw an XAI in there because it's now IPO ing at 1,200,000,000,000. That number is just mind boggling. Like, I, I feel like in normal investing or normal startups, there's kind of like a ceiling market cap or valuation that that, like, you you reach and you're going, alright.\n\nSpeaker 1 | 26:58 - 27:01\nIt's it's gonna be chiller from now on. Like and these guys are not slowing down.\n\nSpeaker 2 | 27:01 - 27:31\nNo. Well, I also think the dynamic that's fascinating about some of these later stage companies is is, you know, in the past, I feel like in in venture world, if you got to a certain level of scale, the question around you was really more a valuation question. This is why there was different types of venture people didn't. The late stage growth people were just incredible at a little bit of what's the ultimate market opportunity of this company, but also what's the right way to evaluate it. We know it's in some bands of an outcome that is like, sure, there's some variance to it, but it's like relatively understood what that band is, and then maybe you get over time surprised to the upside.\n\nSpeaker 2 | 27:31 - 28:13\nWhereas any kind of like even the labs themselves, any later stage company, the bands of which that company might be worth right now, even in a year or two years, are so massive because of how fast the ecosystem changes, that it's like even for later stage companies, every three months could be an existential level event to the upside, to the downside, and I think that you're obviously seeing it in positive with Code, which if you think about a company like Anthropic, for a while it was unclear if they were going to have access to enough capital to really stay in the race, right? And then coding hit at the exact right time, they had the perfect model for it, they executed brilliantly, and now we're one of most valuable companies in the world.\n\nSpeaker 1 | 28:13 - 28:27\nAt the same time, I have zero sympathy for OpenAI because they're crushing it, and they're all rich, You know, this is like a high class champagne problem to have, to to be number two at coding or whatever. Like, who cares? Like, you're you're doing great.\n\nSpeaker 2 | 28:27 - 28:56\nYeah. It's funny, I can't even I mean, you would be closer to this, you know, even though you're in the AI coding space, but it's a lot of people I talk to think Codex is just as good if not better than ClaudeCode. Right? And and I think one thing that I've been really surprised by, and maybe maybe ClaudeCode is a better product in some ways, I'm curious of your thoughts, is just in consumer AI, with ChatGPT, you saw this big first mover advantage, right, where admittedly today, like, I don't know, Claw Gemini, great products, not sure, not abundantly clear ChatGPT is any better, but like, people stick with ChatGPT. It's the first thing to introduce them.\n\nSpeaker 1 | 28:56 - 28:58\nThey stay, but they're not growing anymore. Don't know if you've seen.\n\nSpeaker 2 | 28:59 - 29:54\nRight, but that to me is more of like a product problem than it is they're not it's not like they've lost share to someone else. My understanding is the overall problem with consumer AI today is much more of a how do you take this tool, and for folks like us, like knowledge workers, it's like this incredible magic tool, but it's not necessarily a daily active use tool for a lot of people around the world today, and whatever the product it's kind of a category wide problem, like in coding, for example, the entire space has gone parabolic. There may be some relative growth in other consumer AI players, but it's not like consumer AI as a category is going parabolic, and they're not capturing most of that thing. I think it's actually the larger problem is much more, hey, the category has hit a bit of a plateau, people haven't figured out how to bring tons more users on board, or increase the frequency of those users, and so it seems more of a category wide problem than it is a massive market share change. Was gonna draw the comparison to the coding space where ClaudeCode was the first product obviously to introduce people to this magical experience.\n\nSpeaker 2 | 29:54 - 30:12\nBy all accounts Codex is pretty damn close to as good, if not better, but, like, still that first product, you you would have thought that would not be a super sticky, you know, product surface area, and it actually has it turns out, it feels like the first lab to introduce you to an experience really does keep a lot of the a lot of the focus.\n\nSpeaker 1 | 30:12 - 30:20\nI I think maybe it's, like, still still early days. You know? Chachi BT is, like, three plus years old, and Yeah. Cloud Code is only just\n\nSpeaker 2 | 30:20 - 30:20\nturned a year.\n\nSpeaker 1 | 30:20 - 30:25\nYeah. So just give it time. You know? Like, yeah. I mean, definitely, some a lot people have switched from to Codex.\n\nSpeaker 1 | 30:25 - 30:47\nMaybe that will keep going. It's, like, really hard to tell. Yeah. I I do I do think that because we are in this, like, high volatility, high temperature phase, the loyalty and stickiness to first movers and category creators, I don't think is as high as it might be in some other, areas in our careers that we've looked at.\n\nSpeaker 2 | 30:47 - 30:52\nYeah. Though, I mean, I've been surprised by the ClaudeCode thing. I I would have thought that, like, in many ways, I always worried about the\n\nSpeaker 1 | 30:52 - 30:53\nYou think you would been gone by now?\n\nSpeaker 2 | 30:53 - 31:06\nNot gone, but I would have I I always worried that the that the consumer business of these companies would be quite sticky, and then the enterprise API business was actually, you know, in some ways, like, your least loyal buyers, like, would they would move to Right.\n\nSpeaker 1 | 31:06 - 31:09\nBut but they worked out that it wasn't the enterprise API, was enterprise product. Totally.\n\nSpeaker 2 | 31:09 - 31:21\nAnd maybe that was the that was the secret that, like but the amount of lock in or just default behavior that has happened in that space, is is more than I might have imagined with two products that by all accounts are pretty damn similar.\n\nSpeaker 1 | 31:22 - 31:42\nYeah. No fight there. I will say I do think that Codex is still in like a catch up, in terms of personal experience. The only thing I like out of Codex is like Spark and like the, I feel like the skills integration is a little bit better. I feel like the speed is a bit better maybe because it's written in Rust or whatever.\n\nSpeaker 1 | 31:43 - 32:05\nVery minor things that you like, almost like telling yourself rather than like objectively assessing between two of them. I do think like vibes wise, I think that's going on. The, you know, I feel like the missing questions in this whole debate is like, why is this so concentrated in only two names? Right? Like, where is the Gemini you know, presence?\n\nSpeaker 1 | 32:05 - 32:11\nWhere is the XAI presence? And, like, they are trying. It's just they haven't made that much progress yet.\n\nSpeaker 2 | 32:12 - 32:27\nWell, I think what the what the Cloud Code moment does show and it actually, in some ways, makes you a little more bullish on the potential for someone else to catch up because it does feel like if you're the first person to introduce some magical net new product experience that that actually might be stickier than one might have imagined.\n\nSpeaker 1 | 32:27 - 32:28\nRight. Right. Right.\n\nSpeaker 2 | 32:28 - 32:29\nOkay. Yeah. And so is that I've\n\nSpeaker 1 | 32:29 - 32:41\nheard you've me say that. New product experience might be? I I it's it's like and this is a failure of imagination on my part. Like, I always wonder, like, people always say this, like, well, the the thing that will save us is, being first to the next new thing. Like, what is it?\n\nSpeaker 2 | 32:41 - 32:54\nYeah. I don't know. Something around, like, a consumer agent, computer use, like, hybrid. I think the obvious I I think we're, like, scratching the surface on the consumer side.\n\nSpeaker 1 | 32:54 - 33:22\nSo my my current theory is, like, the the OpenCLO is, like, a vision of things to come. Totally. And it's kinda good that OpenAI has, like, the association with OpenCLaw, but by no means do they have the rights to win it. The general thesis that I have been pursuing now is that the year the same way that 2025 was the year of coding agents, 2026 is coding agents breaking containment to do everything else. And so coding agents continue to still win, but because they generate software and software eats the world.\n\nSpeaker 1 | 33:22 - 33:29\nSo, like, it's kinda like the trans associated property of, like, software eats the world, coding agents eat software, therefore, agents eat the world, which is, like, an interesting\n\nSpeaker 2 | 33:30 - 33:43\nYeah. And breaking containment, always an easier phase phrase in the consumer context than the enterprise one. You've seen people run these really cool experiments in their own personal lives. I think, like Yes. Figuring out, you know, how you I I obviously, everyone's focused, you know, on the enterprise side now around how you create these experiences.\n\nSpeaker 2 | 33:43 - 34:24\nI feel like the vibes know, people love to have these narratives of like everything is completely shifted. It's like I actually you know, OpenAI organizationally, you know, volatility aside is, you know, great products, great team, great models, like everyone else in the world is incentivized for there to be two, three more, everyone would love more like great model companies, and so I feel like the natural forces of the world revolt when any one company is too much the star of the show, right? There's so many people in the ecosystem that are incentivized for that not to happen, and so I think I'd be shocked if we don't have a reversion of vibes, not maybe completely the other way, but at least a little bit more equal at some point over the next six, twelve months.\n\nSpeaker 1 | 34:24 - 34:30\nI I think there's just a kind of different stages. When when you talk about the world wants wanting more model companies, I talk think about, like, the Neolabs.\n\nSpeaker 2 | 34:30 - 34:30\nYeah.\n\nSpeaker 1 | 34:31 - 34:35\nAnd I mean, don't know. Is it fair to say none of them have really broken through in the past year?\n\nSpeaker 2 | 34:35 - 34:36\nI think that's totally fair.\n\nSpeaker 1 | 34:37 - 34:45\nWhich is rough. And well, how are we gonna how are we gonna grow that diversity in in in choice? Like, that's this is it.\n\nSpeaker 2 | 34:46 - 34:56\nYeah. It'll be really interesting to see what what what ends up happening with that. And you've seen, you know, folks like NVIDIA, you know, very incentivized to make sure there's there's a broader platform of of other model providers.\n\nSpeaker 1 | 34:57 - 35:07\nI think I don't know. People say this, but I I I don't think they try that hard. NVIDIA tries harder to build Neo clouds than Neo Labs.\n\nSpeaker 2 | 35:07 - 35:09\nWell, they try pretty damn hard to build Neo Clouds, so that's yeah.\n\nSpeaker 1 | 35:10 - 35:18\nLike, you know, let's call it like the, the core weaves of the world, Much happier place in the you know, than any NeoLab built on top of them.\n\nSpeaker 2 | 35:19 - 35:25\nYeah. Though one might argue, it's it's easier to to enable a NeoCloud to be successful than it is. You can't will a NeoLab into existence the same way.\n\nSpeaker 1 | 35:25 - 35:27\nMore direct control over it, for sure.\n\nSpeaker 2 | 35:27 - 35:36\nWhat else is kinda catching your eye today on the startup side? I mean, you worry there's obviously this whole narrative of like, you know, the foundation models, you know, they announce a product and every stock goes down 15%, like\n\nSpeaker 1 | 35:37 - 35:37\nYeah.\n\nSpeaker 2 | 35:37 - 35:42\nDo you do you worry about the foundation models just kind of eating into to a bunch of these startup categories?\n\nSpeaker 1 | 35:43 - 36:14\nNot really. I think actually like as, there's, there's okay. There's, there's, there's, there's there's the point of view of like being an investor in startups and there's a point of view of like, do you want to start something? And I think honestly, like the, the downside for all of these is so minimal in, in the sense of like the worst you do is you just get hired into one of these labs anyway. So I think the, the market for people who just do things and try things and try to execute in like a competent way, even if you're like, it doesn't work out commercially, even if it just wasn't that great anyway.\n\nSpeaker 1 | 36:14 - 36:45\nLike, but like that's your job interview to go into one of these things anyway. So, I don't feel that from a, from a very, very small startups perspective. Mid sized startups, yes. I would say there's been a lot of dead LM infra consolidation, like the Lang fuses of the world getting Azure to the click house. And I think like people have maybe worked out the domain specific playbook and like, I think that's okay.\n\nSpeaker 1 | 36:46 - 37:15\nAnd, and yeah, I'm not that, not that worried about, okay. So, I, I would say I'd be more worried about traditional SaaS, like low NPS SaaS. This is the whole AI versus SaaS debate that's been going on. And like, literally I'm going through that exact thing in my company where, so I think kind of thinking through this on a very visceral level, right? On one hand, you have the people who say you vibe coders don't appreciate the amount of work that goes into a a And, like, yeah, you think you can rip out Salesforce, so did the 30 entrepreneurs before you.\n\nSpeaker 1 | 37:15 - 37:33\nRight? Like like, you know, you classically underestimate the things that you don't deeply know and, and, and, you you keep talking to the audience is not you. At the same time, like we have never been able to build software so easily and customize software so easily. And like, yeah, you're not gonna use 90% of the things that Salesforce. So like, what's the typical,\n\nSpeaker 2 | 37:33 - 37:34\nwhat have you done internally?\n\nSpeaker 1 | 37:34 - 37:59\nSo we have the main SaaS that we do for event management and sponsor management. And we pay 200 ks a year for that. Not, not huge, but like chunky for, for, for my, my scale. And like, yeah, I could probably spend 2,000 and build like a custom version of the, the, the trick has been dealing with my, the rest of my team and getting them on board because I'm the most cynical person on my team, but like, I can't make that decision myself. Right?\n\nSpeaker 1 | 37:59 - 38:34\nLike, I think in the same way I've been telling with other CEOs, team leaders as well, it's like, well, you can be super cloud pilled. You can be super LM psychosis, and that you think that's okay, but you, like, you have to bring your team with you. And I think like there the sort of widening disparity in LM psychosis in companies is causing real rifts because on one on one hand, the people who are less AI native are not getting with the picture. They're not they're actually, like, behind. They're actually not waking up to the fact that, like, you'd everything you think is necessary is not actually that necessary.\n\nSpeaker 1 | 38:34 - 39:04\nAnd in fact, it's that it would be better of you if you just, like, held your nose and went in and went came out the other side only talking to agents in natural language. And, like, your life would actually be better, and you just you're just, like, close minded. There's that perspective. The other perspective is, oh, you vibequoter, you you did this in a weekend, and you got the 80% solution, and now the rest of your employees have to pick up the rest of your shit Right. That you you thought you you were you were such hot, amazing at, but, like, actually, you didn't figure it out.\n\nSpeaker 1 | 39:04 - 39:27\nAnd, like, actually, LLMs are still useless at this and blah blah blah. So, like, I think there's this huge debate going on in every company right now. And, like, you know, I have a small microcosm of it, but, like, yeah, it it's making me hesitate to to pull the trigger, but like, I will at some point. It's like, maybe I put it off for one year, but not like five. But like so so like SaaS is definitely getting squeezed.\n\nSpeaker 1 | 39:28 - 39:56\nIt does make me wonder, like, I I do think that there's an opportunity for a more AI native, system of record thing that is not just Postgres, or not just MongoDB, although both are very good. Maybe it's like a convex or, like, people Yeah. Bring a convex a lot. I don't know. Like, like, I I just feel like the sort of quote unquote Firebase of of AI apps isn't really a thing yet, beyond what we have, which which is fine.\n\nSpeaker 1 | 39:56 - 40:16\nIt's it's it's just we could probably start in a more sort of rapid iteration cycle first before scaling up to, like, a Postgres or MongoDB, which are more sort of old tech. I was at a dinner with, Mike Krieger, the CPO of Anthropic, and and he we're just kinda going around the room going, like, what are people most worried about?\n\nSpeaker 2 | 40:16 - 40:16\nYeah.\n\nSpeaker 1 | 40:16 - 40:21\nAnd, for me, I instead of security, I brought up biosafety. Yeah.\n\nSpeaker 2 | 40:21 - 40:21\nClassic.\n\nSpeaker 1 | 40:23 - 40:32\nActually, like, I said it was cliche and classic, and the rest of the table were were like, what do you mean someone sitting at home can manufacture a virus that wipes out half of humanity?\n\nSpeaker 2 | 40:32 - 40:35\nSo it's like the OG Jeffrey Hinton, like, this is why you should be scared.\n\nSpeaker 1 | 40:35 - 40:55\nI'm like, yeah. Like, read the, you know, risk reports. Like, this is, like, the thing. I think and Mike was just sitting there knowing he was sitting on Mythos and going, like, actually, it's security. And I think, like, I think the there's there's part of it is very good marketing, like, good.\n\nSpeaker 1 | 40:55 - 41:15\nLike, I would actually advise and topic to tune down the marketing because, also, it's it's just a very good model, you don't have to make so many marketing claims around it. At the same time, it is not really a private model if you give it to 40 companies, each of whom have, like, 10,000 employees or whatever. Right? It's not it's not private. It's it's like there's bad actors in there.\n\nSpeaker 2 | 41:18 - 41:31\nYeah. Hopefully hopefully not as as bad as releasing it widely, but, no. I mean, it's an interesting, you know, it's an interesting case study for how mean, many model releases might I mean, you know, this might be the first model release that looks like the rest of them from from now on. Right?\n\nSpeaker 1 | 41:31 - 41:51\nIt's it's it's the there's a overall product strategy of for Anthropic of, like, bundle, you know, restrict access, bundle, product with model maybe, whereas, OpenAI has definitely been a lot more sort of philosophically aligned on, like, we will just enable access everywhere, and we don't know what you what will come out of it. Right?\n\nSpeaker 2 | 41:51 - 41:56\nRight. Though, I mean, this current moment, obviously, the cynical take is also it just ties to the amount of compute that both companies have.\n\nSpeaker 1 | 41:56 - 42:08\nRight. Right. Yeah. I think I think that's true. I I do think, like, the the this is the the the scale and the dawn of, like, larger than 10,000,000,000,000 parameter models is very interesting.\n\nSpeaker 1 | 42:08 - 42:18\nI don't think it I think it's a temporary phenomenon because we have much larger compute clusters coming online for everyone over the next, like, three, five years. And this is, like, already written in the cards.\n\nSpeaker 2 | 42:18 - 42:19\nYeah.\n\nSpeaker 1 | 42:19 - 42:28\nSo to the extent that, like, you know, will we have rationing of models, above 10,000,000,000,000, in, like, two years? I don't think so. I think everyone will have that.\n\nSpeaker 2 | 42:29 - 42:30\nRationing of the next phase.\n\nSpeaker 1 | 42:30 - 42:48\nRight. Right. But like that's as it should be almost like, my, my classic example, which I, this is just me theorizing, not anything confirmed by Google. When Google announced Gemini, they actually announced three sizes, which was flash pro ultra. They never released ultra.\n\nSpeaker 1 | 42:48 - 43:02\nThey only have pro and flash. So my theory is they have ultra sitting in a basement and they just kept distilling from it for, for flash and pro, which like, yeah, I mean, I actually think that's as it should be for any lab that they do that.\n\nSpeaker 2 | 43:02 - 43:06\nYeah. Just because those are the models that people actually wanna end up using, and it's just like cost per head.\n\nSpeaker 1 | 43:06 - 43:27\nYeah. It's cost. It's not the want, it's just the cost. I do think like it is interesting that for a while, I was I was considering the theory that models capped out at $22,000,000,000,000, and I think that's proving to be wrong. And, well, then if I'm wrong, how wrong how wrong am I?\n\nSpeaker 1 | 43:27 - 43:59\nDo we do 200,000,000,000,000? Do we do 2 quadrillion or whatever? And I don't think we have the straight answer to that, but, like, it's interesting that we are continuing to scale number per ams when everyone kind of, like, can see that we're not going to get, like, the next thousand or 1,000,000 x from this paradigm. So, like, the others, like, the alias of the world are working on other model architecture improvements. We need a different scaling law, I guess, because, like, we're I I feel like people already feel like we're tats out on this.\n\nSpeaker 1 | 43:59 - 44:07\nLike, the the end the end state of this is we turn most of the world into data centers. And, like, I don't know. I don't know if we want that.\n\nSpeaker 2 | 44:08 - 44:13\nYeah. I mean, if the if if if the return of intelligence are there, maybe, maybe not so bad.\n\nSpeaker 1 | 44:13 - 44:44\nI I I think there's there's just a sheer amount of, like like, unscalability that, like, is wrangling people's sensibilities right now, especially in terms of, like, context lengths. My classic quote is that context length is like the slowest scaling factor in in LMs. Yeah. We, like, we took maybe three years to go from, like, 4,000 context length to a million, and that's about it. Like, Gemini has had a million token context length for two years now, and no one's using it.\n\nSpeaker 1 | 44:44 - 44:50\nLike so, like, yeah, it's memory memory is probably gonna be the the biggest limiting constraint on all these things.\n\nSpeaker 2 | 44:50 - 44:56\nYep. Certainly seems that way. Guess I'm curious over the last year since you recorded last, like, what's one thing you've changed your mind on?\n\nSpeaker 1 | 44:57 - 45:22\nI feel like I was kind of bearish on open models, like, last year, in a sense of, like, I I had just done the podcast with Ankur Goyal Yeah. Of BrainTrust, where he and he I mean, you know, he has a good cross section of all the top AI companies, and he says market share of open source is 5% and going down. I think that's changed. I think it's going up. Even if\n\nSpeaker 2 | 45:22 - 45:26\nEven though the capability gap does seem to be increasing, depending\n\nSpeaker 1 | 45:26 - 45:41\non the time. It's hard to tell. Yeah. It's really hard to tell because like, okay, for listeners, capability gap increasing is like on public benchmarks. And let's say you're comparing Methos versus like, I don't know, GPTOSS or like GLN 5.1.\n\nSpeaker 1 | 45:41 - 46:09\nAnd, it's, it was really hard to tell because even if they were closing, you will also not believe that they were closing that much because it's very easy to gain the benchmarks. So you just don't really, really know. All you know is like there's somewhat objective open router stats on like what people choose in a free market and people do choose some of these open models in significant volume, except that a lot of them are heavily discounted. So you need to kind of like price adjust, these things. So even if even if that were true, which I I'm not sure.\n\nSpeaker 1 | 46:09 - 46:51\nLike, I I feel like the number is just up now instead of down. I think the separation between what the top tier agent labs are doing versus the average startup in AI or the average GPT wrapper is significant enough that you should not worry about the the the sort of mean industry number, and you should cohort things into like, here's the median, here's like the bottom 80% and here's the top 20%. And top 20% acts very differently than the bottom 80 And so top 20% is, which is what I all I care about is definitely going towards more open models. The fireworks and the together is a crushing. And so all the fine tuners.\n\nSpeaker 1 | 46:51 - 47:01\nRight? So like, I think maybe last time we even said things like fine tuning as a service doesn't work. Well, now it's gonna work. It's a derivative of the open market open models market.\n\nSpeaker 2 | 47:01 - 47:06\nWell, also in the workload scaling to the point where people care about cost and speed, you know, more and\n\nSpeaker 1 | 47:06 - 47:06\nmore.\n\nSpeaker 2 | 47:06 - 47:14\nAnd that, like, you know, moving from just pure use case discovery of, what can these models do to, okay, we know what they can do at scale. Now let's do them cheaper and faster.\n\nSpeaker 1 | 47:14 - 47:29\nYeah. Yeah. So so like that change, I I think is probably the most significant in in my mind. And like, I I always like to do the mental math of like, this is what I think about, scheduling a learning rate. Like, when you've been wrong once, what else were you wrong on?\n\nSpeaker 1 | 47:29 - 47:45\nAnd I I'm kind of working through it. I I to me, the the the other thing was the coding one, which obviously I I have now come full three sixty on. But I think, like, people are not appreciating dark factories enough, which I don't know if you've discussed in the pod yet. No. Ever.\n\nSpeaker 1 | 47:46 - 48:05\nAnd so this is a kind of a strong DM slash Simon Willis in term. The the general idea is, okay. There's different levels of AI coding psychosis you can have. The the very first level, which I I by the way, I encountered first incognition five months ago was zero, human written code. Yep.\n\nSpeaker 1 | 48:05 - 48:22\nRight? Which, like, seems like a reasonable thing now was less reasonable five months ago. The next frontier that sounds as crazy today as it as as zero coding was in in the past is zero human review. Yeah. Like, you just just check it in without even reviewing it.\n\nSpeaker 1 | 48:22 - 49:00\nAnd very few people are doing that, but Opening Eyes is is exploring this. And I I feel like it's it's definitely the only scalable way to do this, which it just means that you have to just kinda like flip the SDLC or change large amounts of what what you normally do, which is probably things you should have done anyway, more testing, know, more automated verification or whatever. But like, that is a frontier at which, like, when you have unlocked that in your companies, you are just gonna produce much more quantity of software than than you've ever had. It's gonna be like so much so disposable, so cheap that you can probably innovate in quality a lot as well. Like that that quantity helps you get to quality.\n\nSpeaker 1 | 49:00 - 49:07\nYeah. Which I think people are very uncomfortable with because, like, people associate more quantity with slop.\n\nSpeaker 2 | 49:07 - 49:18\nRight. No. It's back to exactly the discussion we're having on, like, the reaction of these token maxing scoreboards and the and the idea that, today, maybe that's not the most the best sign of of of productivity inefficiency, but going forward.\n\nSpeaker 1 | 49:18 - 49:30\nYeah. You but you still get rewarded for it. So you're like, fuck it. Whatever. But, like, I I I think, like, the the the people who are who are doing well who do well who do most well in 2026 are not the cynics who go like, oh, that's just slop.\n\nSpeaker 1 | 49:30 - 49:36\nI'm not gonna participate in that. They're like, okay. Like, this is happening with with or without me. Let's bend this the right way.\n\nSpeaker 2 | 49:36 - 49:37\nYeah. No. I love that.\n\nSpeaker 1 | 49:37 - 49:37\nI mean,\n\nSpeaker 2 | 49:37 - 50:43\nI think for for me, like, any kind of related thing on on the open source model side is for so long, I really didn't think it made any sense to do any sort of RL, post training, pre training, anything you could do to improve kind of overall quality, certainly for latency and cost, it always made sense to me, but for overall quality, God, you just get that for free in the models three, six months later. I think what I'm starting to change my tune on a little bit is hearing all these app companies talk about, we build stuff and then we throw it out three months later as the models improve. You're like, okay, well then what you're doing for capability improvement is just another version of that. I still don't think that your RL or post train is gonna make you have a better model for years and years to come, but maybe I I think you still have to be pretty rigorous on, that the single best thing you can do to solve a customer problem? And oftentimes, it's literally just like, now add more data and feed more data even via connectors to these models, or I don't know, do some clever engineering on the back end or whatever it is, but if the single best thing you can do for that three month time period to improve your customers' outcomes is, you know, post training in some way that, like, really improves the output of model, even if you throw it out three months later because the general models get up there, it still might have been worth doing.\n\nSpeaker 2 | 50:44 - 50:45\nAnd so I think I'm like more open to\n\nSpeaker 1 | 50:45 - 50:49\nYou throw out the results, but you don't throw out the raw data. Totally. Like so Right.\n\nSpeaker 2 | 50:49 - 50:55\nThen you just run it again. And so basically, there's some obviously, at the level of cost of like $10,000,000, maybe that's too much, but there's some level of cost where\n\nSpeaker 1 | 50:55 - 50:56\nNo. It's actually 10,000,000.\n\nSpeaker 2 | 50:56 - 51:04\nNo. Of course it's not. You know? Yeah. There's obviously some level of investment at which it's the equivalent of just, like, staffing four engineers to go build something for three months.\n\nSpeaker 1 | 51:04 - 51:42\nYeah. So the other thing I really as for for listeners, I'm just gonna leave some some droplets of info. Look into like, the the long trajectory, the synthetic rubrics work that people are doing is very important, including, something that's called doctor gRPO. I'll just I'll just leave those key search terms in there. I I think it what it means is that RL is going much more multi turn than people think, And that means that you can customize the models in way more specific dimensions than traditional, let's call it SFT or, you know, like, sort of shallow RL that was done in a year ago.\n\nSpeaker 1 | 51:43 - 51:50\nSo like hundreds of turns. And I think that leads you down a path of like complete domain specificity.\n\nSpeaker 2 | 51:50 - 51:57\nWhat else like are you, you know, of these like unanswered questions in AI today, you like looking for, you know, in the next year, are you paying close attention to?\n\nSpeaker 1 | 51:58 - 52:30\nI have a few thesis for like, is the sort of next frontier? One is memory, which memory and personalization we talked about. The other is really world models, which we've done a small little series on from Fei Fei Li all day to even Moon Lake and Geno Intuition. And there's a lot of debate as to like the relative importance of this. I think a lot of it manifests as like three d static worlds that you kind of inhabit for a little bit and you walk around and they're like, cool, but like, how does this help me with my B2B That's\n\nSpeaker 2 | 52:30 - 52:31\nlike all the hype now is robotics, right?\n\nSpeaker 1 | 52:32 - 52:57\nYeah. And there's obviously a correlation between world models and embodied vision and experiences, which leads to robotics. But I think world models is very interesting in just in improving intelligence itself from the next from the next token prediction paradigm. And so I think people are kind of testing their edges around that. One of our top articles this year so far has been on adversarial world models.\n\nSpeaker 1 | 52:58 - 53:46\nI I do think, like, if you don't do anything else, just read Fei Fei Li's essay on spatial intelligence, on why LLMs don't need don't have it. And she is she may be she may not have the solution yet, but she has the right problems And so everyone else is trying to solve that problem statement in their own way, and let's see who wins. But, like, I I don't think it does you any favor to equate world models to robotics or world models to gaming or some kind of, like or, like, the current manifestations because what is at stake is a much more important conception of intelligence than just answering questions. It is does does does does the AI understand what a table is? Like, what what matter is, what physics is?\n\nSpeaker 1 | 53:46 - 53:54\nIt's almost like for for those who are movie fans, it's like Google hunting where Matt Damon, like, knows everything because he read it in a book, but he's never Great\n\nSpeaker 2 | 53:54 - 53:55\ngreat scene with Robin Williams.\n\nSpeaker 1 | 53:55 - 54:04\nWith Robin Williams. And I I I look at that scene and I go, like, that's exactly the the the difference between, like, a very intelligent LLM who knows everything but hasn't experienced anything.\n\nSpeaker 2 | 54:04 - 54:08\nWow. That's an awesome note to end on. That's a great have you used that antidote? That was great.\n\nSpeaker 1 | 54:08 - 54:16\nYeah. So so one thing I've done with Lanespace is I moved to, like, adding daily write ups. Yeah. And so the one one of the times I was doing this daily write up,\n\nSpeaker 2 | 54:16 - 54:19\nThat's great one. I love Also, it's been a ton of fun. Thanks so much for\n\nSpeaker 1 | 54:19 - 54:20\nfor coming for\n\nSpeaker 2 | 54:20 - 54:46\ncoming I'm Jacob Efron, and this has been Unsupervised Learning, a podcast where I get to talk to the smartest people in AI and ask them tons of questions about what's happening with models and what it means for businesses in the world. As I hope is clear, I have a ton of fun doing this. It's a nights and weekends project in addition to my day job as an investor at Redpoint. But our ability to get these incredible guests on really comes from folks like you subscribing to the podcast, sharing it with friends. It's really what ultimately makes this whole thing work.\n\nSpeaker 2 | 54:46 - 54:51\nAnd so please consider doing that, and thank you so much for your support and listening. We'll see you next episode."
+    }
+  ],
+  "blogs": [
+    {
+      "source": "blog",
+      "name": "Anthropic Engineering",
+      "title": "An update on recent Claude Code quality reports",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "publishedAt": null,
+      "author": "",
+      "description": "",
+      "content": "Over the past month, we’ve been looking into reports that Claude’s responses have worsened for some users. We’ve traced these reports to three separate changes that affected Claude Code, the Claude Agent SDK, and Claude Cowork. The API was not impacted. All three issues have now been resolved as of April 20 (v2.1.116). In this post, we explain what we found, what we fixed, and what we’ll do differently to ensure similar issues are much less likely to happen again. We take reports about degradation very seriously. We never intentionally degrade our models, and we were able to immediately confirm that our API and inference layer were unaffected. After investigation, we identified three different issues: On March 4, we changed Claude Code&#x27;s default reasoning effort from high to medium to reduce the very long latency—enough to make the UI appear frozen—some users were seeing in high mode. This was the wrong tradeoff. We reverted this change on April 7 after users told us they&#x27;d prefer to default to higher intelligence and opt into lower effort for simple tasks. This impacted Sonnet 4.6 and Opus 4.6. On March 26, we shipped a change to clear Claude&#x27;s older thinking from sessions that had been idle for over an hour, to reduce latency when users resumed those sessions. A bug caused this to keep happening every turn for the rest of the session instead of just once, which made Claude seem forgetful and repetitive. We fixed it on April 10. This affected Sonnet 4.6 and Opus 4.6. On April 16, we added a system prompt instruction to reduce verbosity. In combination with other prompt changes, it hurt coding quality and was reverted on April 20. This impacted Sonnet 4.6, Opus 4.6, and Opus 4.7. Because each change affected a different slice of traffic on a different schedule, the aggregate effect looked like broad, inconsistent degradation. While we began investigating reports in early March, they were challenging to distinguish from normal variation in user feedback at first, and neither our internal usage nor evals initially reproduced the issues identified. This isn’t the experience users should expect from Claude Code. As of April 23, we’re resetting usage limits for all subscribers. A change to Claude Code&#x27;s default reasoning effort When we released Opus 4.6 in Claude Code in February, we set the default reasoning effort to high . Soon after, we received user feedback that Claude Opus 4.6 in high effort mode would occasionally think for too long, causing the UI to appear frozen and leading to disproportionate latency and token usage for those users. In general, the longer the model thinks, the better the output. Effort levels are how Claude Code lets users set that tradeoff—more thinking versus lower latency and fewer usage limit hits. As we calibrate effort levels for our models, we take this tradeoff into account in order to pick points along the test-time-compute curve that give people the best range of options. In the product layer, we then choose which point along this curve we set as our default, and that is the value we send to the Messages API as the effort parameter; we then make the other options available via /effort . In our internal evals and testing, medium effort achieved slightly lower intelligence with significantly less latency for the majority of tasks. It also didn’t suffer from the same issues with occasional very long tail latencies for thinking, and it helped maximize users’ usage limits. As a result, we rolled out a change making medium the default effort, and explained the rationale via in-product dialog. Soon after rolling out, users began reporting that Claude Code felt less intelligent. We shipped a number of design iterations to make the current effort setting clearer in order to alert people they could change the default (notices on startup, an inline effort selector, and bringing back ultrathink), but most users retained the medium effort default. After hearing feedback from more customers, we reversed this decision on April 7. All users now default to xhigh effort for Opus 4.7, and high effort for all other models. A caching optimization that dropped prior reasoning When Claude reasons through a task, that reasoning is normally kept in the conversation history so that on every subsequent turn, Claude can see why it made the edits and tool calls it did. On March 26, we shipped what was meant to be an efficiency improvement to this feature. We use prompt caching to make back-to-back API calls cheaper and faster for users. Claude writes the input tokens to the cache when it makes an API request, then after a period of inactivity the prompt is evicted from cache, making room for other prompts. Cache utilization is something we manage carefully (more on our approach ). The design should have been simple: if a session has been idle for more than an hour, we could reduce users’ cost of resuming that session by clearing old thinking sections. Since the request would be a cache miss anyway, we could prune unnecessary messages from the request to reduce the number of uncached tokens sent to the API. We’d then resume sending full reasoning history. To do this we used the clear_thinking_20251015 API header along with keep:1 . The implementation had a bug. Instead of clearing thinking history once, it cleared it on every turn for the rest of the session. After a session crossed the idle threshold once, each request for the rest of that process told the API to keep only the most recent block of reasoning and discard everything before it. This compounded: if you sent a follow-up message while Claude was in the middle of a tool use, that started a new turn under the broken flag, so even the reasoning from the current turn was dropped. Claude would continue executing, but increasingly without memory of why it had chosen to do what it was doing. This surfaced as the forgetfulness, repetition, and odd tool choices people reported. Because this would continuously drop thinking blocks from subsequent requests, those requests also resulted in cache misses. We believe this is what drove the separate reports of usage limits draining faster than expected. Two unrelated experiments made it challenging for us to reproduce the issue at first: an internal-only server-side experiment related to message queuing; and an orthogonal change in how we display thinking suppressed this bug in most CLI sessions, so we didn’t catch it even when testing external builds. This bug was at the intersection of Claude Code’s context management, the Anthropic API, and extended thinking. The changes it introduced made it past multiple human and automated code reviews, as well as unit tests, end-to-end tests, automated verification, and dogfooding. Combined with this only happening in a corner case (stale sessions) and the difficulty of reproducing the issue, it took us over a week to discover and confirm the root cause. As part of the investigation, we back-tested Code Review against the offending pull requests using Opus 4.7. When provided the code repositories necessary to gather complete context, Opus 4.7 found the bug, while Opus 4.6 didn&#x27;t. To prevent this from happening again, we are now landing support for additional repositories as context for code reviews. We fixed this bug on April 10 in v2.1.101. A system prompt change to reduce verbosity Our latest model, Claude Opus 4.7, has a notable behavioral quirk relative to its predecessor: as we wrote about at launch, it tends to be quite verbose. This makes it smarter on hard problems, but it also produces more output tokens. A few weeks before we released Opus 4.7, we started tuning Claude Code in preparation. Each model behaves slightly differently, and we spend time before each release optimizing the harness and product for it. We have a number of tools to reduce verbosity: model training, prompting, and improving thinking UX in the product. Ultimately we used all of these, but one addition to the system prompt caused an outsized effect on intelligence in Claude Code: “Length limits: keep text between tool calls to ≤25 words. Keep final responses to ≤100 words unless the task requires more detail.” After multiple weeks of internal testing and no regressions in the set of evaluations we ran, we felt confident about the change and shipped it alongside Opus 4.7 on April 16. As part of this investigation, we ran more ablations (removing lines from the system prompt to understand the impact of each line) using a broader set of evaluations. One of these evaluations showed a 3% drop for both Opus 4.6 and 4.7. We immediately reverted the prompt as part of the April 20 release. Going forward We are going to do several things differently to avoid these issues: we’ll ensure that a larger share of internal staff use the exact public build of Claude Code (as opposed to the version we use to test new features); and we&#x27;ll make improvements to our Code Review tool that we use internally, and ship this improved version to customers. We’re also adding tighter controls on system prompt changes. We will run a broad suite of per-model evals for every system prompt change to Claude Code, continuing ablations to understand the impact of each line, and we have built new tooling to make prompt changes easier to review and audit. We&#x27;ve additionally added guidance to our CLAUDE.md to ensure model-specific changes are gated to the specific model they&#x27;re targeting. For any change that could trade off against intelligence, we&#x27;ll add soak periods, a broader eval suite, and gradual rollouts so we catch issues earlier. We recently created @ClaudeDevs on X to give us the room to explain product decisions and the reasoning behind them in depth. We&#x27;ll share the same updates in centralized threads on GitHub. Finally, we’d like to thank our users: the people who used the /feedback command to share their issues with us (or who posted specific, reproducible examples online) are the ones who ultimately allowed us to identify and fix these problems. Today we are resetting usage limits for all subscribers. We’re immensely grateful for your feedback and for your patience."
+    },
+    {
+      "source": "blog",
+      "name": "Claude Blog",
+      "title": "New connectors in Claude for everyday life",
+      "url": "https://claude.com/blog/connectors-for-everyday-life",
+      "publishedAt": "Apr 23, 2026",
+      "author": "",
+      "description": "",
+      "content": "Today we’re expanding what you can connect to Claude. Alongside the work tools you already use, you can now connect the apps you use throughout your week, including AllTrails, Instacart, Audible, TripAdvisor, Intuit TurboTax, and more. How people have been using connectors Since launching in July 2025, the Claude directory has grown to over 200 connectors, spanning popular apps for design, finance, productivity, and health used by millions of people every day. We’ve found that people often connect multiple apps and use them together in a single conversation with Claude. For example, a product manager will pull a query from Amplitude, turn it into a Canva deck, and drop the link into Asana for the team, all without leaving the conversation. This expansion extends that functionality to more of the tools you use outside of work. Starting today, Claude connects to AllTrails, Audible, Booking.com, Instacart, Intuit Credit Karma, Intuit TurboTax, Resy, Spotify, StubHub, Taskrabbit, Thumbtack, TripAdvisor, Uber, Uber Eats, and Viator, with more on the way. Connectors dynamically show up in conversations We’ve also changed how connectors show up in conversations. Claude now suggests the right app for what you’re doing, like finding a reservation, adding to a grocery cart, or identifying a flight. It’s working from what you’ve told it: your preferences, your context, your conversation. This all happens inside your conversation. Ask Claude to recommend a weekend hike, and AllTrails will surface trails nearby that match your preferences. You can then refine the recommendations by asking for something shorter, more scenic, or dog-friendly without leaving the thread. When more than one connected app could help answer your question, Claude shows them all and lets you choose. You control what you see and share Claude is ad-free and will stay that way. There are no paid placements or sponsored answers in conversations with Claude. When two connectors could help, you see both, ranked by what’s most useful to you. Connecting a service gives Claude access to it on your behalf. Your data from that app isn’t used to train our models, and the app doesn’t see your other conversations with Claude. You can also disconnect it at any time. Claude suggests connectors and makes recommendations. But you stay in control of its actions: before it books or purchases something on your behalf, it’s designed to check with you first. Getting started The more apps you connect, the more Claude can do. Claude suggests relevant connectors as you work, which you can install with a click on desktop or a few taps on mobile. Once connected, the service is available in every conversation. Connectors are available on all plans, with mobile in beta. See the full list at claude.ai/directory/connectors . If you build a product that would be useful in Claude, submit it to our directory here . For more information on getting started with connectors, along with security and privacy best practices when connecting data sources to Claude, visit our Help Center ."
+    },
+    {
+      "source": "blog",
+      "name": "Claude Blog",
+      "title": "Built-in memory for Claude Managed Agents",
+      "url": "https://claude.com/blog/claude-managed-agents-memory",
+      "publishedAt": "Apr 23, 2026",
+      "author": "",
+      "description": "",
+      "content": "Memory on Claude Managed Agents is available today in public beta. Your agents can now learn from every session, using an intelligence-optimized memory layer that balances performance with flexibility. Because memories are stored as files, developers can export them, manage them via the API, and keep full control over what agents retain. Agents that learn across sessions Managed Agents pairs production infrastructure with a harness tuned for performance. Memory extends that: it’s optimized against internal benchmarks for long-running agents that improve across sessions and share what they&#x27;ve learned with each other. We&#x27;ve found that agents are most effective with memory when it builds on the tools they already use. Memory on Managed Agents mounts directly onto a filesystem, so Claude can rely on the same bash and code execution capabilities that make it effective at agentic tasks. With filesystem-based memory, our latest models save more comprehensive, well-organized memories and are more discerning about what to remember for a given task. Portable memories for production-grade agents Memory is built for enterprise deployments, with scoped permissions, audit logs, and full programmatic control. Stores can be shared across multiple agents with different access scopes. For example, an org-wide store might be read-only, while per-user stores allow reads and writes. Multiple agents can work concurrently against the same store without overwriting each other. Memories are files that can be exported and independently managed via the API, giving developers full control. All changes are tracked with a detailed audit log, so you can tell which agent and session a memory came from. You can roll back to an earlier version or redact content from history. Updates also surface in the Claude Console as session events, so developers can trace what an agent learned and where it came from. What teams are building Teams have been using memory to close feedback loops, speed up verification, and replace custom retrieval infrastructure: Netflix agents carry context across sessions, including insights that took multiple turns to uncover and corrections from a human mid-conversation, instead of manually updating prompts and skills. Rakuten&#x27;s task-based long-running agents use memory to learn from every session and avoid repeating past mistakes, cutting first-pass errors by 97%, all within workspace-scoped, observable boundaries. Wisedocs built their document verification pipeline on Managed Agents, using cross-session memory to spot and remember recurring document issues, speeding up verification by 30%. ‍ Ando is building their workplace messaging platform on Managed Agents, capturing how each organization interacts instead of building memory infrastructure themselves."
+    }
+  ],
+  "stats": {
+    "xBuilders": 15,
+    "totalTweets": 34,
+    "podcastEpisodes": 1,
+    "blogPosts": 3,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
