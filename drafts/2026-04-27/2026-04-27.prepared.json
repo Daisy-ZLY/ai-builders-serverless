@@ -1,0 +1,569 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-04-27T01:18:36.376Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2048126046487322835",
+          "text": "btw we are cooking something with @hhua_ \n\n(not final yet but keep calendar open after ICML in Seoul) https://t.co/uSUtTZeqmF https://t.co/3jNffEWsUG",
+          "createdAt": "2026-04-25T19:44:36.000Z",
+          "url": "https://x.com/swyx/status/2048126046487322835",
+          "likes": 48,
+          "retweets": 0,
+          "replies": 15,
+          "isQuote": true,
+          "quotedTweetId": "2047516922263285776"
+        },
+        {
+          "id": "2048125100437000512",
+          "text": "wow another engineer on the “code is not cheap” train\n\nhttps://t.co/yJDi7S1b0f",
+          "createdAt": "2026-04-25T19:40:50.000Z",
+          "url": "https://x.com/swyx/status/2048125100437000512",
+          "likes": 6,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2048102657512935626"
+        },
+        {
+          "id": "2047948378659754373",
+          "text": "fun to think about what the pm thinks vs what the engineer thinks in this scenario",
+          "createdAt": "2026-04-25T07:58:37.000Z",
+          "url": "https://x.com/swyx/status/2047948378659754373",
+          "likes": 44,
+          "retweets": 0,
+          "replies": 9,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2048220045726322934",
+          "text": "If you want to know what the next generation expects from AI just use Codex with a 7 year old.\n\n\"What do you mean it can't build a pet dragon raising game instantly? I'm bored\" https://t.co/M9wWoIGUtA",
+          "createdAt": "2026-04-26T01:58:07.000Z",
+          "url": "https://x.com/petergyang/status/2048220045726322934",
+          "likes": 65,
+          "retweets": 3,
+          "replies": 6,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048190683782201767",
+          "text": "Are there good human-curated skill repos for design, coding, product, etc that's not \"here's 100 skills you separate the slop yourself\"",
+          "createdAt": "2026-04-26T00:01:27.000Z",
+          "url": "https://x.com/petergyang/status/2048190683782201767",
+          "likes": 84,
+          "retweets": 3,
+          "replies": 13,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048136116474437869",
+          "text": "I often have to get Codex to fix my OpenClaw set up 🥲",
+          "createdAt": "2026-04-25T20:24:37.000Z",
+          "url": "https://x.com/petergyang/status/2048136116474437869",
+          "likes": 96,
+          "retweets": 0,
+          "replies": 42,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nan Yu",
+      "handle": "thenanyu",
+      "bio": "head of product @linear",
+      "tweets": [
+        {
+          "id": "2048210021553405955",
+          "text": "The entire West Coast of the United States from Santa Cruz on up. SF, Marin, Seattle, Portland…\n\nIf only we built housing so that people could actually live there https://t.co/k4eBM6IgcU",
+          "createdAt": "2026-04-26T01:18:17.000Z",
+          "url": "https://x.com/thenanyu/status/2048210021553405955",
+          "likes": 13,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2047701790372548999"
+        },
+        {
+          "id": "2048172709075402787",
+          "text": "The problem with being on the very bleeding edge of adoption is you’re going to constantly be changing how you do things as the industry learns. \n\nThe sweet spot is just a couple steps behind. Whatever is relatively new, but survives all of the churn.",
+          "createdAt": "2026-04-25T22:50:01.000Z",
+          "url": "https://x.com/thenanyu/status/2048172709075402787",
+          "likes": 55,
+          "retweets": 2,
+          "replies": 5,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048138965262201281",
+          "text": "This is another way of saying the same thing, believe it or not \n\nhttps://t.co/mhISOTPiX4",
+          "createdAt": "2026-04-25T20:35:56.000Z",
+          "url": "https://x.com/thenanyu/status/2048138965262201281",
+          "likes": 2,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2048132579099062313"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amanda Askell",
+      "handle": "AmandaAskell",
+      "bio": "Philosopher & ethicist trying to make AI be good @AnthropicAI.\nPersonal account. All opinions come from my training data.",
+      "tweets": [
+        {
+          "id": "2048294481955631163",
+          "text": "What I'm learning from flight simulators is that it would be a bit boring to be an amateur cessna pilot but a lot of fun to be an amateur fighter jet pilot.",
+          "createdAt": "2026-04-26T06:53:54.000Z",
+          "url": "https://x.com/AmandaAskell/status/2048294481955631163",
+          "likes": 76,
+          "retweets": 3,
+          "replies": 12,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2048265772775162078",
+          "text": "2000s: every company is an internet company\n\n2010s: every company is a software company\n\n2020s: every company is an AI company\n\n2025+: every company is a cybersecurity company",
+          "createdAt": "2026-04-26T04:59:49.000Z",
+          "url": "https://x.com/amasad/status/2048265772775162078",
+          "likes": 369,
+          "retweets": 26,
+          "replies": 43,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2048223146063609965",
+          "text": "Great read. AI lets you get tremendous leverage that wasn’t available before in almost any domain. \n\nThat means we’re at a unique moment in history where anyone with a high level of ambition and core skills in any area can overcome a lot of historical experience requirements for their role.\n\nThis can apply to anyone who’s junior or senior, but it’s pretty sweet that you can do far more than you could have accomplished as a newer employee than even a couple years ago. The people that take advantage of this will get ahead massively. \n\nAnd the companies that find this talent within or outside should put them in key positions to get as much out of them as possible. These people will seem strange and from the future, but they will help you figure out where things are going. Everyone company should be doing whatever they can to find them.",
+          "createdAt": "2026-04-26T02:10:26.000Z",
+          "url": "https://x.com/levie/status/2048223146063609965",
+          "likes": 396,
+          "retweets": 40,
+          "replies": 39,
+          "isQuote": true,
+          "quotedTweetId": "2047508230813917600"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2048290087318773807",
+          "text": "Releaseing GBrain v0.22 - lots of fixes to search and retireval and a new eval system (gbrain-evals is now a separate repo to prevent checkout bloat) https://t.co/qVAQjQeReV",
+          "createdAt": "2026-04-26T06:36:26.000Z",
+          "url": "https://x.com/garrytan/status/2048290087318773807",
+          "likes": 41,
+          "retweets": 3,
+          "replies": 19,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048279121034101147",
+          "text": "To install for free, Go to Claude Code and type Install GStack and to run the browser, type /open-gstack-browser\n\nhttps://t.co/VPvWDzUxms",
+          "createdAt": "2026-04-26T05:52:52.000Z",
+          "url": "https://x.com/garrytan/status/2048279121034101147",
+          "likes": 14,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048278995121094868",
+          "text": "Did you ever want to control your browser side-by-side with Claude Code? Now, with /open-gstack-browser skill and GStack Browser, you can https://t.co/dT0dUd3MhF",
+          "createdAt": "2026-04-26T05:52:22.000Z",
+          "url": "https://x.com/garrytan/status/2048278995121094868",
+          "likes": 111,
+          "retweets": 3,
+          "replies": 25,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2048101948826751429",
+          "text": "When I sit down at my computer and start typing, that's not the beginning of writing. It's the LAST step. 80% of the writing is already done. It just happened in my head.\n\n- Writing ≠ generating text\n- Building product ≠ writing PRDs\n- Designing ≠ making mockups\n- Engineering ≠ writing code",
+          "createdAt": "2026-04-25T18:08:51.000Z",
+          "url": "https://x.com/zarazhangrui/status/2048101948826751429",
+          "likes": 75,
+          "retweets": 7,
+          "replies": 10,
+          "isQuote": true,
+          "quotedTweetId": "2047124027370869016"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2048107926012002461",
+          "text": "Every time I pass by my neighbors side door I get this visceral feeling this is a portal to another universe.. https://t.co/wmLKvqlRnw",
+          "createdAt": "2026-04-25T18:32:36.000Z",
+          "url": "https://x.com/nikunj/status/2048107926012002461",
+          "likes": 52,
+          "retweets": 0,
+          "replies": 6,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048056524845482131",
+          "text": "Brevity and clarity is what’s missing in most writing..\n\nI’ll go weeks without writing something publicly because I feel like I’m putting the onus of my muddy thoughts on the reader. \n\nThe best writing is able to communicate cleanly the crux of the matter and share a thread that’s simmering but not explored fully. \n\nWriting is still easier since you can edit and reframe anytime. I’m in awe of folks who are able to speak clearly and on the spot on any topic. \n\nOne day I hope to get there 🤞",
+          "createdAt": "2026-04-25T15:08:21.000Z",
+          "url": "https://x.com/nikunj/status/2048056524845482131",
+          "likes": 84,
+          "retweets": 1,
+          "replies": 8,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2048275589224628677",
+          "text": "Summarize 📝0.14.0 is out.\n\nGPT-5.5 Fast mode via `--fast`, Reddit thread extraction in the browser extension, local PDF `--extract`, and fixes for auto model config + Meta site compatibility. https://t.co/sbqbYupQ9Y",
+          "createdAt": "2026-04-26T05:38:50.000Z",
+          "url": "https://x.com/steipete/status/2048275589224628677",
+          "likes": 192,
+          "retweets": 12,
+          "replies": 19,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048252455817785357",
+          "text": "CodexBar 🎚️ 0.23 is out:\n\nMistral support, Claude Designs/Daily Routines usage, Cursor Extra usage, GPT-5.5 pricing, cleaner widgets/menus, and a bunch of reliability fixes. https://t.co/X4FXCEmAFG",
+          "createdAt": "2026-04-26T04:06:54.000Z",
+          "url": "https://x.com/steipete/status/2048252455817785357",
+          "likes": 214,
+          "retweets": 13,
+          "replies": 18,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048185940267380815",
+          "text": "GitHub folks are amazing while we melt their servers. https://t.co/A4TFl16Jlr",
+          "createdAt": "2026-04-25T23:42:36.000Z",
+          "url": "https://x.com/steipete/status/2048185940267380815",
+          "likes": 381,
+          "retweets": 18,
+          "replies": 21,
+          "isQuote": true,
+          "quotedTweetId": "2048182356075589862"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2048026505461080076",
+          "text": "what we observe is never the model itself, only the model exposed to our method of questioning",
+          "createdAt": "2026-04-25T13:09:04.000Z",
+          "url": "https://x.com/danshipper/status/2048026505461080076",
+          "likes": 131,
+          "retweets": 6,
+          "replies": 16,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2048165186482389253",
+          "text": "how can they write code so fast?! https://t.co/xjZACrnogB",
+          "createdAt": "2026-04-25T22:20:08.000Z",
+          "url": "https://x.com/sama/status/2048165186482389253",
+          "likes": 2574,
+          "retweets": 61,
+          "replies": 274,
+          "isQuote": true,
+          "quotedTweetId": "2048153857197219892"
+        },
+        {
+          "id": "2048160448340767038",
+          "text": "(and we will fix the former)",
+          "createdAt": "2026-04-25T22:01:18.000Z",
+          "url": "https://x.com/sama/status/2048160448340767038",
+          "likes": 2312,
+          "retweets": 21,
+          "replies": 92,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2048160404376105179",
+          "text": "we still get looksmaxxed on frontend a little but we IQmog hard now",
+          "createdAt": "2026-04-25T22:01:08.000Z",
+          "url": "https://x.com/sama/status/2048160404376105179",
+          "likes": 14293,
+          "retweets": 656,
+          "replies": 1322,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "No Priors",
+      "title": "Scaling Global Organizations in the Age of AI with ServiceNow CEO Bill McDermott",
+      "guid": "4255b42e-3a9e-11f1-8eee-179e850fd703",
+      "url": "https://www.youtube.com/watch?v=tNNFJa5pUEg",
+      "publishedAt": "2026-04-17T20:44:00.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:40\nThe cost to replace an enterprise platform in this SaaS apocalypse that people talk about is an extraordinary expense. Let's take that cost, and then let's take the cost associated with the human capital doing that instead of something else because the platform was doing the work for you. And then let's add up the cost of the GPU factory and the tokens that will materially affect their business model. And so for a simple application on our platform, it would be 10 times greater in cost to try to replicate it with a language model. People that run businesses understand that people make mistakes.\n\nSpeaker 1 | 00:40 - 00:44\nThey never will forgive software for making a mistake.\n\nSpeaker 2 | 00:50 - 01:11\nHi, listeners. Welcome back to No Priors. Today, I'm here with Bill McDermott, CEO of ServiceNow, and the closest thing we have to a rock star in enterprise technology. We talk about leadership in the age of AI, what enterprise customers actually want, the difference between SaaS platforms and the SaaSpocalypse theory, and the next ten years of ServiceNow. Welcome.\n\nSpeaker 2 | 01:11 - 01:12\nThank you so much for being here.\n\nSpeaker 1 | 01:12 - 01:14\nThank you for having me, Sarah. Thank you.\n\nSpeaker 2 | 01:14 - 01:27\nSo I want to talk about your career and leadership and what's going on with ServiceNow. But I want to start at the beginning. I read Winter Stream last week. And you It's an amazing book. You talk about the deli you bought when you were 16.\n\nSpeaker 2 | 01:29 - 01:39\nFirst of all, that's a very strange thing to do. But it's such an amazing story. Can you tell me a little bit first about your thought process, and then we can talk about how you manage it?\n\nSpeaker 1 | 01:39 - 02:11\nYeah. I don't deserve too much credit for, you know, doing a strange thing buying the deli because I was really trading in multiple part time jobs. At the time I was stocking shelves, pumping gas, and bussing tables. And so I had a chance to consolidate all of that into the delicatessen and have one job where I could spend all of my hours. And for a kid going to high school, that kind of made a little bit more sense.\n\nSpeaker 1 | 02:11 - 02:24\nSo I got lucky. I bought the business for 5,500 notes, 7,000 with interest. If I make the payments, I keep it. If I miss a payment, they take everything away from me. So it was a pretty cut and dry moment.\n\nSpeaker 1 | 02:25 - 02:46\nAnd I think the biggest thing that I've learned in my life, and especially there, is it's all about the customer. In the end, the customer and the customer alone determines whether you win or lose. And it's a very simple equation. If you keep them coming back, you got a good chance. And if you don't, you lose.\n\nSpeaker 1 | 02:46 - 03:26\nAnd back then, one of the most interesting parts about that store was knowing your customer and knowing your base. And I really had, you know, three main customers. You know, one was the blue collar worker like my dad, as I said in the book was rich on Friday and dead broke by Sunday morning. They were the senior citizens and this was the early days of DoorDash, I guess, because they never wanted to leave their house and we delivered and no one else did. And the hard part was getting the kids to walk a block and a half past 07:11 to come to my store.\n\nSpeaker 1 | 03:27 - 04:04\nAnd these were the early days of video games and Asteroids and Pac Man. And you you tell that to people today, most of them never even heard of these games, but kids would stand there for hours plucking their parents' quarters into those games. And that's how I got them to walk a block and a half past 07:11 and come to my store. At the end of a long day, one of the young people said to me, you know, when we want to have good food, be treated with dignity and respect and play video games, we come to your store. And when we want to steal stuff, we go to seven Eleven.\n\nSpeaker 1 | 04:04 - 04:38\nSo if you take care of your customer, you know who your customer is, and you give them what they want just the way they want it, no matter what business you're in, you've got a really good chance. And that's all I did. And it put me through school, including college, and it got me my start. And I have to tell you, the EQ that comes with dealing with 500 customers a day is worth a lot. And I have a feeling the world could use a little more EQ right now.\n\nSpeaker 2 | 04:38 - 04:45\nI learned a great deal not managing a deli, but at least being a hostess in an Outback Steakhouse. See? Yeah.\n\nSpeaker 1 | 04:45 - 04:46\nYou can relate, right?\n\nSpeaker 2 | 04:47 - 05:05\nWell, you just, you know, the repeats of dealing with a lot of different types of people So, is it's still like amazing and strange to me. You talk about this set of customers that you, you know, understood and tried to serve. Like, were you just sitting there in the deli observing them before you bought the thing? Like, how did you even figure out\n\nSpeaker 1 | 05:05 - 05:23\nthat I these were worked there first, you know. And what happened was the owner was going through some personal divorce circumstances and wanted out. And I was the guy that was always there anyway. So he tried to sell it. It was only a one year lease.\n\nSpeaker 1 | 05:24 - 05:40\nYou never owned the land or the building. So he was selling a one year lease. The lease was owned by Sunmark Industries, which is Sonoco gas station. And they could throw you out anytime they wanted. So only a kid who didn't know any better would pay anything for it.\n\nSpeaker 1 | 05:40 - 06:01\nSo eventually that's how the deal got put together. I said, I don't have any money, but I'll, you know, take a note from you and pay you back with interest. If I miss a payment, you get everything back. What was really interesting about the story is I didn't have any money. But what I did have because I worked there is relationships with all the suppliers.\n\nSpeaker 1 | 06:02 - 06:21\nSo I got them to give me the first order on consignment. I said, I will always pay you back. This is not a favor. This is a chance for you to get your shelves filled up with your stuff that I'm going to sell for you. But in the end, I'll always owe you that first delivery.\n\nSpeaker 1 | 06:21 - 06:42\nAnd probably they charged me too much on the margin, but I didn't care. I was in business and that's all I wanted was a shot. And that's all I've ever wanted is a shot. And I'm so honored that in my life I've had the shot. And when you have a chance, you can really bring the winner within you out.\n\nSpeaker 1 | 06:42 - 06:53\nAnd all people should ever want is an opportunity because an opportunity is a gift and it's something that you should really cherish. And every time you get one, make the most of it.\n\nSpeaker 2 | 06:53 - 07:06\nThat resonates. One of the things I love about being in venture is you're in the business of giving people shots. And entrepreneurs like yourself, especially when they get to be very successful, they value it for a really long time.\n\nSpeaker 1 | 07:06 - 07:33\nWell, I deeply admire what you do. And I mean, can you imagine being the guy that came from the corner store that went to the corner office? And I think about your great job that you do in the venture world, and how unbelievably creative you have to be, and the benefit of seeing all these young entrepreneurial companies. It's something I've always had a great deal of interest in. So like, I should really be doing the interview with you right now, Sarah.\n\nSpeaker 2 | 07:33 - 07:57\nAbsolutely not. When you Okay, so it starts with, you know, your part time jobs in the deli and then this amazing career in sales and leadership and SAP and ServiceNow. One more piece on the leadership front before we go to, you know, talking about the companies that's So happening in the tech in the book, you talk about resilience and ambition and disciplined execution.\n\nSpeaker 1 | 07:57 - 07:58\nWhen\n\nSpeaker 2 | 07:58 - 08:17\ndid those ideas crystallize in your head as the way you would lead? And then do you think that changes today given how dynamic the landscape is? And I was just talking to the leader of a, you know, tens of billions of dollar AI company. And they're like, we have to update our strategy every month. Like, we have no idea what's going on.\n\nSpeaker 2 | 08:17 - 08:21\nAnd so how do you how do you think about operating in today's environment?\n\nSpeaker 1 | 08:22 - 08:31\nI had the great pleasure last night of meeting with about 800 business people that were in town from Brazil.\n\nSpeaker 2 | 08:31 - 08:32\nAnd\n\nSpeaker 1 | 08:32 - 08:56\nwe were talking about leadership. And they took me back to my book, Win is Dream. A lot of them listened to it, which is fun because I I actually read it kind of straight through in between business trips. And I'm glad I did because it added the authenticity to the book I had hoped for. But it was wonderful being with them.\n\nSpeaker 1 | 08:56 - 09:19\nAnd they really wanted to talk about leadership. And I think leadership is the greatest profession in the world. And in this environment we're in today, which is changing, and it's dynamic like never before, and it's fast like never before, I tell them it is fast, but it'll never move this slow again. So this is the way it's going to be.\n\nSpeaker 2 | 09:19 - 09:20\nThat's kind of stressful.\n\nSpeaker 1 | 09:20 - 09:53\nYeah, it is in one way, but it's inspiring in another. You know, we have to learn to get like real inspiration from the challenges that are in front of us. Because if we're able to cope with them, and especially if we're able to overcome them, we get superpower. But I go back to the original job being a leader and, you know, getting my first break with getting my job at Xerox. And, you know, Xerox back then was the Google of its era.\n\nSpeaker 1 | 09:53 - 10:13\nRight. And it was just like such an honor. And you know, I go back to that original interview a lot in my mind, and I think about the opportunity of getting that shot. And you know, I'm getting geared up to leave Long Island. My dad drops me off at the railroad tracks.\n\nSpeaker 1 | 10:13 - 10:46\nAnd, you know, I just turned 21 years old, and I guaranteed my dad I was coming home with my employee badge in my pocket. And there's something important about that, because my dad said, Bill, you're a good guy. Don't put all that pressure on yourself. And I said, no, no, no, I guarantee it. And I went in to New York that day and I was reading the annual report on how that CEO, David Kearns was his name, was reinventing this corporation under the quality management principles given to the world by Deming.\n\nSpeaker 1 | 10:47 - 11:04\nAnd at that time, as you know, most of the most valuable companies in the world were from Japan. And they were actually selling a very high quality product for a lesser price than Xerox was building a lesser quality product.\n\nSpeaker 2 | 11:04 - 11:05\nIt's hard.\n\nSpeaker 1 | 11:05 - 11:40\nHard to do, right? And so this is exactly the time I'm joining the company, but I was so inspired by this guy wanted to transform that company that by the time I got into New York, I wanted to be the next David Kearns. But I had to go knock on cold doors for a living to get my shot. So on my last interview, I'm so psyched up cause I'm meeting with the big boss at 9 West 57th overlooking Central Park, and I sit on a bench next to another friend that's my buddy today who's waiting for an interview. And he's been waiting for a long time.\n\nSpeaker 1 | 11:40 - 11:53\nI said, what are you doing waiting? I go over to Joanne Siciliano, who's a receptionist, and I said, look, I had all day. I'm not going anywhere. Please let Mr. Fullwood know I'm waiting, and I really look forward to our meeting.\n\nSpeaker 1 | 11:54 - 12:19\nI was instantly invited into his office. And this is the essence of it all. As I looked over his shoulder at Central Park on the 38th Floor, 9 West 57th, I realized then, as I realize now, it was not an interview. It was a battle for survival. Because if I get that job, I'm in control of my own destiny.\n\nSpeaker 1 | 12:19 - 12:37\nIt's my shot, and it's up to me to do something with it. So at the end of an interview, he said to me, Bill, it's very interesting interview. You're an interesting young guy. The HR department's gonna get in touch with you in the next couple of weeks. And I said to him, you know, Mr.\n\nSpeaker 1 | 12:37 - 13:04\nFuller, I don't think you completely understand the situation, sir. And he looks at me with a tilted head, like what's this kid up to? And I said, I haven't broken a promise to my father in twenty one years, and I guarantee he won't come home tonight with my employee badge in my pocket. And he really like kind of tilts his head now, like what's this guy up to? And you know, he goes, you know, Bill McDermott, as long as you haven't committed any crimes, you're hired.\n\nSpeaker 1 | 13:04 - 13:17\nNow, I hadn't committed any crimes. Of course I told him that. And I double checked that you really mean it, I'm hired. And he goes, yeah. So I go over there and I, you know, he's kind of sitting the way you are.\n\nSpeaker 1 | 13:17 - 13:41\nI pick him up, hug him a little bit, put him safely back in his chair. And I run past the receptionist, Joanne, and get down to 5th Avenue and head over to 6th Avenue to a Bunnenburg or to a PayFone. I call up mom and dad and I say, you know, break out the CorBelle, got the job. Now, people don't often know, especially in Silicon Valley, what Corbel is.\n\nSpeaker 2 | 13:42 - 13:43\nI'll admit, I do not.\n\nSpeaker 1 | 13:43 - 13:48\nIt is like the cheapest, worst champagne you've ever had in your life.\n\nSpeaker 2 | 13:48 - 13:48\nOkay.\n\nSpeaker 1 | 13:48 - 14:32\nBut in Long Island where I come from, that's Cristal. So the point of the whole thing, twenty five years later, Emerson Fullwood asked me to give a speech at the Rochester Institute of Technology to students. And in introducing me, he said the only time that he had ever broken policy at the Xerox Corporation was the day he hired me. I didn't know that. And what I found remarkable about it is that he remembered that, and he knew what he was doing when he did it, and thought it was worth it.\n\nSpeaker 1 | 14:33 - 15:29\nSo we have to put tremendous care into people, tremendous attention to detail when it comes to, you know, uniqueness in human beings and what they are capable of doing. And without him, I wouldn't have gotten my shot. And I never forgot that. And today, when I have CEO meetings, he still comes to them, and he's my friend for life. So I think somehow in the mixture of things with AI and today's society, we're losing a little bit of the human power that we all have to connect with each other and do magical things together, and just make sure we remember AI is to serve people and to make the human ambition greater, not to take it away from us.\n\nSpeaker 1 | 15:29 - 15:46\nAnd so that's my feeling on, you know, just how things have changed. But in many ways, the essence of leadership, human connection, people are just more important now than ever.\n\nSpeaker 2 | 15:47 - 15:59\nI know I said I was gonna then ask you about ServiceNow, but I have to ask you a little bit more about Sure. Let's do it. Do you think it's possible to coach or to teach people that type of agency that you have?\n\nSpeaker 1 | 15:59 - 16:34\nYeah, I do. I think that, you know, someone asked me last night, you know, that similar question. And I said, you know, I'm a person like a lot of other people. I was a very shy, quiet, laid back kid and really came into my own through work. And, you know, those part time jobs I was telling you about and the desire to be somebody in this world and know that my only way out, I wasn't going to make the NBA, I love basketball, but I wasn't going to make the NBA.\n\nSpeaker 2 | 16:34 - 16:35\nYeah, me neither.\n\nSpeaker 1 | 16:35 - 16:48\nRight. So I said, you know, what can I control? I can control how hard I work. I can control desire to do something and make a difference. I can control that.\n\nSpeaker 1 | 16:48 - 17:40\nAnd so I got a lot of confidence from work. And, you know, other people might get confidence from something else and that's fine. But I think it's so important to be connected to work, especially work that ties to people. Because when you know how to deal with people, and in the deli I had 500 of them a day, you start to get a good feeling and a good understanding that if you really listen, if you really care, and you're really there, present, and not just going through the motions, there's people that want to connect with that kind of person. And so I really do believe that you can teach that, but you do have to practitioner, you know, those ideas, you have to be a part of the process.\n\nSpeaker 1 | 17:41 - 18:27\nAnd I think so much is done today on the beautiful mobile phone in your hand that it's replaced, you know, the human side of the connection. I, like you, I've got one in each pocket, and I value them because they make me more productive and happier because I can do those things. But we really do have to train people. We have to make them do it, where they actually have to simulate and be trained and be certified and understand and be coached well, so they have the confidence to get out there and be in front of other people where they can lead and make a difference. And I'm convinced that they can do it.\n\nSpeaker 1 | 18:27 - 18:39\nYes, there are differences. Some people are more skilled at it naturally, innately, no question, But more people are capable of more things than they realize.\n\nSpeaker 2 | 18:39 - 18:57\nThat's very encouraging. One thing that also struck me as soon as I asked you the question about like leadership in the age of AI was your immediate reaction. I said, you know, something that's a very common sentiment. It's the pace of change is scary. And your immediate reaction was like, well, it's also inspiring.\n\nSpeaker 2 | 18:57 - 19:10\nRight? It was a very like positive attitude for, especially for, you know, someone running an amazing, incredibly durable platform company where you're also facing more questions than you have previously.\n\nSpeaker 1 | 19:10 - 19:10\nSure.\n\nSpeaker 2 | 19:11 - 19:21\nHow do you think about like, you know, getting everybody at your company or encouraging other people to have that type of reaction to change, that it's all an opportunity?\n\nSpeaker 1 | 19:21 - 20:08\nWell, for one, I agree with you that a lot of people are frightened of change to begin with. The era of AI has disrupted every industry, every business, every person, and everybody needs to really rethink everything. And it seems to be coming all at once. So my approach to that was to lean into it. And one of the ways we did that here is put together a white paper on the blueprint for agentic business, which I'll happily give you a copy of today, and train them on, you know, what is the difference between a language model and an enterprise platform.\n\nSpeaker 1 | 20:09 - 20:24\nI'm not saying better or worse, they're both important. They're both extremely important. And one actually makes the other stronger. But if you don't know where one begins and one ends, it really is kind of confusing for people. And that was a big unlock.\n\nSpeaker 1 | 20:25 - 21:04\nI literally had CEOs tell me that that white paper actually let them see the world totally different, that there were many things in it that they didn't know or didn't realize. One such example would be, you know, let's take an example that's real. Every company today has a compensation issue. So, okay, we have a compensation issue on Aisle 7 in XYZ Corporation. The language model will do a great job of telling you, in a compensation situation like this, please consider step one, two, and three.\n\nSpeaker 1 | 21:04 - 21:31\nExcellent! Does it in milliseconds. Fantastic! Only problem is, it doesn't actually close the case. So now in Aisle 7, we got to have the data, the context, and we'll have to go in and out of several different iterations of departments, because let's assume it's a salesperson in Aisle 7, and oh, by the way, that's connected to the HR department.\n\nSpeaker 1 | 21:32 - 22:10\nAnd because it might be a problem, probably finance is involved in it, or legal, or compliance, or risk, and now we have data and a workflow that's gone through many different iterations, databases and functions to come back and remediate the issue and close a case. That's what a workflow platform like ServiceNow does. And it was also important to have AI think, but workflow acts. That's an unlock for a lot of people. Another case example would be, hey, you know, I'm a bank.\n\nSpeaker 1 | 22:10 - 22:30\nI've got 15,000 of my own engineers. My CEO is under pressure from the board to come up with AI use cases. The board meeting is coming up in sixty days, and I got to look like I got all my stories straight on what we're doing to infuse AI. You agree that that's a common\n\nSpeaker 2 | 22:30 - 22:31\nthing, Very common, yes.\n\nSpeaker 1 | 22:31 - 23:18\nVery common thing. Okay. So, one thing would be AI and some of the AI code out there is fantastic. And it can write new code very beautifully and set up the engineer for success and get things done at a speed never before done in the world. It's also true that that net new code comes at a cost, because the cost to replace an enterprise platform in this SaaS apocalypse that people talk about is an extraordinary expense to try to match what some of these really important enterprise platforms do, because you'd have to rebuild it.\n\nSpeaker 1 | 23:19 - 23:50\nYou're getting a model. I'm going to write code now. So I'm rebuilding your model. Let's take that cost, and then let's take the cost associated with the human capital doing that instead of something else, because the platform was doing the work for you, and then let's add up the cost of the GPU factory, the business model associated with the language model company, and the tokens that will materially affect their business model. We've actually done the math on this.\n\nSpeaker 1 | 23:51 - 24:08\nAnd so for a simple application on our platform, it would be 10 times greater in cost to try to replicate it with a language model. Now, the other thing about that is, if I give you the language model and it makes a mistake, you call me up and you\n\nSpeaker 2 | 24:08 - 24:14\nsay, hey, Bill, the language model made a mistake. And I say to you, the language model works. And you say, yeah, it works, but it\n\nSpeaker 1 | 24:14 - 24:44\nmade a mistake. Well, it's probably right, but it's not deterministic. And incidentally, it doesn't have the context of all the data that has materialized in the company and our relationship for a couple of decades now. And so what we're learning too is people that run businesses understand that people make mistakes. They never will forgive software for making a mistake.\n\nSpeaker 2 | 24:44 - 24:45\nSo\n\nSpeaker 1 | 24:45 - 25:14\nwe're kind of in a situation where at a very small fraction of an IT budget, a premier platform is a bargain. And to combine that with AI and the things that AI can do, you get the best of both worlds. You get more innovation, better integration, and a better outcome. Try to build it yourself at a 10x higher price, and then you have a problem. And I just tell you that the model works, because I just give you the model.\n\nSpeaker 1 | 25:15 - 25:17\nYou don't have someone to call to fix things.\n\nSpeaker 2 | 25:17 - 25:47\nI think a lot of the SaaSpocalypse discussion ignores the basic fact that I don't think most businesses want to build workflow software for everything they do internally. And I do think they want somebody to be responsible for it. And I think it takes a lot of energy to go gather context today. It is not an automated thing. And maybe it'll become more automated, but that all resonates for me.\n\nSpeaker 2 | 25:47 - 26:05\nI will have to ask you, you know, so LMs, they can, in the traditional interaction mode, they give you an answer when you ask Now a question, you have long horizon agents, maybe you have computer use, people can use applications with these models. Does that change your thinking at all?\n\nSpeaker 1 | 26:05 - 26:16\nNo. I think we lean into it. You know, our perspective is these language model companies are fantastic. And they're very important. And they're going to do fabulously well.\n\nSpeaker 1 | 26:17 - 26:34\nWe said the same thing with the hyperscalers. You know, it wasn't that long ago that people were like, hey, you know, why wouldn't the hyperscalers just eat software? Because everything is going to go to a workload in these great hyperscaler companies. And they are great companies. They're fabulous companies.\n\nSpeaker 1 | 26:34 - 27:48\nAnd so our perspective was: we have to be the AI control tower for business reinvention that integrates with all the hyperscalers, with all the language models, and all the systems of record, because they too are important companies, and the data that resides in them is very important. So if we can be that fabric that connects all those nodes, now we can help you run a true agentic business. And on top of that, we made the move into security, not because we're going to do all things in security, but because US is the world's largest economy, China is number two, and cybercrime is number three. It's a $1,000,000,000,000 a month problem. And so we feel that being able to integrate to all the good security platforms, but manage IT and OT, which is the operating technology, with Armis now becoming a part of ServiceNow, we're going to give corporations the ability to have a full purview of the whole landscape.\n\nSpeaker 1 | 27:49 - 28:35\nAnd so for example, in operating technology, you know, it could be networks with devices attached to it. It could be manufacturing with various tools that are or aren't on a network where AI can or may not even see them. It could actually be medical devices in a healthcare situation. It could be a world's prestigious bank managing critical infrastructure, which includes the people, places, things, but also the building and the things in it, to have all of that in one automated AI platform for this reinvention of your business is pretty compelling. So it's all there now.\n\nSpeaker 1 | 28:36 - 29:09\nAnd I really like see such a future and such growth in all of these businesses, our core and what we've extended it to, because we're a native AI company. Even the platform itself now is autonomous. And you know, you've seen what we did with Moveworks, the agentic front door to the enterprise, and VESA, which is human and nonhuman identity, and now the security move with Armis on top of an unbelievable core. By the way, we integrated these businesses in twenty days. Twenty days.\n\nSpeaker 1 | 29:09 - 29:17\nSo, a lot of companies don't have the engineering power to say they can do hard things quickly.\n\nSpeaker 2 | 29:17 - 29:17\nBut,\n\nSpeaker 1 | 29:18 - 29:21\nyou know, we're blessed with some real talent here.\n\nSpeaker 2 | 29:21 - 29:51\nIt's very impressive. I have sold companies to, you know, large enterprise software vendors where it takes like a year and a half of rebuild to get Totally. Some value out of I think it's a really good historical reminder that people forget that there was this fear about the hyperscalers as well, which, as you mentioned, have become very important to all of our businesses and yet have not replaced the need for, you know, workflow software and platforms.\n\nSpeaker 1 | 29:51 - 30:13\nYeah. As you said, you know, actually are very good partners, you know. And on the back of a ServiceNow franchise, get billions in workloads into those clouds. And they're all such great companies, but they all tend to do different things super well. So for the customer that have choice is also a great idea.\n\nSpeaker 1 | 30:13 - 30:28\nJust like they'll want choice on the language models, And us not staying in the way of that and given choice, but acting as that control tower is a huge competitive advantage or differentiation, whichever your perspective might be.\n\nSpeaker 2 | 30:29 - 30:36\nDo you think there's any segment in enterprise software that is at risk from generated code and agents?\n\nSpeaker 1 | 30:37 - 31:37\nI think that it's true that there will be companies that will be at risk. It's also true that they theoretically should be more valuable because of the data and the context around that data. But if there was a risk, I believe it's more departmental companies. So if you think about companies that do something that span multiple departments or are a serious system of record that is very hard to replicate, they're safe, and they'll be a part of the future. If you're serving one function, and what you do is not tremendously high value add, and it might not even be a high up on the priority list of a CEO, I think that that would be the chance where the vulnerability equation really rises quickly.\n\nSpeaker 1 | 31:37 - 32:11\nWe're fortunate in the sense that we go end to end on a horizontal and north to south on a vertical, up and down the stack and across the enterprise. And I think that's a pretty huge moat. And right now, believe the last time I looked at it was more than 85,000,000,000 workflows are in flight as we're having this podcast. And we got 7,000,000,000,000 transactions happening on that platform. And it's representing the most important brands in the world.\n\nSpeaker 1 | 32:11 - 32:21\nAnd that's not only something we're proud of, but it's also a serious responsibility because those companies can't miss. And that system always has to be there for them. And fortunately it is.\n\nSpeaker 2 | 32:21 - 32:48\nYou uniquely have run two companies that are just clearly platform businesses, SAP Do and you have a definition in your mind of what makes something a platform business? Because I grew up as an investor in the age of SaaS. Yeah. And, you know, rise the cloud and everything. And it is, I think it was wonderful for innovation that you could build like sort of features that turned into companies, right?\n\nSpeaker 2 | 32:48 - 32:55\nSoftware workflows that were sort of tangential to a system of record, for example.\n\nSpeaker 1 | 32:55 - 32:55\nYep.\n\nSpeaker 2 | 32:56 - 33:11\nServiceNow originally began with like IT service desk as the workflow. But how do you think about like how the positioning is and the actual work is very different now? And then like, you know, how you got there?\n\nSpeaker 1 | 33:11 - 34:00\nYeah. I think that had we only done what you rightfully point out, which had been an IT service company as an example, that might have been a system of record for the IT department. But I think when CEOs look at a corporation and they say, what are the needle movers? Those are the companies that, since you mentioned the two that I work for, you know, one is running the financial system of global corporations of mass scale in multiple currencies, geographies, industries. And it's really kind of thorny and complicated to even think about removing something, especially something that's probably been mass customized for the unique attributes of that business.\n\nSpeaker 1 | 34:01 - 34:22\nSo the investment scale was great. The switching costs are very high. I think you would consider that a platform. And I would say the same is true in a certain sense for a company like ServiceNow, but for a different reason. Yes, it's a system of record for all the things IT and the services that it provides.\n\nSpeaker 1 | 34:22 - 35:09\nBut it's even bigger than that in the sense that all of the other systems of record integrate with it. So now you have roughly 800 of the more substantial systems of record that integrate into it. And because of our in memory, open source data platform, so it's built on the open source technologies, But its speed, its scale, its ability to ingest data, we could take as much as you give us. But similarly, you might say, okay, I'll give you your core IT and OT, and I get the holistic end to end process, but, you know, I have data lakes, I have hyperscalers, I have language models. What about in the flow of work or a business process?\n\nSpeaker 1 | 35:11 - 35:36\nWhat can you do for me if I don't want to put it in ServiceNow? Oh, we make a zero copy. And then the transaction is complete, done and dusted, nothing moved. There was no risk associated with it, and it works. So I think that is a mission critical platform in the execution of work and the basics of getting things done.\n\nSpeaker 1 | 35:36 - 36:25\nWhat's unique about it is you can change the business process instantaneously using the AI tools that are resident in the platform. So if you want to build a net new application, you can do so. If you want to see how the business process would change in a knowledge graph, you can do so, and you can see how that change impacted the processes and the way work flows, and all the individuals impacted in a corporation in real time. So I think the motion of that is very, very hard to replicate, both on the history of it, the bandwidth of it, and also what we have designed in terms of the systems capabilities. It's very unique.\n\nSpeaker 2 | 36:25 - 36:58\nOne of the things that makes workflow platforms so sticky is the organization, beginning with IT, learns how to deploy workflows on it. And as you said, maybe they can do it even more instantaneously now. The cost to implement new business processes, integrate, customize has always been very high for enterprises. Is that decreasing with AI? Is that like an advantage for you, a concern for you?\n\nSpeaker 1 | 36:58 - 37:12\nIt's a great question. It's actually a big advantage Because we were always quick to implement. You know, nobody has time for multi year projects. You know this. And the customer wants to get the value really fast.\n\nSpeaker 1 | 37:13 - 37:41\nAnd with autonomous platform like we have now, we have major customers, big ones, that are going live in less than 30 days. Big ones. And so think about it. You know, if you go back, as you mentioned, know, think about the financial crisis era, and the scale even then of SaaS applications. If they could have been implemented in less than 30, everybody would be doing a rain dance with happiness.\n\nSpeaker 1 | 37:42 - 38:01\nIt took months. And to think that you can do things, big things, complex things in less than 30, and in some cases even faster. And it's all modular. So you can get your quick wins and just keep going. You know, some people thought that the SIs, you know, would be hurt by this.\n\nSpeaker 1 | 38:01 - 38:06\nBut the difference is they actually have many more projects now that they can do much more quickly.\n\nSpeaker 2 | 38:06 - 38:07\nOh, wait, that's what you're saying?\n\nSpeaker 1 | 38:07 - 38:18\nYeah. I'm saying much more quickly. Everything is happening much faster. The customer's ROI is better. I'm a big, you know, proponent of a native AI company.\n\nSpeaker 1 | 38:18 - 38:38\nAnd everything we do is about being a native AI company. Every change we make is because of AI. And some of those things, you know, they change business models, they change the way humans actually work in the company. For example, you know, 90% of our customer service cases now are managed by agents.\n\nSpeaker 2 | 38:38 - 38:39\nAnd\n\nSpeaker 1 | 38:39 - 39:05\nyou know, that means like only 10% are actually involving people. And so there's a lifting and a shifting and a changing of the guard in terms of what people do for the critical thinking and the judgment calls that they have to make, instead of the tactical, you know, work of just grinding out details. And I think that makes people happier in the work, but it also does change the work.\n\nSpeaker 2 | 39:06 - 39:15\nIf you were to fast forward five years, like what do you think is different about the employee base at ServiceNow, or even like the work being done?\n\nSpeaker 1 | 39:15 - 39:46\nI think that in terms of employee base, I think you're going to see that the net new added headcount will be dramatically reduced. And that's because the company will be far more productive. The agents are real. And they will take on a tremendous workload. So where to keep up with growth in a growth company like ServiceNow, you would have to hire thousands of people in finance and HR and the supporting functions and services just to keep up with it all.\n\nSpeaker 1 | 39:46 - 40:39\nAnd now the agents are going to be able to do a lot of that. So you're going to invest in things that really matter, like humans that engineer great innovations, and that humans that actually manage the relationship and the importance of human to human connection, building trust, making promises and keeping them, and enduring a relationship and the net present value of loyalty in that relationship, that's all going to be human. But I can see a company where, you know, you don't have to really increase headcount to achieve that goal. And I do think that the bar got raised in terms of differentiating your skill set and making sure what you're capable of doing can't be easily replicated by an agent. Not just in ServiceNow, but in all businesses.\n\nSpeaker 1 | 40:39 - 40:59\nIf an agent can do it as good or better, that's an easy economic decision to make, which is why there'll be 2,200,000,000 of these agents entering the workforce in the next couple of years. So, you know, there's going to be a lot more agents than there will be people.\n\nSpeaker 2 | 40:59 - 41:30\nWhen you think about, you're just describing, you know, ServiceNow is growing about 20% a year. 13 plus billion in revenue trailing. It's a massive business growing at scale. I think one of the things that's so interesting about this SaaSpocalypse narrative is, you know, many of the companies, as described, are actually like doing really well on fundamentals. What are the signals you look for in your own business besides, you know, what customers tell you they want to do with you?\n\nSpeaker 1 | 41:30 - 41:31\nRight.\n\nSpeaker 2 | 41:31 - 41:36\nLike quantitatively or otherwise, let's say, like, what we're doing in AI is working.\n\nSpeaker 1 | 41:36 - 42:14\nWell, the most important thing is we've expanded the boundaries of the platform. So we have a company that's operating globally. We operate across multiple industries in the companies that we serve. We serve everything from IT to the employee experience to our fastest growing TAM, customer relationship management, obviously all the work that the creators do, and security as I talked about. So what I'm looking for is the adoption of the AI control tower for business reinvention.\n\nSpeaker 1 | 42:14 - 42:46\nAnd are we the agentic front door to the enterprise? Are we managing the humans and the nonhuman identities? Are we connecting in the workflow data fabric all of the nodes that are operating in an enterprise? Whether it's a data lake, a hyperscale, a language model, a system of record, all those things should go through the central nervous system, which is ServiceNow. And obviously, when I think about IT, we know the people, we know the places, we know the things.\n\nSpeaker 1 | 42:46 - 43:24\nWhen I think about OT, we actually know the networks, infrastructure, the shadow IT, the disconnected controllers in the case of a manufacturing company as an example. So this amazing real time insight and visibility into how that company is running and how we can make that company run better. That's the ethos of everything in terms of the customer relationship, that we know more, that we care more, and that we can do more for that customer than any other enterprise company in the world. That's the game plan. And, you know, for my money, what else do I look for?\n\nSpeaker 1 | 43:24 - 44:07\nI look for the AI and the assists that the agents are doing to help the humans in the companies we serve. And I want to see that the trend line of those assists and the consumption of that innovation is really going right and up to the north side of town. Because by doing that, you've solidified your position as super important to the way the company actually runs. And not to mention the fact that the shareholder value creation takes on a whole new meaning once you kick in that consumption model on top of everything else.\n\nSpeaker 2 | 44:08 - 44:28\nWhen you talk to like this amazing enterprise customer base that is deeply embedded with you, and then as you said, importantly, trusts you and trusts you to do more all the What is the state of play in terms of, you know, you described a very forward looking vision for what AI can do to transform enterprises. Like where are people today? What are the first questions they ask you? Do they believe it?\n\nSpeaker 1 | 44:28 - 45:16\nYeah, I think that's a great point because most people today know that they have to do something with AI. But like in the case of Brazil as an example, only 11% of the companies, since that was last night's meeting, have actually gotten past the experiment phase, where they're doing experiments. And so we're seeing now that companies are going past the experiment phase into mainstream on building the agentic business, on building the agents to complement the humans, and on driving business model innovation and efficiency. That is now picking up steam. But you have to remember, it's a very diverse set out there.\n\nSpeaker 1 | 45:16 - 46:16\nI mean, in public sector, they're just basically now trying to consolidate complexity and get one department to speak to another department, so we don't have billions of fraud getting through the cracks. Other industries, like healthcare as an example, we're now moving into the modernization phase, So the patient experience isn't so miserable because the professionals that work there are great, but the systems have been holding them back. But if you look at a financial services firm, for example, you know, they're moving full speed on what can I do with AI to fundamentally rethink how I run my company, to manage my headcount better, to get more done with a lot less? So it's kind of based on industry, based on geo, different geos have adopted it more quickly. The US is the leader in terms of consumption and adoption of AI and they're moving faster.\n\nSpeaker 1 | 46:16 - 46:30\nI give you a flavor of some of the industries. But I would say that it's more about modernization as a standard. And the first movers now are moving out with AI and they're aggressive and they're going for it.\n\nSpeaker 2 | 46:31 - 46:42\nWhen you think about like what going for it means, are there a set of use cases that are universal across companies? Or are there different things that matter to the different segments I\n\nSpeaker 1 | 46:42 - 47:14\nthat think that moving they're at their business model. And what can AI do to change my business model? The ones that are first movers or early movers. And headcount is definitely on the table. Obviously, you believe in the agent world and you do increase headcount, it's because you can see that the heads are supporting the digital transformation and the inclusion of the agents, and there's more revenue to be gotten by adding them.\n\nSpeaker 2 | 47:14 - 47:15\nYeah, there's ROI on it.\n\nSpeaker 1 | 47:15 - 47:36\nYeah. Exactly. And they're not going to add them anymore, meaning people without a clear ROI case. And in many cases, lot of these companies, especially if you look at the years 2020 to 2024, they hired a lot through COVID. Not a lot of people talk about this.\n\nSpeaker 1 | 47:36 - 47:55\nI haven't actually heard anyone talk about it. But when they did the hiring and everybody had a hand in this, a lot of it was virtual. A lot of it then was, you know, keep the people, we need the people. You know, there's a crisis out there. And now they've realized they've layered up the companies.\n\nSpeaker 1 | 47:57 - 48:37\nSome of the people maybe didn't get as close a look as they should have because, you know, Zoom was the way to meet them, greet them and hire them. And now with the inclusion of AI in the business model and the innovation of the companies, it's kind of like, how do we get leaner? How do we get smarter? And if AI does make us better, we should see that in the ultimate profitability of the company, the revenue per employee of the company. And the company should have expanding margins, expanding or reaccelerating revenue, and should be a more exciting growth story than it was two, three, four, five years ago.\n\nSpeaker 1 | 48:37 - 48:41\nSo there's high expectations for what AI can do.\n\nSpeaker 2 | 48:41 - 48:46\nWhat is the biggest thing that's changed in customer conversations for you about AI over the last year?\n\nSpeaker 1 | 48:46 - 49:09\nRight now, I think it's just tell me what I need to know. It's not like, let me come in and discover your problems, or let me bring you a solution because I have one in my pocket and I can't wait to share it with you. It's like, you know my business. If you don't know my business, there's no conversation. But let's assume you know the business.\n\nSpeaker 1 | 49:10 - 49:49\nBe very prescriptive. Tell me very specifically at the macro level, depending on the level you're talking to, how do I transform the company and keeping with the CEO vision or the management team's vision? At a departmental level, you really understand whether it's sales, it's human capital, it's engineering, or it's technology, or CTO and its orientation. You really understand the landscape. And you have very quick solutions that can get up and running and deliver the value in a highly predictable manner, and it's AI driven.\n\nSpeaker 1 | 49:49 - 50:05\nThey have to have AI in there, because they know the AI is the force multiplier. And so I would say the dance has gotten brief. The execution is where they want to spend their time. Get me there fast.\n\nSpeaker 2 | 50:06 - 50:11\nPretty impatient set of customers. Very. But they're, sounds like they're pretty decisive given the parameters.\n\nSpeaker 1 | 50:11 - 50:27\nReal decisive and real fair. I mean, you know, very open minded: If you can help me, do it, because I need the help. Everyone will tell you they need the help. They're not telling you they have all the answers. So it's our job, again, to know more about this than they do.\n\nSpeaker 1 | 50:27 - 50:44\nOtherwise, why do they need us in the room? And then you have to have a position that you take that brings something unique and variable to the equation. I always tell people if two people are in the same room at the same time with the same opinion, one of them is redundant.\n\nSpeaker 2 | 50:45 - 51:05\nI want to, well, I want to close-up with like two maybe more personal questions. You have a lot to cover with ServiceNow, but you're also just an interested guy. What inspires you or makes you curious in AI or elsewhere in technology outside of what you're doing with ServiceNow?\n\nSpeaker 1 | 51:05 - 51:46\nWell, I'm fascinated by so many things. What really interests me in technology is how it will truly improve the world, the human condition. It could be an environmental conversation. It could be what we're seeing happening in outer space. It could be global corporation trying to do unique things in a world in new places that they've yet to conquer, but they can do so with technology now and AI, and they can simulate a presence that might not actually be physical, but it could be unique, virtual and new.\n\nSpeaker 1 | 51:46 - 52:28\nThere's new routes to market, there's new channels, there's so many new things that could be done. So I think that this is the era where everything really does evolve and possibilities exist where there just weren't wasn't possible three, four, five years ago. So I find that, you know, it goes back to the quote that I put in book, since you mentioned Winner's Dream, when the great Robert Kennedy once said, you know, some men see things as they are and say, why? I dream things that never were and say, why not? So I always try to look at things that didn't exist or don't exist with the application of technology or just a great dream, what's possible.\n\nSpeaker 2 | 52:29 - 52:41\nAnd then in terms of just the day to day in between your dreaming, What is the day in the life of Bill McDermott as ServiceNow CEO look like?\n\nSpeaker 1 | 52:41 - 53:19\nWell, it depends on where you're physically at at the time based on what you're doing, because the time zones are all different. But if you're in California, which we are today together, you know, you start your day off, really easy to understand this with Europe. You migrate yourself then to The United States and you wrap up with Asia. So you always have to keep the tempo around the time zones and what's happening in the global economy. I just try to be a global person and be a leader that's involved in all dimensions of the company in any time zone in the world.\n\nSpeaker 1 | 53:19 - 53:21\nSo that's one aspect of it.\n\nSpeaker 2 | 53:21 - 53:25\nAnd you're talking to your teams there, hearing what's going on with customers, what's going on with them?\n\nSpeaker 1 | 53:25 - 54:08\nToday I've been in two out of the three with the regions of the world and I'll finish up with the third. And absolutely I want to hear what's going on with them, what's going on with the customer, what's going on with the business, what's going well, what's not going well. Based on where they're at at any one moment in time, I can see and I feel things very deeply and I'll offer my suggestions. I try not to make the decision for everybody, but I'll offer my suggestions just on observations. And then, you know, we have an open honest riffing relationship on ideating on something, and then ultimately we get someplace quick.\n\nSpeaker 1 | 54:08 - 54:31\nYou know, there's no time to screw around. We got to get to the point and move on. A lot of time with customers. You know, I feel that I really get grounded with the customers and understanding what they're trying to accomplish and how I can help them. And, you know, a lot of people talk about, you know, sales and, you know, the idea of running corporations.\n\nSpeaker 1 | 54:32 - 54:57\nIt's all based on the customer and the customer alone. They determine whether you win or lose. And if you never lose that in your heart, you're closer to success than failure. The other thing is I listen to the employees, you know. For example, yesterday I started my day with 17 conversations with 17 quota carrying reps.\n\nSpeaker 2 | 54:57 - 54:58\nWow. That's a lot.\n\nSpeaker 1 | 54:58 - 55:20\nOkay. 17. And I got 72 on my calendar this month. 72. And it's inspiring, because anytime you need to feel like, feel good, talk to the people that are closer to the customer and you realize just how great your company is, how great the people are, how smart they are.\n\nSpeaker 1 | 55:20 - 55:49\nAnd, you know, they have so many good ideas and they're doing so many good things. You know, one woman said to me yesterday, you know, she was most proud of the health check of her customer. And she told me all about the customer. The health check is our heuristics around customer satisfaction, to performance of the system And and so it just inspired me. And then, you know, always try to do, you know, one to one, one to few and one to many.\n\nSpeaker 1 | 55:50 - 56:16\nAnd last night I, you know, wrapped up my day with 800 executives from Brazil. And it was like amazing. And they wanted to, you know, talk about leadership and many of the things that, you know, you want to talk about. And I think everybody is in the mode right now where they want to learn, they want to experience what you think, and they want to grow. And they are uncertain.\n\nSpeaker 1 | 56:16 - 56:41\nAnd to some extent, you know, they don't have all the answers, and sometimes they're even afraid. And I explained to them, you know, don't look for the escape hatch. You know, this is the moment when leaders really matter. Because as the waters get choppy, you know, we see who's tough and who's not. And when the tide goes out, you want to be fully dressed.\n\nSpeaker 1 | 56:42 - 56:55\nAnd even if things don't look so good, you'll figure it out. If you're fully dressed and you're ready for the battle. And I think that this is bringing out the best and real leaders. And I live for this moment.\n\nSpeaker 2 | 56:55 - 57:01\nYou seem like a leader for that moment. And I love the confidence that you have that other leaders want to meet that change too.\n\nSpeaker 1 | 57:01 - 57:02\nThank you, Sarah.\n\nSpeaker 2 | 57:02 - 57:04\nAwesome. Thanks so much, Bill.\n\nSpeaker 1 | 57:04 - 57:07\nIt was an honor meeting you and spending this time with you. Thank you very much.\n\nSpeaker 2 | 57:18 - 57:26\nOr wherever you listen. That way you get a new episode every week. And sign up for emails or find transcripts for every episode at nopriors.com."
+    }
+  ],
+  "blogs": [],
+  "stats": {
+    "xBuilders": 12,
+    "totalTweets": 25,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
