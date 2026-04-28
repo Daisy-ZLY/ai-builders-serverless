@@ -1,0 +1,340 @@
+{
+  "date": "2026-04-28",
+  "title": "AI早报：Agent个性化、自我改进与UI范式重构",
+  "intro": "今日焦点：AI Agent的个性化构建方法（三文件法）、编码Agent作为超级智能基石的观点、以及Sam Altman对操作系统和互联网协议重新设计的呼吁，共同指向AI原生交互范式的到来。同时，关于AI就业影响的认知偏差分析提醒我们理性看待自动化浪潮。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Swyx",
+      "title": "Swyx 引用推文：AI 行业动态",
+      "originalText": "https://t.co/GAdNmBrxdz https://t.co/q9oiahjUPd",
+      "chineseInterpretation": "Swyx 引用了一条推文，但推文内容仅包含两个链接，没有文字说明。从点赞和转发量（2718赞、123转）来看，这条引用可能涉及重要的 AI 行业新闻或观点，但具体内容需要点击链接查看。作为资深观察者，Swyx 通常分享前沿技术或行业趋势，因此这条推文可能值得关注。",
+      "tldr": "Swyx 转发了一条只有链接的推文，点赞很高，但没说啥，得点进去看才知道是啥。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://t.co/GAdNmBrxdz",
+        "https://t.co/q9oiahjUPd"
+      ],
+      "topicTags": [
+        "AI 行业动态"
+      ],
+      "personTags": [
+        "行业观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Yang",
+      "title": "MCP Server for Fitness App & Gemini Missed Opportunity",
+      "originalText": "This weekend, I improved my mobile fitness app and built a mcp server for it so I can get my latest workout stats and update the app's workouts via Claude/Codex/etc. This shit is too fun. I synced my iPhone photos to @googlephotos and there seems to be no way to just prompt Gemini to \"create a highlight reel of me with my daughter growing up\" Seems like a missed opportunity.",
+      "chineseInterpretation": "Peter Yang 展示了两个有趣的 AI 应用场景：一是为自己的健身 app 搭建 MCP 服务器，让 Claude 等 AI 助手能直接读取和更新健身数据，体现了 agent 与个人应用的深度集成；二是吐槽 Google Photos 与 Gemini 的整合不足，无法通过自然语言指令直接生成回忆视频，指出大模型在个人数据场景下的产品化缺口。",
+      "tldr": "Peter 自己动手给健身 app 装了个 AI 接口，让 AI 能直接帮他查数据和改计划，玩得很嗨。同时吐槽 Google Photos 和 Gemini 联动太弱，不能一句话生成孩子的成长视频，觉得是个大商机。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://x.com/petergyang/status/2048611053333041158",
+        "https://x.com/petergyang/status/2048603978070712757"
+      ],
+      "topicTags": [
+        "MCP服务器",
+        "AI Agent",
+        "健身应用",
+        "Gemini",
+        "Google Photos",
+        "产品集成"
+      ],
+      "personTags": [
+        "产品经理",
+        "开发者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Guillermo Rauch",
+      "title": "Coding agents will be the foundation of all superintelligence",
+      "originalText": "Coding agents will be the foundation of all superintelligence. At a minimum, coding ability is indistinguishable from 'proficiency with computers'. Great coding agents like Claude Code master bash, filesystems, configuring and installing programs… But it's also about self-improvement. A coding agent has the ability to examine its source, its state, its skills, its instructions… it can propose changes to itself (with human supervision and audit trail, I recommend), or even mutate itself directly. In retrospect, this should be obvious. \"What I cannot create, I cannot understand\". Coding fluency has given models a deeper understanding of all computer and knowledge work. To master programs, you must be able to create them.",
+      "chineseInterpretation": "Guillermo Rauch（Vercel CEO）认为编码能力是通向超级智能的关键路径。他提出，优秀的 coding agent（如 Claude Code）不仅能熟练操作 bash、文件系统等计算机基础设施，更重要的是具备自我改进能力——可以审视自身代码、状态、技能和指令，并在人类监督下修改甚至变异自己。这呼应了费曼的名言“我不能创造的东西，我就无法理解”，暗示通过编程，AI 才能真正掌握计算机和知识工作的本质。",
+      "tldr": "编程能力是 AI 变聪明的根本——就像一个人如果会写代码，就能真正理解电脑怎么工作。厉害的编程 AI 甚至能自己看自己的代码、改自己的代码，就像能给自己做手术的医生。",
+      "proView": "如果 coding agent 真能实现自我改进，那么 AI 的发展将进入指数级加速阶段：一个能修改自身代码的 AI 可以不断优化算法、修复漏洞、甚至发明新的编程范式，这可能导致通用人工智能（AGI）的快速到来。",
+      "conView": "但另一面是：自我修改的 AI 存在失控风险，历史上类似“自我改进”的设想（如递归自我改进）在安全性和可解释性上一直面临巨大挑战。人类监督可能成为瓶颈，且一旦出现错误修改，后果可能难以逆转。",
+      "clue": "判断线索：观察 Claude Code 等 coding agent 是否真的在真实项目中展现出自我修改能力，以及人类监督机制的有效性。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/rauchg/status/2048523195305902341"
+      ],
+      "topicTags": [
+        "AI 智能体",
+        "编程",
+        "超级智能",
+        "自我改进",
+        "Claude Code"
+      ],
+      "personTags": [
+        "创业者",
+        "技术领袖"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "AI时代的认知偏差：高估他人工作被替代，低估自身工作复杂性",
+      "originalText": "Noticing an interesting version of gell-man amnesia where people use AI for their job and see all the various things they have to do in the “last mile”, but then look at someone else’s job and think that AI will eliminate it immediately.\n\nWe all have a much deeper appreciation for the nuances and complexities of the work that we do every day. We run into issues about accessing data, we know how much context is needed to get AI models to work the way we need, we have to review the output of the AI to make sure it’s accurate, and then we have to incorporate that work into some broader business process. We see all those steps deeply for the work that we do.\n\nThen, a moment later, we see AI do something in a foreign space and think that it can go automate that entire function. We tend to dramatically underestimate the work that goes into making the AI work just as effectively in those jobs.\n\nThis is reason to be skeptical about many of the theories of job loss. It’s coming from the lens of being able to automate individual tasks with AI, without understanding all the work that goes into doing the job fully.\n\nThere are at least 2 big but subtle factors contributing to the sense of overwork due to agents right now.\n\n1. The leverage on incremental effort has gone up substantially due to AI, and anyone using these tools tend to feel it first. We’re so used to everything taking so long to get done, that spending that much extra time on something didn’t have the same value. \n\nBut now you can sense the compounding leverage you have with agents much more acutely. It feels more like when you’re a people manager and not maximizing what your team is working on. The worst thing you can do is waste your team’s time, point them in the wrong direction, or have them be idle. Now ICs get a similar sense of this via managing agents.\n\nPrioritization and thinking through how to break up tasks and maximize work becomes a key skill.\n\n2. The other rested factor is we’ve just made it so much easier to start incremental tasks that end up taking much longer than we realize. Very easy to get to the 90% solution but the final 10% takes the vast majority of the time. So we are starting far more projects because of the lower barrier, and spending a ton of time to finish the work. \n\nI regularly start a project at 9PM that I think will be quick, and find myself at midnight still completing the work. The interesting thing about this fact is that we’ll use AI to test lots of new ideas an hypothesis, and quickly figure out which areas to continue and sustain. \n\nThis will ultimately lead to a lot of the job creation with AI, because teams and companies will decide that the experiment needs to get promoted into a production process. But they wouldn’t have even started that “experiment” without AI in the first place. \n\nThis overwork obviously can’t sustain across the economy, but it’s interesting to see how this is shaping things right now.",
+      "chineseInterpretation": "Aaron Levie 指出了一种常见的认知偏差：人们对自己工作的复杂性有深刻理解，知道AI在“最后一公里”会遇到数据访问、上下文需求、输出审核和流程整合等难题；但看别人的工作时，却轻易认为AI能立刻取代。这种偏差导致对失业理论的过度乐观。他还分析了AI agent带来的两种“过度工作”现象：一是AI提升了增量努力的杠杆，让人像管理者一样感到必须最大化agent产出，导致决策压力增大；二是AI降低了启动门槛，人们容易开始大量任务，但最后10%的完成时间远超预期，从而陷入深夜赶工。他认为这种过度工作不可持续，但会催生更多实验和最终的生产流程，反而创造新岗位。",
+      "tldr": "大家总觉得AI能轻松干掉别人的工作，但轮到自己时才发现一堆麻烦事。而且AI让开始新任务变得太容易，结果常常是晚上9点开工，半夜还在收尾。",
+      "proView": "如果这种认知偏差普遍存在，那么AI对就业的冲击可能比很多人预测的要温和。因为每个岗位都有大量隐性工作（数据获取、上下文理解、结果验证、流程整合）难以自动化，AI更多是辅助工具而非替代者。同时，AI降低实验成本会催生大量新项目，这些项目最终需要人力来维护和优化，反而创造新的工作岗位。",
+      "conView": "但另一面是：这种偏差可能只是暂时的。随着AI能力提升（如更长的上下文窗口、更好的工具调用、更可靠的输出），许多“最后一公里”问题可能被解决。历史上，技术革命初期人们也低估了自动化对工作的替代速度，例如工业革命时的手工业者。此外，如果AI agent能自主完成更多步骤，那么“过度工作”现象可能只是过渡期，最终导致岗位减少。",
+      "clue": "关键指标：观察AI在数据获取、上下文理解、输出审核等环节的进展速度；以及企业是否真的将AI实验转化为生产流程并招聘人员。如果AI agent的自主性持续提升且企业招聘放缓，则替代风险更高。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2048576989930619185",
+        "https://x.com/levie/status/2048537503972684252"
+      ],
+      "topicTags": [
+        "AI认知偏差",
+        "AI就业影响",
+        "AI agent",
+        "工作自动化",
+        "过度工作"
+      ],
+      "personTags": [
+        "创业者",
+        "技术观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Garry Tan",
+      "title": "构建个性化AI Agent的秘密：三份核心文件",
+      "originalText": "The secret to an articulate agent like mine isn't one file. It's three:\n\nSOUL.md — Who the agent IS. Voice, values, operating principles, what good output looks like, what bad output looks like. Not a system prompt, a constitution. Mine says things like \"brevity is mandatory,\" \"humor is mandatory,\" \"never open with 'Great question,'\" \"swearing is allowed when it lands.\" The more specific and opinionated this is, the less your agent sounds like a chatbot. Write it like you're briefing your smartest friend on how to be you, not like you're configuring software.\n\nUSER.md — Who YOU are. Not a bio — a deep model. How your mind works, what you're building, your strengths, your blind spots, your family, your temperament, what triggers you, what you care about. The more the agent understands about you, the better it can serve you. Mine is ~4000 words.\n\nAGENTS.md — Operational rules. What to check on every message, what to never do, how to handle failures, lookup chains, path rules, brain-first protocols. This is the playbook for how it works, not who it is.\n\nThe articulation comes from SOUL.md being brutally specific about voice. Generic instructions → generic output. If you write \"be helpful and concise\" you get ChatGPT. If you write \"speak like a peer with taste, one sentence when one sentence works, uncomfortable truths welcome if actually true, language with voltage\" — you get something alive.",
+      "chineseInterpretation": "Garry Tan 分享了他构建个性化 AI Agent 的核心方法论：不是用一个 system prompt，而是用三份独立的 Markdown 文件来分别定义 Agent 的个性（SOUL.md）、用户画像（USER.md）和操作规则（AGENTS.md）。他强调，要让 Agent 听起来不像聊天机器人，关键在于 SOUL.md 要写得极其具体和有观点，比如规定“必须简洁”、“必须幽默”、“永远不要以‘好问题’开头”，甚至允许在合适的时候说脏话。这种写法本质上是把 Agent 当作一个需要深度了解你、并拥有独特人格的伙伴来塑造，而不是一个需要配置的软件。",
+      "tldr": "想让AI助手说话像真人一样有个性？别只写一句“要友好简洁”，得给它三本手册：一本写它的性格和说话风格（比如必须幽默、不许说套话），一本写你的详细背景和喜好，一本写操作规则。这样它才能活起来，而不是像个标准客服。",
+      "proView": "如果这种方法被广泛采用，AI Agent 将从千篇一律的通用助手进化为高度个性化的数字分身，每个人都能拥有一个真正理解自己、风格独特的 AI 伙伴。这会极大提升用户粘性和 Agent 的实际可用性，尤其是在个人助理、创意写作、心理咨询等需要深度共情和独特风格的场景。",
+      "conView": "但另一面是：这种高度定制化可能带来隐私风险——USER.md 需要用户暴露大量个人细节；同时，维护三份文件并持续迭代的成本不低，普通用户可能难以坚持。此外，过度强调个性可能导致 Agent 在某些正式或敏感场景下表现不当。",
+      "clue": "判断 Garry Tan 观点是否成立的关键证据：观察其 Agent（OpenClaw）在公开交互中的表现是否真的比 GPT-4 等通用模型更自然、更有个性；以及是否有其他开发者复现类似方法并取得显著效果。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/garrytan/status/2048669695344046090"
+      ],
+      "topicTags": [
+        "AI Agent",
+        "个性化",
+        "系统提示词",
+        "Agent设计",
+        "OpenClaw"
+      ],
+      "personTags": [
+        "创业者",
+        "投资人"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Steinberger",
+      "title": "wacrawl 0.2.0发布：WhatsApp桌面端加密备份工具",
+      "originalText": "Released wacrawl 0.2.0. New: encrypted Git backup/restore for WhatsApp Desktop archives. `wacrawl backup push` writes age-encrypted shards to GitHub; `backup pull` decrypts, verifies, and restores locally. Been so CPU-constrained on OpenClaw work. Switched local tests running to @useblacksmith and IT IS SO GOOD. codex can literally spin up to 32vCPU instances and rip through our test suite. Wanted a truly local storage for my tweets so built birdclaw. Imports your archive, backs it up on github, has jobs so you can import your x bookmarks daily (since they are not fully accessible via the api).",
+      "chineseInterpretation": "Peter Steinberger 发布了 wacrawl 0.2.0，这是一个针对 WhatsApp Desktop 的加密备份工具，利用 age 加密和 Git 分片存储到 GitHub，支持本地恢复。他还分享了使用 @useblacksmith 的云实例加速测试套件的体验，以及自己构建的本地推文存储工具 birdclaw，用于备份 X 书签。这些工具展示了开发者对数据自主权和加密存储的重视。",
+      "tldr": "Peter 做了三个工具：一个加密备份 WhatsApp 聊天记录的工具，一个用云服务器加速测试的体验分享，还有一个本地存储推文和书签的工具。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://t.co/gzCQO6eSAe",
+        "https://t.co/cks45534su",
+        "https://t.co/4Nd1Ad0ZeY"
+      ],
+      "topicTags": [
+        "加密备份",
+        "WhatsApp",
+        "Git",
+        "云实例",
+        "数据自主权"
+      ],
+      "personTags": [
+        "开发者",
+        "工具作者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aditya Agarwal",
+      "title": "人类进步的标志：两人同时突破极限",
+      "originalText": "Human progress is not just Sawe breaking the 2-hour mark but that TWO people did something that no human had ever done.",
+      "chineseInterpretation": "Aditya Agarwal 指出，人类进步的真正标志不仅是个人打破纪录，而是多人同时实现前所未有的成就。这反映了技术进步和知识共享带来的集体突破现象，类似于AI领域多个团队同时达到类似性能水平。",
+      "tldr": "他说人类进步不只是一个人破纪录，而是两个人同时做到了以前没人做到的事，说明大家一起进步才是真进步。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "低",
+      "links": [
+        "https://x.com/adityaag/status/2048534774776746102"
+      ],
+      "topicTags": [
+        "人类进步",
+        "集体突破"
+      ],
+      "personTags": [
+        "观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Sam Altman",
+      "title": "OpenAI CEO 对 AI 时代操作系统与用户界面设计的反思",
+      "originalText": "feels like a good time to seriously rethink how operating systems and user interfaces are designed\n\n(also the internet; there should be a protocol that is equally usable by people and agents)",
+      "chineseInterpretation": "Sam Altman 认为当前是重新思考操作系统和用户界面设计的关键时刻，并指出互联网也需要一个既能被人类使用、也能被 AI agent 使用的协议。这暗示了现有 UI/UX 范式（如图形界面、点击操作）可能不再适应 AI 原生交互，未来需要更自然、更 agent-friendly 的设计。同时，他提到的“协议”概念可能指向类似 MCP（Model Context Protocol）或 A2A（Agent-to-Agent）等标准化通信方式。",
+      "tldr": "Sam Altman 说现在的电脑和手机界面设计太老了，需要为 AI 时代重新设计，而且互联网也需要一个人类和 AI 都能用的新“语言”或规则。",
+      "proView": "如果这一观点成立，未来操作系统将不再以应用为中心，而是以意图和任务为中心，用户只需用自然语言描述需求，系统自动调度 agent 完成。UI 将大幅简化，甚至消失，转而由语音、手势或脑机接口主导。互联网协议层面，HTTP/HTML 可能被更轻量、语义化的协议取代，agent 之间可直接通信协作。",
+      "conView": "但另一面是，完全抛弃现有 UI 范式可能带来巨大的迁移成本和用户学习成本。历史上，命令行到图形界面的过渡用了数十年，且至今仍有大量用户依赖传统交互。此外，agent 协议的安全性和隐私问题尚未解决，开放协议可能被滥用。",
+      "clue": "判断线索：观察 OpenAI 是否推出类似“Agent OS”的产品，或参与制定新的互联网协议标准。同时关注主流操作系统厂商（如微软、苹果）是否开始集成 agent 原生交互。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/sama/status/2048428561481265539"
+      ],
+      "topicTags": [
+        "操作系统",
+        "用户界面",
+        "AI agent",
+        "互联网协议",
+        "人机交互"
+      ],
+      "personTags": [
+        "CEO",
+        "创业者"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "name": "Anthropic Engineering",
+      "title": "Claude Code auto mode: a safer way to skip permissions",
+      "chineseInterpretation": "Anthropic 推出了 Claude Code 的 auto mode，旨在解决用户因频繁手动批准操作而产生的“批准疲劳”问题。该模式通过两层防御机制（输入层的提示注入探测和输出层的转录分类器）来拦截危险操作，同时允许大多数安全操作自动执行，无需用户干预。分类器采用两阶段设计：快速单令牌过滤和链式思维推理，以平衡效率和准确性。实际测试显示，该模式能将误报率降至 0.4%，但对真实过度积极行为的漏报率为 17%，表明它并非完美，而是为那些原本使用 --dangerously-skip-permissions 的用户提供了一个更安全的选择。",
+      "tldr": "Claude Code 的 auto mode 用 AI 分类器代替人工批准，自动拦截危险操作，但仍有 17% 的漏报率，适合不想手动批准但又需要一定安全性的用户。",
+      "links": [
+        "https://www.anthropic.com/engineering/claude-code-auto-mode"
+      ],
+      "topicTags": [
+        "AI安全",
+        "Claude Code",
+        "自动模式",
+        "提示注入防御",
+        "分类器"
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "name": "AI & I by Every",
+      "title": "The AI Model Built for What LLMs Can't Do",
+      "chineseInterpretation": "播客探讨了能量基模型（EBM）作为大型语言模型（LLM）的替代方案，尤其适用于需要确定性、可验证性和效率的任务。嘉宾Eve（Logical Intelligence CEO）解释了EBM如何通过能量最小化原理和潜在变量来理解数据，从而避免LLM的token猜测、高成本和黑箱问题。她认为LLM在关键任务（如自动驾驶、代码验证）中存在局限性，而EBM能提供可约束、可解释的解决方案。",
+      "tldr": "LLM像瞎子摸象，只能一步步猜；EBM像鸟瞰全局，直接找最优解，更省算力、更可靠。",
+      "links": [
+        "https://www.youtube.com/watch?v=Q-i8ZSUCtIc"
+      ],
+      "topicTags": [
+        "能量基模型",
+        "EBM",
+        "LLM局限性",
+        "确定性AI",
+        "可验证AI",
+        "代码生成",
+        "AI架构",
+        "Logical Intelligence"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "Agent个性化三文件法",
+          "summary": "Garry Tan 提出用 SOUL.md、USER.md、AGENTS.md 三份文件定义 Agent 个性，实现高度定制化交互。",
+          "implication": "前端需思考如何将这种个性化配置融入UI，例如提供可视化编辑器让用户轻松定制Agent风格，同时确保隐私安全。",
+          "sourceUrl": "https://x.com/garrytan/status/2048669695344046090"
+        },
+        {
+          "title": "Sam Altman 呼吁重新设计操作系统和UI",
+          "summary": "Sam Altman 认为当前是重新思考操作系统和用户界面设计的关键时刻，并提议开发人类和Agent通用的互联网协议。",
+          "implication": "前端应探索以意图和任务为中心的UI范式，减少传统图形界面依赖，转向自然语言、语音等交互方式，并关注Agent友好协议（如MCP）的集成。",
+          "sourceUrl": "https://x.com/sama/status/2048428561481265539"
+        },
+        {
+          "title": "Claude Code auto mode 的安全设计",
+          "summary": "Anthropic 推出 Claude Code 的 auto mode，通过两层分类器自动批准安全操作，降低批准疲劳。",
+          "implication": "前端可借鉴其安全设计思路，在Agent交互界面中实现智能权限管理，平衡效率与安全。",
+          "sourceUrl": "https://www.anthropic.com/engineering/claude-code-auto-mode"
+        }
+      ],
+      "actions": [
+        "调研并原型设计一个Agent个性化配置面板，支持SOUL.md等文件的图形化编辑。",
+        "评估现有前端框架对自然语言交互的支持，探索集成语音/文本输入组件。",
+        "研究Claude Code auto mode的权限管理机制，考虑在内部工具中实现类似功能。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "编码Agent作为超级智能基石",
+          "summary": "Guillermo Rauch 认为编码Agent具备自我改进能力，是通向超级智能的关键。",
+          "implication": "后端架构需支持Agent的自我修改能力，设计安全的沙箱环境和审计机制，同时考虑版本控制和回滚策略。",
+          "sourceUrl": "https://x.com/rauchg/status/2048523195305902341"
+        },
+        {
+          "title": "MCP服务器与个人应用集成",
+          "summary": "Peter Yang 为自己的健身app搭建MCP服务器，让AI直接读写数据。",
+          "implication": "后端应标准化MCP协议，提供易于集成的SDK，支持Agent与各种个人应用的数据交互。",
+          "sourceUrl": "https://x.com/petergyang/status/2048611053333041158"
+        },
+        {
+          "title": "能量基模型（EBM）作为LLM替代方案",
+          "summary": "播客探讨EBM在确定性任务中优于LLM，提供可约束、可解释的解决方案。",
+          "implication": "后端架构可考虑混合模型：LLM用于创意生成，EBM用于关键决策（如代码验证、自动驾驶），优化资源分配。",
+          "sourceUrl": "https://www.youtube.com/watch?v=Q-i8ZSUCtIc"
+        }
+      ],
+      "actions": [
+        "设计支持Agent自我修改的沙箱架构，包含审计日志和自动回滚机制。",
+        "调研MCP协议，开发内部SDK以支持Agent与现有服务的数据交互。",
+        "评估EBM在关键业务场景（如交易验证、代码审查）中的应用可行性。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "AI就业影响的认知偏差",
+          "summary": "Aaron Levie 指出人们高估AI替代他人工作的速度，低估自身工作的复杂性，并分析AI带来的“过度工作”现象。",
+          "implication": "产品设计应聚焦AI辅助而非替代，强调“最后一公里”的复杂性，并利用AI降低实验成本来创造新岗位。",
+          "sourceUrl": "https://x.com/levie/status/2048576989930619185"
+        },
+        {
+          "title": "个性化Agent的商业机会",
+          "summary": "Garry Tan 的三文件法展示了Agent个性化潜力，可应用于个人助理、创意写作等场景。",
+          "implication": "产品经理应探索个性化Agent的商业模式，如提供模板市场、隐私保护方案，以及针对不同角色的定制服务。",
+          "sourceUrl": "https://x.com/garrytan/status/2048669695344046090"
+        },
+        {
+          "title": "Gemini与Google Photos的整合缺口",
+          "summary": "Peter Yang 吐槽无法通过自然语言指令让Gemini生成回忆视频，指出产品化缺口。",
+          "implication": "产品经理应关注个人数据与AI的深度整合，例如提供“一句话生成视频”功能，解决用户痛点。",
+          "sourceUrl": "https://x.com/petergyang/status/2048603978070712757"
+        }
+      ],
+      "actions": [
+        "组织跨部门研讨会，分析AI辅助与替代的边界，制定产品路线图。",
+        "开展用户调研，验证个性化Agent的市场需求，设计MVP功能。",
+        "与工程团队合作，评估在现有产品中集成自然语言生成视频功能的可行性。"
+      ]
+    }
+  ]
+}
