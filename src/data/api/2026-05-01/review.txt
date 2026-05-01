@@ -1,0 +1,34 @@
+Review ID: 2026-05-01T01-30-31
+Date: 2026-05-01
+Status: awaiting_human_review
+Policy: manual_review
+Quality: fail (11 issues)
+Risk: high
+Recommended action: manual_check
+
+Summary:
+质量守门未通过，已回退为人工审核。
+
+Highlights:
+- 无重点条目
+
+Issues:
+- [high] builder_missing_links @ builders[0].links: Builder is missing links
+- [high] builder_missing_dialectic @ builders[1]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[3]: Builder is missing dialectic fields
+- [high] builder_missing_links @ builders[4].links: Builder is missing links
+- [high] builder_missing_dialectic @ builders[4]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[6]: Builder is missing dialectic fields
+- [high] builder_missing_links @ builders[7].links: Builder is missing links
+- [high] builder_missing_dialectic @ builders[7]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[9]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[12]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[13]: Builder is missing dialectic fields
+
+Artifacts:
+- Markdown: drafts/2026-05-01/2026-05-01.md
+- Digest JSON: drafts/2026-05-01/2026-05-01.digest.json
+- Prepared JSON: drafts/2026-05-01/2026-05-01.prepared.json
+
+Actions:
+approve | rewrite | save_only
