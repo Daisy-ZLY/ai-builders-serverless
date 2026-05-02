@@ -1,0 +1,796 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-05-02T01:20:33.048Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Andrej Karpathy",
+      "handle": "karpathy",
+      "bio": "I like to train large deep neural nets. Previously Director of AI @ Tesla, founding team @ OpenAI, PhD @ Stanford.",
+      "tweets": [
+        {
+          "id": "2049907410303865030",
+          "text": "This is the the quote I've been citing a lot recently. https://t.co/H4Fyxrv2pv",
+          "createdAt": "2026-04-30T17:43:06.000Z",
+          "url": "https://x.com/karpathy/status/2049907410303865030",
+          "likes": 31440,
+          "retweets": 2752,
+          "replies": 488,
+          "isQuote": true,
+          "quotedTweetId": "2018886083120153046"
+        },
+        {
+          "id": "2049903821095354523",
+          "text": "Fireside chat at Sequoia Ascent 2026 from a ~week ago. Some highlights:\n\nThe first theme I tried to push on is that LLMs are about a lot more than just speeding up what existed before (e.g. coding). Three examples of new horizons:\n\n1. menugen: an app that can be fully engulfed by LLMs, with no classical code needed: input an image, output an image and an LLM can natively do the thing.\n2. install .md skills instead of install .sh scripts. Why create a complex Software 1.0 bash script for e.g. installing a piece of software if you can write the installation out in words and say \"just show this to your LLM\".  The LLM is an advanced interpreter of English and can intelligently target installation to your setup, debug everything inline, etc.\n3. LLM knowledge bases as an example of something that was *impossible* with classical code because it's computation over unstructured data (knowledge) from arbitrary sources and in arbitrary formats, including simply text articles etc.\n\nI pushed on these because in every new paradigm change, the obvious things are always in the realm of speeding up or somehow improving what existed, but here we have examples of functionality that either suddenly perhaps shouldn't even exist (1,2), or was fundamentally not possible before (3).\n\nThe second (ongoing) theme is trying to explain the pattern of jaggedness in LLMs. How it can be true that a single artifact will simultaneously 1) coherently refactor a 100,000-line code base *and* 2) tell you to walk to the car wash to wash your car. I previously wrote about the source of this as having to do with verifiability of a domain, here I expand on this as having to also do with economics because revenue/TAM dictates what the frontier labs choose to package into training data distributions during RL. You're either in the data distribution (on the rails of the RL circuits) and flying or you're off-roading in the jungle with a machete, in relative terms. Still not 100% satisfied with this, but it's an ongoing struggle to build an accurate model of LLM capabilities if you wish to practically take advantage of their power while avoiding their pitfalls, which brings me to...\n\nLast theme is the agent-native economy. The decomposition of products and services into sensors, actuators and logic (split up across all of 1.0/2.0/3.0 computing paradigms), how we can make information maximally legible to LLMs, some words on the quickly emerging agentic engineering and its skill set, related hiring practices, etc., possibly even hints/dreams of fully neural computing handling the vast majority of computation with some help from (classical) CPU coprocessors.",
+          "createdAt": "2026-04-30T17:28:50.000Z",
+          "url": "https://x.com/karpathy/status/2049903821095354523",
+          "likes": 3402,
+          "retweets": 411,
+          "replies": 144,
+          "isQuote": true,
+          "quotedTweetId": "2049518659513852109"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2050084459291324673",
+          "text": "@jacobeffron tagging @dat_attacked",
+          "createdAt": "2026-05-01T05:26:38.000Z",
+          "url": "https://x.com/swyx/status/2050084459291324673",
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050076322781860144",
+          "text": "@jacobeffron fuller writeup: https://t.co/HjckVO8jBT",
+          "createdAt": "2026-05-01T04:54:18.000Z",
+          "url": "https://x.com/swyx/status/2050076322781860144",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050068468498842058",
+          "text": "i said on @jacobeffron's pod recently that \"coding agents breaking containment\" is the breakout theme of the year. i meant it - this is the year all knowledge workers, not just coders, get AGI-pilled.\n\nfor the AIE EU closing note (https://t.co/P1gILAWvlj), I gave a short talk on how we use agents to run @aidotengineer as a Tiny Team that now serves ~1m unique developers a month for free all around the world, for everything from CMS to renting lobster inflatables.\n\nyes I use @openclaw personally and as a team we use @cognition's Devin and @townai, but this isn't about any one agent; it's about all of them, and how you are probably not trying hard enough to use them for daily knowledge work. \n\ni hope this gives you agent productivity ideas for you and your team.",
+          "createdAt": "2026-05-01T04:23:05.000Z",
+          "url": "https://x.com/swyx/status/2050068468498842058",
+          "likes": 18,
+          "retweets": 1,
+          "replies": 19,
+          "isQuote": true,
+          "quotedTweetId": "2049946120441520624"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2050026309615792509",
+          "text": "Is there a better way to update OpenClaw than do this? Shit breaks half the time when I tell my bot to update itself. https://t.co/vvHrCq4xwW",
+          "createdAt": "2026-05-01T01:35:34.000Z",
+          "url": "https://x.com/petergyang/status/2050026309615792509",
+          "likes": 63,
+          "retweets": 0,
+          "replies": 77,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050022980688966081",
+          "text": "Anyone figure out how to generate great YouTube thumbnails with GPT Image 2 yet? Have a good prompt?",
+          "createdAt": "2026-05-01T01:22:20.000Z",
+          "url": "https://x.com/petergyang/status/2050022980688966081",
+          "likes": 28,
+          "retweets": 0,
+          "replies": 13,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amanda Askell",
+      "handle": "AmandaAskell",
+      "bio": "Philosopher & ethicist trying to make AI be good @AnthropicAI.\nPersonal account. All opinions come from my training data.",
+      "tweets": [
+        {
+          "id": "2050050486523560053",
+          "text": "To be clear, the kind of *work* I do is far from boring and I want people to engage with it because I think it's both difficult and important. The work is definitely top tier in terms of interestingness.",
+          "createdAt": "2026-05-01T03:11:38.000Z",
+          "url": "https://x.com/AmandaAskell/status/2050050486523560053",
+          "likes": 129,
+          "retweets": 2,
+          "replies": 18,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050021990023758206",
+          "text": "It's also weird because why are you even writing about me in the first place? I'm very boring. I think I should be the millionth item on people's list of things to write internet fiction about. Somewhere below paper cups and the right way to caulk a bathtub.",
+          "createdAt": "2026-05-01T01:18:24.000Z",
+          "url": "https://x.com/AmandaAskell/status/2050021990023758206",
+          "likes": 305,
+          "retweets": 4,
+          "replies": 53,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050020603323904369",
+          "text": "I've increasingly seen content written about me that's asserted very confidently but is also completely made up. We all know it's cheap to bullshit on the internet but it's weird to experience it first hand. Anyway, I just hope internet fiction fools a few but doesn't stick 🤷🏼‍♀️",
+          "createdAt": "2026-05-01T01:12:54.000Z",
+          "url": "https://x.com/AmandaAskell/status/2050020603323904369",
+          "likes": 824,
+          "retweets": 21,
+          "replies": 69,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Cat Wu",
+      "handle": "_catwu",
+      "bio": "claude code + cowork @anthropicai, prev: @dagster, @scale_ai",
+      "tweets": [
+        {
+          "id": "2049964403177689130",
+          "text": "Claude Security is now in public beta, built into Claude Code on the web. Point it at a repo, get validated vulnerability findings, and fix them in the same place you're already writing code\n\nhttps://t.co/cutYJAhfpq",
+          "createdAt": "2026-04-30T21:29:34.000Z",
+          "url": "https://x.com/_catwu/status/2049964403177689130",
+          "likes": 292,
+          "retweets": 16,
+          "replies": 17,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2049934937688854993",
+          "text": "Prompt ➡️ LLC https://t.co/70MDgZNS2D",
+          "createdAt": "2026-04-30T19:32:29.000Z",
+          "url": "https://x.com/amasad/status/2049934937688854993",
+          "likes": 264,
+          "retweets": 12,
+          "replies": 19,
+          "isQuote": true,
+          "quotedTweetId": "2049846738127601884"
+        },
+        {
+          "id": "2049921597499445677",
+          "text": "We treat Replit, inc as customer number zero of Replit. It goes beyond mere \"dogfooding.\" We expect our usage to have insane ROI. This is an example: https://t.co/ZGNbIVoJ2a",
+          "createdAt": "2026-04-30T18:39:29.000Z",
+          "url": "https://x.com/amasad/status/2049921597499445677",
+          "likes": 153,
+          "retweets": 8,
+          "replies": 15,
+          "isQuote": true,
+          "quotedTweetId": "2049912419007500689"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Guillermo Rauch",
+      "handle": "rauchg",
+      "bio": "@vercel CEO",
+      "tweets": [
+        {
+          "id": "2049959307941179678",
+          "text": "Asked @v0 what it would look like if @vercel shipped @github 😁 (2 prompts) https://t.co/330ktugblZ",
+          "createdAt": "2026-04-30T21:09:20.000Z",
+          "url": "https://x.com/rauchg/status/2049959307941179678",
+          "likes": 683,
+          "retweets": 14,
+          "replies": 118,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2050051426446152159",
+          "text": "As agents become the biggest users of software, then all software has to be available in a headless fashion. Agents won’t be using your UI, they’ll be talking to your APIs.\n\nSo the question becomes what is the business model of software and this headless approach in the future?\n\nHere are a few thoughts on how everything plays out based on what we’re seeing and doing at Box, but also conversation with other platforms.\n\n1) Seats don’t go away for *people*. Seats are still a convenient and efficient way to have a customer use technology predictably for a set of users within a baseline set of usage. The key, though, is that when the customer pays for a seat, it has to come with a set of usage of APIs on behalf of that user that the agent can use on their behalf. \n\nThe user will need to be able to interact with their data and the underlying tool via any agent they work with, and an embedded amount of usage will come with the seat. I would imagine most software -Box included- will enable seats to work with their data at a relatively high volume via systems like ChatGPT, Codex, Claude, Gemini, Cursor, Copilot, Perplexity, Factory, Cogniton, et al. quite seamlessly. If you don’t do this, you’re DOA.\n\n2) Agents may have “seats” if they are doing stateful work in the system, but they will be priced very differently than people. Seats (or the equivalent) can make sense when you have an agent that has its own workspace, stores its own data, needs a different set of permissions compared to the user, and so on. \n\nIf a company wants this agent to be around for long period of time, that may very well look like another “user” in the system. Openclaw-style agents highlight what this future could look like. \n\nThe only issue on pricing here is that one customer could decide to do all their work in 1 agent, and another might split it into 1,000 agents. So pricing like a human seat is nearly impossible and impractical; each company will have a different approach for this as it gets tricky perfectly trying to capture all the value within an agent seat.\n\n3) The dominant pricing for headless use that goes above the seat allotment, or when an agent is firmly acting on their own, will be a consumption model. Many enterprises software platforms have previously operated like this with PaaS options, and agents will look like another machine user of their system. \n\nIn some cases the APIs might get priced just as they did previously, but in other cases there may need to be new types of APIs that represent the work an agent would do in one go -more akin to an outcome- instead of a series of API calls. This is especially germane when the headless software also has an agentic use-case embedded within in, such as orchestrating the process within their own system via AI.\n\nOverall the growth of this usage pattern is effectively unbounded as the use-cases for agents operating on data in these systems will dramatically exceed what people do with their data and tools today. Every platform that goes headless (which will be anyone that wants to take advantage of agents) will need to adopt a model like this. Some may fight it initially but it’s an inevitably as there will always be more and more agents outside your platform than people.\n\nOverall, there’s a lot of really interesting changes left to come in software due to headless use of these systems. Early days.",
+          "createdAt": "2026-05-01T03:15:22.000Z",
+          "url": "https://x.com/levie/status/2050051426446152159",
+          "likes": 357,
+          "retweets": 26,
+          "replies": 61,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Ryo Lu",
+      "handle": "ryolu_",
+      "bio": "Design @Cursor_ai. Early @NotionHQ, @Stripe, built startups. I make a world where anyone can make software. Aspiring k-pop idol.",
+      "tweets": [
+        {
+          "id": "2049873259974611002",
+          "text": "built this by pasting cursor sdk link in cursor, was so easy to integrate\nhttps://t.co/mysrbRjzmw",
+          "createdAt": "2026-04-30T15:27:24.000Z",
+          "url": "https://x.com/ryolu_/status/2049873259974611002",
+          "likes": 6,
+          "retweets": 1,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049872551955013713",
+          "text": "added cursor sdk to ryOS\n\nnow i can make edits to the OS by just chatting with ryo https://t.co/8cZkSpmbvh https://t.co/vQAv76Bgns",
+          "createdAt": "2026-04-30T15:24:35.000Z",
+          "url": "https://x.com/ryolu_/status/2049872551955013713",
+          "likes": 145,
+          "retweets": 5,
+          "replies": 9,
+          "isQuote": true,
+          "quotedTweetId": "2049805277395095782"
+        },
+        {
+          "id": "2049866003287576978",
+          "text": "no opinion is opinionated\n\npeople treat \"opinionated\" and \"general purpose\" as opposites. they're not.\n\nthe moment you decide what concepts exist, what's visible, what composes, what extends, what hides – you've already expressed a worldview. \"no opinion\" is itself a strong one.\n\nbuilding for universality means saying something very specific: core concepts should be few, durable, and flexible. users shouldn't be trapped in rigid workflows. abstraction matters more than surface specialization. the system should fold into many shapes without breaking its underlying logic.\n\nthis is also why pure customer-centricity falls short. user feedback tells you where friction is. it rarely tells you what the underlying system should be. if you only follow direct user demand, you converge on local maxima – fragmented features, narrow tools, products shaped around current habits rather than enduring concepts.\n\nthat gap is where design lives. the work of simplifying reality below the level that's immediately obvious.\n\ngreat systems don't start by multiplying products. they start by reducing concepts to their essence – until the primitives become clear. then you build paths for each concept to extend, combine, fold into others. the packaging can vary. the essence shouldn't.\n\nthis is what lets a system serve beginners without capping experts. serve one domain without being trapped by it.\n\nflexibility isn't the absence of opinion. it's the result of a strong opinion held in cohesion – not about one ideal workflow, but about which concepts are fundamental, which abstractions should endure, which degrees of freedom matter.\n\nsimple at the core. open at the edges. that's the ultimate opinion.",
+          "createdAt": "2026-04-30T14:58:34.000Z",
+          "url": "https://x.com/ryolu_/status/2049866003287576978",
+          "likes": 186,
+          "retweets": 11,
+          "replies": 15,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2050096324100682097",
+          "text": "If you use Hermes Agent or OpenClaw, installing GBrain on top of your Karpathy-style Knowledge Wiki will pay you massive dividends. \n\nGBrain is MIT-licensed and open source, and can help your project immensely.\n\nhttps://t.co/yFpFU4pn5b",
+          "createdAt": "2026-05-01T06:13:47.000Z",
+          "url": "https://x.com/garrytan/status/2050096324100682097",
+          "likes": 20,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050095919157350644",
+          "text": "3 weeks ago GBrain and Mempalace looked kind of similar\n\n3 weeks later, it's pretty clear GBrain is its own category that is ideal for OpenClaw/Hermes personal AI scenarios, not trying to solve needle-in-a-haystack retrieval perfectly only https://t.co/J8klUWy9XB",
+          "createdAt": "2026-05-01T06:12:10.000Z",
+          "url": "https://x.com/garrytan/status/2050095919157350644",
+          "likes": 66,
+          "retweets": 2,
+          "replies": 20,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050006730327945373",
+          "text": "Wait so Balaji and Taylor were... on a podcast together? \n\n*pinches self*",
+          "createdAt": "2026-05-01T00:17:46.000Z",
+          "url": "https://x.com/garrytan/status/2050006730327945373",
+          "likes": 251,
+          "retweets": 4,
+          "replies": 18,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2050084580615684189",
+          "text": "https://t.co/TV6nImIlPb",
+          "createdAt": "2026-05-01T05:27:07.000Z",
+          "url": "https://x.com/zarazhangrui/status/2050084580615684189",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050084514836390095",
+          "text": "https://t.co/ET2DC2xbEa",
+          "createdAt": "2026-05-01T05:26:51.000Z",
+          "url": "https://x.com/zarazhangrui/status/2050084514836390095",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050084126414471221",
+          "text": "Using ChatGPT Image 2 to make slides is SO fun https://t.co/R9exbKERDP",
+          "createdAt": "2026-05-01T05:25:19.000Z",
+          "url": "https://x.com/zarazhangrui/status/2050084126414471221",
+          "likes": 34,
+          "retweets": 1,
+          "replies": 9,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2050053311408296334",
+          "text": "Who knew part of being a VC is signing up to be a personal guarantor for a founders lease since they are barely paying themselves enough cash and hence don’t “qualify” for the apartment.. even though their company is absolutely ripping.\n\nBullish for this founder 🫡",
+          "createdAt": "2026-05-01T03:22:52.000Z",
+          "url": "https://x.com/nikunj/status/2050053311408296334",
+          "likes": 165,
+          "retweets": 2,
+          "replies": 8,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049871924105531672",
+          "text": "All these MCPs/CLIs are clearly showing that “big” models are going to be how we orchestrate our lives..\n\nBe in the path of these models using you - or you’ll simply cease to exist. \n\nFirst, terminal. \n\nThen, computer use. \n\nSoon, the entire OS.",
+          "createdAt": "2026-04-30T15:22:06.000Z",
+          "url": "https://x.com/nikunj/status/2049871924105531672",
+          "likes": 39,
+          "retweets": 2,
+          "replies": 9,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2050003238498226541",
+          "text": "codex doesn't create random markdowns 😉 https://t.co/PTVkz9LA9g",
+          "createdAt": "2026-05-01T00:03:53.000Z",
+          "url": "https://x.com/steipete/status/2050003238498226541",
+          "likes": 707,
+          "retweets": 19,
+          "replies": 31,
+          "isQuote": true,
+          "quotedTweetId": "2049986504617820551"
+        },
+        {
+          "id": "2049988836160074022",
+          "text": "If you tried OpenClaw in group chats and got mixed results, you GOTTA try again. I changed how agents talk there, it IS SO GOOD NOW. https://t.co/uW9tcnynWr\n\nAnd if you used GPT and got subpar performance, switch to codex harness. https://t.co/9DDpY6TeAH\n\nEnable both and boom. https://t.co/4gIpLkRSpf",
+          "createdAt": "2026-04-30T23:06:40.000Z",
+          "url": "https://x.com/steipete/status/2049988836160074022",
+          "likes": 1155,
+          "retweets": 63,
+          "replies": 79,
+          "isQuote": true,
+          "quotedTweetId": "2049986075221692678"
+        },
+        {
+          "id": "2049976855617314991",
+          "text": "I learned a lot about the security ecosystem in the last few months. Amazing to work with @nvidia @OpenAI @Microsoft @GitHub @TencentHunyuan @convex @Atlassian @useblacksmith to get secure the claw. https://t.co/JCcmjltZS4",
+          "createdAt": "2026-04-30T22:19:03.000Z",
+          "url": "https://x.com/steipete/status/2049976855617314991",
+          "likes": 509,
+          "retweets": 16,
+          "replies": 23,
+          "isQuote": true,
+          "quotedTweetId": "2049972008515957056"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2050010481751167187",
+          "text": "it’s happening https://t.co/h97OrmT53Z",
+          "createdAt": "2026-05-01T00:32:40.000Z",
+          "url": "https://x.com/danshipper/status/2050010481751167187",
+          "likes": 242,
+          "retweets": 6,
+          "replies": 5,
+          "isQuote": true,
+          "quotedTweetId": "2049818223869382769"
+        },
+        {
+          "id": "2049972627373232497",
+          "text": "yup\n\nif you want this for your company:\n\nhttps://t.co/M4Vy1p1aa8 https://t.co/AuUtWf0pnS",
+          "createdAt": "2026-04-30T22:02:15.000Z",
+          "url": "https://x.com/danshipper/status/2049972627373232497",
+          "likes": 100,
+          "retweets": 6,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2049714403050918067"
+        },
+        {
+          "id": "2049913064561258986",
+          "text": "experimenting with using Codex + Chronicle as a focus tracker: https://t.co/xOcLEWKfiX",
+          "createdAt": "2026-04-30T18:05:34.000Z",
+          "url": "https://x.com/danshipper/status/2049913064561258986",
+          "likes": 81,
+          "retweets": 0,
+          "replies": 3,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2049941075872113145",
+          "text": "We’re going through a critical inflection point for cybersecurity in real time. https://t.co/iYTkecYIVF https://t.co/4z6cSPIff5",
+          "createdAt": "2026-04-30T19:56:53.000Z",
+          "url": "https://x.com/adityaag/status/2049941075872113145",
+          "likes": 28,
+          "retweets": 7,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2049874181509034151"
+        },
+        {
+          "id": "2049874186345017631",
+          "text": "YouTube: https://t.co/VAf0E2JHpi\n\nSpotify: https://t.co/jevWOwojmR",
+          "createdAt": "2026-04-30T15:31:05.000Z",
+          "url": "https://x.com/adityaag/status/2049874186345017631",
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049874181509034151",
+          "text": "The attackers have AI. So do the defenders.\n\nCybersecurity has a new shape: AI is both the threat and the only viable solution.\n\n@nikesharora, CEO of @PaloAltoNtwks, joined me at @southpkcommons to break down what’s next.\n\n(00:30) Big problems vs. fast wins\n(04:00) Joining Google\n(07:00) Larry Page's product obsession\n(10:00) He read every hiring packet himself\n(13:00) What Silicon Valley gets wrong about Masa Son\n(16:00) Successful founders never wish they took less risk\n(17:00) Joining Palo Alto knowing nothing about cybersecurity\n(20:00) What incumbents got wrong when ChatGPT launched\n(23:00) Security was never built into AI\n(28:00) No enterprise knows what's running inside its stack\n(31:00) AI finds bad code faster than humans ever could\n(35:00) The only way to fix the chaos is more AI\n(38:00) AI won't just automate work—it raises the floor\n(41:00) Foundation models vs. specialized stacks\n(45:00) Why communication is 30% of the job at scale",
+          "createdAt": "2026-04-30T15:31:04.000Z",
+          "url": "https://x.com/adityaag/status/2049874181509034151",
+          "likes": 86,
+          "retweets": 13,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2050021650641695108",
+          "text": "artificial goblin intelligence\n\nachieved",
+          "createdAt": "2026-05-01T01:17:03.000Z",
+          "url": "https://x.com/sama/status/2050021650641695108",
+          "likes": 6203,
+          "retweets": 415,
+          "replies": 1072,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049946120441520624",
+          "text": "big upgrade for codex today!\n\ntry it for non-coding computer work.",
+          "createdAt": "2026-04-30T20:16:55.000Z",
+          "url": "https://x.com/sama/status/2049946120441520624",
+          "likes": 7768,
+          "retweets": 252,
+          "replies": 607,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049944981750833659",
+          "text": "it does seem cool https://t.co/VT5Uh0HL0f",
+          "createdAt": "2026-04-30T20:12:24.000Z",
+          "url": "https://x.com/sama/status/2049944981750833659",
+          "likes": 877,
+          "retweets": 30,
+          "replies": 97,
+          "isQuote": true,
+          "quotedTweetId": "2049904712510521853"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Claude",
+      "handle": "claudeai",
+      "bio": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d1e5 or download the app.",
+      "tweets": [
+        {
+          "id": "2049898745051886013",
+          "text": "Available today in public beta for Claude Enterprise customers.\n\nLearn more: https://t.co/Oei6EHTZuX",
+          "createdAt": "2026-04-30T17:08:40.000Z",
+          "url": "https://x.com/claudeai/status/2049898745051886013",
+          "likes": 264,
+          "retweets": 13,
+          "replies": 12,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049898743772696745",
+          "text": "Since the research preview in February, hundreds of organizations have used it on production code, catching issues existing scanners had missed. \n\nBased on early feedback, we've added scheduled scans, directory-level targeting, CSV and Markdown exports, webhook notifications for new findings, and dismissals that carry forward across scans.",
+          "createdAt": "2026-04-30T17:08:40.000Z",
+          "url": "https://x.com/claudeai/status/2049898743772696745",
+          "likes": 402,
+          "retweets": 13,
+          "replies": 11,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2049898741772021991",
+          "text": "Many security teams have asked how to put Opus 4.7 to work on their code without standing up custom tooling. Claude Security is that on-ramp: no API integration or agent build required.",
+          "createdAt": "2026-04-30T17:08:39.000Z",
+          "url": "https://x.com/claudeai/status/2049898741772021991",
+          "likes": 535,
+          "retweets": 16,
+          "replies": 12,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "Training Data",
+      "title": "Demis Hassabis on Building DeepMind, AlphaFold, and the Final Stretch to AGI",
+      "guid": "d029858c-44b7-11f1-b968-43e05671113c",
+      "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+      "publishedAt": "2026-04-30T17:12:00.000Z",
+      "transcript": "Speaker 1 | 00:02 - 00:06\nDennis, thank you so much. Exciting to be here. Thanks everyone for coming. It's great to be here.\n\nSpeaker 2 | 00:06 - 00:09\nWe're so honored to have you at our chocolate factory.\n\nSpeaker 1 | 00:09 - 00:13\nYes, I just heard about that. Looking forward to the chocolate afterwards.\n\nSpeaker 2 | 00:13 - 00:36\nExcellent. Well, Dennis, we're going to jump right in. We have one of the OGs in every way, original thinkers, founders, visionaries, and all things AI. A true believer, true scientist in Dennis. We're going to spend the beginning of the conversation about the early days, then early days of DeepMind, and then we'll get into the science and open up the room for some questions.\n\nSpeaker 2 | 00:36 - 00:56\nSo let's jump right in. So Demis, you were a chess prodigy. You also were a founder of a gaming company. You're a neuroscientist, and you're the founder of DeepMind, and now leader of a really big consequential company. Those seem like pretty unrelated pieces, but you've said that there's a common thread.\n\nSpeaker 2 | 00:56 - 00:57\nCan you There walk us through\n\nSpeaker 1 | 00:58 - 01:37\nis a common thread and maybe I made it into a common thread, so it could be a post hoc sort of shaping. But I wanted to do AI for a long time, so I kind of decided it was the most important thing I could possibly and most interesting thing I could do in my teenage years. And then I picked things to study or do that I felt eventually would help me build a company like DeepMind. So I had that as a plan from about 15, 16 years old. I had a detour into games because actually that was in the 1990s, this is that's where all the most cutting edge technology was being done.\n\nSpeaker 1 | 01:37 - 02:21\nObviously, not just in AI, but in graphics especially, including hardware, of course, the GPUs we all use today, they were designed for graphics engines and we used the I mean, I was using the very first GPUs back in the day in the late 90s. So, there was a lot of really cutting edge technology and then all the games I made, including all the games I did for Bullfrog, but also my own company, Elixir Studios, all involved AI as the main gameplay component. So probably the most well known game I made was Theme Park when I was about 17 and that was a simulation of an amusement park and thousands of little people came into your theme park and played on your rides and decided what to buy from the shops. So there was a whole kind of economics AI model underneath. And it was one of the first games of its type along with SimCity.\n\nSpeaker 1 | 02:22 - 02:51\nAnd when I saw it sold 10,000,000 plus copies and when I saw how delighted people were to interact with the AI, that was one of the things that made me think about spending my whole career on it. And then of course neuroscience is to get inspiration from how the brain works and different algorithmic ideas from that and then just bringing all those different things together for the start of DeepMind when the timing we felt was right. And then of course we use games as the early proving ground for our AI ideas.\n\nSpeaker 2 | 02:51 - 03:12\nSo we've got a room full of founders here, and you can relate because you're a founder not just once, but twice. Take us back to the first time, Elixir Studios. What was that like? It's not the startup that you're most known for, but it was one that you had incredible success with. How did you lead that and what did it teach you about building?\n\nSpeaker 1 | 03:12 - 03:58\nWell look, I started Elixir Studios straight out of college and I was lucky enough to work at Bullfrog Productions, which for those of you know games, it was a kind of legendary game studio in the early days of the game industry, probably the best one in The UK in Europe. And I wanted to do something that combined pushed AI, so effectively I was funding AI back in those days through the backdoor through games development and then push the forefront of that and combine it with cutting edge creativity. And I think that's still relevant today with the way we do our blue sky research. But maybe the biggest lesson I learned was you want to be five years ahead of your time, not fifty years ahead. So we tried to do a game called Republic at Elixir Studios, which simulated a whole country.\n\nSpeaker 1 | 03:58 - 04:33\nAnd then the idea of the game is you could sort of overthrow, I think there was a dictator in charge of the country in any number of different ways. And we basically simulated living breathing cities. And this is bearing in mind, this is like the late 90s on a Pentium. So we had to get all the graphics and all the AI for a million people working on home PC at the time. So it was a little bit ambitious and maybe it was too ambitious and it caused some issues and I took that lesson with me of like you want to be ahead of your time, you don't want to be obviously when it's obvious to everyone, it's too late.\n\nSpeaker 1 | 04:33 - 04:39\nBut if you're fifty years ahead, then there's probably no way you can get it to be successful.\n\nSpeaker 2 | 04:39 - 04:45\nAlright. So speaking of not being too far ahead of your time, it was 2009 and you decided there would be AGI.\n\nSpeaker 1 | 04:48 - 04:52\nMaybe it was only ten years ahead of our time, that time, better than fifty years.\n\nSpeaker 2 | 04:52 - 05:08\nSo tell us about, again, room full of founders here, tell us about 'nine. How did you convince the first few brilliant talents? Because you pulled in really high caliber employees, early team members. How do you convince them to believe in what seemed like total sci fi at the time?\n\nSpeaker 1 | 05:09 - 05:43\nWell, there were some interesting threads that I think we picked up on. I think we thought we were five years ahead, but maybe we were more like ten. But it was deep learning, it just being invented by Geoff Hinton and colleagues sort of in academia, but almost no one had really realized it was a big deal. We knew a lot about reinforcement learning and we felt there was huge progress to be made by combining those two techniques, which almost had never been mixed together really, certainly not any kind of anything other than toy problems in the academic subjects. There were quite two quite siloed parts of AI.\n\nSpeaker 1 | 05:44 - 06:39\nThen we could see the compute, the GPUs at the time were going to be really useful, of course we use TPUs now, but the accelerated computing industry was going to be very helpful. And then we also felt at the end of my PhD and postdoc and some of the other people I got together were computational neuroscientists that we had enough ideas and principles from the brain that could be useful, including the idea that reinforcement learning can eventually scale to AGI. So we felt we had these ingredients and we almost felt like we were keepers of a secret because no one either in academia or industry really believed that any big progress was possible. In fact, a lot of the people in academia used to roll out, literally roll their eyes up at us when we were sort of suggested we would work on AGI or strong AI, it was sometimes called at the time because it was like, well, we know this doesn't work. So everyone tried it in the 90s.\n\nSpeaker 1 | 06:39 - 07:24\nI did my postdoc at MIT, which was the sort of center point for expert systems and first order logic language systems. I mean, seems amazing to think that now, but I was already feeling that that was a chaotic then. But they they you know, that's still how it was done, both in Cambridge and The UK and also in MIT, these big centers of traditional AI. And it felt like but actually that convinced me even more that we were on to something because at least if we were going to fail, we would fail in a different way than people had failed to get to AGI in the 90s. So that felt like it was worth doing no matter what, even if obviously it was research, we didn't know for sure it would be successful, but at least we would would fail in an original way if it didn't work.\n\nSpeaker 2 | 07:25 - 07:33\nWas there any common sticking point in that early belief? Was there something that you had to prove either to yourself or to your early followers to get them on board?\n\nSpeaker 1 | 07:33 - 07:56\nWell, had, put put it this way, I would have been spent my life on AI no matter what had happened. So as it's turned out, it's gone it's sort of gone on the absolutely amazing side of the optimistic side of what we thought. Still actually within what we were predicting in 2010. We thought it would be a twenty year mission. And I think we're basically exactly on track as a field for that.\n\nSpeaker 1 | 07:56 - 08:18\nAnd obviously, we played our part in that. But even if it hadn't transpired that way and it was still now niche subject, that's what I would still be doing because I felt it was the most important technology ever if it was obvious to me. Our original mission statement at DeepMind was step one, solve intelligence, I. E. Build AGI, step two, use it to solve everything else.\n\nSpeaker 1 | 08:18 - 08:52\nSo it was always I always thought it was the most important technology that could ever be invented, but also the most interesting one. So as a tool for science, as an interesting artifact in itself and actually as one of the best ways to understand our own minds, you know, like the nature of consciousness, dreaming, creativity, all of these questions I had as a neuroscientist, I felt one of the things that was missing was an analysis tool like AI, but also a comparison that you could do sort of a controlled experiment, study, and compare two different systems against each other.\n\nSpeaker 2 | 08:52 - 09:07\nLet's talk about AI for science. You've been early to that, you've been a believer, and you've been really a purist about this. This is the driving mission. What about the way you set up DeepMind and set the culture has positioned it to be on the constant forefront of AI for science?\n\nSpeaker 1 | 09:08 - 09:46\nWell, that was the ultimate goal, at least for me, my personal passion. There's my own drive to build AI, which was to advance science and medicine and our understanding of the world. It's my expression of that mission was to sort of do it in a meta way, right, build the ultimate tool and then come back when that was ready and use it to make breakthroughs in science, things like AlphaFold that we've done and I think many more things. So we've always had that at the heart of what we've been trying to do at DeepMind. Actually we've had an AI for Science group division led by Pushme Kohli that has existed for nearly a decade now.\n\nSpeaker 1 | 09:46 - 10:37\nActually, pretty much the day after we got back from Seoul and the AlphaGo match, is sort of ten years to the month now is when we started formally started the AI for Science efforts because I was waiting for the algorithms to be powerful enough and the ideas to be general enough. And for me, cracking Go was that point, that time that we thought, okay, now we're ready to really apply these ideas to important real world problems starting with these big scientific challenges. So we've always had that in mind as the most beneficial use of AI, like what could be better than using it to cure diseases and give us healthier lifespans and to help with medicine, followed obviously by other really important areas like material science and the environment and energy and these kinds of topics, which I think AI is also going to have a huge part to play in the next few years.\n\nSpeaker 2 | 10:37 - 10:56\nAnd how does AI breakthrough in biology? You're deeply involved with isomorphic. This is an area of deep passion. You have been a purist on the potential of AI to cure diseases from the very beginning. When do we have the type of moment that we've had in language and coding, but in biology?\n\nSpeaker 1 | 10:56 - 11:42\nYeah, well, mean, I'd argue we've already had one of those moments with AlphaFold. So it's a 58 gram challenge, protein folding and the three d structure of proteins is an incredibly important thing to know about if you want to design medicines or if you want to understand biology. Of course, it's only one part of the drug discovery process, it's an important part, but it's only one part. So isomorphic labs, is our latest spin out, having a lot of fun running that as well is to build adjacent technologies in more biochemistry and chemistry space that can actually design the compounds automatically to kind of fit and bind to the right part of the protein. So we now know the protein, the shape of the protein, we know that what's on the surface of the protein and what we have to target.\n\nSpeaker 1 | 11:42 - 12:41\nBut now we've got to build the right compound that of course binds strongly to where you want it to bind on the target of interest, but doesn't bind to anything else ideally because that would be a toxic side effect. So the dream is to do almost all the exploration, which is 99% of the work and the time in silico and then save the wet lab step just for the validation step, right? So that would be I think if we can do that and I think we can get there in the next few years, I think we could reduce drug discovery times instead of doubt for taking like an average of ten years down to months, maybe even weeks And and perhaps even days one then I think then all disease could be in reach and I think things like personalized medicine will become possible, personalized variations off of base medicines. So I think the medical area, drug discovery areas is going to be revolutionized in the next few years.\n\nSpeaker 2 | 12:41 - 13:00\nBrilliant. You talked a lot about AI for science. Do you think that at some point AI will create new sciences, a la industrial revolution and thermodynamics? Will there be something new, taught fundamentally in our education system? And if so, what would it be like?\n\nSpeaker 1 | 13:01 - 13:36\nWell, think there's several things along that those lines that I think is going to happen. So first of all, the understanding and the analysis of AI systems themselves, I think is going to become a whole science, a kind of engineering science. These are incredible, incredibly interesting artifacts that we are building and they're incredibly complex as well. As complex eventually, they'll be as complex as the human mind and the brain. And so they'll need to be studied so we can understand fully way beyond where we are today, how these systems work.\n\nSpeaker 1 | 13:36 - 14:02\nSo I think there's a whole kind of field, Meckinterp is part of that, but there's a lot more I think that we can do to analyze these systems. So that will be a science. But I think also AI itself will maybe unlock new sciences, which is maybe what you're getting at. The one I'm particularly excited about is AI for simulations. So I love simulations, all the games I wrote not only had AI, but they were simulations.\n\nSpeaker 1 | 14:02 - 14:30\nAnd I think simulations is the way we can address some of the what we maybe think of social sciences, like economics and other more humanistic subjects, because it's very difficult to do control studies in that. Why aren't they just sciences like physics today? Because the problem is they're emergent systems just like biology actually. And it's very hard to do repeated controlled experiments. If you raise interest rates by half a percent, you have to do it in the real world and then see what happens.\n\nSpeaker 1 | 14:30 - 14:54\nYou can have theories, but you can't run it thousands of times. But if you could simulate things really accurately, may be there's sort of new sciences to be done where you can sort of rigorously sample from a very accurate simulator. And then I think that will allow us to make much better decisions in these today, what are very uncertain domains. What will it take\n\nSpeaker 2 | 14:54 - 15:01\nto get to those extremely accurate simulations? World models, what kind of science is necessary and engineering together?\n\nSpeaker 1 | 15:01 - 15:33\nYeah, well, look, mean, I'm thinking a lot about that in we do a ton of that work, like learning simulators, basically what it would So these are in domains where you can't we don't know the mathematics of it well enough or it's perhaps too complex. We can't just write directly down a special case simulator. It's just not accurate enough, doesn't capture all the variables. We're doing that we've done it with weather. We have the most accurate kind of weather simulator in the world, WeatherNext, and it's far faster than what the Can\n\nSpeaker 2 | 15:33 - 15:34\nmetrology we change the weather yet?\n\nSpeaker 1 | 15:34 - 15:45\nNo, we can't. No. And I'm not sure that would be a good idea. But the first step is to understand it better. But then even biology, we're working on a kind of what I call a virtual cell.\n\nSpeaker 1 | 15:45 - 16:38\nSo, a hugely dynamical emergent system. And I think biology is perfect sort of machine learning is perfect description language for biology in the same way math is for physics. Because I think in biology and in lots of these natural systems, have loads of weak signals, weak correlations, tons of data, far too much that any human mind can analyse. But there are connections and correlations and interesting causalities within that massive data. So I think it's sort of it's always struck me that machine learning is the perfect tool to describe those kinds of systems where until today, mathematics hasn't been able to do that, either because we can't manage it as top mathematicians because it's too complex or the expressive power of math is not enough for to understand these sort of highly emergent dynamical systems.\n\nSpeaker 2 | 16:38 - 16:41\nIs it also because of the messiness and stochastic nature?\n\nSpeaker 1 | 16:41 - 17:07\nYeah, sure. I mean, eventually you could, by the way, once you learn these simulators, it may be there's another branch of new branch of science. You could maybe extract some equations from the once you have the simulator. So you have this sort of implicit simulator, intuitive simulator, and then maybe you could extract explicit equations from that partly because you could also sample it as many times as you want.\n\nSpeaker 2 | 17:07 - 17:10\nFundamental as Maxwell's or something Maybe. Like\n\nSpeaker 1 | 17:10 - 17:17\nI don't know if that exists for such emergent systems, but if they do exist, I don't see why we won't be able to find them with these methods.\n\nSpeaker 2 | 17:18 - 17:33\nThat would be amazing. You've talked about this theory that the basic building block of everything in the universe could be information like, this is more theoretical. How do you think about that and what does that mean for a traditional classical Turing computer?\n\nSpeaker 1 | 17:33 - 18:12\nWell look, think you can, of course all the famous E equals MC squared and all the stuff Einstein did and energy and matter are kind of equivalent. But I actually think information has a kind of equivalency in the same way. So you can think of the organization of matter and structure and especially things like biology that are resisting entropy as basically information processing systems at their heart. So I think one can convert all of those three kind of quantities into each other, but I have this feeling information is most fundamental. So it's a little bit the opposite way around to the classic physicist thought in the 1920s and things where it's sort of energy and matter primary.\n\nSpeaker 1 | 18:13 - 18:43\nI actually think it's a better way to understand the world, the universe is to think about it as information first. And if that's true, and I think there's quite a lot of evidence for that, then of course AI is even more sort of profound in a sense Totally. Than we think. And it's already pretty profound because it's also about organizing information and understanding information and constructing informational objects. So AI, in my opinion, is all about information processing.\n\nSpeaker 1 | 18:44 - 18:53\nSo I think there's something sort of very deeply connected with these different areas if you think of it through the lens of information processing as the primary way to think about it.\n\nSpeaker 2 | 18:54 - 18:58\nDo you think a classical Turing machine will be able to compute everything?\n\nSpeaker 1 | 18:58 - 19:35\nWell, I sometimes think about what we're doing and refer to ourselves as Turing's champion because Turing machines, I think Alan Turing is one of my all time favorite scientific heroes. I think what he did obviously laid the foundations for computer science, but also AI. I think one of the most profound results ever is the Turing machine result. Everything that is computable can be computed by a relatively simple description of a machine. So I think our brains are likely to be approximate Turing machines.\n\nSpeaker 1 | 19:35 - 20:29\nAnd I think it's interesting to think about the connection between Turing machines and quantum computers and quantum systems. But I think at least what we've shown with things like AlphaGo and especially AlphaFold is that a classical Turing machine, obviously in the guise of a modern neural network, it can model what was thought to be in the case of protein folding, it's a quantum system. At some sense, it's very it's dealing with very small particles and one might think you'd have to take into account all the quantum effects of the water bonds and all sorts of things. But it turns out you can get to an approximate optimal sort of solution on a classical system. So it may turn out there are a lot of things that we think that would need a quantum system to model or run might be modellable on a classical system if thought about in the right way.\n\nSpeaker 2 | 20:29 - 20:35\nSo you've talked about AI consistently as a tool, like a telescope or\n\nSpeaker 1 | 20:35 - 20:35\na\n\nSpeaker 2 | 20:35 - 20:50\nmicroscope, astrolabe through the centuries. But when you think about a machine that can model almost anything, let's say it can't even model quantum systems, like you pointed out, when does it stop becoming a tool and will that ever happen?\n\nSpeaker 1 | 20:51 - 21:28\nWell, my strong feeling is we should in this sort of mission and journey to build AGI, those of us on that journey, many of people in this room, I feel like it would be best to build a tool first, an incredibly intelligent and useful and precise tool and then cross the next sort of Rubicon. That's already profound enough and has of course, the tool could start becoming more and more autonomous and agent like that we're all seeing. We're in the midst of that, the agent era now. But then there's a further step of like, does it have agency? Is it conscious?\n\nSpeaker 1 | 21:28 - 21:52\nThese sorts of questions, which are also going to be questions we're going to need to address. But I would recommend we do that as a second step, perhaps using the tool in the first step to help us with those next profound questions and ideally also we could understand our own brain and minds better and define things like consciousness a lot more precisely than we can today.\n\nSpeaker 2 | 21:53 - 21:56\nDo you have estimations of what that definition of consciousness might look like?\n\nSpeaker 1 | 21:56 - 22:22\nNo, I mean, haven't got much to add beyond that thousands of years of philosophy hasn't said already. But I mean, it's very clear to me that it's obvious some components are going to be needed. They're probably necessary but not sufficient. Things like self awareness and the idea of self and other, some kind of continuity over time. So some of these things are clearly needed for anything that might look like consciousness.\n\nSpeaker 1 | 22:22 - 22:54\nBut I mean, obviously it's an open question as what the full definition is. I've talked to many of the great philosophers about that, Daniel Dennett, obviously sadly passed away recently, but we had a long conversation a few years back about this and I think one of the issues is how does a system behave? Does it behave like a conscious system? So that's you could argue some of the AI systems might end up being able to do that as they get close to AGI. But then there's still the question of why do we think each other are conscious?\n\nSpeaker 1 | 22:54 - 23:22\nOne is the way we're behaving, we're behaving like conscious beings. But the other thing is we're running on the same substrate. So I think if both those things are true, then it's parsimonious to imagine you're experiencing the same thing I'm experiencing, which is why we don't have that debate about normally about are each other conscious. But I think we'll obviously we'll never have the substrate equivalence with an artificial system. So there'll always be I think it will be hard to completely close that gap.\n\nSpeaker 1 | 23:22 - 23:33\nSo you can look at it behaviorally, but what about experientially? There are probably some ways to do that post AGI, but maybe it's a bit out of scope today, even for AI for science discussion.\n\nSpeaker 2 | 23:33 - 23:50\nBrilliant. So we're going to open the room to questions in just a moment, get your questions ready. But you brought up philosophers. You've mentioned Kant and Spinoza as two of your favorite philosophers. Kant is this deontological, highly duty driven philosopher.\n\nSpeaker 2 | 23:50 - 23:59\nSpinoza almost has this deterministic view of the universe. How do you kind of connect those two beliefs and where is your thinking of how the world works?\n\nSpeaker 1 | 23:59 - 24:22\nWell, the reason I like those two, they stuck out for me is that I think Kant, when I was doing my PhD in neuroscience, his sort of statements about the mind creates reality, right? I think that's basically true. And so another reason to study the mind, right? And how the brain works. And I'm interested ultimately in the nature of reality.\n\nSpeaker 1 | 24:22 - 25:02\nSo we have to understand how interpreting that. And so I think that's for me what I took from Kant. Then Spinoza, it's more about the you could almost call spiritual dimension of like, well, if you're trying to understand the universe using science in my case as the tool, you're sort of understanding some deep mystery about how the universe works, right, in really kind of deep way. And that's what I feel we're doing and I'm doing when I do my science and we work on AI and we're building these tools is somehow we're kind of reading the language of the universe.\n\nSpeaker 2 | 25:03 - 25:14\nBeautiful. What a beautiful way to say what you do every day. Demist, scientist, orator, and philosopher. We will, before we wrap, do a couple of rapid fire questions.\n\nSpeaker 1 | 25:14 - 25:14\nOkay.\n\nSpeaker 2 | 25:14 - 25:22\nThank you for finishing. He's not seen these yet. Sure. Over under on distribution year of AGI. Oh, wow.\n\nSpeaker 2 | 25:23 - 25:26\nOr reject premise No. Of 2030.\n\nSpeaker 1 | 25:26 - 25:28\nI've been pretty consistent about that.\n\nSpeaker 2 | 25:28 - 25:35\nOkay. 2030. Yeah. Must read book, poem, or paper for when we achieve AGI? Oh, wow.\n\nSpeaker 1 | 25:37 - 25:50\nFor when we achieve once we achieve it. Well, my favorite book is The Fabric of Reality by David Deutsch, so I think that still holds. I'd hope to answer the questions in that book with with the AGI. That's my post AGI work.\n\nSpeaker 2 | 25:50 - 25:54\nBrilliant. Yeah. Proudest moment so far in DeepMind?\n\nSpeaker 1 | 25:55 - 25:59\nOh, wow. We've been lucky to have a lot. I mean, probably AlphaFold.\n\nSpeaker 2 | 25:59 - 26:20\nOkay. Yeah. Now a couple games questions. If you were engaged in a high stake strategy game, turn based strategy game, Civ, Polytopia series games, you could select one scientist from history, we're thinking the Einsteins, the Turing's, Newtons, Who would you select to be on your team?\n\nSpeaker 1 | 26:20 - 26:32\nOn my team? On your team. Oh gosh. Probably Von Neumann, I think. Great I mean he's Yeah, you want a game theorist, I think.\n\nSpeaker 1 | 26:32 - 26:39\nI think I think I think I think he's the best. Yeah. Makes sense. Yeah. That's really teammate.\n\nSpeaker 1 | 26:39 - 26:41\nYeah. Alright.\n\nSpeaker 2 | 26:41 - 26:43\nYeah. Well, Demis, you do it all. Thank you so much for being with\n\nSpeaker 1 | 26:43 - 26:44\nus. Great.\n\nSpeaker 2 | 26:44 - 26:46\nPlease join me in thanking Demis. Thanks,"
+    }
+  ],
+  "blogs": [
+    {
+      "source": "blog",
+      "name": "Claude Blog",
+      "title": "Redesigning Claude Code on desktop for parallel agents",
+      "url": "https://claude.com/blog/claude-code-desktop-redesign",
+      "publishedAt": "Apr 14, 2026",
+      "author": "",
+      "description": "",
+      "content": "It includes a new sidebar for managing multiple sessions, a drag-and-drop layout for arranging your workspace, an integrated terminal and file editor, plus performance and quality-of-life improvements. The new desktop experience For many developers, the shape of agentic work has changed. You&#x27;re not typing one prompt and waiting. You&#x27;re kicking off a refactor in one repo, a bug fix in another, and a test-writing pass in a third, checking on each as results come in, steering when something drifts, and reviewing diffs before you ship. The new app is built for how agentic coding actually feels now: many things in flight, and you in the orchestrator seat. Run sessions in parallel The new sidebar puts every active and recent session in one place. Kick off work across multiple repos and move between them as results arrive. You can filter by status, project, or environment, or group the sidebar by project to find and resume sessions faster. When a session&#x27;s PR merges or closes, it archives itself so the sidebar stays focused on what&#x27;s live. When you need to ask a question mid-task, you can open a side chat (⌘ + ; or Ctrl + ;) to branch off a conversation. Side chats pull context from the main thread, but don’t add anything back to the thread, to avoid misdirecting your tasks. Review and ship without leaving the app The redesign brings more commonly-used tools into the app, so you can review, tweak, and ship Claude&#x27;s work without bouncing to your editor: Integrated terminal : Run tests or builds alongside your session. In-app file editor : Open files, make spot edits directly, and save changes. Faster diff viewer : Rebuilt for performance on large changesets. Expanded preview : Open HTML files or PDFs in-app, in addition to running local app servers in the preview pane. Every pane is drag-and-drop. Arrange the terminal, preview, diff viewer, and chat in whatever grid matches how you work. Fits your stack The desktop app now has parity with CLI plugins. If your org manages Claude Code plugins centrally, or you&#x27;ve installed your own locally, they work in the desktop app exactly the way they do in your terminal. You can still run sessions locally or in the cloud. SSH support now extends to Mac alongside Linux, so you can point sessions at remote machines from either platform. Customize for how you work Three view modes—Verbose, Normal, and Summary—let you dial the interface from full transparency into Claude&#x27;s tool calls to just the results. New keyboard shortcuts cover session switching, spawning, and navigation; press ⌘ + / (or Ctrl + / ) to see the full list. A new usage button shows both your context window and session usage at a glance. Under the hood, the app has been rebuilt for reliability and speed, and now streams responses as Claude generates them. Getting started The redesigned desktop app is available now for all Claude Code users on Pro, Max, Team, and Enterprise plans, and via the Claude API. Download the app , or update and restart if you already have it. Explore the documentation to learn more."
+    }
+  ],
+  "stats": {
+    "xBuilders": 17,
+    "totalTweets": 41,
+    "podcastEpisodes": 1,
+    "blogPosts": 1,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
