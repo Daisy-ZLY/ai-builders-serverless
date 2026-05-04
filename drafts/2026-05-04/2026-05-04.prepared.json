@@ -1,0 +1,550 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-05-04T01:22:44.277Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2050753293601935777",
+          "text": "Much respect to @tokengobbler who shutdown Vibe-kanban live onstage at AIE Europe - still with 30,000 MAU, and still living on as an open source project.\n\n\"Everyone who is making money is doing 2 things: selling to enterprise, and reselling tokens. We were doing neither.\" \n\nsurprisingly not the first company to shutter at AIE but there's a lot to learn from the process and the software engineering retrospective from 2021-2025 will stick in my mind!",
+          "createdAt": "2026-05-03T01:44:21.000Z",
+          "url": "https://x.com/swyx/status/2050753293601935777",
+          "likes": 56,
+          "retweets": 4,
+          "replies": 11,
+          "isQuote": true,
+          "quotedTweetId": "2050681484072161550"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2050623358488997917",
+          "text": "It's very satisfying to get Codex or Claude Code to \"marie kondo\" your local files and Google Drive.\n\nI give these apps full access to my computer and gws (google workspace cli), then prompt things like:\n\n\"Tell me what apps load on computer bootup. Give me a plan to clean this up.\"\n\n\"Look at my downloads folder. Give me a plan to clean up and organize it.\"\n\n\"Help me organize my Google Drive. Let's review your plan first before doing anything.\"\n\nNote that I always ask it for a plan first. These are semi-dangerous operations so try them at your own risk.\n\nAnyway, my files and Drive now spark joy 🤣",
+          "createdAt": "2026-05-02T17:08:02.000Z",
+          "url": "https://x.com/petergyang/status/2050623358488997917",
+          "likes": 222,
+          "retweets": 15,
+          "replies": 29,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050594674394751073",
+          "text": "My OpenClaw is going to have a very poor performance review this quarter https://t.co/LBEnrApfdo",
+          "createdAt": "2026-05-02T15:14:03.000Z",
+          "url": "https://x.com/petergyang/status/2050594674394751073",
+          "likes": 42,
+          "retweets": 0,
+          "replies": 16,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050588775609451006",
+          "text": "Guys, this game is pretty addictive I think I made a mistake 🥲",
+          "createdAt": "2026-05-02T14:50:36.000Z",
+          "url": "https://x.com/petergyang/status/2050588775609451006",
+          "likes": 17,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2050801714656424140",
+          "text": "Nice https://t.co/hNbCN9FLTT",
+          "createdAt": "2026-05-03T04:56:45.000Z",
+          "url": "https://x.com/amasad/status/2050801714656424140",
+          "likes": 15,
+          "retweets": 0,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2050733139270463549"
+        },
+        {
+          "id": "2050793150713864678",
+          "text": "10 project 10 parallel agents each 🤯 https://t.co/OGtdcMeGZJ",
+          "createdAt": "2026-05-03T04:22:43.000Z",
+          "url": "https://x.com/amasad/status/2050793150713864678",
+          "likes": 78,
+          "retweets": 2,
+          "replies": 20,
+          "isQuote": true,
+          "quotedTweetId": "2050749174132392261"
+        },
+        {
+          "id": "2050691458920005737",
+          "text": "“Prompt” took on an entirely new meaning but somehow many things stayed the same. https://t.co/kXMRmWVHHM https://t.co/YxMFjYgW65",
+          "createdAt": "2026-05-02T21:38:38.000Z",
+          "url": "https://x.com/amasad/status/2050691458920005737",
+          "likes": 124,
+          "retweets": 3,
+          "replies": 8,
+          "isQuote": true,
+          "quotedTweetId": "2050479551537619413"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2050684160151617603",
+          "text": "If you think AI replaces software engineers, here’s a quick thought experiment. \n\nImagine you’re a life sciences company. 10 years ago you want to invest heavily in lab automation, processing data at scale, and other software. You look at the cost of doing so and realize you can’t compete with tech for as many engineers as you need, so you pare down your goals and do what you can. Every new software project has a fixed cost of a certain sized team, so you can only do so much given budgets, ability to compete for talent, and other trade offs.\n\nNow, AI comes along. And all of a sudden you have the *exact same* output tokens as the best tech companies in the world. Your engineers are using the same AI models as the tech industry, which means you have just boosted your engineering team by a some meaningful amount, while also neutralizing your differences with tech. \n\nDo you continue with your pared down approach, or do you start to hire more engineers because each engineer is 2X or 5X more capable than before? In almost every company I’m talking to, they’re doing the latter.\n\nNow extrapolate this to every bank, manufacturer, industrial company, retailer, and on and on. And extrapolate it not to just large enterprises, but also every SMB up and down the stack of these value chains. Oh, and also extrapolate this to other job functions, not just engineers. Resource scarce domains in marketing, legal, finance, design, and so on. \n\nIf you’re wondering why new jobs show up because of AI this is the reason. Any other view of what happens doesn’t contemplate the variety of unmet needs there are in the economy.",
+          "createdAt": "2026-05-02T21:09:38.000Z",
+          "url": "https://x.com/levie/status/2050684160151617603",
+          "likes": 301,
+          "retweets": 52,
+          "replies": 57,
+          "isQuote": true,
+          "quotedTweetId": "2050621589696151639"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2050775806574751816",
+          "text": "Oakland has highest taxes per capita among similar cities while services are among the worst. 44% of Measure E revenue goes to pre-approved union raises.\n\nThe pattern: wrap dysfunction in moral language, attack anyone who asks where the money went\n\nhttps://t.co/wbkyxt6Zve https://t.co/PArVnY9DLP",
+          "createdAt": "2026-05-03T03:13:48.000Z",
+          "url": "https://x.com/garrytan/status/2050775806574751816",
+          "likes": 237,
+          "retweets": 36,
+          "replies": 22,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050763012894834952",
+          "text": "It's true GBrain on OpenClaw with book-mirror skill pack is like infinite personal Blinkist https://t.co/vfsD9CpWwG",
+          "createdAt": "2026-05-03T02:22:58.000Z",
+          "url": "https://x.com/garrytan/status/2050763012894834952",
+          "likes": 74,
+          "retweets": 4,
+          "replies": 11,
+          "isQuote": true,
+          "quotedTweetId": "2050608486778552516"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2050660712620630402",
+          "text": "How are you dealing with this? https://t.co/ikURFaAk80",
+          "createdAt": "2026-05-02T19:36:27.000Z",
+          "url": "https://x.com/zarazhangrui/status/2050660712620630402",
+          "likes": 26,
+          "retweets": 1,
+          "replies": 10,
+          "isQuote": true,
+          "quotedTweetId": "2050398954614087904"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2050779734116856137",
+          "text": "Too many funds are capping downside right now, instead of maximizing upside..\n\nI’ll often ask the GP/partner on why they did the deal and on my fifth why the real reason comes out which is “well at least big token factory will acquire them so our downside is capped”\n\nI haven’t done this for many years but I don’t think history shows that’s how you return a 5-10x fund?\n\nMaybe, the incentives have really simply shifted to AUM-maxxing and so the sentiment is deploy baby deploy. But, sigh, that just seems so incredibly short sighted. \n\nMaybe, it’s been a long day and I just want to rant but time is the only thing you don’t get back. Use it very wisely to work on things that matter and with people who won’t treat you as an option call 🫡",
+          "createdAt": "2026-05-03T03:29:24.000Z",
+          "url": "https://x.com/nikunj/status/2050779734116856137",
+          "likes": 54,
+          "retweets": 0,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050593851459747957",
+          "text": "Find someone who loves you as much as this kid loves popcorn.. \n\nPS: the dash popcorn maker is one of the best investments we’ve made https://t.co/40QY8jZ1Dz",
+          "createdAt": "2026-05-02T15:10:47.000Z",
+          "url": "https://x.com/nikunj/status/2050593851459747957",
+          "likes": 51,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2050735979477008412",
+          "text": "This one fixes the depenency issues/slowness some had when installed via npm.\n\nPlugins are hard, worth it tho! Package is way leaner now, we moved [almost] everything into extensions! https://t.co/rp3Psd3sPF https://t.co/JFZ7xkbrnR",
+          "createdAt": "2026-05-03T00:35:32.000Z",
+          "url": "https://x.com/steipete/status/2050735979477008412",
+          "likes": 496,
+          "retweets": 24,
+          "replies": 60,
+          "isQuote": true,
+          "quotedTweetId": "2050735037230801042"
+        },
+        {
+          "id": "2050676702242644465",
+          "text": "goblins have fat fingers https://t.co/NQrvMpiSNr",
+          "createdAt": "2026-05-02T20:40:00.000Z",
+          "url": "https://x.com/steipete/status/2050676702242644465",
+          "likes": 156,
+          "retweets": 5,
+          "replies": 14,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050490163810230579",
+          "text": "🦀 Crabbox 0.3.0 is out.\nRemote Linux runs for dirty worktrees\n\n🔐 GitHub browser login\n🧰 Blacksmith Testbox wrap\n📡 crabbox attach for live run replay\n📜 Durable run events\n☁️ AWS image create\n🛡️ Cloudflare Access\n\nbrew upgrade openclaw/tap/crabbox\nhttps://t.co/oD7LDHzpSF",
+          "createdAt": "2026-05-02T08:18:45.000Z",
+          "url": "https://x.com/steipete/status/2050490163810230579",
+          "likes": 580,
+          "retweets": 39,
+          "replies": 20,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2050608311888941301",
+          "text": "@every if you want to try a codex-native app, use proof to write:\n\nhttps://t.co/JfAd0xIW6D",
+          "createdAt": "2026-05-02T16:08:14.000Z",
+          "url": "https://x.com/danshipper/status/2050608311888941301",
+          "likes": 7,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050595829954891808",
+          "text": "read more about this on @every:\n\nhttps://t.co/9wRhOCVapS",
+          "createdAt": "2026-05-02T15:18:38.000Z",
+          "url": "https://x.com/danshipper/status/2050595829954891808",
+          "likes": 5,
+          "retweets": 0,
+          "replies": 1,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050583747041640608",
+          "text": "clear that this is how we'll be doing most of our work for the next 10 years:\n\nagent running continuously on the left, application that you + the agent use on the right https://t.co/GTLkK20XDS",
+          "createdAt": "2026-05-02T14:30:37.000Z",
+          "url": "https://x.com/danshipper/status/2050583747041640608",
+          "likes": 323,
+          "retweets": 20,
+          "replies": 34,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2050660894234059050",
+          "text": "If you get out of the console and terminal, you will start to see that there is a lot of hard tech being built in America.\n\nIt is deeply deeply inspiring and exciting.\n\nLet’s shoot things into space ✅ https://t.co/lMQYYf9dUz",
+          "createdAt": "2026-05-02T19:37:11.000Z",
+          "url": "https://x.com/adityaag/status/2050660894234059050",
+          "likes": 37,
+          "retweets": 1,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2050671161915371998",
+          "text": "i keep thinking i want the models to be cheaper/faster more than i want them to be smarter\n\nbut it seems that just being smarter is still the most important thing",
+          "createdAt": "2026-05-02T20:17:59.000Z",
+          "url": "https://x.com/sama/status/2050671161915371998",
+          "likes": 9505,
+          "retweets": 260,
+          "replies": 1910,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050661006230344083",
+          "text": "never thought id be watching F1 via the kids broadcast\n\ncannot imagine being happier https://t.co/0N6xrUf1TT",
+          "createdAt": "2026-05-02T19:37:37.000Z",
+          "url": "https://x.com/sama/status/2050661006230344083",
+          "likes": 4999,
+          "retweets": 100,
+          "replies": 501,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2050658558174437701",
+          "text": "5.5 xhigh in fast mode is\n\nreally good\n\ni think i got psyoped by twitter on medium for a bit",
+          "createdAt": "2026-05-02T19:27:54.000Z",
+          "url": "https://x.com/sama/status/2050658558174437701",
+          "likes": 4708,
+          "retweets": 91,
+          "replies": 667,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "Training Data",
+      "title": "OpenAI's Greg Brockman: Why Human Attention Is the New Bottleneck",
+      "guid": "2b60e614-458c-11f1-8407-d363b4cb5860",
+      "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+      "publishedAt": "2026-05-01T18:32:00.000Z",
+      "transcript": "Speaker 1 | 00:02 - 00:24\nSo Greg, thank you for coming back here. I don't think we ever charge you for rent. So maybe I'll send you an invoice later. But Greg, you've been part of like two really spectacular companies, Stripe as employee number four and then the first CTO. I just recently heard that they process 1,600,000,000, sorry, 1.6% of the global GDP.\n\nSpeaker 1 | 00:24 - 00:25\nYou must be proud of that.\n\nSpeaker 2 | 00:25 - 00:26\nThat's amazing.\n\nSpeaker 1 | 00:26 - 00:34\nYou must be even more proud of the fact that OpenAI has almost a billion or maybe more than a billion, in weekly active users at this point.\n\nSpeaker 2 | 00:34 - 00:37\nI mean, it's all it's all very exciting. It shows you what technology can do.\n\nSpeaker 1 | 00:37 - 00:44\nAnd, you're not just co founder and president, but you're also chief builder at OpenAI. I heard that that was one of your titles.\n\nSpeaker 2 | 00:44 - 00:48\nI'm not sure if it's ever an official title, but I I've been called many things. Let's just say that.\n\nSpeaker 1 | 00:49 - 01:05\nWell, you have a audience of great builders here, so we'll start from all the way at the bottom of the stack. OpenAI has multiple stacks of the business, one of which is compute. And you guys have been very aggressive, very aggressive on securing compute. Why is that?\n\nSpeaker 2 | 01:05 - 01:32\nWell, in many ways, we have a very simple business. We buy, rent, build, compute, and we resell it at a margin. That's it. As long as the margin's positive, then you want to scale it because the demand for solving problems, the demand for intelligence, that's unlimited. And the AIs that we have right now really are able to rise to the challenge of effectively any kind of problem that you want to throw at them.\n\nSpeaker 1 | 01:32 - 01:33\nDo you have enough compute?\n\nSpeaker 2 | 01:33 - 01:36\nNo. Really? Yeah, definitely not.\n\nSpeaker 1 | 01:36 - 01:45\nI was just with Matt Garman and he says the GPU compute availability in twenty twenty six rounds to zero. Don't you guys have all of it?\n\nSpeaker 2 | 01:45 - 02:04\nI mean, we have we we would love more. We're we're constantly out there hunting for more, honestly. And I'll tell you, like when we first launched, when we launched ChatGPT, I remember being on a call with my team and they were like, all right, how much compute should we buy? And I said, all of it. And they're like, no, no, seriously, like, come on, how much should we buy?\n\nSpeaker 2 | 02:04 - 02:10\nI'm like, no matter how fast we try to ramp compute, I guarantee we're not going be able to keep up with demand. And that has been true ever since.\n\nSpeaker 1 | 02:11 - 02:34\nThat's fascinating. Moving up from compute, since I don't know if much of this audience can help you with securing more compute, because most of them are founders of startups. About architecture and scaling laws, what are the, where are we in the scaling laws? Are they still doubling each year? Are you changing architecture?\n\nSpeaker 1 | 02:36 - 02:39\nWhat are you guys pushing on the frontier on the research side?\n\nSpeaker 2 | 02:39 - 03:04\nWell, I would say, first of all, the scaling laws are a deep and very beautiful mystery. They feel deeply fundamental. It's like this scientific truth that just like you think about physics and Newton's laws and things like that, there's somehow this truth of the universe. And they're empirical. We don't necessarily have all the theory to explain exactly why it works.\n\nSpeaker 2 | 03:04 - 03:27\nBut to me, the most beautiful thing is that neural networks were really designed in the 1940s, before they were computers. And somehow, we've been able to take the exact ideas that were developed back then and apply increasing amounts of computation. And as you pour more compute into the models, they get correspondingly more capable. It just keeps going. There's no wall.\n\nSpeaker 2 | 03:27 - 03:29\nAnd I think that's a beautiful thing.\n\nSpeaker 1 | 03:29 - 03:49\nThat's pretty beautiful. Are there more research or more algorithms that are in the works? Because in the past, we had neural networks, to your point, in the 1940s, but we didn't have the compute for it. Now that we have the compute for it, are we just pushing the same things, or are there new architectures and new ideas coming up?\n\nSpeaker 2 | 03:49 - 04:14\nYeah, so I would think of it as we absolutely have new ideas that are constantly powering what we do. It's very simplified to say, well, let's take a neural network from the 1940s and it in a gigawatt data center, right? We have made tons of innovations and we constantly are improving things. And sometimes these are micro tweaks. You just realize that the way you've been formatting data was not quite right, and that can actually be a very big deal.\n\nSpeaker 2 | 04:14 - 04:35\nSometimes it's larger. You think about the shift from the LSTM to the transformer. And I don't think the transformer is everyone's moved past the transformer as described in the other 2018 paper. So there's constant innovation happening. And I think of places that have been perhaps the most invested in long term research on how to improve the architectures, how to improve the fundamental algorithms, and how to get the paradigm shifts.\n\nSpeaker 2 | 04:35 - 04:40\nI think OpenAI has been leading the pack there. And that's something we continue to invest, and I see lots of fruit on the horizon.\n\nSpeaker 1 | 04:40 - 04:54\nGot it. And on the models, does OpenAI have a formal definition for AGI? Are we closed? Are we not closed? Pat and Sonya published this thing that we are at AGI functionally.\n\nSpeaker 1 | 04:54 - 04:56\nDo you agree with that? Do you not agree with that?\n\nSpeaker 2 | 04:56 - 05:16\nWell, we do have a formal definition, but to some extent, one thing I have learned is that everyone has their own intuitions about what AGI is, and maybe you can view it as, according to my view of where we are, I think we're about 80% of the way there, in that we have models that are smart. They're very capable. They're able to, if you give\n\nSpeaker 1 | 05:16 - 05:17\nAre they smarter than you?\n\nSpeaker 2 | 05:18 - 05:35\nI mean, they're certainly more capable than I am at writing software, right? If you give it all the context, then yes, I think that they are just so capable. It's really remarkable. Like, does anyone here feel better at writing software than GPD 5.4? Oh.\n\nSpeaker 2 | 05:35 - 05:58\nOh, it's got one. It's got one. All right, writing kernels. So even there, we're seeing massive gains from Exactly. And for some of our internal results, there we're really seeing if you pour the right kinds of If you have the right setup for your problem, then you're able to get really massive results out of very low level, even low level tasks.\n\nSpeaker 2 | 05:58 - 06:44\nAnd just to give you one example of how things have been trending, one of my systems engineers also very similar, he was like, hey, I haven't been able to get value out of the models for GPT-five, for 5.1, for 5.2 as well. For 5.3, Anil Lark, had prepared this design document for a very complicated systems optimization he was about to do. He handed it over to the model, went to sleep, waking up intending to give this to his team to work on for the next week. And when he woke up, was done, that the model had actually implemented the initial spec, had seen that it was slow, had added instrumentation, had actually run the code, used a profiler to figure out where things were slow, and iterated multiple times until it had gotten to an optimized result. And like, that is incredible.\n\nSpeaker 2 | 06:44 - 06:45\nThat's where we are.\n\nSpeaker 1 | 06:46 - 07:18\nAnd so what would you advise all startups here to do? Because the models keep getting more and more capable. I've asked this when Sam was here in the past. If you're building today, do you need to rebuild in two years when a new model comes out because all the functionality and all the capabilities all change around you? Do you need to make sure that you're not in OpenAI's way because just going to run over startups because the models are so much more capable?\n\nSpeaker 1 | 07:19 - 07:26\nHow would you recommend a set of startup founders to build in this environment?\n\nSpeaker 2 | 07:26 - 07:53\nWell, of all, would say to lean in. The tools right now have become incredibly useful. And if you look even over the course of December, I think that we went from these agentic coding tools being like, they're like writing 20% of your code to writing 80% of your code, which means they go from being kind of a sideshow to being the main thing that you're doing. And I think we're doing that across all of the work that people do with computers, all computer work this year. And you can look at the recent progress on Codecs.\n\nSpeaker 2 | 07:53 - 08:19\nIt's really changing from a tool for software engineers to a tool for anyone who's doing work with a computer. And just over the past week, we've released a bunch of features that just make it so much more powerful and capable. And one thing we just announced today is a new tool called Chronicle that plugs into Codecs, where it actually can see everything you're doing with your computer and can form memories of what's going on. And so you ask it a question. It instantly knows what you're talking about.\n\nSpeaker 2 | 08:19 - 08:32\nYou're like, what was I doing five minutes ago? It knows. You're like, oh, what was this person talking about? It knows. To me, it was this real wake up call to realize you spend so much of your effort right now just explaining to computer what's going on.\n\nSpeaker 2 | 08:32 - 08:46\nLike, why are you explaining to your computer what's going on? That makes no sense. And so I think what's going to happen over upcoming years is the models are going to get much more capable. We'll have better harnesses. We'll be able to solve harder and harder problems, come up with new knowledge, all of these things.\n\nSpeaker 2 | 08:46 - 09:01\nBut there is a one time shift that's happening now, which is really about context. It's really about, is your AI able to you have all these meetings. You didn't include the AI. That's not very nice to the AI. You're asking it to help you with things, and it has no information.\n\nSpeaker 2 | 09:01 - 09:24\nSo I think really leaning into, how do you make sure the AI even has enough information in theory to solve the problem and then trust the models are going to really get there and improve. So I think it will be a constant cycle of improvement and iteration and leaning into the tools and talking to your friends and figuring out how they're using it, but that there is this investment, that's a one time investment that now is the time to make.\n\nSpeaker 1 | 09:24 - 09:35\nAnd in terms of, let's say you set that all up, is OpenAI using Codecs differently than you think everybody else outside is using it?\n\nSpeaker 2 | 09:35 - 10:02\nWell, I think one of the amazing things about being at OpenAI is you do get to live in the future, right? You do get to really see the shape of what's emerging, and we can co design, right? We can really change the models, harness, everything together in order to better serve the needs that we see. And a lot of the approach we've been taking is, so we started with software engineering, and we set some clear guidelines, for example, saying that we still want a human to be accountable for all code that gets merged. Right?\n\nSpeaker 2 | 10:02 - 10:19\nSo at the end of the day, is it a good thing to merge this piece of code? Is it well structured? Is it going to make our code base more maintainable? We want to make sure there's a human who is signing off to say yes. And I think that thoughtfulness of not just saying, oh, because it's blindly used this or Oh, we don't want to use this at all.\n\nSpeaker 2 | 10:19 - 10:54\nLike, I think neither extreme is quite right. And then we are also going vertical by vertical within OpenAI to adopt these tools within finance, within sales, within IT. And there we have a small dedicated team who's really deeply understanding the domain, working with the people who are the experts in it in order to build skills, in order to modify the codec's UI, whatever it is that is needed in order to get it to be good. And then that's something we can then, once we have it in good shape, we will externalize and that we're able to ship that to all of you. And so we are starting to work with certain customers as well.\n\nSpeaker 2 | 10:54 - 11:11\nSo for people who want to be very AI forward and want to be part of defining this revolution, that there's a place for that, and I'd love to talk afterwards. But yeah, think that just this desire to say, hey, we really want to be AI forward, really live in the future, and experience what it will be like for everyone else one year, two years, three years down the road.\n\nSpeaker 1 | 11:11 - 11:39\nDo you guys structure your company differently or the engineering teams differently because of living in the future? I mean, if you have to go way back, when my father learned computer science, he was just himself. Then we had these long software releases that became waterfall. And then when the web happened and the cloud happened, we had these two pizza teams and we had scrum. Now that we have these coding agents, how do you structure around everything differently?\n\nSpeaker 2 | 11:39 - 11:55\nI think we're still figuring it out. And there's certain places where you really see it. For example, the cost of building a prototype is cheap now. It's so cheap. And if you want to build a dashboard that used to be like, oh, would take someone like a week to do it, and you just do it now.\n\nSpeaker 2 | 11:55 - 12:35\nAnd so actually, a lot of the bottleneck has shifted to things like sharing. And so we actually have some internal work on this as well that, again, we will be externalizing of how do you make it really easy for anyone in your enterprise to build a dashboard, a widget, a bot, whatever the thing is, then share it with others. And then that starts to really put pressure on having good governance. You want your IT organization to be able to see all these different threads of execution that are happening, all the little things that are being shared around, have some control over data provenance to really make sure that, Okay, a good example of this is I think people are now starting to take their internal knowledge dumps, turn them into wikis. We have a really cool one of these internally.\n\nSpeaker 2 | 12:35 - 13:03\nAnd the thing you immediately think about is, well, if someone has a document in the internal knowledge base that was accidentally permissioned incorrectly, and they realize, oh no, I didn't want this information to be accessible, how do they fix that? So normally, it's they go into the doc, they change the permissions, but now there's these derived artifacts. And so you need to make sure you have some way of tracking through the system to say, well, this output document came from this source one. The source one is no longer accessible to this audience. Let's go in and validate that as well.\n\nSpeaker 2 | 13:03 - 13:16\nAnd so you have to start really building your technical architecture with awareness of the way that people are going to use this information. And it really changes how teams relate to each other because it really changes where the bottlenecks are and what's hard.\n\nSpeaker 1 | 13:17 - 13:25\nDo you think team sizes are going be a lot smaller? Are we going to have still human software engineers in a decade?\n\nSpeaker 2 | 13:25 - 13:46\nWell, a decade is a long time from now. And the ceiling on this technology is really hard to internalize. I think that it is clear that what a company is will change in a lot of ways. I think that we're going to have this ability for solopreneurs to build very incredible businesses. And so anyone who has a vision, I think, will be able to realize it.\n\nSpeaker 2 | 13:46 - 14:15\nI think the jobs that you all have will become way easier in a lot of ways, way more fun. Now, it might be more competitive too, because everyone's going have these amazing tools. And so really figuring out what is your niche, what is your unique angle, is probably going to become the most important core. But a lot of how we run organizations right now, and there's almost only one way to organize large groups of people, where you have teams, you have management structures, and you have scopes, you have these hierarchies and all these things, maybe that can change. Maybe you can be much more flat, small teams that can really just do incredible things.\n\nSpeaker 2 | 14:15 - 14:28\nWe're seeing it right now in mathematics, where these individuals on the internet are using GPT-five point four Pro to solve these unsolved math problems. Normally, we need a math team, and they're just doing it.\n\nSpeaker 1 | 14:28 - 14:34\nYeah. My son's a math nerd. I just told him that maybe we should be studying something else besides math.\n\nSpeaker 2 | 14:34 - 14:51\nBut I well, but see, this is the question. Right? If you look at something like AlphaGo, Move 37, this move that just, like, changed humanity's understanding of the game. But the thing that was surprising is it made the game more interesting and important for humans. And maybe that will be true for these other domains too.\n\nSpeaker 1 | 14:51 - 15:05\nTrue. What about common failure modes when you're building with production GenSync workflows? What do you see as the common things that founders get wrong and they're building incorrectly these days?\n\nSpeaker 2 | 15:05 - 15:29\nWell, I think that these models, they have such power and really understanding how to operate them well takes thought. And so we've been investing a lot in primitives, security primitives, observability, having, again, good governance, things like that. But just to give you one anecdote that I think is evocative, I asked so I was working with my codex. I asked it to install some package that someone at OpenAI had written. It ran into an error.\n\nSpeaker 2 | 15:29 - 15:38\nI was like, oh, ping that person on Slack and asked them for help. So I pinged the person on Slack. Two minutes later, it said, this is taking too long. I've escalated to the person's manager. And it actually pinged the person's manager.\n\nSpeaker 2 | 15:40 - 15:56\nAnd you realize it's like, on the one hand, it's kind of a reasonable thing for the model to do. It's being proactive. It's trying to solve my problem. It's like not just sitting around waiting to be told what to do. But on the other hand, like, you know, maybe it should have taken a little bit longer, maybe it should have checked with me.\n\nSpeaker 2 | 15:56 - 16:11\nAnd so I think that really thinking about these questions where we're still building up the EQ of the model and that in some places it's getting very good. For example, clicking approve, approve, approve is kind of where we've been. And humans are not very good at that either, right?\n\nSpeaker 1 | 16:11 - 16:12\nThey default.\n\nSpeaker 2 | 16:13 - 16:26\nThey just default. And so now we're starting to have AIs that can actually take care of flagging, is this a high risk action? Hey, this one should be escalated. This one's okay to auto approve. And it really makes you realize that human attention is going to be this incredibly scarce resource, right?\n\nSpeaker 2 | 16:26 - 16:36\nThe doing of things now is easy. The, is this a good thing? Is this what I wanted? Is this aligned with my values, with my desires? That is going to become the single most important bottleneck.\n\nSpeaker 2 | 16:36 - 16:43\nAnd so I think building systems that take that into account and really think about the human factor, that's the most important thing to do now.\n\nSpeaker 1 | 16:43 - 17:06\nAnother human factor is security. How would you advise people to think about security in this world of AI? And I just heard about breaches left and right with Vercel recently. These models are incredibly powerful at finding security holes. So how would you recommend people here use the models to find those security issues?\n\nSpeaker 2 | 17:06 - 17:38\nWell, I think there's a couple levels to the answer. I do think that this is I think that the Internet has been a place where security has been just like a a ratcheting important concern over time. You think about where it started going through the '90s with viruses and worms and malware and those things, and we've moved past that. I think we are also moving now to a much more ultimately secure regime, but it does require kind of an internet wide effort to get there. And so a lot of this honestly is just, again, leaning into the technology, having these models that can scan your code base, that can actually be used for end to end red teaming.\n\nSpeaker 2 | 17:38 - 18:05\nThere's a lot that can be done with them. And a lot of how we're thinking about further models and improvements there is really leaning into how do we actually leverage trusted access programs? How do we leverage the community of people who really care about being defenders and making the internet more secure? And I think that's something where everyone has a role to play and can participate. But the number one thing is just recognizing that these models are very powerful, but they're not magic, right?\n\nSpeaker 2 | 18:05 - 18:39\nThat they are just like a part of the overall resilience ecosystem. And I think that we as a society, and I think every company again, really contributes to this, have something to build in terms of how do we incorporate these in a way that results in more assurance and more sort of certainty on the impacts of whether it's this particular patch that you're taking, whether it's thinking about how do you make sure that you're just sort of rolling in updates quickly as they're being released. So I think that there's a lot of work to be done, but I have a lot of optimism for where this is going.\n\nSpeaker 1 | 18:40 - 19:02\nLet's switch to speed. It seems like things are moving faster and faster and faster in the world of accelerating change. We were talking about it when you were walking up here around how you're trying to keep up with things. How do you keep up with all the accelerating change? How would you recommend everybody here keep up with everything that's changing?\n\nSpeaker 2 | 19:02 - 19:16\nWell, I think this is the new normal. And I think to some extent, it's not really because of AI. I think it's just been the trend of technology for the past two decades. There's more people doing things. It's easier to do things than ever.\n\nSpeaker 2 | 19:16 - 19:37\nBarrier to entry goes down. It means it's also much more easy to build value, to have great successes. And so I think that really trying to keep your ear to the ground and understand what's changing and to some extent, always starts with the same thing, which is play with the technology yourself. It's very different to hear AI described versus to use it. But the beautiful thing about AI is it's so intuitive.\n\nSpeaker 2 | 19:37 - 20:03\nThat's the whole point, is rather than have the machine be something you have to contort yourself to, the machine contorts itself to you. It's doing work for you. And it should be something where you ask it and does something. And so I think that just really trying to just get your finger on the pulse of what's changing, what's possible, where the models lag, that is, I think, the core skill that is going to really determine a lot of the success of companies in the future.\n\nSpeaker 1 | 20:03 - 20:24\nAnd then on the flip side of that, you guys have held back models to work with security agents. So it's like the opposite of going as fast as possible. So you're doing things responsibly, too. So how do you think about the balance, because you're in a competitive environment. You want to ship as quickly as possible, and yet you're trying to do the right thing as well.\n\nSpeaker 2 | 20:24 - 21:06\nYeah. I think at a values level, like what OpenAI is about, we really want to put the power of AI in people's hands. We want to empower people to build the future with the tools that are being created, but we need to do that in a thoughtful way, that we really think about both sides of here are the benefits, here are the risks, how do you maximize the benefits, how do you mitigate those risks. And I think that in cybersecurity and in biosecurity, those are areas where we're very thoughtful. We've been building we've been working on these kinds of both mitigations and trusted access programs for quite a long time, and that what we see coming is models that are going to be increasingly powerful and capable in a continuous way across all dimensions of capability.\n\nSpeaker 2 | 21:07 - 21:20\nAnd we announced last week the expansion of our Trusted Access for Cyber program. By the way, has anyone here applied? No one? Oh, I see one hand, two hands. Okay, more of you should apply.\n\nSpeaker 2 | 21:20 - 22:10\nIt's great. We really need help because it's very important that people who are trustworthy and responsible and really want to push these models are participating in this because that is how that's going to pay dividends for everyone. We're going to have more to announce over upcoming weeks on how we're expanding the program, and also when we release models to everyone, kind of the mitigations that we have and how we're going to tune those to be both to really balance, to really try to bring these capabilities as broadly as possible while also making sure that the ones that you know, that we're thinking about the risks and and able to to have some observability over them and to ensure that this is maximally positive in terms of deployment. So I think the short answer is, like, it's core to our mission. We care a lot about the impacts of what we're doing, not just building the technology in isolation, but it is a whole community and a whole world effort to really get to where we need to be.\n\nSpeaker 1 | 22:11 - 22:25\nNow moving up from the models to the application layer, which is what a lot of people here are building, How do you how does OpenAI decide what in the application layer you're you're gonna build and what you're gonna leave out?\n\nSpeaker 2 | 22:26 - 22:35\nWell, people have probably seen the word focus being applied to OpenAI quite a lot recently, possibly for the first Always time smiling. In a while.\n\nSpeaker 1 | 22:36 - 22:37\nIt's been applied to her, too.\n\nSpeaker 2 | 22:38 - 23:06\nAnd it's hard because the field of AI is one of opportunity, right? It's like anything you can imagine is going to be great. No question, it's going to be great. And we, as a company, as a single company, no matter how much compute we build, no matter how many people we have, are only going to be able to do so much. And so a lot of we've been thinking about things is what is the sort of most focused strategy that covers the parts of the space?\n\nSpeaker 2 | 23:08 - 23:29\nMaybe it's an eightytwenty or just like the parts of the space that we think we can have most impact on. I think there it's very clear. Right now we're going through this agentic transition, and so products that are and it's not just about enterprise versus consumer, right? So it's like clear we are being very serious about enterprise. Like we're selling to to big companies and and building a whole muscle and sales motion there.\n\nSpeaker 2 | 23:29 - 23:54\nBut consumer what consumer is is going to change. Right? It's kind of a very broad term that buckets in multiple things. But the the slice of consumer that's about not just productivity, but about goals, about achieving your goal, about even knowing what is your goal, being able to elicit that and having an AI that can proactively do that, it's all kind of the same thing. Like in the end, we're trying to build an AGI that you can talk to, that has all this context that you can use in your personal life, your work life.\n\nSpeaker 2 | 23:54 - 24:22\nIt's trustworthy, that you can go to it for advice and give you useful information, maybe health information or maybe about finances or about if you're trying to figure out what to do with your career. All of these things, they all kind of ladder into one thing. And it's meant we had to make some very painful decisions about what not to do. But I think I would just say that that's the aperture that we look at things through and that things that accrue to that singular vision of what we want to build you should expect us to pursue.\n\nSpeaker 1 | 24:22 - 24:32\nGot it. Do you think we'll be coding with command lines and agents in a few years, or is it going to be completely changed?\n\nSpeaker 2 | 24:32 - 24:51\nI think that we're in a very unnatural state right now for how we work. Like we all sit behind this box and kind of type away, and it's very clear our bodies were not designed for this. We got our carpal tunnel and our hunched shoulders and all these things. And I don't think we want that. I don't think any of us wanted think that we want Want\n\nSpeaker 1 | 24:51 - 24:52\nmore free time?\n\nSpeaker 2 | 24:52 - 25:04\nWe want more time. But it's not even about free time necessarily. It's like you want to spend more time with your loved ones? Yes. You want to spend more time talking to people and coming up with brilliant visions or just what you're excited about or just understanding yourself.\n\nSpeaker 2 | 25:04 - 25:32\nSo it's kind of like, do you want to be a CEO of an organization of 100,000 agents? That actually seems pretty good. And I think that we're all going to be able to get so much more done. But the mechanics of it are going to feel as different as going from having to write out things by hand with a quill or something to being able to just send a text message and have people go and working on your behalf on your goals.\n\nSpeaker 1 | 25:32 - 25:49\nAll right. We talked about compute. We talked about model and security and agents and app layer. Let's talk about Frontier. When are the models going to be good enough to push the frontiers of science, physical AI?\n\nSpeaker 1 | 25:49 - 26:14\nWe had Jen Fang here. It seems like LLMs have been a great scaling law for digital intelligence. It hasn't been as strong for robotics, for physical intelligence, for aspects of biology and science where the problems are probably a lot harder to verify or takes a long time to verify. Well, how are you keeping track of science and physical AI in the world?\n\nSpeaker 2 | 26:14 - 26:56\nWell, science is one domain that we're really leaning into, and we see line of sight to really incredible progress. And we're starting to have some signs of life, and I think it's always important to ground in what is happening today when trying to predict what will happen six months, a year from now. So for example, we had a physics result where our AI came up with this very beautiful formula that physicists who've been working on this for quite some time thought was totally impossible, thought it was maybe an unsolvable problem. And it's pretty significant. It's real serious physicists who really view this as a step towards really being able to get to some sort of answer for quantum gravity and all these things.\n\nSpeaker 2 | 26:56 - 27:20\nIt's not there, but it's a step. That's much bigger than where we were just a couple of months ago. And so it makes you really wonder a year from now, how far will we have traveled? Now, things like biology, that they are different from physics and math, that they are, you've got to leave your beautiful simulated world and deal with messy reality. But I think we've been learning how to deal with messy reality in other domains.\n\nSpeaker 2 | 27:20 - 27:45\nSoftware engineering is a perfect example where we've really realized that just building the thing that solves programming competitions, that's not enough. You need something that's seen real world messy code bases, humans interrupting in different ways, this adversarial banging at it. And so I think that on science, I expect we're going to see a real renaissance. Maybe we'll see some big results this year. Next year, I think, is going to be a totally wild, wild time.\n\nSpeaker 1 | 27:46 - 28:03\nWe live in interesting times. I promise that I get you out on time because you're a busy man. Before we let you leave we've got one minute on the shot clock what since you have no time, but soon you will have lots of time, what do you and Anna do for fun?\n\nSpeaker 2 | 28:03 - 28:18\nFun? Mean, same as anyone. Like to watch movies, go on hikes, those kinds of things. Not as much time for it as maybe we'll hopefully have post AGI. But you've got to enjoy the ride along the way.\n\nSpeaker 1 | 28:18 - 28:21\nThank you, Greg, for joining us. Thank you, everyone."
+    }
+  ],
+  "blogs": [
+    {
+      "source": "blog",
+      "name": "Anthropic Engineering",
+      "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "publishedAt": null,
+      "author": "",
+      "description": "",
+      "content": "Get started with Claude Managed Agents by following our docs . A running topic on the Engineering Blog is how to build effective agents and design harnesses for long-running work . A common thread across this work is that harnesses encode assumptions about what Claude can’t do on its own. However, those assumptions need to be frequently questioned because they can go stale as models improve. As just one example, in prior work we found that Claude Sonnet 4.5 would wrap up tasks prematurely as it sensed its context limit approaching—a behavior sometimes called “context anxiety.” We addressed this by adding context resets to the harness. But when we used the same harness on Claude Opus 4.5, we found that the behavior was gone. The resets had become dead weight. We expect harnesses to continue evolving. So we built Managed Agents: a hosted service in the Claude Platform that runs long-horizon agents on your behalf through a small set of interfaces meant to outlast any particular implementation—including the ones we run today. Building Managed Agents meant solving an old problem in computing: how to design a system for “ programs as yet unthought of .” Decades ago, operating systems solved this problem by virtualizing hardware into abstractions— process, file —general enough for programs that didn&#x27;t exist yet. The abstractions outlasted the hardware. The read() command is agnostic as to whether it’s accessing a disk pack from the 1970s or a modern SSD. The abstractions on top stayed stable while the implementations underneath changed freely. Managed Agents follow the same pattern. We virtualized the components of an agent: a session (the append-only log of everything that happened), a harness (the loop that calls Claude and routes Claude’s tool calls to the relevant infrastructure), and a sandbox (an execution environment where Claude can run code and edit files). This allows the implementation of each to be swapped without disturbing the others. We&#x27;re opinionated about the shape of these interfaces, not about what runs behind them. Don’t adopt a pet We started by placing all agent components into a single container, which meant the session, agent harness, and sandbox all shared an environment. There were benefits to this approach, including that file edits are direct syscalls, and there were no service boundaries to design. But by coupling everything into one container, we ran into an old infrastructure problem: we’d adopted a pet . In the pets-vs-cattle analogy, a pet is a named, hand-tended individual you can’t afford to lose, while cattle are interchangeable. In our case, the server became that pet; if a container failed, the session was lost. If a container was unresponsive, we had to nurse it back to health. Nursing containers meant debugging unresponsive stuck sessions. Our only window in was the WebSocket event stream, but that couldn’t tell us where failures arose, which meant that a bug in the harness, a packet drop in the event stream, or a container going offline all presented the same. To figure out what went wrong, an engineer had to open a shell inside the container, but because that container often also held user data, that approach essentially meant we lacked the ability to debug. A second issue was that the harness assumed that whatever Claude worked on lived in the container with it. When customers asked us to connect Claude to their virtual private cloud, they had to either peer their network with ours, or run our harness in their own environment. An assumption baked into the harness became a problem when we wanted to connect it to different infrastructure. Decouple the brain from the hands The solution we arrived at was to decouple what we thought of as the “brain” (Claude and its harness) from both the “hands” (sandboxes and tools that perform actions) and the “session” (the log of session events). Each became an interface that made few assumptions about the others, and each could fail or be replaced independently. The harness leaves the container. Decoupling the brain from the hands meant the harness no longer lived inside the container. It called the container the way it called any other tool: execute(name, input) → string . The container became cattle. If the container died, the harness caught the failure as a tool-call error and passed it back to Claude. If Claude decided to retry, a new container could be reinitialized with a standard recipe: provision({resources}) . We no longer had to nurse failed containers back to health. Recovering from harness failure. The harness also became cattle. Because the session log sits outside the harness, nothing in the harness needs to survive a crash. When one fails, a new one can be rebooted with wake(sessionId) , use getSession(id) to get back the event log, and resume from the last event. During the agent loop, the harness writes to the session with emitEvent(id, event) in order to keep a durable record of events. The security boundary. In the coupled design, any untrusted code that Claude generated was run in the same container as credentials—so a prompt injection only had to convince Claude to read its own environment. Once an attacker has those tokens, they can spawn fresh, unrestricted sessions and delegate work to them. Narrow scoping is an obvious mitigation, but this encodes an assumption about what Claude can&#x27;t do with a limited token—and Claude is getting increasingly smart. The structural fix was to make sure the tokens are never reachable from the sandbox where Claude’s generated code runs. We used two patterns to ensure this. Auth can be bundled with a resource or held in a vault outside the sandbox. For Git, we use each repository’s access token to clone the repo during sandbox initialization and wire it into the local git remote. Git push and pull work from inside the sandbox without the agent ever handling the token itself. For custom tools, we support MCP and store OAuth tokens in a secure vault. Claude calls MCP tools via a dedicated proxy; this proxy takes in a token associated with the session. The proxy can then fetch the corresponding credentials from the vault and make the call to the external service. The harness is never made aware of any credentials. The session is not Claude’s context window Long-horizon tasks often exceed the length of Claude’s context window, and the standard ways to address this all involve irreversible decisions about what to keep. We’ve explored these techniques in prior work on context engineering. For example, compaction lets Claude save a summary of its context window and the memory tool lets Claude write context to files, enabling learning across sessions. This can be paired with context trimming, which selectively removes tokens such as old tool results or thinking blocks. But irreversible decisions to selectively retain or discard context can lead to failures. It is difficult to know which tokens the future turns will need. If messages are transformed by a compaction step, the harness removes compacted messages from Claude’s context window, and these are recoverable only if they are stored. Prior work has explored ways to address this by storing context as an object that lives outside the context window. For example, context can be an object in a REPL that the LLM programmatically accesses by writing code to filter or slice it. In Managed Agents, the session provides this same benefit, serving as a context object that lives outside Claude’s context window. But rather than be stored within the sandbox or REPL, context is durably stored in the session log. The interface, getEvents(), allows the brain to interrogate context by selecting positional slices of the event stream. The interface can be used flexibly, allowing the brain to pick up from wherever it last stopped reading, rewinding a few events before a specific moment to see the lead up, or rereading context before a specific action. Any fetched events can also be transformed in the harness before being passed to Claude’s context window. These transformations can be whatever the harness encodes, including context organization to achieve a high prompt cache hit rate and context engineering. We separated the concerns of recoverable context storage in the session and arbitrary context management in the harness because we can’t predict what specific context engineering will be required in future models. The interfaces push that context management into the harness, and only guarantee that the session is durable and available for interrogation. Many brains, many hands Many brains. Decoupling the brain from the hands solved one of our earliest customer complaints. When teams wanted Claude to work against resources in their own VPC, the only path was to peer their network with ours, because the container holding the harness assumed every resource sat next to it. Once the harness was no longer in the container, that assumption went away. The same change had a performance payoff. When we initially put the brain in a container, it meant that many brains required as many containers. For each brain, no inference could happen until that container was provisioned; every session paid the full container setup cost up front. Every session, even ones that would never touch the sandbox, had to clone the repo, boot the process, fetch pending events from our servers. That dead time is expressed in time-to-first-token (TTFT), which measures how long a session waits between accepting work and producing its first response token. TTFT is the latency the user most acutely feels . Decoupling the brain from the hands means that containers are provisioned by the brain via a tool call (execute(name, input) → string) only if they are needed. So a session that didn&#x27;t need a container right away didn&#x27;t wait for one. Inference could start as soon as the orchestration layer pulled pending events from the session log. Using this architecture, our p50 TTFT dropped roughly 60% and p95 dropped over 90%. Scaling to many brains just meant starting many stateless harnesses, and connecting them to hands only if needed. Many hands. We also wanted the ability to connect each brain to many hands. In practice, this means Claude must reason about many execution environments and decide where to send work—a harder cognitive task than operating in a single shell. We started with the brain in a single container because earlier models weren&#x27;t capable of this. As intelligence scaled, the single container became the limitation instead: when that container failed, we lost state for every hand that the brain was reaching into. Decoupling the brain from the hands makes each hand a tool, execute(name, input) → string : a name and input go in, and a string is returned. That interface supports any custom tool, any MCP server, and our own tools. The harness doesn’t know whether the sandbox is a container, a phone, or a Pokémon emulator. And because no hand is coupled to any brain, brains can pass hands to one another. Conclusion The challenge we faced is an old one: how to design a system for “programs as yet unthought of.” Operating systems have lasted decades by virtualizing the hardware into abstractions general enough for programs that didn&#x27;t exist yet. With Managed Agents, we aimed to design a system that accommodates future harnesses, sandboxes, or other components around Claude. Managed Agents is a meta-harness in the same spirit, unopinionated about the specific harness that Claude will need in the future. Rather, it is a system with general interfaces that allow many different harnesses. For example, Claude Code is an excellent harness that we use widely across tasks. We’ve also shown that task-specific agent harnesses excel in narrow domains. Managed Agents can accommodate any of these, matching Claude’s intelligence over time. Meta-harness design means being opinionated about the interfaces around Claude: we expect that Claude will need the ability to manipulate state (the session) and perform computation (the sandbox). We also expect that Claude will require the ability to scale to many brains and many hands. We designed the interfaces so that these can be run reliably and securely over long time horizons. But we make no assumptions about the number or location of brains or hands that Claude will need. Acknowledgements Written by Lance Martin, Gabe Cemaj, and Michael Cohen. Thanks to Nodir Turakulov and Jeremy Fox for helpful conversations on these topics. Special thanks to the Agents API team and Jake Eaton for their contributions."
+    }
+  ],
+  "stats": {
+    "xBuilders": 11,
+    "totalTweets": 23,
+    "podcastEpisodes": 1,
+    "blogPosts": 1,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
