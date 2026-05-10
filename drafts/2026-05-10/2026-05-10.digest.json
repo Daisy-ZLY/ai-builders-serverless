@@ -1,0 +1,365 @@
+{
+  "date": "2026-05-10",
+  "title": "AI早报：Claude Mythos预览版性能翻倍，HTML取代Markdown趋势初现，企业Token预算管理成新课题",
+  "intro": "今日焦点：Claude Mythos预览版在自主任务基准测试中性能翻倍，引发对AI Agent能力的关注；开发者社区出现从Markdown转向HTML的趋势，AI编码工具正改变工作流；企业开始重视Token预算管理，预示AI资源分配新范式。此外，实时AI副驾、本地长上下文模型等创新涌现，AI行业信息差带来投资机会。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Swyx",
+      "title": "AI编码工具与开发者体验的行业关注度变化",
+      "originalText": "@nikitabier @business bloomberg being suddenly interested in your take on developer experience and ai coding tools is the new \"sexy singles in your area\"",
+      "chineseInterpretation": "Swyx 调侃 Bloomberg 突然对开发者体验和 AI 编码工具感兴趣，就像弹出广告一样突兀。这反映了主流财经媒体开始追逐 AI 编码工具的热点，但 Swyx 认为这种关注可能流于表面，缺乏深度。",
+      "tldr": "就像以前突然弹出“你附近有美女”的广告一样，现在 Bloomberg 这类大媒体突然开始追捧 AI 编程工具的话题，显得有点刻意和跟风。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/swyx/status/2052782201486598523"
+      ],
+      "topicTags": [
+        "AI编码工具",
+        "开发者体验",
+        "媒体关注"
+      ],
+      "personTags": [
+        "开发者",
+        "行业观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Amanda Askell",
+      "title": "AI对齐研究需要正面愿景",
+      "originalText": "Alignment research often has to focus on averting concerning behaviors, but I think the positive vision for this kind of training is one where we can give models and honest and positive vision for what AI models can be and why. I'm excited about the future of this work.",
+      "chineseInterpretation": "Amanda Askell 指出，当前 AI 对齐研究往往侧重于防止模型出现有害行为，但她认为更重要的方向是构建一个正面愿景：让模型不仅安全，还能诚实、积极地展现 AI 的潜力。她对此充满期待。这反映了对齐研究从“防御性”向“建设性”的转变趋势。",
+      "tldr": "AI安全研究不能只想着怎么不让AI干坏事，还得想想怎么让AI做好事、说真话，这才是未来方向。",
+      "proView": "如果对齐研究能成功注入正面愿景，未来的 AI 模型将更值得信赖，用户会更愿意与 AI 协作，从而加速 AI 在医疗、教育等领域的积极应用。",
+      "conView": "但正面愿景可能被滥用，例如模型可能以“诚实”为名输出有害信息，或“积极”变成过度乐观的误导。此外，定义“正面”本身存在主观性，不同文化背景下的标准可能冲突。",
+      "clue": "关注 Anthropic 等机构是否发布关于“正面对齐”的具体技术报告或训练方法，以及模型在诚实性测试（如 TruthfulQA）上的表现变化。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/AmandaAskell/status/2052928572810256748"
+      ],
+      "topicTags": [
+        "AI对齐",
+        "模型安全",
+        "正面愿景",
+        "Anthropic"
+      ],
+      "personTags": [
+        "研究员"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Thariq",
+      "title": "HTML is the new markdown",
+      "originalText": "HTML is the new markdown. I've stopped writing markdown files for almost everything and switched to using Claude Code to generate HTML for me. This is why.",
+      "chineseInterpretation": "Thariq 提出一个有趣的观点：在 AI 时代，HTML 正在取代 Markdown 成为新的默认文档格式。他本人已经几乎不再手写 Markdown，而是让 Claude Code 直接生成 HTML。这意味着 AI 可以轻松处理 HTML 的复杂性，而人类只需关注内容，不再需要为格式妥协。这反映了 AI 辅助编程的一个趋势：开发者可以更直接地使用功能更强大的格式，因为 AI 承担了繁琐的编码工作。",
+      "tldr": "以前大家写文档喜欢用 Markdown 因为简单，但现在 AI 能直接帮你生成更复杂的 HTML，所以 Thariq 说干脆直接用 HTML 得了，反正 AI 会搞定一切。",
+      "proView": "如果这一趋势成立，开发者将不再需要学习 Markdown 等简化语法，可以直接用 HTML 实现更丰富的排版和交互，AI 自动生成代码将大幅提升文档和网页的创作效率。",
+      "conView": "但另一面是：Markdown 的简洁性和可读性对于人类协作和版本控制仍有优势，完全依赖 AI 生成 HTML 可能引入不必要的复杂度，且 AI 生成的代码未必总是最优或安全。",
+      "clue": "观察 Claude Code 等 AI 工具生成 HTML 的质量和稳定性，以及开发者社区是否真的开始大规模放弃 Markdown。",
+      "relevance": "高",
+      "links": [
+        "https://t.co/QuTMbHtdlc"
+      ],
+      "topicTags": [
+        "AI编程",
+        "HTML",
+        "Markdown",
+        "Claude Code"
+      ],
+      "personTags": [
+        "开发者",
+        "AI观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Alex Albert",
+      "title": "Claude Mythos Preview在METR基准测试中表现领先",
+      "originalText": "An early Claude Mythos Preview snapshot we provided METR has a time horizon of more than 2x the next best model on their 80% success rate benchmark",
+      "chineseInterpretation": "Alex Albert透露，Claude Mythos预览版在METR的80%成功率基准测试中，时间跨度（即模型能持续自主完成任务的时间）是次优模型的两倍以上。这意味着该模型在长时间自主执行复杂任务方面有显著提升，可能对AI agent和自动化领域产生重要影响。",
+      "tldr": "Claude的新版本在长时间自主完成任务的能力上，比目前最好的模型还要强一倍多。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://x.com/alexalbert__/status/2052899864493830590"
+      ],
+      "topicTags": [
+        "Claude",
+        "AI基准测试",
+        "自主任务",
+        "模型性能"
+      ],
+      "personTags": [
+        "研究员",
+        "产品负责人"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "Token预算管理将成为企业新课题",
+      "originalText": "A common trend emerging in larger enterprises is token budgeting as a major topic. As agents can do more and more long running tasks, and thus take vastly more compute, allocation of tokens across teams becomes a very real thing in the enterprise.\n\nCompanies spend a meaningful amount of time deciding how much to spend on talent, marketing campaigns, events, laptop setups, and even the cost of lunches. Tokens will be no different.\n\nTokens will similarly need to be excruciatingly well-managed because you’ll need to ensure you don’t blow up your budget, and you’ll need to ensure that the tokens are flowing to the highest and most useful parts of work. You don’t want to find out you burned your monthly budget on something relatively low value and then be blocked on the much higher value task later. \n\nDoing this at large company scale is extremely hard as you have layers of abstraction on data and visibility into the digital work being done by agents in any central way. This is going to mean that agentic spend will increasingly will expand beyond the confines of the IT budget, and end up in organizational budgets like other expenses. \n\nUltimately team and org leaders will have to be given budgets for this, but even they don’t have adequate visibility and controls in most cases. We’ll need all new software just to solve this problem, and it’s probably an opportunity for startups in its own right.\n\nGoing to be an all new era of enterprise resource allocation, especially while we compute constrained.",
+      "chineseInterpretation": "Aaron Levie 观察到大型企业正在将 token 预算管理提上日程。随着 AI agent 能执行更复杂的长期任务，消耗的计算资源大幅增加，企业需要像管理人力、营销等预算一样，精细分配 token 资源，避免低价值任务消耗预算而高价值任务受阻。他认为这需要全新的软件工具来提供可见性和控制，对初创公司是机会。",
+      "tldr": "企业以后得像管钱一样管 AI 的 token 用量，不然一不小心就把预算花在没用的任务上，真正重要的活反而没钱干了。",
+      "proView": "如果 token 预算管理成为刚需，将会催生一批专门做 AI 成本监控和资源分配的 SaaS 工具，类似当年的云成本管理市场。企业组织架构也可能调整，出现类似“AI 资源经理”的新角色。",
+      "conView": "但 token 成本下降速度可能比想象中快，就像云计算价格逐年降低，未来 token 可能不再稀缺，精细化管理的重要性会减弱。另外，大模型本身也在优化效率，单位任务消耗 token 数会持续减少。",
+      "clue": "关注主流大模型 API 价格走势和 token 消耗效率提升速度；观察是否有企业级 token 管理平台获得融资或大客户。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2052903105256382679"
+      ],
+      "topicTags": [
+        "AI agent",
+        "企业预算管理",
+        "Token经济",
+        "SaaS机会"
+      ],
+      "personTags": [
+        "创业者",
+        "企业高管"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Garry Tan",
+      "title": "个人软件时代来临：1M token上下文窗口的本地编码Agent",
+      "originalText": "Personal software is coming. Downloading now... 1M token context window with supposedly usable coding agent capability all on a 128GB Macbook Pro is 🤯",
+      "chineseInterpretation": "Garry Tan（YC CEO）兴奋地宣布个人软件时代到来，他正在下载一个能在128GB Macbook Pro上本地运行的模型，拥有1M token上下文窗口和可用的编码agent能力。这意味着开发者可以在本地硬件上运行接近GPT-4级别的长上下文AI，无需依赖云端API，隐私和延迟问题将大幅改善。",
+      "tldr": "Garry Tan说以后AI软件可以完全跑在你的个人电脑上，不用联网，就像手机从功能机变成智能机一样，他正在试用一个能装下整本书的上下文、还能帮你写代码的本地AI。",
+      "proView": "如果本地1M上下文编码Agent真的可用，将催生新一代个人AI应用：开发者可以离线处理大型代码库、进行全项目重构，甚至运行私有数据训练的小模型。YC投资的初创公司可能会围绕本地AI构建新的开发工具链。",
+      "conView": "但128GB内存门槛过高，普通开发者难以负担；且本地模型能力通常弱于云端模型，1M上下文的有效利用率存疑。历史上类似本地AI产品（如Alpaca）因性能差距未能普及。",
+      "clue": "关注该模型的实际编码任务完成率、上下文检索准确率，以及是否支持M1/M2芯片的MacBook Air等低端设备。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/garrytan/status/2052996691586932783"
+      ],
+      "topicTags": [
+        "个人软件",
+        "本地AI",
+        "编码Agent",
+        "长上下文",
+        "Macbook Pro"
+      ],
+      "personTags": [
+        "投资人",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Matt Turck",
+      "title": "AI Agent定价模式思考：从纯消耗到席位制",
+      "originalText": "The more I think about AI agents, the less obvious it is that pricing goes purely consumption-based. Token costs matter... but enterprise agents may need identities, roles, auth, budgets, audit logs etc. That sounds oddly seat-like? just not human-seat-like",
+      "chineseInterpretation": "Matt Turck 认为 AI agent 的定价模式不会完全是按 token 消耗计费，因为企业级 agent 需要身份、角色、权限、预算、审计日志等管理功能，这听起来很像传统的席位制（seat-based），只是不是给人用的席位。他暗示未来 agent 的定价可能更接近按“agent 实例”或“agent 身份”收费，而非纯用量。",
+      "tldr": "AI agent 的收费可能不是按使用量（比如 token 数）来算，而是像企业软件一样按“一个 agent 一个坑”来收钱，只不过这个坑不是给人坐的，是给 AI 坐的。",
+      "proView": "如果 agent 定价转向席位制，企业采购会更可预测，类似 SaaS 订阅模式，有利于预算规划和成本控制。同时，身份和权限管理会成为 agent 平台的核心差异化功能，推动企业级 agent 基础设施的成熟。",
+      "conView": "但纯消耗模式在 AI 领域仍有优势，比如按 token 计费更灵活，适合使用量波动大的场景。席位制可能抑制小规模或实验性使用，且 agent 数量可能远多于人类员工，导致总成本失控。",
+      "clue": "观察主流 agent 平台（如 OpenAI、Anthropic、Google）的定价公告，看是否出现按 agent 实例或身份收费的选项，以及企业客户的实际采购偏好。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/mattturck/status/2052839798063112303"
+      ],
+      "topicTags": [
+        "AI Agent",
+        "定价模式",
+        "企业级应用"
+      ],
+      "personTags": [
+        "投资人",
+        "分析师"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Zara Zhang",
+      "title": "YouTube实时AI副驾与GPT实时2 API的突破",
+      "originalText": "Built a \"YouTube realtime copilot\" browser extension using OpenAI's realtime 2 API: The agent watches the video alongside you, and can answer any question you have about what was just said via realtime voice chat. The crazy part to me is: It can differentiate the YouTube's audio stream and your voice, so it doesn't confuse the video as commands, and stays silent unless you ask something!",
+      "chineseInterpretation": "Zara Zhang用OpenAI的realtime 2 API构建了一个YouTube实时副驾浏览器扩展，能区分视频音频和用户语音，实现静默监听、按需回答。这展示了realtime API在音频流处理上的突破，类似MCP但更聚焦实时交互。对前端开发者而言，这种能力可扩展到直播、会议等场景，但需注意延迟和隐私问题。",
+      "tldr": "她做了一个浏览器插件，能一边看YouTube一边用语音问问题，AI只回答你的问题，不会把视频里的声音当成命令。就像有个懂行的朋友在旁边，你不说话他就不吭声。",
+      "proView": "如果realtime 2 API的音频流区分能力成熟，将催生大量实时AI助手应用，如教育、会议、直播等场景，用户可随时打断提问，提升交互自然度。",
+      "conView": "但音频流区分在嘈杂环境或多人对话中可能失效，且实时语音交互的延迟和成本仍是瓶颈，历史类似产品如Google Duplex也曾面临实用化挑战。",
+      "clue": "关注OpenAI realtime 2 API的延迟指标和音频分离准确率，以及是否有更多开发者复现类似功能。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/zarazhangrui/status/2052977849267892339"
+      ],
+      "topicTags": [
+        "实时AI",
+        "浏览器扩展",
+        "语音交互",
+        "OpenAI API"
+      ],
+      "personTags": [
+        "开发者",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Steinberger",
+      "title": "Codex技能越多，提示越少",
+      "originalText": "The more skills you give codex, the less you have to prompt.",
+      "chineseInterpretation": "Peter Steinberger 指出，给 AI 编码助手（Codex）赋予更多技能（如工具调用、上下文理解），就能减少人工提示。这反映了 AI 从被动响应向主动智能的演进，类似 agent 模式，通过预置能力降低用户交互成本。",
+      "tldr": "给AI装更多技能包，你就不用老指挥它了。就像给助手配好工具箱，他自然知道该用哪个。",
+      "proView": "如果这一趋势成立，未来 AI 工具将更自主，用户只需定义目标，AI 自动拆解执行，极大提升开发效率。",
+      "conView": "但技能过多可能导致黑箱问题，用户难以控制细节，且技能泛化可能引入错误，需要更严格的验证机制。",
+      "clue": "观察 Codex 等工具是否逐步集成更多内置功能（如调试、测试生成），以及用户提示量是否显著下降。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/steipete/status/2052971550966440251"
+      ],
+      "topicTags": [
+        "AI编程助手",
+        "Codex",
+        "提示工程",
+        "Agent"
+      ],
+      "personTags": [
+        "开发者",
+        "技术专家"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Dan Shipper",
+      "title": "AI 市场机会：利用信息差提前布局 Codex",
+      "originalText": "Generational opportunity for anyone in AI to play the markets given this time lag. Guarantee everyone is psyched about Codex in a few months. Invest accordingly. Evidence that everyone at Milken is 3-4 months behind",
+      "chineseInterpretation": "Dan Shipper 观察到 AI 行业存在显著的信息滞后现象，比如 Milken 大会上的参与者比前沿进展落后 3-4 个月。他认为这是一个代际级别的市场机会，建议提前布局 Codex（可能是 OpenAI 的代码生成工具或相关产品），因为几个月后大众会对其兴奋。这本质上是利用认知差进行投资。",
+      "tldr": "大佬说现在 AI 圈的信息传播有延迟，比如大公司高层还在聊几个月前的老话题。他赌 Codex 几个月后会火，所以现在赶紧投资相关的东西，等别人反应过来就晚了。",
+      "proView": "如果信息滞后确实存在，那么提前布局被低估的 AI 工具（如 Codex）将获得超额回报。这类似于早期投资 ChatGPT 或 Midjourney 的机会，先发优势明显。",
+      "conView": "但信息差可能被高估：Milken 参会者未必代表市场整体，且 Codex 的普及可能受限于技术成熟度或竞争（如 GitHub Copilot）。此外，提前布局需要精准判断时间点，过早入场可能承受资金占用成本。",
+      "clue": "关注 Codex 的公开采用数据（如 GitHub 集成量、开发者社区讨论热度）以及竞争对手动态。如果 3 个月内主流媒体开始密集报道，则验证了 Dan 的判断。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/danshipper/status/2052865144066097217",
+        "https://x.com/danshipper/status/2052864131573715225"
+      ],
+      "topicTags": [
+        "AI投资",
+        "信息差",
+        "Codex",
+        "市场机会"
+      ],
+      "personTags": [
+        "创业者",
+        "投资人"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "name": "AI & I by Every",
+      "title": "The Secrets of Claude's Platform From the Team Who Built It",
+      "chineseInterpretation": "Anthropic平台产品负责人Angela和工程负责人Caitlin深入解析了Claude平台从简单API到托管代理的演进逻辑，强调平台的核心使命是让开发者以最小工作量获得最佳模型输出。他们指出，当前构建代理的真正瓶颈并非模型能力或提示工程，而是生产化基础设施（如状态管理、安全沙箱、长时运行等）的复杂性。未来一年，平台将朝着“仅需定义目标和预算，Claude自动选择模型、编排子代理”的方向演进，实现模型与框架的深度耦合。",
+      "tldr": "Claude平台正在从API进化到托管代理，帮你省掉基础设施的麻烦，未来你只需告诉Claude目标和预算，它自己搞定一切。",
+      "links": [
+        "https://www.youtube.com/watch?v=lLypHkIVLqc"
+      ],
+      "topicTags": [
+        "Claude平台",
+        "托管代理",
+        "AI基础设施",
+        "模型与框架耦合",
+        "多代理编排",
+        "生产化部署"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "HTML is the new markdown",
+          "summary": "开发者开始用AI直接生成HTML替代Markdown，简化文档工作流。",
+          "implication": "前端团队应评估AI生成HTML的质量和效率，考虑在文档、组件库中引入AI辅助生成，减少手动编写Markdown的维护成本。",
+          "sourceUrl": "https://t.co/QuTMbHtdlc"
+        },
+        {
+          "title": "YouTube实时AI副驾与GPT实时2 API的突破",
+          "summary": "利用OpenAI实时API构建浏览器扩展，实现视频内容实时问答。",
+          "implication": "前端可探索将实时语音交互集成到Web应用中，如在线教育、会议助手，但需关注延迟和隐私问题。",
+          "sourceUrl": "https://x.com/zarazhangrui/status/2052977849267892339"
+        },
+        {
+          "title": "个人软件时代来临：1M token上下文窗口的本地编码Agent",
+          "summary": "本地模型实现1M上下文和编码Agent能力，可在Macbook Pro上运行。",
+          "implication": "前端开发工具链可能转向本地AI，提升离线编码体验和隐私保护，但需关注硬件门槛和模型能力。",
+          "sourceUrl": "https://x.com/garrytan/status/2052996691586932783"
+        }
+      ],
+      "actions": [
+        "调研AI生成HTML工具（如Claude Code）在组件文档生成中的效果",
+        "试点集成实时语音API到内部工具或产品原型",
+        "评估本地AI模型在代码审查、重构中的可行性"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "Token预算管理将成为企业新课题",
+          "summary": "企业需像管理预算一样管理AI Token消耗，避免低价值任务占用资源。",
+          "implication": "后端架构需设计Token监控和配额系统，支持按团队、任务分配资源，并考虑成本优化策略。",
+          "sourceUrl": "https://x.com/levie/status/2052903105256382679"
+        },
+        {
+          "title": "AI Agent定价模式思考：从纯消耗到席位制",
+          "summary": "企业级Agent可能需要身份、权限管理，推动按席位定价。",
+          "implication": "后端需构建Agent身份认证、权限控制和审计日志系统，支持多租户和资源隔离。",
+          "sourceUrl": "https://x.com/mattturck/status/2052839798063112303"
+        },
+        {
+          "title": "Claude Mythos Preview在METR基准测试中表现领先",
+          "summary": "Claude Mythos在自主任务时间跨度上超越竞品两倍。",
+          "implication": "后端架构需支持长时间运行的Agent任务，包括状态持久化、故障恢复和资源调度。",
+          "sourceUrl": "https://x.com/alexalbert__/status/2052899864493830590"
+        }
+      ],
+      "actions": [
+        "设计Token消耗监控和配额管理API",
+        "调研Agent身份管理方案，集成OAuth/RBAC",
+        "评估长时任务架构，引入事件溯源或工作流引擎"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "AI 市场机会：利用信息差提前布局 Codex",
+          "summary": "AI行业存在3-4个月信息滞后，提前布局Codex等工具可获先发优势。",
+          "implication": "产品经理应关注前沿AI工具动态，识别信息差，快速将新能力融入产品路线图。",
+          "sourceUrl": "https://x.com/danshipper/status/2052865144066097217"
+        },
+        {
+          "title": "AI对齐研究需要正面愿景",
+          "summary": "AI安全研究应从防御转向建设，构建诚实积极的模型愿景。",
+          "implication": "产品设计需平衡安全与价值，在功能中融入透明度和用户控制，建立信任。",
+          "sourceUrl": "https://x.com/AmandaAskell/status/2052928572810256748"
+        },
+        {
+          "title": "The Secrets of Claude's Platform From the Team Who Built It",
+          "summary": "Claude平台正从API演进到托管代理，未来只需定义目标和预算。",
+          "implication": "产品经理可规划基于代理的自动化工作流，降低用户操作复杂度，提升效率。",
+          "sourceUrl": "https://www.youtube.com/watch?v=lLypHkIVLqc"
+        }
+      ],
+      "actions": [
+        "建立AI工具跟踪机制，定期评估新能力对产品的潜在影响",
+        "在用户调研中纳入AI信任和透明度需求",
+        "设计代理化功能原型，验证用户对自动化工作流的接受度"
+      ]
+    }
+  ]
+}
