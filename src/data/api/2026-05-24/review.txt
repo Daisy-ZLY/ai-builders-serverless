@@ -1,0 +1,27 @@
+Review ID: 2026-05-24T01-51-23
+Date: 2026-05-24
+Status: awaiting_human_review
+Policy: manual_review
+Quality: fail (4 issues)
+Risk: high
+Recommended action: manual_check
+
+Summary:
+质量守门未通过，已回退为人工审核。
+
+Highlights:
+- 无重点条目
+
+Issues:
+- [high] builder_missing_dialectic @ builders[0]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[4]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[5]: Builder is missing dialectic fields
+- [high] builder_missing_dialectic @ builders[6]: Builder is missing dialectic fields
+
+Artifacts:
+- Markdown: drafts/2026-05-24/2026-05-24.md
+- Digest JSON: drafts/2026-05-24/2026-05-24.digest.json
+- Prepared JSON: drafts/2026-05-24/2026-05-24.prepared.json
+
+Actions:
+approve | rewrite | save_only
