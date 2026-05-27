@@ -1,0 +1,251 @@
+{
+  "date": "2026-05-27",
+  "title": "AI早报：Agent开发范式反转、VC亲自下场、WASM优化与AI就业乐观论",
+  "intro": "今日焦点：AI Agent开发范式从MVP转向系统化基础设施搭建，VC亲自下场构建以保持前沿，WebAssembly在体积优化上展现优势，同时高盛CEO对AI就业前景持乐观态度。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Peter Yang",
+      "title": "AI编码工具对比与Agent时代开发范式转变",
+      "originalText": "Codex is very good. I'm especially impressed by how it uses the browse to test its own work. But any design related / frontend tasks, Claude still wins. You have to think of tokenmaxxing as eating crab legs at the buffet. The buffet (all you can eat AI plans) is not going to last forever so you better eat all the crab legs while you still can. What used to feel like procrastination (building systems instead of the MVP) is now a prerequisite to ship effectively with AI agents. My number 1 lesson from @ryancarson: \"We used to say just do the bare minimum to get the MVP out. Don't spend time on systems. It's literally reversed now. You have to spend a lot of time setting up your documentation. Build all that into a cron job with a skill file, and suddenly you're doing the work of 10 people.\"",
+      "chineseInterpretation": "Peter Yang 对比了 Codex 和 Claude 在编码任务上的表现：Codex 擅长通过浏览测试自身代码，但设计和前端任务上 Claude 仍占优。他还用自助餐吃蟹腿比喻当前AI无限token计划的不可持续性，建议开发者趁现在大量使用。最核心的观点来自 Ryan Carson：在AI Agent时代，开发范式已反转——过去MVP强调最小可行产品，现在必须先花大量时间搭建系统（文档、cron job、skill file），才能让AI高效工作，实现10倍效率。",
+      "tldr": "现在做AI应用开发，得先花时间搭好系统框架和文档，就像给AI搭好脚手架，它才能帮你干10个人的活。另外，现在AI的无限token计划就像自助餐，趁还没涨价赶紧多用。",
+      "proView": "如果AI Agent确实需要系统化基础设施才能高效工作，那么未来开发者的核心能力将从写代码转向设计AI工作流和知识体系，催生新的\"AI架构师\"角色。同时，无限token计划一旦结束，提前建立高效token使用习惯的团队将获得成本优势。",
+      "conView": "但过度强调系统搭建可能导致过早优化，尤其对于探索性项目，MVP思维仍有价值。另外，AI模型能力快速迭代，今天需要复杂系统才能完成的任务，未来可能被模型原生能力直接解决。",
+      "clue": "观察主流AI编码工具（如Cursor、Copilot）的更新方向：是否越来越强调项目级配置、文档索引、自定义指令等系统化功能。同时关注AI定价模式变化，特别是token计费策略的调整。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/petergyang/status/2059099566377693305",
+        "https://x.com/petergyang/status/2059070818798465330",
+        "https://x.com/petergyang/status/2059029752858775581"
+      ],
+      "topicTags": [
+        "AI编码工具",
+        "Agent开发范式",
+        "token经济学",
+        "MVP方法论",
+        "前端开发"
+      ],
+      "personTags": [
+        "产品经理",
+        "开发者",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "Goldman Sachs CEO反驳AI导致失业的悲观论调",
+      "originalText": "The CEO of Goldman Sachs is taking the other side on the pessimistic takes on AI and jobs. ... When you move from believing the world is static and you'll have a better view of how jobs evolve due to AI.",
+      "chineseInterpretation": "Aaron Levie引用高盛CEO的观点，认为AI不会导致大规模失业，因为历史表明技术进步只会提高期望和需求，从而创造更多工作。例如，金融分析、法律咨询、医疗等服务会变得更全面、更个性化，而不是被AI完全取代。关键在于市场动态竞争：部分玩家利用AI提升质量，迫使所有人跟进，最终整体产出和就业都增加。",
+      "tldr": "AI不会抢走工作，反而会让工作要求更高、花样更多，就像以前电脑普及后工作反而变多了，因为大家想要的东西更多了。",
+      "proView": "如果这个观点成立，AI将推动各行各业服务升级，催生新岗位（如AI训练师、数据标注员、个性化服务设计师），同时现有岗位会变得更复杂、更有价值，而非消失。",
+      "conView": "但另一面是：历史类比可能失效，因为AI的自动化能力远超以往，可能同时替代大量白领和蓝领工作，而新岗位的创造速度和数量未必能跟上。例如，工业革命初期确实有结构性失业。",
+      "clue": "关键指标：未来5年内，被AI替代的岗位数量与新增岗位数量的对比；以及薪资水平是否两极分化。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2059025559896883489"
+      ],
+      "topicTags": [
+        "AI与就业",
+        "技术乐观主义",
+        "经济影响"
+      ],
+      "personTags": [
+        "CEO",
+        "技术观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Garry Tan",
+      "title": "Agent自我改进：LLM作为评判者的eval循环",
+      "originalText": "By evals I mean literally tell the agent: given what we discussed about what we are doing and why and what happened, use three different frontier models to look at inputs and outputs of your skill file calling the code, and rate it on effectiveness. Why isn’t it a 10? How could it be made to be so? Run this a few times and you will be surprised how fast it gets astonishingly better. And since it is in a skill file plus code with evals (LLM as judge) and unit tests, it stays better forever.",
+      "chineseInterpretation": "Garry Tan 提出了一种 agent 自我改进的方法：让 agent 使用多个前沿模型（如 GPT-4、Claude）作为评判者，评估自身 skill file 调用代码的效果，并迭代优化。这种方法结合了 LLM as judge 和单元测试，使得改进持久化。他认为这是通往 abundance 时代的关键技术，并预言 prompters 将联合起来。",
+      "tldr": "让AI自己当裁判，反复检查自己干活好不好，然后自动改进，越改越好，而且改完不会退步。",
+      "proView": "如果这种方法普及，agent 将能自主迭代优化，大幅降低人工调优成本，加速 AI 应用部署，推动自动化水平提升。",
+      "conView": "但 LLM as judge 可能产生自我强化偏差，且依赖多个前沿模型成本较高，eval 质量受限于评判模型的水平。",
+      "clue": "观察 agent 在多次 eval 循环后是否真正提升任务完成率，以及是否出现过度拟合 eval 指标的现象。",
+      "relevance": "高",
+      "links": [],
+      "topicTags": [
+        "AI Agent",
+        "自我改进",
+        "LLM作为评判者",
+        "自动化",
+        "技能文件"
+      ],
+      "personTags": [
+        "投资人",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Nikunj Kothari",
+      "title": "VC亲自下场：在AI时代，只有动手构建才能保持前沿",
+      "originalText": "It’s hilarious how many people DM me every week asking “aren’t you a VC, why are you building”.. Brother, the space is moving so fast that the only way you can learn and stay at the frontier is by building. Priors need to be rethought every few months. It’s also SO much fun to explore the edges of these models and discover new capabilities that haven’t been documented yet. I also find it absurd that how can you NOT be curious and redo how you do work. We have alien super intelligence in our hands and you want to spend hours doing it the same way just because it’s comfortable? Automate or get automated is the bitter lesson we all need to learn. And have a lot of fun along the way :)",
+      "chineseInterpretation": "Nikunj Kothari 作为VC，却亲自下场做产品，这反映了AI行业的一个核心趋势：技术迭代太快，光看项目、读报告已经不够了，必须亲手写代码、调模型才能保持敏锐。他提到“每几个月就要推翻旧认知”，说明AI领域没有永恒的真理，只有持续实验才能发现模型的新能力。最后那句“自动化或被自动化”是给所有人的警醒：别因为舒适而拒绝改变，否则就会被淘汰。",
+      "tldr": "别光动嘴皮子，自己动手干才能跟上AI的节奏。就像学游泳，站在岸上看永远学不会，得跳进水里扑腾。",
+      "proView": "如果更多VC和决策者亲自下场构建，行业会减少很多纸上谈兵的投资，更多资源会流向真正有技术深度的项目。同时，这种“动手文化”会加速AI应用层的创新，因为一线经验能更快发现模型的边界和商业机会。",
+      "conView": "但VC的核心价值在于资本配置和资源整合，而非技术实现。如果所有VC都去写代码，可能会分散精力，反而降低投资效率。历史上很多成功的VC并不亲自写代码，比如Peter Thiel，他们通过深度研究和人脉网络同样做出了优秀投资。",
+      "clue": "观察Nikunj Kothari后续是否持续发布自己构建的产品或技术博客，以及他投资组合中是否出现更多亲自参与的项目。如果他的观点正确，应该能看到更多VC开始公开分享自己的构建经验。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/nikunj/status/2058927145519562867"
+      ],
+      "topicTags": [
+        "AI行业趋势",
+        "VC角色转变",
+        "动手构建",
+        "自动化"
+      ],
+      "personTags": [
+        "风险投资人",
+        "AI从业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Steinberger",
+      "title": "OpenClaw 依赖清理：用 WebAssembly 替换 JS 库，体积从 140MB 降至 2MB；以及 agent skill 的 token 效率建议",
+      "originalText": "OpenClaw's dependency purge continues. Killed Sharp and Jimp. Replaced it with photon, a small WebAssembly that runs compiled Rust for image processing. 2MB vs 140MB. Folks: when you write skills, ask your agent to be token efficient, relax grammer. I see too many skills that write books in the skill description, and all that crap is loaded into every context. I wrote a skill that finds the worst offenders.",
+      "chineseInterpretation": "Peter 分享了两个技术洞察：一是 OpenClaw 项目通过用 Rust 编译的 WebAssembly 库 photon 替换 Sharp 和 Jimp 两个 JS 图像处理库，将依赖体积从 140MB 压缩到 2MB，展示了 WASM 在性能与体积上的优势。二是针对 AI agent 的 skill 编写，他建议保持 token 高效、放松语法，因为冗长的 skill 描述会浪费上下文窗口，他写了一个 skill 来检测这类问题。",
+      "tldr": "用 Rust 写的 WebAssembly 库替换 JS 库，体积缩小 98%；写 AI agent 的 skill 时别写废话，否则浪费 token。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://t.co/tSimX2GKwP",
+        "https://t.co/kfaaJpxMXE"
+      ],
+      "topicTags": [
+        "WebAssembly",
+        "Rust",
+        "AI Agent",
+        "Token效率",
+        "前端性能"
+      ],
+      "personTags": [
+        "开发者",
+        "技术博主"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Dan Shipper",
+      "title": "Dan Shipper 引用 Every 文章反驳自动化后世界观点，并提及教皇言论",
+      "originalText": "Good counterpoint from inside @every to After Automation: https://t.co/o5h1PTYUTg\n\n\"Humanity, created by God in all its grandeur is today facing a pivotal choice: either to construct a new Tower of Babel or to build the city in which God and humanity dwell together.\"\n\nThe Pope has obviously been reading @every from 2024: https://t.co/TxmwICvJ77",
+      "chineseInterpretation": "Dan Shipper 引用了他创办的媒体 Every 上的一篇文章，作为对 'After Automation' 观点的反驳。同时，他注意到教皇最近的言论与 Every 在 2024 年发表的一篇文章观点高度相似，暗示教皇可能受到了该文章的影响。这反映了 AI 时代下，关于人类与技术关系的讨论已经进入更广泛的公共领域，甚至触及宗教领袖。",
+      "tldr": "Dan Shipper 分享了一篇反驳自动化悲观论的文章，并发现教皇的发言和那篇文章的观点很像，说明 AI 话题已经火到连教皇都在关注了。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://t.co/o5h1PTYUTg",
+        "https://t.co/TxmwICvJ77"
+      ],
+      "topicTags": [
+        "AI 自动化",
+        "技术哲学",
+        "宗教与科技"
+      ],
+      "personTags": [
+        "创业者",
+        "媒体人"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "name": "The MAD Podcast with Matt Turck",
+      "title": "Why AWS and Azure Cannot Run Autonomous AI – Ivan Burazin (Daytona)",
+      "chineseInterpretation": "Daytona CEO Ivan Burazin 认为，每个 AI Agent 都需要一个独立的“沙盒”（Sandbox），即一台专属计算机，才能安全、高效地执行复杂任务。他指出，AWS、Azure 等传统云平台是为无状态应用设计的，无法满足 Agent 对有状态、长运行、高性能计算的需求。Daytona 自研调度器，支持毫秒级启动、快照、热迁移等特性，并预测未来将出现 CPU 短缺。",
+      "tldr": "Agent 需要自己的电脑（沙盒），传统云平台不适合，Daytona 自研调度器解决性能问题，未来 CPU 可能比 GPU 更紧缺。",
+      "links": [
+        "https://www.youtube.com/watch?v=kMXJrzAa5fM"
+      ],
+      "topicTags": [
+        "AI Agent",
+        "沙盒",
+        "Daytona",
+        "Agent基础设施",
+        "CPU短缺",
+        "Firecracker",
+        "Kubernetes",
+        "RL训练"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "WebAssembly替代JS库实现体积骤降98%",
+          "summary": "OpenClaw用Rust编译的WASM库photon替换Sharp和Jimp，依赖从140MB降至2MB。",
+          "implication": "前端性能优化新方向：对计算密集型任务（如图像处理），可考虑WASM替代纯JS方案，显著减小包体积并提升性能。",
+          "sourceUrl": "https://t.co/tSimX2GKwP"
+        },
+        {
+          "title": "AI Agent skill编写需注重token效率",
+          "summary": "Peter Steinberger建议skill描述应简洁，避免浪费上下文窗口。",
+          "implication": "前端开发AI Agent时，需设计高效的skill文件，减少冗余描述，以降低token消耗和提升响应速度。",
+          "sourceUrl": "https://t.co/kfaaJpxMXE"
+        }
+      ],
+      "actions": [
+        "调研WASM在项目中的适用场景，如图像处理、数据压缩等，评估替换成本与收益。",
+        "制定AI Agent skill编写规范，要求描述简洁、结构化，并开发lint工具自动检测冗余。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "AI Agent需要独立沙盒，传统云平台不适用",
+          "summary": "Daytona CEO指出每个Agent需专属计算机，AWS/Azure为无状态设计，无法满足有状态、长运行需求。",
+          "implication": "服务端架构需考虑Agent基础设施的重新设计，可能包括自研调度器、快照、热迁移等能力。",
+          "sourceUrl": "https://www.youtube.com/watch?v=kMXJrzAa5fM"
+        },
+        {
+          "title": "Agent自我改进：LLM作为评判者的eval循环",
+          "summary": "Garry Tan提出用多个模型评估agent效果并迭代优化。",
+          "implication": "后端可构建eval循环系统，集成多模型评判，实现agent自动调优，降低人工维护成本。",
+          "sourceUrl": ""
+        }
+      ],
+      "actions": [
+        "评估现有云平台对Agent工作负载的支持，调研Daytona等专用基础设施方案。",
+        "设计并实现基于LLM as judge的eval循环框架，集成到CI/CD流程中。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "AI Agent开发范式反转：先搭系统再写功能",
+          "summary": "Ryan Carson指出现在需花大量时间搭建文档、cron job等系统，才能让AI高效工作。",
+          "implication": "产品策略需调整：优先投资于AI工作流和知识体系的基础设施，而非快速推出MVP。",
+          "sourceUrl": "https://x.com/petergyang/status/2059099566377693305"
+        },
+        {
+          "title": "高盛CEO反驳AI失业论，认为将创造更多工作",
+          "summary": "技术进步提高期望和需求，从而创造更多就业，而非替代。",
+          "implication": "产品定位可更乐观：AI将推动服务升级和个性化，催生新需求，而非简单替代人力。",
+          "sourceUrl": "https://x.com/levie/status/2059025559896883489"
+        }
+      ],
+      "actions": [
+        "重新评估产品路线图，优先构建AI Agent所需的系统化基础设施（如文档、知识库、工作流）。",
+        "分析目标市场，识别AI可能创造的新需求场景，设计差异化功能。"
+      ]
+    }
+  ]
+}
