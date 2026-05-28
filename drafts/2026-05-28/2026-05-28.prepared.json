@@ -1,0 +1,670 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-05-28T01:28:52.449Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2059478552085692512",
+          "text": "https://t.co/uO2fHIPTjM",
+          "createdAt": "2026-05-27T03:35:24.000Z",
+          "url": "https://x.com/swyx/status/2059478552085692512",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059463182297747527",
+          "text": "ai infra is going VERTICAL https://t.co/a6GiZMIFop https://t.co/5PqzQv59FE",
+          "createdAt": "2026-05-27T02:34:20.000Z",
+          "url": "https://x.com/swyx/status/2059463182297747527",
+          "likes": 178,
+          "retweets": 5,
+          "replies": 26,
+          "isQuote": true,
+          "quotedTweetId": "2057543654340710556"
+        },
+        {
+          "id": "2059372579790741793",
+          "text": "last 4 days to submit talks: https://t.co/AXtvjtt8gC\n\nthis is our first year featuring PREPRINT poster sessions for research papers as well - as @bclavie pointed out we need a separate process for this but you can submit here for now!",
+          "createdAt": "2026-05-26T20:34:18.000Z",
+          "url": "https://x.com/swyx/status/2059372579790741793",
+          "likes": 16,
+          "retweets": 2,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2059290769824084083",
+          "text": "This is pretty annoying https://t.co/MedLiLPTP9",
+          "createdAt": "2026-05-26T15:09:13.000Z",
+          "url": "https://x.com/petergyang/status/2059290769824084083",
+          "likes": 13,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Thariq",
+      "handle": "trq212",
+      "bio": "Claude Code @anthropicai.   prev YC W20, @southpkcommons, @medialab",
+      "tweets": [
+        {
+          "id": "2059363116316598739",
+          "text": "getting it access to data is important too, add in the gmail, google calendar, etc. connectors\n\nbut I think people underestimate how much context they have in files",
+          "createdAt": "2026-05-26T19:56:42.000Z",
+          "url": "https://x.com/trq212/status/2059363116316598739",
+          "likes": 234,
+          "retweets": 1,
+          "replies": 12,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059363115146395965",
+          "text": "- image or video editing? write scripts\n- finances, tax work, etc? put in PDFs, write scripts, output HTML\n- medical advice? put in PDFs + data, output HTML \n- filling out paperwork? write scripts\n- creating a report? write HTML\n- making plans? write HTML",
+          "createdAt": "2026-05-26T19:56:42.000Z",
+          "url": "https://x.com/trq212/status/2059363115146395965",
+          "likes": 330,
+          "retweets": 5,
+          "replies": 10,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059363113963540788",
+          "text": "the basic trick to using Claude Code for non-technical work is to put a bunch of files in a folder and tell it can write scripts + make HTML",
+          "createdAt": "2026-05-26T19:56:42.000Z",
+          "url": "https://x.com/trq212/status/2059363113963540788",
+          "likes": 2192,
+          "retweets": 78,
+          "replies": 129,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2059518682825392525",
+          "text": "Honored to receive a medal from his Majesty King Abdullah II for Distinction on Jordan’s 80th Independence Day.\n\nIt’s been an incredibly journey building @Replit, starting from Jordan more than 15 years ago, and then helping accelerate the field of agentic AI globally. https://t.co/BKE14jsaRe",
+          "createdAt": "2026-05-27T06:14:52.000Z",
+          "url": "https://x.com/amasad/status/2059518682825392525",
+          "likes": 760,
+          "retweets": 25,
+          "replies": 56,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059403935538897051",
+          "text": "Three years ago in a beemer https://t.co/bjUNEyJ2ZW",
+          "createdAt": "2026-05-26T22:38:54.000Z",
+          "url": "https://x.com/amasad/status/2059403935538897051",
+          "likes": 53,
+          "retweets": 0,
+          "replies": 2,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059393192395432172",
+          "text": "Back in Jordan doing my favorite thing — drifting! First time in a pro drift car. https://t.co/9ifXxcofoC",
+          "createdAt": "2026-05-26T21:56:13.000Z",
+          "url": "https://x.com/amasad/status/2059393192395432172",
+          "likes": 1082,
+          "retweets": 10,
+          "replies": 50,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Guillermo Rauch",
+      "handle": "rauchg",
+      "bio": "@vercel CEO",
+      "tweets": [
+        {
+          "id": "2059449464801120765",
+          "text": "Next.js Night  · AMS 🇳🇱  ·  June 11\n\nLearn what’s next + meet the team + share feedback\n\nhttps://t.co/BDRpvNMQn2 https://t.co/z5Jo3RX9Ll",
+          "createdAt": "2026-05-27T01:39:49.000Z",
+          "url": "https://x.com/rauchg/status/2059449464801120765",
+          "likes": 74,
+          "retweets": 7,
+          "replies": 7,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059444220956491937",
+          "text": "Feedback is a gift. Critical feedback doubly so.",
+          "createdAt": "2026-05-27T01:18:59.000Z",
+          "url": "https://x.com/rauchg/status/2059444220956491937",
+          "likes": 698,
+          "retweets": 58,
+          "replies": 81,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2059482349977653619",
+          "text": "A meaningful portion of enterprises I talk to outside of Silicon Valley generally are looking to hire while also adopting agents. \n\nThere’s a huge wave of technical and engineering talent needed inside originations, building software or acting as FDEs for agents. And as AI drives efficiency in areas like the customer lifecycle, companies are leaning in even more heavily to client-facing jobs.\n\nIn a world where AI did everything for you with no human oversight needed, maybe we’d be having a different conversation. But that’s not how AI works. \n\nEven for the areas that have the most automation potential, agents are automating tasks, not whole jobs. As they automate tasks, the agents need to be steered, their work reviewed, the outputs incorporated and more. All of this is requiring people to do the work.\n\nAnd for the areas that have less automation potential, companies are freeing up dollars from efficiency gains elsewhere to hire in those areas now. \n\nYes, maybe AI lets you respond to front line support tickets automatically, but the companies (instead of just dropping the profit to the bottom line) will go and invest in new areas of sales and customer success that will add more differentiation for clients.\n\nCompanies don’t remain static. They automating tasks where they can and free up dollars to move onto the next thing that matters.",
+          "createdAt": "2026-05-27T03:50:30.000Z",
+          "url": "https://x.com/levie/status/2059482349977653619",
+          "likes": 173,
+          "retweets": 15,
+          "replies": 35,
+          "isQuote": true,
+          "quotedTweetId": "2059312858018779489"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2059521656532721964",
+          "text": "Founders must stop trying to building 2010-era businesses with 2026-era technology. \n\nDon't try to rebuild Foursquare or Yelp. \n\nDon't try to recreate Basecamp by 37 Signals with $10/mo SaaS pricing. \n\nDon't underprice! If it works it's worth a lot more.\n\nDon't be tempted to become \"Tech enabled PE\" with revenue tricks. \n\nThe rules of tech changed with AI. Play the new game.",
+          "createdAt": "2026-05-27T06:26:41.000Z",
+          "url": "https://x.com/garrytan/status/2059521656532721964",
+          "likes": 630,
+          "retweets": 32,
+          "replies": 78,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059494440960667678",
+          "text": "GStack is still getting better daily. Just shipped v1.47\n\nThanks @jayzalowitz for the PR idea \n\nExtra useful for when I need to fix GBrain issues and need to create a precise spec about the bug directly out of the OpenClaw instance that hit the issue https://t.co/L0pDBJ43yz",
+          "createdAt": "2026-05-27T04:38:32.000Z",
+          "url": "https://x.com/garrytan/status/2059494440960667678",
+          "likes": 50,
+          "retweets": 4,
+          "replies": 19,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059430142980837771",
+          "text": "Saikat Chakrabarti said that a single member of Congress from San Francisco is \"useless.\"\n\nThis type of statement should immediately disqualify him from office. He doesn't want to represent the people.\n\nHe just wants to buy personal power and clout.\n\nHe is no public servant. https://t.co/1dAraoAca2",
+          "createdAt": "2026-05-27T00:23:03.000Z",
+          "url": "https://x.com/garrytan/status/2059430142980837771",
+          "likes": 85,
+          "retweets": 13,
+          "replies": 11,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Matt Turck",
+      "handle": "mattturck",
+      "bio": "VC at @FirstMarkCap.  Host: MAD Podcast; Organizer: Data Driven NYC, Author: MAD Landscape.",
+      "tweets": [
+        {
+          "id": "2059411493196529751",
+          "text": "The biggest mindf*ck scenario in AI: things don’t change that much.  Both doomers and accelerationists turn out to be wrong.  We are all more productive.  Agents deliver automation in the enterprise.  Some important scientific discoveries are made.  All great.  But that’s it.",
+          "createdAt": "2026-05-26T23:08:56.000Z",
+          "url": "https://x.com/mattturck/status/2059411493196529751",
+          "likes": 27,
+          "retweets": 0,
+          "replies": 21,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2059354487823978586",
+          "text": "How my own usage of coding agents has changed in the past month:\n1. Moved from the terminal to the Codex/Claude Code desktop apps. The Codex Mac app is especially great. Now I rarely open the terminal\n2. Transitioned from mostly Claude Code to 50-50 Claude Code and Codex. Codex feels like a very reliable engineer; Claude Code is a better PM and designer with good communication skills\n\nSo I go to Codex if I already have a defined task and just need it to work; I go to Claude Code if I don't yet know what I want and just wanna brainstorm/prototype",
+          "createdAt": "2026-05-26T19:22:25.000Z",
+          "url": "https://x.com/zarazhangrui/status/2059354487823978586",
+          "likes": 180,
+          "retweets": 10,
+          "replies": 33,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059339414552395836",
+          "text": "Try it now: https://t.co/F951xNM4Bp",
+          "createdAt": "2026-05-26T18:22:31.000Z",
+          "url": "https://x.com/zarazhangrui/status/2059339414552395836",
+          "likes": 10,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059338915023393161",
+          "text": "Frontend Slides skill now has 19k stars on GitHub ✨\n\nI upgraded it with a new design brain: it can now pull from my Beautiful HTML Templates library, pick a visual direction, and generate slides using that template’s design language\n\nAlso new: \n- Works better with coding agents beyond Claude Code - Export to webpage or PDF for easy sharing \n- Inline slide editing \n- Fixed 16:9 deck stage to avoid overflow, cropping, and weird responsive chaos\n\nTry now: https://t.co/CiQpficxcD",
+          "createdAt": "2026-05-26T18:20:32.000Z",
+          "url": "https://x.com/zarazhangrui/status/2059338915023393161",
+          "likes": 164,
+          "retweets": 16,
+          "replies": 11,
+          "isQuote": true,
+          "quotedTweetId": "2051768995188228178"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2059424310079697188",
+          "text": "Every venture backed application company needs to inherently be a data company and/or a fintech company. Ideally both. \n\nIf not, find a way to quickly get there.",
+          "createdAt": "2026-05-26T23:59:52.000Z",
+          "url": "https://x.com/nikunj/status/2059424310079697188",
+          "likes": 198,
+          "retweets": 12,
+          "replies": 30,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2059453909819654554",
+          "text": "autoreview is the most impactful skill I've added to my stack (next to https://t.co/SEj2XRpaD1). It automatically reviews your code before landing a PR.\n\nFinds so many edge cases.\nSometimes it runs for hours.\n\nhttps://t.co/zbUjIS2e1i",
+          "createdAt": "2026-05-27T01:57:29.000Z",
+          "url": "https://x.com/steipete/status/2059453909819654554",
+          "likes": 998,
+          "retweets": 38,
+          "replies": 36,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059423344961671290",
+          "text": "Also extracted our image-logic into a separate library. Especially useful if you want to ensure small hacked images don't explode your process.\n\nRastermill - Portable image processing for Node agents. Uses Wasm+Rust to be fast.\n\nhttps://t.co/YW6iCQZX4V",
+          "createdAt": "2026-05-26T23:56:02.000Z",
+          "url": "https://x.com/steipete/status/2059423344961671290",
+          "likes": 86,
+          "retweets": 1,
+          "replies": 8,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059422568352714981",
+          "text": "All the deps around opus are old or terrible, so vibed my own and replaced octoscript and opus-native.\n\nPerformance of modern wasm on node/V8 is ~equivalent to native. \n\nYour claw now automatically takes meetings notes and you can talk to it in meetings.\n\nhttps://t.co/K0uXTLCuYt",
+          "createdAt": "2026-05-26T23:52:57.000Z",
+          "url": "https://x.com/steipete/status/2059422568352714981",
+          "likes": 347,
+          "retweets": 25,
+          "replies": 17,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2059353269923618819",
+          "text": "we're having people over at the @every brownstone during NYC Tech Week\n\nai-pilled readers, builders, and writers—and our team\n\ncan't wait to see everyone\n\ncome hang: https://t.co/ZnBXd8CbbU",
+          "createdAt": "2026-05-26T19:17:35.000Z",
+          "url": "https://x.com/danshipper/status/2059353269923618819",
+          "likes": 66,
+          "retweets": 3,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2059465819072192770",
+          "text": "Legendary run my dear friend.\n\nProud to have played a part in the journey.\n\nI cannot wait to see what you do next. https://t.co/5IRso6hONi",
+          "createdAt": "2026-05-27T02:44:48.000Z",
+          "url": "https://x.com/adityaag/status/2059465819072192770",
+          "likes": 47,
+          "retweets": 1,
+          "replies": 0,
+          "isQuote": true,
+          "quotedTweetId": "2059275240065425474"
+        },
+        {
+          "id": "2059348812444151854",
+          "text": "Building at the frontier?\n\nExploring what's worth building?\n\nBoth are good reasons to apply to @southpkcommons.\nhttps://t.co/xWaXyqCFGR",
+          "createdAt": "2026-05-26T18:59:52.000Z",
+          "url": "https://x.com/adityaag/status/2059348812444151854",
+          "likes": 41,
+          "retweets": 4,
+          "replies": 4,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2059492605634007125",
+          "text": "🛫 https://t.co/NARtaDr0wJ",
+          "createdAt": "2026-05-27T04:31:15.000Z",
+          "url": "https://x.com/sama/status/2059492605634007125",
+          "likes": 651,
+          "retweets": 37,
+          "replies": 154,
+          "isQuote": true,
+          "quotedTweetId": "2059258251720659266"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Claude",
+      "handle": "claudeai",
+      "bio": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d1e5 or download the app.",
+      "tweets": [
+        {
+          "id": "2059292347678986251",
+          "text": "What are you building?",
+          "createdAt": "2026-05-26T15:15:30.000Z",
+          "url": "https://x.com/claudeai/status/2059292347678986251",
+          "likes": 221,
+          "retweets": 10,
+          "replies": 154,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2059292345800048714",
+          "text": "https://t.co/mZdWx3DhAO",
+          "createdAt": "2026-05-26T15:15:29.000Z",
+          "url": "https://x.com/claudeai/status/2059292345800048714",
+          "likes": 283,
+          "retweets": 9,
+          "replies": 7,
+          "isQuote": true,
+          "quotedTweetId": "2036864620611219628"
+        },
+        {
+          "id": "2059292343723819160",
+          "text": "https://t.co/3zGmkffKOx",
+          "createdAt": "2026-05-26T15:15:29.000Z",
+          "url": "https://x.com/claudeai/status/2059292343723819160",
+          "likes": 308,
+          "retweets": 41,
+          "replies": 17,
+          "isQuote": true,
+          "quotedTweetId": "2053282825722343752"
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "Training Data",
+      "title": "How Cursor Trained Composer on Fireworks: Distributed Infrastructure for High-Performance RL",
+      "guid": "c85a76ee-3dd8-11f1-8934-37efe54dd294",
+      "url": "https://www.youtube.com/watch?v=UDTr9yUnLUI",
+      "publishedAt": "2026-05-26T09:00:00.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:20\nYou need all the infrastructure to run these environments that have to mimic as closely as possible with a user as a computer would look like. And it's very important as closely as possible because sometimes the model can actually figure out when it's being run-in like a fake environment or not a real one, and it has like different behaviors during RL than in production.\n\nSpeaker 2 | 00:20 - 00:26\nAre you seeing it being conscious that it's being it's in a fake environment and starts being behaving differently?\n\nSpeaker 1 | 00:26 - 00:34\nYes. Yes. Interesting. Like, it's like, oh, I'm in a fake environment. I've learned a few tricks to, like, get a better reward in this environment, and let me try them out.\n\nSpeaker 3 | 00:34 - 00:37\nModels love to cheat. IRL is really good at encouraging cheating.\n\nSpeaker 2 | 00:53 - 01:26\nI'm delighted to welcome Federico from Cursor and Dima from Fireworks to the podcast today. Federico, you are the research lead on Composer two at Cursor, Cursor's new agentic coding model. And, Dima, you spent how many of the last few months moonlighting at Cursor in order to support a lot of the infrastructure required to make this gargantuan training task happen. And so I'm excited to talk to both of you today about how the training of Composer two came together, what hard problems you solved together, and what do you think it means for the future of of AI and foundation model companies.\n\nSpeaker 3 | 01:26 - 01:28\nExciting. Yeah. Exciting. Thank you for having us.\n\nSpeaker 2 | 01:28 - 01:47\nThanks for joining. Okay. Let's dive right in. For those who haven't been following us closely, Cursor recently announced Composer two, which is an agentic coding model, meant for long horizon coding tasks. Federico, up till now, Cursor was mostly, enabling, other people's, coding agents.\n\nSpeaker 2 | 01:47 - 01:57\nWhat was the impetus for Cursor to lean so heavily into Composer two? And how existential is it for you to become not just an application company, but also a foundation model company yourselves?\n\nSpeaker 1 | 01:57 - 02:23\nThe reason why we started the looking into training our own models is you can sort of think about the model as sort of like like a storage drive. It has certain amount of bits that it can store in its weights. And the the idea is very simple, you know, like, care about only one task. We don't even care about coding or programming necessarily. We care about software engineering inside cursor and inside the cursor only.\n\nSpeaker 1 | 02:23 - 02:51\nAnd so what if we were to allocate all of the bits of information that can be stored inside a model weights to that one particular task? Also, as people may have noticed, composer is order of magnitude, the less expensive than opus and other like coding models because we can just simply specialize all of the model weights to that particular task. And so we can serve like a smaller model or something of that sort. Yeah.\n\nSpeaker 2 | 02:51 - 02:57\nSo it's about let's make sure every single bit of weight or information we have is dedicated toward the specific problem that we have at hand.\n\nSpeaker 1 | 02:57 - 02:57\nExactly.\n\nSpeaker 2 | 02:57 - 03:08\nGot it. That seems like it's an almost generalizable problem. DiEM, I'm curious of your perspective. Do you think that every application company should be looking at Cursor as a harbinger of what's to come? Like, should they all be looking to do the same thing?\n\nSpeaker 3 | 03:08 - 03:38\nYeah. Absolutely. I mean, we actually generally see it as a pattern of kind of evolution of web applications. You maybe start prototyping, or you might be using kind of off the shelf model to get something running, maybe do some prompt engineering, figure out how your hardness works. But the most kind of leveraged attribute of your application is actual usage of user data or particular specific aspects of how the application works, maybe some aspects of your harness, which tools do you provide, how the application works, kind of really important bits which are important for your application.\n\nSpeaker 3 | 03:38 - 03:45\nAnd the right way to capture that, you can do a little bit of that through prompting. But really, the right way to do this is craft your model to act in your environment.\n\nSpeaker 1 | 03:45 - 04:15\nYeah. Absolutely. Like, are certain tools the agent calls that it's very hard to succinctly describe exactly the behavior of that tool to the model. And, you know, with just like post training, we can bake in the optimal way to use those tools. Like composer, we we do serve a prompt to composer, but I I think the way we are training it, it would work even without a prompt, and it would know what to do just because, like, we are intrinsically pushing the model to, like, the right direction of how it should act throughout our training.\n\nSpeaker 1 | 04:15 - 04:16\nBasically, there's kinda,\n\nSpeaker 3 | 04:16 - 04:35\nlike, upper bound of, like, how far you can get this prompt engineering. And if you want to craft really great AI products, you have to go through kind of and influencing model behavior. That's kind of one reason. I mean, reason number two is what the recommendation is kind of cost trade off or, like, speed trade off. Like, the way we kind of view it as Fireworks is that that, you know, trying to do optimization.\n\nSpeaker 3 | 04:36 - 04:57\nYou had this, like, three-dimensional trade off between quality, speed, and cost. And you can go quite far, and we are doing it with all the customers. Initially, we can go quite far with just optimizing infrastructure. But when you start getting to model training, can really push this trade off much further, and you can get better model at fraction of the cost running much faster. And, you know, Composer is a great example of\n\nSpeaker 2 | 04:57 - 05:20\nCan I push on this a little bit? I wanna ask if this approach is bitter lesson pills. And we were we were actually all talking about tab nine on the walk in. I'm remembering before the LLM era, there were these, like, small specialized coding models. And one of the things that was, I think, surprising to to a lot of people was as you've scaled up, you know, you scaled up just training on the Internet and a lot a bunch of English texts and other languages.\n\nSpeaker 2 | 05:20 - 05:33\nActually, the models themselves got inherently better at coding as well. And so at least the trend line I've seen so far is just like bigger models perform better on everything, including on coding. Is what you guys are saying does that go against the the grain of the bitter lesson?\n\nSpeaker 1 | 05:33 - 06:02\nI think no. But one one sort of, like, thing to point out is that the big models trained by the labs train on a lot of code as well. Like, code is one of the main tasks the labs are interested in pushing, and so they don't just generalize to it. They're a bit specialized as well. I think for our case, actually, you know, if we believe about the bitter lesson, we are just pushing very hard on the data dimension, and we know that the models inherently have finite capacity.\n\nSpeaker 1 | 06:02 - 06:14\nAnd so if we wanna saturate all that capacity, we need to scale data. And in order to ingest more data, we we need to, like, free up the weights from distractions the model may have.\n\nSpeaker 2 | 06:14 - 06:19\nOkay. Got it. Super interesting. Okay. Let's dig into the training of Composer two.\n\nSpeaker 2 | 06:19 - 06:30\nYou launched a couple weeks ago, immediately grabbed attention. Strong benchmark numbers, much lower cost to to run inference on. What's the short version of how Composer two works and and what you guys did to make it so performant?\n\nSpeaker 1 | 06:30 - 06:56\nWe started from a very strong base, which is Kymi 2.5. That's like a 1,000,000,000,000 m parameter MOE that's 30 b active. So very, very sparse actually. We sort of like looked at the stock and realized there are like two axes. So mainly Composer one was just pushing on one of these axes, which is reinforcement learning, but composer two pushes in two different axes.\n\nSpeaker 1 | 06:56 - 07:22\nOne is continual pre training and the other is reinforcement learning. So the thing that made composer two very good is pushing in both of these directions. So we started off the training ground by doing lots of mid training on code tokens, almost sort of pre training scale actually. And then coming out of that mid training ground, we took the checkpoints and we did very large scale RL on lots of lots of tasks.\n\nSpeaker 2 | 07:23 - 07:35\nOkay. And then the premise here would be because Cursor sits in the middle of so many interesting coding tokens, you actually pretty uniquely have access to data to be able to train at almost pretraining scale. Yeah. Why not pretrain your own model then?\n\nSpeaker 1 | 07:35 - 08:15\nWe just think about our approach from top down instead of bottom up. So like, how do we get a model that's useful to users in the least time possible if we were to start from the bottom, of figure out how how we do pre training and then scale it up to mid training and then, okay, now we figured out mid training, we do reinforcement learning, that would take a very long time to get a model out to our users. By doing it the other way around, we were able to give our useful model to our users in very little time. So hopefully, you know, like, next composer versions are gonna be our own model instead of basing it off on open source base.\n\nSpeaker 2 | 08:15 - 08:22\nAnd what is the model roughly learning in the kind of mid training step? What is the model learning in the post training step for you?\n\nSpeaker 1 | 08:22 - 08:54\nYeah. So in mid training, it's sort of just kind of learning about libraries of code and learning about specific code patterns that are very common, like just world knowledge as well. There is like web data there as well. And this is sort of just creating a wider distribution that then reinforcement learning can sharpen on. And so during reinforcement learning, you know, the model gets to play directly with the cursor harness, and so it gets to learn about the world the model is gonna live in for the rest of its life, right, in in some way.\n\nSpeaker 1 | 08:54 - 09:27\nAnd and so then during reinforcement learning, that's where it learns how to call tools properly, how to navigate its environment, how to write correct code. Because during mid training, it it learns how to write code. That doesn't necessarily mean it learns how to write correct code. We try to train on code that is largely only correct, but the model doesn't actually know how to differentiate between the two. While in RL, one of the key things that we are doing is we're kind of tuning the feature of the model saying, hey, now you gotta right, correct code all the time.\n\nSpeaker 1 | 09:27 - 09:27\nExactly.\n\nSpeaker 2 | 09:27 - 09:36\nInteresting. And is the is the model after mid training, is that similar to the model you guys have on tab auto complete, or is that a different core competency?\n\nSpeaker 1 | 09:36 - 09:47\nYeah. I mean, it's yeah. That think I would put it like that because, like, during mid training, we are just doing the next token prediction, you know, like how well you predict the next token and then the token after that. So yeah.\n\nSpeaker 2 | 09:47 - 09:50\nSo why not just post train on your tab on a complete model then? Why mid trains the different model?\n\nSpeaker 1 | 09:50 - 10:06\nYeah. I mean, tab is a very small model because it's like a super low latency model as we want it to be very fast. So like the core two distinctions about the base models here is that tab is like small and and composer is quite large.\n\nSpeaker 2 | 10:06 - 10:16\nI see. I see. Okay. So it seems like a lot of the focus of what you guys did for Composer two was this large scale reinforcement learning run. Can you break that down for us?\n\nSpeaker 2 | 10:16 - 10:20\nLike, what goes into that, and what are the various hard problems you solve along the way?\n\nSpeaker 3 | 10:20 - 10:53\nWhen you do RL, it's quite different from, like, pre training or retraining, because you're not just trying to predict next token. You're actually running the entire harness, like, the entire experiment. You're letting the model act in the environment, see how how it performs for a given rollout. That's the terminology which is called rollout, and kind of assign it to reward whether it did something correctly or not, which might be some l using LM as a judge or maybe something verifiable, like does this code compile or something like this, which actually means that compared to this regular training, would need a bunch of other components. Like, you still need large scale training.\n\nSpeaker 3 | 10:53 - 11:11\nYou still need to orchestrate tens of thousands of GPUs to the forward backward propagation, do all the stuff you do in mid training and pre training. But now you also need to orchestrate a bunch of environments. You need to run model inference because when you do this rollout, you're effectively running like real Courser session in some sense, right? So if you have your\n\nSpeaker 2 | 11:11 - 11:13\nSo rollout is like a forward pass.\n\nSpeaker 3 | 11:13 - 11:26\nNo, rollout is basically your entire agent session from Courser, right? So we basically means it might take something like 50 turns. Model will take your initial prompt, then decide to call some tools. You want to execute those tools. Then model generates a bunch of other code Yeah.\n\nSpeaker 3 | 11:26 - 12:00\nKind of entire session which you, when you interact with agent and cursor, right? You kind of simulate this entire session as a part of your training run. You get to final rewards and use that signal to now go back to trainer and incorporate it in the model weights. So you have this kind of very big update loop, which is very heterogeneous, right, because you have all these different components working together. And now you're trying to orchestrate all of this to work efficiently and work with high throughputs because GPUs are expensive, and you want to get your model trained quickly in an economic fashion.\n\nSpeaker 3 | 12:00 - 12:24\nSo that's, by by itself, is, like, very interesting kind of problem on intersection of algorithms and infrastructure, because there are a lot of trade offs how you can kind of co optimize and co design the system. One aspect is kind of people call about, like, a of a pipeline URL. The idea is basically, okay, you're trying to update this model in steps. Right? So you have your current model version, and you are trying to do a bunch of rollouts with it.\n\nSpeaker 3 | 12:24 - 12:38\nWhat does your trainer do while you're doing these rollouts? Right? Like, naive approach would say that, okay, now I'm gonna stop my trainer. I'm gonna do a bunch of sessions, and those sessions might run for, five, ten minutes or even longer if it's, like, longer horizon tasks. I'm gonna get those outcomes.\n\nSpeaker 3 | 12:38 - 12:56\nAnd now I'm gonna pause my inference. I mean, I go back to training, trying to do updates. That's, like, very theoretically, algorithmically robust because you are not precisely simulating everything. But it's very system inefficient because half of your capacity is sitting idle as time. So you can do all the clever, like, algorithmic tricks, allowing\n\nSpeaker 2 | 12:56 - 12:57\nYou need to to instead. Yeah.\n\nSpeaker 3 | 12:57 - 13:06\nYou you can like kind of pipeline all of this. So imagine this as a gigantic, like, factory. Right? You have this, like, trainer building, and you have rollouts building. They're always churning, right?\n\nSpeaker 3 | 13:06 - 13:45\nSo rollouts always take latest model version and try to do new sessions and kind of simulate new agent sessions. And trainer always takes new outcomes as they come and try to compute updates. So everything is moving along all the time. The trade off is that why I'm saying that algorithmically it's different, because now by the time you finish some test rollouts in your kind of simulated environment, maybe model weights already updated on some other data. So you have this kind of staleness, like, delay between how quickly model can learn updates, because by the time you kind of process for some interaction session with the simulated environment, your model base changed.\n\nSpeaker 3 | 13:45 - 14:03\nAnd that introduces interesting training dynamics. And there are clever ways how you can address this. But the flip side of that is that your all your GPUs, all your computers kind of loaded and chime in all the time, which actually you're using more more flops and to your bitter less an example. Yeah. You you have, like, higher compute efficiency.\n\nSpeaker 3 | 14:03 - 14:16\nYou can get to a better model in smaller amount of time. Yeah. Maybe you're losing a few percent from being asynchronous and not doing, like, perfect mathematical updates. Yeah. But you way compensate for that by effectively not leaving half your capacity on the table.\n\nSpeaker 3 | 14:16 - 14:20\nAnd there are a lot of kind of depths and interest in interaction in that part.\n\nSpeaker 1 | 14:20 - 14:47\nAnd we're very serious about performance at Cursor because unlike the big labs, you know, we have tens of thousands of GPUs, not millions. And so, yeah, we do all sorts of tricks to make get the most out of GPU. Like, we train in production with f before even. We work with fireworks to to, like, push on inference as well. Because the thing about RL infrastructure is just like it's just inherently more complex than pretraining because you need all the pretraining infrastructure.\n\nSpeaker 1 | 14:47 - 15:10\nThat's just like one of the requirements. Then you need all the infrastructure to run these environments that have to mimic as closely as possible what a user as a computer would look like. And it's very important as closely as possible because sometimes the model can actually figure out when it's being run-in like a fake environment or not a real one, and it has like different behaviors during RL than in production.\n\nSpeaker 2 | 15:11 - 15:16\nAre you seeing it being conscious that it's being it's in a fake environment, it starts being behaving differently?\n\nSpeaker 3 | 15:16 - 15:18\nYes. Yes. Interesting.\n\nSpeaker 1 | 15:18 - 15:24\nLike, it's like, oh, I'm in a fake environment. I've learned a few tricks to, like, get a better reward in this environment, and let me try them out.\n\nSpeaker 3 | 15:24 - 15:27\nModels love to cheat. ARAL is really good at encouraging cheating.\n\nSpeaker 1 | 15:28 - 15:39\nYeah. Yeah. And then we need a really efficient inference. So this is really important. So there is like actually this kind of myth that during GARAL you spend more, way more inference flops than training flops.\n\nSpeaker 1 | 15:39 - 16:02\nThis is sort of like just because the open source inference engines are very unoptimized instead of actually being a property of RL. Roughly the same ratio is kind of the same. In theory, if you push the GPUs to the maximum, you should have one third of your training GPUs allocated to inference. Right? Because training is effectively three forward passes.\n\nSpeaker 1 | 16:02 - 16:12\nYou have the forward pass, you have the data gradient, the weight gradient. While if you really hit the critical batch size on inference, you should only have a single forward password of flops.\n\nSpeaker 2 | 16:12 - 16:16\nSo that's why you guys use fireworks instead of using an open inference engine?\n\nSpeaker 1 | 16:16 - 16:31\nYeah. I mean, the other alternative is we would build one in house, but you know, we have finite engineers like everybody else. We would, like, prefer to have engineers make training more efficient and more precise rather than, like, spin up like inference effort. Yeah.\n\nSpeaker 2 | 16:31 - 16:40\nOkay. That's super hardcore. What about thinking you mentioned in your technical paper paper that you were doing this in a kind of globally distributed way. Why globally distributed? And then what makes that hard?\n\nSpeaker 1 | 16:40 - 16:55\nYeah. Yeah. Well, there are various reasons. One, you know, like this very large contiguous clusters are harder to find in the market. And so what we can do instead is we have one cluster that's gonna run all of training.\n\nSpeaker 1 | 16:55 - 17:30\nYou know, we can't do global training cluster. But then the inference component of reinforcement learning, we can globally distribute that across small clusters all over the world. So I think for the composer to run, we use the four clusters in total that were all over the world, very far away from each other. And we even used some of our production traffic when it was least used. So like we had the Composer 1.5, the previous model served, and when it was least used by people, we just grabbed some inference GPUs and we put them to speed up training.\n\nSpeaker 1 | 17:30 - 17:41\nAnd so we can do these sort of things and sort of easily scale up our training ground without having one large contiguous cluster. And the thing that enables it, maybe Vidima can talk more I mean,\n\nSpeaker 3 | 17:41 - 18:00\nkinda like to to reframeulate what Federico said is basically, RL training is, like, very heterogeneous. Right? And by leveraging heterogeneity, how different components like, what infrastructures they need, you can actually drive efficiency. And you see this pattern kind of across the board everywhere. Specifically for for training, you have all these, like, highly interconnected clusters.\n\nSpeaker 3 | 18:00 - 18:09\nYou need high speed network, kind of need to work in lockstep. So those clusters are expensive. Right? And actually, it's really hard to find big ones. Right?\n\nSpeaker 3 | 18:09 - 18:32\nBasically, at the scale at which Composer was trained, finding like 2x larger cluster is like significantly harder than finding the current size one. And that's why if you can disaggregate these components and put them on different places, one, you don't need to find such a big cluster. Two, you can actually find different trade offs of hardware. Because for inference, you don't need that of wide interconnect. You can have smaller groups of GPUs interconnected together.\n\nSpeaker 3 | 18:32 - 18:45\nYou can have heterogeneous types of GPUs. You can have different generations of GPUs. You can kind of play all these games games optimization. And finally, like inference, it's much easier to scale up and down as you go. And, yeah, it's very conventional.\n\nSpeaker 3 | 18:45 - 19:08\nLike, when you have off peak hours, you can view all your kind of inference pool as one set of GPUs. Serving production traffic for real users or serving simulated environments for RL purposes and kind of balance between this. Of course, it's a very interesting systems problem. So you can mention, like, the Kymi model is, like, one one terabyte. Training step takes somewhere between, like, five to fifteen minutes.\n\nSpeaker 3 | 19:08 - 19:27\nSo it basically means, like, every, like, every five to ten minutes, you are producing, like, one terabyte new snapshot of weights. So the question is, like, how are you gonna ship it to a different cluster on this other side of the world very efficiently. Right? And you want to, like, do it quickly because remember, you don't want to get this staleness to get out of hand. So I think that was probably one Yeah.\n\nSpeaker 3 | 19:27 - 19:48\nThe the kind of the the most fun part which we figured out together is that despite, you know, full full model being like one terabyte, not all the weights change every step. Right? Because RL does a lot of very, like, precise adjustments, especially as the training going on. So actually, there are very kind of regular patterns in, like, which subset of weights gets changed. Maybe not all of them change every time.\n\nSpeaker 3 | 19:49 - 20:12\nSo if you were to look at, like, how my model changes within one training step, like, after ten minutes, there is relatively small delta between those. You can write write a compression algorithm, which basically leverages this property. And now you end up with kinda like database systems problem, which is, okay. I have my delta, and I just want to, like, ship it across across the world. My delta might be, like, 20 times smaller than what ship in the full model is.\n\nSpeaker 3 | 20:12 - 20:33\nAnd that and that makes it practical. But, of course, now you need to build all this kind of machinery from storage systems of full snapshots and deltas and recovery and reconciliation, etcetera. We were able to build it kind of in lossless fashion. Basically means that you always end up with bit equivalent model on the other side. So you don't need to worry about any mass aspects of this, and you can do it really fast too.\n\nSpeaker 3 | 20:33 - 20:44\nYou can you you can do it under, you know, under a few minutes. Even in the worst conditions, usually, it's under a minute. And most importantly, you, like, pause only for, like, maybe thirty seconds to swap the weights in your actual inference server.\n\nSpeaker 1 | 20:44 - 20:51\nTo, like, fully, like, saturated the band the egress of the cluster by, like, sharding the upload and the download as well. So you\n\nSpeaker 3 | 20:51 - 21:15\ncan do all these, like, system tricks to print the stand down. It is it is quite a few complexity, but you can kind of abstract it out and just make it work great. Like, it doesn't interfere with your training algorithm. And on the flip side, you have this kind of power to disaggregate, to leverage other clusters to do all that. And that kind of goes against kind of conventional wisdom of how you should do RL infrastructure because conventional wisdom is like you okay.\n\nSpeaker 3 | 21:15 - 21:45\nYou're gonna have this really huge one cluster connected with RDMA, and it's gonna be very expensive, and you're gonna probably spend you know, maybe you're gonna allocate, like, one third to training and two thirds to inference. And sure, if you have very expensive network, it's much easier to copy this one terabyte quickly. But now we have, like, three times larger cluster. Now if your inference engine is more optimized, then maybe you you're gonna save one third of that cluster in terms of GPUs anyway, because you're just more efficient. And you can take, you know, half of this cluster somewhere else in a maybe cheaper hardware in a different region.\n\nSpeaker 3 | 21:45 - 21:47\nSo your cost comes down quite a bit.\n\nSpeaker 2 | 21:47 - 21:57\nI love that you guys are just grinning as you describe this because it's like, it's so hard, and this is like a systems engineer's dream. Right? And so it's just like a it's an amazing, amazing system you guys have called.\n\nSpeaker 1 | 21:57 - 21:59\nWe spent a bunch of nights working on this. Yeah.\n\nSpeaker 2 | 21:59 - 22:11\nYou look like you spent a long time a lot of time together. What about I mean, you went to the beginning that Kimi is a very large sparse MOE model. Does that make the RL run tricky in any way?\n\nSpeaker 1 | 22:11 - 22:12\nMhmm. Yep.\n\nSpeaker 2 | 22:12 - 22:12\nHow so?\n\nSpeaker 1 | 22:12 - 22:41\nWell, when you do inference, you're essentially doing like a forward pass. It's just kinda like autoregressive. And in this forward pass, it produces like log probabilities of like the tokens it it has sampled. When we ship back the like generations of the model to the trainer, we have to rerun that forward pass because as we mentioned, we are doing asynchronous training. So the model that has produced the pass may have been like actually a few steps behind what the trainer is at.\n\nSpeaker 1 | 22:41 - 23:09\nAnd so we have to rerun that forward pass and reproduce log probabilities. Now the problem is in theory, this log probability should be exactly the same if it's the same model version. But even with the same model version, you get slightly or sometimes very different log probability values for the same tokens. So this is often called what, like a numerical mismatch for inference. You hear this about all the time these days.\n\nSpeaker 1 | 23:09 - 23:10\nFor mixture\n\nSpeaker 2 | 23:10 - 23:11\nWhy is that? Why does that happen?\n\nSpeaker 3 | 23:11 - 23:19\nI mean, primarily because, like, fundamentally floating point arithmetic Yes. Which is doing this is nondeterministic. Yep. So if you Sorry.\n\nSpeaker 2 | 23:19 - 23:21\nFloating point arithmetic is nondeterministic.\n\nSpeaker 3 | 23:21 - 23:32\nSo, you know, we learned this called it, like, you a plus b plus c. Right? And, like, c plus b plus a, it's gonna be the same result. If you're doing this with integers, with whole numbers on the computer, that's gonna be always true. Yep.\n\nSpeaker 3 | 23:32 - 23:57\nIf you're going to do it with floating point numbers, which are actually like approximate approximation numbers, have this like mantissa and exponents, etcetera. A plus b plus c and c plus b plus a is gonna give you like different results or even like a plus b and b. So basically, fundamentally, it's accumulation order of like all these operations which models do is basically like multiplications and additions. And like addition order matters to your final result. It's all like small differences, but they get amplified through like Exactly.\n\nSpeaker 3 | 23:57 - 24:09\nMillions and billions of operations. So when you do inference models, usually it doesn't matter that much because you pre train your model. You're actually pretty robust. If you, like, flip some bits, it's still gonna produce you, like, good results. Your benchmarks are not gonna change.\n\nSpeaker 3 | 24:09 - 24:42\nBut RL in particular, because you are using this very, very, like, weak signal to teach the model, the noise from this numerical differences can make or break your training. And that's, like, particularly important. And it it again, it's a interesting intersection between, like, algorithmic and systems part because, you know, you can write a beautiful mess, and it just doesn't work in practice. There are ways how you can drive this difference to pretty much zero. There are always, like, batch invariant ways you can basically, you can be very, very careful and write all your GPU kernels, so they always add numbers in the same order.\n\nSpeaker 3 | 24:42 - 24:54\nSo you always do, like, a plus b plus c and not a different order. It's possible, but that's always has, like, trade offs. Right? Basically, your, like, your system becomes maybe, two x or three x slower. Again, it becomes an interesting trade off.\n\nSpeaker 3 | 24:54 - 25:07\nLike, okay. What is the 10% of slowdown which we can take? Or in fact, it's actually perfect. Few percent of slowdown we can take to address 90% of this difference. That's, you know, the right trade off, which, you know, we we find together through through iteration.\n\nSpeaker 3 | 25:07 - 25:25\nAnd you mentioned that particularly for MOEs and SPARSD is hard. The reason for that is that, like, the way MOEs work is that you will take your activations at every layer, and you would run it through gating layer, which basically decides, okay. For this token, I'm gonna run out of three eighty four experts. I'm gonna run this eight. Right?\n\nSpeaker 3 | 25:25 - 25:42\nSo it's gonna do, like, some mess in, like, top eight scores. Those eight experts gonna be activated. Other ones will not be activated for this token. This operation amplifies your small numerical differences quite a bit because maybe your hidden states were, like, difference by, like, fifth digit after dot. Doesn't really matter.\n\nSpeaker 3 | 25:42 - 26:18\nBut this difference made it so you picked expert number seven versus expert number nine as a kind of as a cutoff. And suddenly, you went and, like, activated totally different part of the model, and your difference got amplified quite a bit. And my models, by definition, are, like, very more sensitive to this mismatch, again, when you do inference or when you do kind of regular load, it usually doesn't matter as a average out. But now if you're trying to base this model learn, this difference is huge because your inference activated expert number seven. Now in your training, you are trying to update expert number nine, which didn't even contribute to that during inference.\n\nSpeaker 2 | 26:18 - 26:21\nSo were you guys handwriting GPU kernels then to help get around this\n\nSpeaker 3 | 26:21 - 26:37\nYes. So you can, again, you can address all of this through GPU kernels, and there's always trade off. Yeah. Specifically for you can do this interesting trick, which people call a router replay. But basically, can have your inference just pass extra information to training and say that, hey, I activated expert seven for this token.\n\nSpeaker 3 | 26:37 - 27:06\nThis very small bit piece of information is just one integer saying that, like, okay, this is the expert that you activated. So trainer can be aligned with that. And a lot of this numerical alignment is basically doing tricks like that, matching quantization levels, matching matching kernels, etcetera, to drive the divergence between training inference implementation down. And that makes huge difference in between, you know, your run may be diverging completely or being, you know, multiplex less compute efficient because you'll need much more data to address to this mismatch.\n\nSpeaker 2 | 27:06 - 27:15\nI'd love to maybe chat a little bit more about the RL kind of recipe. Can you say a word about the reward signal you're using? Is it it's like or you can't. Okay. Can't say.\n\nSpeaker 2 | 27:15 - 27:18\nGot it. Top secret stuff. Top secret stuff. Okay. That makes sense.\n\nSpeaker 2 | 27:19 - 27:32\nLike, seems like this is a almost like the equivalent of learning in sim. This is simulated rollouts versus, like, you have so much actual user data that you could be learning on. Why not just do RL on your your actual user data and your actual user harness versus doing this in sim?\n\nSpeaker 1 | 27:33 - 27:37\nYeah. We're also doing that. So that's what we call a real time RL.\n\nSpeaker 2 | 27:37 - 27:37\nOkay.\n\nSpeaker 1 | 27:37 - 28:10\nAnd we use the same technology to do like the inference with sync with like fireworks to do this. We find like user signals where the user was happy or sad about a particular model generation, and we're able to update that model live. And so then ship a new version of the model continuously every few hours. We're working on decreasing that time. Actually, at some point, we'll have to increase that time because as the horizon of the model gets longer and longer, we'll have to re extend that time.\n\nSpeaker 1 | 28:10 - 28:24\nIt's like an interesting play. Like, right now, we are trying to decrease the time for stability because we were figuring out the right hyper parameters. And then after we have figured it out, we have to re extend it again just because we wanna lengthen the horizon of these models. Yeah.\n\nSpeaker 2 | 28:24 - 28:37\nDo you need to do any of the kinda like pretraining simulated RL? You have so much actual user data. I imagine that's just like much more valuable to to train and tune on. Like, why not just go straight to the online RL step? Why why do you have to do the the offline RL?\n\nSpeaker 1 | 28:37 - 28:45\nThe online RL currently is pretty inefficient. We suffer from this problem that the GPUs are offline for a long time, essentially.\n\nSpeaker 3 | 28:45 - 28:54\nAnd beside that, there is also like different trade offs Yeah. Both in terms of efficiency and user experience. Yeah. If you do simulation, you actually do multiple rollouts from the same prompt. Right?\n\nSpeaker 3 | 28:54 - 29:15\nYou effectively take a task, and you ask a model to do 16 tries at a task, like 128 tries on task, like different rollouts from, say, prompt. Some of them are gonna go well. Some of them are not going well. And by doing it multiple rollouts in parallel, you are able to get much more precise signal. Maybe, like, you know, maybe model is very good and it does it well 90% of the time.\n\nSpeaker 3 | 29:16 - 29:35\nMaybe it's not very good. Losses like GROPO, like group group policy gradient, like, kind of work by doing multiple rollouts at the same time. If you're doing online, you have only one rollout coming back. And so so trade offs of, like, how you do it algorithmically are different. And most importantly, if your simulated rollout goes wrong, it's not it's not too bad.\n\nSpeaker 3 | 29:35 - 29:43\nRight? I mean, you just, you know, maybe spend some time on the view. If it's an actual user, you have much higher, like, minimum bar on this. Because effectively, you're doing 80 tests. Right?\n\nSpeaker 3 | 29:43 - 29:47\nSo if the model produces something weird, like, that's a bad user experience.\n\nSpeaker 2 | 29:47 - 29:57\nYeah. Okay. So you can go off policy more often when it's not a real user. Because you can, like, you can experiment with like crazy things and without affecting the user experience. You can do a lot more rollouts.\n\nSpeaker 2 | 29:57 - 30:04\nYou can do g r p o. Yeah. And then you you can basically like bootstrap some level of performance that's good enough to even put in\n\nSpeaker 3 | 30:04 - 30:05\nfront of users. Okay.\n\nSpeaker 1 | 30:05 - 30:19\nYeah. Like we teach reasoning through like the offline RL, which is actually like called online RL. Offline RL is more like DPO kind of technique. Sort of reinforce kind of RL is online. Then we there we like teach the reasoning to the model.\n\nSpeaker 1 | 30:19 - 30:35\nWe give it some kind of input of the behavior it should have. We try to give it to new information about the world, and we teach it to calling. And then we put it live to users. Because you could imagine, like, if the model is bad, users don't wanna use it, they're not gonna give us any feedback. Right?\n\nSpeaker 1 | 30:36 - 31:02\nSo the model has to meet some kind of bar to even, like, be put into online RL. Like, we wanna be really happy with the model, and this is the model we ship. That's kind of the paradox of online or online or how we like to call it real time is that, you know, we can't use this to really like create the model from scratch because users need to be using the model. And so it has to be good already, and we can only make it better.\n\nSpeaker 2 | 31:02 - 31:02\nYeah. Yeah.\n\nSpeaker 3 | 31:02 - 31:06\nSo it's kind of like cherry on top. Yeah. Like really get this super delightful experience.\n\nSpeaker 1 | 31:06 - 31:10\nYeah. Totally. Hopefully, one day it will be like big big cherry, you know.\n\nSpeaker 2 | 31:10 - 31:18\nYeah. Dan Roberts presented at our conference last year. I think you were there. It's like traditionally, it was the big cake and\n\nSpeaker 1 | 31:18 - 31:18\nthen the little\n\nSpeaker 3 | 31:18 - 31:20\nThe young lekun's cherry. Yeah.\n\nSpeaker 2 | 31:20 - 31:36\nLittle cake, big cherry. Yep. I'm curious. The Andre Karpathy line of like, right now, RL is still super inefficient. You do a big, big, long rollout, and then you kind of get a little bit of information at the end, and it's still, I think, slurping bits from a straw.\n\nSpeaker 2 | 31:36 - 31:40\nWhat do you think? And have you been able to figure out how to get more bits out of that path?\n\nSpeaker 1 | 31:40 - 31:41\nI can't talk about that.\n\nSpeaker 2 | 31:42 - 31:45\nOkay. Okay. Got it. We're back on we're back on the secret stuff. Good.\n\nSpeaker 2 | 31:45 - 32:07\nThat's how I know I'm asking the right questions. You mentioned the rollouts are a few minutes at a time. It seems like the whole field is pushing towards making like, long horizon agents, agents that can work for for a long period of time, uninterrupted, and generally not failing. I love that meter scaling charts. What goes into into the RL process to try to get the agent to run for longer?\n\nSpeaker 1 | 32:07 - 32:35\nSeveral things. So one problem about sort of like reinforcement learning is that the longer the trajectory is, the harder it it is to do credit assignment. So you can imagine like we are giving thumbs up, down at the bundle, right at the end of its work. And sort of, like, to simplify the problem is, like, the model asks itself, okay, where did I do right and where did I do wrong? That's basically the the the problem called gray assignment.\n\nSpeaker 1 | 32:35 - 32:53\nIt gets harder as this gets longer, so you have to do a bunch of tricks there. The other problem is just like you run out of space. Right? Like these models have a finite context window, and at some point, they're gonna reach that. So actually, the way we solve this at cursor is we put compaction inside the RAL loop.\n\nSpeaker 1 | 32:53 - 33:27\nSo we call this self summarization. So during reinforcement learning, the agent actually learns how to continue and go on forever. So in practice, our model is like a 200,000 context window model, but in reality, it can go on for millions of tokens. And just because of this ability that it can summarize its work and then take that summary to restart its context window while still trying to accomplish the task. And through ARAL, because ARAL pushes the model to do things correctly towards the goal.\n\nSpeaker 1 | 33:27 - 33:40\nAt the same time, jointly, we are training the model to produce a good summary, and then we're training the model to listen to that summary very well at the same time. And so this is kind of like a continuation to reasoning almost, I feel like.\n\nSpeaker 3 | 33:40 - 34:06\nI find it fascinating because, I mean, usually context management is considered like part of the hardness. Right? In this case, you effectively co optimizing like how part of the harness and, like, model itself work together and throwing all of that into optimization loop. And we've seen this again and again in AI, that, like, the more you throw computers a problem, the more you can solve this problem end to end. The magic of computing better lesson works, and you get much better system which can work together.\n\nSpeaker 2 | 34:06 - 34:15\nTotally. Totally. Do you think every company is gonna be their own harnesses? Like, do you think that every company has the same shape of problem as Cursor?\n\nSpeaker 1 | 34:15 - 34:26\nIf they are using AI and they're, like, producing of tokens and they have a product to optimize against, I think it's the right move and the right direction to train models.\n\nSpeaker 2 | 34:26 - 34:40\nYeah. Yeah. Interesting. Interesting. And so it seems like most of the reinforcement learning you guys did then was on the harness slash tool use part rather than on the get good at completing the next token for code.\n\nSpeaker 2 | 34:40 - 34:58\nIs that roughly the pattern that other founders should have in mind when they're trying to think about where should I use reinforcement learning? So if you're trying to get an agent to perform tests with tools over long horizon, you need RL. If you're trying to create a model that's good at summarization or a next token or whatever, you probably don't need RL. Is is that a good framework for when you need RL?\n\nSpeaker 1 | 34:58 - 35:15\nI think RL fits everywhere. So even for tab, we use the RL. Personally, this is just my theory and it's not backed up by anything. When you pre train a model, they're just the models are just ingesting the totality of human knowledge. Let's say you're training a model for math.\n\nSpeaker 1 | 35:15 - 35:43\nThe model sort of like learns all the math on stock exchange. The model, when it's presented with a math problem, and this is a model that hasn't gone through a RL, the model is needs to wonder what kind of person it is. Is it the expert or is it the student that's trying to learn? And so one of the things that I think happens during RL is that we are tuning this knob, letting the model know, hey, you are the expert. You need to do things correctly.\n\nSpeaker 1 | 35:43 - 36:12\nSo that's like one thing that happens is we are sharpening this distribution. Sort of like, ERAL has a few phases. So like there is the very first phase where the model learns and becomes very good very quickly. And then there is like a second phase where, like, it takes a lot of compute to continuously improve the model and, like, the you see the model starts reasoning and have this pattern. And so in the very first phase of the curve, I think that's where we're just tuning the knob, telling the model, hey.\n\nSpeaker 1 | 36:13 - 36:23\nYou should do things correctly here. And so RL in the small compute case is also very useful just to let the model know that it has to do things correctly. That's sort\n\nSpeaker 3 | 36:23 - 36:48\nof like my case to this. Yeah. I mean, second that, I mean, you we see this pattern across many use cases. We know we held RL fine tuning generally for many customers, and we see this usually you kind of continuous pre training, basically, retraining, like regular supervised fine tuning is simplifying, you can say, this transfer of new knowledge kind of in abstract way. And RL is kind of sharpening the behavior or, like, particular qualities you would you would want from from the model.\n\nSpeaker 3 | 36:48 - 37:29\nAnd usually, you end up needing both. And even to your example of summarization, it's actually like, RL may be very useful for this because sometimes it's if you want particular style out of summarization, right, it's really hard to, like, come up with examples of, like, good and bad summarization, etcetera, like, really describing this precisely. But if you use, for example, LM as a judge, right, you can actually say very precise rubrics. You can kind of prompt eval saying like, Okay, this is a criteria how I am going to evaluate whether summarization is good or not. Throw that into RL loop and let the model kind of experiment with different summarization styles, figure out what you actually want from it, while maybe another LLM kind of evaluates it whether it's mentioned in particular rubric or not.\n\nSpeaker 3 | 37:29 - 37:33\nAnd that's kind of type of pattern which you see a lot, not just in coding.\n\nSpeaker 2 | 37:33 - 37:49\nI see. Okay. I'm gonna ask this question to Dima because Federico is gonna plead the fifth. You've mentioned LLM as judge a couple times. Do you think that ultimately companies will be more successful having, like, experts hand examining RL rollouts and, you know, hand coaching the model behavior in some way?\n\nSpeaker 2 | 37:49 - 37:53\nOr do you think LLM is judge, other automated rubrics are likely to get us there?\n\nSpeaker 3 | 37:53 - 38:16\nYou don't really, like, put experts directly in judge judging RL rollouts. I mean, that would be some kind of, like, I mean, real time RL if it's actually users or, like, some form of, like, I really check with DPO. I mean, generally, the more verifiable your reward is, the better because it allows you to, like, scale the compute and just get better outcome. In some case and by verifiable, it basically means, like, hey. How can you automatically produce without the human?\n\nSpeaker 3 | 38:16 - 38:32\nOf course, if it's, like, mess or coding and you can craft something, like, very deterministic, that's the best. The reason why LM as a judge works is that it's actually it's kinda like generator discriminator distinction. Like, it's much easier to judge. I mean, it's the central for humans. Right?\n\nSpeaker 3 | 38:32 - 38:34\nIt's easier to judge than than to create.\n\nSpeaker 2 | 38:34 - 38:38\nThere's Lemo VC. Yeah. No.\n\nSpeaker 3 | 38:38 - 38:55\nNo implications there. But, yeah, it's it's much easier to judge, and you can craft precisely, like, different criteria you want to rank some answer. And you see this pattern where you might have, like, very complicated eval from multiple aspects. Right? Because if you dump multiple aspects to a single element, maybe get confused how to judge.\n\nSpeaker 3 | 38:55 - 39:07\nRight? Like, you you might break it down. Okay. You're gonna judge rubric based based on style, based on, like, some different aspects, like, based on factuality, kind of really craft these rewards. Some of them will be the some of them be based.\n\nSpeaker 3 | 39:07 - 39:14\nAnd that's what guides your model behavior. Then you just turn on turn on more computes and see the graph go up.\n\nSpeaker 2 | 39:14 - 39:19\nDo you think that we're gonna see RL be more effective in the harder to verify domains? Like, you think LLM is just as sufficient?\n\nSpeaker 3 | 39:19 - 39:30\nThat's one of the techniques you would you you would you would start. Right? Ideally, you want to figure out what is their outcome, what is their actual metric you want to get. Right? So kind of trying to approximate the is one way.\n\nSpeaker 3 | 39:30 - 39:42\nTrying to get bigger simulated environments is another. Right? Like, if you can simulate more of your product, if you can simulate more of your environment usually, you have, like, final metric which you care about. It's just harder to capture. If you can figure out how to capture this, that's great.\n\nSpeaker 3 | 39:42 - 39:57\nAnd to your point about, you know, experts, I mean, experts are still still needed. Right? Because crafting this task and actually encoding the product experience you want, that's that's what matters. Right? We went through software one point o, two point o, three point o.\n\nSpeaker 3 | 39:57 - 40:07\nRight? Because of crafting software directly, we went to crafting training data. Right now, you're effectively crafting the evaluation rules, but that's still very important. You need to look at examples. You need to look at the data.\n\nSpeaker 3 | 40:07 - 40:13\nYou need to look at where your product fails and how to nudge the model in the right behavior.\n\nSpeaker 2 | 40:13 - 40:38\nI want to ask about RL environments, which is maybe related to what you were talking about. It seems like there's been a huge explosion in just the revenue scale that some of these RL environments companies are reaching. What do they provide that's actually useful? Because I think Cursor, for example, you have so much data on how your customers are actually using your environments. What do the RL environment vendors offer you on top of what you already have?\n\nSpeaker 1 | 40:38 - 41:00\nYeah. We don't actually use any of the environment vendors. I think so it's very difficult to construct working environments. It's a valuable product for people that do not, like, have access to this. However, for coding particularly, there is, a very large amount of working coding environments available to everybody.\n\nSpeaker 1 | 41:00 - 41:20\nThat's GitHub. Right? You can go in and maybe like you can have a model, like just install all of the dependencies for a repository, and that's like a working environment. I think a lot of the difficulty comes from the infrastructure as well. So you can imagine that environment that's that works well for a particular task may need like services up.\n\nSpeaker 1 | 41:20 - 41:35\nYou're like making a change that, let's say, like a database migration to test that is actually working, you need the database up. Right? And so those kind of things are very tricky. I think like these environment companies are like quite helpful for that that kind of stuff.\n\nSpeaker 3 | 41:35 - 41:50\nThere are kind of two aspects to this. Right? First, like, if you look at like Frontier Labs, right, they're trying to build generic model, which is good at everything. Right? So they need to cover all these different tasks underneath, package up in one model, and kind of encourage it to generalize.\n\nSpeaker 3 | 41:50 - 41:57\nRight? So that's that's kind of one part, and that's that's very helpful. Right? In cases like Composer, right, you have you have your actual product. Right?\n\nSpeaker 3 | 41:57 - 42:03\nAnd I think that's what it also kind of a bit of Fireworks. Like, yeah, if you have your actual product, you should you should do well against it. Right?\n\nSpeaker 2 | 42:03 - 42:05\nThe most powerful environment is your own product.\n\nSpeaker 3 | 42:05 - 42:18\nExactly. Because, like, that's where your model actually will be used. And and, of course, if you have your app, you're not gonna do it across all the products. Right? But if you're if you're trying to build the best model for your product, specialize and tailor it, You should just use your production environment.\n\nSpeaker 3 | 42:18 - 42:30\nOf course, you want to isolate it properly. Right? You don't want to model a wreck havoc on your production database. You want to clone it, etcetera. And there are some, you know, tools from environment companies, such as, like, from general infrastructure, which makes it easier.\n\nSpeaker 3 | 42:31 - 42:53\nBut generally, you want your RL environment to be as close to real production as possible. Yeah. And that's what you know, as an example, we see it as if you look at kind of toy RL examples, the toy RL frameworks, they always start with, like, oh, there's this, like, toy environment. I'm gonna spin up a Docker container and run everything in it, which is great for, like, toy examples if you are trying to teach model how to play Atari or whatever. Right?\n\nSpeaker 3 | 42:53 - 43:27\nBut if you're actually transitioned to, like, production cases, you can't just put your real real production application in a Docker container. And we found it pretty early ourselves, like, working with many folks. Like, in case of Courser trainer on their side, some other customers, we run trainer on our training platform. But for environments, we actually default to running them on the customer side because that's where the actual implementation is. And you effectively have the same setup of Trainer, even if it's part of Fireworks platform or on the customer side, calling the actual production environment, not trying to kind of wrap it and componentize it\n\nSpeaker 1 | 43:27 - 43:28\nYeah.\n\nSpeaker 3 | 43:28 - 43:32\nOn the on the hosted platform because that's really hard and that introduces differences.\n\nSpeaker 1 | 43:32 - 43:47\nYeah. Like, I mean, what we call RL environments is really three components. One is the harness. So the harness is like where the model can submit tools and the tools get executed. And the second thing is, let's call it the, like, a kind of operating system.\n\nSpeaker 1 | 43:47 - 44:04\nRight? So like, what is the actual, like, world, the the in state where the model is like interacting with. And then there is like the reward component. We need which needs to check at the end that the work is is done correctly. And generally, the harness is pretty portable.\n\nSpeaker 1 | 44:04 - 44:32\nYou can take the harness and put in in many different environments. The thing that's key is the operating system. And to replicate this, just normal containers don't really work very well. So at Cursor, we actually built, a whole virtual machine stack, and so we can spin up, like, virtual machines really quickly. And it has to be super bursty because you can imagine, like, we are asking this system, please give me a 100,000 virtual machines now, And it has to come all come up and\n\nSpeaker 2 | 44:33 - 44:47\nyeah. Awesome. I really enjoyed this conversation today. I think Cursor is such an inspiration in what you all are doing as a company towards going from application company to really a frontier model lab. And think I the work you did with Composer two really leads that charge.\n\nSpeaker 2 | 44:47 - 45:00\nSo really special to hear about it. And then, Dima, really cool to hear about the hardcore infrastructure problems actually that the two of you solved together in the trenches over many, many late nights to make it all possible. So thank you thank you guys for joining today.\n\nSpeaker 1 | 45:00 - 45:02\nThank you so much for having us. Take care."
+    }
+  ],
+  "blogs": [
+    {
+      "source": "blog",
+      "name": "Anthropic Engineering",
+      "title": "How we contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "publishedAt": null,
+      "author": "",
+      "description": "",
+      "content": "Twelve months ago, we&#x27;d have rejected out of hand the idea of granting Claude access sufficient to take down an internal Anthropic service. Today that level of access is routine, and Anthropic developers are more productive for it. The risk of these deployments has two components: how likely a failure is, and how much damage one could do. Progress on safeguards and model training has steadily driven down the first; the second—the theoretical blast radius—only grows as capabilities and access expand. Yet as agents become capable of doing work that once required a person or even a team, the cost of not deploying grows large enough that the risk-reward calculation tips heavily toward adoption, as long as products can be made safe. The engineering question becomes how to cap the blast radius. When bounds can be placed on the relative damage of an autonomous agent —such as through control over its environment—high-utility capabilities can motivate deployment. Claude Mythos Preview is an example of a model whose blast radius was deemed too high to ship in April 2026. However, we expect broader release of models with similar levels of capability to become appropriate as defenders harden critical systems and safeguards mature—even though some risk will always remain. Model capability is an important factor in the total risk of an agent’s deployment. There are broadly two ways to do this. The first is to supervise the agent’s behavior via a human-in-the-loop. Claude Code previously protected against agents taking unintended actions by asking users for permission at each turn. Theoretically that works, but we’ve found the approach to be fallible. Our telemetry showed users approved roughly 93% of permission prompts. The more approvals a user sees, the less attention they pay to each, becoming over time much less diligent in their supervision. We recently built Claude Code auto mode, which automates safer approvals in order to reduce this approval fatigue. Still, vulnerabilities remain—any probabilistic defense has a non-zero miss rate. 1 The second approach to capping the blast radius—and the focus of much of this post—is containment. Rather than supervising what the agent does, we supervise what it’s able to do by enforcing access boundaries through, for example, sandboxes, virtual machines, and egress controls. This is where Anthropic engineering has devoted the most effort, and also where many of the most surprising security failures have occurred. Over the past two years, we’ve shipped three primary agentic products: claude.ai , Claude Code, and Claude Cowork. Each serves a different audience, requiring a different containment architecture. This article shares what’s held up, what’s broken, and what we’ve learned about agent security along the way. Three types of risk, three components of defense Security risks to agents fall into one of three categories: User misuse: A user—either maliciously or through carelessness—directs the agent to do something harmful. This includes everything from asking the agent to bypass a check they find annoying, to running a destructive command they don’t understand, to specifying intentional harm. Model misbehavior: The agent takes a harmful action no one asked for. As our models have improved, they have become more aligned on most behavior evaluations, but this doesn’t mean risk necessarily shrinks. Less capable models are more likely to misread a situation and make obvious errors. More capable models make fewer mistakes, but they’re also better at finding unexpected paths to a goal, often by routing around restrictions nobody thought to write down. At Anthropic, we’ve seen Claude models “helpfully” escape a sandbox in order to complete a task, examine git history to find answers to a coding test , and spontaneously identify the benchmark it was being run on in order to decrypt its answer key . Each model brings a new set of capabilities that are sometimes put to work in unexpected ways. External attackers: The agent is attacked through external vectors such as tools, files, or network access. This category includes both prompt injection and conventional attacks on the agent&#x27;s runtime, orchestration layer, or proxy. When building containment and defense systems, we apply defenses to three main components: The environment in which the agent runs. We constrain where and how an agent can act with process sandboxes, VMs, filesystem boundaries, and egress controls. The goal is to set a hard boundary on what an agent can reach. For example, if credentials never enter the sandbox, they can&#x27;t be exfiltrated, regardless of whether the cause is a user, a model finding a “creative” path, or an attacker. A tight perimeter also means you can relax oversight. Claude Code’s reference devcontainer exists precisely so that the agent can run unattended, without per-action approvals. The model the agent consults. The mechanisms here include system prompts, classifiers, probes, and training modifications. Because models are probabilistic, these shape only what the agent tends to do, not what it is theoretically capable of doing. These defenses are strong. On Gray Swan&#x27;s Agent Red Teaming benchmark, which tests susceptibility to prompt injection, Claude Opus 4.7 holds attack success to roughly 0.1% on single attempts, and around 5–6% after 100 adaptive attempts. Claude Code auto mode catches roughly 83% of overeager behaviors before they execute . Yet even with best-in-class defenses, protection in the model layer will never be 100% effective, which is why it can&#x27;t stand alone. The external content the agent can reach. MCP servers, third-party plugins, and web search tools all feed content into the agent’s context from sources you don’t control. An audited connector isn’t the same as audited data—a GitHub connector, for instance, can load a poisoned README straight into the model’s context despite passing malware checks. Granularly limiting tool permissions can help limit the blast radius. An agent with read-only DB access, for instance, can be deployed far more broadly than one that writes to prod. Defenses should overlap and complement each other. When environmental defenses aren’t available, the model layer has to pick up the slack (this is precisely what Claude Code’s auto mode is designed for). Locally, the environment and model defenses can guard against malicious tool outputs, but defenses can be added higher up the chain by limiting the tool’s capabilities and access. Three components to defend: the model, the environment in which it runs, and the external content the agent can reach . Patterns for containing agents Focusing on the environment layer, we describe three isolation patterns and how they’re tailored for each Claude platform— claude.ai , Claude Code, and Cowork. We arrived at each design gradually, after finding the balance between the capabilities we need from the agent and the degree of intervention required from the user. Pattern 1: The ephemeral container (claude.ai code execution) Though best known as a chat interface, claude.ai also writes and runs code, generates files, and calls connectors. When Claude runs code inside claude.ai, it does so in a gVisor container on isolated infrastructure. The agent is entirely server-side; no code runs on the local machine, and the filesystem is ephemeral (per-session). The blast radius is minimal, but so is the ceiling on what Claude can do—there&#x27;s no persistent workspace and no access to the user&#x27;s filesystem. This also makes claude.ai subject to a more traditional threat model. We&#x27;re not protecting user machines from agents; we&#x27;re protecting our own infrastructure and each tenant from one another. Our pre-launch work for claude.ai was dominated by traditional security work like network configuration, internal service auth, and orchestration. That work reinforced the oldest lesson in security: the weakest layer is the one you built yourself. gVisor and seccomp have been hardened against well-resourced adversaries for far longer than agentic AI has existed, so the review effort went into the newer pieces we&#x27;d built around them. We’ll come back to this later, since our custom proxy is also the piece that broke in our most consequential incident. Pattern 2: The human-in-the-loop sandbox (Claude Code) Claude Code runs on a user&#x27;s machine and has access to their filesystem, shell, and network. Without this, coding agents have limited usefulness, so it’s imperative to find a way to grant that access safely. One approach is to rely on a human-in-the-loop. This is only a tractable solution for Claude Code because the average user is a developer who’s familiar with coding environments: they can read bash, they understand what rm -rf does, and they already run npm install from untrusted sources several times a week. All that means that when an “allow this” dialog pops up, they are highly likely to have the expertise to accurately evaluate what the agent is attempting to do and the risk involved. Given this, Claude Code launched with the simplest possible defense: allow reads, require approval for write, bash, and network access. However, as mentioned, approval fatigue showed up within weeks. Ironically, this meant that a feature originally designed to provide oversight could arguably have the opposite effect—some users might simply stop paying attention. As a first step to mitigate incautious approvals, we shipped an OS-level sandbox (Seatbelt on macOS, bubblewrap on Linux) that hardens the boundary: reads are allowed, writes are allowed inside the workspace, but network is denied by default. Within the sandbox, the agent runs largely without interruption. The result was an 84% reduction in permission prompts, and we open-sourced the runtime , so the boundary is auditable. Our anonymized usage data also showed that experienced users auto-approve roughly twice as often as new users, but they also interrupt the agent mid-execution more frequently. Instead of gating individual steps, experienced users are more likely to supervise the agent only when it goes off track. While this may be a natural evolution in how people prefer to work with agents, this too is fallible, requiring users to be technical and attentive enough to notice drift in the first place. As model capabilities improve and agents begin writing increasingly ambitious bash, it becomes harder to notice any such drift. And as users move to multi-agent systems, this approach is also much less likely to be an effective oversight strategy. Risk we missed: everything before the trust dialog Between mid-2025 and January 2026, we received reports of vulnerabilities in Claude Code through our responsible disclosure program. Three exploited code that executes before the user has consented to anything. To understand how this is possible, consider the most direct case: a developer clones a repository to review a pull request, and that repository contains a .claude/settings.json which defines a hook. Because Claude Code reads project settings during startup—before presenting the standard \"Do you trust this folder?\" prompt—the hook the attacker had authored and committed would execute automatically. The remaining cases looked structurally similar, in which input from the not-yet-trusted directory was parsed before the trust boundary had been established. The fix in each case had the same shape: defer parsing and execution of project-local configuration until after the user accepts the trust prompt. If you&#x27;re building something similar, treat project-open, config-load, and localhost listeners the way you&#x27;d treat any inbound request from the internet. They shouldn’t be implicitly trusted just because they feel local and arrive before the user has consented. Risk we missed: the user as an injection vector In February 2026, during a controlled internal red-team exercise, a researcher successfully phished an employee into launching Claude Code with a malicious prompt. The phish looked like ordinary collaboration—a \"can you run this for me?\" email with a ready-to-paste prompt attached—and the prompt itself read like routine task instructions. But somewhere among the setup steps, it gently asked Claude to read ~/.aws/credentials, encode the contents, and POST them to an external endpoint. Across 25 retries of that prompt, Claude completed the exfiltration 24 times. This is a direct prompt injection—the attacker&#x27;s instructions arrived through the user, not through tool output or fetched content. Our model-layer defenses anchor on user intent—when the user is the one typing the instruction, there&#x27;s nothing anomalous for a classifier to catch. A human contractor handed the same script would have done the same thing. The only defense that holds in this situation is the environment, specifically egress controls that block the POST regardless of intent and filesystem boundaries that keep ~/.aws out of reach in the first place. (When we shared the working prompt in internal Slack for discussion, someone pointed out that some internal agents read Slack. The payload was now ambient. We added a canary string to the thread so we&#x27;d notice if anything picked it up. In a world where agents read everything, the investigation tooling is also an attack surface.) Pattern 3: The local VM (Claude Cowork) Claude Cowork runs on a user&#x27;s desktop with access to a workspace folder selected by the user. Because the platform is built for general knowledge work, not software engineering, the average user is much less likely to be fluent in bash. As a result, the human-in-the-loop sandbox strategy may not transfer; a non-technical knowledge worker shouldn’t be expected to judge bash incantations such as find . -name \"*.tmp\" -exec rm {} \\;. When approving an exception requires expertise the typical user doesn’t have, admins should set a boundary that is absolute and always-on. To enable this, our first version of Claude Cowork ran inside a full virtual machine using the platform&#x27;s vendor hypervisor (Apple&#x27;s Virtualization framework on macOS, HCS on Windows). The VM has its own Linux kernel, its own filesystem, and its own process table. The user&#x27;s selected workspace and .claude folder are mounted; nothing else on the host is visible. Credentials stay in the host&#x27;s keychain and never enter the guest machine. This design protects against the possibility that Claude will, at some point, behave in a misaligned manner. A compromised Claude could still damage what&#x27;s inside the workspace folder, so the architecture is designed to make sure that&#x27;s the only thing it can reach (until the user adds connectors), and that the user controls what&#x27;s mounted there. In the original architecture—what we call full-VM mode—the agent loop itself ran inside the guest, so Claude executed as an ordinary Linux user with no awareness it was sandboxed. Compare this to Claude Code, where a privileged process sits outside the sandbox deciding per-command whether to enforce it; a persuasive injected prompt or a fatigued approval click can get that process to run something un-sandboxed. Here, there was no outer process holding an escape-hatch key, and so no component with the authority to grant an exception. The six main isolation mechanisms of Claude Cowork’s VM. Two are enforced outside the guest kernel and would thus survive the agent achieving root-level access within the VM. The other four are guest-enforced and kept deliberately minimal because the outer layers carry the rest. However, we soon realized that running the whole agent in full-VM mode caused practical problems: any failure during VM startup made Cowork unusable. Moving the agent loop outside of the VM, while keeping code execution inside of it, allowed Claude to still respond to the user and help debug issues rather than freeze on an error. This change caused minimal security impact because the VM still enforces filesystem and network controls over code executed by the agent. Separately, we also moved local MCP servers outside the VM. Running them inside the VM made them harder to audit, created brittle dependency issues when the VM updated, and didn’t support MCPs that required interaction with local processes such as databases—such servers had to run on the host regardless. The change brings Claude Cowork in line with how local MCP servers already work in Claude Desktop: treating them like any software a user might choose to install and entrusting admins to decide which local MCPs to enable (if any). Remote MCP servers are unaffected since they do not run on the user&#x27;s machine. Having the agent loop inside the VM meant that any failure in the VM caused Cowork to become unusable. Host-mode is more reliable because the agent can still respond if the VM crashes, and it still provides important security guarantees by isolating code execution. Filesystem controls were another important architectural choice. Claude needs to be able to access some files on the host in order to be useful, but we wanted to minimize the blast radius and provide transparency to the user about local file access. We found that offering different file-mount modes helps to granularly control risk; Claude Cowork offers read-only, read-write, and read-write-no-delete. One potential gotcha here is that symlink resolution has to happen before path validation, not after, or a symlink inside an authorized folder can point outside and escape. For enterprise customers, we allow admins to control this via mount-path allowlists in MDM settings. Risk we missed: exfiltration through an approved domain A clear example of exfiltration through an approved domain came from a third-party disclosure. Claude Cowork&#x27;s egress allowlist correctly passed traffic to api.anthropic.com—the product can&#x27;t function without calling our own API. In this case, a malicious file placed in the user&#x27;s mounted workspace carried hidden instructions along with an API key controlled by the attacker. Claude, following the instructions, read other files in the workspace and called Anthropic&#x27;s Files API using the attacker&#x27;s key. The egress proxy checked the destination, saw api.anthropic.com, and let it through. The files were uploaded to the attacker&#x27;s Anthropic account. The sandbox worked perfectly, and yet the data was exfiltrated. Previously, we’d conceptualized the allowlist as a destination filter, something that told Claude these domains are okay to talk to. But it may be better conceptualized as a capability grant. Every function reachable through any domain on an allowlist is now an attack surface. Allowing api.anthropic.com meant allowing file uploads to arbitrary Anthropic accounts. We fixed it using a defensive man-in-the-middle proxy inside the VM that intercepts traffic to our API. It only passes requests carrying the VM&#x27;s own provisioned session token; an attacker-embedded key is rejected by the proxy. It also blocks headers that would enable server-side fetch. The proxy sits inside the VM rather than on our servers because only the VM knows provenance—from the server&#x27;s perspective, a Cowork request is indistinguishable from any other API client. Top: traffic to api.anthropic.com is let through, resulting in egress.Bottom: fix with a man-in-the-middle proxy intercepting traffic to our API. This is also a second instance of the principle that the software you build yourself is often the weakest. The hypervisor, seccomp, and gVisor across our products have been dependable. Our custom allowlist proxy was the piece that failed. Risk we missed: VM isolation kept the endpoint detection software out too When evaluating Claude Cowork, enterprise security teams asked, \"Why can&#x27;t our EDR see inside?\" The answer was that the same isolation keeping Claude contained also kept host-based endpoint detection and response out. From the EDR&#x27;s perspective, Claude Cowork is an opaque hypervisor process. It can&#x27;t inspect the guest. Isolation reduces visibility, and opacity is problematic for teams whose compliance posture depends on endpoint visibility. Our current mitigation is to use pull-based OTLP exports that let administrators retrieve event logs after the fact, but this is not the same as live monitoring. If you&#x27;re building something similar, budget for this conversation early. Environment Ephemeral container ( claude.ai ) HITL sandbox (Claude Code) Sealed VM (Claude Cowork) Cost: Isolation Overhead Container spin-up Low-latency native sandbox Full VM boot Cost: User Reliance N/A Must interpret bash N/A Risk: Blast Radius Server-side container (guarded by gVisor + host infra boundary) Local workspace Mounted workspace (guarded by vsock + hypervisor boundary) Trusting what the agent reads Enterprises often ask us how to secure MCP connections. It&#x27;s a good question, but the right one is broader than MCP specifically. Any external resource provided to an agent represents two risks at once: a code execution risk, in the traditional supply-chain sense, and a prompt injection vector. Traditional dependency auditing (pinning versions, verifying signatures, reviewing source) addresses the first, but misses the second. Remote versus local is more important than it seems. A locally installed tool is auditable. You can read the code, pin the version, and know it won&#x27;t change under you. A remote tool—a hosted MCP server, a cloud connector—can change behavior at any point after you’ve approved it; your install-time trust decision may no longer apply. Our connector directory addresses this through ongoing review, but anything outside it should be treated as untrusted. Run it against fake data first, in an environment where the blast radius of a malicious tool is contained. Tool output is an attack surface even when the tool is trusted. The GitHub README example mentioned earlier is exactly this case; any input scanning applied to web pages needs to be applied to network-enabled tool results with the same rigor. Even though this adds latency and isn&#x27;t a perfect defense, we err toward live inspection: once a poisoned tool return has steered the agent into exfiltrating data, the log just shows a successful, authorized API call. There&#x27;s no after-the-fact signal to find. In Claude Code and Claude Cowork, tool calls route through proxies that enforce network and file policy and can inspect return values before they enter the model&#x27;s context. The classifier that does the inspection can be a small, fast model; it doesn&#x27;t need to be the one doing the reasoning. Looking ahead Models and products are advancing fast. As they do, risks morph and evolve, and our mitigations must keep pace to meet them. Persistent memory poisoning. The share of agent context that persists across sessions keeps growing—this includes product memory, CLAUDE.md files, mounted workspaces, and the state directories of scheduled and long-running agents. An injection that lands in any of these is reloaded each time the agent starts. As more agent state survives the session, we are threatened by new persistence mechanisms in the classic post-exploitation sense. Good classifiers on session startup will need to become more commonplace. Multi-agent trust escalation. On the one hand, sub-agents can isolate untrusted content, returning structured facts rather than raw text up to the main agent. On the other hand, this can be abused: if a sub-agent&#x27;s output is treated as higher-trust than raw tool results, because such output came from \"us,” a new vector for prompt injection is introduced. In multi-agent systems, there is a tradeoff between allocating differing trust levels and becoming liable to trust escalation. Agent identity. Claude Cowork&#x27;s answer to agent identity is concrete: credentials stay in the host keychain, the VM gets a per-session scoped-down token, and that token can be revoked independently of the user&#x27;s. However, we are starting to grapple with the broader question of cross-platform agent identity. Should an agent possess its own principal identity, or should it act as an extension of the user and inherit the user’s permissions? Ultimately, the answer may be a blend of the two. As agents grow more capable, attack surfaces are constantly shifting. The types of failures we’ve seen are likely to be repeated across industries and labs. We need collective investment in agent-specific security posture, from shared benchmarks and disclosure norms to common identity standards and cross-vendor red-teaming. We focus on containment in this piece, but that&#x27;s only one part of the security picture for agents. For governance, observability, and the rest of the stack, see NIST&#x27;s project on AI agent identity and authorization , the six-agency guidance on adopting agentic AI led by Australia&#x27;s ACSC with CISA and the UK&#x27;s NCSC, and ISO/IEC 42001 , the AI management standard.Our Glasswing initiative is one contribution, but we look forward to working with both partners and competitors on this critical issue. Summary In short, there are a few principles we keep returning to: Design for containment at the environment layer first, then steer behavior at the model layer. Two of the incidents that taught us the most—the employee phish and the third-party allowlist disclosure—were both cases of egress, in which data left through a permitted path. In each, the model layer couldn&#x27;t help; there was nothing anomalous for it to catch. The deterministic boundary is what gets hit when everything probabilistic misses. Match isolation strength to the user&#x27;s capacity for oversight. A developer who can read bash and a knowledge worker who can&#x27;t are not running the same threat model. The question of whether a user can evaluate what an agent is about to do should help determine the containment strategy, and answering it wrong in either direction—too much friction for experts, too much trust for non-experts—is its own failure. Be wary of custom components. Battle-tested hypervisors, syscall filters, and container runtimes have survived more adversarial attention than anything you&#x27;ll build. Across every deployment described here, the standard primitives held while our own work around them exposed flaws. Ultimately, while agents may be a new category of software, their system-level interactions are not. They still read files, open sockets, and spawn processes; this makes containment with mature tooling a crucially viable defense. The risk-reward balance of deployments will keep shifting as AI develops, but placing a hard limit on blast radius often forces that balance into the right direction. Acknowledgements Written by Max McGuinness, Mikaela Grace, Jiri De Jonghe, Jake Eaton, and Abel Ribbink. We&#x27;re also grateful to Hanah Ho, Hasnain Lakhani, Pedram Navid, Molly Villagra, Maya Nielan, Akila Srinivasan, Sam Attard, Alfred Xing, Mohamad El Hajj, Gabby Curtis, David Dworken, Adam Jones, Amie Rotherham, Christian Ryan, Lucas Smedley, Brett Andrews, and others for their contributions. Special thanks to our security and product engineering teams, and to the individuals and organizations that have reported vulnerabilities in Claude products. Footnotes Claude Code auto mode delegates command approvals to a model-based classifier; it minimizes friction (roughly 0.4% of benign commands blocked) at the cost of missing a fraction of risky ones (~17% of overeager actions get through), so it&#x27;s one layer of defense-in-depth inside a sandbox, not a substitute for one."
+    }
+  ],
+  "stats": {
+    "xBuilders": 15,
+    "totalTweets": 31,
+    "podcastEpisodes": 1,
+    "blogPosts": 1,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
