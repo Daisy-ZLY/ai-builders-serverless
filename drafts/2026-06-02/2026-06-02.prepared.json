@@ -1,0 +1,547 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-06-02T02:07:24.620Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2061257183250313256",
+          "text": "@soumithchintala @pewdiepie @opencode https://t.co/Z6FYBkoe8U",
+          "createdAt": "2026-06-01T01:23:03.000Z",
+          "url": "https://x.com/swyx/status/2061257183250313256",
+          "likes": 7,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061256096719970337",
+          "text": "just a small zoom out on the vibe shift:\n\nin Feb 2025 @soumithchintala was talking about his dream of personal, local, private agents, most people didn't believe him.\n\nit's June 2026 and @pewdiepie has just released his vibecoded @opencode wrapper that is a complete personal AI productivity suite including email, docs, and calendar. top of HN, easily >1m views, >10k stars in a day.\n\nif your Knowledge Work Agents startup can't beat pewdiepie you might as well pack up and go home at this point, his is the benchmark for what you can DIY.",
+          "createdAt": "2026-06-01T01:18:44.000Z",
+          "url": "https://x.com/swyx/status/2061256096719970337",
+          "likes": 137,
+          "retweets": 5,
+          "replies": 27,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061206120233054327",
+          "text": "every evals/analytics startup is going through a onetime generational upgrade into a continual learning platform in 2026\n\nmany will fail but as always the tasteful ones win",
+          "createdAt": "2026-05-31T22:00:09.000Z",
+          "url": "https://x.com/swyx/status/2061206120233054327",
+          "likes": 245,
+          "retweets": 8,
+          "replies": 48,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Thibault Sottiaux",
+      "handle": "thsottiaux",
+      "bio": "Codex & ChatGPT @OpenAI",
+      "tweets": [
+        {
+          "id": "2061106703446450392",
+          "text": "The Codex usage limits have been reset for all paid ChatGPT subscriptions. You should be back to 100% weekly and 100% hourly limits.\n\nLet the tokens do incredible things today and have fun. https://t.co/e7iJcJ1iHy",
+          "createdAt": "2026-05-31T15:25:06.000Z",
+          "url": "https://x.com/thsottiaux/status/2061106703446450392",
+          "likes": 6064,
+          "retweets": 313,
+          "replies": 666,
+          "isQuote": true,
+          "quotedTweetId": "2060964284117782996"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2061277577785000203",
+          "text": "Ok is there any difference between Codex automations and Claude Code routines? Which one is better? \n\nI want to consolidate all my cron jobs in one list.",
+          "createdAt": "2026-06-01T02:44:05.000Z",
+          "url": "https://x.com/petergyang/status/2061277577785000203",
+          "likes": 75,
+          "retweets": 1,
+          "replies": 26,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061175114184736792",
+          "text": "You all just don't get it. \n\nIf you want to win and I mean really win you have to:\n\n1. Work 997 \n996 is for losers\n\n2. Tokenmax \nIf you're not spending more on tokens than your company's entire human headcount budget, are you even AI native?\n\n3. Sleep in the office\nThink about how many more agents you can spin up with that $4,000 monthly SF rent.\n\n4. Be on Forbes 30 under 30\nIf you're over 30 and didn't make this list, I hate to say it but it's over for you.\n\n5. Try not to end up in jail\nMight be hard if you do 4.",
+          "createdAt": "2026-05-31T19:56:56.000Z",
+          "url": "https://x.com/petergyang/status/2061175114184736792",
+          "likes": 37,
+          "retweets": 2,
+          "replies": 7,
+          "isQuote": true,
+          "quotedTweetId": "2060736248004710452"
+        },
+        {
+          "id": "2061173405366571251",
+          "text": "@Shpigford \"Pretend your worst enemy wrote this code.\"\n\n\"That person who always leaves smug PR comments? Be them.\"\n\n😂",
+          "createdAt": "2026-05-31T19:50:09.000Z",
+          "url": "https://x.com/petergyang/status/2061173405366571251",
+          "likes": 4,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Guillermo Rauch",
+      "handle": "rauchg",
+      "bio": "@vercel CEO",
+      "tweets": [
+        {
+          "id": "2061135404942974982",
+          "text": "Unclear if a durable trend, but CEOs and CTOs are back to coding with a fury, thanks to coding agents.\n\nI have public company CEOs sliding into my DMs (and “InMail”) telling me about falling in love with shipping software again thanks to Claude Code and Vercel.\n\n“Dream accounts” that we always wanted to work with, where in the past the C-suite would hardly understand the infrastructure until much later in the game.\n\nCoding agents are the ultimate PLG-fication of the enterprise. Bad, legacy software can’t hide anymore. The stack that works is self-evident to the entire organization, from intern to CEO.",
+          "createdAt": "2026-05-31T17:19:09.000Z",
+          "url": "https://x.com/rauchg/status/2061135404942974982",
+          "likes": 1226,
+          "retweets": 69,
+          "replies": 157,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2061247380897579500",
+          "text": "This is effectively the #1 problem for AI agents in the enterprise. \n\nAs we go from agentic coding (where a large amount of context is in the code base, and users are technical enough to get the rest to the agent easily) to a world of knowledge work agents, the context problem becomes much more acute.\n\nWe see this every day with customers at Box. For existing digital knowledge, it’s often fragmented across legacy systems or environments that don’t play nice with agents, and have access controls that don’t map to the real work that needs to be done, which become a huge hurdle for getting agents the context they need. This has to all get moved to modern, secure cloud environments.\n\nBut also, companies often haven’t captured and digitized some of the critical context that agents need to work with. Decisions, processes, and workflows often live in people’s heads and tribal knowledge that need to get turned into unstructured data for agents.\n\nThis is actually one of the biggest points of leverage for applied AI companies, because they can work to specialize in getting agents exactly the information and domain expertise they need. But it’s also one of the reasons why FDEs and new system integrator plays will also work so well right now. \n\nThe companies that figure this out will be able to get the most out of AI going forward.",
+          "createdAt": "2026-06-01T00:44:06.000Z",
+          "url": "https://x.com/levie/status/2061247380897579500",
+          "likes": 479,
+          "retweets": 54,
+          "replies": 65,
+          "isQuote": true,
+          "quotedTweetId": "2060806313001746792"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2061251376802599397",
+          "text": "We have 16 partners funding 40 to 60 companies per year, usually amounting to more than 50 to 200 new SF residents per partner per year (depending on how many cofounders and how many already live here, but multiply by 16 and it’s a lot!) https://t.co/Yq7Y8CZpyq",
+          "createdAt": "2026-06-01T00:59:59.000Z",
+          "url": "https://x.com/garrytan/status/2061251376802599397",
+          "likes": 284,
+          "retweets": 5,
+          "replies": 28,
+          "isQuote": true,
+          "quotedTweetId": "2061247589324906770"
+        },
+        {
+          "id": "2061176075288453333",
+          "text": "This sounds like a small thing but it's big. Platforms need to stay open and it shouldn't require a lot of work to get your data. \n\nBecause where the AI harness wars are going... someone else's harness is just going to be you sharecropping someone else's AI ecosystem. https://t.co/mQBVLsyjdL",
+          "createdAt": "2026-05-31T20:00:45.000Z",
+          "url": "https://x.com/garrytan/status/2061176075288453333",
+          "likes": 300,
+          "retweets": 15,
+          "replies": 42,
+          "isQuote": true,
+          "quotedTweetId": "2061158636311958005"
+        },
+        {
+          "id": "2061174413513678941",
+          "text": "You should want to control and host your own memory\n\nIt’s the one thing that you should be able to take to any platform\n\nWatch for this to be a defining battle in the new browser war: the AI harness wars of 2027 https://t.co/yb8IPzuc09",
+          "createdAt": "2026-05-31T19:54:09.000Z",
+          "url": "https://x.com/garrytan/status/2061174413513678941",
+          "likes": 1423,
+          "retweets": 122,
+          "replies": 110,
+          "isQuote": true,
+          "quotedTweetId": "2061091767030825003"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Zara Zhang",
+      "handle": "zarazhangrui",
+      "bio": "Builder. Dangerously skips permissions. Harvard’17. GitHub: https://t.co/KCuEajezlL YouTube: https://t.co/8xzbGWtf6w",
+      "tweets": [
+        {
+          "id": "2061341642544783801",
+          "text": "Why do I get so annoyed when a coding agent ends a message with \"just say the word\"\n\nYou're my cofounder, not my servant",
+          "createdAt": "2026-06-01T06:58:40.000Z",
+          "url": "https://x.com/zarazhangrui/status/2061341642544783801",
+          "likes": 13,
+          "retweets": 0,
+          "replies": 7,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061143524020822158",
+          "text": "“Real mastery is not exerting the most effort. It is achieving the outcome with the least necessary effort.\n\nGrinding is never good for any creative problem” https://t.co/UWYkFDbj5c",
+          "createdAt": "2026-05-31T17:51:24.000Z",
+          "url": "https://x.com/zarazhangrui/status/2061143524020822158",
+          "likes": 45,
+          "retweets": 2,
+          "replies": 4,
+          "isQuote": true,
+          "quotedTweetId": "2060977012471370054"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2061115431528943775",
+          "text": "Does anyone have good studies for what jobs AI has *meaningfully* replaced?\n\nLooking for a statistical analysis of historical data, present openings and forward looking statements for roles. \n\nI know it’s early but still want to read more. \n\nBroadly, we’re seeing every startup claim outcomes, model company revenues booming and companies laying people off - but I think the risk of the permanent underclass seems wildly overblown.",
+          "createdAt": "2026-05-31T15:59:47.000Z",
+          "url": "https://x.com/nikunj/status/2061115431528943775",
+          "likes": 19,
+          "retweets": 0,
+          "replies": 12,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2061208638027395490",
+          "text": "Been teaching codex to be my QA assistant. For every commit it creates a user-test scenario and uses webVNC (crabbox), computer/browser use (peekaboo/mcporter) to test OpenClaw like a user/QA person would.\n\nThis runs in the background and opens PRs with fixes. https://t.co/xGcKgjyf7F",
+          "createdAt": "2026-05-31T22:10:09.000Z",
+          "url": "https://x.com/steipete/status/2061208638027395490",
+          "likes": 1008,
+          "retweets": 59,
+          "replies": 46,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061115471760441692",
+          "text": "Haven't seen codex writing ad-hoc codemods before, but it just did for a bigger TypeScript migration. Impressed.",
+          "createdAt": "2026-05-31T15:59:56.000Z",
+          "url": "https://x.com/steipete/status/2061115471760441692",
+          "likes": 297,
+          "retweets": 10,
+          "replies": 33,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061072753998856696",
+          "text": "The idea of OpenClaw is always that it should be yours. \n\nIt's modular and lean, only add what you need. Fewer skills, fewer tools = your agent can work more efficiently. https://t.co/vUoBvQw2sN",
+          "createdAt": "2026-05-31T13:10:12.000Z",
+          "url": "https://x.com/steipete/status/2061072753998856696",
+          "likes": 428,
+          "retweets": 20,
+          "replies": 48,
+          "isQuote": true,
+          "quotedTweetId": "2061069595138494897"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2061234578610585677",
+          "text": "if you're comparing your startup to the manhattan project and you're not rocking this every day .... ngmi https://t.co/uv4VXrw8Db",
+          "createdAt": "2026-05-31T23:53:14.000Z",
+          "url": "https://x.com/danshipper/status/2061234578610585677",
+          "likes": 98,
+          "retweets": 6,
+          "replies": 10,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061216715262906449",
+          "text": "this will happen with AI too in about a decade https://t.co/idtwKdvJ0T",
+          "createdAt": "2026-05-31T22:42:15.000Z",
+          "url": "https://x.com/danshipper/status/2061216715262906449",
+          "likes": 55,
+          "retweets": 2,
+          "replies": 6,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2061312610172051900",
+          "text": "Indian Dynamism.\n \n@arctusaerospace https://t.co/BlqExiWYMp",
+          "createdAt": "2026-06-01T05:03:18.000Z",
+          "url": "https://x.com/adityaag/status/2061312610172051900",
+          "likes": 826,
+          "retweets": 37,
+          "replies": 13,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2061117302528188712",
+          "text": "OpenAI Robotics is hiring, looking for exceptional full-stack hardware, ops, systems, and ML engineers to help us program and manufacture robots that are useful for society.\n\nAI should be able to help people in the physical world. In the short term, we are focused on robots to support skilled workers to build our future infrastructure; in the long term, we imagine everyone having a personal robot doing anything they need.\n\nOur world simulation research program, led by Aditya Ramesh (@model_mechanic), has evolved over the past year into OpenAI Robotics. Progress is rapid, and based on a foundation of co-design between robotics hardware and ML research.\n\nIf you love working hands-on across the robotics stack and want to build the future, please consider joining us. Send an email with your background and evidence of exceptional accomplishment to: robotics-recruiting@openai.com",
+          "createdAt": "2026-05-31T16:07:13.000Z",
+          "url": "https://x.com/sama/status/2061117302528188712",
+          "likes": 11049,
+          "retweets": 840,
+          "replies": 958,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061101875303530871",
+          "text": "We want to help the world get a head start on biodefense:\n\nhttps://t.co/gDQfOZrLA4",
+          "createdAt": "2026-05-31T15:05:55.000Z",
+          "url": "https://x.com/sama/status/2061101875303530871",
+          "likes": 1397,
+          "retweets": 159,
+          "replies": 283,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "The MAD Podcast with Matt Turck",
+      "title": "OpenAI's Yann Dubois: Why AI Progress Suddenly Feels Real",
+      "guid": "71041c81-5a6b-4a16-af9d-685d6cda8566",
+      "url": "https://www.youtube.com/watch?v=DhD1zZ8w8Mw",
+      "publishedAt": "2026-05-21T11:30:00.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:26\nYou need to reach this level of reliability to really make any of these AI tools very useful, and I think we just crossed that probably December last year, at least at OpenAI. Now we can trust these models to do a lot of the work that we are doing. The last few months have been pretty wild. We moved from like competitions to usefulness to users and that's what we are feeling right now. I think most of the time the Bionic is the last mile.\n\nSpeaker 1 | 00:26 - 00:34\nThere will always be a lot of space left for this last mile in different verticals. And I would highly encourage people to continue working on that.\n\nSpeaker 2 | 00:34 - 01:03\nHi, I'm Matt Turk. Welcome to the MAD Podcast. My guest today is Jan Dubois, who co leads the post training Frontiers team at OpenAI. The recent release of GBT 5.5 was yet another major milestone in AI, and Jan's team helped build it alongside OpenAI's prior top reasoning models, including o three and GBT five thinking. Before OpenAI, Jan was at Stanford, where he co authored Stanford Alpaca, the landmark project that kicked off much of the modern post training research community.\n\nSpeaker 2 | 01:03 - 01:29\nIn this conversation, we go deep on what's actually new in GPT 5.5, why reinforcement learning is moving from math and coding competitions into messy real world work, why AI progress can feel like a sudden step function, and why continual learning remains one of the big unsolved problems in AI three years after ChatGPT. Please enjoy this fantastic conversation with Jan Dubois. Hey, Jan. Welcome.\n\nSpeaker 1 | 01:29 - 01:30\nHi, Matt. Thanks for having me.\n\nSpeaker 2 | 01:30 - 01:57\nIt's been another wild, last few weeks in the world of, Frontier AI with the release of, GBT 5.5, of, Claude Muthos preview. So it it feels like, we have unlocked yet another step function in progress, particularly in cybersecurity, agent decoding. What's the best way to think about this from your perspective? Are things accelerating? What is happening?\n\nSpeaker 1 | 01:57 - 02:31\nYeah. The last few months have been pretty wild. Internally, also really feel it, and I think anyone who's working with anyone who's work who's coding, basically, is really feeling it right now. I think that's really because of three reasons. The first one is even though in my mind, the progress is actually pretty continuous, you need to reach this level of reliability to really make any of these AI tools very useful, and I think we just crossed that probably December last year, at least at OpenAI.\n\nSpeaker 1 | 02:31 - 03:05\nThat's where I thought we really crossed that threshold, where now we can trust these models to do a lot of the work that we are doing. So it feels like a stem function, even though I think actually in terms of capability, it's pretty continuous. So that's the first thing. The second reason is once you start having models that are really good, you accelerate yourself, especially in terms of coding, given that we all code internally. You accelerate yourself both for having these models train the other models, but also build the tooling that we need as researchers to do our job.\n\nSpeaker 1 | 03:05 - 03:44\nAll this acceleration, I think, means that we saw these last few months going faster and faster. The third thing that I think we are feeling is all of last year, we really built these reasoning models, and we really pushing a lot on reinforcement learning. And initially, when we had like 'one, 'one preview, even 'three, these models were still optimized for what we call verifiable rewards, things where we actually have access to ground truth. It's easy to test whether you're correct or not. That is, for example, the case in math questions or coding competitions.\n\nSpeaker 1 | 03:45 - 04:13\nAnd what I think we are realizing now is that we were able to take many of the tools that we built for these verifiable reward cases, and we were able to use them more generally for reinforcement learning on real use cases. And I think that's, like, really why we're feeling that right now in, like, just real world coding rather than, like, competition. So we moved from, like, competitions to usefulness to users, and that's what we are feeling right now.\n\nSpeaker 2 | 04:13 - 04:23\nOkay. Fascinating. So we're going to unpack a lot of this, particularly on the the RL side. For the first thing that you mentioned, reliability, is that, engineering? Is that models?\n\nSpeaker 2 | 04:23 - 04:27\nLike, what what makes a model reliable in in in the way you meant it?\n\nSpeaker 1 | 04:27 - 04:55\nIt's a little bit of everything. But in general, given that these are agentic models, the longer if you just think about it as, like, every two minutes, there's, a certain probability that they are wrong. The longer that they run, the the higher the probability that, like, the final answer is gonna be wrong. So it's just something inherent in agentic models. And what we've been pushing a lot on is making sure that the model we decrease this probability of being wrong every two minutes.\n\nSpeaker 1 | 04:55 - 05:11\nSo purely from a model point of view, of course, there's a lot of reliability that is also happening on the applied side, And the team at OpenAI has been doing an amazing job on that. But I'm even talking only about reliability of our models and making sure that basically we decrease the probability of being wrong.\n\nSpeaker 2 | 05:11 - 05:28\nGreat. So 5.5, formerly known as Spud was, as mentioned, a big deal. It is a big deal. And I'm just curious from the inside, what was what are you guys the most proud of? What did you find the most challenging?\n\nSpeaker 2 | 05:28 - 05:34\nGive us some some some color on, how you all felt releasing this.\n\nSpeaker 1 | 05:34 - 06:00\nWe're all really excited about 5.5, to be honest. It is one of these models where everyone in the company was extremely involved in building, and I think that we really feel it now. That's like we got a lot of attention because of the 5.5, and it's it seems like all the stars were aligned. That doesn't always happen, and I was just like a great model for this. So we did feel it.\n\nSpeaker 1 | 06:00 - 06:43\nIt's kind of funny because in general with every model that is looking really good early on, we have a model, we all get really excited about it, and then there's, like, tons of doubts that start, coming up because it's like, oh, like, everyone is so hype is, like, hyping this thing internally, but actually it's, like, bad at all these other things, and then there's another wave where, like, people start, under hyping it, and it kind of goes through waves. And it depends when we actually ship it, how people feel about it internally. But that's true with most models that we have. So 5.5 was not that different in this case, but it definitely maybe had a higher amplitude of the wave. So people were very excited, then very not as excited, and and we shipped it, and and people were happy externally.\n\nSpeaker 2 | 06:43 - 06:56\nHow long does that process take? Like, you know, you including the waves of going up and down and of of of excitement. I guess it depends on the on the on the release and the importance of each release, but, like, is that a is that a few weeks? Is it a few months?\n\nSpeaker 1 | 06:56 - 07:33\nIt really depends. I can so I cannot talk exactly about what what went into 5.5, but it kind it kind of depends which part of the pipeline is training parts of the model. We really have different sub teams, including pre training, and you have the mid training stage, and you have some post training, and usually the closer you get to products, like posting being the last one, the faster the iteration cycle is. And if you're more upstream, the slower the iteration cycle is. So it could go from, let's say, from months to days, basically.\n\nSpeaker 2 | 07:33 - 07:48\nThe 5.5 was particularly good, on agent decoding, computer use, knowledge work, and early scientific research. How does that work in internally? Do do different people focus on those different parts? How do you get to that result?\n\nSpeaker 1 | 07:48 - 08:15\nYeah. We definitely have different teams that are working on specific use cases and are pushing on these use cases. My team specifically is actually the one that is kind of taking all these vertical improvements and try to put them together in the final model. You could see it as a team that is doing both kind of the smoothing function. So you have all these improvements, but you need to make sure that the model doesn't feel too spiky, doesn't feel differently in different on on different verticals.\n\nSpeaker 1 | 08:15 - 08:48\nAnd also you need to have some teams that are working, and that's basically what my team is doing, on all the horizontal improvements. So there are many things like instruction following, function calling, or like thinking about how much should a model think for on different, problems. Those are very horizontal and that kind of impacts all these use cases. So we have both these more vertical teams and these more horizontal ones, and both are very important to improve on the model. And the good thing is that these things can kind of be improved orthogonally.\n\nSpeaker 1 | 08:48 - 09:28\nSo you might have like multiple different teams that are working on certain verticals and maybe for one model, there's only half of these teams that made integrations basically in the last run and like improved the model on these capabilities and maybe for the next model, it'll be the other half. So that's kind of at a high level how it works. One thing which I will say, because you asked also about one of the things that we are really proud about for this model, I would say two things. Number one is the efficiency of the model. We really, really improved the efficiency of the model and like we, most of the tasks can be basically performed, I would say like two X faster now with this model.\n\nSpeaker 1 | 09:29 - 09:49\nSo that's great. And the other one that I already mentioned before, but it's kind of this alignment of the company and making sure that like everyone is working towards the same goal. And that really takes the entire company working towards like this north star of building one good model in in like specific timelines. So very, very proud of how that happened.\n\nSpeaker 2 | 09:49 - 10:02\nGreat. And then speaking of efficiency, how do you optimize for that? We're talking about efficiency per per token. Are we also talking about latency in serving the model? What what what part is AI research versus engineering?\n\nSpeaker 1 | 10:02 - 10:27\nSo that's what that's what I I mean when I say it's the entire company is that it really comes from everywhere. It has to come from, like, inference optimizations. It has to come from the model of being more efficient in its thinking time. So you have basically every token that you think for. Basically, the the usual plot that you should be looking at is x axis, the number of tokens that you think for, and y axis, the the performance.\n\nSpeaker 1 | 10:27 - 11:03\nSo this is the these test time scaling curves that we look at. And research basically tries to move this curve to the left, so think less, to be the same level or more correct. And then inference also deals with with this x axis, but switches switches it from number of tokens to actual latency. And the the final thing that people care about is latency on x axis, performance on y axis, and this is where everything comes together, and this is really what happened with 5.5. So, yeah, that's why I always say I'm really proud of the company for this one.\n\nSpeaker 2 | 11:03 - 11:11\nOkay. Great. Let's talk about you for for for a minute. So you are in the post trading frontiers team. So that team you described as horizontals.\n\nSpeaker 2 | 11:11 - 11:14\nWhat does the the team do in in general?\n\nSpeaker 1 | 11:14 - 11:30\nYeah. I would say there's three things that we do. So in a broad broad sense, we are on the post trading org, and my team is the post trading, frontiers one. So there are three things that my team does. Number one is we kind of decide what goes into the final run.\n\nSpeaker 1 | 11:30 - 12:06\nSo as we talked before, there's like many verticals, and someone needs to decide, like, what can go in, what cannot, and also provide the science experiments for people to iterate on something that is gonna be representative of the final run. So this is the first thing that my team does. The second thing that my team does is bringing everything together and actually doing the big run. So this has, as you might imagine, like we train on a good amount of GPUs, so there's a lot of infra work that is needed, but also there's a lot of ML work that is needed by putting everything together and making sure things work well together. And then the third thing that my team does is horizontal improvements to the models.\n\nSpeaker 1 | 12:06 - 12:31\nBasically, are some things that, like, these vertical scenes will not usually look too much at. For example, the thinking time, as I said before. So how much should the model think for on certain answers? Or instruction following, function calling, things like memory, and general improvements to the model that are really across the stack. So that's what the Pushing Frontiers team does, I'm leading that team.\n\nSpeaker 2 | 12:31 - 12:35\nOkay. Great. And, what was your journey into OpenAI?\n\nSpeaker 1 | 12:35 - 13:00\nOh, it's a long story, but I'll try to keep it really short. Basically, I did my undergrad in biomedical engineering, in Switzerland. I'm from Switzerland. And then I won an exchange in Canada, and I learned about word2vec. So I don't know if you heard about this algorithm, but it basically takes words, which is like a a something discrete, and puts it in a in a vector space.\n\nSpeaker 1 | 13:01 - 13:30\nSo puts it basically in a in a way to think about it as a plane where if words that are more similar to one another will be closer to one another. So it it brings these, like, discrete words into, like, some continuous space that is semantically meaningful. I was absolutely blown away by that algorithm. And that's when I decided that I wanted to work on natural language processing and just understanding language. At that time, I was very wrong, but I thought that English NLP was basically solved, well, like close to being solved.\n\nSpeaker 1 | 13:30 - 14:04\nThat was in 2017. So that was right when Transformers started, and it was actually right before Transformers. So I was very wrong, but I decided that I wanted to work on under researched languages. And basically, I wanted to improve NLP on languages where we don't have that much data. So I went to work for Grab in Singapore, and I was basically building the natural language processing pipeline for them, working with Khmer, with Bahasa, with Thai, Vietnamese, and all these different languages.\n\nSpeaker 1 | 14:04 - 14:18\nAnd then I'm skipping a little bit. I had I did more academic type of work in different countries, and I ended up at Stanford, did my PhD there. And after this, had a small stint into startups and then, went to OpenA.\n\nSpeaker 2 | 14:18 - 14:30\nYes. And I I remember, seeing on your blog or your page a note for quant firms to not reach out to you because you were not interested in hedge fund work.\n\nSpeaker 1 | 14:31 - 14:43\nYeah. I always think it's very important for me to think about the positive impact that I'm having in the world or at least that I'm trying to have. Yes. So so that's that's why this thought is there.\n\nSpeaker 2 | 14:43 - 15:05\nYes. And as we were, saying just before we started recording, people may have seen you in the GBT five video announcement, and you did this very funny demonstration of an app that was built on the fly to teach your partner how to speak French. So, like, people should go check that out.\n\nSpeaker 1 | 15:06 - 15:17\nExactly. That was that was a fun one. That was a fun one. It was GPT five was not that reliable, I was a little bit stressed that it wouldn't work, but but it ended up working.\n\nSpeaker 2 | 15:17 - 15:19\nSo this was truly live and and\n\nSpeaker 1 | 15:19 - 15:20\nOkay. Was it was truly\n\nSpeaker 2 | 15:21 - 15:23\nvery rehearsed, but but truly live.\n\nSpeaker 1 | 15:24 - 15:37\nActually, the right before we did that, like, the last rehearsal, it did not work. So I got slightly stressed about that, but but, yeah, seems like live live ended up working well.\n\nSpeaker 2 | 15:37 - 15:42\nYeah. The no no pressure. But, that that that landed perfectly. Okay. Very cool.\n\nSpeaker 2 | 15:42 - 16:19\nAlright. So let's some of the things we alluded to in the intro. So we started effectively talking about reasoning, and I'm curious what reasoning means in 2026 that's any different from, you know, a conversation we could have had about one or three. In particular, one of the claims of 5.5 and and also my experience as a user is that it's particularly good with with messy data, which seems to imply that it needs to reason through ambiguity more. What has changed?\n\nSpeaker 1 | 16:20 - 17:23\nWhat I would say is that o one and o one preview were really, really breakthroughs in the research community about having model that can think, and the longer they're thoughtful, higher likelihood they would be of being correct. So that was really a breakthrough, but initially, and if you look at old blog posts, would mostly see math evals and also maybe coding competitions, but things that are really easy to test whether you're correct or whether you're not. And it also gives you like some suggestion about like how we were training some of these models, and how I see maybe all of last year and especially the end of last year and the beginning of this year is that we were able to take these algorithms that work with, verify rewards, things where we can say you're correct or you're not, to the messy real world really optimize for the utility that we provide to users and, like, making them more productive. So I think that's what really changed.\n\nSpeaker 2 | 17:23 - 17:30\nOkay. So it's the post training reinforcement learning part largely?\n\nSpeaker 1 | 17:30 - 18:20\nYeah. I would say that's a I mean, there's also there's also another big part of it. Number one, basically, the the first thing is that, of course, when you develop a new method, the method is kind of fragile and is not that reliable and it's hard to basically productionize, so this bot also improved a lot, but then it's also really basically, we had a tool that we could start optimizing for different things, And initially when we were developing this tool, making we a lot of simplifying assumptions up in the real world basically. Now we are removing these simplifying assumptions and at least in Poshstring, we are able to optimize really user utility and make sure that these models are useful and the tasks that we are looking at are useful. And that's why also now current evals look much more realistic.\n\nSpeaker 1 | 18:21 - 18:33\nI mean, if you think about g t p val or even if you look at, like, three bench pro or three bench, these look way more realistic than, let's say, some code force or, like, coding competitions that we were looking at with r one.\n\nSpeaker 2 | 18:33 - 18:51\nMhmm. Mhmm. And still on the topic of of reasoning, what what's ultimately the difference between 5.5, thinking versus 5.5 pro? Is that is that just more test time compute, more tokens, and more time invested in solving a a problem?\n\nSpeaker 1 | 18:51 - 19:33\nYes. Basically, it's just a question of of, how much test time compute we pour into the model or we pour into this entire, system that we're shipping. So we we've seen again and again the longer the model think for, the better answers we will get. The problem is that these curves that we're talking about are definitely not linear, and there's some plateauing effect, they kind of look logarithmic in some sense, or depending on which eval. So you can pull, like, two times more compute and actually only get, like, small performance gains.\n\nSpeaker 1 | 19:34 - 20:10\nI personally don't use Pro that much because I really don't like wait I'm pretty impatient, so I don't like waiting for that long. And, and I know that the probability of being correct definitely improves, but it doesn't improve, like, enough for for me to use it. But there are some people who use Pro and who really love it, especially actually for academic research. And, I know especially a lot of mathematicians who are using it, and that's because they're kind of just have this in the background that is running for maybe one hour, two hours, and they don't really need to, like, iterate really quickly with the model. And Pro is really good for that.\n\nSpeaker 2 | 20:10 - 20:32\nI'd love to reconcile this with, what you were mentioning about efficiency earlier per token. So is the idea that, you would be able to think longer, but also be more efficient, therefore solve the task better? Like, how do those the the the the time aspect and the efficiency aspect sort of interact?\n\nSpeaker 1 | 20:32 - 21:22\nYes. So if you go back to, the plot that I was talking about, what I was thinking about, well, on the x axis we have latency and y axis we have performance, we're basically moving this curve when we say that we improve efficiency more and more to the left, so we're becoming more efficient or, like, we spend less time to achieve the same performance, but what Pro does is that it extends this curve. So it says like, I'm gonna think for much longer, but I will have a higher likelihood of being correct, but every iteration of the pro model also moves to the left, so it also becomes more and more efficient. The important part is there will always be tasks where you just want to maximize the probability of correctness and you don't really care about latency. For example, if start a job before going to sleep, I mean, the model has, eight hours.\n\nSpeaker 1 | 21:22 - 21:28\nLike, it should just think for as long as it, as it can. And this is what kind of ProBook gives you.\n\nSpeaker 2 | 21:28 - 21:41\nAnd, in layman's term, like, what what what does that mean practically? Or how does that work practically? If the model goes in the wrong direction, then it would interrupt itself earlier? Is that, is that one of the axes?\n\nSpeaker 1 | 21:42 - 21:46\nSo for the efficient Okay. So there's two things. Are are you asking for the efficiency? What does it mean?\n\nSpeaker 2 | 21:46 - 21:48\nYeah. The for the efficiency. Yeah. Yeah. Yeah.\n\nSpeaker 2 | 21:48 - 21:54\nYes. For the largely for the efficiency, I'm like I'm I'm I'm just curious how reasoning gets more powerful.\n\nSpeaker 1 | 21:54 - 22:40\nYes. That that's a good question. Let me give you maybe a metaphor from humans. You have someone who's an expert in certain domain and you compare them to some undergrad that is starting in that domain, the undergrad doing that task will probably take might take one day, two days, and we'll have to think through a lot of the possibilities and investigate because it never did a certain problem, while someone who's an expert that field will usually just know what direction to take, and it will not spend the time on investigating 10 different directions because it knows that there's one that is more likely to be correct. So this is the type of efficiency that we're talking about.\n\nSpeaker 1 | 22:40 - 23:10\nIt's basically models where we optimized more on real world problems. As a result, it was kind of trained to figure out with a higher likelihood which paths of reasoning are more likely to be correct. So this is a part on efficiency. There's also what you suggested is that part of it is the model knowing when it's going down the wrong path. But this is also something that we can that the model can be trained for with reinforcement learning.\n\nSpeaker 1 | 23:10 - 23:22\nIt's like knowing, like, that seems like not a great path. Let me backtrack and let me go and test something else. And if you train the model less, it might realize that it's in the wrong path much later.\n\nSpeaker 2 | 23:22 - 23:43\nOkay. All right. So it seems like a lot of this goes back to reinforcement learning and post training. So let's talk about how the different components of modern AI systems work. So let's talk about pre training, mid training, and then post training and spend more time on post training since it's so important.\n\nSpeaker 2 | 23:44 - 24:19\nStarting with pre training first at a high level and realizing that you may or may not be able to talk about how the things done or what happened in the context of 5.5 specifically. Big narrative of last year was that pre training was hitting a wall and was not going to yield much progress. That seems to not be the case at all in 2026. Can you walk us through some ideas for what is happening in pre training and why it's progressing now in a way that people hadn't predicted last year?\n\nSpeaker 1 | 24:19 - 25:28\nFor pre training, I can't talk in a lot of details about what's happening internally. Besides that, the team has been really doing a lot of good work, and our models are really getting better and better. One thing that I do want to highlight when we're talking, for example, with efficiency, If you have larger models, the amount of thinking time, so the amount of tokens they will think for, will usually decrease. And the way that you can think about it is that metaphorically, the model already thinks through its weights when it generates a certain token, so you can decrease the number of tokens that it needs to generate for thinking by increasing the size of the model that you are training. Oftentimes, if you just increase the model size, if you basically pre train larger models, you will get better efficiency, and the good thing with larger models is that they can be paralyzed better on at inference time.\n\nSpeaker 1 | 25:28 - 26:21\nSo the even though you might think, you actually generated fewer tokens, but by a larger model, so you actually might decrease the overall efficiency of the system. This is not true because the larger the model is, the more chances you have to actually optimize optimize busy for inference on GPUs, so you will be able to make the overall system more efficient. So that's one thing I wanted to say with larger models that are actually giving you a lot of efficiency. Otherwise, in terms of pre training, I think it's very interesting. I actually also thought maybe two years ago that pre training was kind of hitting a wall, and when we see, for example, if we talk just about Entropic, I mean, Mythos seems like clearly just a much bigger model when you look at the cost.\n\nSpeaker 1 | 26:23 - 26:49\nThe cost of the model, usually that's how you know, by the way. It's a bigger model, you just look at the cost per token. And clearly, they are getting very good performance just by increasing the size of the model. So I think the field was very at least part of the field was surprised about that. There were a lot of conversations about hitting data walls, and it seems like we did not quite hit it.\n\nSpeaker 1 | 26:49 - 27:02\nSo the larger the model is, the more data it needs to ingest to be trained. And it seems like different companies kind of found different ways to overcome the fact that we don't have that much data on the internet.\n\nSpeaker 2 | 27:03 - 27:12\nIs the next frontier or the current frontier for data multimodal data? Is it synthetic data?\n\nSpeaker 1 | 27:12 - 27:55\nI think synthetic data can probably work well in in a data, data limited regime. I think multimodal is an interesting one. I definitely cannot talk about what we do internally, but I used to work on multimodal representation learning back in the days, and I always thought that it would really help your reasoning abilities if you have a lot of multimodal data. And I still think this, but for example, if you look at entropic models, they tend to not be that good on multimodal, and they are still really smart. So it seems that it's not as necessary as at least I would have thought in the past.\n\nSpeaker 1 | 27:56 - 28:20\nI still believe that once we go to embodied agents, embodied AI, you will learn a lot about the world, and you will kind of improve general intelligence and usefulness to users by learning how the world interacts with itself. But at least looking, for example, in traffic models, it seems like they don't need that much multimodal data to have a strong model.\n\nSpeaker 2 | 28:21 - 28:33\nAnd by embodied intelligence, so you mean so potentially robotics. And so if you use a video, that shows how gravity works and how a robot evolves in space, then presumably that would be more useful. Is that is that the thought?\n\nSpeaker 1 | 28:34 - 29:23\nYes. The the idea the the intuition that I think many people had, and I I definitely thought for a long time, is that it's hard to understand the world, only through text. And and there will be, it's hard to understand what, like, what physics is without really seeing what, like, for example, you can't understand gravity without really seeing things falling, and when you look at our models, I mean, they kind of understand gravity without having seen that, but it still seems not obvious. Like it still seems like they would get it more, and like they are still kind of missing some common sense aspects, So I do feel like we will improve the common sense of our model by having them interact in the real world. But we're still pretty far from that, I think.\n\nSpeaker 1 | 29:23 - 29:29\nAnd by we, I mean, just generally the academic community and the AI community seems pretty far from\n\nSpeaker 2 | 29:29 - 29:42\nYeah. And while we're on the topic, as a quick detour that leads us to the concept of world models. Taking your open eye hat off, are you bullish on world models?\n\nSpeaker 1 | 29:42 - 30:49\nWorld models in the sense that, yes, you can try to replicate or simulate things, basically work in an environment that is simulated. Yes, the problem is simulations are always going to be really hard and not going to be truthful. So I think there will always need to be a certain a little bit of training that will need to happen in the real world to make sure that the model realizes kind of these mismatches between the simulated world and the real world. And I think we as a field have a tendency of optimizing something that is simulated or not quite realistic past the point where this is useful. So that's something that I think we should always be careful with, we spend a lot of time and effort on optimizing something simulated and not quite realistic, and it's great at the beginning, but at some point once you start optimizing too much for something, it's not representative of the real world, and people continue doing that just because that's what they've been doing for a long time.\n\nSpeaker 1 | 30:49 - 31:05\nSo I just think people need to realize when to stop that. I don't work with these type of synthetic environments as much, or just because I don't work on embodied AI. So I don't know if we heard that yet.\n\nSpeaker 2 | 31:05 - 31:10\nOkay. Great. Alright. So going back to pretraining, mid training, post training. Let's talk about mid training.\n\nSpeaker 2 | 31:10 - 31:17\nIt's it's maybe something that people have heard about a bit less. The term comes up a bit less. What is it and why is it important?\n\nSpeaker 1 | 31:17 - 32:00\nMid training is just this idea of something that's between pre training and as you might realize from the name and kind of the post training part of the pipeline. And really, the idea is if you have high quality data that is more representative of what you really want in your final model, you should overtrain on that data. Taking a step back here, pre training, what is it? Pre training, it's basically trying to learn everything from the world by learning everything from Internet at a high level. The problem is that most things on Internet are not really useful.\n\nSpeaker 1 | 32:01 - 32:19\nIf you think, for example, about Wikipedia or, like, GitHub, which is, like, coding data, it just seems like there's way more information in there than some random forums. Yeah. Some some random forums that may maybe not, like, have that much information. Like, for example, ads. There's also lots of ads on Internet.\n\nSpeaker 1 | 32:19 - 32:44\nLike, you probably don't wanna train too much on that. But in pretraining, train on everything, and in mid training, we basically overweight this type of high quality data that we think is more useful, for for training the final model. And this is something I I can't talk about what is happening in everybody here, but it's, like, something that that is happening definitely in all the academic community right now and in all the open source models have this stage of mid training.\n\nSpeaker 2 | 32:44 - 32:52\nGreat. Post training, let let's start, at a high level by by defining what that is. So there's reinforcement learning, but that's not the only part of post training. What what else is there?\n\nSpeaker 1 | 32:52 - 33:39\nIt kind of depends how you define the term, and where you put the boundaries. In my mind, post training, I'll take it from a very broad sense, which includes all the reinforcement learning and the training for our reasoning models. It's just the idea of having something that knows everything about world to making something that is useful to people. Pre training, I think about it, or the metaphor that I like giving is you go in the library and you have a lot of books about everything, and in theory, you can find all the information that you want in the library. But it's much more useful to talk to an expert who has learned these books and that you can ask questions to, and they can answer they can answer, and, like, they they can understand, like, what you're actually looking for.\n\nSpeaker 1 | 33:40 - 34:04\nSo this is kind of the goal of pushing at a very high level, is making something that is useful to users and is easier to interact with. So there are multiple stages. I'll talk mostly well, I'll talk only about things that are happening outside of OpenAI and kind of the the usual stages. There's usually some SFT that is happening.\n\nSpeaker 2 | 34:04 - 34:06\nWhich is supervised fine tuning.\n\nSpeaker 1 | 34:06 - 34:36\nSupervised fine tuning. Yes. Supervised fine tuning, and that's actually what early on most of the models that we're posturing were only doing supervised fine tuning. This is the idea is that if you have humans that can give you the desired final answer, so if you have if, yeah, if you have humans that can give you the gold answer, you can basically clone the behavior of the human. So this is what we call behavior cloning.\n\nSpeaker 1 | 34:36 - 35:10\nThe problem with this is that you will never get better than what your ground truth gives you. And humans are actually pretty limited in many many sense, so you will never, like, overcome the human labelers that you're working with. The reinforcement learning reinforcement learning stage goes from behavior cloning to really like optimizing rewards. So the idea is, I don't know what the ground truth is. I don't know what the perfect answer is, but here's how I would say whether the answer is correct or not.\n\nSpeaker 1 | 35:10 - 35:46\nAnd here are the things that I want in the answer. And what you do is you start optimizing, you start having a model that tries to get more reward, basically optimize more this reward function that's how we call it. And it goes beyond what you currently have, what humans can do, what at least the humans that you're working with can do. So this this, I would say, is the two big stages. Then in reinforcement learning, that depends in, like, which models are being trained, at least in the open source community, it seems that there are there are different ways of doing that.\n\nSpeaker 1 | 35:46 - 36:15\nReinforcement learning, when you have very fireball rewards. So reinforcement learning where it's really easy to say whether something is correct or not, and you can really kind of have a binary reward for this, and that goes back to how we talked about one and one preview in the past. And then you have reinforcement learning without verifiable rewards, where maybe I could do pairwise comparisons. I can say this answer is better than this other one, but I don't really know. I cannot quite say this is the perfect answer.\n\nSpeaker 1 | 36:17 - 37:10\nSo of course, like it's a continuum and there's everything in between, but I would say these are like the three high level things to think about when you think about post training in general. How people are usually doing it in the open source world is that they take SFT, they clone the behavior that you you can collect online or from humans, and then once it's already at a pretty good level, they just do this reinforcement learning to go beyond what we currently have. Because if you just started from reinforcement learning, it would be very inefficient. Because the problem with reinforcement learning is that you have to stumble across the right answer, basically. Because how how reinforcement learning works is you sample many times essentially from the model that you're training, and you say this one is correct, this one is not, and you say do more of the one that is correct.\n\nSpeaker 1 | 37:10 - 37:21\nSo you have to stumble across the right solution. So you're much better off first getting as much as close as possible to the best you can do. And this is this behavior cloning and then doing reinforcement learning.\n\nSpeaker 2 | 37:21 - 37:29\nDoes reinforcement learning create new capabilities or does it make the model better at existing capabilities?\n\nSpeaker 1 | 37:29 - 38:18\nIt's really hard to say because pre training, when it's trained on all of the internet, arguably already has all capabilities in it. So it would be even hard to answer this question scientifically because arguably everything is already there. What I would say is that if you look at models that we were training or that we were post training like two years ago in the open source world, For example, I worked on one of them, Alpaca, where we used 50,000 examples for SFT. And like now, when you look at reinforcement learning from models like Kimi or from DeepSeek models, it seems that they are closer to 1,000,000 data points. So definitely people scaled up a lot the reinforcement learning stage.\n\nSpeaker 1 | 38:20 - 38:53\nFrom this, it seems that they've learned new capability, like this reasoning aspect, this fact that you can check your answer and try to improve it, so you can really think for longer to get a more correct answer. All this to say that arguably everything is already in pre training, but we were definitely able in the last one year and a half, even in the open source world, to have more capabilities after reinforcement learning than we used to before.\n\nSpeaker 2 | 38:53 - 39:20\nI heard several times that reinforcement learning is pretty finicky and hard to scale and part of the reason why we as an industry didn't do reinforcement learning as part of the initial kind of LLM sort of a progress curve was precisely that, that it was hard to to make work. What is hard about scaling RL? Is that a question of, datasets, knowing where the rewards are? Is there is that or something else?\n\nSpeaker 1 | 39:20 - 40:04\nI would say most people who did not work in reinforcement learning in the academic and like in research community up to two years ago probably thought reinforcement learning would would just doesn't work and is like too finicky to to work with. I used to be that type of person and actually when I saw ChatGPT come out they had this blog. I was not at OpenAI at the I saw this blog that says that they use reinforcement learning, and my first thought was I can do the same without reinforcement learning, because this is just an over complicated method, and this is actually the product that we started working on with Alpaca, was exactly let's try to reproduce that only using SFT just by doing this behavior cloning. Yeah. And and, like, for example, Yan Leuke famously, like, gives, like, this metaphor of, like, oh, the the reinforcement is just, the cherry on the top.\n\nSpeaker 1 | 40:04 - 40:57\nSo I think that was really like, the intuition that most people had, it seems that after crossing a certain scale of models that know basically everything about the world and what we call, like, good priors about the world, it seems that reinforcement learning just started to work. And this is not only with LMs. Robotics seems to be entering the same stage where they're realizing that actually it used to be very finicky, but now that we use models that know already everything about the world, it actually learns pretty well. Now, to answer your question about what is still complicated with reinforcement learning, one is an infra aspect. So just like systems in general, reinforcement learning, have at a very high level, basically to sample, as I said before, many answers and say like what is correct and what is not.\n\nSpeaker 1 | 40:59 - 41:42\nLike this sampling is just very expensive and you have to do it at scale. The other issue that also in the open source world people are seeing right now is that when we are training more agentic systems, you only know whether you're correct at the end of your very long rollout. So you get very little information per token of whether you were correct or not, and it's hard to say it's hard to basically do attribution. It's hard to say what part of your entire answer was the one that led you to be incorrect. So that's more of an issue on the machine learning side.\n\nSpeaker 1 | 41:43 - 42:01\nThe ideal world in machine learning is when I can say exactly like, this thing was good, do more of that. And the problem again with these agentic systems and reinforcement learning with agentic systems is that you don't really know which part was good or not until you arrive at the end. That's another big issue for reinforcement learning.\n\nSpeaker 2 | 42:01 - 42:17\nWhat's the current frontier of reinforcement learning? It seems like there's a jungle of acronyms like GRPO and, other techniques. What, what are you using? What are you excited about? What do you think is promising?\n\nSpeaker 1 | 42:17 - 43:09\nSo I can talk about what we're using, but, like, for example, the open source world, gRPO seems to be working very well, and people used to have different methods like PPO and and DPO, and, like, people seem to have really converged to this one. The big The big difference with other methods is that you do this simple method that I told you about sampling as many answers as possible, and you say which one is correct. So in some way, GRPO is a very simplistic method. And in general, we saw over and over again in machine learning that the simplest method where you can scale up in terms of compute usually is the one that ends up working the best. And that is kind of what is happening here, at least in the open source world.\n\nSpeaker 2 | 43:09 - 43:27\nAs you described some of the challenges, question crossed my mind. You know, you often hear that AI systems are not built, they're grown. How you'd characterize it as well? What part is science versus a craft or trying multiple things and then just keeping what works best in your day to day life?\n\nSpeaker 1 | 43:27 - 44:08\nYeah, that's a great question. I think how it usually works is that it starts being craft. People just try out many things, and they start building a mental model of what works and what doesn't, and over time we move from this craft land to more science. Science is or more scientific approach are really the ones that first end up working. It's very rare that you take a really scientific approach and you say, like, this is the optimal thing to do, and you do it and it just works.\n\nSpeaker 1 | 44:08 - 44:40\nLike, people are just there's some sense of alchemy. People just have, like, a good flair for something and they make it work, and then other people or that person starts trying to improve what we are doing by being very scientific. And I would say this happens over and over in machine learning. So first craft, then science, and both are really important, but it's different stages of the pipeline. In terms of engineering, this is definitely something that is always necessary.\n\nSpeaker 1 | 44:41 - 45:09\nSo I would say most researchers have moved to being relatively good at figuring at least, I wouldn't say good engineers, but good at working in complex systems and figuring out what they need to try out. The systems the the and the infra that we have has become more and more complicated. So so definitely the the work required changes over time.\n\nSpeaker 2 | 45:09 - 45:36\nFascinating. Alright. So still in a reinforcement learning and circling back to some of the things you said at the at the beginning. So if I wanna make my model better at computer use or genetic coding or whatever domain, then I would spend particular amount of time doing specifically reinforcement learning for computer use and putting together a dataset and then coming up with rewards. Is that is that how it works?\n\nSpeaker 2 | 45:36 - 45:42\nLike, you you just pick one problem and you just do reinforcement learning specifically for it?\n\nSpeaker 1 | 45:42 - 46:17\nTo be clear, I talk more about reinforcement learning because also this is like the part I know the best. And this is what I've worked like, pushing, I've worked on for a long time. We talked about mid training before. All these things are also extremely important, and you can improve it in different parts of the pipeline. As I said before, the closer you are from the final stage of the model, usually the smaller the scale of the training becomes, so you can iterate fast on that because now you can iterate in terms of days rather than iterate in terms of months.\n\nSpeaker 1 | 46:18 - 46:46\nUsually, start from this fast situation loop, and then they go deeper, and they make, like, bigger changes, across the entire stack. So this is not to say that, only, like, reinforcement learning matters. I'm really not saying that. But it's just that, like, that's why people will start doing, changes, and then they will that will permeate, and we will go deeper into the stack. So this is how it works, and in the open source world, it's very much like that too.\n\nSpeaker 1 | 46:46 - 47:05\nI think you see way more post trained models than you see new pre trained bases, And you see way more improvements in the algorithm, and that's why we talked about, I mean, GRPO, DPO, PPO. There are so many XPOs, and that's because people can iterate really quickly on its final stage of the pipeline.\n\nSpeaker 2 | 47:06 - 47:24\nAnd the jagged nature of, those models, does that come from this approach of, picking this problem and that problem, and therefore it's gonna be excellent at those problems, but not as good as other problems? Or is that a more fundamental characteristic of AI models?\n\nSpeaker 1 | 47:24 - 48:04\nThere's definitely some of that. For sure, if you optimize more on specific types of problems, you will be better in that setting. I would say, with my intuition, is that it's less about the exact problems that you're optimizing on, and it's more about the class of problems that you're optimizing on. So for example, if you are really good at math competitions, your model will probably be pretty good at coding competitions. So it's not about the domain, it's more about the skills that are necessary and the way to think and this horizontal capabilities that you need for performing these tasks.\n\nSpeaker 1 | 48:05 - 48:21\nAnd that's what I think you are usually seeing. When some model is really bad at something, it's actually bad at that in any domain, in any language. So you have to think, yeah, about this domain and then this generalization of this domain, not necessarily per domain capability.\n\nSpeaker 2 | 48:21 - 48:56\nSo speaking of generalization, so there's been that clear evolution from math and coding success to now starting to cover different areas. So that's the whole GDP valve thing where, like, across the economy, different areas are being evaluated in terms of, model performance. Sort of same question. Is that the result of overall model progress? Or is that a deliberate, okay, now we're gonna take you know, this part of the economy and build a dataset for it and do mid training and do post training?\n\nSpeaker 2 | 48:56 - 49:04\nHow does that progress work from those very specific domains to generalizing to the rest of the world?\n\nSpeaker 1 | 49:04 - 50:02\nIt's definitely something that we actively push on. I think people are realizing, I mean, us and also other companies, that we are moving towards this world where we want to really make products that are useful and improve productivity of people and help people in their day to day life. So I think there's a very active move to deciding what are the domains that we should be prioritizing. Now that we know we have an algorithm that we can apply in different places, what we are constrained by is more collecting the right data, having people who really care about a certain problem work on that problem, but there are not that many people who can do these things, so you really need to prioritize. So this is Yeah, it's a very active, proactive kind of approach here.\n\nSpeaker 1 | 50:02 - 50:25\nAnd in general, I would say the performance of the model really depends on, like, the number of people who care about the final output of the model and who are looking at that model. So if they start looking more on specific verticals, these verticals will improve really quickly. But again, we don't have that many of these people that can do these things.\n\nSpeaker 2 | 50:26 - 50:53\nBut to unpack something that you alluded to, I think a minute ago, do models actually generalize now more, especially from a reinforcement learning perspective? So being making a model very, very good at domain A or B, is likely to make the model better at C, regardless of the amount of effort you put into developing, rewards for domain C.\n\nSpeaker 1 | 50:53 - 51:25\nSo I think there are different axes of generalization. One, there's an algorithmic generalization, and and that's, like, really, can I use the algorithm that I developed for domain a, and can I use it for domain b? And again, like even talking about the open source wall, it really seems that it's like people are able to do that. They take GRP or they apply it in like many different places and it just works. So that generalization seems to be relatively good, is why we're seeing a lot of progress.\n\nSpeaker 1 | 51:25 - 51:50\nOtherwise it would be hard to make progress. Then there's the generalization of the model that is trained on one particular dataset. And this is what I was alluding to before, is at least my mental model is that generalization happens in terms of capability. Like, if the capability is the same, you will see generalization across domains. Again, like multi like, different languages, like coding.\n\nSpeaker 1 | 51:50 - 53:06\nLike, you can optimize for C plus plus coding, for having a good C plus plus model, with very little training on C plus plus partly because this pre trained model very little OL in C plus plus partly because this pre trained model has seen all of C plus plus and so it already kind of understands the basics of that language. So that type of generalization definitely happens. The generalization that I think is harder are these when we don't have these horizontal capabilities. So I'll give you one concrete example. If my model is very intelligent in terms of being correct on competitions, I usually take that example because it's somewhat conscribed at math competitions, like coding competitions, From a human perspective, people that are good at these things are usually just smart, and if they are smart or someone might think that at least, that they are just smart, if they are smart, they can actually do other things too, but that is really not true, and that type of generalization is really not true because many things where we need to have humans working on expert domains The world is very messy, and these coding competitions and math competitions are extremely well specified.\n\nSpeaker 1 | 53:06 - 53:47\nAnd you need to have the capability of understanding underspecified tasks, understanding how to deal with the messy world, and understanding what are even the resources that you need to answer the question? Like, if you look at the at the math, competition, like, you usually have everything in the in the in the prompt. It's like you have five lines or maybe 15 lines, and it's, like, all the information that you need to answer this question. In the real world, if, if I'm a consultant, if I work in, like, finance, I need to go on the Internet. I need to, like, find and extract different information just to understand, before doing any of the reasoning, just to to be able to do that reasoning.\n\nSpeaker 1 | 53:47 - 54:18\nAnd this type of horizontal capability is the thing that doesn't usually You generalize if you have that horizontal capability, but in many cases, we don't have that horizontal capability. Yeah, that's why we hallucinate actually in every domain. When you have hallucination of LMs, if a model is really bad at saying that it doesn't know, that usually happens in every single domain. You won't have one domain where the model is extremely calibrated about its knowledge and another domain where it's not.\n\nSpeaker 2 | 54:18 - 54:29\nAnd as a quick detour, is hallucination also a reinforcement learning problem where you reward the behavior to say I don't know when it occurs?\n\nSpeaker 1 | 54:30 - 55:37\nJohn Schulman has a great presentation about that, I think from like one or two years ago, where he was saying that if you do behavior cloning, so this like SFT that we talked about before, you be like, you will will basically reward and optimize for hallucination because what will happen or you could optimize for hallucination because what what will happen is if your model doesn't know about something, but now you say that the right answer is to say that something. So I'll give you I'll be very concrete. If the model doesn't know about a paper, and now in an answer that you give that is given by a a ground truth answer given by a human, you say, here's where I got the information, and then you cite that paper. Like, what you're actually optimizing the model to do is citing something that doesn't exist because it doesn't know that that paper exists, so John Sullivan had this, like, great presentation saying, like, SFT is gonna force, like, a hallucination, while in reinforcement learning, given that, as I said, you kind of sample from the model in the first place, extremely unlikely that it samples something that it doesn't know and it's correct.\n\nSpeaker 1 | 55:37 - 56:04\nThat's like extremely unlikely, so you will never reward that behavior. You will only sample things that it doesn't know and being incorrect, and then you will kill that, kill that behavior. So so hallucination, at least the the intuition that people have, is that it it can come, for example, from from SFT and it it can come from this, like, portioning pipeline. But if you have good reinforcement in pipeline, that shouldn't happen too often.\n\nSpeaker 2 | 56:04 - 56:24\nAnd, going back to, generalization as well. Is there are there examples where, actually getting better at one domain, makes the model worse at, the rest? A little bit, to what you were saying about, like, some people are very good at math, some people are very good at English. Pretty often, they're not the same people.\n\nSpeaker 1 | 56:24 - 56:53\nIn domains, usually not. What will happen, though, is you will make decisions based on which domain we optimize for. If you optimize for one domain, you will be able to optimize less for another one. It's not necessarily that optimizing for one thing will make the other one worse. It's just that as a result, can optimize less for the other one because you're compute constrained, you're data constrained, you have your your, human bottleneck also in terms of that work.\n\nSpeaker 1 | 56:53 - 57:50\nWhat does happen is, you can have negative kind of generalization like bad generalization or negative transfer more for these horizontal aspects of the model. I'll give you a very concrete example. Explicit instruction following versus implicit instruction following. If I have a model, and this is we often hear, for example, from OpenAI models that they tend to be really good if you tell them exactly what you want, but as a result, sometimes we hear also that they're like less good if you are not as specific about what you wanted. For example, if I make a typo and I say, Change this file, and I make a typo in this file, an extremely good model at explicit instruction following will change the wrong file, the one that has a typo, but humans would probably realize that you made a typo.\n\nSpeaker 1 | 57:52 - 58:05\nAs a result, there are cases where this explicit instruction following goes against this, like, implicit instruction following. So you will have cases where, basically, these horizontal, capabilities go against each other.\n\nSpeaker 2 | 58:05 - 58:26\nAnd maybe to close on this whole, reinforcement learning, conversation. So is your sense that as we progress from being excellent at coding and excellent at math and move to the rest of the economy, do you think that the rest of the economy is a tractable problem? Do you think we can get to the same level of performance ultimately?\n\nSpeaker 1 | 58:26 - 58:43\nYes. But. I was like, yes, we can. I don't think there's anything like really deeply special about these domains where we cannot optimize, and where we couldn't get the same with other domains. The but is for at least two reasons.\n\nSpeaker 1 | 58:43 - 59:31\nThe first one is most of the people working on these models are pretty good at coding, and they really care about coding because that's what they use as their current drivers, and there's nothing better than the user being also the one who, like, trains the model because, like, then they understand the issues. It's it's hard to really like, for me, for example, it's very hard to really understand, like, what should we change on the verdict like, on, like, legal aspects of the model if I don't understand anything about the legal domain. So that's one thing. The other thing that you will often hear about, and I mentioned also briefly about before, is this kind of verifiable rewards. There are domains where it's easier to say where something is correct or not.\n\nSpeaker 1 | 59:32 - 1:00:08\nFor example, in the case of cyber, like you mentioned that before that, like, cyber has been improving a lot, cyber capabilities are in models, and this is because in cyber, it's, like, extremely easy to say. If in are you correct? Like, did you find like, did the cyber issue that you find is a real issue or not? It's very easy to test it. And so there are domains where reinforcement learning is just, like, easier to apply, but there's nothing I would say in the capacity of the model that is constraining the model to be as good at legal and medical and other domains.\n\nSpeaker 1 | 1:00:09 - 1:00:19\nSo it is the the the short answer is we know less about these domains, and, definitely there are some domains that are easier to optimize for in reinforcement learning.\n\nSpeaker 2 | 1:00:19 - 1:00:29\nGreat. Let's talk about evals for a minute. That's a hugely important topic. Maybe to start, why is it so hard to evaluate a model in the first place?\n\nSpeaker 1 | 1:00:30 - 1:01:16\nEvaluation has been harder and harder as models become better, and that's because the tasks that we ask to the model become more and more general and more and more open ended. Now I maybe just say, build me a website that does x, While before in the in the past, I would just be like, hey. Like, is there a specific bug in this in in this, like, implementation that you have? And it's, like, much easier to say whether there's a bug because I I can I can extract I can know a pro I can have a human that says here are all the bugs that you have, and then you can apply that automatically? While the the website one is very hard to know, what is, like, the optimal answer because there are many good answers.\n\nSpeaker 1 | 1:01:16 - 1:02:00\nThere are many good ways of of building a certain website. This open ended nature of models really makes evals harder. There's also another issue, that models in specific axes are becoming better than the majority of humans, and so we have fewer and fewer humans that can actually evaluate these models on particular axes, so that's definitely a constraint. Another one, to be honest, is kind of cultural. Most people want to improve the model, and they think that the best way to do that is kind of training the model, when in reality finding issues and making sure that we can quantify improvements is just as important, if not more important, but there's always this, like, cultural gap.\n\nSpeaker 1 | 1:02:01 - 1:02:30\nThat was especially true, I would say, the academic world up to, like, two years ago when evals were always fixed, benchmarks were always fixed, and even datasets were kind of always fixed, maybe, let's say, four years ago. And there was, like, a mentality shift of, like, okay. Data is actually critical, and now there's a lot of people working on data. And I think evals were still not quite there. People don't really fully everyone knows that it's important, but, like, people don't really understand, like, how impactful it could be to work on emails.\n\nSpeaker 1 | 1:02:30 - 1:02:45\nSo actually, my first first product at OpenAI just came in, I was like, wanna work on data and emails because I know that this is the thing that no one is is working on. And as a result, I know that it's, like, super impactful to work on that. And, yeah, the tide is shifting, but like not fast enough.\n\nSpeaker 2 | 1:02:46 - 1:03:01\nAnd is the pace of progress in model as a judge and AI evaluating AI, is that is that moving as fast? Is that a distinct part of research or, is that fundamentally the same idea or same techniques?\n\nSpeaker 1 | 1:03:01 - 1:03:34\nIt's really fundamentally the same method. It's like nothing also, most of the things that we do in in evals, especially now that we have reinforcement learning, could just be applied nearly exactly as is during training. So that's another reason actually why evals are so complicated is that every time you build an eval, you actually build a way to build training datasets. So now you're gonna optimize that training dataset. Well, not even if it's not that eval, it's gonna be the same type of data, and now you're gonna do super well because we have this generalization of of of capabilities that I was telling you about.\n\nSpeaker 1 | 1:03:34 - 1:04:19\nYou will learn that on that other dataset, and now you'll become really good at that eval, that eval will become obsolete really quickly. So so that's also an issue with ULs. But, yeah, to come back to your question, model as a judge, it's really important, and I think it's one one probably of the most important things because as we get, like, better models, we have this self reinforcing loop, and we have this this, like, capability flywheel where better models become better teachers for other models. And this is really important for training, but then you can also do the same thing for evaluation. So I a lot of my team works on that, and I think that's really critical is to work on this, module model as a as a judge kind of, framework.\n\nSpeaker 2 | 1:04:21 - 1:04:40\nOkay. Fantastic. Alright. So as we get, towards the end of this conversation, I'd love to to zoom out a bit and get your sense for where things, might be heading. Obviously, it's incredibly hard to make predictions on on AI, you know, years out, but let's call it the next twelve, eighteen, maybe twenty four months.\n\nSpeaker 2 | 1:04:40 - 1:04:49\nIs your sense that things are going to continue progressing, or are we heading towards something that could feel more like a discontinuity?\n\nSpeaker 1 | 1:04:49 - 1:05:18\nIn terms of progress, as I was saying before, it's I think it's always continuous. Now the feeling of this continuity will happen. It did happen three months ago with coding or four months ago with coding, and I think that will happen now in every other domains. Like most people are not feeling the same way, the capability of our model and the usefulness of our models, the same way as coding and software engineering is feeling right now. So this will definitely permeate, I think, through many other verticals.\n\nSpeaker 1 | 1:05:19 - 1:05:48\nNow in terms of capability bump in terms of, let's say, verticals that we're already looking at, I think it will be more continuous, and they will there will never be, big discontinuities. Like, most of them are always local discontinuities, but you zoom out and it always just feels pretty smooth. It's not always like this, but, like, that has been the case most of the time, and I can definitely not predict when is the next big discontinuity.\n\nSpeaker 2 | 1:05:48 - 1:06:09\nWhat is your sentiment on this general concept of, accelerating loops in AI? So whether that's continual learning to make models more current and able to learn faster to this broader concept of AI building AI, like in an increasingly automated way, fact versus fiction. And what are you excited about?\n\nSpeaker 1 | 1:06:09 - 1:06:48\nI'm extremely excited about continual learning. I think we haven't quite cracked it. I mean, we we have, like, codex memories, and that that is helpful, but it's definitely not, like, the the end state. I have a friend who always like tells me about, again, another type of plot that we should be looking at, which is x axis time, y axis utility that you provide to users. And right now, or like or like usefulness basically of the models, and right now actually most models, at day zero, if you just drop them in a company, arguably they are more useful than most new employees.\n\nSpeaker 1 | 1:06:48 - 1:07:35\nSo they start higher at t zero, but then across time they are mostly constant. They don't really learn company knowledge, they don't really learn to be more efficient over time on doing the things that they are doing, while humans learn really quickly. What is important is this integral area under the curve of these curves, and as a result, I think, like, humans are still more useful, in many cases, and that's why what we will need is to make like, continual learning is to make the the this curve now monotonically increasing over time, and basically make models more and more useful the longer they work in a certain environment. So I'm extremely excited about it. I'm actually surprised that we're not quite there yet.\n\nSpeaker 1 | 1:07:37 - 1:08:00\nThree years ago when ChatGPT came out, I remember I was doing a startup with friends, and we were thinking about working on continual learning and personalization and memories in general. We're like, OpenAI is going to do that in the next six months. They have all the data, they're to figure it out, and they have all the users and their models are going to run super quickly from users. And three years later, I don't think we're there yet.\n\nSpeaker 2 | 1:08:01 - 1:08:06\nAnd quickly, in layman's terms, is the fundamental difficulty?\n\nSpeaker 1 | 1:08:06 - 1:08:40\nIt's a good question. I actually don't quite know, to be completely honest with you. I don't quite know why it's taking us that long to figure it out. It's this type of domain that I think if we really put enough resources behind it, we would figure it out. Of course, when we talk about this memory inside of a company, there's big questions about permissions, and there's a lot of questions about privacy and, like, what you can share and what you cannot, across models across users, sorry.\n\nSpeaker 1 | 1:08:40 - 1:08:49\nBut for a single user, even for a single user, we're not quite there, and I I don't quite know why. At least at at the at the high level that I can talk about, I don't know why.\n\nSpeaker 2 | 1:08:50 - 1:09:22\nYeah. What you bring up is I think really interesting for AI builders and investors and startups, which is this question of the models getting increasingly smarter within an enterprise. And in particular, there's like this whole tension between what the models are able to do and then what a lot of people have built around the model. So, you know, a year or two ago, was RAG. These days, it's all about harnesses for agents.\n\nSpeaker 2 | 1:09:22 - 1:09:35\nAnd, a lot of people are wondering whether the models are going to end up eating the harness, whether the harness is just a temporary thing. From your perspective, like, where where what do you think happens?\n\nSpeaker 1 | 1:09:35 - 1:10:24\nYeah. I think harnesses can really improve the capability of a model right now. I think given that we're seeing this this really fast progress in terms of capability, I personally wouldn't push that much on the harness unless the harness is something for a very concrete goal that you're trying to achieve right now. Certain companies, if they are focused on a specific vertical, they want to go from this 80% reliability to 85%, and Iconicists will give them that. I think that's very important, but they need to do it while knowing that they will have to retune that harness in the future, and I think that's totally fine.\n\nSpeaker 1 | 1:10:26 - 1:11:23\nIf you try to have a general harness that will sustain over time, I don't think that will work. Harnesses for specific domains as a short term thing that you need to do, I think there will always be so much you can do in harnesses, and if anything, I think everyone should do more of that if they have a specific problem in mind because we're leaving so much on the table without a good harness. Arguably, if we just I think if we froze the models that we have right now and you really worked on the harness and maybe we also spend more time training with a great harness, I think people would really feel the AGI in every single domain or could already feel that in every single domain, But given that we're not freezing it and we're gonna continue training better and better models, I think the harness we don't really understand what the final harness will be, and it's not and, like, it will always change.\n\nSpeaker 2 | 1:11:23 - 1:12:09\nSame question about applications. So we alluded to, your progress in in different verticals, and, that was, you know, GDBI Val in general, but also Tao2bench Telecom, which does complex customer service workflows, and then progress against finance agents, 88.5% of internal investment banking modeling tasks and then 51.1% on Office QA Pro. So bit by bit, you're doing more and more of this. So do you think people should be building, applications, anymore or is ultimately as we get closer to AGI, all of this going to be part of the model capabilities?\n\nSpeaker 1 | 1:12:10 - 1:12:59\nThere's so much space on pushing for like external companies or like startups pushing on specific verticals. I think there's so much space for that. The reason why is because, a lot of people kind of think about intelligence in quotations and kind of raw capability as being the real bottleneck, but I don't think that's true. I think most of the time, the bottleneck is the last mile. It's making sure that the model has the right permissions or has also access to the right connectors and things like this, and we are going to be very focused on this on this general aspect, and I think there are other companies that should be focused on more the verticals and providing maximum value of what we currently have.\n\nSpeaker 1 | 1:13:00 - 1:13:21\nSo I think there will always be a lot of space left for this last mile in different verticals, and I would highly encourage people to continue working on that. And maybe one day when we stop making horizontal progress, which I don't think is anytime soon, maybe we will stop focusing on that. But, yeah, that's not what we're doing now.\n\nSpeaker 2 | 1:13:22 - 1:13:31\nOkay. Well, feels like a very optimistic note, at least for the startup ecosystem to end up on. Thank you so much, Jan. This was terrific. Really enjoyed it.\n\nSpeaker 2 | 1:13:31 - 1:13:33\nThank you so much for spending time with us.\n\nSpeaker 1 | 1:13:33 - 1:13:35\nGreat, thanks Matt!\n\nSpeaker 2 | 1:13:36 - 1:13:56\nHi, it's Matt Turk again. Thanks for listening to this episode of the MAD Podcast. If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't already or leaving a positive review or comment on whichever platform you're watching this or listening to this episode from. This really helps us build a podcast and get great guests. Thanks and see you at the next episode!"
+    }
+  ],
+  "blogs": [],
+  "stats": {
+    "xBuilders": 12,
+    "totalTweets": 23,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
