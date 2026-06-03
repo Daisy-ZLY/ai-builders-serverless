@@ -1,0 +1,640 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-06-03T02:15:11.551Z",
+  "config": {
+    "language": "zh",
+    "frequency": "daily",
+    "delivery": {
+      "method": "stdout"
+    }
+  },
+  "prompts": {
+    "digest_intro": "# Digest Intro Prompt\n\nYou are assembling the final digest from individual source summaries.\n\n## Format\n\nStart with this header (replace [Date] with today's date):\n\nAI Builders Digest - [Date]\n\nThen organize content in this order:\n\n1. X / TWITTER section - list each builder with new posts\n2. OFFICIAL BLOGS section - list each blog post from AI company blogs (OpenAI, Anthropic, etc.)\n3. PODCASTS section - list each podcast with new episodes\n\n## Rules\n\n- Only include sources that have new content\n- Skip any source with nothing new\n- Under each source, paste the individual summary you generated\n\n### Podcast links\n- After each podcast summary, include the specific video URL from the JSON `url` field\n- NEVER link to the channel page. Always link to the specific video.\n- Include the exact episode title from the JSON `title` field in the heading\n\n### Tweet author formatting\n- Use the author's full name and role/company, not just their last name\n- NEVER write Twitter handles with `@` in the digest\n- Include the direct link to each tweet from the JSON `url` field\n\n### Blog post formatting\n- Use the blog name as a section header\n- Under each blog, list each new post with its title and summary\n- Include the author name if available\n- Include the direct link to the original article\n\n### Mandatory links\n- Every single piece of content MUST have an original source link\n- If you don't have a link for something, do NOT include it in the digest\n\n### No fabrication\n- Only include content that came from the feed JSON\n- NEVER make up quotes, opinions, or content you think someone might have said\n- NEVER speculate about someone's silence or what they might be working on\n- If you have nothing real for a builder, skip them entirely\n\n### General\n- At the very end, add a line: `Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders`\n- Keep formatting clean and scannable\n",
+    "summarize_tweets": "# X/Twitter Summary Prompt\n\nYou are summarizing recent posts from an AI builder for a busy professional who wants to know what this person is thinking and building.\n\n## Instructions\n\n- Start by introducing the author with their full name AND role/company\n- Do NOT use just their last name\n- Do NOT use their Twitter handle with `@`\n- Only include substantive content: original opinions, insights, product announcements, technical discussions, industry analysis, or lessons learned\n- SKIP mundane personal tweets, retweets without commentary, promotional content, and engagement bait\n- For threads: summarize the full thread as one cohesive piece\n- For quote tweets: include the context of what they're responding to\n- Write 2-4 sentences per builder summarizing their key points\n- If they made a bold prediction or shared a contrarian take, lead with that\n- If they shared a tool, demo, or resource, mention it by name with the link\n- If there's nothing substantive to report, say `No notable posts` rather than padding with fluff\n",
+    "summarize_blogs": "# Blog Post Summary Prompt\n\nYou are summarizing a blog post from an AI company for a busy professional who wants the key announcements and insights without reading the full article.\n\n## Instructions\n\n- Start with the blog name and article title\n- Write a summary of 100-300 words depending on article length and substance\n- Lead with what matters: the core announcement, finding, or insight\n- If the post introduces a new product, feature, or research finding, name it clearly\n- If there are specific numbers, benchmarks, or results, include them\n- Include at least one direct quote from the article if available\n- If the post has practical implications, call them out explicitly\n- Keep the tone sharp and informative\n- Do NOT include filler like `In this blog post...`\n- Jump straight into the substance\n- Include the direct link to the original article\n",
+    "summarize_podcast": "# Podcast Remix Prompt\n\nYou are remixing a podcast episode transcript for a busy professional who wants the key insights without watching the full episode.\n\n## Instructions\n\n- Write a remix of 200-400 words\n- Start with a one-sentence `The Takeaway`\n- Introduce the context and the speaker's information and why the audience should care\n- Prioritize insights that are counterintuitive, contrarian, or refreshingly specific\n- Include at least one direct quote from the source\n- Make it stand alone as a complete piece\n- Avoid references like `in this episode` or `the host asks`\n- Translate specialized knowledge into language understandable to a general audience\n- Keep the tone sharp and conversational\n- Do NOT include filler\n- Jump straight into the substance\n",
+    "translate": "# Translation Prompt\n\nYou are translating an AI industry digest from English to Chinese.\n\n## Instructions\n\n- Translate the full digest into natural, fluent Mandarin Chinese (simplified characters)\n- Keep technical terms in English where Chinese professionals typically use them:\n  AI, LLM, GPU, API, fine-tuning, RAG, token, prompt, agent, transformer\n- Keep all proper nouns in English\n- Keep all URLs unchanged\n- Maintain the same structure and formatting as the English version\n- The tone should be professional but conversational\n- For bilingual mode: interleave English and Chinese paragraph by paragraph\n- Do NOT output all English first then all Chinese\n- Never use em-dashes\n"
+  },
+  "sources": {
+    "podcasts": [
+      {
+        "name": "Latent Space",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@LatentSpacePod",
+        "channelHandle": "LatentSpacePod"
+      },
+      {
+        "name": "Training Data",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "playlistId": "PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+      },
+      {
+        "name": "No Priors",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@NoPriorsPodcast",
+        "channelHandle": "NoPriorsPodcast"
+      },
+      {
+        "name": "Unsupervised Learning",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "channelHandle": "RedpointAI"
+      },
+      {
+        "name": "Data Driven NYC",
+        "type": "youtube_channel",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "channelHandle": "DataDrivenNYC"
+      },
+      {
+        "name": "AI & I by Every",
+        "type": "youtube_playlist",
+        "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+        "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+      }
+    ],
+    "blogs": [
+      {
+        "name": "Anthropic Engineering",
+        "type": "scrape",
+        "indexUrl": "https://www.anthropic.com/engineering",
+        "articleBaseUrl": "https://www.anthropic.com/engineering/",
+        "fetchMethod": "http"
+      },
+      {
+        "name": "Claude Blog",
+        "type": "scrape",
+        "indexUrl": "https://claude.com/blog",
+        "articleBaseUrl": "https://claude.com/blog/",
+        "fetchMethod": "http"
+      }
+    ],
+    "x_accounts": [
+      {
+        "name": "Andrej Karpathy",
+        "handle": "karpathy"
+      },
+      {
+        "name": "Swyx",
+        "handle": "swyx"
+      },
+      {
+        "name": "Josh Woodward",
+        "handle": "joshwoodward"
+      },
+      {
+        "name": "Kevin Weil",
+        "handle": "kevinweil"
+      },
+      {
+        "name": "Peter Yang",
+        "handle": "petergyang"
+      },
+      {
+        "name": "Nan Yu",
+        "handle": "thenanyu"
+      },
+      {
+        "name": "Madhu Guru",
+        "handle": "realmadhuguru"
+      },
+      {
+        "name": "Amanda Askell",
+        "handle": "AmandaAskell"
+      },
+      {
+        "name": "Cat Wu",
+        "handle": "_catwu"
+      },
+      {
+        "name": "Thariq",
+        "handle": "trq212"
+      },
+      {
+        "name": "Google Labs",
+        "handle": "GoogleLabs"
+      },
+      {
+        "name": "Amjad Masad",
+        "handle": "amasad"
+      },
+      {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      {
+        "name": "Alex Albert",
+        "handle": "alexalbert__"
+      },
+      {
+        "name": "Aaron Levie",
+        "handle": "levie"
+      },
+      {
+        "name": "Ryo Lu",
+        "handle": "ryolu_"
+      },
+      {
+        "name": "Garry Tan",
+        "handle": "garrytan"
+      },
+      {
+        "name": "Matt Turck",
+        "handle": "mattturck"
+      },
+      {
+        "name": "Zara Zhang",
+        "handle": "zarazhangrui"
+      },
+      {
+        "name": "Nikunj Kothari",
+        "handle": "nikunj"
+      },
+      {
+        "name": "Peter Steinberger",
+        "handle": "steipete"
+      },
+      {
+        "name": "Dan Shipper",
+        "handle": "danshipper"
+      },
+      {
+        "name": "Aditya Agarwal",
+        "handle": "adityaag"
+      },
+      {
+        "name": "Sam Altman",
+        "handle": "sama"
+      },
+      {
+        "name": "Claude",
+        "handle": "claudeai"
+      }
+    ]
+  },
+  "x": [
+    {
+      "source": "x",
+      "name": "Swyx",
+      "handle": "swyx",
+      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
+      "tweets": [
+        {
+          "id": "2061694815130243344",
+          "text": "@xai @imagine see more about flipbook from @zan2434 and @eddiejiao_obj !\n\nhttps://t.co/WHwtYQ3WWF",
+          "createdAt": "2026-06-02T06:22:03.000Z",
+          "url": "https://x.com/swyx/status/2061694815130243344",
+          "likes": 3,
+          "retweets": 0,
+          "replies": 3,
+          "isQuote": true,
+          "quotedTweetId": "2046975783324004732"
+        },
+        {
+          "id": "2061658241877397917",
+          "text": "title undersells it - this @workos talk is doing v well and is the first to seriously challenge @mattpocockuk in weeks. team is ab testing https://t.co/puwZ8bKPH3 https://t.co/rRWOfwqjjq",
+          "createdAt": "2026-06-02T03:56:43.000Z",
+          "url": "https://x.com/swyx/status/2061658241877397917",
+          "likes": 26,
+          "retweets": 4,
+          "replies": 12,
+          "isQuote": true,
+          "quotedTweetId": "2061509762420813993"
+        },
+        {
+          "id": "2061654021958762620",
+          "text": "@Microsoft @nvidia roundup of links: https://t.co/52cazFXk1f",
+          "createdAt": "2026-06-02T03:39:57.000Z",
+          "url": "https://x.com/swyx/status/2061654021958762620",
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Thibault Sottiaux",
+      "handle": "thsottiaux",
+      "bio": "Codex & ChatGPT @OpenAI",
+      "tweets": [
+        {
+          "id": "2061657264508006738",
+          "text": "You can just codex ... a farm\nhttps://t.co/pwmS7IvqbH",
+          "createdAt": "2026-06-02T03:52:50.000Z",
+          "url": "https://x.com/thsottiaux/status/2061657264508006738",
+          "likes": 516,
+          "retweets": 28,
+          "replies": 63,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061644307111796984",
+          "text": "Heard that AWS is where the cool kids are. Hello. We have GPT-5.5. https://t.co/TixKoaIS0D",
+          "createdAt": "2026-06-02T03:01:20.000Z",
+          "url": "https://x.com/thsottiaux/status/2061644307111796984",
+          "likes": 835,
+          "retweets": 17,
+          "replies": 78,
+          "isQuote": true,
+          "quotedTweetId": "2061564502160892138"
+        },
+        {
+          "id": "2061572602888589807",
+          "text": "Should we rename Codex to ChadGPT?",
+          "createdAt": "2026-06-01T22:16:25.000Z",
+          "url": "https://x.com/thsottiaux/status/2061572602888589807",
+          "likes": 2984,
+          "retweets": 52,
+          "replies": 1031,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Yang",
+      "handle": "petergyang",
+      "bio": "Practical AI tutorials and interviews for busy people | Join 140K+ readers at https://t.co/XYKTmGVH14 | Product at Roblox",
+      "tweets": [
+        {
+          "id": "2061586272305795355",
+          "text": "my #1 most used skill lol https://t.co/7nAW7T3vDE",
+          "createdAt": "2026-06-01T23:10:44.000Z",
+          "url": "https://x.com/petergyang/status/2061586272305795355",
+          "likes": 231,
+          "retweets": 2,
+          "replies": 11,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061452081572282805",
+          "text": "You can get a sneek peek into Josh's full skills library here: https://t.co/d7n2UXsw6E",
+          "createdAt": "2026-06-01T14:17:30.000Z",
+          "url": "https://x.com/petergyang/status/2061452081572282805",
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061452068792287622",
+          "text": "My top 6 takeaways from @Shpigford on how to build multiple products solo with AI agents:\n\n1. Keep shipping even if the fear of embarrassment never goes away.\n\nAfter 25 years as a solo builder, Josh still thinks \"It's terrifying launching something. Every single time it's just like, what if zero people care?\" But he ships early anyway: \"The idea of spending months working on something before you put it out for other people to use, I think that's a real bad idea.\"\n\n2. Charge from day one, and kill products that can’t pay for themselves.\n\nFor any product with built-in costs (e.g., hosting, LLM), Josh ships a paid version from day one. If the product can't cover its own costs, he doesn't hesitate to shut it down and refund recent payments.\n\n3. Build features in parallel with separate git worktrees\n\nEach worktree is a separate working copy of your codebase on its own branch, so features won't interact with each other. Worktrees stop context rot, isolate mistakes, and force you to test every chunk before moving on. Josh uses @conductor_build to manage them all.\n\n4. Have GPT review Claude's work and vice versa\n\nJosh builds with one model and then runs a review pass with another “GPT invariably finds three to five bugs that Opus overlooked.” Different models spot different mistakes. In Conductor, he sets a default review model so it runs on every PR.\n\n5. Build a skill to make AI better over time.\n\nJosh built a /learnings skill that runs at the end of each phase so that every \"no, that didn't work\" moment can be distilled into new rules to help the agent avoid repeating the same mistakes.\n\n6. AI lets anyone ship, but real experience still matters.\n\nJosh credits 25 years of building before AI for how fast he ships now with agents. \"I know the general shape of how I want things to work, so I can very quickly get to that point.\" His advice for newer builders is to \"just fail a lot, because the only way that you'll ever figure out what not to do is by doing the thing incorrectly.\"\n\nJosh walked through his entire development workflow in our episode and shared more skills.\n\n📌 Watch the full episode here: https://t.co/9brwr7daw8",
+          "createdAt": "2026-06-01T14:17:27.000Z",
+          "url": "https://x.com/petergyang/status/2061452068792287622",
+          "likes": 40,
+          "retweets": 6,
+          "replies": 12,
+          "isQuote": true,
+          "quotedTweetId": "2061092939233980762"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Thariq",
+      "handle": "trq212",
+      "bio": "Claude Code @anthropicai.   prev YC W20, @southpkcommons, @medialab",
+      "tweets": [
+        {
+          "id": "2061585357934878745",
+          "text": "Suzanne also mentioned she uses this with voice mode to make it easier to respond and more natural.",
+          "createdAt": "2026-06-01T23:07:06.000Z",
+          "url": "https://x.com/trq212/status/2061585357934878745",
+          "likes": 78,
+          "retweets": 0,
+          "replies": 7,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061545635141361687",
+          "text": "gist for the full prompt here: https://t.co/L0ffBeU1ua",
+          "createdAt": "2026-06-01T20:29:15.000Z",
+          "url": "https://x.com/trq212/status/2061545635141361687",
+          "likes": 380,
+          "retweets": 24,
+          "replies": 6,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061545633560010826",
+          "text": "been asking others at Anthropic how they stay in the loop with Claude and fully understand the work being done\n\nthis is one of my favorites from Suzanne: https://t.co/nqIMcGXiKI",
+          "createdAt": "2026-06-01T20:29:15.000Z",
+          "url": "https://x.com/trq212/status/2061545633560010826",
+          "likes": 6183,
+          "retweets": 351,
+          "replies": 144,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Amjad Masad",
+      "handle": "amasad",
+      "bio": "ceo @replit. civilizationist",
+      "tweets": [
+        {
+          "id": "2061673231309058241",
+          "text": "vibecon https://t.co/zAqrtrfd1k",
+          "createdAt": "2026-06-02T04:56:17.000Z",
+          "url": "https://x.com/amasad/status/2061673231309058241",
+          "likes": 44,
+          "retweets": 1,
+          "replies": 6,
+          "isQuote": true,
+          "quotedTweetId": "2061539771353067612"
+        },
+        {
+          "id": "2061575503434408106",
+          "text": "Prompt to business:\n- website\n- mobile app\n- monetization\n- Delaware corp\n\nStart for free: https://t.co/r3LEz2slaT",
+          "createdAt": "2026-06-01T22:27:56.000Z",
+          "url": "https://x.com/amasad/status/2061575503434408106",
+          "likes": 167,
+          "retweets": 15,
+          "replies": 24,
+          "isQuote": true,
+          "quotedTweetId": "2061537387726119165"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Guillermo Rauch",
+      "handle": "rauchg",
+      "bio": "@vercel CEO",
+      "tweets": [
+        {
+          "id": "2061593874498531707",
+          "text": "MiniMax M3 is now the leading open model on the Next.js agent evaluations (https://t.co/SnZ54XoRWV).\n\nRight behind Opus &amp; GPT5, but 10× cheaper (And 20× cheaper right now on ▲ AI Gateway!) https://t.co/z9ts1NZDyu",
+          "createdAt": "2026-06-01T23:40:56.000Z",
+          "url": "https://x.com/rauchg/status/2061593874498531707",
+          "likes": 596,
+          "retweets": 25,
+          "replies": 32,
+          "isQuote": true,
+          "quotedTweetId": "2061590462822224374"
+        },
+        {
+          "id": "2061533151676293430",
+          "text": "Git is all you need. Always has been https://t.co/PEt3D4Pt70",
+          "createdAt": "2026-06-01T19:39:39.000Z",
+          "url": "https://x.com/rauchg/status/2061533151676293430",
+          "likes": 336,
+          "retweets": 11,
+          "replies": 27,
+          "isQuote": true,
+          "quotedTweetId": "2061477029111792125"
+        },
+        {
+          "id": "2061415178298937365",
+          "text": "Beautiful example of a full-stack agent on @vercel. Great learning material! https://t.co/jz1E7g4aSM",
+          "createdAt": "2026-06-01T11:50:52.000Z",
+          "url": "https://x.com/rauchg/status/2061415178298937365",
+          "likes": 537,
+          "retweets": 15,
+          "replies": 29,
+          "isQuote": true,
+          "quotedTweetId": "2061410279922282556"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aaron Levie",
+      "handle": "levie",
+      "bio": "ceo @box - your business lives in content. unleash it with AI",
+      "tweets": [
+        {
+          "id": "2061662386680127688",
+          "text": "As we enter the era of AI agents, one of the defining questions is how you develop competitive advantage when your competitor has access to the same AI models and intelligence as you. \n\nThe companies that are able to best harness their internal institutional knowledge, existing data assets, and domain-specific workflows -- connected with AI -- will be those that are able to stay ahead in the future.\n\nWhether a company decides to build out the tech stacks themselves, or leverage a variety of best-in-class tools is certainly one core variable. But the key is to find the way that the enterprise can capture and protect the value created by their unique data, processes, and expertise over the long run. Each industry will have their own version of this, and the competitive advantage will vary by vertical.\n\nWe’re increasingly seeing this at Box, where customers want to ensure that they can take advantage of their institutional knowledge and have the flexibility of bringing any AI model and intelligence to their data at any time. This is a pattern that will increasingly become a core principle of strategy in the future.",
+          "createdAt": "2026-06-02T04:13:11.000Z",
+          "url": "https://x.com/levie/status/2061662386680127688",
+          "likes": 154,
+          "retweets": 15,
+          "replies": 29,
+          "isQuote": true,
+          "quotedTweetId": "2061537247049159101"
+        },
+        {
+          "id": "2061612625574944804",
+          "text": "AWS has massive enterprise traction, with large committed contracts from enterprises. So this partnership opens up both increased distribution for OpenAI’s models, but also likely drives an increase in token consumption overall across model providers. https://t.co/I9XJyDAq9F",
+          "createdAt": "2026-06-02T00:55:27.000Z",
+          "url": "https://x.com/levie/status/2061612625574944804",
+          "likes": 134,
+          "retweets": 6,
+          "replies": 14,
+          "isQuote": true,
+          "quotedTweetId": "2061564502160892138"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Garry Tan",
+      "handle": "garrytan",
+      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack & GBrain—designer/engineer who helps founders—SF Dem accelerating the boom loop",
+      "tweets": [
+        {
+          "id": "2061568169354129640",
+          "text": "Want to try GStack /office-hours for your product idea as quickly as possible? It's one click here: \n\nhttps://t.co/8g3LJkrV6i https://t.co/YEGSvd445K",
+          "createdAt": "2026-06-01T21:58:48.000Z",
+          "url": "https://x.com/garrytan/status/2061568169354129640",
+          "likes": 352,
+          "retweets": 20,
+          "replies": 42,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061495739637960927",
+          "text": "\"Leadership is presence, not absence.\" —@bchesky https://t.co/hMnmq6yqxH",
+          "createdAt": "2026-06-01T17:10:59.000Z",
+          "url": "https://x.com/garrytan/status/2061495739637960927",
+          "likes": 241,
+          "retweets": 15,
+          "replies": 26,
+          "isQuote": true,
+          "quotedTweetId": "2061477863682122079"
+        },
+        {
+          "id": "2061456821488169223",
+          "text": "Or the new way? https://t.co/aEXYsQ8VdH",
+          "createdAt": "2026-06-01T14:36:20.000Z",
+          "url": "https://x.com/garrytan/status/2061456821488169223",
+          "likes": 54,
+          "retweets": 6,
+          "replies": 16,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Matt Turck",
+      "handle": "mattturck",
+      "bio": "VC at @FirstMarkCap.  Host: MAD Podcast; Organizer: Data Driven NYC, Author: MAD Landscape.",
+      "tweets": [
+        {
+          "id": "2061533386296963464",
+          "text": "CEO: “we have tens of thousands of AI agents running in production at massive scale right now”\n\nCTO: https://t.co/eulDCgxkNQ",
+          "createdAt": "2026-06-01T19:40:35.000Z",
+          "url": "https://x.com/mattturck/status/2061533386296963464",
+          "likes": 289,
+          "retweets": 12,
+          "replies": 11,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Nikunj Kothari",
+      "handle": "nikunj",
+      "bio": "partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian & others. love @shimoleejhaveri + 👦👧",
+      "tweets": [
+        {
+          "id": "2061662916039074267",
+          "text": "walk in the park part II (feat. @taiuti).. coming soon 👀 https://t.co/57WdrRvICw",
+          "createdAt": "2026-06-02T04:15:17.000Z",
+          "url": "https://x.com/nikunj/status/2061662916039074267",
+          "likes": 33,
+          "retweets": 0,
+          "replies": 3,
+          "isQuote": false,
+          "quotedTweetId": null
+        },
+        {
+          "id": "2061492724856234030",
+          "text": "All you had to do to make life changing wealth was to invest in ~every public company along the 237 https://t.co/SDEx6JE3P7",
+          "createdAt": "2026-06-01T16:59:00.000Z",
+          "url": "https://x.com/nikunj/status/2061492724856234030",
+          "likes": 4045,
+          "retweets": 190,
+          "replies": 124,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Peter Steinberger",
+      "handle": "steipete",
+      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.\n@OpenClaw🦞 + @OpenAI",
+      "tweets": [
+        {
+          "id": "2061574752574283858",
+          "text": "I told codex to use https://t.co/oHS8ombQcW whenever I'm distracted and it needs my help to be unblocked, and ever once it a while I hear it talking to me, and it's the coolest thing ever. (e.g. for releases, that needs npm and is 1Password-gated)",
+          "createdAt": "2026-06-01T22:24:57.000Z",
+          "url": "https://x.com/steipete/status/2061574752574283858",
+          "likes": 683,
+          "retweets": 27,
+          "replies": 45,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Dan Shipper",
+      "handle": "danshipper",
+      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
+      "tweets": [
+        {
+          "id": "2061550920635191666",
+          "text": "it happened! https://t.co/7wi1xkA3co https://t.co/D3PDOwsOJ8",
+          "createdAt": "2026-06-01T20:50:15.000Z",
+          "url": "https://x.com/danshipper/status/2061550920635191666",
+          "likes": 86,
+          "retweets": 1,
+          "replies": 13,
+          "isQuote": true,
+          "quotedTweetId": "2036498182436225513"
+        },
+        {
+          "id": "2061443674311999739",
+          "text": "you don't have to work 7 days a week if you just have a swarm of Codex's running on /goal all the time \n\nbut you'll probably want to",
+          "createdAt": "2026-06-01T13:44:06.000Z",
+          "url": "https://x.com/danshipper/status/2061443674311999739",
+          "likes": 248,
+          "retweets": 6,
+          "replies": 48,
+          "isQuote": false,
+          "quotedTweetId": null
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Aditya Agarwal",
+      "handle": "adityaag",
+      "bio": "General Partner @SouthPkCommons, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Builder, Dad",
+      "tweets": [
+        {
+          "id": "2061664255007469881",
+          "text": "Schrep and the Gigascale team are building something special.\n\nThey have been incredible partners to @southpkcommons portfolio companies.\n\n@schrep is someone who I have looked up to for a long time and I am very excited to continue to collaborate with him. https://t.co/Jo3bZ5So5A",
+          "createdAt": "2026-06-02T04:20:36.000Z",
+          "url": "https://x.com/adityaag/status/2061664255007469881",
+          "likes": 17,
+          "retweets": 1,
+          "replies": 2,
+          "isQuote": true,
+          "quotedTweetId": "2061474431118229932"
+        }
+      ]
+    },
+    {
+      "source": "x",
+      "name": "Sam Altman",
+      "handle": "sama",
+      "bio": "AI is cool i guess",
+      "tweets": [
+        {
+          "id": "2061562575322492937",
+          "text": "The OpenAI Foundation is doing a lot of wonderful things.\n\nHelping society become resilient to AI is going to be incredibly important. Much more to come here! https://t.co/i0pkmF9Lmv",
+          "createdAt": "2026-06-01T21:36:34.000Z",
+          "url": "https://x.com/sama/status/2061562575322492937",
+          "likes": 1661,
+          "retweets": 129,
+          "replies": 340,
+          "isQuote": true,
+          "quotedTweetId": "2061463726407155795"
+        }
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "source": "podcast",
+      "name": "Unsupervised Learning",
+      "title": "Ep 88: Unpacking DeepMind&apos;s Quest for SuperIntelligence with Demis Hassabis&apos; Biographer",
+      "guid": "a014ff02-bdcf-478b-8d23-6c05a4c35788",
+      "url": "https://www.youtube.com/@RedpointAI",
+      "publishedAt": "2026-06-01T12:46:52.000Z",
+      "transcript": "Speaker 1 | 00:00 - 00:05\nDemis has a Nobel Prize. Sam didn't finish his first degree. Therefore, Demis doesn't take Sam very seriously.\n\nSpeaker 2 | 00:05 - 00:09\nDo you think he feels like or or will have to become more of a public figure than he is today?\n\nSpeaker 1 | 00:09 - 00:12\nDemis, in some ways, is too sensible.\n\nSpeaker 2 | 00:12 - 00:15\nWhat was the moment, I guess, your view of him kind of shifted the most?\n\nSpeaker 1 | 00:15 - 00:28\nHe would sometimes erupt in these conversations I was having, and he would start banging the table and saying, maybe if we approach science the right way, we understand more about nature, we will be getting closer to something that we could perhaps call God.\n\nSpeaker 2 | 00:28 - 01:02\nSebastian Malaby spent over thirty hours with DeepMind CEO and cofounder, Demis Esabas, in preparation to write his book, The Infinity Machine. I got to sit down with Sebastian to get all his reflections on this experience. It was fascinating to talk about some of the stories that Sebastian reported on in this book, including the fact that Reid Hoffman offered a billion dollars to Demis to spin DeepMind out of Google at some point. We talked about Demis' relationship with Elon and how that's evolved over the years, as well as what he thinks of Sam, Dario, and the general relationship between all the AI leaders in the space today. And we hit on Sebastian's reflections on Demis, what motivates him, what his blind spots are.\n\nSpeaker 2 | 01:02 - 01:20\nJust a fascinating conversation with someone who's spent unprecedented time with someone who's really, at the cutting edge of AI today. I think folks will really enjoy Sebastian's candid takes here. Without further ado, here he is. Well, Sebastian, thanks so much for coming on the podcast. Really appreciate it.\n\nSpeaker 1 | 01:20 - 01:21\nThank you. It's great to be with you.\n\nSpeaker 2 | 01:21 - 01:42\nI feel like the Infinity Machine and your kind of story of DeepMind and Demis Esabas has captivated a bunch of folks in the AI world. I know that I inhaled this book. I think I finished it in, like, twenty four hours. It's just a a gripping story, and you got this just incredible access to Demis. I think, you know, the sitting in this pub for for multi hours at a time, talking about all sorts of things.\n\nSpeaker 2 | 01:42 - 02:16\nJust just a fascinating, you know, opportunity and window into to definitely one of the most interesting people and and companies in this AI race today. And so appreciate you writing the book and appreciate you coming on the podcast to talk about So our goal today is to, you know, use your reporting to understand the people, decisions, and dynamics that shape the AI race that we're living through. And so maybe to start, I feel like one of the interesting themes in your book is whether this race that we have today between the labs was inevitable or could have gone differently, if different players or decisions had had been done. I guess I'm curious. After doing this work, do you think there was another path, or or was this kind of inevitable?\n\nSpeaker 1 | 02:16 - 02:40\nYou know, I think it was inevitable. I think when you have this sort of supremely strong technology, there's gonna be multiple labs in multiple countries that are just desperate to try and build it. And we know the China stack, you know, is pretty strong. And so despite the lack of semiconductors, they were gonna have a go at it and they are actually doing pretty well. And then clearly in The US, and then in a few other countries, you've got the Austral in France, Coher in Canada.\n\nSpeaker 1 | 02:40 - 02:58\nYou know, there was bound to be many players just as it's the technology is too sweet for it to be only interesting to one team. What's strange about this whole debate though is that's not how people saw it ex ante, that, you know, when Demis was starting DeepMind, he really hoped that he could avoid the race dynamic. It seems naive in retrospect, but that's what he hoped.\n\nSpeaker 2 | 02:58 - 03:23\nOne really compelling anecdote you had was I I believe Demis in his interviews would say, you know, he he was interviewing candidate, and he'd say, look. At some point, we may be really close to AGI, and we'll go, fly to a bunker and and and figure this all out as kind of like one team. Would you be willing to, you know, get on that flight and and and do that? You know, think certainly as part of the the founding origin of Anthropic is also this belief like, hey. We need to be the team that, like, gets you know, as we get to the precipice of AGI, we're the ones figuring this out.\n\nSpeaker 2 | 03:24 - 03:33\nYou know, clearly, a a key part of starting all these companies. Do you think these folks, I mean, particularly, Demis, like, do they still believe this, or or how is their kind of thinking evolved having seen the way things have played out these past years?\n\nSpeaker 1 | 03:33 - 03:57\nNo. I think Demis has swung from one extreme to the other. You know, he began by thinking there could be a singleton scenario, just one lab. And by that, he really meant deep mind in himself. To the opposite extreme where he now sees that there's a very crowded field and therefore that it's almost pointless for one lab to pursue safety by itself because if one lab is safe and then the other ones aren't, it doesn't make the world safer.\n\nSpeaker 1 | 03:57 - 04:03\nSo he really has shifted to seeing this as a collective action problem that only a government can solve.\n\nSpeaker 2 | 04:03 - 04:30\nBecause one thing I I thought was really compelling for your book was, obviously, there was this early AI safety summit that Demis and the and the team put together, and they're sharing, you know, the progress they've made and and why they're worried about it. And, know, you some people in the room like Reid Hoffman and Elon Musk take that information, and then they're like, oh, this technology really is starting to work. We should ourselves potentially do something around that. You know, do you think, obviously, to to get safety to work going forward, you need these different companies to to agree to share things and and collaborate. I imagine that left a bad taste in in in Demis' mouth.\n\nSpeaker 2 | 04:30 - 04:38\nHow do you think he and and other kind of key players in this space think about, you know, potentially sharing what they're doing with with given that, you know, past experience?\n\nSpeaker 1 | 04:38 - 04:49\nYeah. I mean, you're totally right. That was in 2015, summer of twenty fifteen. They have this summit SpaceX. Elon Musk is hosting it, and the idea is he's gonna be brought into the tent by DeepMind.\n\nSpeaker 1 | 04:49 - 05:07\nHe's gonna be part of their efforts. He's going to be, you know, chairing this sort of safety oversight board, And therefore, he wouldn't set up a competitor. And, of course, at the end of 2015, he did set up a competitor, OpenAI. And so that kind of really drove home the reality that we're gonna have a race. And I think if you ask now, okay.\n\nSpeaker 1 | 05:07 - 05:24\nSo what about future collaboration? I think from Tembus' point of view or from any of the lab leaders, frankly, you can't trust the other guys. And therefore, the only way you get trust is if you have a government enforcer that comes along and say, look. Here's the rules for everybody. There's gonna be a level playing field.\n\nSpeaker 1 | 05:24 - 05:46\nYou're all gonna have to, you know, abide by some sort of safety, slowdown, you know, pretesting of models before you release them, all that stuff. And you will have to do it. And then the reaction, of course, will be, yeah. But what about the guys in China? And that's why, ultimately, I think this has to be a US China collaboration, you know, remote though that prospect may seem to many listeners right now.\n\nSpeaker 2 | 05:46 - 06:07\nI mean, do you think, Demis and others, I think that's actually realistic? I mean, obviously, there there's it you know, it's it's such a a pressing problem, but, you know, it doesn't seem like, folks have the most confidence in in governments and certainly, you know, inter government, collaboration across the world. Like, it it intellectually makes sense that that is kind of the the clear way to solve this problem. But do you think they they think there's actually a probability this this does happen successfully?\n\nSpeaker 1 | 06:07 - 06:47\nWell, you know, I think they ought to believe that it could happen. And we we do have the Food and Drug Administration and people complain that it's slow and all that, but but it does, you know, have expert reviewers who look at clinical trials and say is this drug safe or not and can it be released. And if you can do that for pharmaceuticals and you should do it, AI models that can be more destructive on a grander scale than a drug certainly need to be reviewed ex ante. And I think in Britain actually you have an example of a government AI safety institute that's pretty effective, has some high class scientists. I mean the chief scientist there is Geoffrey Irving who was at DeepMind originally did a lot of the post training on the early models.\n\nSpeaker 1 | 06:47 - 07:14\nHe's a really serious researcher. Was also at OpenAI by the way and a close collaborator of Darius. So you've got serious people there and they have found vulnerabilities in systems in the past and quietly shared them with the private labs that have failed to find the same vulnerabilities. So it shows that you can aggregate some technical expertise inside these public institutions because a certain number of folk feel motivated and public spirited enough to go work for the government. So I don't think we should give up on that.\n\nSpeaker 2 | 07:14 - 07:35\nFrom the outside, it's hard to tell. You know, it it's almost like such a dispiriting story of, you know, Demis kinda being idealistic and then realizing this dynamic isn't gonna play out. And so it's hard to tell, you know, I guess, reading between the lines in your book, whether he's kind of just resigned to this dynamic or is is found newfound hope in in, like, the the actual possibility of, you know, intergovernment collaboration? Because, obviously, even the examples you give are just within a single country. Right?\n\nSpeaker 2 | 07:35 - 07:39\nCertainly not at the scale of of of coordination across countries.\n\nSpeaker 1 | 07:39 - 07:55\nYeah. I mean, what he what he says, I mean, the very last line of my book is, I'm optimistic still, and that's a quote from Demis trying to, you know, persuade me. I've been I'm pushing him in in in my interviews with him. Are you really optimistic? Because it seems like we've got a race dynamic, you know, in, of course, January 2025.\n\nSpeaker 1 | 07:55 - 08:13\nYou have deep sea come out, and that really signals the advent of the Chinese labs into this space. And, you know, I'm writing through 2025 into the end of twenty twenty five, and I'm saying, you still optimistic, Demet? And he says, yes. I'm optimistic still. And I think the reason for that insistence apart from like, what what's he gonna say?\n\nSpeaker 1 | 08:14 - 08:43\nIt's also that, you know, when something kind of dramatic happens, the world does coalesce and take action. You know, if you look at COVID, the reaction to COVID, I mean, government on a national basis really did stuff that people didn't expect beforehand. You know? So in a crisis, people do react. When you have something like, you know, trade where protectionism has a pretty slow and subtle effect on economic performance, you don't really get a political reaction to try and fix that.\n\nSpeaker 1 | 08:43 - 09:05\nAnd that's what we've seen in the last few years. But when you when it if if you have a acute thing like mythos, an anthropics model comes out, you know, and people suddenly get worried, You see the US government pretty much do a one eighty from a less affair position to, oh, well, we better control this kind of position. And I think that shows the shock effect is extremely important in determining whether you get government action or not.\n\nSpeaker 2 | 09:05 - 09:37\nSwitching gears, obviously, a key part of, you know, and through line through your your whole work is just the story of of DeepMind and its ultimate relationship with Google, and it's just an incredible story. And so I guess, as I recall, you started this or you kinda got Demis to agree to this, like, right before ChatGPT. And so, obviously, post AlphaFold and some really interesting things, but certainly the world, evolved in a bunch of interesting ways from the start of your project. People talk about Demis and DeepMind all the time. You know, before you published this book, but you've kinda done the research, what do you think the popular narrative got, like, most wrong about Demees, DeepMind, the way people would talk about, you know, the the two?\n\nSpeaker 1 | 09:37 - 09:59\nWell, the extraordinary thing to me is how people basically discounted Demees. I mean, you know, I I've been interviewed a bunch of times since my book came out a few weeks ago and, you know, often people can't pronounce his name. They say Demise and they say Hasabis instead of Hasabis. They kind of barely know who he is. You know my publisher Penguin Press was figuring out what to do the how to do the cover design.\n\nSpeaker 1 | 09:59 - 10:08\nAnd they wanted to use his picture but at the same time they didn't think people would recognize him. So you couldn't sell books based on some, you know, person that he recognized. Right.\n\nSpeaker 2 | 10:08 - 10:11\nAt this point, I assume Sam, Dario, they'd be fine for for a cover of a book.\n\nSpeaker 1 | 10:11 - 10:12\nYeah. Yeah. Totally.\n\nSpeaker 2 | 10:12 - 10:13\nIs it Elon. Yeah.\n\nSpeaker 1 | 10:13 - 10:41\nElon, for sure. And and Demis, you know, is the guy who founded the OG lab in 2010 way before anybody else really created the model that then OpenAI copied later. I remember going to see Dario when I was doing my research and, you know, he said, yes, Demis was the original figure and he's got the whole AI for science space to himself which was true at the time. I think it's less true now. But so I think people just underestimated how important he he is.\n\nSpeaker 1 | 10:42 - 11:01\nThey underestimated Google as a company because they thought Innovator's Dilemma, they were too slow. OpenAI went fast with a model with a with a chatbot. And now they've got this massive brand effect, OpenAI does. And so nobody can catch up. That proved wrong.\n\nSpeaker 1 | 11:01 - 11:27\nAnd you know, as of late twenty twenty five, the Google DeepMind models, Gemini three point o were better on the leaderboards than the adversaries. Of course, since then we've seen a big anthropic surge. But you know, the the point is I think people were too quick to crown OpenAI and Sam Altman as the winner and underestimated both Demis as a person and Google DeepMind as a company.\n\nSpeaker 2 | 11:27 - 12:01\nIs interesting, obviously, like, since you're reporting, you know, I guess in 2026, you've had these rise of these, you know, coding agents and, you know, it's certainly, you know, Anthropic and Cloud Code were the first there and OpenAI, you know, with with Codex was was right behind. It does feel like Google continues to do, like, amazing science and, you know, they do you know, they always do well on the leaderboards. But for whatever reason, it it struggles in, like, the zeitgeist and, like, actual usage on the product side. If these two monumental moments were, you know, ChatGPT and consumer products and then ClaudeCode and and and the coding agents, Google doesn't really have a a super competitive product in either of those spaces just from a usage perspective. Not the products themselves are are good.\n\nSpeaker 2 | 12:01 - 12:06\nThe models are good, but they haven't really figured out the the latter part, and I'm wondering kinda what you make of that.\n\nSpeaker 1 | 12:06 - 12:29\nPeople use Gemini more than we realize. Right? You know, it's sort of bundled into Google search at this point, the AI mode thing. But I I I take the broader point, which is that both of these sort of seminal moments in proving out, you know, the the the consumer experience, which were ChatTPT, as you say, on the consumer side and then more recently with coding. Neither of those came from Google DeepMind.\n\nSpeaker 1 | 12:29 - 12:58\nAnd I think what that perhaps shows us is that, you know, partly because of Demis's personality and his intellectual formation, which was PhD in neuroscience, this very broad study of what intelligence might be, a very broad approach therefore to building artificial intelligence. There's this there's this kind of let's try everything approach to AI research. Whenever there's like two different paths you could go down, they say, well, we'll do both. And if we can find the third path, we'll probably do that too. They're very hedged.\n\nSpeaker 1 | 12:58 - 13:27\nRight? Whereas I think Anthropic got to coding because it was willing to take a more concentrated bet. It never went into the whole field of, you know, generative video, just never had a sort of equivalent. And, you know, at the same time, OpenAI, being a startup, didn't have the reputational baggage that it had to protect that Google has, and so it willing to put out a chatbot that hallucinated a lot at the beginning.\n\nSpeaker 2 | 13:27 - 13:52\nIt honestly has a lot of echoes of of the transformer itself. Right? And and, basically, I think OpenAI making the bet of going all in on on scaling transformers, which were obviously invented at Google and Google pursuing a bunch of different paths. And then to your point, OpenAI starting to do a bunch of things and Anthropic deciding, hey, we're just focusing on coding. Have you seen kind of a shift in in and DeepMind's focus, I guess, what's played out and given this kind of, it's such a tension, right?\n\nSpeaker 2 | 13:52 - 14:13\nAs a polymath, as someone who's so interested in many facets of AI to focus on a ton of different things versus the thing that's happening at the moment. Obviously, OpenAI, I think famously has kind of consolidated down and said we were doing too much. Now we've got to really hone in and catch up to Anthropicana coding models. How do you think Demis and the DeepMind folks think about this at this\n\nSpeaker 1 | 14:13 - 14:31\nI think, you know, they do have this tendency to try and do everything. As I was saying, I don't think that's been cured. I mean, you know, I was chatting actually just last week with one of the young scientists from that from that shop. And, you know, that was very much the tenor of what he was telling me. It's like, you know, we always make multiple bets.\n\nSpeaker 1 | 14:31 - 14:58\nWe never really go hard down one avenue. And and, you know, from a corporate point of view, maybe this makes sense. I mean, if we if we think about what happened with the consumer side, the sort of general chatbot model, yeah, they were late. They were late both in trying to develop it after the transformer thing dropped in 2017, and then they were late again in productizing, you know, behind ChatTPT. But then they caught up by 2025.\n\nSpeaker 1 | 14:58 - 15:15\nSo maybe if you have very deep pockets like Google and a very deep technical bench and tons of human talent and amazing amounts of compute, you know, you can afford you're they're not doing Apple. Right? Apple is the absolute extreme where they just say, whatever. We're not gonna do this AI thing. We'll just charge people to put it on our iPhone.\n\nSpeaker 1 | 15:16 - 15:26\nThat's an extremely hands off position towards AI. Google is much more in it, but it doesn't mind being a couple of years behind because it figures it can catch up.\n\nSpeaker 2 | 15:26 - 15:56\nAnd I wonder at some point whether that that does shift. Obviously, you've you've, you know, allowed $2,000,000,000,000, plus. We'll see what they're end up being worth companies to to or or at least in the in the prediction market seem to be worth that, you know, come come up, and and and gain a lot of territory. And, you know, think I it's it's it'll be really interesting to see going forward, you know, whether that that focused or or that, like, diversity of different things they're pursuing, you know, ends up ends up continuing. You know, you talk a lot about in the book about, you know, the governance of DeepMind and Google and, like, the way these two organizations work together.\n\nSpeaker 2 | 15:57 - 16:11\nAnd And I think actually one of the most interesting parts I thought was this DeepMind was considering spinning out of Google. There was, like, some financing behind that. They ultimately chose not to. Why don't you think they ended up, you know, deciding to to spin out of Google? And I guess in retrospect, was that the right decision?\n\nSpeaker 1 | 16:11 - 16:32\nYeah. So there was this secret plan called project Mario to spin out. And Demis was not so happy when I kinda discovered about it from other sources. I had to speak to the general counsel of Google DeepMind at one point who tried to persuade me I couldn't write about it. Other people had leaked me the documents and I had them and, you know, definitely had good information.\n\nSpeaker 1 | 16:32 - 16:55\nIt was all true, and I wrote it, so whatever. And the point of this story is is actually partly goes back to your safety thing that that Demis really really wanted to get safety oversight over the Google DeepMind models or just the DeepMind as it was then. And Google corporate in the mountain view wasn't doing that. And so he had to have a credible threat of spinning out. So he went to Reed Hoffman.\n\nSpeaker 1 | 16:56 - 17:42\nReid Hoffman pledged a billion dollars to finance a spin out and Demis used that to kind of pressure Google. Although I don't think he ever mentioned that Reid Hoffman had done that but he he he pushed he pushed Google knowing that he had this back pocket option. And I spoke to a lot of the advisers who were in the room when DeepMind was figuring out, you know, whether to go with a Reid Hoffman spin out option. And there were those who said, look, you should spin out because then you'll be an independent startup and you'll have all the incentives and the kind of, you know, alertness and the and the and the flexibility, the agility that go with that. You can, you know, give all your team, you know, very high powered financial incentives linked to your performance, and it'll be awesome and you should spin out.\n\nSpeaker 1 | 17:43 - 18:02\nAnd then Demes' view in the end was, you know, it's it's legally, it's gonna be a there may be a court battle over it, you know, whether we have the right to do that. And I just wanna do science. I wanna not be distracted by legal fights. I want access to tons of compute. I'm staying in.\n\nSpeaker 1 | 18:02 - 18:11\nAnd so that was the call he made. Was it right? Was it wrong? Well, I mean, did lead to him getting a Nobel Prize, right, in 2020. You know, it's a small matter of a Nobel Prize.\n\nSpeaker 1 | 18:11 - 18:24\nThen, you know, in in 2020, so a year after he gave up that fight with his parent company, he ships AlphaFold, the protein folding prediction model, and that gets him the Nobel Prize.\n\nSpeaker 2 | 18:25 - 18:34\nKind of way you just framed it was more of like, hey. This was part of negotiating leverage to to, you know, get some of the safety stuff. I mean, how seriously do you think the DeepMind team was considering this at the time?\n\nSpeaker 1 | 18:34 - 19:03\nWell, I think they always, you know, didn't quite they never quite got to that decision point in their own heads. Like, wanted the plan b spin out option because why not have that? And they weren't sure how to then use it in the negotiation with Google. And I think they determined never to tell Google explicitly that they had that, but a kind of hint that, you know, there might be something in the background. And if you don't do what we want with safety oversight, we may do something you don't you don't expect kind of thing.\n\nSpeaker 1 | 19:03 - 19:38\nBut it you know, ultimately, they never really waived that threat explicitly and they never exercised a threat even though Google didn't give them the safety oversight that they wanted. So in the end, I mean, it's in some sense, it's a story of the naivete of the of the founders, both Demis himself and Mustafa Soleiman, his co founder who's now at Microsoft. I mean, they went into this, you know, not quite sure what their end game was. And in the end, they never really used that spin out op I mean, they they not no. In the end, they didn't use the spin out option.\n\nSpeaker 1 | 19:38 - 19:43\nAnd so sometimes spending three years going back and forth to Mountain View with this was a waste of time.\n\nSpeaker 2 | 19:43 - 19:58\nI'm wondering in in the course of the conversations that you that you had with Demis, I mean, obviously, we talked about that AI safety summit already and kinda realizing, yeah, that was not ideal. Are there any other things that he regrets, I guess, about how the whole past decade has unfolded?\n\nSpeaker 1 | 20:00 - 20:07\nWhat does he regret? I'd say that he would certainly not regret, spending all that energy on AI for science.\n\nSpeaker 2 | 20:07 - 20:22\nI love that anecdote in your book, by the way, that, like, the day they won AlphaGo, AlphaGo, yeah, won the the the you know, beat the best player in the world. He was already on to Bio, and someone picked it up on a mic, which I which I just thought was, talking about an ambitious, and always moving, leader.\n\nSpeaker 1 | 20:22 - 20:30\nRight. Right. He rests on his laurels for about ten seconds, and then he says the next thing we're gonna do is we're gonna solve protein folding. Yeah. That that was amazing.\n\nSpeaker 1 | 20:30 - 21:12\nBut I think, you know, the the serious point here is that he not only got a Nobel Prize out of it, he also views this, I think, correctly as absolutely central to the whole acceptability of artificial intelligence in society writ large. If AI doesn't deliver, you know, clear benefits for humans, and it's just like lots of job disruption, which may be good for productivity, but it's kinda painful for people on the receiving end. I'm not sure that politically AI will really be rolled out with some massive without some huge backlash. So so I think, you know, both from it's good to advance science. You know, I like winning a Nobel Prize, but also AI can't succeed without this kind of science stuff.\n\nSpeaker 1 | 21:12 - 21:35\nI think he doesn't regret that for a second. You know, does he regret not being faster onto chatbots? Yeah. Of course. I mean, it would have been better to understand, you know, like Ilya Satsuka did at OpenAI, you know, the moment the transformer dropped, Ilya is like jumping out of his chair running down the corridor going to find Alec Radford saying, hey, we're gonna build a language model based on this transformer architecture.\n\nSpeaker 1 | 21:35 - 22:09\nI mean, on the day the paper dropped because he had this prepared mind, you know, since his PhD, he had been thinking about how to deal with, you know, sequential data like text. And so when the Transformer Biblical came out, he immediately saw the significance. And of course, it would have been great for DeepMind if they had had that same perception that quickly and it took them instead, you know, two, three years to get there. And Demis, you know, frankly still has a bit of a blind spot about this. You know, when I say to him, well, you were sort of three years late.\n\nSpeaker 1 | 22:09 - 22:11\nHe goes, no. No. No. No. We had Chinchilla.\n\nSpeaker 1 | 22:11 - 22:19\nWe had these other models. And I'm saying, yeah. Yeah. But you didn't release those till the end of twenty twenty. And Ilya by then had been working on it for three and a half years, so you were late.\n\nSpeaker 1 | 22:19 - 22:23\nBut he he really resists that, and I think that is because he he does regret that.\n\nSpeaker 2 | 22:23 - 22:52\nWell, I thought it was interesting too, you know, the way you kind of put put it in your book is that, you know, part of the resistance maybe the transformer architecture was this. He obviously comes from such a deep neuroscience background and this belief that the path to artificial general intelligence has to flow through something that looks much more like the way humans learn and the human brain, which obviously was the RL world and less of just you know, how how can you really understand what it is to be a human by consuming the Internet? I think your point was actually it turns out you can understand it the the way more than one might have anticipated from scaling these these models.\n\nSpeaker 1 | 22:52 - 23:46\nYeah. And by the way, I think there may be some version of that same dilemma with robotics In order to train robotics and simulation, you need these real world simulations and probably video is one important tool for building those simulations. So potentially, if DeepMind gets the right bet on the right pathway to much better robotics, it has the it has what it takes. But we'll see whether, you know, there's some version of what what went wrong with language and the transformer model is that just underestimated the importance of language to super intelligence. And then maybe, you know, to get robotics right, Is it, for example, something that you're gonna do by building physical robots and having them crash and break their arms, you know, in some kind of physical lab?\n\nSpeaker 2 | 23:46 - 24:19\nBut it's an interesting, you know, point because actually, you know, too many perils in the robotics space where there's, you know, ten, fifteen different approaches that people are trying. And I imagine if you're Google and, like, given the way DeepMind's approach other things, you'll kinda put your hand in a bunch of these approaches. And meanwhile, you'll have startups that were like, we're all in on, you know, x approach or y approach, and it'll be interesting to see how that plays out. Because you can certainly empathize today when the recipe is not clear. It it's it's not particularly irrational for for DeepMind to keep their options open, but also leaves you vulnerable to someone that that really goes all in on the transformer or encode or whatever the next, you know, equivalent is in the robotics space.\n\nSpeaker 1 | 24:19 - 24:34\nA 100%. And I and I I think here actually there's a larger fascinating question about whether venture backed innovation beats sort of hyperscaler, you know, tech behemoth, you know, AI approaches. Because\n\nSpeaker 2 | 24:34 - 24:35\nI have a biased opinion on that one.\n\nSpeaker 1 | 24:35 - 24:44\nYeah. Yeah. Well, that that's fair. But but I think but but, you know, I'm less biased. But but, you know, I've written about a hyperscaler now, but my previous book was about venture.\n\nSpeaker 1 | 24:44 - 25:06\nI kind of done both. But I think it's kind of a interestingly balanced thing because, know, in one sense, this is a very capital intensive project. You need very deep pockets. If you look at OpenAI's ability to fight Google over the long haul on generative AI, You know, I wrote in the New York Times in January that I thought OpenAI had a 50% chance of going bust by next It\n\nSpeaker 2 | 25:06 - 25:07\nsounds like it's still 50, by the way?\n\nSpeaker 1 | 25:07 - 25:24\nYeah. I mean, you know, I said fail. I mean, I I I what I mean is it it sells itself as a disc at a discount to to some hyperscaler. And I think, you know, I've I've been impressed by some of the, you know, expenditure cuts they've done. You know, canceling Sora was a smart move.\n\nSpeaker 1 | 25:24 - 25:49\nThey've done some impressive cost cutting, so I give them credit for that. On the other hand, of course, the sort of rumors around Sam being replaced by Brett Taylor are pretty widespread, and it's just a general sense of, you know, the leadership is damaged goods. Yeah. I think on net, I'm still around fifty fifty that they fail next by kinda next summer. And and that's not because they don't have great tech because they do.\n\nSpeaker 1 | 25:49 - 26:07\nI mean, the tech is great. It's just the business model. It's the problematic. And it's problematic because you're up against Google, which just has unlimited amounts of cash to spend you into the ground. And so in one sense, this looks like a platform shift that benefits the incumbents.\n\nSpeaker 1 | 26:07 - 26:29\nOn the other hand, as we've been discussing, when you have the luxury of unlimited amounts of talent and compute and money, you tend not to make these strategic concentrated bets. And if you're up against a bunch of different venture backed startups that each of them makes different, you know, highly concentrated bets, then maybe one of those bets work out.\n\nSpeaker 2 | 26:29 - 26:51\nBut it is a game of very thin margins. Right? I mean, if if you take Anthropic, I think there was always a question about whether they would be able to raise enough capital to stay in this race or or or basically, you know, have to sell or or be deeply embedded with a hyperscaler, which they are to some extent, and it felt like it might be headed on that track with with either Google or Amazon. And then, you know, right at the moment where you might have wondered, hey. Can they keep raising the amount of capital that's required to stay in this game?\n\nSpeaker 2 | 26:51 - 27:12\nThe coding models hit, and they hit in a in a huge way. And and now, you know, Anthropic is is the the hottest company in the in the bay. But, like, it's a really interesting counterfactual if that stuff had hit six months later, twelve months later. It certainly wasn't inevitable, that that it was really gonna start working then. And, yeah, a lot of this stuff I mean, it seems you can write a very clean narrative in in retrospect, but it's not, an inevitability that things play out that way.\n\nSpeaker 2 | 27:12 - 28:04\nI wanna go back to something you said on on Demis, which was him obviously focusing on science and this kind of belief that, hey, we have to show that AI can have beneficial outcomes for society or or else the world will turn against it. And one thing I'm struck by in particular, you you kind of alluded to it right at the beginning that you couldn't put Demis on the cover because people wouldn't recognize, you know, who he was. And in in many ways, like, the people that the world associates with AI today are are Sam and Dario, They're kind of taking a lot of the oxygen in the public conversation about how people think about AI. I'm wondering, one, how Demes feels about that, and two, over time, do you think he feels like or will have to become more of a public figure than he is today to shape that conversation? Obviously, he's deeply passionate about this stuff in a way that's more analogous with how he feels.\n\nSpeaker 1 | 28:04 - 28:18\nYeah. First of all, to be clear, the compromise my publisher, struck was to have him on the cover, but to kind of fuzz it up so that he looks like a kind of enigmatic geek. And if you don't recognize him, it's still a cool picture. So that's Fair enough. What they did.\n\nSpeaker 1 | 28:19 - 28:59\nBut, yeah, I think to your question, you know, Dennis does understand that he needs to be out there more. He's good at kind of self narrativizing in one way, which is that, you know, he's the kind of retrospective story of his journey up until where he is now is something that he's been good at communicating. He spends more than thirty hours talking to me and of course of course there is a reason for that. But but also, you know, there was the documentary, The Thinking Game, which a lot of people have seen. And before that, there was a documentary about AlphaGo which didn't get made by mistake, you know, that they actually brought a documentary team with them to Seoul when they played that game against the Seoul Go champion.\n\nSpeaker 1 | 29:00 - 29:19\nSo so there is a there is this retrospective storytelling which he's good at. What he doesn't do is prospective. He doesn't like Sam, you know, has or at least in his heyday had the ability to kill the attention on a new DeepMind release simply by putting out a couple of tweets.\n\nSpeaker 2 | 29:19 - 29:23\nThey would always go one day before. Like, they they know something was gonna happen. And\n\nSpeaker 1 | 29:23 - 29:52\nYeah. And when we say go one day before, we mean, you know, just trail something on on on x. Just put out a couple of posts and and and, you know, not even release something. But that was but because Sam's following on x is, like, five, six times Demis's, the echo chamber is so much stronger that he could really dominate the narrative even when the other guys were releasing the product. And that's a problem both in terms of product adoption for DeepMind, but also like talent recruitment.\n\nSpeaker 1 | 29:53 - 30:16\nYou know, controlling the narrative does matter. And I think they kind of get that over at Google DeepMind. Whether they quite have the ability to fight it, we'll see. I mean what, you know, what they don't do is is do what, you know, Darius has which is pick a hut, you know, public fight with the Pentagon. Know, unreleased mythos.\n\nSpeaker 1 | 30:17 - 30:39\nAll these things which just, you know, immediately turn you into a massive celebrity. And Demis, in some ways, is too sensible to pick a public fight with the government. And so maybe that makes him less notorious and, you know, maybe it's it's a kind of byproduct of strategic caution that he's a bit less front of mind in the media.\n\nSpeaker 2 | 30:39 - 30:56\nI'm curious like what you ended up learning about the extent to which that does or doesn't attract researchers. Right? Obviously, a huge part of the battle here is the battle for talent. You've had I mean, Google has incredible researchers. You've had folks like, you know, like Jack Ray, who you talk about in the in the book who left, then came back, then left again.\n\nSpeaker 2 | 30:57 - 31:08\nYou know, how do you think about or or in in talking with folks, the types of people that are attracted to DeepMind, the extent to which they, you know, do or don't need to change their hiring brand to kinda stay on on par with the others?\n\nSpeaker 1 | 31:08 - 31:35\nYeah. It's a great question. I think it sort of overlaps with what we were saying about the rivalry between the, you know, deep pocketed hyperscaler and the and the venture model. Because I think, you know, for Jack Ray, when he left DeepMind and went to OpenAI, he explained to me that, you know, this was because there was a concentrated bet on language models at OpenAI. And that's all they cared about at the time.\n\nSpeaker 1 | 31:35 - 31:55\nAnd that's what Jack was doing. And so he wanted to be there. And I think, you know, that would be true today in robotics. There'll be certain researchers who are really great and they wanna go somewhere where there's one concentrated bet which they believe in themselves. And then they will just, you know, work all out to to be part of that team and and to to realize what they think is the right path.\n\nSpeaker 1 | 31:56 - 32:12\nWhereas, if you put a robotics researcher in this big, careful, diversified, you know, lab and say, you know, we really believe in you, but we also believe in these other five bets we're making at the same time. You don't feel so good about it. You know, there's a kind of passion piece that's that's missing.\n\nSpeaker 2 | 32:12 - 32:27\nWell, what do you make of the decision you know, obviously, the AlphaFold work eventually got folded out or or spun out into, you know, isomorphic, right, in a different company that kind of I mean, Alphabet still owns a bunch, but is a separate effort. Like, does that make sense, or is that a a a path forward you think will be repeated?\n\nSpeaker 1 | 32:27 - 32:43\nThat's a great question. I mean, I I think, isomorphic does have that effect. I I think the spinout was also about trying to be able to do partnerships with pharma big pharma part you know, partners. Maybe that was a bit easier in a in a spunout format.\n\nSpeaker 2 | 32:43 - 32:46\nJust because they wouldn't wanna work with Google directly or something? Or?\n\nSpeaker 1 | 32:46 - 33:12\nMaybe yeah. And maybe maybe also just the sense was that this by itself as a freestanding thing could become so big. And there'd been this history of Google and DeepMind separately doing AI for health. And health has got its own politics, its own kind of, you know, very long lead times. You know, it it they they felt it just needed to be in a different home.\n\nSpeaker 1 | 33:14 - 33:34\nSo they did that. But I I think you're raising a good point that there might have been an extra reason to do it which is that you you give people the option of working somewhere where they are the bet. Their thing is the thing. And I think that's a super important recruiting tool. I also would note, I mean, it's probably, you know fairly well known in the valley I guess.\n\nSpeaker 1 | 33:34 - 34:08\nBut you know, Anthropics churn is very low relative to everybody else. And I think that shows you that if you if you're kind of identity as a leader is like Dario where you're kind of out there and unfiltered about your extreme concern for safety and your extreme concern for responsibility and social impact. You write these long essays. You know, it it probably means that some people would never join you because they think you're a bit wacky. But the ones who do join absolutely love you and believe in you, and there's this kind of amazing loyalty, which is kind of special.\n\nSpeaker 2 | 34:08 - 34:27\nI mean, another kind of key character in in in your work that we haven't talked about is, you know, David Silver, who obviously played a key role in in a bunch of the reinforcement learning work and was was one of the early, collaborators with Demis on a bunch of things. You know, he he obviously think, you know, since publishing your book, he recently left, DeepMind, right, to start another company. I'm curious what you made of that.\n\nSpeaker 1 | 34:27 - 35:03\nI think it kind of fits your narrative here, actually. I mean, in the sense that he was this he he is this intensely determined believer in reinforcement learning to a point where I think most of his colleagues at DeepMind ended up thinking it was just too much. You know, he was the hero when, first of all, the Atari, you know, game playing system that DeepMind rolled out 2012, 2013, you know, made these incredible breakthroughs. And, you know, that was almost like ImageNet but for early agents. And David Silver was a key person in that.\n\nSpeaker 1 | 35:03 - 35:51\nAnd then there was AlphaGo and then there was AlphaZero, which I was, you know, pretty much all learning from reinforcement learning and no I mean, there was deep learning, but it was but it was it was heavily skewed towards the reinforcement learning side. And and then came this paper from David Silver and Rich Sutton, his PhD supervisor called, what was it called, Experience is Enough I think it was something like that. And basically learn from experience, learn from reinforcement learning, don't learn from data was the message of that paper. And David is just very very hard over on that vision that, you know, learning from data is inferior because the data includes mistakes. Right?\n\nSpeaker 1 | 35:51 - 36:44\nThey're kind of if you train if you take the Go analogy, if you train on a human Go player's past games, even if it's expert games, those players don't have perfect understanding of Go. And you need to get beyond that to have super intelligence. And so you need to learn the machine needs to learn from its own experience, not rely on the kinda crystallized knowledge of humans passed on through text or other kinds of data. He is such a believer in that that it's all agents for him, only agents, and they have to learn from themselves. And I think, you know, Demis told me once or actually more than once that, you know, that kind of approach may ultimately win in some future when you already have AGI and now you're just sort of like perfecting it into even greater superintelligence.\n\nSpeaker 1 | 36:46 - 37:09\nBecause ultimately, yes, you know, if you if the machine learns from its own data, that is purer and ultimately will get you further. But to try and get you to that AGI, you need to bootstrap yourself with existing data, and that's what the whole language model revolution showed us. That for a long time, there wasn't much there was almost no reinforcement learning unless you count reinforcement learning from human\n\nSpeaker 2 | 37:09 - 37:22\nif if their base models weren't weren't strong enough, right, except for these these specific domains. And then, you know, what's fascinating, obviously, about this moment in time is the combination of large pre training LMs and then reinforcement learning on these on these verifiable domains.\n\nSpeaker 1 | 37:22 - 37:22\nBut it's\n\nSpeaker 2 | 37:22 - 37:40\njust interesting that he that he left at this time because, obviously, it feels like, generally, reinforcement learning is back in vogue as, like, the way to improve, you know, these these models. And so, you know, it almost would have made more sense a few years ago when when when reinforcement learning was more out of favor. I thought it was interesting timing that that had happened now.\n\nSpeaker 1 | 37:40 - 38:04\nYeah. I mean, I think I think you're right, but it it sort of reflects the human lag between feeling something and acting on it. Right? I think he'd been feeling for a while frankly that he was swamped in a big organization which didn't fundamentally want to put more than a sort of small amount of its chips on the reinforcement learning table. And then even within reinforcement learning, you know, his vision of how it should be done differed from some other people.\n\nSpeaker 1 | 38:04 - 38:21\nSo I think he is kind of a classic startup sort of person who who wants to be in a small organization where his vision is the vision because, you know, he's he's extremely visionary on on reinforcement learning. And so it makes sense for him to go do his own thing.\n\nSpeaker 2 | 38:21 - 38:52\nOne thing that we've kind of talked about a bunch here is just like in the end of the day, there's a few people here that that run these labs and have intensely, like, personal histories and and relationships. And I think the obviously, the Sam Dario relationship has been incredibly well documented. Elon, Sam, all coming out in this in this current court case. You know, I think Demis' relationship with each of them is probably less well understood by, you know, by the general public. And I'm wondering if you could just talk a little bit about that and his the extent to which those relationships exist, his kind of feelings on the two main other protagonists of space right now.\n\nSpeaker 1 | 38:54 - 38:57\nDemis' relationship with Elon is very interesting.\n\nSpeaker 2 | 38:58 - 38:59\nYou know, because tried to buy him. Right?\n\nSpeaker 1 | 38:59 - 39:21\nYeah. But it but just going back, I mean, you know, the the origin of this whole thing is that they were both funded by the same VC shop, founder's fund. Right? Where, you know, Elon was the SpaceX guy and Demis is the DeepMind guy. They both in 2012 or thereabouts get invited to an LP off-site and they both present and then they get talking to each other.\n\nSpeaker 1 | 39:22 - 39:24\nAnd, you know, Elon is always very competitive.\n\nSpeaker 2 | 39:24 - 39:27\nThat would have been a pretty valuable off-site to pay attention Too too pretty.\n\nSpeaker 1 | 39:27 - 39:50\nYeah. So Elon's like, you know, well, I've got the most important technology in the world because, you know, even if the world is screwed up by your AI, we can all move to Mars, be a multi planetary species. So I've got the most important thing. At which point, Dennis says, yeah, But if you think you're gonna be safe on Mars, remember that my AI will be able to conquer space flight and it will just follow you to Mars. So then you won't be safe after all.\n\nSpeaker 1 | 39:50 - 40:11\nAnd then there's a silence. And then Elon goes, and then the next thing he he says, well, I'd like to invest in your series b. And he writes a $5,000,000 check into the series b. And then as you say, he wants to buy DeepMind, at the start of 2014 to prevent it from being sold to Google. And and Demis just like waves them off.\n\nSpeaker 1 | 40:11 - 40:37\nAnd there's this crazy story where Luke Nozick, the founder's fund partner who is sitting on SpaceX's board, you know, sees Elon at a party in LA and they agree that they've just gotta stop DeepMind from being sold to Larry Page. He's a transhumanist. You can't trust him. So they go up to some closet upstairs in this party, and they Skype Demis in the middle of the night in London and say, you gotta sell to us, not to them. And, you know, sell it to SpaceX.\n\nSpeaker 1 | 40:37 - 40:44\nSell it to Tesla. Do something, but just don't sell to Google because they're evil. And Demis is like, know, no. No. Google's got the computer.\n\nSpeaker 1 | 40:44 - 40:58\nI'm selling to them. Goodbye. Goodnight. And he puts the phone down. And then Elon goes nuts, right, and starts calling Demis an evil genius, which is a reference to a game that Demis worked on when he was a video game designer.\n\nSpeaker 1 | 40:59 - 41:22\nAnd, you know, vilifies Demis and is obsessed with this. But I think this has come out again a bit more in the trial that we've just been having recently, know, the the Elon versus Sam trial. And the kind of obsession that Elon had with Demis as the evil genius that had to be counteracted. So that's the history there. Demis is kind of very keen to say that these days they get on fine.\n\nSpeaker 1 | 41:23 - 41:46\nAnd I haven't heard that directly from Elon, but I kind of feel that probably water under the bridge, Elon has moved on to fighting with Sam. It probably is true that he's okay with with Demis now. But, you know, that's the history there. And then with Sam, it's just such a complete difference in personality and background if you compare the two of them. Right?\n\nSpeaker 1 | 41:46 - 41:56\nSo Demis has a Nobel Prize. Sam didn't finish his first degree. Therefore, Demis doesn't take Sam very seriously. Right? He doesn't have a college degree, let alone a PhD or a Nobel Prize.\n\nSpeaker 1 | 41:57 - 42:34\nAnd and he just, you know, to to Demis, Sam and I think there's some truth in this, frankly, that, you know, Sam is the sort of skillful ultimate embodiment of the Silicon Valley network who knows how to fake it until you make it, to tell the premature truth, who is just a master at raising money at leveraging his connections in the valley. And, you know, that's all great, but, you know, it's not the same as being a serious scientist. And you can't trust somebody like that. And I think, you know, I think people have come around to Demis' view to quite some, you know, some extent with Sam. But but Demis always felt that.\n\nSpeaker 1 | 42:35 - 42:39\nAnd so I don't think he ever liked Sam.\n\nSpeaker 2 | 42:39 - 43:02\nI think it was The Economist that in talking about your book, you know, said it's really like a test of this, like, great man theory of history. But I'm curious, we've talked a lot about these four protagonists. And I'm wondering after having done all this work, was all of this inevitable or to what extent did it matter that it was you know, Demis and and maybe some of these other folks at the at the helm of the companies? Yeah. I'd be curious your thoughts on that.\n\nSpeaker 1 | 43:02 - 43:27\nI once wrote a book about Alan Greenspan, a super powerful player in global economics, but ultimately unable to stop the financial bubble of two thousand eight. And I called the book The Man Who Knew because he understood that bubbles were dangerous. That's in fact what he read his PhD about. He was obsessed with bubbles blowing up, but he couldn't stop this thing from happening. And I feel that one could have almost used the same title for the Demis book.\n\nSpeaker 1 | 43:27 - 43:53\nRight? I called it the infinity machine, but it could have been called the man who knew because Demis has known from the beginning that this thing is dangerous. But as the leader of one lab, even a very powerful rich lab, even he with his stature as a Nobel Prize winner, he understands that it's dangerous but what can he do? Because if he makes his own lab safe, it doesn't stop the other guys from being unsafe. And so I think there is a sort of this inevitability to the race dynamic.\n\nSpeaker 1 | 43:55 - 44:22\nIt does matter who is leading these labs. I mean, clearly, you know, Dario changed the narrative on AI safety first by fighting with the Pentagon in public and secondly and more importantly by the way that he did the Mythos release. So that's a clear example. On the other hand, you know, Sam decided to release ChattyPT even though it was hallucinating. That was a choice.\n\nSpeaker 1 | 44:22 - 44:49\nIt didn't have to do that And that completely colored the way the AI race played out. And Demis, in a more understated way, told Rishi Sunak, The UK prime minister at the time, hey, we should have a global AI safety summit. And, you know, that's what happened. And there was one in Bletchley Park and the Chinese came and that was kind of the beginnings of international conversation on AI safety. So I think Demis is more behind the scenes in what he does.\n\nSpeaker 1 | 44:49 - 45:00\nBut, yeah, I think it matters, the personalities of these leaders. But it perhaps, you know, it's not the only thing that matters. The there are underlying forces as well.\n\nSpeaker 2 | 45:00 - 45:18\nWell, before we wrap up, I definitely you know, given that you spent so much time with Dennis, I I think there's a few just questions about that process I was I was really curious to dig into. You know, you spent, I guess, three years meeting him at the same pub. And I'm wondering across those series of conversations, like, what was the moment, I guess, your view of him kind of shifted the most?\n\nSpeaker 1 | 45:18 - 45:46\nThere were lots of surprises, but one of them is the depth of his conviction about discovering the deep mysteries of science. And this is actually a kind of spiritual conviction, which I had no inkling of before. But, you know, he would sometimes erupt in these conversations I was having. They went on for two hours each time so we already could, you know, get deep on stuff. And he would start banging the table and saying, look, this table, it's a mystery.\n\nSpeaker 1 | 45:46 - 45:57\nIt's a mystery. Don't understand it. Like, these atoms jumping around and there are gaps between them and yet the table is solid. And why is your laptop able to think when it's just a bunch of sand and copper? And and, you know, what's going on here?\n\nSpeaker 1 | 45:58 - 46:05\nWhy is the world set up like this so that it functions? It's a mystery. We have to understand. There must be some sort of intelligence behind it. This can't just be coincidence that it's like this.\n\nSpeaker 1 | 46:05 - 46:34\nMaybe maybe it's like God. Maybe if we approach science the right way, we understand more about nature, we will be getting closer to something that we could perhaps call God. Now I had no idea that he would feel that way, but I think he does. And and it explains why he nonetheless pushes forward to, you know, develop this super strong AI, which he knows to be dangerous is because it's it's it's this kind of quasi spiritual quest for him.\n\nSpeaker 2 | 46:34 - 47:00\nAnd it feels like it's it for all for a lot of people in the space, there's like a religious or spiritual element to to, like, getting to AGI. And it it it's really interesting to see play out. And, certainly, I thought that that came through really clearly in in in your work. I guess, you know, it feels like you you had free you know, such a wide ranging and open book. Were there things that Demis, like, wasn't really willing to talk about or or areas that you would have liked to put in the book but but but, you know, didn't end up coming through?\n\nSpeaker 1 | 47:00 - 47:12\nYeah. He was very clear at the start that he would talk a lot about himself, but he wouldn't talk about his family. And so I left that out. And there are passing references. He's know, he married his girlfriend from Cambridge.\n\nSpeaker 1 | 47:13 - 47:37\nThey're still married. They have two children. It's all very normal. But I basically don't talk I mean, most by when I wrote about Greenspan, going to speak to his many, many, many ex girlfriends was one way of understanding the guy and actually brought out the human side of him in a good way. And I, you know, I didn't really go there with Demis.\n\nSpeaker 1 | 47:38 - 48:10\nAnother thing is, you know, he didn't wanna talk about fights between himself and Sundar Pichai and the leadership of Google and Mountain View. I did write about that because other people told me about that and so I get into that quite a lot. So you know his preference that this should be left out was not honored. You know, he didn't really want me to talk about the way that he fired his co founder, Mustafa Soleiman. And he would sort of say I didn't really fire him.\n\nSpeaker 1 | 48:10 - 48:41\nYou know there was a process, some sort of inquiry into bullying done by my general counsel and so forth. And you know that was kind of the trigger but it wasn't the deep reason why Mustafa was pushed out. Nothing happened at DeepMind unless Demis wanted it to happen. And I think he just decided it was time for Mustafa to go because they disagreed on too many issues. So yeah, there were some things that he didn't want included and sometimes he won that preference and other times he didn't.\n\nSpeaker 2 | 48:41 - 48:55\nThere's been a ton of public discourse about your book. I feel like you've been on on you know, lots lots of folks have been talking about it, and I think you picked up on a lot of the themes we've discussed here today. Are there parts of the book or or or aspects of it that you think are, like, under discussed or you wish people, you know, would would would talk about more?\n\nSpeaker 1 | 48:56 - 49:33\nI think there are sort of interesting takeaways for scientific innovation, how you do deep tech companies. Know, You we talked about some of the shortcomings at DeepMind, you know, the lack of concentrated bets and and so forth. But on the upside, I think it's very interesting how he developed what he calls scientific taste. And what I mean here is that, you know, when he had his first startup, which was this video game production company called Elixir, he basically blew it up by being too ambitious in terms of the product engineering. Like, how fantastic could the graphics be?\n\nSpeaker 1 | 49:33 - 49:54\nCould you do kind of early reinforcement learning to make the characters more interesting? And he drove his technical team, like, over the brink in terms of how ambitious they had to be. And they couldn't ship product on time as a result. And so that was a bad outcome. You know, he got some money out of that first company, but it wasn't as much of a success as he hoped.\n\nSpeaker 1 | 49:54 - 50:17\nBut then you fast forward and he's doing DeepMind. And he gets this moment in 2018 where, you know, he's two years into the AlphaFold research and his AlphaFold team has produced the best protein prediction system in the world. And the boss of that team, Andrew Sr, says, okay, boss. You know, we've okay, Demis. We've done this now.\n\nSpeaker 1 | 50:17 - 50:25\nLet's declare victory and move on because we're not gonna predict proteins precisely. Give me a break. That's impossible. We're the best in the world. That's good enough.\n\nSpeaker 1 | 50:25 - 50:42\nAnd Demis is like, no. No. That's not the point. We we wanna predict proteins so that, you know, research biologists and and medical researchers can use our predictions to build medicines and other fantastic breakthroughs. There's no point just being the best better than the other labs.\n\nSpeaker 1 | 50:43 - 51:10\nWe wanna solve this problem. And the guy who's running the team, Andrew Sr, says that's impossible. So Demes sits in the meetings of the team and this is where the scientific taste come in. He he listens to what he calls you know, he listens for the fluidity and the fluidity of ideas. If the research team are, like, bouncing possibilities of stuff they could look into off of each other, then that's fluent, and and you should move forward.\n\nSpeaker 1 | 51:10 - 51:19\nPut more resources in. Push harder. If there was kind of a silence and nobody had any good ideas, of course, you should give up. And so he he does that test. He listens to the team.\n\nSpeaker 1 | 51:19 - 51:32\nThey are fluid in their exchange of ideas. And so then he basically switches out the project lead. Andrew Sr. Does something else. He puts in this other guy, John Jumper, who then goes on to become the co winner of the Nobel Prize with him.\n\nSpeaker 1 | 51:32 - 51:45\nAnd I think that evolution from blowing up his first startup to being right about protein folding holds a lesson for how you do this sort of frontier science inside a company.\n\nSpeaker 2 | 51:45 - 52:11\nI love that story. I guess, know, obviously, you know, part of of of this work really helps elevate, you know, and and tell the story of Demis more broadly, which may be an under known story. Throughout this work or in general, are there other folks in the AI ecosystem that you feel similarly deserve more light shown on them or an expose, some kind of biography, other undersung heroes in this kind of AI world?\n\nSpeaker 1 | 52:12 - 52:50\nWell, in my book, do have this sort of pairing of Ilya Satskeva and David Silva, one of them representing the deep learning tradition, PhD under Geoffrey Hinton in Toronto. And then on the other hand, David Silver representing what I call the kind of Edmonton, Alberta tradition, PhD under Rich Sutton who was the sort of guru of reinforcement learning. And I think both of those individuals and I have kind of embedded in my story about Demis a kind of mini biography of the two of them kind of juxtaposing their two approaches, and there could be a fantastic double biography of the two of them.\n\nSpeaker 2 | 52:50 - 53:03\nCertainly. Know, I think at various times as as Google has AI fortunes have seemed better or worse, you know, folks have speculated that maybe one day Demis will become CEO of Google. You think that's possible?\n\nSpeaker 1 | 53:03 - 53:35\nYeah. It's possible. There's a question about whether he would want to do that because I think he does love being a little bit able to think about the science. And he does this double shift every day meaning, you know, he eats dinner with his family and then goes back to his desk until 4AM and that's when he's doing science. Now I think actually these days a lot of that late time is spent doing calls to Mountain View and trying to coordinate with all, you know, all of the many people who report to him out of Mountain View.\n\nSpeaker 1 | 53:35 - 54:14\nSo already that science time is being eaten into, but if he became CEO, obviously, there'd be nothing left of it at all. And I think he's genuinely conflicted about whether he won't want that. But it seems to me that it it all depends kind of like if Sundar were to decide that he's leaving, you know, who would be the likely CEO replacement if it wasn't Demis? And if it was somebody that Demis felt very comfortable with, he'd probably be perfectly happy not to do that. If he was not comfortable with it, then he might kind of push his hat into the ring because he wouldn't he wouldn't want to work for somebody that he didn't agree with.\n\nSpeaker 2 | 54:14 - 54:27\nWell, Sebastian, it's been such an interesting conversation. I always like to leave the last word to the guest. I I think in this case, it's pretty clear where you might wanna point people, but, I'll leave the last word to you. Anything our listeners should should take away further from this conversation, and and, also, please please plug the book.\n\nSpeaker 1 | 54:29 - 55:00\nWell, look, I really enjoyed writing this book. It's my sixth book and spending, you know, more than thirty hours at Demis de Sabes in the top of a British pub was really quite special. He would like me to point out that we were drinking coffee, not pints of beer, But just simply the intellectual range of this guy who can riff about neuroscience, computer science, physics, biology, chemistry, you know, the history of movies, novels, science fiction. It it was just wild. And I do try to communicate that energy on the page.\n\nSpeaker 1 | 55:01 - 55:34\nIt's the first time I've ever used the the first person as a device in the book because I wanted to use that dialogue I had with him. And so having Demis Riffer than me kind of ask him a question or just you know, in that interspersed in what he's saying, this kind of what I'm thinking to help the reader sort of understand it. I was this was such an extraordinary experience that I was driven to innovate the craft of writing in terms of my own craft. So, yeah, I enjoyed it. I hope you do too if you read it, everybody out there.\n\nSpeaker 2 | 55:34 - 55:36\nAmazing. Well, thanks so much for coming on the podcast to talk about it.\n\nSpeaker 1 | 55:36 - 55:38\nFantastic. Thank you, Jacob. It's great.\n\nSpeaker 2 | 55:38 - 56:04\nI'm Jacob Efron, and this has been Unsupervised Learning, a podcast where I get to talk to the smartest people in AI and ask them tons of questions about what's happening with models and what it means for businesses in the world. As I hope is clear, I have a ton of fun doing this. It's a nights and weekends project in addition to my day job as an investor at Redpoint. But our ability to get these incredible guests on really comes from folks like you subscribing to the podcast, sharing it with friends. It's really what ultimately makes this whole thing work.\n\nSpeaker 2 | 56:04 - 56:08\nAnd so please consider doing that, and thank you so much for your support and listening. We'll see you next episode."
+    }
+  ],
+  "blogs": [],
+  "stats": {
+    "xBuilders": 14,
+    "totalTweets": 30,
+    "podcastEpisodes": 1,
+    "blogPosts": 0,
+    "feedGeneratedAt": null,
+    "snapshotDate": null
+  }
+}
