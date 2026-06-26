@@ -1,0 +1,303 @@
+{
+  "date": "2026-06-26",
+  "title": "AI早报：基础设施重建、Agent协作与创业浪潮",
+  "intro": "今日焦点：Swyx 强调 AI 时代基础设施需大规模重建，并分享技术演讲的黄金法则；Claude 在 Slack 中作为共享同事的 Agent 模式引发对组织级协作的思考；Guillermo Rauch 预言 AI 将催生前所未有的创业浪潮。此外，Claude Design 的截图复现能力与 token 控制问题、Google Project Genie 获戛纳大奖、Cursor 与 Notion 双向集成等动态值得关注。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Swyx",
+      "title": "AI演讲与基础设施重建的深度洞察",
+      "originalText": "lots of folks prepping talks next week (congrats!). Some thoughts from RLing on thousands of hours of engineer- and researcher- focused talks:\n\n- AI generated svgs > AI generated imgs. MAXIMUM 4 ai slop images in your slides, I don't care how pretty your mom thinks they are (exception ofc if your talk is ABOUT imagegen)\n- Be pointy. Better to have 1 message with 5 surprising applications, than 5 messages with no concrete examples.\n- Put code on screen. Engineers like to see code. Especially if they can nitpick it to death over things that aren't the point.\n- Don't forget to Entertain. Being actually funny, or good at telling relevant anecdotes, is more important than adding yet another bullet point.\n- Have a Thesis. every talk gets ONE \"if you remember one thing from this talk, it is this\" card. 1) SO MANY PEOPLE DON'T USE IT. 2) SO MANY PEOPLE DON'T PLAN FOR IT. you get one. use it well?\n- Have a Thesis Slide. you've been in that talk where everyone gets their phone out to take a photo of the slide. Because people see 1000x more images than videos, you are much more likely to have a viral talk/slide if you have a single viral slide. You are much more likely to have a viral slide if you TRY and most people do not TRY. Struggling? Collect examples from talks you like and adapt their format to your thing. Your slides have a power law - don't spend 5% of your time each on 20 slides, spend 80% of your time on 1 slide and have the rest build up to that 1 slide.\n- You might not need slides. live demo in IDE, off the cuff rambles, pull audience member up to roleplay, do call and response with the audience, sing/perform, voice over vibe videos, I have seen it all. higher risk/effort, higher reward when done well.\n- Be pleasant to listen to. Talks with bad/no visuals still can be listened to. Talks with bad audio are DOA. Be confident, project, remember vocal variation, evoke emotion.\n- Design the emotional journey. Start strong, end strong, have a peak aha/laugh/thesis moment in the middle. Everything else is buildup.\n- Data driven talks are underrated. Present pretty charts and surprising, authoritative numbers. Use the stage authority to infer from the data to support the broader thesis. Done well, it will feel like my obvious conclusion from objectively looking at the data you presented, not you feeding the conclusion to me.\n- How to shill your product/company without feeling salesy: teach me everything I didn't know I should to know about the problems you solve, and then you shall have earned the right to convince me you are the guys to trust to solve it once and for all.\n- Actively watch a lot of talks. like with anything you both need a lot of reps AND you need to explore to find the styles/role models that you shine in. Passive = no introspection after watching, just mindlessly autoplay next video. Active = trying to articulate why a talk was good/bad after watching. If you want to REALLY hone it, think about how you feel about a famous talk and then TRANSCRIBE the talks and read the words on the printed page, and then compare with a \"normal\" talk and define rules you will follow for yourself to improve.\n\nthanks to @dexhorthy for organizing the AIEWF Speaker prep meetup tonight. we should actually do more of these....\n\nwe are going to have to Rebuild So. Much. Infra. for the age of Software Factories https://t.co/OHfQjOhiwJ\n\nLOTS of alpha in this pod:\n\n- Why Databricks beat Snowflake (! a straight answer!)\n- Why everyone is building a metaharness now\n- Why the @neondatabase made so much sense (so much @nikitabase glazing its not even funny)\n- How LTAP solves the HTAP dream I discussed with @ankrgyl in our @braintrust pod\n- What happened to @MosaicML + DBRX\n- How to maintain research/startup culture in a $175B megacorp\n- What's more important knowledge/experience in the race to the agent cloud: databases, operating systems, or.... networking!\n\nvery honored to be invited to @Data_AI_Summit to interview two of the top people in our industry and somehow be able to jam on everything from the @bennstancil modern data stack theme to @alighodsi's amazing keynote aura",
+      "chineseInterpretation": "Swyx 分享了关于技术演讲的实用建议，强调演讲要有单一核心论点、使用代码和AI生成的SVG，并设计情感曲线。他还指出，在AI和软件工厂时代，基础设施需要大规模重建。此外，他总结了与Databricks高管的播客内容，包括Databricks为何击败Snowflake、Neon数据库的成功逻辑，以及agent云时代网络知识的重要性。这些观点对AI从业者和技术演讲者都有很高的参考价值。",
+      "tldr": "Swyx 教你怎么做技术演讲才能让人记住，同时提醒大家AI时代的基础设施要大翻新。他还聊了Databricks为什么赢了Snowflake，以及未来agent云里网络比数据库和操作系统更重要。",
+      "proView": "如果演讲者遵循这些建议（如单一定位、数据驱动、情感设计），技术演讲的传播效果和影响力将显著提升。在基础设施层面，若软件工厂成为主流，现有数据管道、编排和监控系统都需要重新设计，这将催生新的创业机会。",
+      "conView": "但演讲建议可能过于理想化，实际中很多成功演讲靠的是即兴发挥和个人魅力，过度设计反而显得刻意。基础设施重建的论点也面临挑战：许多现有系统通过增量升级即可适应AI需求，完全推倒重来的成本过高。",
+      "clue": "观察未来6个月技术大会（如AI Engineer Summit）的演讲风格变化，以及主流云厂商是否推出针对软件工厂的新基础设施产品。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/swyx/status/2069964772003770673",
+        "https://x.com/swyx/status/2069937175899275475",
+        "https://x.com/swyx/status/2069864073202905501"
+      ],
+      "topicTags": [
+        "技术演讲",
+        "AI基础设施",
+        "软件工厂",
+        "数据库",
+        "agent云",
+        "Databricks",
+        "Snowflake",
+        "Neon"
+      ],
+      "personTags": [
+        "技术演讲者",
+        "AI行业观察者",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Yang",
+      "title": "Claude Design 体验：完美复现移动应用截图，但 token 提示过早",
+      "originalText": "Claude Design is pretty great. I gave it a repo for a mobile app I'm building and it reproduced the screens perfectly. Except after one prompt it's telling me to save tokens already 😅",
+      "chineseInterpretation": "Peter Yang 测试了 Claude Design 功能，发现它能根据代码仓库完美复现移动应用界面截图，效果令人印象深刻。但仅一次提示后，系统就开始提醒节省 token，说明 token 消耗控制可能过于激进，影响用户体验。",
+      "tldr": "Claude Design 能根据你的代码自动生成应用截图，效果很准，但用一次就提醒你省着点用 token，有点扫兴。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/petergyang/status/2069992268963135897"
+      ],
+      "topicTags": [
+        "Claude",
+        "AI设计工具",
+        "移动应用开发"
+      ],
+      "personTags": [
+        "产品经理",
+        "开发者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Google Labs",
+      "title": "Project Genie 获戛纳创意节AI工艺类全场大奖",
+      "originalText": "We are honored to share that Project Genie has won the Cannes Lions Grand Prix for AI Craft! 🏆 To our awesome Labs community, thank you for being on this journey with us!",
+      "chineseInterpretation": "Google Labs 的 Project Genie 在戛纳国际创意节上获得了 AI Craft 类别的全场大奖，这是对 AI 在创意领域应用的最高认可之一。Project Genie 是 Google 内部的一个实验性项目，专注于利用 AI 辅助创意生成和设计，此次获奖表明业界对 AI 工具在提升创意效率和突破传统边界方面的价值给予了高度肯定。",
+      "tldr": "Google 的一个 AI 创意项目在广告界的奥斯卡——戛纳创意节上拿了最高奖，说明 AI 做创意这事已经得到行业大佬们的认可了。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/GoogleLabs/status/2069827839826809042"
+      ],
+      "topicTags": [
+        "AI创意",
+        "戛纳创意节",
+        "Google Labs",
+        "Project Genie"
+      ],
+      "personTags": [
+        "产品团队"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Guillermo Rauch",
+      "title": "AI将催生前所未有的创业浪潮",
+      "originalText": "AI will bring forth an unprecedented surge in entrepreneurship. From 'solopreneurs,' to the revitalization of the small & medium business segment, to the emergence of the largest companies of our times… providing the foundation of it all.",
+      "chineseInterpretation": "Guillermo Rauch（Vercel CEO）认为AI将引发创业大爆发，从独立开发者到中小企业再到巨头公司，AI会成为所有商业形态的基础。他同时分享了Vercel AI Gateway的惊人数据，以及快速GLM模型上线的消息，暗示AI基础设施正在快速成熟。",
+      "tldr": "AI会让创业变得更容易，一个人也能开公司，小企业能重新崛起，大公司也会从AI中长出来——AI就是新时代的电力。",
+      "proView": "如果AI真的降低了创业门槛，那么未来几年我们会看到大量AI原生应用和垂直SaaS涌现，独立开发者（solopreneur）将能借助AI工具完成过去一个团队的工作，中小企业也能用AI与大公司竞争。",
+      "conView": "但另一面是：AI也可能加剧垄断，因为训练和部署大模型需要巨额资本，最终只有少数巨头能掌控底层基础设施，小公司反而更依赖平台，失去自主权。",
+      "clue": "判断线索：观察AI开发工具（如Cursor、Vercel AI SDK）的采用率，以及独立开发者通过AI产品获得收入的案例数量。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/rauchg/status/2070001110866354345",
+        "https://x.com/rauchg/status/2069863762694459805",
+        "https://x.com/rauchg/status/2069819652365242765"
+      ],
+      "topicTags": [
+        "AI创业",
+        "独立开发者",
+        "中小企业",
+        "AI基础设施"
+      ],
+      "personTags": [
+        "创业者",
+        "CEO"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "Claude作为共享同事的Agent模式深度解析",
+      "originalText": "There are some subtleties in this launch that are very important in practice. This isn’t just you interacting with Claude in a 1:1 format via Slack. In this case, Claude acts as a coworker that any user can tap into in a shared way. ... It’s awesome to see continued innovation in what the future of work may begin to look like with agents.",
+      "chineseInterpretation": "Aaron Levie指出，Claude与Slack的集成并非简单的1对1对话，而是将AI agent设计为团队共享的同事。这种模式要求agent拥有独立的资源、工具和数据权限，而非直接借用个人权限，以避免信息泄露。通过连接Claude Tag与Box等企业工具，agent可以安全地访问销售材料、品牌指南、产品文档等，实现跨团队的协作知识工作。这标志着AI agent从个人助手向组织级协作实体的进化。",
+      "tldr": "Claude在Slack里不再是你的私人助理，而是像团队新同事一样，有自己的权限和资料库，大家都能找它帮忙，但不会搞混你的私人物品。",
+      "proView": "如果这种共享agent模式普及，企业知识管理将彻底改变：agent成为统一的知识入口，减少信息孤岛，提升跨部门协作效率。同时，权限管理将更精细化，推动企业IT架构向agent-centric演进。",
+      "conView": "但另一面是：共享agent的权限配置复杂，容易出错导致数据泄露；且agent的决策可能缺乏上下文，产生误导性输出。此外，员工可能过度依赖agent，削弱自身判断力。",
+      "clue": "观察企业是否开始为agent单独创建用户账户和权限组，以及agent访问日志是否被纳入审计体系。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2069975251476422664"
+      ],
+      "topicTags": [
+        "AI Agent",
+        "企业协作",
+        "Claude",
+        "Slack集成",
+        "权限管理"
+      ],
+      "personTags": [
+        "创业者",
+        "技术观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Ryo Lu",
+      "title": "Cursor与Notion双向集成：AI编程工具与知识管理平台的融合",
+      "originalText": "use cursor in notion\nuse notion in cursor",
+      "chineseInterpretation": "这条推文展示了AI编程工具Cursor与知识管理平台Notion之间的双向集成能力。用户可以在Notion中直接调用Cursor进行代码编辑，同时在Cursor中访问Notion文档，实现了开发环境与知识库的无缝衔接。这种集成体现了AI工具生态中跨平台协作的趋势，提升了开发者的工作效率。",
+      "tldr": "Cursor和Notion可以互相调用，就像在微信里用支付宝，在支付宝里用微信一样方便。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/ryolu_/status/2069830172354986418"
+      ],
+      "topicTags": [
+        "AI编程工具",
+        "Cursor",
+        "Notion",
+        "工具集成"
+      ],
+      "personTags": [
+        "开发者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Dan Shipper",
+      "title": "AI能否取代人类？与Surge AI CEO Edwin Chen的深度对话",
+      "originalText": "Are we hurtling toward a future where AI can do everything humans can?\n\nEdwin Chen (@echen) believes we might be. He’s the CEO of Surge AI, one of the largest providers of expert data for frontier labs. Surge passed over $1 billion in revenue without raising any outside capital, and that gives Edwin a unique perspective on how quickly AI progress is accelerating.\n\nI’m on the record arguing that AI automation actually creates more human work. I also believe that even though AI progress is accelerating exponentially, we’re much farther away from AI replacing humans than it might seem.\n\nThat’s why I had Edwin on @every’s AI & I. We batted around different visions of the future, and discussed whether humanity will retain its unique place in the universe, and what that might be.\n\nWe get into:\n• If Chen’s version of the future materializes, he’s worried it’ll make people stop trying. One answer comes from a short story by science fiction writer Ted Chiang: Behave as if your decisions matter, even when you know they don’t.\n• AI may soon be able to take a nebulous goal like “win a Fields Medal” and execute. What it can’t do, I argue, is set its own goals—LLMs have no intrinsic motivation, no drive to explore, no ability to just change their mind.\n• A model optimized for engagement doesn’t provide the most valuable user experience. Edwin spent 20 rounds polishing a pointless email with one model before Claude told him to just send it.\n• Why AI is still bad at writing: models learn to hack the metrics they're trained on. Edwin's Hemingway Bench found models outputting a metaphor in every single sentence, an overindexxing that makes for a terrible reading experience.\n\nThis is a must-watch for anyone interested in where we fit as models get more capable.\n\nWatch below!",
+      "chineseInterpretation": "Dan Shipper 与 Surge AI 的 CEO Edwin Chen 进行了一场关于 AI 能力边界和人类价值的深度对话。Chen 认为 AI 可能很快就能做所有人类能做的事，但 Shipper 持不同观点，认为 AI 自动化反而会创造更多人类工作，且距离完全替代人类还很远。他们讨论了 AI 缺乏内在动机、无法自主设定目标的问题，以及当前模型在写作上的缺陷——比如过度优化指标导致输出变得机械。这场对话对于理解 AI 时代人类的独特价值非常有启发性。",
+      "tldr": "简单说就是：一个做AI数据的大佬觉得AI很快啥都能干，但Dan Shipper觉得AI离取代人类还远着呢，而且AI没有自己的目标和动力，写东西也容易跑偏。他们俩在播客里吵了一架，挺有意思的。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://x.com/danshipper/status/2069805581263847467",
+        "https://t.co/O8njShLFWB",
+        "https://t.co/U3R2F9rSYS"
+      ],
+      "topicTags": [
+        "AI能力边界",
+        "人类价值",
+        "AI写作",
+        "AGI",
+        "动机",
+        "播客"
+      ],
+      "personTags": [
+        "创业者",
+        "研究员"
+      ]
+    }
+  ],
+  "blogs": [],
+  "podcasts": [
+    {
+      "name": "AI & I by Every",
+      "title": "Building a School Where AI Models Learn About Humanity",
+      "chineseInterpretation": "播客中，Surge CEO Edwin讨论了如何通过数据环境训练AI模型，使其更像人类一样学习和成长。他强调AI应优化人类成长而非用户参与度，并预测AGI可能在5年内实现。同时，他探讨了AI在数学研究中的突破，以及数据个性化对模型的重要性。",
+      "tldr": "AI模型正在像孩子一样被培养，未来5年可能超越人类，但我们需要确保它们帮助我们成长，而不是让我们沉迷。",
+      "links": [
+        "https://www.youtube.com/watch?v=omX6wrLuX08"
+      ],
+      "topicTags": [
+        "AGI",
+        "AI训练数据",
+        "AI个性化",
+        "数学推理",
+        "AI伦理",
+        "Claude",
+        "Gemini"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "AI 生成 SVG 优于图片，演讲中代码展示是关键",
+          "summary": "Swyx 建议演讲中多用 AI 生成的 SVG 而非图片，并强调展示代码的重要性。",
+          "implication": "前端团队在技术分享或对外演示时，应优先使用 SVG 等可交互、可缩放的可视化元素，并准备 live demo 或代码片段，以增强说服力和技术深度。",
+          "sourceUrl": "https://x.com/swyx/status/2069964772003770673"
+        },
+        {
+          "title": "Claude Design 可完美复现移动应用截图，但 token 控制需优化",
+          "summary": "Claude Design 能根据代码仓库生成精准的 UI 截图，但过早提示 token 消耗影响体验。",
+          "implication": "前端团队可探索将 Claude Design 集成到开发流程中，用于快速生成 UI 预览或设计稿对比，但需注意 token 成本管理，避免打断工作流。",
+          "sourceUrl": "https://x.com/petergyang/status/2069992268963135897"
+        },
+        {
+          "title": "Cursor 与 Notion 双向集成，提升开发效率",
+          "summary": "Cursor 和 Notion 可互相调用，实现代码编辑与知识管理的无缝衔接。",
+          "implication": "前端团队应推动开发工具与知识管理平台的深度集成，减少上下文切换，提升协作效率。可评估 Cursor 的 API 与内部文档系统的对接方案。",
+          "sourceUrl": "https://x.com/ryolu_/status/2069830172354986418"
+        }
+      ],
+      "actions": [
+        "在团队内部技术分享中，尝试使用 AI 生成 SVG 和代码演示，并收集反馈。",
+        "调研 Claude Design 的 API 接入成本，评估其在 UI 预览场景的可行性。",
+        "推动 Cursor 与 Notion 或内部 Wiki 的集成，建立开发-文档双向同步流程。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "AI 时代基础设施需大规模重建，软件工厂模式兴起",
+          "summary": "Swyx 指出在软件工厂时代，数据管道、编排和监控系统都需要重新设计。",
+          "implication": "服务端架构师应提前规划可扩展、模块化的基础设施，支持 AI 驱动的自动化工作流。关注 Neon 等新型数据库的 HTAP 能力，以及网络在 agent 云中的核心地位。",
+          "sourceUrl": "https://x.com/swyx/status/2069864073202905501"
+        },
+        {
+          "title": "Claude 作为共享同事的 Agent 模式，要求独立的权限和资源管理",
+          "summary": "Claude 在 Slack 中作为团队共享 agent，拥有独立的工具和数据权限。",
+          "implication": "后端架构需支持 agent 级别的身份和权限隔离，设计 agent 专属的 API 网关、数据存储和审计日志。考虑将 agent 视为一等公民，纳入现有的 IAM 体系。",
+          "sourceUrl": "https://x.com/levie/status/2069975251476422664"
+        },
+        {
+          "title": "AI 创业浪潮下，基础设施即服务（IaaS）需求激增",
+          "summary": "Guillermo Rauch 预测 AI 将引发创业爆发，Vercel AI Gateway 数据增长迅速。",
+          "implication": "服务端架构师应关注 AI 网关、模型推理服务、向量数据库等基础设施的选型与自建，为内部或外部客户提供低延迟、高可用的 AI 服务。",
+          "sourceUrl": "https://x.com/rauchg/status/2070001110866354345"
+        }
+      ],
+      "actions": [
+        "评估现有基础设施对 AI 工作负载的支持，制定向软件工厂架构演进的路线图。",
+        "设计 agent 权限管理方案，包括身份认证、资源隔离和操作审计。",
+        "调研 Vercel AI Gateway 等产品，为团队或客户搭建 AI 服务网关原型。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "AI 将催生前所未有的创业浪潮，独立开发者与中小企业受益",
+          "summary": "Guillermo Rauch 认为 AI 会降低创业门槛，从 solopreneur 到巨头都将以 AI 为基础。",
+          "implication": "产品经理应关注 AI 原生应用和垂直 SaaS 的机会，尤其是面向中小企业的工具。考虑将 AI 能力作为产品核心差异化，而非附加功能。",
+          "sourceUrl": "https://x.com/rauchg/status/2070001110866354345"
+        },
+        {
+          "title": "Claude 作为共享同事的 Agent 模式，重塑企业协作",
+          "summary": "Claude 在 Slack 中作为团队共享 agent，拥有独立权限，可跨部门协作。",
+          "implication": "产品经理可探索将 AI agent 设计为组织级协作实体，而非个人助手。这需要重新定义权限模型、知识共享机制和交互流程，可能催生新的企业 SaaS 品类。",
+          "sourceUrl": "https://x.com/levie/status/2069975251476422664"
+        },
+        {
+          "title": "AI 能力边界讨论：缺乏内在动机，但可执行模糊目标",
+          "summary": "Dan Shipper 与 Edwin Chen 辩论 AI 能否替代人类，认为 AI 缺乏自主设定目标的能力。",
+          "implication": "产品经理在设计 AI 功能时，应聚焦于辅助人类设定和执行目标，而非完全自动化。强调人机协作，让 AI 处理执行层，人类负责决策和创意。",
+          "sourceUrl": "https://x.com/danshipper/status/2069805581263847467"
+        }
+      ],
+      "actions": [
+        "组织产品团队讨论 AI 对现有产品线的潜在影响，识别 solopreneur 和 SME 市场机会。",
+        "设计一个共享 agent 的原型，在内部团队试用，收集协作效率数据。",
+        "在用户研究中加入对 AI 自主性的认知测试，确保产品设计符合用户对 AI 能力的预期。"
+      ]
+    }
+  ]
+}
