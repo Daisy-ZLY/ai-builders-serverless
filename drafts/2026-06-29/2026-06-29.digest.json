@@ -1,0 +1,327 @@
+{
+  "date": "2026-06-29",
+  "title": "AI早报：模型评估新标准、Codex重大更新、个人健康数据追踪、AI安全攻防、智能眼镜历史回顾",
+  "intro": "今日焦点：Swyx提出用美元成本替代token数评估模型性价比，引发行业标准讨论；Codex迎来重大更新，用户体验大幅提升；非工程师借助AI工具在GitHub获万星，展示AI编程低门槛趋势；Aaron Levie强调AI成本优化的关键在于深入理解业务流程，为应用型AI公司指明方向；智能眼镜发展史再次证明产品痛点未解；同时，MCP协议在个人健康数据聚合中的应用、持续学习模型理念等也值得关注。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Swyx",
+      "title": "AI Engineer Conference & Open Model Inference Budget",
+      "originalText": "An interesting way to take Noam at his word in regards to always keeping a constant inference budget for any eval reporting - is that open models have a lot more dollar per token mileage than closed model APIs. So anyone launching an open model today or situationally incentivized toward open models should obviously report thinking levels measured by dollar inference on popular inference providers, instead of by number of tokens on the x axis",
+      "chineseInterpretation": "Swyx 提出了一个关于 AI 模型评估的深刻观点：在报告推理成本时，应该用美元（实际花费）而非 token 数量作为横轴。因为开源模型在 API 调用上通常比闭源模型更便宜（每美元能获得更多 token），所以用 token 数衡量会误导比较。这实际上是在呼吁行业统一评估标准，让用户能更公平地对比不同模型的性价比。",
+      "tldr": "评估 AI 模型时，别只看它用了多少 token，要看花了多少钱。开源模型 token 便宜，用 token 数比会显得它很笨，但实际可能更划算。",
+      "proView": "如果行业采纳这个标准，用户将能更直观地比较模型的经济性，推动开源模型在成本敏感场景的普及，同时倒逼闭源模型降价或提升效率。",
+      "conView": "但美元成本受云服务商定价波动影响大，且不同任务对 token 的利用效率不同，单纯按美元衡量可能忽略模型在特定任务上的质量差异。",
+      "clue": "观察主流模型评估报告（如 LMSYS Chatbot Arena）是否开始引入美元成本作为横轴，以及开源模型社区是否积极响应这一提议。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/swyx/status/2070949306060931312"
+      ],
+      "topicTags": [
+        "AI 模型评估",
+        "开源模型",
+        "推理成本",
+        "token 计价"
+      ],
+      "personTags": [
+        "AI 工程师",
+        "行业观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Thibault Sottiaux",
+      "title": "Codex 重大更新：长线程、导航栏、设置搜索、粘贴格式修复，以及宠物面板",
+      "originalText": "Tons of improvements landed in Codex. \n\n- Handles super long threads smoothly. \n- Hoverable navigation rail for previewing and jumping between turns that feels just right. \n- Settings search covers more controls, with clearer appearance and host-filtering options and easier-to-find custom-provider settings. \n- Zoom-level changes no longer misalign tooltips, dialogs, menus, selection bubbles, drag previews, or autocomplete. \n- Copying into Slack preserves Markdown formatting such as bullets, bold text, code, and links; and large text pastes no longer freeze the UI.\n- And most importantly: a dedicated Pets panel.",
+      "chineseInterpretation": "Codex 是 OpenAI 的 AI 编程助手，这次更新大幅提升了用户体验：长线程处理更流畅，新增可悬停的导航栏方便预览和跳转，设置搜索覆盖更多控制项，缩放不再导致 UI 错位，粘贴到 Slack 时保留 Markdown 格式，还增加了宠物面板。这些改进表明 Codex 正在从单纯的代码补全工具向更全面的 AI 开发环境演进，尤其注重细节和交互流畅度。",
+      "tldr": "Codex 更新了一堆实用功能：长对话不卡了，导航栏能悬停预览，设置更好找，缩放不乱跳，粘贴到 Slack 格式不乱，还加了个宠物面板——对，就是给猫狗用的。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://x.com/thsottiaux/status/2071071289247244481"
+      ],
+      "topicTags": [
+        "Codex",
+        "AI编程助手",
+        "产品更新",
+        "用户体验"
+      ],
+      "personTags": [
+        "产品经理",
+        "开发者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Yang",
+      "title": "用MCP和vibe coding搭建个人健康数据追踪系统",
+      "originalText": "Every Saturday, Hermes sends me a health check email with top takeaways and stats to help me work toward my health goals by pulling data from: → My smart scale via the Withings API → My Fitbit and Google Health → An MCP server and mobile fitness app I vibe coded to track my workouts. I find this super useful, even if my body fat is going the wrong way 😅. I talk about how to do this in my Hermes tutorial here: https://t.co/p0BDhL6PAp. Should I make another video on building my fitness app?",
+      "chineseInterpretation": "Peter Yang展示了一个个人健康数据聚合的实践案例：通过Hermes平台整合Withings智能秤、Fitbit和Google Health的数据，并利用MCP协议和vibe coding自建健身App来追踪训练。这体现了AI时代个人数据管道的轻量化构建趋势——用MCP作为数据交换标准，vibe coding快速实现定制化功能，让非专业开发者也能搭建类似‘数字孪生’的健康监控系统。",
+      "tldr": "他用AI工具把各种健康设备的数据串起来，每周自动生成健康报告，就像给自己配了个私人健康管家。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://t.co/p0BDhL6PAp"
+      ],
+      "topicTags": [
+        "MCP协议",
+        "vibe coding",
+        "个人健康数据",
+        "AI应用",
+        "数据聚合"
+      ],
+      "personTags": [
+        "产品经理",
+        "AI实践者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Nan Yu",
+      "title": "如果90%的问题不值得解决，那么level 1和level 6 90%相同",
+      "originalText": "If 90% of problems you bump into aren’t worth solving, then level 1 and level 6 are 90% the same",
+      "chineseInterpretation": "Nan Yu 指出，在AI或创业领域，大多数日常遇到的问题其实并不值得投入精力去解决。如果90%的问题都是低价值的，那么一个初级水平（level 1）和一个高级水平（level 6）的人，在面对这些低价值问题时表现几乎一样——因为两者都不会去解决它们。真正的差距体现在那10%值得解决的高价值问题上。",
+      "tldr": "意思是，如果你遇到的大部分问题都是鸡肋，那新手和老手在这些问题上看起来差不多，真正的区别在于处理那少数关键问题的能力。",
+      "proView": "如果这个观点成立，那么AI产品和服务应该聚焦于识别和解决那10%的高价值问题，而不是试图覆盖所有场景。这可能导致资源向垂直领域的高难度问题倾斜，推动AI从通用助手转向专业顾问。",
+      "conView": "但另一面是，低价值问题往往是高价值问题的入口或基础，忽视它们可能错过潜在机会。历史上，许多创新（如Twitter的诞生）正是从解决看似琐碎的问题开始的。",
+      "clue": "判断线索：观察AI产品是否在刻意筛选问题，例如只回答特定类型的高价值查询，或者用户是否愿意为高价值问题付费。",
+      "relevance": "高",
+      "links": [
+        "https://t.co/CVozReRLVR"
+      ],
+      "topicTags": [
+        "问题选择",
+        "AI产品策略",
+        "创业思维"
+      ],
+      "personTags": [
+        "创业者",
+        "AI观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Guillermo Rauch",
+      "title": "Mythos/Sol 网络安全能力的双刃剑效应及个人域名收藏",
+      "originalText": "Mythos / Sol cybersecurity capabilities are equally useful in an offensive as well a defensive capacity. If adversaries get ahold of an equivalent offensive capability, it poses a serious threat to US companies that remain unaware of latent vulnerabilities. In the meantime, I strongly recommend running deepsec[1] or similar harnesses with the available frontier models. [1] https://t.co/Wh4QVGDFnm",
+      "chineseInterpretation": "Guillermo Rauch 指出 Mythos/Sol 的网络安全能力具有攻防双重用途，如果对手获得同等攻击能力，将对尚未意识到潜在漏洞的美国公司构成严重威胁。他建议立即使用 deepsec 等工具配合前沿模型进行安全检测。这反映了 AI 安全领域攻防不对称的现状，以及主动防御的重要性。",
+      "tldr": "AI 安全工具既能防守也能进攻，如果坏人拿到同样的工具，那些还没发现自己漏洞的公司就危险了。所以赶紧用上最新的安全检测工具吧。",
+      "proView": "如果这一观点成立，AI 安全领域将进入军备竞赛阶段，企业必须持续投入前沿模型进行漏洞挖掘，否则可能面临毁灭性攻击。同时，安全工具的双重用途会加剧地缘政治紧张，催生新的监管框架。",
+      "conView": "但另一面是，攻防能力的对称性也可能促进安全生态的快速进化，类似开源安全工具（如 Metasploit）的历史表明，公开漏洞利用代码反而加速了防御技术的成熟。",
+      "clue": "关键线索：观察 Mythos/Sol 是否公开其攻击能力细节，以及 deepsec 等工具的实际检出率与误报率。",
+      "relevance": "高",
+      "links": [
+        "https://t.co/Wh4QVGDFnm"
+      ],
+      "topicTags": [
+        "网络安全",
+        "AI安全",
+        "前沿模型",
+        "漏洞挖掘"
+      ],
+      "personTags": [
+        "创业者",
+        "技术领袖"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "AI Token Cost Optimization Best Practices and the Opportunity for Applied AI Companies",
+      "originalText": "Some good best practices here on AI token cost optimization. None of these happens though without a deep understanding of the underlying work being done in a non-abstract way.\n\nThe ultimate implication is that a layer between the work itself and the underlying intelligence needs to deeply understand your workflows, context, and business process. Now, each individual company doing this on their own is unlikely to be effective at scale, so as a consequence, this is effectively the playbook for any applied AI company right now. \n\nBy evaling the models for the applied use cases, deeply understanding the domain, having tuned UX and features for the use case, and having the ability to support adoption and change (via FDEs), allow this layer to add a ton of value. And as a result, enterprises get higher ROI because you actually can get *more* intelligence per dollar by having optimal architecture and workflows.\n\nThere will be many horizontal and vertical versions of this approach. Huge opportunity right now.",
+      "chineseInterpretation": "Aaron Levie 认为，AI token 成本优化的最佳实践需要深入理解具体工作流程，而不是抽象地优化。他提出，在底层模型和实际工作之间需要一个中间层，这个层必须深刻理解企业的业务流程、上下文和领域知识。单个企业自己搞很难规模化，所以这实际上是当前所有应用型 AI 公司的标准打法：评估模型、深耕领域、优化 UX 和功能、通过 FDE 支持落地。这样企业才能获得更高的 ROI，用更少的钱获得更多的智能。他认为横向和纵向的版本都会出现，现在是个巨大的机会。",
+      "tldr": "AI 成本优化的关键是搞懂具体业务，而不是瞎调参数。中间层公司（比如做企业 AI 应用的）如果能深度理解客户流程、做好评估和落地支持，就能帮企业用更少的钱获得更好的 AI 效果，这是个巨大的市场机会。",
+      "proView": "如果这个观点成立，未来企业 AI 应用将高度依赖中间层服务商，它们通过深度定制和优化，能显著提升 AI 投入产出比，从而推动更多企业采用 AI，并催生一批垂直和水平领域的独角兽公司。",
+      "conView": "但另一面是，这种深度定制可能带来高昂的前期成本，且每个行业或企业的流程差异巨大，中间层公司难以快速复制和扩展，可能导致市场碎片化，最终只有少数通用性强的平台能胜出。",
+      "clue": "关键线索是观察中间层公司（如 AI 应用初创企业）是否真的能通过深度理解客户流程，持续降低 token 成本并提升 ROI，以及它们能否在不同行业快速复制成功模式。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2070937863806751154"
+      ],
+      "topicTags": [
+        "AI Token 成本优化",
+        "应用型 AI 公司",
+        "企业 AI 落地",
+        "中间层",
+        "ROI"
+      ],
+      "personTags": [
+        "创业者",
+        "投资人"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Matt Turck",
+      "title": "智能眼镜与头显的历史：从Google Glass到Snap Spectacles的屡败屡战",
+      "originalText": "Smart glasses and goggles, a history:\n\nSilicon Valley, 2013 (Google): “you really want this”\nEveryone: “no we don’t”\n\nSilicon Valley, 2016 (Microsoft): “ok but what if it’s for the enterprise”\nEnterprise: “maybe, but also, no”\n\nSilicon Valley, 2023 (Meta): “ok but what if they look normal and have AI”\nEveryone: “wait… maybe? … Actually, no”\n\nSilicon Valley, 2024 (Apple): “ok but what if it’s $3,499 and covers your whole face”\nEveryone: “absolutely not”\n\nSilicon Valley, 2026 (Snap): “ok but this time for real”\nEveryone: “we admire the persistence but still no”",
+      "chineseInterpretation": "Matt Turck 用幽默的对话形式回顾了智能眼镜/头显的坎坷历史：从2013年Google Glass的消费者失败，到2016年HoloLens的企业市场遇冷，再到2023年Meta Ray-Ban的AI眼镜反响平平，2024年Apple Vision Pro因高价和形态被拒，最后2026年Snap Spectacles再次尝试却依然不被看好。核心观点是：尽管技术不断迭代，但智能眼镜始终未能解决用户真正的痛点——要么太丑、太贵、太笨重，要么缺乏杀手级应用。",
+      "tldr": "智能眼镜折腾了十几年，从Google Glass到Apple Vision Pro，每次都说“这次不一样”，但大家还是觉得“不想要”——就像每年都有人推销3D电视，但没人买账。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [],
+      "topicTags": [
+        "智能眼镜",
+        "AR/VR",
+        "消费电子",
+        "产品失败史"
+      ],
+      "personTags": [
+        "投资人",
+        "科技评论员"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Zara Zhang",
+      "title": "非工程师用AI构建项目，GitHub获万星",
+      "originalText": "Last year I barely knew how GitHub worked. Now I have 10k followers on GitHub (and still can't write code by hand). What a year. Btw I'm not an engineer; these are all side projects I built for fun. I just love connecting technology with user problems/using it to solve my own pain points, and then telling stories about the products",
+      "chineseInterpretation": "Zara Zhang 并非工程师出身，但通过 AI 辅助构建了多个项目，并在 GitHub 上获得了 1 万关注者。她强调自己不会手写代码，所有项目都是利用 AI 工具完成的，核心在于将技术与用户问题结合。这展示了 AI 编程工具（如 Cursor、Copilot 等）正在降低开发门槛，让非技术人员也能成为创造者。",
+      "tldr": "一个不会写代码的人，靠 AI 工具做项目，一年内在 GitHub 上火了，说明现在 AI 让普通人也能当开发者。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "高",
+      "links": [
+        "https://x.com/zarazhangrui/status/2070982013822333007",
+        "https://x.com/zarazhangrui/status/2071116793234813272"
+      ],
+      "topicTags": [
+        "AI编程",
+        "低代码",
+        "GitHub",
+        "个人项目"
+      ],
+      "personTags": [
+        "非工程师",
+        "产品爱好者"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "name": "Claude Blog",
+      "title": "Claude Code now supports artifacts",
+      "chineseInterpretation": "Claude Code 新增了 Artifacts 功能，能够将 AI 工作会话中的进展自动转化为实时更新的可视化网页，例如 PR 审查、系统解释、仪表盘和发布清单等。这些页面默认私有，可分享给团队成员，并支持版本历史。该功能旨在减少团队沟通状态更新的时间，让协作更高效。",
+      "tldr": "Claude Code 现在可以把你的工作过程自动变成可以分享的网页，比如调试记录、PR 说明，而且内容会随着你的工作实时更新。",
+      "links": [
+        "https://claude.com/blog/artifacts-in-claude-code"
+      ],
+      "topicTags": [
+        "Claude Code",
+        "Artifacts",
+        "AI 协作",
+        "实时更新",
+        "可视化"
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "name": "Training Data",
+      "title": "Memory and Continual Learning: Engram's Dan Biderman and Jessy Lin",
+      "chineseInterpretation": "Engram 的联合创始人 Dan Biderman 和 Jessy Lin 认为，当前 AI 模型的瓶颈不在于原始智能，而在于持续学习和记忆新上下文的能力。他们提出“模型始终在训练”的理念，通过适配器微调等技术，为每个团队或工作空间训练专属模型，将私有数据和交互经验深度内化到模型权重中，从而实现更高效、更个性化的 AI 应用。",
+      "tldr": "Engram 想让 AI 模型像人类一样持续学习，把公司的私有数据和经验“记在脑子里”，而不是每次都要翻文档。",
+      "links": [
+        "https://www.youtube.com/watch?v=aiR7F4jqjXY"
+      ],
+      "topicTags": [
+        "持续学习",
+        "记忆",
+        "适配器微调",
+        "RAG",
+        "模型个性化",
+        "Engram"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "Codex 重大更新：长线程、导航栏、设置搜索等",
+          "summary": "Codex 新增了长线程处理、悬停导航栏、设置搜索、粘贴格式修复等功能，显著提升开发者体验。",
+          "implication": "作为前端TL，应关注AI编程助手的交互细节优化，例如长对话的流畅渲染、UI组件的响应式适配、以及跨应用粘贴的格式兼容性。这些改进方向可直接应用于自研工具或团队协作平台。",
+          "sourceUrl": "https://x.com/thsottiaux/status/2071071289247244481"
+        },
+        {
+          "title": "非工程师用AI构建项目，GitHub获万星",
+          "summary": "非工程师Zara Zhang利用AI工具构建项目，在GitHub上获得1万关注者，展示了AI编程的低门槛。",
+          "implication": "前端TL应思考如何降低团队内部工具的开发门槛，例如推广AI辅助编码工具（如Copilot、Cursor），并建立最佳实践，让非前端成员也能参与简单的前端组件开发，提升整体效率。",
+          "sourceUrl": "https://x.com/zarazhangrui/status/2070982013822333007"
+        }
+      ],
+      "actions": [
+        "组织团队试用Codex新功能，评估其对前端开发流程的影响。",
+        "调研AI辅助编码工具在团队内的使用情况，制定推广计划。",
+        "关注前端框架对AI生成代码的兼容性，提前适配。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "AI Token成本优化：深入理解业务流程是关键",
+          "summary": "Aaron Levie指出，AI成本优化需要中间层深度理解企业流程，而非抽象优化。",
+          "implication": "作为服务端架构师，应设计可插拔的中间层架构，支持对不同业务场景的token消耗进行细粒度监控和优化。例如，通过缓存、批处理、模型路由等技术降低推理成本，同时保持灵活性以适配不同客户流程。",
+          "sourceUrl": "https://x.com/levie/status/2070937863806751154"
+        },
+        {
+          "title": "MCP协议在个人健康数据追踪中的应用",
+          "summary": "Peter Yang利用MCP协议和vibe coding搭建个人健康数据聚合系统。",
+          "implication": "MCP协议作为数据交换标准，可应用于服务端的数据集成场景。架构师应评估MCP在微服务间数据同步、第三方API聚合等方面的潜力，以简化数据管道建设。",
+          "sourceUrl": "https://t.co/p0BDhL6PAp"
+        },
+        {
+          "title": "持续学习与记忆：Engram的适配器微调理念",
+          "summary": "Engram提出通过适配器微调为每个团队训练专属模型，实现持续学习。",
+          "implication": "服务端架构师需考虑支持模型持续学习的架构，例如设计模型版本管理、增量训练管道、以及私有数据的安全存储与处理机制。这要求后端系统具备弹性扩展和高效的数据流处理能力。",
+          "sourceUrl": "https://www.youtube.com/watch?v=aiR7F4jqjXY"
+        }
+      ],
+      "actions": [
+        "调研MCP协议在现有数据管道中的可行性，进行技术原型验证。",
+        "设计支持模型持续学习的后端架构，包括数据隔离和增量训练模块。",
+        "建立token成本监控仪表盘，识别高消耗场景并优化。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "模型评估新标准：用美元成本替代token数",
+          "summary": "Swyx建议用美元成本作为模型评估的横轴，以更公平地比较开源与闭源模型的性价比。",
+          "implication": "作为产品经理，应关注行业评估标准的变化，并考虑在自家产品中引入成本效益指标，帮助用户做出更明智的模型选择。这可能成为差异化竞争优势。",
+          "sourceUrl": "https://x.com/swyx/status/2070949306060931312"
+        },
+        {
+          "title": "智能眼镜历史回顾：屡败屡战，痛点未解",
+          "summary": "Matt Turck回顾了智能眼镜从Google Glass到Snap Spectacles的失败历史，指出产品始终未能解决用户真正痛点。",
+          "implication": "产品经理应警惕技术驱动而非用户需求驱动的产品陷阱。在规划AI硬件或新功能时，务必验证用户真实痛点，避免重蹈覆辙。",
+          "sourceUrl": ""
+        },
+        {
+          "title": "非工程师用AI构建项目：低门槛创造趋势",
+          "summary": "非工程师Zara Zhang利用AI工具在GitHub上获得成功，展示了AI赋能非技术用户的潜力。",
+          "implication": "产品经理应思考如何设计面向非技术用户的AI产品，降低创造门槛。例如，提供模板化、可视化的工作流，让用户无需编码即可构建应用。",
+          "sourceUrl": "https://x.com/zarazhangrui/status/2070982013822333007"
+        }
+      ],
+      "actions": [
+        "评估在模型选择页面增加成本效益对比功能的可行性。",
+        "组织用户调研，验证智能眼镜类产品的真实需求场景。",
+        "探索面向非技术用户的AI产品功能，如可视化工作流编辑器。"
+      ]
+    }
+  ]
+}
