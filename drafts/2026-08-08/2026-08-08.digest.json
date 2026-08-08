@@ -1,0 +1,491 @@
+{
+  "date": "2026-08-08",
+  "title": "AI早报：GPT-5.6免费开放、Agent生态爆发、个人AGI兴起",
+  "intro": "今日焦点：OpenAI 发布 GPT-5.6 Sol 并开放免费无限聊天，AI 编程与 Agent 生态迎来爆发，行业领袖热议个人 AGI 与企业级 Agent 落地，AI 正从工具走向自主工作流。",
+  "builders": [
+    {
+      "isWater": false,
+      "name": "Swyx",
+      "title": "AI开发博客技能：引导思考与可视化",
+      "originalText": "the ai-devblog skill elicits what YOU think the story is, and works with you to trace what you read and report it faithfully. also does visuals...",
+      "chineseInterpretation": "Swyx 在介绍一个名为 ai-devblog 的技能，它能够引导用户梳理自己的思路，并协助追踪阅读内容，最终生成忠实的报告，还支持可视化。这反映了 AI 在辅助内容创作和知识管理方面的应用趋势，强调人机协作而非替代。",
+      "tldr": "这个AI工具能帮你理清思路，把你读的东西整理成报告，还能配图，就像有个助理帮你写博客。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://t.co/629UcBES0e",
+        "https://t.co/Ldadz8P7QT",
+        "https://t.co/DwhEAq3gBd"
+      ],
+      "topicTags": [
+        "AI工具",
+        "内容创作",
+        "知识管理",
+        "可视化"
+      ],
+      "personTags": [
+        "开发者",
+        "AI观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Thibault Sottiaux",
+      "title": "GPT-5.6 Luna 免费开放，Codex 能力惊人",
+      "originalText": "Free users of ChatGPT now have unlimited text chats, powered by GPT-5.6 Luna. You can just ask Codex with GPT-5.6 Sol the wildest things and it will just do it. I talk to it for 5 minutes straight with things that just seem to require weeks of work, get up to get something in the fridge, pet the dog, come back and ... it's done.",
+      "chineseInterpretation": "Thibault Sottiaux 透露 ChatGPT 免费用户现在可以无限次文本聊天，由 GPT-5.6 Luna 驱动，这标志着 OpenAI 在免费层级的重大升级。同时，他惊叹于 Codex 结合 GPT-5.6 Sol 的能力，只需几分钟对话就能完成看似需要数周的工作，这展示了 AI 编程助手的巨大潜力。",
+      "tldr": "ChatGPT 免费版现在能无限聊天了，而且新模型 Codex 特别厉害，你说什么它都能帮你搞定，几分钟就能干完以前要几周的活。",
+      "proView": "如果 GPT-5.6 真的如此强大，那么 AI 编程将进入新阶段，开发者生产力将大幅提升，可能改变软件开发的流程和效率。",
+      "conView": "但要注意，这类宣传往往有夸大成分，实际效果可能受限于具体任务复杂度，且免费用户的无限聊天可能包含隐性限制。",
+      "clue": "关注后续用户反馈和实际测试，特别是 Codex 在复杂项目中的表现，以及免费版是否真的无限制。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/thsottiaux/status/2085610231707623750",
+        "https://x.com/thsottiaux/status/2085597685948813610"
+      ],
+      "topicTags": [
+        "ChatGPT",
+        "GPT-5.6",
+        "Codex",
+        "AI编程",
+        "免费服务"
+      ],
+      "personTags": [
+        "开发者",
+        "AI观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Peter Yang",
+      "title": "Consumer AI 市场：ChatGPT 与 Google 的竞争格局",
+      "originalText": "Consumer is basically ChatGPT and Google's market to lose in my opinion. ChatGPT already has 1B users and needs to get them to connect their favorite apps and use agents to do work. OpenAI is already pioneering new interaction patterns like voice. The biggest barriers to overcome are: 1) Normies not trusting AI and ChatGPT with full access to their apps and data. 2) Normies not realizing what ChatGPT is now capable of. In both cases, I think marketing and the right messaging are just as important as improving the product. Google Gemini also has almost 1B users and my gut is normies trust it more to connect to email, calendar, Workspace, Chrome, etc since it's all the same login. But Google is behind on 3rd plugins, browser use, and alot of other critical features. They need to make the Gemini app best in class and friendly for normies. They can just copy ChatGPT tbh except make improvements like not have 3 separate modes (ChatGPT/Work/Codex) that ChatGPT and Claude are stuck in. fwiw I don't think having acess to the best model is that important to normies vs. getting the user onboarding right. My non-AI pilled friends could care less about Sol vs Fable as long as the pricing is fair and the model can get their work done reliably.",
+      "chineseInterpretation": "Peter Yang 认为消费级 AI 市场基本是 ChatGPT 和 Google 的天下，关键不在模型能力，而在用户信任和 onboarding。ChatGPT 有 10 亿用户，但需要让普通人敢把数据交给它，并意识到它的能力边界；Google 有生态优势，但产品体验和第三方插件落后。他建议 Google 直接抄 ChatGPT 的交互，但避免多模式分裂。最终，普通用户更关心价格和可靠性，而不是模型排名。",
+      "tldr": "就是说，AI 助手这块，就看 ChatGPT 和 Google 谁能先让普通人放心用、觉得好用。模型多厉害不重要，重要的是让用户觉得靠谱、简单，就像选外卖，好吃不贵就行，不用管是不是米其林。",
+      "proView": "如果这个观点成立，那么 OpenAI 和 Google 将主导消费级 AI，创业公司只能做垂直场景或卖身。产品体验和用户教育将成为核心壁垒，模型能力差距被淡化，营销预算和生态整合决定胜负。",
+      "conView": "但另一面是，历史多次证明，巨头在平台切换时容易掉队（如诺基亚），而且普通用户的信任可能因隐私事件崩塌。另外，模型能力差距可能在未来扩大，比如多模态或推理能力，届时普通用户也会感知到。",
+      "clue": "关键看未来 12 个月：ChatGPT 的 agent 功能使用率是否提升，Google 是否统一 Gemini 交互模式，以及是否有创业公司靠垂直体验突破。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/petergyang/status/2085427222836658600"
+      ],
+      "topicTags": [
+        "消费级AI",
+        "ChatGPT",
+        "Google Gemini",
+        "AI助手",
+        "用户信任"
+      ],
+      "personTags": [
+        "创业者",
+        "AI观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Madhu Guru",
+      "title": "用AI保留口述原味：让想法不被文档磨平",
+      "originalText": "I’ve noticed people are much clearer when they speak through new ideas than writing a doc on it. Somewhere between their mouth and the doc, the core idea gets buried as they try to add context, polish it and make it sound smart. So here’s what I ask my teams to do: record yourself explaining the idea exactly as you would to a friend, use ai to do basic cleanup but keep the rough original structure and flow. Share that doc.",
+      "chineseInterpretation": "Madhu Guru 观察到人们在口头表达新想法时往往比写文档更清晰，因为写文档时容易过度修饰而丢失核心。他建议团队先用录音记录像对朋友解释一样的原始表达，再用 AI 做基础清理，保留原始结构和流畅度，最后分享这个文档。这实际上是在利用 AI 将口语化的高信息密度内容转化为可读文档，同时避免传统写作的“包装”损耗。",
+      "tldr": "就是说，别费劲写正式文档了，直接录下你随口讲的想法，用 AI 简单整理一下，保留那种唠嗑的劲儿，这样核心意思才不丢。",
+      "proView": "如果这个做法普及，可能会改变团队知识管理的方式，让想法传递更高效，减少因文档格式化导致的信息失真，同时提升 AI 在内容整理方面的应用价值。",
+      "conView": "但另一方面，口语表达有时缺乏逻辑性和完整性，AI 清理可能无法完全弥补，且对于复杂技术方案，书面文档的严谨性仍是必要的。",
+      "clue": "可以观察团队采用此方法后，文档的可读性和想法落地效率是否真的提升，以及 AI 清理后的文档是否仍能保持原始意图。",
+      "relevance": "中",
+      "links": [],
+      "topicTags": [
+        "AI应用",
+        "团队协作",
+        "知识管理"
+      ],
+      "personTags": [
+        "创业者",
+        "管理者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Amjad Masad",
+      "title": "从No-Code到AI Coding：Replit创始人的远见与行业变迁",
+      "originalText": "Airtable bookends the rise and fall of “no code.” I remember arguing endlessly with investors about this. UI can never let you build arbitrary software. The way to make software accessible was always to solve code itself. For a long time, that sounded delusional. Not anymore. It’s true, in 21/22 I went around the valley asking everyone to train coding specific models with us: Google, Meta, everyone — no one thought it was as important as NLP use cases — eventually we trained our own: Replit-code-3b and then everyone got code pilled.",
+      "chineseInterpretation": "Amjad Masad 认为 Airtable 的兴衰标志着 no-code 运动的终结，他坚持 UI 无法构建任意软件，真正的解法是让代码本身更易用。他回忆 2021-2022 年游说各大公司训练代码模型时无人理会，最终 Replit 自己训练了 Replit-code-3b，随后整个行业才转向代码优先。这反映了 AI 编程从边缘到主流的转变，也验证了他的远见。",
+      "tldr": "以前大家觉得不用写代码、拖拖拽拽就能做软件，但 Amjad 一直觉得那不行，得让写代码本身变简单。现在 AI 能帮人写代码了，证明他是对的，no-code 那套已经过时了。",
+      "proView": "如果代码生成成为主流，软件开发的入门门槛将大幅降低，非专业开发者也能构建复杂应用，可能导致 no-code 平台被边缘化，同时催生新的开发工具链和协作模式。",
+      "conView": "但 no-code 并未完全消亡，它在特定场景（如内部工具、简单自动化）仍有价值，且 AI 编程目前仍依赖人类审查，完全自动化尚不现实。历史上对技术趋势的线性预测常被低估，例如低代码平台仍在企业市场增长。",
+      "clue": "观察 Airtable 的估值变化、Replit 等 AI 编程工具的采用率，以及主流云厂商对代码生成模型的投入力度。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/amasad/status/2085451197323034902",
+        "https://x.com/amasad/status/2085544020424716723"
+      ],
+      "topicTags": [
+        "AI编程",
+        "No-Code",
+        "Replit",
+        "代码生成",
+        "行业趋势"
+      ],
+      "personTags": [
+        "创业者",
+        "技术布道者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Guillermo Rauch",
+      "title": "AI 编码代理的插件标准：开源与可扩展性的重要性",
+      "originalText": "Devtools must be 1️⃣ open source and 2️⃣ universally extensible.\n\nAI coding agents are the most important devtools in the history of our industry. The Plugin standard lets anybody extend them uniformly.\n\nThis is huge for the ecosystem. Build a Plugin → get exposure to the tidal wave of software creation from every agent: CLIs, IDEs, cloud agents, and even personal assistants.",
+      "chineseInterpretation": "Guillermo Rauch 强调开发者工具必须开源且可扩展，而 AI 编码代理是史上最重要的开发者工具。他提到的 Plugin 标准（可能是类似 MCP 的协议）能让所有 agent 统一扩展，从而让开发者构建一次插件，就能在 CLI、IDE、云端 agent 甚至个人助手中获得曝光。这反映了 AI 工具生态正在走向标准化和平台化，类似早期 VS Code 插件生态的爆发。",
+      "tldr": "Rauch 说 AI 编程工具必须开源且能装插件，这样大家做的插件就能在所有 AI 工具里通用，就像手机 App 能在不同系统上跑一样。",
+      "proView": "如果 Plugin 标准成为事实标准，那么 AI 编程工具的生态将迎来爆发式增长，开发者可以一次开发插件，多平台复用，类似 VS Code 插件市场带来的繁荣。这会加速 AI 工具的普及，并催生新的商业模式。",
+      "conView": "但标准之争往往激烈，历史上类似 Java 的 \"write once, run anywhere\" 并未完全实现，不同 agent 可能有不同的插件接口，导致碎片化。此外，过度依赖插件标准可能限制创新，核心功能被标准化后，差异化空间变小。",
+      "clue": "观察 Plugin 标准是否被主流 agent（如 Claude Code、Cursor、GitHub Copilot）采纳，以及是否有第三方插件市场出现。",
+      "relevance": "高",
+      "links": [],
+      "topicTags": [
+        "AI 编码代理",
+        "插件标准",
+        "开源",
+        "开发者工具"
+      ],
+      "personTags": [
+        "创业者",
+        "技术领袖"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aaron Levie",
+      "title": "Agent 时代的企业软件：从聊天到流程管理，平台价值凸显",
+      "originalText": "If you’re trying to understand the dynamic of real world agent adoption this post is a great place to start. Everyone got so hooked on talking to chatbots that there’s limited recognition still that working with an agent is much more like managing someone in a process vs. just asking an ai some questions and getting a response back. “prompting an agent is closer to writing a spec than asking a question. you have to scope the task extensively and define what \"done\" looks like.” Ultimately, the real upside of agents is when you start to change the underlying workflow itself instead of just treating it as another system you ask questions of. This means getting the agents the right data to work with, crossing organizational boundaries, and evolving the human in the loop steps for when people actually review the work. All of this has to change about today’s processes for the big upside to occur. The end result is that it’s most likely that the vast majority of token usage in an enterprise will be agents that are “deployed” to go execute tasks inside of workflows. Huge Atlassian quarterly beat. There was a misplaced thesis over the past 6 months that somehow agents would be bad for certain software categories. There’s definitely truth in this in some areas, but many were parsing this poorly. In a world where agents are generating 100X more code, processing massive amounts of data, or making decisions across your systems, the role of the platforms that manage this data and these workflows becomes more important, not less. Enterprises care about governance, security, compliance, guardrails, safe access to data, and many more critical capabilities that go into these systems of record.",
+      "chineseInterpretation": "Aaron Levie 指出，企业采用 agent 的关键不是把它当聊天机器人，而是像管理员工一样管理流程。他引用了一个观点：给 agent 写 prompt 更像写规格说明，需要明确任务范围和完成标准。真正的价值在于重构工作流，让 agent 获得数据、跨部门协作，并重新设计人工审核环节。他预测企业级 token 消耗将主要来自部署在流程中的 agent。另外，他借 Atlassian 的财报反驳了“agent 会损害软件平台”的论调，认为 agent 越普及，治理、安全、合规等平台能力越重要。",
+      "tldr": "别把 AI agent 当聊天机器人，它更像一个需要你写清楚任务书的员工。真正用好 agent 要重新设计工作流程，而不是简单问问题。而且 agent 用得越多，像 Atlassian 这样的企业管理软件反而越重要，因为它们能管好数据和安全。",
+      "proView": "如果 agent 真的成为企业工作流的核心执行者，那么对数据治理、安全合规和流程编排的需求将指数级增长。像 Atlassian、ServiceNow 这样的平台将成为 agent 的“操作系统”，其战略地位和商业价值会进一步凸显。",
+      "conView": "但另一面是，agent 的普及也可能颠覆现有软件的分类。如果 agent 能自主完成跨系统任务，用户可能不再需要单独购买 Jira、Confluence 等工具，而是转向更集成的 AI 原生平台。Atlassian 的短期财报好不代表长期无忧，历史上诺基亚在智能手机初期也表现不错。",
+      "clue": "观察 Atlassian 等平台公司的后续财报和客户留存率，以及企业是否真的将 agent 部署到核心业务流程中。如果 token 消耗量中 agent 占比持续上升，且平台收入增长，则观点成立；反之则需警惕。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/levie/status/2085587079405425146",
+        "https://x.com/levie/status/2085474309943030032"
+      ],
+      "topicTags": [
+        "AI agent",
+        "企业软件",
+        "工作流",
+        "数据治理",
+        "Atlassian"
+      ],
+      "personTags": [
+        "创业者",
+        "投资人"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Garry Tan",
+      "title": "个人AGI：不只是聊天机器人，而是深度了解你的AI",
+      "originalText": "Here's what I think you need to know about personal AGI - not a chatbot that anyone can have, but one that knows you uniquely, now and into the future",
+      "chineseInterpretation": "Garry Tan 在强调个人AGI的概念，它不同于通用的聊天机器人，而是能够深度了解每个用户独特背景、偏好和历史的AI。这种AI会随着时间推移不断学习，形成个性化的长期记忆，从而提供更精准的服务。这预示着AI从通用工具向个性化伙伴的转变。",
+      "tldr": "就是说，未来的AI不是那种谁都能用的聊天机器人，而是像你的私人助理一样，特别懂你，记得你的喜好和经历，而且越用越懂你。",
+      "proView": "如果个人AGI成为现实，AI将能提供高度个性化的服务，比如医疗建议、教育辅导、职业规划等，真正成为每个人的数字分身。这可能会催生新的商业模式，比如基于个人数据的订阅服务，并极大提升用户粘性。",
+      "conView": "但另一面是，个人AGI需要大量个人数据，隐私和安全问题将成为巨大挑战。历史上，类似个性化推荐曾引发信息茧房问题，个人AGI可能加剧这种效应，让用户陷入自己的小世界。此外，技术实现难度极高，长期记忆和个性化推理仍是AI研究的难点。",
+      "clue": "判断线索：关注Garry Tan后续是否发布具体产品或技术细节，以及AI领域对个性化长期记忆的研究进展，比如是否有新的模型架构或训练方法出现。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/garrytan/status/2085446068461043722"
+      ],
+      "topicTags": [
+        "个人AGI",
+        "AI个性化",
+        "长期记忆",
+        "AI趋势"
+      ],
+      "personTags": [
+        "投资人",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Matt Turck",
+      "title": "构建长时程AI代理的深度对话：行为规范、本体论与过程监督",
+      "originalText": "How to build long-horizon AI agents: behavior specs, ontologies, process supervision - my conversation with @mitch_troy, co-founder of @trybasis \n\n01:09 Why Everyone at Basis Was Whispering to AI when @steph_palazzolo walked in \n04:12 Accounting as \"an Intelligence Over the Economy\"\n06:11 What Makes an Agent Truly Long-Horizon\n08:24 Inside an Autonomous, Multi-Day Tax Return\n10:19 Agents That Hand Off Like Senior Engineers\n11:17 A Brief History of Agents: From ReAct to Today\n12:33 Why LLMs Have No Long-Term Memory\n14:13 Why AutoGPT Didn't Live Up to Its Promise\n15:51 The Three Breakthroughs: Opus 3, o1, o3\n17:07 Why Reasoning Models Unlocked Agents\n18:23 \"Let's Verify Step by Step\": The Road Not Taken\n20:32 Pushing Back on the METR Chart\n22:09 Why Coding Agents Won First\n25:14 Why Real-World Agents Are Harder\n26:55 How Accountants Verify Non-Deterministic Work\n29:18 You Can't Scale Tax Returns Like Math\n33:16 100 Evals Pass - So What?\n35:53 Right Answer, Wrong Process\n36:37 Behavior Specs, Explained\n39:58 How Specific Should Behaviors Be?\n42:18 Context Is Runtime Training Data\n44:21 Who Judges the Judge?\n46:45 The Move 37 Objection\n50:02 The Magic Box Mental Model\n52:41 \"Nothing Has Changed Since o3\"\n54:56 Open-Sourcing Behavior Specs with @ankrgyl  @braintrust \n59:45 Ontologies: A World for Agents to Live In\n01:04:20 Documentation as Codebase\n01:06:33 Why the Founding Fathers Were Context Engineers\n01:09:05 Onboarding 300 Brilliant Alien Employees\n01:11:10 Self-Improving Agent Systems\n01:12:50 The Context Mistake Agent Builders Make\n01:14:29 RL on Behavior Adherence\n01:17:01 Will the Bitter Lesson Swallow the Harness\n01:18:46 \"Technical Moats Are Not Real Moats\"\n01:21:03 Advice for AI Builders",
+      "chineseInterpretation": "Matt Turck 与 Basis 联合创始人 Mitch Troy 的这场对话，深入探讨了构建长时程 AI agent 的核心方法论。他们提出，要让 agent 在真实世界中完成多天任务（如税务申报），不能只依赖模型推理，还需要行为规范（behavior specs）来约束过程，用本体论（ontologies）定义领域知识，并通过过程监督（process supervision）确保每一步正确。对话还反思了 AutoGPT 的失败，指出推理模型（如 o1）是解锁 agent 的关键，但真正的瓶颈在于如何验证非确定性工作，以及如何让 agent 像资深工程师一样交接。这些观点对 AI 工程实践很有启发，尤其是对 agent 的评估和验证提出了新思路。",
+      "tldr": "这就像教一个实习生做复杂的项目，光告诉他最终目标没用，还得给他一本详细的操作手册（行为规范），告诉他每一步该怎么做，并且有老师傅在旁边盯着（过程监督），这样才能保证他不出错地完成整个项目。",
+      "proView": "如果行为规范、本体论和过程监督成为构建长时程 agent 的标准范式，那么 agent 将能在更多专业领域（如会计、法律）可靠地执行复杂任务，推动 AI 从辅助工具向自主工作者转变。",
+      "conView": "但过度依赖行为规范和过程监督可能限制 agent 的灵活性，使其难以应对未预见的场景。而且，定义完备的规范本身成本高昂，可能只适用于特定垂直领域，难以通用化。",
+      "clue": "观察 Basis 等公司是否能在实际业务中持续产出高质量结果，以及其行为规范框架是否被社区广泛采用。",
+      "relevance": "高",
+      "links": [
+        "https://t.co/j2srHcxAQK"
+      ],
+      "topicTags": [
+        "AI代理",
+        "长时程任务",
+        "行为规范",
+        "本体论",
+        "过程监督",
+        "推理模型"
+      ],
+      "personTags": [
+        "投资人",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Zara Zhang",
+      "title": "Claude Tag 团队使用情况调查",
+      "originalText": "Question: is anyone using Claude Tag (or other equivalent team agents) heavily in your team? What have been the top use cases/aha moments?",
+      "chineseInterpretation": "Zara Zhang 在询问团队中重度使用 Claude Tag 或类似团队 agent 的情况，想了解最典型的使用场景和令人惊喜的瞬间。这反映了当前 AI 工具从个人辅助向团队协作演进的趋势，Claude Tag 可能是指 Anthropic 的团队协作功能，类似 agent 的团队化应用正在成为新的探索方向。",
+      "tldr": "有人在问：你们团队有没有重度使用 Claude Tag 这类 AI 助手？用得最多的场景是什么？有没有什么让人眼前一亮的效果？",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/zarazhangrui/status/2085371310042169630"
+      ],
+      "topicTags": [
+        "团队协作",
+        "AI 助手",
+        "Claude"
+      ],
+      "personTags": [
+        "投资人",
+        "AI 观察者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Nikunj Kothari",
+      "title": "VC融资季的实战建议：创始人必看的避坑指南",
+      "originalText": "Alright August fundraising season is here (got 9 intros this week) so here’s a brain dump of tips that no VC will tell you.. \n\n> who you talk to and get to an intro at a VC firm really matters. associates and principals ARE really great. i genuinely mean it BUT you have to see what they have backed recently to understand what kind of leverage they have. what’s their standing in the firm. new, worked on a few great recent deals and understand your space, talk to them. if not, they might be on the way out. always get a warm intro to them as well. understand quickly if the fund will actually be interested vs. lip service. also know once you are assigned to someone in the CRM, you’re stuck with that person. wars have been fought on deal attribution (you think I’m joking but no)\n\n> you got to talk to the GP or capital P partners (these are folks who have actual authority and not just the title, caveat below). and you could cold email, but try to get a warm intro. angels are great for this. ideally from a founder they have already backed. they’ll run on a plane to talk to you with that intro. all schedules vanish and you don’t get passed to an associate (usually).\n\n> on the raise, now here’s where it gets tricky. ask for too much, then they look at you skeptically unless you’re Elon. ask for too little and then you’re not ambitious enough. ask for too little dilution it’s not worth it, ask for too much it’s too good of a deal. and this is the number one thing founders don’t understand: VCs don’t want a “deal”. Like if the price is too good it begets even more questions like why is the price not high. It’s weird but it’s true. there’s no science here.. but be prepared to come up with a resemblance of a plan on why you’re raising that much. \n\n> ok on numbers, no established good lead VC fund will do under 10% dilution. so don’t even ask? obviously there are exceptions and if you have insane leverage go for it. but generally the floor is set since someone is showing how this returns the fund. on valuation, never compare on what your competitor got. it’s the single best way to tank the deal. you have no idea how that deal got done but it’s good to have as a comp. \n\n> don’t lie. the valley and NY especially is insanely small. if you tell them you have a term sheet from someone, it’s literally a text away. it’s a co-opetition so everyone talks to everyone. this is why all decks leak and news spreads like wildfire. and this is why don’t share anything you don’t want to be shared. even if it’s not shared by an upstanding VC, another one will. \n\n> vibes are really important. be you? showcase what you’re excited by and highlight where you need help (we thrive on helping). you can play the silly game of trying to neg and act like someone you’re not - but trust me it works far less then you can think. hype can buy you eyeballs and attention but it’s not the end all be all. \n\n> finally, this is the most consensus market I’ve seen in a while. so if you’re not in a hot sector, strap in. share what makes you a great contrarian bet. everyone is looking to balance their portfolio so you never know where you find champions even if you strike out of the top 100. goes without saying figure out the default alive path. \n\nGood luck to all - and obligatory if you’re raising a seed or series A round - I’d love to meet IRL!",
+      "chineseInterpretation": "Nikunj Kothari 这篇推文是给创始人的融资实战指南，核心观点是：融资时找对人比什么都重要，要优先接触有实权的 GP 或资深合伙人，并通过 warm intro 建立联系；估值和稀释比例要拿捏得当，VC 其实不喜欢“太划算”的交易；同时强调诚信和真实的重要性，因为圈子很小，谎言很容易被戳穿。他还指出当前市场高度共识化，非热门赛道需要突出自己的 contrarian 特质。这些建议非常接地气，反映了 VC 行业的真实运作逻辑。",
+      "tldr": "融资就像相亲，你得找对介绍人，别太主动也别太被动，价格要合理，别吹牛，做自己。现在大家都挤热门赛道，如果你不在里面，就得拿出点不一样的东西。",
+      "proView": "如果这些建议被广泛采纳，创始人将更注重建立长期关系而非短期交易，VC 行业的透明度会提高，融资过程可能更高效。同时，强调真实性和诚信可能减少信息不对称，促进更健康的投资生态。",
+      "conView": "然而，这些建议可能过于依赖个人经验，不同基金和行业可能有很大差异。例如，一些新兴基金可能更灵活，对稀释比例和估值有不同看法。此外，过度强调 warm intro 可能让没有强大网络的创始人处于劣势，加剧融资不平等。",
+      "clue": "观察 VC 行业动态，如基金的投资策略变化、创始人的融资反馈，以及市场对非热门赛道的态度。如果更多创始人分享类似经验，可能表明行业正在形成共识。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/nikunj/status/2085382457457828153"
+      ],
+      "topicTags": [
+        "融资",
+        "VC",
+        "创业",
+        "估值",
+        "创始人"
+      ],
+      "personTags": [
+        "投资人",
+        "创业者"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Aditya Agarwal",
+      "title": "SPC 投资与 GoodfireAI 诞生",
+      "originalText": "A good day to apply to @spc. I have learnt an incredible amount from Tom and I could not be more proud that @GoodfireAI was born at SPC.",
+      "chineseInterpretation": "Aditya Agarwal 在推文中表达了对 SPC 的认可，并提到 GoodfireAI 是在 SPC 孵化出来的。这暗示 SPC 作为孵化器在 AI 创业领域有较强的支持能力，可能吸引更多创业者申请。同时，他对 Tom 的感谢也表明 SPC 的导师资源对创业者有实际帮助。",
+      "tldr": "Aditya 说 SPC 是个好地方，他学到了很多，而且 GoodfireAI 就是从那里出来的，所以推荐大家去申请。",
+      "proView": "",
+      "conView": "",
+      "clue": "",
+      "relevance": "中",
+      "links": [
+        "https://x.com/adityaag/status/2085364323707150758",
+        "https://x.com/adityaag/status/2085315202237546603"
+      ],
+      "topicTags": [
+        "孵化器",
+        "AI创业",
+        "SPC"
+      ],
+      "personTags": [
+        "创业者",
+        "投资人"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Sam Altman",
+      "title": "OpenAI 发布 Sol 5.6：聊天体验大幅提升，免费用户无限文本聊天",
+      "originalText": "5.6 Sol much better in chat now\n\nand unlimited text chat for free users!",
+      "chineseInterpretation": "Sam Altman 宣布 OpenAI 的 Sol 5.6 模型在聊天场景下表现显著提升，同时向免费用户开放无限文本聊天。这标志着 OpenAI 在模型优化和产品策略上的双重推进：一方面通过技术迭代提升用户体验，另一方面以免费无限聊天吸引更多用户，扩大生态影响力。此举可能对竞争对手形成压力，并推动 AI 聊天服务的普及。",
+      "tldr": "OpenAI 的新模型 Sol 5.6 在聊天上更聪明了，而且免费用户也能随便聊，不限次数。就像奶茶店免费续杯，让你喝到爽。",
+      "proView": "若 Sol 5.6 确实在聊天质量上有显著提升，将巩固 OpenAI 在对话式 AI 的领先地位，吸引更多免费用户转化为付费用户，同时为未来商业化奠定基础。",
+      "conView": "免费无限聊天可能带来高昂的算力成本，若无法有效控制成本或通过广告等方式变现，可能影响公司盈利。此外，模型性能提升是否真正满足用户需求仍需实际体验验证。",
+      "clue": "关注用户反馈和第三方评测，对比 Sol 5.6 与 GPT-4o 等模型的聊天质量；同时观察 OpenAI 的定价策略和成本控制措施。",
+      "relevance": "高",
+      "links": [
+        "https://x.com/sama/status/2085454964814753990"
+      ],
+      "topicTags": [
+        "OpenAI",
+        "Sol 5.6",
+        "聊天模型",
+        "免费服务"
+      ],
+      "personTags": [
+        "创业者",
+        "AI 行业领袖"
+      ]
+    },
+    {
+      "isWater": false,
+      "name": "Claude",
+      "title": "Claude Fable 5 更新生物学安全防护，减少误报",
+      "originalText": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks by about 85% across our product surfaces. Fable can now assist on a wider range of everyday health and educational questions. We believe the biggest positive impacts of AI will be in biology and medicine, and we’re committed to putting frontier intelligence safely into the hands of as many researchers as possible. Fable will continue to fallback to Opus 5 for requests we consider dual-use—including virology, toxicology, and molecular design—so it isn't yet usable for professional biology research and drug development. We're committed to closing that gap through trusted access pathways for frontier biology capabilities.",
+      "chineseInterpretation": "Claude 团队更新了 Fable 5 的生物安全防护机制，将误报率降低了约 85%，这意味着模型现在能回答更多日常健康和科普问题，而不会频繁触发安全回退。不过，对于涉及病毒学、毒理学和分子设计等高风险领域，Fable 仍会回退到 Opus 5，以确保安全。这表明 Anthropic 在安全与实用性之间寻找平衡，既想扩大 AI 在生物医学领域的积极影响，又对潜在的双重用途保持警惕。",
+      "tldr": "Claude 的 AI 模型更新了安全设置，现在能回答更多日常健康问题，但涉及病毒、毒药等危险领域时，还是会自动切换到更保守的版本，防止被滥用。",
+      "proView": "如果这一更新能有效减少误报，同时保持对高风险请求的严格管控，那么 AI 在健康教育和基础科研辅助方面的应用将大幅扩展，加速生物医学领域的创新，并可能推动更多可信访问通道的建立，让专业研究人员获得更强大的工具。",
+      "conView": "然而，降低误报率可能意味着安全边界的模糊，一些原本被拦截的请求可能被放行，存在被恶意利用的风险。历史上，AI 安全机制常因过度调整而出现漏洞，需要持续监控和迭代。",
+      "clue": "关键看后续是否有第三方安全测试报告，以及实际使用中是否出现新的安全事件。同时，观察 Anthropic 是否公布更详细的评估数据和可信访问通道的具体规则。",
+      "relevance": "高",
+      "links": [
+        "https://t.co/zbjxPhc909"
+      ],
+      "topicTags": [
+        "AI安全",
+        "生物医学",
+        "Claude",
+        "模型更新"
+      ],
+      "personTags": [
+        "AI公司",
+        "研究员"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "name": "Claude Blog",
+      "title": "Building intelligent apps for Apple platforms with Claude in the Foundation Models framework",
+      "chineseInterpretation": "Anthropic 发布了新的 Swift 包，使 Apple 开发者能够在 Foundation Models 框架中调用 Claude，实现更复杂的工作流。该框架允许开发者用 Swift 原生调用模型，并通过引导生成返回类型化的 Swift 值，而 Claude 的加入则补充了多步推理、代码生成和网络搜索等能力。开发者可以将设备端模型用于快速本地任务，如摘要或提取，并在需要更高级功能时无缝切换到 Claude，同时保持统一的用户体验。",
+      "tldr": "苹果开发者现在可以在自己的应用里，先用设备上的小模型处理简单任务，遇到复杂问题就交给 Claude 处理，而且代码很简单。",
+      "links": [
+        "https://claude.com/blog/claude-for-foundation-models"
+      ],
+      "topicTags": [
+        "Claude",
+        "Apple",
+        "Foundation Models",
+        "Swift",
+        "开发者工具"
+      ]
+    }
+  ],
+  "podcasts": [
+    {
+      "name": "The MAD Podcast with Matt Turck",
+      "title": "How to Build Long-Horizon AI Agents — Mitch Troyanovsky, Basis",
+      "chineseInterpretation": "本期播客深入探讨了构建长时程自主AI代理的挑战与解决方案。嘉宾Mitch Troyanovsky分享了Basis公司如何通过行为规范（Behavior Specs）和过程验证来确保代理在复杂任务（如税务申报）中的可靠性和一致性。他强调，在缺乏大量可验证数据的情况下，模仿人类工作流程和过程监督比单纯依赖结果评估更为有效，并展望了代理自我改进和模型级强化学习的未来方向。",
+      "tldr": "AI代理要干长活，不能光看结果，得管过程。就像带新人，得教他按规矩办事，不能让他瞎搞。",
+      "links": [
+        "https://www.youtube.com/@DataDrivenNYC/videos"
+      ],
+      "topicTags": [
+        "AI代理",
+        "长时程任务",
+        "行为规范",
+        "过程验证",
+        "税务自动化",
+        "Basis",
+        "强化学习",
+        "自我改进"
+      ]
+    }
+  ],
+  "roleSuggestions": [
+    {
+      "roleId": "frontend",
+      "roleLabel": "前端 TL 视角",
+      "items": [
+        {
+          "title": "AI 编码代理插件标准：开源与可扩展性",
+          "summary": "AI 编码代理是史上最重要的开发者工具，插件标准将让开发者一次构建，多平台复用。",
+          "implication": "前端团队应关注插件标准（如 MCP），提前布局 AI 工具链的生态建设，避免被锁定在单一工具。",
+          "sourceUrl": "https://x.com/guillermorauch/status/2085451197323034902"
+        },
+        {
+          "title": "GPT-5.6 与 Codex 能力惊人",
+          "summary": "Codex 结合 GPT-5.6 Sol 能完成复杂编程任务，几分钟完成数周工作。",
+          "implication": "前端开发效率将大幅提升，但需评估 AI 生成代码的质量和可维护性，建立代码审查机制。",
+          "sourceUrl": "https://x.com/thsottiaux/status/2085610231707623750"
+        },
+        {
+          "title": "Claude 支持 Apple Foundation Models",
+          "summary": "Anthropic 发布 Swift 包，让 Apple 开发者原生调用 Claude，实现设备端与云端模型无缝切换。",
+          "implication": "前端开发者可在 iOS/macOS 应用中集成 Claude，实现复杂 AI 功能，提升用户体验，但需注意隐私和成本。",
+          "sourceUrl": "https://claude.com/blog/claude-for-foundation-models"
+        }
+      ],
+      "actions": [
+        "调研 MCP 等插件标准，评估其对前端工具链的影响。",
+        "试点使用 Codex 辅助前端代码生成，制定代码审查流程。",
+        "学习 Swift 包集成 Claude，探索在 Apple 平台上的 AI 功能开发。"
+      ]
+    },
+    {
+      "roleId": "backend",
+      "roleLabel": "服务端架构师视角",
+      "items": [
+        {
+          "title": "Agent 时代的企业软件：平台价值凸显",
+          "summary": "企业级 Agent 将大量消耗 token，数据治理、安全合规等平台能力成为关键。",
+          "implication": "服务端架构需考虑 Agent 的编排、数据访问控制、审计等，构建支持 Agent 的中间件和 API 网关。",
+          "sourceUrl": "https://x.com/levie/status/2085587079405425146"
+        },
+        {
+          "title": "构建长时程 AI 代理：行为规范与过程监督",
+          "summary": "长时程 Agent 需要行为规范、本体论和过程监督来确保可靠性，而非仅依赖模型推理。",
+          "implication": "后端架构需支持 Agent 的状态管理、任务追踪和过程验证，设计可观测的 Agent 运行环境。",
+          "sourceUrl": "https://t.co/j2srHcxAQK"
+        },
+        {
+          "title": "从 No-Code 到 AI Coding：代码生成成为主流",
+          "summary": "Replit 创始人认为 AI 编程将取代 no-code，代码生成成为软件开发的未来。",
+          "implication": "后端开发需拥抱 AI 辅助编码，同时关注代码生成的安全性和可维护性，调整技术栈和 CI/CD 流程。",
+          "sourceUrl": "https://x.com/amasad/status/2085451197323034902"
+        }
+      ],
+      "actions": [
+        "设计支持 Agent 的微服务架构，引入事件驱动和状态机。",
+        "调研过程监督工具，如 Basis 的行为规范框架，评估其在后端任务中的应用。",
+        "建立 AI 生成代码的审查和测试机制，确保质量。"
+      ]
+    },
+    {
+      "roleId": "product",
+      "roleLabel": "高级产品经理视角",
+      "items": [
+        {
+          "title": "Consumer AI 市场：ChatGPT 与 Google 的竞争格局",
+          "summary": "消费级 AI 的关键是用户信任和 onboarding，而非模型能力。",
+          "implication": "产品设计应聚焦用户体验和信任建立，简化 onboarding，避免多模式分裂，营销与产品同等重要。",
+          "sourceUrl": "https://x.com/petergyang/status/2085427222836658600"
+        },
+        {
+          "title": "个人 AGI：不只是聊天机器人，而是深度了解你的 AI",
+          "summary": "个人 AGI 将深度了解用户，提供个性化服务，但隐私挑战巨大。",
+          "implication": "产品经理应探索个性化 AI 场景，同时设计隐私保护机制，平衡个性化与用户信任。",
+          "sourceUrl": "https://x.com/garrytan/status/2085446068461043722"
+        },
+        {
+          "title": "用 AI 保留口述原味：让想法不被文档磨平",
+          "summary": "用 AI 整理口述内容，保留原始结构，提升团队知识传递效率。",
+          "implication": "产品可集成语音转文档功能，帮助用户快速记录和分享想法，降低写作成本。",
+          "sourceUrl": ""
+        }
+      ],
+      "actions": [
+        "进行用户调研，了解普通用户对 AI 助手的信任障碍。",
+        "设计个性化 AI 功能原型，并制定隐私合规方案。",
+        "探索语音记录与 AI 整理的产品功能，提升协作效率。"
+      ]
+    }
+  ]
+}
