@@ -1,0 +1,59 @@
+{
+  "reviewId": "2026-08-09T00-39-27",
+  "date": "2026-08-09",
+  "status": "awaiting_human_review",
+  "publishPolicy": "manual_review",
+  "requestedPublishPolicy": "auto_publish",
+  "qualityPassed": false,
+  "qualityIssueCount": 4,
+  "rewriteRound": 1,
+  "artifacts": {
+    "draftMarkdownPath": "drafts/2026-08-09/2026-08-09.md",
+    "draftDigestJsonPath": "drafts/2026-08-09/2026-08-09.digest.json",
+    "preparedJsonPath": "drafts/2026-08-09/2026-08-09.prepared.json"
+  },
+  "review": {
+    "publishable": false,
+    "riskLevel": "high",
+    "recommendedAction": "manual_check",
+    "summary": "质量守门未通过，已回退为人工审核。",
+    "highlights": [],
+    "issues": [
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[0]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_links",
+        "severity": "high",
+        "path": "builders[2].links",
+        "message": "Builder is missing links"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[2]",
+        "message": "Builder is missing dialectic fields"
+      },
+      {
+        "code": "builder_missing_dialectic",
+        "severity": "high",
+        "path": "builders[3]",
+        "message": "Builder is missing dialectic fields"
+      }
+    ]
+  },
+  "humanDecision": null,
+  "history": [
+    {
+      "at": "2026-08-09T00:39:27.693Z",
+      "type": "draft_generated"
+    },
+    {
+      "at": "2026-08-09T00:39:27.693Z",
+      "type": "ai_review_completed"
+    }
+  ]
+}
