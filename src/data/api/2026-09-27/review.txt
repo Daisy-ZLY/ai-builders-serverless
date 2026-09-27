@@ -1,0 +1,24 @@
+Review ID: 2026-09-27T01-57-22
+Date: 2026-09-27
+Status: awaiting_human_review
+Policy: manual_review
+Quality: fail (1 issues)
+Risk: high
+Recommended action: manual_check
+
+Summary:
+质量守门未通过，已回退为人工审核。
+
+Highlights:
+- 无重点条目
+
+Issues:
+- [high] builder_missing_links @ builders[11].links: Builder is missing links
+
+Artifacts:
+- Markdown: drafts/2026-09-27/2026-09-27.md
+- Digest JSON: drafts/2026-09-27/2026-09-27.digest.json
+- Prepared JSON: drafts/2026-09-27/2026-09-27.prepared.json
+
+Actions:
+approve | rewrite | save_only
